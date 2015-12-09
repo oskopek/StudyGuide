@@ -1,0 +1,19 @@
+== How-to write documentation
+
+=== How-to write TODOs inside comments
+
+* *Syntax*: `TODO (priority: 1-3 ) message`
+* *Example*: `TODO 2 This exception shouldn't be ignored`
+
+=== How-to write documentation
+
+Apart from standard Javadoc comments used inside the actual source code,
+StudyGuide has all its documentation written in the `docs/` folder,
+using link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Asciidoctor] markup.
+
+To preview the changes you make, you can use one of these:
+
+* link:https://github.com/asciidoctor/asciidoctor-chrome-extension[Asciidoctor Chrome Extension]
+* link:https://github.com/asciidoctor/asciidoctor-firefox-addon[Asciidoctor Firefox Addon]
+
+After installing, just open the file in your browser of choice.

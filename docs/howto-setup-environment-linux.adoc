@@ -1,0 +1,18 @@
+=== How-to setup your build environment on Linux & Mac
+
+==== Build-related installations
+
+. *Install Git*
+** Fedora: `sudo dnf install git`
+** Ubuntu: `sudo apt-get install git`
+
+. *Install Java8 JDK* -- link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle JDK Downloads] -- Select: Java Platform (JDK)
+
+. *Install Maven* -- preferably the latest version you can.
+Usually, your distribution's package management repository is enough:
+** Fedora: `sudo dnf install mvn`
+** Ubuntu: `sudo apt-get install maven`
+
+. *Run the build* (see the Building section in the link:../README.adoc[README])
+
+. If you plan to *contribute code*, please set-up https://github.com/oskopek/ide-config[IDE coding templates] first
