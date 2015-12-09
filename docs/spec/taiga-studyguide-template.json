@@ -1,0 +1,599 @@
+{
+  "owner": "skopekondrej@gmail.com",
+  "default_points": "?",
+  "default_us_status": "New",
+  "default_task_status": "New",
+  "default_priority": "Normal",
+  "default_severity": "Normal",
+  "default_issue_status": "New",
+  "default_issue_type": "Bug",
+  "memberships": [
+    {
+      "user": "skopekondrej@gmail.com",
+      "role": "Project Owner",
+      "invited_by": null,
+      "is_owner": true,
+      "email": "skopekondrej@gmail.com",
+      "created_at": "2015-11-17T19:05:02+0000",
+      "invitation_extra_text": null,
+      "user_order": 10000
+    }
+  ],
+  "points": [
+    {
+      "name": "?",
+      "order": 1,
+      "value": null
+    },
+    {
+      "name": "0",
+      "order": 2,
+      "value": 0.0
+    },
+    {
+      "name": "1",
+      "order": 4,
+      "value": 1.0
+    },
+    {
+      "name": "5",
+      "order": 7,
+      "value": 5.0
+    },
+    {
+      "name": "10",
+      "order": 9,
+      "value": 10.0
+    }
+  ],
+  "us_statuses": [
+    {
+      "name": "New",
+      "slug": "new",
+      "order": 1,
+      "is_closed": false,
+      "is_archived": false,
+      "color": "#999999",
+      "wip_limit": null
+    },
+    {
+      "name": "Ready",
+      "slug": "ready",
+      "order": 2,
+      "is_closed": false,
+      "is_archived": false,
+      "color": "#ff8a84",
+      "wip_limit": null
+    },
+    {
+      "name": "In progress",
+      "slug": "in-progress",
+      "order": 3,
+      "is_closed": false,
+      "is_archived": false,
+      "color": "#ff9900",
+      "wip_limit": null
+    },
+    {
+      "name": "Ready for test",
+      "slug": "ready-for-test",
+      "order": 4,
+      "is_closed": false,
+      "is_archived": false,
+      "color": "#fcc000",
+      "wip_limit": null
+    },
+    {
+      "name": "Done",
+      "slug": "done",
+      "order": 5,
+      "is_closed": true,
+      "is_archived": false,
+      "color": "#669900",
+      "wip_limit": null
+    },
+    {
+      "name": "Archived",
+      "slug": "archived",
+      "order": 6,
+      "is_closed": true,
+      "is_archived": true,
+      "color": "#5c3566",
+      "wip_limit": null
+    }
+  ],
+  "task_statuses": [
+    {
+      "name": "New",
+      "slug": "new",
+      "order": 1,
+      "is_closed": false,
+      "color": "#999999"
+    },
+    {
+      "name": "In progress",
+      "slug": "in-progress",
+      "order": 2,
+      "is_closed": false,
+      "color": "#ff9900"
+    },
+    {
+      "name": "Ready for test",
+      "slug": "ready-for-test",
+      "order": 3,
+      "is_closed": true,
+      "color": "#ffcc00"
+    },
+    {
+      "name": "Closed",
+      "slug": "closed",
+      "order": 4,
+      "is_closed": true,
+      "color": "#669900"
+    },
+    {
+      "name": "Needs Info",
+      "slug": "needs-info",
+      "order": 5,
+      "is_closed": false,
+      "color": "#999999"
+    }
+  ],
+  "issue_statuses": [
+    {
+      "name": "New",
+      "slug": "new",
+      "order": 1,
+      "is_closed": false,
+      "color": "#8C2318"
+    },
+    {
+      "name": "In progress",
+      "slug": "in-progress",
+      "order": 2,
+      "is_closed": false,
+      "color": "#5E8C6A"
+    },
+    {
+      "name": "Ready for test",
+      "slug": "ready-for-test",
+      "order": 3,
+      "is_closed": true,
+      "color": "#88A65E"
+    },
+    {
+      "name": "Closed",
+      "slug": "closed",
+      "order": 4,
+      "is_closed": true,
+      "color": "#BFB35A"
+    },
+    {
+      "name": "Needs Info",
+      "slug": "needs-info",
+      "order": 5,
+      "is_closed": false,
+      "color": "#89BAB4"
+    },
+    {
+      "name": "Rejected",
+      "slug": "rejected",
+      "order": 6,
+      "is_closed": true,
+      "color": "#CC0000"
+    },
+    {
+      "name": "Postponed",
+      "slug": "postponed",
+      "order": 7,
+      "is_closed": false,
+      "color": "#666666"
+    }
+  ],
+  "priorities": [
+    {
+      "name": "Low",
+      "order": 1,
+      "color": "#666666"
+    },
+    {
+      "name": "Normal",
+      "order": 3,
+      "color": "#669933"
+    },
+    {
+      "name": "High",
+      "order": 5,
+      "color": "#CC0000"
+    }
+  ],
+  "severities": [
+    {
+      "name": "Wishlist",
+      "order": 1,
+      "color": "#666666"
+    },
+    {
+      "name": "Minor",
+      "order": 2,
+      "color": "#669933"
+    },
+    {
+      "name": "Normal",
+      "order": 3,
+      "color": "#0000FF"
+    },
+    {
+      "name": "Important",
+      "order": 4,
+      "color": "#FFA500"
+    },
+    {
+      "name": "Critical",
+      "order": 5,
+      "color": "#CC0000"
+    }
+  ],
+  "issue_types": [
+    {
+      "name": "Bug",
+      "order": 1,
+      "color": "#89BAB4"
+    },
+    {
+      "name": "Question",
+      "order": 2,
+      "color": "#ba89a8"
+    },
+    {
+      "name": "Enhancement",
+      "order": 3,
+      "color": "#89a8ba"
+    }
+  ],
+  "userstorycustomattributes": [],
+  "taskcustomattributes": [],
+  "issuecustomattributes": [],
+  "roles": [
+    {
+      "permissions": [
+        "add_issue",
+        "modify_issue",
+        "delete_issue",
+        "view_issues",
+        "add_milestone",
+        "modify_milestone",
+        "delete_milestone",
+        "view_milestones",
+        "view_project",
+        "add_task",
+        "modify_task",
+        "delete_task",
+        "view_tasks",
+        "add_us",
+        "modify_us",
+        "delete_us",
+        "view_us",
+        "add_wiki_page",
+        "modify_wiki_page",
+        "delete_wiki_page",
+        "view_wiki_pages",
+        "add_wiki_link",
+        "delete_wiki_link",
+        "view_wiki_links"
+      ],
+      "name": "Project Owner",
+      "slug": "product-owner",
+      "order": 50,
+      "computable": true
+    },
+    {
+      "permissions": [
+        "add_issue",
+        "add_task",
+        "add_us",
+        "add_wiki_link",
+        "add_wiki_page",
+        "delete_issue",
+        "delete_task",
+        "delete_wiki_link",
+        "delete_wiki_page",
+        "modify_issue",
+        "modify_task",
+        "modify_us",
+        "modify_wiki_page",
+        "view_issues",
+        "view_milestones",
+        "view_tasks",
+        "view_us",
+        "view_wiki_links",
+        "view_wiki_pages",
+        "view_project"
+      ],
+      "name": "Contributor",
+      "slug": "stakeholder",
+      "order": 60,
+      "computable": true
+    }
+  ],
+  "milestones": [
+    {
+      "owner": "skopekondrej@gmail.com",
+      "modified_date": "2015-11-17T19:55:56+0000",
+      "estimated_start": "2015-12-01",
+      "estimated_finish": "2015-12-20",
+      "name": "Requirements",
+      "slug": "requirements-6",
+      "created_date": "2015-11-17T19:55:56+0000",
+      "closed": false,
+      "disponibility": 0.0,
+      "order": 1,
+      "watchers": []
+    },
+    {
+      "owner": "skopekondrej@gmail.com",
+      "modified_date": "2015-11-17T19:56:35+0000",
+      "estimated_start": "2015-12-20",
+      "estimated_finish": "2016-01-03",
+      "name": "Backend",
+      "slug": "backend-14",
+      "created_date": "2015-11-17T19:56:35+0000",
+      "closed": false,
+      "disponibility": 0.0,
+      "order": 1,
+      "watchers": []
+    },
+    {
+      "owner": "skopekondrej@gmail.com",
+      "modified_date": "2015-12-04T20:18:51+0000",
+      "estimated_start": "2016-02-21",
+      "estimated_finish": "2016-03-31",
+      "name": "Frontend",
+      "slug": "frontend-8",
+      "created_date": "2015-12-04T20:18:51+0000",
+      "closed": false,
+      "disponibility": 0.0,
+      "order": 1,
+      "watchers": []
+    }
+  ],
+  "wiki_pages": [
+  ],
+  "wiki_links": [],
+  "user_stories": [
+  ],
+  "tasks": [
+  ],
+  "issues": [
+  ],
+  "tags_colors": [],
+  "anon_permissions": [
+    "view_wiki_pages",
+    "view_project"
+  ],
+  "public_permissions": [
+    "add_issue",
+    "add_us",
+    "view_wiki_pages",
+    "view_project"
+  ],
+  "modified_date": "2015-11-17T19:42:58+0000",
+  "timeline": [
+    {
+      "data": {
+        "values_diff": {},
+        "milestone": {
+          "id": 47440,
+          "name": "Frontend",
+          "slug": "frontend-8"
+        },
+        "comment_html": "",
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        },
+        "comment": "",
+        "project": {
+          "description": "Oi",
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "id": 83114
+        }
+      },
+      "content_type": 10,
+      "event_type": "milestones.milestone.create",
+      "data_content_type": 19,
+      "created": "2015-12-04T20:18:52+0000"
+    },
+    {
+      "data": {
+        "values_diff": {},
+        "milestone": {
+          "id": 44709,
+          "name": "Backend",
+          "slug": "backend-14"
+        },
+        "comment_html": "",
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        },
+        "comment": "",
+        "project": {
+          "id": 83114,
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "description": "Oi"
+        }
+      },
+      "content_type": 10,
+      "event_type": "milestones.milestone.create",
+      "data_content_type": 19,
+      "created": "2015-11-17T19:56:35+0000"
+    },
+    {
+      "data": {
+        "values_diff": {},
+        "milestone": {
+          "id": 44708,
+          "name": "Requirements",
+          "slug": "requirements-6"
+        },
+        "comment_html": "",
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        },
+        "comment": "",
+        "project": {
+          "id": 83114,
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "description": "Oi"
+        }
+      },
+      "content_type": 10,
+      "event_type": "milestones.milestone.create",
+      "data_content_type": 19,
+      "created": "2015-11-17T19:55:56+0000"
+    },
+    {
+      "data": {
+        "values_diff": {
+          "total_story_points": [
+            null,
+            0.0
+          ]
+        },
+        "comment_html": "",
+        "comment": "",
+        "project": {
+          "id": 83114,
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "description": "Oi"
+        },
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        }
+      },
+      "content_type": 10,
+      "event_type": "projects.project.change",
+      "data_content_type": 10,
+      "created": "2015-11-17T19:42:58+0000"
+    },
+    {
+      "data": {
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        },
+        "comment_html": "",
+        "comment": "",
+        "project": {
+          "id": 83114,
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "description": "Oi"
+        },
+        "values_diff": {
+          "is_wiki_activated": [
+            true,
+            false
+          ],
+          "is_kanban_activated": [
+            false,
+            true
+          ]
+        }
+      },
+      "content_type": 10,
+      "event_type": "projects.project.change",
+      "data_content_type": 10,
+      "created": "2015-11-17T19:13:40+0000"
+    },
+    {
+      "data": {
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        },
+        "comment_html": "",
+        "comment": "",
+        "values_diff": {
+          "total_milestones": [
+            1,
+            0
+          ]
+        },
+        "project": {
+          "id": 83114,
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "description": "Oi"
+        }
+      },
+      "content_type": 10,
+      "event_type": "projects.project.change",
+      "data_content_type": 10,
+      "created": "2015-11-17T19:12:49+0000"
+    },
+    {
+      "data": {
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        },
+        "comment_html": "",
+        "comment": "",
+        "project": {
+          "id": 83114,
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "description": "Oi"
+        },
+        "values_diff": {
+          "total_milestones": [
+            null,
+            1
+          ]
+        }
+      },
+      "content_type": 10,
+      "event_type": "projects.project.change",
+      "data_content_type": 10,
+      "created": "2015-11-17T19:06:13+0000"
+    },
+    {
+      "data": {
+        "user": {
+          "email": "skopekondrej@gmail.com"
+        },
+        "comment_html": "",
+        "comment": "",
+        "values_diff": {},
+        "project": {
+          "id": 83114,
+          "name": "StudyGuide",
+          "slug": "oskopek-studyguide",
+          "description": "Oi"
+        }
+      },
+      "content_type": 10,
+      "event_type": "projects.project.create",
+      "data_content_type": 10,
+      "created": "2015-11-17T19:05:02+0000"
+    }
+  ],
+  "tags": "[]",
+  "name": "StudyGuide",
+  "slug": "oskopek-studyguide",
+  "description": "Oi",
+  "created_date": "2015-11-17T19:05:02+0000",
+  "total_milestones": 0,
+  "total_story_points": 0.0,
+  "is_backlog_activated": true,
+  "is_kanban_activated": true,
+  "is_wiki_activated": false,
+  "is_issues_activated": true,
+  "videoconferences": null,
+  "videoconferences_extra_data": null,
+  "is_private": true,
+  "userstories_csv_uuid": null,
+  "tasks_csv_uuid": null,
+  "issues_csv_uuid": null
+}
