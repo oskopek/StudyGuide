@@ -14,10 +14,10 @@ image:http://cdn.imghack.se/images/a6f3be78f72232fa6e9f09a11c53f7a6.png["StudyGu
 === Building
 * See: How-to setup your *build environment*:
 link:./docs/howto-setup-environment-windows.adoc[Windows], link:./docs/howto-setup-environment-linux.adoc[Linux & Mac]
-* *Recommended*: +mvn clean install -DskipTests+
-* To run *unit tests*: +mvn clean install+
-* To run *integration tests*: +mvn clean install -Pit+
-* To *clean*, run: +mvn clean+
+* *Recommended*: `mvn clean install -DskipTests`
+* To run *unit tests*: `mvn clean install`
+* To run *integration tests*: `mvn clean install -Pit`
+* To *clean*, run: `mvn clean`
 * Run a simple link:./docs/usage.adoc[StudyGuide demo]
 
 StudyGuide uses http://semver.org/[semantic versioning].
@@ -58,7 +58,7 @@ the bug, including your Java version and operating system.
 . http://learn.github.com/p/branching.html[Create a topic branch]
 . Implement your feature or bug fix
 . If applicable, add tests for your feature or bug fix
-. Run +mvn clean install -Pit+
+. Run `mvn clean install -Pit`
 . If the tests fail, return to step 3 and 4
 . Add, commit, and push your changes
 . http://help.github.com/send-pull-requests/[Submit a pull request]
