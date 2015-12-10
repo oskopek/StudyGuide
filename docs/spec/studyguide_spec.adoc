@@ -2,11 +2,11 @@
 Ondrej Škopek <oskopek@matfyz.cz>
 
 
-TODO: Revise, politically correct tone, zhodnotit narocnost
+TODO: Revise, zhodnotit narocnost
 
 == Stručne
 
-Program StudyGuide je ideálny sprievodca štúdiom každého matfyzáka (i nematfyzáka...).
+Program StudyGuide je ideálny sprievodca štúdiom každého matfyzáka (i nematfyzáka).
 Umožňuje študentom "európskeho" typu štúdia na univerzite monitorovať priebeh svojho štúdia,
 jednoducho prezerať splnenosť jednotlivých podmienok svojho odboru -- a tým predísť
 nepríjemným prekvapeniam na študíjnom oddelení!
@@ -14,27 +14,28 @@ nepríjemným prekvapeniam na študíjnom oddelení!
 == Podrobne
 
 Typický workflow študenta v StudyGuide:
-1. Študent si do program načíta svoj odbor a príslušné podmienky potrebné na jeho splnenie (povinné predmety, skupiny povinne voliteľných predmetov, ...)
-2. StudyGuide vie z rôznych* datových zdrojov načítať zoznam predmetov, ktoré si študent rozvrhne do semestrov
-3. Študent môže predmety prehadzovat, označovať ako splnené/nesplnené, ...
-4. StudyGuide vždy udržuje aktuálny stav a plánovaný stav splnenosti jednotlivých podmienok, ktoré určuje vybratý odbor
-5. Študent jasne a prehľadne vidí, čo mu v pláne/realite chýba do splnenia študíjnych povinností
-6. Student si moze vytvarat rozne scenaria -- skusit si, co sa stane, ak tu ci onu povinnost nesplnim
+1. Študent si do StudyGuide načíta nastavenie svojej školy, fakulty a odboru (rôzne úrovne podmienok potrebných na úspešné dokončenie štúdia)
+2. StudyGuide vie z rôznych datových zdrojov načítať zoznam predmetov, ktoré si študent následne rozvrhne do semestrov
+3. Študent môže predmety prehadzovat, postupne označovať ako splnené/nesplnené, ...
+4. StudyGuide vždy udržuje aktuálny a plánovaný stav splnenosti jednotlivých podmienok
+5. Študent jasne a prehľadne vidí, čo mu v pláne/realite chýba do splnenia študíjnych povinností -- a môže podľa toho konať
+6. Študent taktiež môže vytvárat rôzne scenária -- skúsiť si, čo sa stane, ak tú či onú povinnosť nesplní, ak si zapíše iné predmety, ...
 
 Program bude určite obsahovať:
 
-* Aktuálne datové súbory pre všetky typy Bakalarskeho/Magisterskeho studia na MFF
-* Podporu roznych univerzitnych, fakultnych a odborovych kriterii na uspesnost studia
-* Rychle prepocitavanie statistik na zaklade
-* Moznost ukladat/nacitavat vytoverene plany/scenare
+* Aktuálne datové súbory pre všetky typy bakalárskeho (prípadne i magisterského) štúdia na MFF
+* Podporu rôznych univerzitných, fakultných a odborových kriterií na úspešnosť štúdia (s rôznymi prioritami)
+* Rýchle prepočítavanie štatistík a kontrol podľa aktuálne zvoleného študijneho plánu (zapísaných predmetov)
+* Možnosť ukladať/načítavať vytvorené študíjne plány, prípadne fiktívne scenáre
+* Jednoduché Swingove grafické prostredie na editáciu aktuálneho študíjneho plánu a zobrazenie štatistík/výsledkov kontrol
 
 == Bonus
 
-* Localization (EN, DE, SK, CZ)
-* Dynamicke generovanie vstupnych nastaveni/suborov z textovych zdrojov (pdf, html, ...)
-* Dynamicke generovanie vstupnych nastaveni/suborov z databazovych zdrojov (SIS, IS, ...)
-* Varovanie na prekrocenie doby studia/poplatky
-* Vyhodnocovanie "narocnosti" daneho zapisaneho planu na semester podla europskych noriem (funkcia hodinovej dotacie, kreditov, ...)
+* Lokalizácia (EN, DE, SK, CZ)
+* Dynamické generovanie vstupných nastavení/súborov z textových zdrojov (pdf, html, ...)
+* Dynamické generovanie vstupných nastavení/súborov z online databazových zdrojov (SIS, IS, ...)
+* Kontrola prekročenia doby štúdia, kontrola vzniknutých poplatkov
+* Odhad "náročnosti" aktuálneho plánu v každom semestri podľa európskych noriem (ECTS), prípadne iných kritérií
 
 = Zápočtový program, Pokročilé programování na platformě Java
 Ondrej Škopek <oskopek@matfyz.cz>
@@ -43,7 +44,7 @@ StudyGuide 2
 
 == Stručne
 
-Program StudyGuide je ideálny sprievodca štúdiom každého matfyzáka (i nematfyzáka...).
+Program StudyGuide je ideálny sprievodca štúdiom každého matfyzáka (i nematfyzáka).
 Umožňuje študentom "európskeho" typu štúdia na univerzite monitorovať priebeh svojho štúdia,
 jednoducho prezerať splnenosť jednotlivých podmienok svojho odboru -- a tým predísť
 nepríjemným prekvapeniam na študíjnom oddelení!
