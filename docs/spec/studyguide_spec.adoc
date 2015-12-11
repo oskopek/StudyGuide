@@ -1,12 +1,10 @@
 = StudyGuide -- zápočtový program, Java, ZS 2015
 Ondrej Škopek <oskopek@matfyz.cz>
 
-
-TODO: Revise, zhodnotit narocnost
-
 == Stručne
 
 Program StudyGuide je ideálny sprievodca štúdiom každého matfyzáka (i nematfyzáka).
+
 Umožňuje študentom "európskeho" typu štúdia na univerzite monitorovať priebeh svojho štúdia,
 jednoducho prezerať splnenosť jednotlivých podmienok svojho odboru -- a tým predísť
 nepríjemným prekvapeniam na študíjnom oddelení!
@@ -14,6 +12,7 @@ nepríjemným prekvapeniam na študíjnom oddelení!
 == Podrobne
 
 Typický workflow študenta v StudyGuide:
+
 1. Študent si do StudyGuide načíta nastavenie svojej školy, fakulty a odboru (rôzne úrovne podmienok potrebných na úspešné dokončenie štúdia)
 2. StudyGuide vie z rôznych datových zdrojov načítať zoznam predmetov, ktoré si študent následne rozvrhne do semestrov
 3. Študent môže predmety prehadzovat, postupne označovať ako splnené/nesplnené, ...
@@ -27,37 +26,13 @@ Program bude určite obsahovať:
 * Podporu rôznych univerzitných, fakultných a odborových kriterií na úspešnosť štúdia (s rôznymi prioritami)
 * Rýchle prepočítavanie štatistík a kontrol podľa aktuálne zvoleného študijneho plánu (zapísaných predmetov)
 * Možnosť ukladať/načítavať vytvorené študíjne plány, prípadne fiktívne scenáre
-* Jednoduché Swingove grafické prostredie na editáciu aktuálneho študíjneho plánu a zobrazenie štatistík/výsledkov kontrol
+* Jednoduché Swingové grafické prostredie na editáciu aktuálneho študíjneho plánu a zobrazenie štatistík/výsledkov kontrol
 
 == Bonus
 
 * Lokalizácia (EN, DE, SK, CZ)
-* Dynamické generovanie vstupných nastavení/súborov z textových zdrojov (pdf, html, ...)
+* Dynamické generovanie vstupných nastavení/súborov z textových zdrojov (PDF, HTML, ...)
 * Dynamické generovanie vstupných nastavení/súborov z online databazových zdrojov (SIS, IS, ...)
 * Kontrola prekročenia doby štúdia, kontrola vzniknutých poplatkov
 * Odhad "náročnosti" aktuálneho plánu v každom semestri podľa európskych noriem (ECTS), prípadne iných kritérií
 
-= Zápočtový program, Pokročilé programování na platformě Java
-Ondrej Škopek <oskopek@matfyz.cz>
-
-StudyGuide 2
-
-== Stručne
-
-Program StudyGuide je ideálny sprievodca štúdiom každého matfyzáka (i nematfyzáka).
-Umožňuje študentom "európskeho" typu štúdia na univerzite monitorovať priebeh svojho štúdia,
-jednoducho prezerať splnenosť jednotlivých podmienok svojho odboru -- a tým predísť
-nepríjemným prekvapeniam na študíjnom oddelení!
-
-== Podrobne
-
-Program bude rozšírením zápočtového programu z predchádzajúceho semestru.
-Pridané budú následovné časti:
-
-* Program vie vygenerovat zo SISu a aktualnych studijnych vysledkov subor pre vstup
-* Dokoncenie lokalizacie (EN, DE, SK, CZ)
-* SaaS --> Web UI w/Drag'n'Drop, etc.
-
-== Bonus
-
-* ???Integracia priamo do SIS???
