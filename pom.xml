@@ -15,9 +15,7 @@
         <developerConnection>scm:git:https://github.com/oskopek/StudyGuide.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    <!--
     <url>https://www.ohloh.net/p/StudyGuide</url>
-    -->
     <issueManagement>
         <system>GitHub</system>
         <url>https://github.com/oskopek/StudyGuide/issues</url>
@@ -26,12 +24,10 @@
         <system>TravisCI</system>
         <url>https://travis-ci.com/oskopek/StudyGuide</url>
     </ciManagement>
-    <!--
     <organization>
         <name>StudyGuide Development Team</name>
         <url>https://github.com/oskopek/StudyGuide/graphs/contributors</url>
     </organization>
-    -->
     <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>
