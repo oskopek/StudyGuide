@@ -1,4 +1,4 @@
-package com.oskopek.studyguide.impl.core;
+package com.oskopek.studyguide.model;
 
 public final class Placeholder {
 

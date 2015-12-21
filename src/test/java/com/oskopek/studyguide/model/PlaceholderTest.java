@@ -1,4 +1,4 @@
-package com.oskopek.studyguide.impl.core;
+package com.oskopek.studyguide.model;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

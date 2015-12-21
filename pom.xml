@@ -189,7 +189,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.3.2</version>
                 <configuration>
-                    <mainClass>com.oskopek.studyguide.impl.core.Placeholder</mainClass>
+                    <mainClass>com.oskopek.studyguide.model.Placeholder</mainClass>
                 </configuration>
             </plugin>
             <plugin>
