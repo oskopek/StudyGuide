@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.oskopek.studyguide.model.constraints.Constraints</OriginalElement>
+  <nodes>
+    <node x="116.0" y="320.0">com.oskopek.studyguide.model.SemesterPlan</node>
+    <node x="292.0220588235294" y="80.0">com.oskopek.studyguide.model.courses.Course</node>
+    <node x="130.0" y="240.0">com.oskopek.studyguide.model.Semester</node>
+    <node x="177.28676470588238" y="400.0">com.oskopek.studyguide.model.DefaultStudyPlan</node>
+    <node x="268.5" y="160.0">com.oskopek.studyguide.model.courses.CourseRegistry</node>
+    <node x="0.0" y="320.0">com.oskopek.studyguide.model.StudyPlan</node>
+    <node x="434.25735294117646" y="320.0">com.oskopek.studyguide.model.constraints.Constraints</node>
+    <node x="454.00735294117646" y="160.0">com.oskopek.studyguide.model.courses.CourseGroupType</node>
+    <node x="292.5220588235294" y="0.0">com.oskopek.studyguide.model.courses.Credits</node>
+    <node x="428.1544117647059" y="0.0">java.io.Serializable</node>
+    <node x="103.5" y="160.0">com.oskopek.studyguide.model.CourseEnrollment</node>
+    <node x="495.00735294117646" y="80.0">java.lang.Enum</node>
+    <node x="552.1544117647059" y="0.0">java.lang.Comparable</node>
+    <node x="427.25735294117646" y="240.0">com.oskopek.studyguide.model.constraints.CourseGroup</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.oskopek.studyguide.model.DefaultStudyPlan" target="com.oskopek.studyguide.model.constraints.Constraints">
+      <point x="52.875" y="-15.0" />
+      <point x="300.6617647058824" y="380.0" />
+      <point x="486.25735294117646" y="380.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.constraints.Constraints" target="com.oskopek.studyguide.model.constraints.CourseGroup">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.DefaultStudyPlan" target="com.oskopek.studyguide.model.SemesterPlan">
+      <point x="-17.625" y="-15.0" />
+      <point x="230.16176470588238" y="370.0" />
+      <point x="176.0" y="370.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.Semester" target="com.oskopek.studyguide.model.CourseEnrollment">
+      <point x="-23.0" y="-15.0" />
+      <point x="153.0" y="215.0" />
+      <point x="139.75" y="215.0" />
+      <point x="-36.25" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.courses.Course" target="com.oskopek.studyguide.model.courses.Credits">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.Comparable">
+      <point x="17.0" y="-15.0" />
+      <point x="546.0073529411765" y="55.0" />
+      <point x="606.6544117647059" y="55.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.courses.CourseRegistry" target="com.oskopek.studyguide.model.courses.Course">
+      <point x="0.0" y="-15.0" />
+      <point x="333.5" y="135.0" />
+      <point x="331.0220588235294" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.DefaultStudyPlan" target="com.oskopek.studyguide.model.StudyPlan">
+      <point x="-52.875" y="-15.0" />
+      <point x="194.91176470588238" y="380.0" />
+      <point x="48.0" y="380.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.CourseEnrollment" target="com.oskopek.studyguide.model.Semester">
+      <point x="36.25" y="15.0" />
+      <point x="212.25" y="215.0" />
+      <point x="199.0" y="215.0" />
+      <point x="23.0" y="-15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.constraints.CourseGroup" target="com.oskopek.studyguide.model.courses.CourseGroupType">
+      <point x="29.5" y="-15.0" />
+      <point x="515.7573529411765" y="215.0" />
+      <point x="529.0073529411765" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.constraints.CourseGroup" target="com.oskopek.studyguide.model.courses.Course">
+      <point x="-29.5" y="-15.0" />
+      <point x="456.75735294117646" y="215.0" />
+      <point x="435.889705882353" y="215.0" />
+      <point x="435.889705882353" y="135.0" />
+      <point x="357.0220588235294" y="135.0" />
+      <point x="26.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.DefaultStudyPlan" target="com.oskopek.studyguide.model.courses.CourseRegistry">
+      <point x="17.625" y="-15.0" />
+      <point x="265.4117647058824" y="370.0" />
+      <point x="333.5" y="370.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.io.Serializable">
+      <point x="-17.0" y="-15.0" />
+      <point x="512.0073529411765" y="55.0" />
+      <point x="480.1544117647059" y="55.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.SemesterPlan" target="com.oskopek.studyguide.model.Semester">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.courses.CourseGroupType" target="java.lang.Enum">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.oskopek.studyguide.model.CourseEnrollment" target="com.oskopek.studyguide.model.courses.Course">
+      <point x="0.0" y="-15.0" />
+      <point x="176.0" y="135.0" />
+      <point x="305.0220588235294" y="135.0" />
+      <point x="-26.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.3000000000000003" x="331.0" y="215.00000000000003" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
