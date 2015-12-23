@@ -1,4 +1,4 @@
 package com.oskopek.studyguide.constraints;
 
-public class CourseRepetitionConstraint {
+public class CourseRepetitionConstraint implements Constraint {
 }
