@@ -2,7 +2,7 @@ package com.oskopek.studyguide.model.constraints;
 
 import com.oskopek.studyguide.constraints.GroupConstraint;
 import com.oskopek.studyguide.model.courses.Course;
-import com.oskopek.studyguide.model.courses.CourseType;
+import com.oskopek.studyguide.model.courses.CourseGroupType;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class CourseGroup {
 
-    private CourseType type;
+    private CourseGroupType courseGroupType;
     private List<Course> courseList;
     private List<GroupConstraint> groupConstraintList;
 
