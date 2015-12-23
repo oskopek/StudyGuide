@@ -5,6 +5,6 @@ package com.oskopek.studyguide.constraints;
  * {@link com.oskopek.studyguide.model.courses.Course}s in a given
  * {@link com.oskopek.studyguide.model.constraints.CourseGroup} is at least N.
  */
-public class GroupCreditsPercentageConstraint implements Constraint {
+public class GroupCreditsPercentageConstraint extends GroupConstraint {
 
 }
