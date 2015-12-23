@@ -1,4 +1,7 @@
 package com.oskopek.studyguide.controller;
 
-public class FindCourseController {
+/**
+ * Find the course referenced from the given input string (course id, name, teacher names).
+ */
+public abstract class FindCourseController {
 }
