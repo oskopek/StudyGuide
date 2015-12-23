@@ -1,7 +1,10 @@
 package com.oskopek.studyguide.view;
 
-public class StudyPanel {
+import com.oskopek.studyguide.model.StudyPlan;
 
-    // TODO Semester bubbles, drag n drop (replicates SemesterPlan
+/**
+ * TODO Semester bubbles, drag n drop (replicates {@link StudyPlan}).
+ */
+public class StudyPanel {
 
 }
