@@ -87,6 +87,8 @@
                                         <property name="severity" value="error"/>
                                         <property name="eachLine" value="true"/>
                                     </module>
+                                    <!-- Javadoc comment checks.                       -->
+                                    <module name="JavadocPackage"/>
                                     <!-- Miscellaneous other checks.                   -->
                                     <!-- See http://checkstyle.sf.net/config_misc.html -->
                                     <module name="RegexpSingleline">
@@ -100,10 +102,12 @@
                                         <property name="tabWidth" value="4"/>
                                         <!-- Checks for Javadoc comments.                     -->
                                         <!-- See http://checkstyle.sf.net/config_javadoc.html -->
-                                        <module name="JavadocMethod">
-                                            <property name="allowMissingJavadoc" value="true"/>
-                                        </module>
+                                        <module name="JavadocMethod"/>
+                                        <module name="JavadocType"/>
                                         <module name="JavadocStyle"/>
+                                        <module name="JavadocVariable">
+                                            <property name="scope" value="public"/>
+                                        </module>
                                         <!-- Checks for imports                              -->
                                         <!-- See http://checkstyle.sf.net/config_import.html -->
                                         <module name="IllegalImport"/>
