@@ -4,6 +4,6 @@ import java.util.List;
 
 public class SemesterPlan {
 
-    private List<Semester> semesterList;
+    private List<CourseEnrollment> courseEnrollmentList;
 
 }
