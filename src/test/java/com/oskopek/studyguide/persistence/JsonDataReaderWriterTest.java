@@ -18,19 +18,19 @@ import static org.junit.Assert.*;
 /**
  * TODO finish
  */
-public class JSONDataReaderWriterTest {
+public class JsonDataReaderWriterTest {
 
-    private JSONDataReaderWriter jsonDataReaderWriter;
+    private JsonDataReaderWriter jsonDataReaderWriter;
     private Path jsonPath;
     private StudyPlan plan;
 
     @Before
     public void setUp() throws IOException {
-        jsonDataReaderWriter = new JSONDataReaderWriter();
+        jsonDataReaderWriter = new JsonDataReaderWriter();
         jsonPath = Files.createTempFile("tmpPlan", ".json");
         Files.write(jsonPath, Arrays.asList("{", "\"semesterPlan\": null,", "\"constraints\": null,",
                 "\"courseRegistry\": null", "}"));
-        plan = new DefaultStudyPlan();
+        plan = new DefaultStudyPlan(null, null, null);
         // TODO fill plan
     }
 

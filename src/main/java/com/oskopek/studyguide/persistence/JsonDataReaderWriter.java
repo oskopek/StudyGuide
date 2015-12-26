@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  *
  * Specifics of the format: TODO docs format spec
  */
-public class JSONDataReaderWriter implements DataReader, DataWriter {
+public class JsonDataReaderWriter implements DataReader, DataWriter {
 
     private Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
 
