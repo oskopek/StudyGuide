@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -28,8 +30,8 @@ public class JsonDataReaderWriterTest {
     public void setUp() throws IOException {
         jsonDataReaderWriter = new JsonDataReaderWriter();
         jsonPath = Files.createTempFile("tmpPlan", ".json");
-        Files.write(jsonPath, Arrays.asList("{", "\"semesterPlan\": null,", "\"constraints\": null,",
-                "\"courseRegistry\": null", "}"));
+        Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/json_empty.json"), jsonPath,
+                StandardCopyOption.REPLACE_EXISTING);
         plan = new DefaultStudyPlan();
         // TODO fill plan
     }
