@@ -24,12 +24,13 @@ public class Course {
      * @param id unique course id, non-null
      * @param name course name, non-null
      * @param localizedName course name in a local language
-     * @param locale the locale of the localized course name
+     * @param locale the locale of the localized course name, non-null if {@code localizedName} is non-null
      * @param credits the credits awarded after fulfilling this course, non-null
      * @param teacherNames teachers of this course
      * @param requiredCourses courses required
      * as per {@link com.oskopek.studyguide.constraints.CourseEnrollmentRequirementsUnfulfilledConstraint}
      * @throws IllegalArgumentException if id, name or credits are null
+     * or if the locale is null when localizedName is non-null
      */
     public Course(String id, String name, String localizedName, Locale locale, Credits credits, String[] teacherNames,
             Course[] requiredCourses) throws IllegalArgumentException {
@@ -40,6 +41,9 @@ public class Course {
         this.name = name;
         this.localizedName = localizedName;
         this.locale = locale;
+        if (locale == null && localizedName != null) {
+            throw new IllegalArgumentException("Locale cannot be null when localized name isn't null.");
+        }
         this.credits = credits;
         this.teacherNames = teacherNames;
         if (teacherNames == null) {
@@ -114,6 +118,19 @@ public class Course {
      */
     public String[] getTeacherNames() {
         return teacherNames;
+    }
+
+    /**
+     * Get a localized or default name, depending on the locale.
+     * @param otherLocale the locale in which to get the name
+     * @return localized name iff the locale languages are the same
+     */
+    public String name(Locale otherLocale) {
+        if (localizedName == null || otherLocale == null || !locale.getLanguage().equals(otherLocale.getLanguage())) {
+            return name;
+        } else {
+            return localizedName;
+        }
     }
 
     @Override
