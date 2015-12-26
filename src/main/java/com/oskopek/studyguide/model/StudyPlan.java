@@ -1,8 +1,8 @@
 package com.oskopek.studyguide.model;
 
 /**
- * Parent class of the whole study plan model.
+ * Representation of the whole study plan model.
  */
 public interface StudyPlan {
-
+    // TODO
 }

@@ -30,7 +30,7 @@ public class JsonDataReaderWriterTest {
         jsonPath = Files.createTempFile("tmpPlan", ".json");
         Files.write(jsonPath, Arrays.asList("{", "\"semesterPlan\": null,", "\"constraints\": null,",
                 "\"courseRegistry\": null", "}"));
-        plan = new DefaultStudyPlan(null, null, null);
+        plan = new DefaultStudyPlan();
         // TODO fill plan
     }
 
