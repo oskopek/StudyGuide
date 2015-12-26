@@ -39,6 +39,19 @@ public class Semester {
     }
 
     /**
+     * The unique name of the semester.
+     *
+     * @param name non-null
+     * @throws IllegalArgumentException if name is null
+     */
+    public void setName(String name) throws IllegalArgumentException {
+        if (name == null) {
+            throw new IllegalArgumentException("Name cannot be null.");
+        }
+        this.name = name;
+    }
+
+    /**
      * Add the {@link CourseEnrollment} to this semester.
      *
      * @param courseEnrollment the enrollment to add to this semester, non-null

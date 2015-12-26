@@ -12,23 +12,28 @@ import java.io.IOException;
  */
 public abstract class AbstractFXMLPane {
 
-    protected static final StudyGuideResourceBundle messages = new StudyGuideResourceBundle();
+    public static final StudyGuideResourceBundle messages = new StudyGuideResourceBundle();
+    protected Object controller;
+    protected StudyGuideApplication studyGuideApplication;
 
     /**
      * Loads a FXML resource from the filesystem: {@link #getFxmlResource()}.
      *
      * @return non-null
      */
-    public Node load() {
+    public Node load(StudyGuideApplication studyGuideApplication) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(getFxmlResource()));
         loader.setResources(AbstractFXMLPane.messages);
+        Node node = null;
         try {
-            return loader.load();
+            node = loader.load();
         } catch (IOException e) {
             handleLoadLayoutError(e);
-            return null; // never occurs
         }
+        this.controller = loader.getController();
+        this.studyGuideApplication = studyGuideApplication;
+        return node;
     }
 
     /**
@@ -37,6 +42,14 @@ public abstract class AbstractFXMLPane {
      * @return a non-null string representing a FXML resource
      */
     protected abstract String getFxmlResource();
+
+    public Object getController() {
+        return controller;
+    }
+
+    public StudyGuideApplication getStudyGuideApplication() {
+        return studyGuideApplication;
+    }
 
     /**
      * Show a GUI alert when an exception loading FXMLs occurs.

@@ -65,6 +65,11 @@
             <artifactId>controlsfx</artifactId>
             <version>8.40.10</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.mpkorstanje</groupId>
+            <artifactId>simmetrics-core</artifactId>
+            <version>4.0.1</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>StudyGuide</finalName>

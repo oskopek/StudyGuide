@@ -3,8 +3,7 @@ package com.oskopek.studyguide.model.courses;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Serves as a cache and/or database for/of {@link Course}s.
@@ -46,6 +45,10 @@ public class CourseRegistry {
             throw new IllegalArgumentException("Cannot get course with null id from registry.");
         }
         return courseIdMap.get(id);
+    }
+
+    public Collection<Course> getCourses() {
+        return courseIdMap.values();
     }
 
     @Override
