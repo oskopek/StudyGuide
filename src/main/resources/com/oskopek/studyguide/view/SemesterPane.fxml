@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
 
-<BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/null"
+            xmlns:fx="http://javafx.com/fxml/1">
     <center>
-        <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="449.0" prefWidth="418.0" BorderPane.alignment="CENTER">
+        <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="449.0"
+                   prefWidth="418.0" BorderPane.alignment="CENTER">
             <columns>
-                <TableColumn editable="false" prefWidth="75.0" sortable="false" />
-                <TableColumn editable="false" prefWidth="75.0" sortable="false" />
+                <TableColumn editable="false" prefWidth="75.0" sortable="false"/>
+                <TableColumn editable="false" prefWidth="75.0" sortable="false"/>
             </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
         </TableView>
     </center>
     <top>
         <HBox minHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="5.0" BorderPane.alignment="CENTER">
             <BorderPane.margin>
-                <Insets />
+                <Insets/>
             </BorderPane.margin>
             <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
             <children>
-                <Button mnemonicParsing="false" text="+" />
-                <Button mnemonicParsing="false" text=" - " />
+                <Button mnemonicParsing="false" text="+"/>
+                <Button mnemonicParsing="false" text=" - "/>
             </children>
         </HBox>
     </top>
