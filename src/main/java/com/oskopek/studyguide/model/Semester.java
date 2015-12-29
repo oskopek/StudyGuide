@@ -62,8 +62,9 @@ public class Semester {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
         }
         if (!equals(courseEnrollment.getSemester())) {
-            throw new IllegalArgumentException("Cannot add courseEnrollment (" + courseEnrollment
-                    + ") with different semester (" + courseEnrollment.getSemester() + ") to semester (" + this + ")");
+            throw new IllegalArgumentException(
+                    "Cannot add courseEnrollment (" + courseEnrollment + ") with different semester ("
+                            + courseEnrollment.getSemester() + ") to semester (" + this + ")");
         }
         courseEnrollmentList.add(courseEnrollment);
     }
@@ -79,9 +80,9 @@ public class Semester {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
         }
         if (!equals(courseEnrollment.getSemester())) {
-            throw new IllegalArgumentException("Cannot remove courseEnrollment (" + courseEnrollment
-                    + ") with different semester (" + courseEnrollment.getSemester() + ") from semester ("
-                    + this + ")");
+            throw new IllegalArgumentException(
+                    "Cannot remove courseEnrollment (" + courseEnrollment + ") with different semester ("
+                            + courseEnrollment.getSemester() + ") from semester (" + this + ")");
         }
         courseEnrollmentList.remove(courseEnrollment);
     }

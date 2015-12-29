@@ -13,22 +13,22 @@ public interface DataWriter {
     /**
      * Writes a {@link StudyPlan} to a file in the filesystem.
      *
-     * @see DataReader#readFrom(String)
      * @param plan the StudyPlan to persist
      * @param fileName the file to write to
      * @throws IOException if something writing the plan failed
      * @throws IllegalArgumentException if plan or fileName is null
+     * @see DataReader#readFrom(String)
      */
     void writeTo(StudyPlan plan, String fileName) throws IOException, IllegalArgumentException;
 
     /**
      * Writes a {@link StudyPlan} to an {@link OutputStream}.
      *
-     * @see DataReader#readFrom(java.io.InputStream)
      * @param plan the StudyPlan to persist
      * @param outputStream the stream to write to
      * @throws IOException if something writing the plan failed
      * @throws IllegalArgumentException if plan or outputStream is null
+     * @see DataReader#readFrom(java.io.InputStream)
      */
     void writeTo(StudyPlan plan, OutputStream outputStream) throws IOException, IllegalArgumentException;
 

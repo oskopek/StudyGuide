@@ -13,8 +13,8 @@ public class CourseEnrollmentDetailPane extends AbstractFXMLPane {
     @Override
     public Node load(StudyGuideApplication studyGuideApplication) {
         GridPane courseEnrollmentDetailPane = (GridPane) super.load(studyGuideApplication);
-        CourseEnrollmentDetailController courseEnrollmentDetailController
-                = (CourseEnrollmentDetailController) getController();
+        CourseEnrollmentDetailController courseEnrollmentDetailController =
+                (CourseEnrollmentDetailController) getController();
         courseEnrollmentDetailController.setViewElement(this);
         courseEnrollmentDetailController.setStudyGuideApplication(studyGuideApplication);
         return courseEnrollmentDetailPane;

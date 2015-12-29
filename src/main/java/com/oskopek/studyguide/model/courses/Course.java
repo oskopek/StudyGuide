@@ -85,8 +85,8 @@ public class Course {
     /**
      * Localized {@link #getName()} of this course.
      *
-     * @see #getLocale()
      * @return the localized name
+     * @see #getLocale()
      */
     public String getLocalizedName() {
         return localizedName;
@@ -104,8 +104,8 @@ public class Course {
     /**
      * Courses required to fulfill this course.
      *
-     * @see com.oskopek.studyguide.constraints.CourseEnrollmentRequirementsUnfulfilledConstraint
      * @return non-null, may be empty
+     * @see com.oskopek.studyguide.constraints.CourseEnrollmentRequirementsUnfulfilledConstraint
      */
     public Course[] getRequiredCourses() {
         return requiredCourses;
@@ -122,6 +122,7 @@ public class Course {
 
     /**
      * Get a localized or default name, depending on the locale.
+     *
      * @param otherLocale the locale in which to get the name
      * @return localized name iff the locale languages are the same
      */

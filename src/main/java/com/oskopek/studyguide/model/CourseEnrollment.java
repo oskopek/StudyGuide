@@ -86,13 +86,11 @@ public class CourseEnrollment {
             return false;
         }
         CourseEnrollment that = (CourseEnrollment) o;
-        return new EqualsBuilder().append(course, that.course)
-                .append(semester, that.semester).isEquals();
+        return new EqualsBuilder().append(course, that.course).append(semester, that.semester).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(course).append(semester)
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(course).append(semester).toHashCode();
     }
 }

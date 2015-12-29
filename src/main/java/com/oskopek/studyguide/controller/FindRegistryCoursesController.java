@@ -36,26 +36,19 @@ public class FindRegistryCoursesController extends FindCoursesController impleme
      * Computes a similarity index for all courses to the {@code key}, sorts the courses according to it and returns
      * the first 5 (most similar).
      *
-     * @see org.simmetrics.StringMetric
-     * @see CosineSimilarity
      * @param key the key to search
      * @param locale the locale in which to search courses
      * @return the 5 most similar courses to the key
+     * @see org.simmetrics.StringMetric
+     * @see CosineSimilarity
      */
     @Override
     public List<Course> findCourses(String key, Locale locale) {
-        return courseRegistry.getCourses().parallelStream()
-                .map(((Course course) -> new HashMap.SimpleEntry<>(
-                        StringMetricBuilder
-                                .with(new CosineSimilarity<>())
-                                .simplify(Simplifiers.toLowerCase())
-                                .simplify(Simplifiers.removeDiacritics())
-                                .tokenize(Tokenizers.whitespace())
-                                .build()
-                                .compare(course.name(locale), key), course)))
-                .sorted((a, b) -> Float.compare(a.getKey(), b.getKey()))
-                .limit(5)
-                .map((a) -> a.getValue())
+        return courseRegistry.getCourses().parallelStream().map(((Course course) -> new HashMap.SimpleEntry<>(
+                StringMetricBuilder.with(new CosineSimilarity<>()).simplify(Simplifiers.toLowerCase())
+                        .simplify(Simplifiers.removeDiacritics()).tokenize(Tokenizers.whitespace()).build()
+                        .compare(course.name(locale), key), course)))
+                .sorted((a, b) -> Float.compare(a.getKey(), b.getKey())).limit(5).map((a) -> a.getValue())
                 .collect(Collectors.toList());
     }
 }

@@ -36,7 +36,8 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     public void onSemesterNameChange() {
         String newName = semesterNameArea.getText();
         if (studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().contains(new Semester(newName))) {
-            Alert alert = new Alert(Alert.AlertType.WARNING, AbstractFXMLPane.messages.getString("semesterBox.nameNotUnique"));
+            Alert alert = new Alert(Alert.AlertType.WARNING,
+                    AbstractFXMLPane.messages.getString("semesterBox.nameNotUnique"));
             alert.showAndWait();
         } else {
             semester.setName(newName);

@@ -3,7 +3,9 @@ package com.oskopek.studyguide.model.courses;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Serves as a cache and/or database for/of {@link Course}s.
@@ -22,9 +24,9 @@ public class CourseRegistry {
     /**
      * Put (add or replace) a course into the registry.
      *
-     * @see Course#equals(Object)
      * @param course non-null
      * @throws IllegalArgumentException if course is null
+     * @see Course#equals(Object)
      */
     public void putCourse(Course course) throws IllegalArgumentException {
         if (course == null) {

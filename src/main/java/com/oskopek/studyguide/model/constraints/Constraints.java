@@ -25,8 +25,8 @@ public class Constraints {
     /**
      * Get the list of course groups (which can have constraints specific to them).
      *
-     * @see CourseGroup#getGroupConstraintList()
      * @return non-null
+     * @see CourseGroup#getGroupConstraintList()
      */
     public List<CourseGroup> getCourseGroupList() {
         return courseGroupList;

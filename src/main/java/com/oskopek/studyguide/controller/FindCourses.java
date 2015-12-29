@@ -11,7 +11,6 @@ import java.util.Locale;
 public interface FindCourses {
 
     /**
-     *
      * @param key
      * @param locale
      * @return

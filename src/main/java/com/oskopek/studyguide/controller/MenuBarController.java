@@ -115,9 +115,8 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
     private void handleAbout() {
         Dialog<Label> dialog = new Dialog<>();
         dialog.setContentText(
-                  "                               StudyGuide\n"
-                + "    <https://github.com/oskopek/StudyGuide>\n"
-                + "Author: Ondrej Skopek <oskopek@matfyz.cz>");
+                "                               StudyGuide\n" + "    <https://github.com/oskopek/StudyGuide>\n"
+                        + "Author: Ondrej Skopek <oskopek@matfyz.cz>");
         dialog.setTitle("About");
         dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
         dialog.showAndWait();
@@ -142,7 +141,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
             return;
         }
         try {
-             studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath().toString()));
+            studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath().toString()));
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             alert.showAndWait();

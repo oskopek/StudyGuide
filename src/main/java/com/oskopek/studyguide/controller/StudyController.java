@@ -5,5 +5,4 @@ import com.oskopek.studyguide.view.StudyPane;
 public class StudyController extends AbstractController<StudyPane> {
 
 
-
 }

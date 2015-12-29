@@ -20,18 +20,13 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
     }
 
     /**
-     *
      * @param key
      * @param locale
      * @return
      */
     public List<Course> findCourses(String key, Locale locale) {
-        return findCoursesControllerList.parallelStream()
-                .map((f) -> f.findCourses(key, locale))
-                .flatMap(l -> l.stream())
-                .distinct()
-                .limit(5)
-                .collect(Collectors.toList());
+        return findCoursesControllerList.parallelStream().map((f) -> f.findCourses(key, locale))
+                .flatMap(l -> l.stream()).distinct().limit(5).collect(Collectors.toList());
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 /**
  * Reads and writes the {@link com.oskopek.studyguide.model.StudyPlan} to a JSON formatted file.
- *
+ * <p/>
  * Specifics of the format: TODO docs format spec
  */
 public class JsonDataReaderWriter implements DataReader, DataWriter {
@@ -27,9 +27,9 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("FileName is null.");
         }
         try {
-            return gson.fromJson(
-                    Files.lines(Paths.get(fileName), Charset.forName("UTF-8")).collect(Collectors.joining()),
-                    DefaultStudyPlan.class);
+            return gson
+                    .fromJson(Files.lines(Paths.get(fileName), Charset.forName("UTF-8")).collect(Collectors.joining()),
+                            DefaultStudyPlan.class);
         } catch (IOException | JsonSyntaxException e) {
             throw new IOException("Failed to read StudyPlan from file (" + fileName + ").", e);
         }

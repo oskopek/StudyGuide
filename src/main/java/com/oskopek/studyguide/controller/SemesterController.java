@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 
-import java.util.HashMap;
-
 public class SemesterController extends AbstractController<SemesterPane> {
 
     @FXML
@@ -25,7 +23,7 @@ public class SemesterController extends AbstractController<SemesterPane> {
         int semesterCount = tilePane.getChildren().size();
         int currentRows = semesterCount % 2 + semesterCount / 2;
         if (currentRows * 2 <= semesterCount) { // enough space
-            tilePane.setPrefRows(currentRows+1);
+            tilePane.setPrefRows(currentRows + 1);
         }
         SemesterBoxPane boxPane = new SemesterBoxPane(this.viewElement);
         BorderPane borderPane = (BorderPane) boxPane.load(studyGuideApplication);
@@ -43,7 +41,7 @@ public class SemesterController extends AbstractController<SemesterPane> {
         int semesterCount = tilePane.getChildren().size() - 1;
         int currentRows = semesterCount % 2 + semesterCount / 2;
         if (currentRows * 2 - 2 >= semesterCount) { // more than enough space
-            tilePane.setPrefRows(currentRows-1);
+            tilePane.setPrefRows(currentRows - 1);
         }
     }
 
