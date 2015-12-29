@@ -2,6 +2,9 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.FindCoursePane;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,12 @@ import java.util.stream.Collectors;
  * Controller for searching courses in multiple data-sources.
  */
 public class FindCoursesController extends AbstractController<FindCoursePane> implements FindCourses {
+
+    @FXML
+    private TextArea searchArea;
+
+    @FXML
+    private Button searchButton;
 
     private List<FindCourses> findCoursesList;
 

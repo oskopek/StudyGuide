@@ -6,18 +6,26 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 
+/**
+ * Controller for {@link SemesterPane}.
+ * Handles adding/removing {@link com.oskopek.studyguide.model.Semester}s
+ * and dragging {@link com.oskopek.studyguide.model.courses.Course}s between them.
+ */
 public class SemesterController extends AbstractController<SemesterPane> {
 
     @FXML
     private TilePane tilePane;
 
     /**
-     * Needs to be done after loading the graphics.
+     * Adds a default, initial semester. Needs to be done after loading the graphics.
      */
     public void initializeSemesters() {
         onAddSemester();
-    }
+    } // TODO add a add semester button to menu
 
+    /**
+     * Handles adding a new semester to the pane and model.
+     */
     @FXML
     private void onAddSemester() {
         int semesterCount = tilePane.getChildren().size();
@@ -31,6 +39,11 @@ public class SemesterController extends AbstractController<SemesterPane> {
         tilePane.getChildren().add(borderPane);
     }
 
+    /**
+     * Removes a semester from the semester pane.
+     *
+     * @param box non-null, with a non null {@link SemesterBoxPane#getBoxBorderPane()}
+     */
     public void removeSemester(SemesterBoxPane box) {
         BorderPane borderPane = box.getBoxBorderPane();
         if (borderPane == null) {
@@ -45,10 +58,21 @@ public class SemesterController extends AbstractController<SemesterPane> {
         }
     }
 
+    /**
+     * Handles the start of a {@link com.oskopek.studyguide.model.courses.Course}
+     * drag and drop action between semesters.
+     *
+     * @param box non-null
+     */
     public void dragDetected(SemesterBoxPane box) { // TODO
         System.out.println("Drag detected in box " + box);
     }
 
+    /**
+     * Handles the end of a {@link com.oskopek.studyguide.model.courses.Course} drag and drop action between semesters.
+     *
+     * @param box non-null
+     */
     public void dragEnded(SemesterBoxPane box) { // TODO
         System.out.println("Drag ended in box " + box);
     }

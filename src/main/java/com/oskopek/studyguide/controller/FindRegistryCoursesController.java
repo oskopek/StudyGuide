@@ -2,9 +2,6 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import org.simmetrics.builders.StringMetricBuilder;
 import org.simmetrics.metrics.CosineSimilarity;
 import org.simmetrics.simplifiers.Simplifiers;
@@ -20,14 +17,13 @@ import java.util.stream.Collectors;
  */
 public class FindRegistryCoursesController extends FindCoursesController implements FindCourses {
 
-    @FXML
-    private TextArea searchArea;
-
-    @FXML
-    private Button searchButton;
-
     private CourseRegistry courseRegistry;
 
+    /**
+     * Create a controller instance for a {@link CourseRegistry}.
+     *
+     * @param courseRegistry non-null back-end for the controller
+     */
     public FindRegistryCoursesController(CourseRegistry courseRegistry) {
         this.courseRegistry = courseRegistry;
     }

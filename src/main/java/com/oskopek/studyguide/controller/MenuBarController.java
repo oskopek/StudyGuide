@@ -6,6 +6,7 @@ import com.oskopek.studyguide.persistence.DataWriter;
 import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
 import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.RootLayoutPane;
+import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -15,6 +16,9 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Handles all action in the menu bar of the main app.
+ */
 public class MenuBarController extends AbstractController<RootLayoutPane> {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -55,21 +59,24 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
     @FXML
     private MenuItem aboutMenuItem;
 
-    @FXML
-    private void initialize() {
-
-    }
-
+    /**
+     * Menu item: File->New.
+     * Creates a new model in the main app.
+     * Doesn't save the currently opened one!
+     */
     @FXML
     private void handleNew() {
-        handleSave(); // auto-save
         openedFile = null;
         studyGuideApplication.setStudyPlan(new DefaultStudyPlan());
     }
 
+    /**
+     * Menu item: File->Open.
+     * Opens an existing model into the main app.
+     * Doesn't save the currently opened one!
+     */
     @FXML
     private void handleOpen() {
-        handleSave(); // auto-save
         FileChooser chooser = new FileChooser();
         chooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("JSON StudyPlan", ".json", ".JSON"));
         File chosen = chooser.showOpenDialog(studyGuideApplication.getPrimaryStage());
@@ -79,14 +86,22 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         openFromFile(chosen);
     }
 
-
+    /**
+     * Menu item: File->Close.
+     * Close the opened model from the main app and clear it.
+     * Doesn't save the currently opened one!
+     */
     @FXML
     private void handleClose() {
-        handleSave(); // auto-save
         openedFile = null;
         studyGuideApplication.setStudyPlan(null);
     }
 
+    /**
+     * Menu item: File->Save.
+     * Save the opened model from the main app.
+     * If there is no opened file and the model is not null, calls {@link #handleSaveAs()}.
+     */
     @FXML
     private void handleSave() {
         if (openedFile == null && studyGuideApplication.getStudyPlan() != null) {
@@ -96,6 +111,10 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         saveToFile(openedFile);
     }
 
+    /**
+     * Menu item: File->Save As.
+     * Save the opened model from the main app into a new file.
+     */
     @FXML
     private void handleSaveAs() {
         FileChooser chooser = new FileChooser();
@@ -107,11 +126,20 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         saveToFile(chosen);
     }
 
+    /**
+     * Menu item: File->Quit.
+     * Exit the main app.
+     * Doesn't save the currently opened model!
+     */
     @FXML
     private void handleQuit() {
         System.exit(0);
     }
 
+    /**
+     * Menu item: Help->About.
+     * Shows a short modal about dialog.
+     */
     @FXML
     private void handleAbout() {
         Dialog<Label> dialog = new Dialog<>();
@@ -123,6 +151,13 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         dialog.showAndWait();
     }
 
+    /**
+     * Saves the currently opened model to a file.
+     * If an {@link IOException} occurs, opens a modal dialog window notifying the user and prints a stack trace.
+     *
+     * @see StudyGuideApplication#getStudyPlan()
+     * @param file if null, does nothing
+     */
     private void saveToFile(File file) {
         if (file == null) {
             logger.debug("Cannot save to null file.");
@@ -133,9 +168,17 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
             alert.showAndWait();
+            e.printStackTrace();
         }
     }
 
+    /**
+     * Loads a model from a file into the main app.
+     * If an {@link IOException} occurs, opens a modal dialog window notifying the user and prints a stack trace.
+     *
+     * @see StudyGuideApplication#setStudyPlan(com.oskopek.studyguide.model.StudyPlan)
+     * @param file if null, does nothing
+     */
     private void openFromFile(File file) {
         if (file == null) {
             logger.debug("Cannot open from null file.");
@@ -146,6 +189,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             alert.showAndWait();
+            e.printStackTrace();
         }
         if (studyGuideApplication.getStudyPlan() != null) {
             openedFile = file;
