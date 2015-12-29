@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.view;
 
+import com.oskopek.studyguide.controller.AbstractController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -12,13 +13,18 @@ import java.io.IOException;
  */
 public abstract class AbstractFXMLPane {
 
+    /**
+     * A static instance of {@link StudyGuideResourceBundle} for translating strings in the view.
+     */
     public static final StudyGuideResourceBundle messages = new StudyGuideResourceBundle();
-    protected Object controller;
+
+    protected AbstractController controller;
     protected StudyGuideApplication studyGuideApplication;
 
     /**
      * Loads a FXML resource from the filesystem: {@link #getFxmlResource()}.
      *
+     * @param studyGuideApplication reference to the main application, non-null
      * @return non-null
      */
     public Node load(StudyGuideApplication studyGuideApplication) {
@@ -43,10 +49,20 @@ public abstract class AbstractFXMLPane {
      */
     protected abstract String getFxmlResource();
 
-    public Object getController() {
+    /**
+     * Reference to the controller of this pane.
+     *
+     * @return the controller controlling this pane, non-null
+     */
+    public AbstractController getController() {
         return controller;
     }
 
+    /**
+     * Reference to the main app (and model).
+     *
+     * @return non-null
+     */
     public StudyGuideApplication getStudyGuideApplication() {
         return studyGuideApplication;
     }

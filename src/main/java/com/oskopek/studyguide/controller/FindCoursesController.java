@@ -9,23 +9,37 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 
 /**
- *
+ * Controller for searching courses in multiple data-sources.
  */
 public class FindCoursesController extends AbstractController<FindCoursePane> implements FindCourses {
 
-    private List<FindCoursesController> findCoursesControllerList;
+    private List<FindCourses> findCoursesList;
 
+    /**
+     * Creates an empty instance.
+     */
     public FindCoursesController() {
-        this.findCoursesControllerList = new ArrayList<>();
+        this.findCoursesList = new ArrayList<>();
     }
 
     /**
-     * @param key
-     * @param locale
-     * @return
+     * Add a {@link FindCourses} instance to the list of course data-sources.
+     *
+     * @param findCourses a non-null instance
      */
-    public List<Course> findCourses(String key, Locale locale) {
-        return findCoursesControllerList.parallelStream().map((f) -> f.findCourses(key, locale))
+    public void addFindCourses(FindCourses findCourses) {
+        findCoursesList.add(findCourses);
+    }
+
+    /**
+     * Search for courses corresponding to the given key in all {@link FindCourses} data-sources.
+     *
+     * @param key the key to search for (id, name, ...)
+     * @param locale the locale in which to search the names ({@link Course#getLocalizedName()}).
+     * @return a non-null, five element list of {@link Course}s that match best
+     */
+    public List<Course> findCourses(String key, Locale locale) { // TODO search for ids and names
+        return findCoursesList.parallelStream().map((f) -> f.findCourses(key, locale))
                 .flatMap(l -> l.stream()).distinct().limit(5).collect(Collectors.toList());
     }
 

@@ -49,6 +49,11 @@ public class CourseRegistry {
         return courseIdMap.get(id);
     }
 
+    /**
+     * Get all the {@link Course}s in the registry.
+     *
+     * @return a non-null (may be empty) collection of courses
+     */
     public Collection<Course> getCourses() {
         return courseIdMap.values();
     }

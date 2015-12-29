@@ -1,12 +1,15 @@
 package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.controller.SemesterBoxController;
+import com.oskopek.studyguide.controller.SemesterController;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 
 /**
- * BorderPane
+ * Panel for displaying courses in a single semesters. Returns a BorderPane.
+ *
+ * @see SemesterPane
  */
 public class SemesterBoxPane extends AbstractFXMLPane {
 
@@ -15,6 +18,11 @@ public class SemesterBoxPane extends AbstractFXMLPane {
     @FXML
     private BorderPane boxBorderPane;
 
+    /**
+     * Create a semester box from the parent {@link SemesterPane}.
+     *
+     * @param parent the parent containing all semester boxes
+     */
     public SemesterBoxPane(SemesterPane parent) {
         this.parent = parent;
     }
@@ -34,14 +42,31 @@ public class SemesterBoxPane extends AbstractFXMLPane {
         return "SemesterBoxPane.fxml";
     }
 
+    /**
+     * Parent {@link SemesterPane}.
+     *
+     * @return the parent pane containing all semester boxes
+     */
     public SemesterPane getParent() {
         return parent;
     }
 
+    /**
+     * Get the JavaFX {@link BorderPane} object that represents this semester box.
+     * Needed for {@link SemesterController#onAddSemester()}.
+     *
+     * @return the pane representing this semester box
+     */
     public BorderPane getBoxBorderPane() {
         return boxBorderPane;
     }
 
+    /**
+     * Set the JavaFX {@link BorderPane} object that represents this semester box.
+     *
+     * @see SemesterController#onAddSemester()
+     * @param boxBorderPane the boxBorderPane to set
+     */
     public void setBoxBorderPane(BorderPane boxBorderPane) {
         this.boxBorderPane = boxBorderPane;
     }

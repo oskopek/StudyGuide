@@ -4,6 +4,7 @@ import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.persistence.DataReader;
 import com.oskopek.studyguide.persistence.DataWriter;
 import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
+import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.RootLayoutPane;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -116,8 +117,8 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         Dialog<Label> dialog = new Dialog<>();
         dialog.setContentText(
                 "                               StudyGuide\n" + "    <https://github.com/oskopek/StudyGuide>\n"
-                        + "Author: Ondrej Skopek <oskopek@matfyz.cz>");
-        dialog.setTitle("About");
+                        + AbstractFXMLPane.messages.getString("menu.author") + ": Ondrej Skopek <oskopek@matfyz.cz>");
+        dialog.setTitle(AbstractFXMLPane.messages.getString("root.about"));
         dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
         dialog.showAndWait();
     }

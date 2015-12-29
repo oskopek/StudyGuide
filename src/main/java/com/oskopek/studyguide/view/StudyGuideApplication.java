@@ -47,14 +47,29 @@ public class StudyGuideApplication extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Get the main {@link javafx.stage.Window} element of the app.
+     *
+     * @return non-null
+     */
     public Stage getPrimaryStage() {
         return primaryStage;
     }
 
+    /**
+     * Get the current model instance.
+     *
+     * @return may be null (no study plan currently loaded)
+     */
     public StudyPlan getStudyPlan() {
         return studyPlan;
     }
 
+    /**
+     * Set a new model instance.
+     *
+     * @param studyPlan the new model
+     */
     public void setStudyPlan(StudyPlan studyPlan) {
         this.studyPlan = studyPlan;
     }

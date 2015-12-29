@@ -7,6 +7,11 @@ public interface StudyPlan {
 
     // TODO
 
+    /**
+     * Get the corresponding {@link SemesterPlan} instance.
+     *
+     * @return a non-null semester plan instance
+     */
     SemesterPlan getSemesterPlan();
 
 }
