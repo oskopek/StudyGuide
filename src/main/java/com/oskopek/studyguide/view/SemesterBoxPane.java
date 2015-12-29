@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.controller.SemesterBoxController;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 
@@ -10,6 +11,9 @@ import javafx.scene.layout.BorderPane;
 public class SemesterBoxPane extends AbstractFXMLPane {
 
     private SemesterPane parent;
+
+    @FXML
+    private BorderPane boxBorderPane;
 
     public SemesterBoxPane(SemesterPane parent) {
         this.parent = parent;
@@ -21,6 +25,7 @@ public class SemesterBoxPane extends AbstractFXMLPane {
         SemesterBoxController controller = (SemesterBoxController) getController();
         controller.setStudyGuideApplication(studyGuideApplication);
         controller.setViewElement(this);
+        controller.initializeSemester();
         return semesterBox;
     }
 
@@ -31,5 +36,13 @@ public class SemesterBoxPane extends AbstractFXMLPane {
 
     public SemesterPane getParent() {
         return parent;
+    }
+
+    public BorderPane getBoxBorderPane() {
+        return boxBorderPane;
+    }
+
+    public void setBoxBorderPane(BorderPane boxBorderPane) {
+        this.boxBorderPane = boxBorderPane;
     }
 }
