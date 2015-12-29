@@ -64,8 +64,8 @@ public class SemesterBoxPane extends AbstractFXMLPane {
     /**
      * Set the JavaFX {@link BorderPane} object that represents this semester box.
      *
-     * @see SemesterController#onAddSemester()
      * @param boxBorderPane the boxBorderPane to set
+     * @see SemesterController#onAddSemester()
      */
     public void setBoxBorderPane(BorderPane boxBorderPane) {
         this.boxBorderPane = boxBorderPane;

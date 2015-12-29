@@ -48,8 +48,8 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
      * @return a non-null, five element list of {@link Course}s that match best
      */
     public List<Course> findCourses(String key, Locale locale) { // TODO search for ids and names
-        return findCoursesList.parallelStream().map((f) -> f.findCourses(key, locale))
-                .flatMap(l -> l.stream()).distinct().limit(5).collect(Collectors.toList());
+        return findCoursesList.parallelStream().map((f) -> f.findCourses(key, locale)).flatMap(l -> l.stream())
+                .distinct().limit(5).collect(Collectors.toList());
     }
 
 }

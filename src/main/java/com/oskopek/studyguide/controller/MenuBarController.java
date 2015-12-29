@@ -155,8 +155,8 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
      * Saves the currently opened model to a file.
      * If an {@link IOException} occurs, opens a modal dialog window notifying the user and prints a stack trace.
      *
-     * @see StudyGuideApplication#getStudyPlan()
      * @param file if null, does nothing
+     * @see StudyGuideApplication#getStudyPlan()
      */
     private void saveToFile(File file) {
         if (file == null) {
@@ -176,8 +176,8 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
      * Loads a model from a file into the main app.
      * If an {@link IOException} occurs, opens a modal dialog window notifying the user and prints a stack trace.
      *
-     * @see StudyGuideApplication#setStudyPlan(com.oskopek.studyguide.model.StudyPlan)
      * @param file if null, does nothing
+     * @see StudyGuideApplication#setStudyPlan(com.oskopek.studyguide.model.StudyPlan)
      */
     private void openFromFile(File file) {
         if (file == null) {

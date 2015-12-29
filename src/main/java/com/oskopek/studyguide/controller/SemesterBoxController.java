@@ -38,10 +38,10 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     /**
      * Get the parent controller. Used for inter-semester data exchange.
      *
+     * @return non-null controller for {@link com.oskopek.studyguide.view.SemesterPane}
      * @see #onRemoveSemester()
      * @see #onDragDetected()
      * @see #onDragDropped()
-     * @return non-null controller for {@link com.oskopek.studyguide.view.SemesterPane}
      */
     private SemesterController getParentController() {
         return (SemesterController) viewElement.getParent().getController();

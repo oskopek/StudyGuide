@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 /**
  * Reads and writes the {@link com.oskopek.studyguide.model.StudyPlan} to a JSON formatted file.
- * <p/>
+ * <p>
  * Specifics of the format: TODO docs format spec
  */
 public class JsonDataReaderWriter implements DataReader, DataWriter {
