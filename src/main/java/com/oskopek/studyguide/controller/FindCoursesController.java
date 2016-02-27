@@ -4,9 +4,12 @@ import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.FindCoursePane;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -16,8 +19,10 @@ import java.util.stream.Collectors;
  */
 public class FindCoursesController extends AbstractController<FindCoursePane> implements FindCourses {
 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
     @FXML
-    private TextArea searchArea;
+    private TextField searchField;
 
     @FXML
     private Button searchButton;
@@ -29,6 +34,17 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
      */
     public FindCoursesController() {
         this.findCoursesList = new ArrayList<>();
+    }
+
+    /**
+     * Handles the user action of searching for a course.
+     */
+    @FXML
+    public void handleSearch() {
+        String input = searchField.getText();
+        List<Course> courses = findCourses(input, Locale.getDefault());
+        // TODO choose course form list
+        logger.debug("Found courses for input {}: {}", input, Arrays.toString(courses.toArray()));
     }
 
     /**

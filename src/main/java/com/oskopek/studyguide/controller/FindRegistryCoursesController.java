@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 /**
  * Finds course being searched for in the {@link CourseRegistry}.
  */
-public class FindRegistryCoursesController extends FindCoursesController implements FindCourses {
+public class FindRegistryCoursesController extends ChooseCourseController implements FindCourses {
 
     private CourseRegistry courseRegistry;
 

@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.view;
 
+import com.oskopek.studyguide.controller.ChooseCourseController;
 import com.oskopek.studyguide.controller.FindCoursesController;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
