@@ -1,5 +1,11 @@
 package com.oskopek.studyguide.model;
 
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -12,8 +18,8 @@ import java.util.List;
  */
 public class Semester {
 
-    private String name;
-    private List<CourseEnrollment> courseEnrollmentList;
+    private StringProperty name;
+    private ListProperty<CourseEnrollment> courseEnrollmentList;
 
     /**
      * Create an empty semester.
@@ -25,8 +31,8 @@ public class Semester {
         if (name == null) {
             throw new IllegalArgumentException("Name cannot be null.");
         }
-        this.name = name;
-        this.courseEnrollmentList = new ArrayList<>();
+        this.name = new SimpleStringProperty(name);
+        this.courseEnrollmentList = new SimpleListProperty<>(FXCollections.observableArrayList());
     }
 
     /**
@@ -35,7 +41,7 @@ public class Semester {
      * @return non-null
      */
     public String getName() {
-        return name;
+        return name.get();
     }
 
     /**
@@ -48,7 +54,7 @@ public class Semester {
         if (name == null) {
             throw new IllegalArgumentException("Name cannot be null.");
         }
-        this.name = name;
+        this.name.setValue(name);
     }
 
     /**
@@ -87,18 +93,22 @@ public class Semester {
         courseEnrollmentList.remove(courseEnrollment);
     }
 
+    public ObservableList<CourseEnrollment> getCourseEnrollmentList() {
+        return courseEnrollmentList.get();
+    }
+
     /**
-     * Read only list of course enrollments currently in this semester.
+     * The JavaFX property for {@link #getCourseEnrollmentList()}.
      *
-     * @return unmodifiable, non-null
+     * @return the property of {@link #getCourseEnrollmentList()}
      */
-    public List<CourseEnrollment> observeCourseEnrollments() {
-        return Collections.unmodifiableList(courseEnrollmentList);
+    public ListProperty<CourseEnrollment> courseEnrollmentListProperty() {
+        return courseEnrollmentList;
     }
 
     @Override
     public String toString() {
-        return "Semester[" + name + ']';
+        return "Semester[" + getName() + ']';
     }
 
     @Override
@@ -110,11 +120,11 @@ public class Semester {
             return false;
         }
         Semester semester = (Semester) o;
-        return new EqualsBuilder().append(name, semester.name).isEquals();
+        return new EqualsBuilder().append(getName(), semester.getName()).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(name).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getName()).toHashCode();
     }
 }

@@ -2,6 +2,8 @@ package com.oskopek.studyguide.model;
 
 import com.oskopek.studyguide.model.constraints.Constraints;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -10,17 +12,17 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  */
 public class DefaultStudyPlan implements StudyPlan {
 
-    private SemesterPlan semesterPlan;
-    private Constraints constraints;
-    private CourseRegistry courseRegistry;
+    private ObjectProperty<SemesterPlan> semesterPlan;
+    private ObjectProperty<Constraints> constraints;
+    private ObjectProperty<CourseRegistry> courseRegistry;
 
     /**
      * Create an empty instance of a study plan.
      */
     public DefaultStudyPlan() {
-        this.constraints = new Constraints();
-        this.courseRegistry = new CourseRegistry();
-        this.semesterPlan = new SemesterPlan();
+        this.constraints = new SimpleObjectProperty<>(new Constraints());
+        this.courseRegistry = new SimpleObjectProperty<>(new CourseRegistry());
+        this.semesterPlan = new SimpleObjectProperty<>(new SemesterPlan());
     }
 
     /**
@@ -29,7 +31,7 @@ public class DefaultStudyPlan implements StudyPlan {
      * @return may be null
      */
     public Constraints getConstraints() {
-        return constraints;
+        return constraints.get();
     }
 
     /**
@@ -39,7 +41,7 @@ public class DefaultStudyPlan implements StudyPlan {
      * @return may be null
      */
     public CourseRegistry getCourseRegistry() {
-        return courseRegistry;
+        return courseRegistry.get();
     }
 
     /**
@@ -48,12 +50,25 @@ public class DefaultStudyPlan implements StudyPlan {
      * @return may be null
      */
     public SemesterPlan getSemesterPlan() {
+        return semesterPlan.get();
+    }
+
+
+    public ObjectProperty<SemesterPlan> semesterPlanProperty() {
         return semesterPlan;
+    }
+
+    public ObjectProperty<Constraints> constraintsProperty() {
+        return constraints;
+    }
+
+    public ObjectProperty<CourseRegistry> courseRegistryProperty() {
+        return courseRegistry;
     }
 
     @Override
     public String toString() {
-        return "DefaultStudyPlan[" + semesterPlan + ']';
+        return "DefaultStudyPlan[" + getSemesterPlan() + ']';
     }
 
     @Override
@@ -61,16 +76,21 @@ public class DefaultStudyPlan implements StudyPlan {
         if (this == o) {
             return true;
         }
+
         if (!(o instanceof DefaultStudyPlan)) {
             return false;
         }
+
         DefaultStudyPlan that = (DefaultStudyPlan) o;
-        return new EqualsBuilder().append(semesterPlan, that.semesterPlan).append(constraints, that.constraints)
-                .append(courseRegistry, that.courseRegistry).isEquals();
+
+        return new EqualsBuilder().append(getSemesterPlan(), that.getSemesterPlan())
+                .append(getConstraints(), that.getConstraints()).append(getCourseRegistry(), that.getCourseRegistry())
+                .isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(semesterPlan).append(constraints).append(courseRegistry).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getSemesterPlan()).append(getConstraints())
+                .append(getCourseRegistry()).toHashCode();
     }
 }
