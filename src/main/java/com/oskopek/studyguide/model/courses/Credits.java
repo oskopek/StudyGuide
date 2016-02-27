@@ -1,5 +1,7 @@
 package com.oskopek.studyguide.model.courses;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -8,7 +10,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  */
 public final class Credits {
 
-    private int creditValue;
+    private final IntegerProperty creditValue;
 
     /**
      * Doesn't check the creditValue's value.
@@ -17,7 +19,7 @@ public final class Credits {
      * @param creditValue any integer
      */
     private Credits(int creditValue) {
-        this.creditValue = creditValue;
+        this.creditValue = new SimpleIntegerProperty(creditValue);
     }
 
     /**
@@ -40,12 +42,21 @@ public final class Credits {
      * @return non-negative
      */
     public int getCreditValue() {
+        return creditValue.get();
+    }
+
+    /**
+     * The JavaFX property for {@link #getCreditValue()}.
+     *
+     * @return the property of {@link #getCreditValue()}
+     */
+    public IntegerProperty creditValueProperty() {
         return creditValue;
     }
 
     @Override
     public String toString() {
-        return "Credits[" + creditValue + ']';
+        return "Credits[" + getCreditValue() + ']';
     }
 
     @Override
@@ -57,11 +68,11 @@ public final class Credits {
             return false;
         }
         Credits credits = (Credits) o;
-        return new EqualsBuilder().append(creditValue, credits.creditValue).isEquals();
+        return new EqualsBuilder().append(getCreditValue(), credits.getCreditValue()).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(creditValue).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getCreditValue()).toHashCode();
     }
 }

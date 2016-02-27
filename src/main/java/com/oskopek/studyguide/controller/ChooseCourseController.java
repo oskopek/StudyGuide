@@ -1,23 +1,20 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
-import com.oskopek.studyguide.model.courses.Credits;
 import com.oskopek.studyguide.view.ChooseCourseDialogPane;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
- * Controller for searching courses in multiple data-sources.
+ * Controller for choosing a course out of several choices.
  */
 public class ChooseCourseController extends AbstractController<ChooseCourseDialogPane> {
 
@@ -33,28 +30,39 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
     private TableColumn<Course, String> nameColumn;
 
     @FXML
-    private TableColumn<Course, Credits> creditsColumn;
-
-    private List<Course> courseList;
+    private TableColumn<Course, Number> creditsColumn;
 
     @FXML
-    private void initialize() {
-        idColumn.setCellValueFactory(cellData -> cellData.getValue().getId());
-        nameColumn.setCellValueFactory(cellData -> cellData.getValue().getLocalizedName());
-        creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCredits());
-    }
+    private ButtonType applyButton;
 
-    public void setCourseList(List<Course> courseList) {
-        this.courseList = courseList;
+    private ObservableList<Course> courseList;
+
+    /**
+     * Initialize the {@link #courseTableView} data bindings.
+     */
+    @FXML
+    private void initialize() {
+        idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCredits().creditValueProperty());
     }
 
     /**
-     * Handles the user action of choosing a course.
+     * Sets the courseList displayed in the dialog.
+     *
+     * @param courseList non-null
      */
-    @FXML
-    public void handleChoice() {
-        Course chosen = courseTableView.getSelectionModel().getSelectedItem();
-        // TODO add the choice to a (the latest) semester
-        logger.debug("Chosen course: {}", chosen);
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = FXCollections.observableList(courseList);
+        courseTableView.setItems(this.courseList);
+    }
+
+    /**
+     * Utility method for returning the selected course.
+     *
+     * @return selected course, or null if none selected
+     */
+    public Course getChosenCourse() {
+        return courseTableView.getSelectionModel().getSelectedItem();
     }
 }

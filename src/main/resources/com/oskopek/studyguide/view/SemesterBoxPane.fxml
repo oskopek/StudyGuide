@@ -40,10 +40,10 @@
                    onDragDropped="#onDragDropped">
             <columns>
                 <TableColumn editable="false" maxWidth="120.0" minWidth="80.0" prefWidth="120.0"
-                             text="%semesterBox.id"/>
-                <TableColumn editable="false" minWidth="80.0" prefWidth="120.0" text="%semesterBox.name"/>
+                             text="%course.id"/>
+                <TableColumn editable="false" minWidth="80.0" prefWidth="120.0" text="%course.name"/>
                 <TableColumn editable="false" maxWidth="90.0" minWidth="70.0" prefWidth="90.0"
-                             text="%semesterBox.credits"/>
+                             text="%course.credits"/>
                 <TableColumn editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" text="✓"/>
                 <TableColumn editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" text="✗"/>
             </columns>

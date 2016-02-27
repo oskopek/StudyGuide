@@ -20,6 +20,10 @@ public class ChooseCourseDialogPane extends AbstractFXMLPane {
         return load(studyGuideApplication, new ArrayList<>());
     }
 
+    /**
+     * {@inheritDoc}
+     * @param courseList the list of {@link Course}s to display
+     */
     public Node load(StudyGuideApplication studyGuideApplication, List<Course> courseList) {
         DialogPane chooseCourseDialogPane = (DialogPane) super.load(studyGuideApplication);
         ChooseCourseController chooseCourseController = (ChooseCourseController) getController();

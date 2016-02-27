@@ -1,5 +1,9 @@
 package com.oskopek.studyguide.model.courses;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -10,13 +14,13 @@ import java.util.Locale;
  */
 public class Course {
 
-    private String id;
-    private String name;
-    private String localizedName;
-    private Locale locale;
-    private Credits credits;
-    private String[] teacherNames;
-    private Course[] requiredCourses;
+    private final StringProperty id;
+    private final StringProperty name;
+    private final StringProperty localizedName;
+    private final ObjectProperty<Locale> locale;
+    private final ObjectProperty<Credits> credits;
+    private final ObjectProperty<String[]> teacherNames;
+    private final ObjectProperty<Course[]> requiredCourses;
 
     /**
      * Create a new Course with the given parameters.
@@ -37,21 +41,23 @@ public class Course {
         if (id == null || name == null || credits == null) {
             throw new IllegalArgumentException("Id, name and credits cannot be null.");
         }
-        this.id = id;
-        this.name = name;
-        this.localizedName = localizedName;
-        this.locale = locale;
+        this.id = new SimpleStringProperty(id);
+        this.name = new SimpleStringProperty(name);
+        this.localizedName = new SimpleStringProperty(localizedName);
+        this.locale = new SimpleObjectProperty<>(locale);
         if (locale == null && localizedName != null) {
             throw new IllegalArgumentException("Locale cannot be null when localized name isn't null.");
         }
-        this.credits = credits;
-        this.teacherNames = teacherNames;
+        this.credits = new SimpleObjectProperty<>(credits);
         if (teacherNames == null) {
-            this.teacherNames = new String[0];
+            this.teacherNames = new SimpleObjectProperty<>(new String[0]);
+        } else {
+            this.teacherNames = new SimpleObjectProperty<>(teacherNames);
         }
-        this.requiredCourses = requiredCourses;
         if (requiredCourses == null) {
-            this.requiredCourses = new Course[0];
+            this.requiredCourses = new SimpleObjectProperty<>(new Course[0]);
+        } else {
+            this.requiredCourses = new SimpleObjectProperty<>(requiredCourses);
         }
     }
 
@@ -61,7 +67,7 @@ public class Course {
      * @return non-null
      */
     public Credits getCredits() {
-        return credits;
+        return credits.get();
     }
 
     /**
@@ -70,7 +76,7 @@ public class Course {
      * @return non-null
      */
     public String getId() {
-        return id;
+        return id.get();
     }
 
     /**
@@ -79,7 +85,7 @@ public class Course {
      * @return the locale
      */
     public Locale getLocale() {
-        return locale;
+        return locale.get();
     }
 
     /**
@@ -89,7 +95,7 @@ public class Course {
      * @see #getLocale()
      */
     public String getLocalizedName() {
-        return localizedName;
+        return localizedName.get();
     }
 
     /**
@@ -98,7 +104,7 @@ public class Course {
      * @return non-null
      */
     public String getName() {
-        return name;
+        return name.get();
     }
 
     /**
@@ -108,7 +114,7 @@ public class Course {
      * @see com.oskopek.studyguide.constraints.CourseEnrollmentRequirementsUnfulfilledConstraint
      */
     public Course[] getRequiredCourses() {
-        return requiredCourses;
+        return requiredCourses.get();
     }
 
     /**
@@ -117,21 +123,100 @@ public class Course {
      * @return non-null
      */
     public String[] getTeacherNames() {
-        return teacherNames;
+        return teacherNames.get();
     }
 
     /**
-     * Get a localized or default name, depending on the locale.
+     * Get the localized or default name, depending on the locale.
      *
      * @param otherLocale the locale in which to get the name
      * @return localized name iff the locale languages are the same
      */
     public String name(Locale otherLocale) {
-        if (localizedName == null || otherLocale == null || !locale.getLanguage().equals(otherLocale.getLanguage())) {
-            return name;
+        if (getLocalizedName() == null || otherLocale == null
+                || !getLocale().getLanguage().equals(otherLocale.getLanguage())) {
+            return getName();
         } else {
-            return localizedName;
+            return getLocalizedName();
         }
+    }
+
+    /**
+     * Get the localized or default name property, depending on the locale.
+     *
+     * @param otherLocale the locale in which to get the name property
+     * @return localized name property iff the locale languages are the same
+     */
+    public StringProperty nameProperty(Locale otherLocale) {
+        if (getLocalizedName() == null || otherLocale == null
+                || !getLocale().getLanguage().equals(otherLocale.getLanguage())) {
+            return nameProperty();
+        } else {
+            return localizedNameProperty();
+        }
+    }
+
+    /**
+     * The JavaFX property for {@link #getId()}.
+     *
+     * @return the property of {@link #getId()}
+     */
+    public StringProperty idProperty() {
+        return id;
+    }
+
+    /**
+     * The JavaFX property for {@link #getName()}.
+     *
+     * @return the property of {@link #getName()}
+     */
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    /**
+     * The JavaFX property for {@link #getLocalizedName()}.
+     *
+     * @return the property of {@link #getLocalizedName()}
+     */
+    public StringProperty localizedNameProperty() {
+        return localizedName;
+    }
+
+    /**
+     * The JavaFX property for {@link #getLocale()}.
+     *
+     * @return the property of {@link #getLocale()}
+     */
+    public ObjectProperty<Locale> localeProperty() {
+        return locale;
+    }
+
+    /**
+     * The JavaFX property for {@link #getCredits()}.
+     *
+     * @return the property of {@link #getCredits()}
+     */
+    public ObjectProperty<Credits> creditsProperty() {
+        return credits;
+    }
+
+    /**
+     * The JavaFX property for {@link #getTeacherNames()}.
+     *
+     * @return the property of {@link #getTeacherNames()}
+     */
+    public ObjectProperty<String[]> teacherNamesProperty() {
+        return teacherNames;
+    }
+
+    /**
+     * The JavaFX property for {@link #getRequiredCourses()}.
+     *
+     * @return the property of {@link #getRequiredCourses()}
+     */
+    public ObjectProperty<Course[]> requiredCoursesProperty() {
+        return requiredCourses;
     }
 
     @Override
@@ -139,24 +224,28 @@ public class Course {
         if (this == o) {
             return true;
         }
+
         if (!(o instanceof Course)) {
             return false;
         }
+
         Course course = (Course) o;
-        return new EqualsBuilder().append(id, course.id).append(name, course.name)
-                .append(localizedName, course.localizedName).append(locale, course.locale)
-                .append(credits, course.credits).append(teacherNames, course.teacherNames)
-                .append(requiredCourses, course.requiredCourses).isEquals();
+
+        return new EqualsBuilder().append(getId(), course.getId()).append(getName(), course.getName())
+                .append(getLocalizedName(), course.getLocalizedName()).append(getLocale(), course.getLocale())
+                .append(getCredits(), course.getCredits()).append(getTeacherNames(), course.getTeacherNames())
+                .append(getRequiredCourses(), course.getRequiredCourses()).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(id).append(name).append(localizedName).append(locale).append(credits)
-                .append(teacherNames).append(requiredCourses).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getId()).append(getName()).append(getLocalizedName())
+                .append(getLocale()).append(getCredits()).append(getTeacherNames()).append(getRequiredCourses())
+                .toHashCode();
     }
 
     @Override
     public String toString() {
-        return "Course[" + id + ": " + name + ']';
+        return "Course[" + getId() + ": " + getName() + ']';
     }
 }

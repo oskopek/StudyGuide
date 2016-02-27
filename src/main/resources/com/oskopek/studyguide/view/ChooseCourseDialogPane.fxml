@@ -16,11 +16,11 @@
    <content>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
-            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="courseTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn editable="false" minWidth="50.0" prefWidth="75.0" text="%course.id" />
-                <TableColumn editable="false" minWidth="200.0" prefWidth="325.0" text="%course.name" />
-                  <TableColumn editable="false" minWidth="50.0" prefWidth="75.0" text="%course.credits" />
+                <TableColumn fx:id="idColumn" editable="false" minWidth="50.0" prefWidth="75.0" text="%course.id" />
+                <TableColumn fx:id="nameColumn" editable="false" minWidth="200.0" prefWidth="325.0" text="%course.name" />
+                <TableColumn fx:id="creditsColumn" editable="false" minWidth="50.0" prefWidth="75.0" text="%course.credits" />
               </columns>
             </TableView>
          </center>

@@ -1,17 +1,14 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.view.ChooseCourseDialogPane;
 import com.oskopek.studyguide.view.FindCoursePane;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -43,8 +40,21 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
     public void handleSearch() {
         String input = searchField.getText();
         List<Course> courses = findCourses(input, Locale.getDefault());
-        // TODO choose course form list
         logger.debug("Found courses for input {}: {}", input, Arrays.toString(courses.toArray()));
+
+        ChooseCourseDialogPane pane = new ChooseCourseDialogPane();
+        Dialog<ButtonType> chooseCourseDialog = new Dialog<>();
+        chooseCourseDialog.dialogPaneProperty().setValue((DialogPane) pane.load(studyGuideApplication, courses));
+        ChooseCourseController controller = (ChooseCourseController) pane.getController();
+
+        Optional<ButtonType> result = chooseCourseDialog.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.APPLY) {
+            Course chosen = controller.getChosenCourse();
+            if (chosen != null) {
+                logger.debug("Chosen course: {}", chosen);
+                // TODO add chosen course to semester
+            }
+        }
     }
 
     /**
@@ -64,7 +74,7 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
      * @return a non-null, five element list of {@link Course}s that match best
      */
     public List<Course> findCourses(String key, Locale locale) { // TODO search for ids and names
-        return findCoursesList.parallelStream().map((f) -> f.findCourses(key, locale)).flatMap(l -> l.stream())
+        return findCoursesList.parallelStream().map((f) -> f.findCourses(key, locale)).flatMap(List::stream)
                 .distinct().limit(5).collect(Collectors.toList());
     }
 
