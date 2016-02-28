@@ -6,6 +6,8 @@ import com.oskopek.studyguide.view.SemesterBoxPane;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Controller for {@link SemesterBoxPane}.
@@ -14,6 +16,8 @@ import javafx.scene.control.TextField;
  * @see com.oskopek.studyguide.view.SemesterPane
  */
 public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private static int index = 0;
 
@@ -78,6 +82,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     @FXML
     public void onDragDetected() {
         getParentController().dragDetected(this.viewElement);
+        logger.debug("Drag detected {}", this.semester);
     }
 
     /**
@@ -87,6 +92,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     @FXML
     public void onDragDropped() {
         getParentController().dragEnded(this.viewElement);
+        logger.debug("Drag dropped {}", this.semester);
     }
 
 }
