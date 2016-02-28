@@ -9,10 +9,6 @@ import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Single semester in a {@link StudyPlan}.
  */
@@ -93,6 +89,11 @@ public class Semester {
         courseEnrollmentList.remove(courseEnrollment);
     }
 
+    /**
+     * The {@link CourseEnrollment}s regarding this semester.
+     *
+     * @return non-null, possibly empty
+     */
     public ObservableList<CourseEnrollment> getCourseEnrollmentList() {
         return courseEnrollmentList.get();
     }

@@ -20,6 +20,7 @@ public class SemesterController extends AbstractController<SemesterPane> {
      * Adds a default, initial semester. Needs to be done after loading the graphics.
      */
     public void initializeSemesters() {
+        // TODO spin up/down number of panes
         onAddSemester();
     } // TODO add a add semester button to menu
 

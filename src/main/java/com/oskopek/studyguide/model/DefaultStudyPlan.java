@@ -54,14 +54,29 @@ public class DefaultStudyPlan implements StudyPlan {
     }
 
 
+    /**
+     * The JavaFX property for {@link #getSemesterPlan()}.
+     *
+     * @return the property of {@link #getSemesterPlan()}
+     */
     public ObjectProperty<SemesterPlan> semesterPlanProperty() {
         return semesterPlan;
     }
 
+    /**
+     * The JavaFX property for {@link #getConstraints()}.
+     *
+     * @return the property of {@link #getConstraints()}
+     */
     public ObjectProperty<Constraints> constraintsProperty() {
         return constraints;
     }
 
+    /**
+     * The JavaFX property for {@link #getCourseRegistry()}.
+     *
+     * @return the property of {@link #getCourseRegistry()}
+     */
     public ObjectProperty<CourseRegistry> courseRegistryProperty() {
         return courseRegistry;
     }
