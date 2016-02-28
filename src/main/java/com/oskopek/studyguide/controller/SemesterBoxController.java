@@ -26,6 +26,11 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
 
     private Semester semester;
 
+    @FXML
+    private void initialize() {
+        semesterNameArea.textProperty().addListener((observable) -> onSemesterNameChange());
+    }
+
     /**
      * Initialize a new {@link Semester} instance into this box.
      * Needed, because JavaFX's initialize method runs too soon (before we have a reference to the main app).
@@ -64,8 +69,11 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      * Handles changing the name of this semester box. The name has to be unique (different than others in the list).
      */
     @FXML
-    public void onSemesterNameChange() {
+    public void onSemesterNameChange() { // TODO data binding? how to check uniqueness
         String newName = semesterNameArea.getText();
+        if (semester.getName().equals(newName)) {
+            return;
+        }
         if (studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().contains(new Semester(newName))) {
             Alert alert = new Alert(Alert.AlertType.WARNING,
                     AbstractFXMLPane.messages.getString("semesterBox.nameNotUnique"));
