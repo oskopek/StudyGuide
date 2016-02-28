@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 /**
  * Reads and writes the {@link com.oskopek.studyguide.model.StudyPlan} to a JSON formatted file.
  * <p>
- * Specifics of the format: TODO docs format spec
+ * Specifics of the format: TODO docs format spec + test thoroughly
  */
 public class JsonDataReaderWriter implements DataReader, DataWriter {
 

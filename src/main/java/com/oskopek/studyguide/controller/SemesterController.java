@@ -5,6 +5,8 @@ import com.oskopek.studyguide.view.SemesterPane;
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Controller for {@link SemesterPane}.
@@ -12,6 +14,8 @@ import javafx.scene.layout.TilePane;
  * and dragging {@link com.oskopek.studyguide.model.courses.Course}s between them.
  */
 public class SemesterController extends AbstractController<SemesterPane> {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @FXML
     private TilePane tilePane;
@@ -45,6 +49,7 @@ public class SemesterController extends AbstractController<SemesterPane> {
      *
      * @param box non-null, with a non null {@link SemesterBoxPane#getBoxBorderPane()}
      */
+    @FXML
     public void removeSemester(SemesterBoxPane box) {
         BorderPane borderPane = box.getBoxBorderPane();
         if (borderPane == null) {
@@ -65,8 +70,8 @@ public class SemesterController extends AbstractController<SemesterPane> {
      *
      * @param box non-null
      */
-    public void dragDetected(SemesterBoxPane box) { // TODO
-        System.out.println("Drag detected in box " + box);
+    public void dragDetected(SemesterBoxPane box) { // TODO drag n drop
+        logger.debug("Drag detected in box {}", box);
     }
 
     /**
@@ -74,8 +79,8 @@ public class SemesterController extends AbstractController<SemesterPane> {
      *
      * @param box non-null
      */
-    public void dragEnded(SemesterBoxPane box) { // TODO
-        System.out.println("Drag ended in box " + box);
+    public void dragEnded(SemesterBoxPane box) { // TODO drag n drop
+        logger.debug("Drag ended in box {}", box);
     }
 
 }
