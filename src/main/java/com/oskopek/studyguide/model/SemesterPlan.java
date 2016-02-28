@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * Represents the {@link com.oskopek.studyguide.model.courses.Course} distribution in the {@link StudyPlan}.
  */
+
 public class SemesterPlan {
 
     private ListProperty<Semester> semesterList;
@@ -29,6 +30,15 @@ public class SemesterPlan {
      */
     public List<Semester> getSemesterList() {
         return semesterList;
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param semesterList the list of {@link Semester}s to set
+     */
+    private void setSemesterList(List<Semester> semesterList) {
+        this.semesterList.set(FXCollections.observableArrayList(semesterList));
     }
 
     /**

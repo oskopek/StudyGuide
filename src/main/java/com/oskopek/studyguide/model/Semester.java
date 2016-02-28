@@ -1,13 +1,12 @@
 package com.oskopek.studyguide.model;
 
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+
+import java.util.List;
 
 /**
  * Single semester in a {@link StudyPlan}.
@@ -18,17 +17,25 @@ public class Semester {
     private ListProperty<CourseEnrollment> courseEnrollmentList;
 
     /**
+     * Private constructor for Jackson persistence.
+     */
+    private Semester() {
+        name = new SimpleStringProperty();
+        this.courseEnrollmentList = new SimpleListProperty<>(FXCollections.observableArrayList());
+    }
+
+    /**
      * Create an empty semester.
      *
      * @param name unique, non-null
      * @throws IllegalArgumentException if name is null
      */
     public Semester(String name) throws IllegalArgumentException {
+        this();
         if (name == null) {
             throw new IllegalArgumentException("Name cannot be null.");
         }
-        this.name = new SimpleStringProperty(name);
-        this.courseEnrollmentList = new SimpleListProperty<>(FXCollections.observableArrayList());
+        this.name.setValue(name);
     }
 
     /**
@@ -105,6 +112,15 @@ public class Semester {
      */
     public ListProperty<CourseEnrollment> courseEnrollmentListProperty() {
         return courseEnrollmentList;
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param courseEnrollmentList the list of {@link CourseEnrollment}s to set
+     */
+    public void setCourseEnrollmentList(List<CourseEnrollment> courseEnrollmentList) {
+        this.courseEnrollmentList.set(FXCollections.observableArrayList(courseEnrollmentList));
     }
 
     @Override

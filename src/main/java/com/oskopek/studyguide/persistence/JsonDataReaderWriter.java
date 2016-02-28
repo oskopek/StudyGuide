@@ -1,16 +1,14 @@
 package com.oskopek.studyguide.persistence;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.stream.Collectors;
 
 /**
  * Reads and writes the {@link com.oskopek.studyguide.model.StudyPlan} to a JSON formatted file.
@@ -19,7 +17,8 @@ import java.util.stream.Collectors;
  */
 public class JsonDataReaderWriter implements DataReader, DataWriter {
 
-    private Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+    //private Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public StudyPlan readFrom(String fileName) throws IOException, IllegalArgumentException {
@@ -27,10 +26,8 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("FileName is null.");
         }
         try {
-            return gson
-                    .fromJson(Files.lines(Paths.get(fileName), Charset.forName("UTF-8")).collect(Collectors.joining()),
-                            DefaultStudyPlan.class);
-        } catch (IOException | JsonSyntaxException e) {
+            return objectMapper.readValue(new File(fileName), DefaultStudyPlan.class);
+        } catch (JsonParseException | JsonMappingException e) {
             throw new IOException("Failed to read StudyPlan from file (" + fileName + ").", e);
         }
     }
@@ -41,8 +38,8 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("InputStream is null.");
         }
         try {
-            return gson.fromJson(new BufferedReader(new InputStreamReader(inputStream)), DefaultStudyPlan.class);
-        } catch (JsonSyntaxException e) {
+            return objectMapper.readValue(inputStream, DefaultStudyPlan.class);
+        } catch (JsonMappingException | JsonParseException e) {
             throw new IOException("Failed to read StudyPlan from stream.", e);
         }
     }
@@ -56,7 +53,7 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
         }
         try {
             writeTo(plan, Files.newOutputStream(Paths.get(fileName)));
-        } catch (IOException | JsonSyntaxException e) {
+        } catch (IOException e) {
             throw new IOException("Failed to write StudyPlan to file (" + fileName + ").", e);
         }
     }
@@ -69,9 +66,9 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("Plan is null.");
         }
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream))) {
-            writer.write(gson.toJson(plan));
+            writer.write(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(plan));
             writer.write('\n');
-        } catch (IOException | JsonSyntaxException e) {
+        } catch (IOException e) {
             throw new IOException("Failed to write StudyPlan to stream.", e);
         }
     }

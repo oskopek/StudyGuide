@@ -53,6 +53,32 @@ public class DefaultStudyPlan implements StudyPlan {
         return semesterPlan.get();
     }
 
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param semesterPlan the {@link SemesterPlan} to set
+     */
+    private void setSemesterPlan(SemesterPlan semesterPlan) {
+        this.semesterPlan.set(semesterPlan);
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param constraints the {@link Constraints} to set
+     */
+    private void setConstraints(Constraints constraints) {
+        this.constraints.set(constraints);
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param courseRegistry the {@link CourseRegistry} to set
+     */
+    private void setCourseRegistry(CourseRegistry courseRegistry) {
+        this.courseRegistry.set(courseRegistry);
+    }
 
     /**
      * The JavaFX property for {@link #getSemesterPlan()}.
