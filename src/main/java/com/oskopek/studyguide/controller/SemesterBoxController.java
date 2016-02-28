@@ -35,7 +35,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      */
     public void initializeSemester() {
         semester = new Semester("Semester" + index++);
-        studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().add(semester);
+        studyGuideApplication.getStudyPlan().getSemesterPlan().addSemester(semester);
         semesterNameArea.setText(semester.getName());
     }
 
@@ -56,7 +56,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      */
     @FXML
     public void onRemoveSemester() {
-        studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().remove(semester);
+        studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
         getParentController().removeSemester(this.viewElement);
     }
 

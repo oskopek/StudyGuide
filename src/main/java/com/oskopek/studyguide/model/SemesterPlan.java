@@ -32,6 +32,14 @@ public class SemesterPlan {
         return semesterList;
     }
 
+    public void removeSemester(Semester semester) {
+        semesterList.remove(semester);
+    }
+
+    public void addSemester(Semester semester) {
+        semesterList.add(semester);
+    }
+
     /**
      * Private setter for Jackson persistence.
      *
