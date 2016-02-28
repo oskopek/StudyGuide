@@ -70,6 +70,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
             Alert alert = new Alert(Alert.AlertType.WARNING,
                     AbstractFXMLPane.messages.getString("semesterBox.nameNotUnique"));
             alert.showAndWait();
+            semesterNameArea.setText(semester.getName());
         } else {
             semester.setName(newName);
         }

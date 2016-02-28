@@ -32,10 +32,22 @@ public class SemesterPlan {
         return semesterList;
     }
 
+    /**
+     * Remove the {@link Semester} from the semester list.
+     *
+     * @param semester the semester to be removed
+     * @see javafx.collections.ObservableList#remove(Object)
+     */
     public void removeSemester(Semester semester) {
         semesterList.remove(semester);
     }
 
+    /**
+     * Add the {@link Semester} to the semester list.
+     *
+     * @param semester the semester to be added
+     * @see javafx.collections.ObservableList#add(Object)
+     */
     public void addSemester(Semester semester) {
         semesterList.add(semester);
     }

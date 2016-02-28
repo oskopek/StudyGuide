@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.controller;
 
-import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.view.SemesterBoxPane;
 import com.oskopek.studyguide.view.SemesterPane;
 import javafx.fxml.FXML;

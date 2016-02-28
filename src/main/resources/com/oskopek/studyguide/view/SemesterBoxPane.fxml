@@ -29,7 +29,7 @@
                 </HBox>
             </right>
             <left>
-                <TextField fx:id="semesterNameArea" onAction="#onSemesterNameChange" promptText="Semester Name" BorderPane.alignment="CENTER" />
+                <TextField fx:id="semesterNameArea" onAction="#onSemesterNameChange" onInputMethodTextChanged="#onSemesterNameChange" promptText="Semester Name" BorderPane.alignment="CENTER" />
             </left>
         </BorderPane>
     </top>
