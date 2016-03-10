@@ -1,5 +1,7 @@
 package com.oskopek.studyguide.controller;
 
+import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.view.SemesterBoxPane;
 import com.oskopek.studyguide.view.SemesterPane;
 import javafx.fxml.FXML;
@@ -23,8 +25,10 @@ public class SemesterController extends AbstractController<SemesterPane> {
     /**
      * Adds a default, initial semester. Needs to be done after loading the graphics.
      */
-    public void initializeSemesters() {
-        onAddSemester();
+    public void initializeSemesters(SemesterPlan semesterPlan) {
+        //for (Semester semester : semesterPlan.getSemesterList()) {
+            //semester.// TODO add semester loading correctly
+        //}
     } // TODO add the add semester button to menu
 
     /**

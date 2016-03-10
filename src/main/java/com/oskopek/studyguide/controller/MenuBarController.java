@@ -194,6 +194,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         if (studyGuideApplication.getStudyPlan() != null) {
             openedFile = file;
         }
+        studyGuideApplication.get
     }
 
 }

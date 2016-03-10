@@ -38,7 +38,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      * @see AbstractController#setStudyGuideApplication(com.oskopek.studyguide.view.StudyGuideApplication)
      * @see SemesterBoxPane#load(com.oskopek.studyguide.view.StudyGuideApplication)
      */
-    public void initializeSemester() {
+    public void addEmptySemester() {
         semester = new Semester("Semester" + index++);
         studyGuideApplication.getStudyPlan().getSemesterPlan().addSemester(semester);
         semesterNameArea.setText(semester.getName());
