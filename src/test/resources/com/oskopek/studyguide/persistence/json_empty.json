@@ -1,5 +1,12 @@
 {
-  "semesterPlan": null,
-  "constraints": null,
-  "courseRegistry": null
+  "semesterPlan" : {
+    "semesterList" : [ ]
+  },
+  "constraints" : {
+    "courseGroupList" : [ ],
+    "globalConstraintList" : [ ]
+  },
+  "courseRegistry" : {
+    "courses" : [ ]
+  }
 }

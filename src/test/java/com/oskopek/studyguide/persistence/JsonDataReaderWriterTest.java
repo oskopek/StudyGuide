@@ -55,6 +55,8 @@ public class JsonDataReaderWriterTest {
     public void readFromString() throws IOException {
         StudyPlan plan = jsonDataReaderWriter.readFrom(jsonPath.toString());
         assertNotNull(plan);
+        assertNotNull(plan.getSemesterPlan());
+        assertEquals(0, plan.getSemesterPlan().getSemesterList().size());
     }
 
     @Test
