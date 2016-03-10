@@ -6,23 +6,22 @@ import com.oskopek.studyguide.model.courses.CourseRegistry;
 import org.junit.Before;
 import org.junit.Test;
 import org.simmetrics.StringMetric;
-import org.simmetrics.builders.StringMetricBuilder;
-import org.simmetrics.metrics.CosineSimilarity;
-import org.simmetrics.simplifiers.Simplifiers;
-import org.simmetrics.tokenizers.Tokenizers;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
 /**
- * Created by skopeko on 10.3.16.
+ * Unit test for {@link FindRegistryCoursesController}.
  */
 public class FindRegistryCoursesControllerTest {
 
     private CourseRegistry registry;
     private FindRegistryCoursesController findRegistryCoursesController;
+    private StringMetric metric;
 
     @Before
     public void setUp() throws Exception {
@@ -31,35 +30,70 @@ public class FindRegistryCoursesControllerTest {
             registry.putCourse(CourseGenerator.generateRandomCourse());
         }
         findRegistryCoursesController = new FindRegistryCoursesController(registry);
+        metric = FindRegistryCoursesController.getMetric();
     }
 
     @Test
     public void testFindCourses() throws Exception {
-        List<Course> courses = findRegistryCoursesController.findCourses("aaaaaaa").collect(Collectors.toList());
+        String key = "aaaaaaa";
+        List<Course> courses = findRegistryCoursesController.findCourses(key).collect(Collectors.toList());
+
+        List<Course> courseId = findRegistryCoursesController.findCoursesById(key)
+                .limit(10).collect(Collectors.toList());
+        List<Course> courseName = findRegistryCoursesController.findCoursesByName(key, Locale.getDefault())
+                .limit(10).collect(Collectors.toList());
+
         assertNotNull(courses);
         assertEquals(10, courses.size());
-        System.out.println(courses);
+        int index = 0;
+        for (Course c : courses) {
+            if (courseId.get(0).equals(c)) {
+                courseId.remove(0);
+            } else if (courseName.get(0).equals(c)) {
+                courseName.remove(0);
+            } else {
+                fail("The course at " + index  + " is out of order: " + c);
+            }
+            index++;
+        }
     }
 
     @Test
     public void simmetricsTest() throws Exception {
-        StringMetric metric = StringMetricBuilder.with(new CosineSimilarity<>()).simplify(Simplifiers.toLowerCase())
-                .simplify(Simplifiers.removeDiacritics()).tokenize(Tokenizers.whitespace()).build();
-        String[] strings = { "aaa", "aab", "aba", "bab", "dad" };
+        String[] strings = {"aba", "bab", "aaa", "dad", "aab"};
+        String[] stringsSorted = {"aaa", "aba", "aab", "bab", "dad"};
         String key = "aaa";
-        for (String s : strings) {
-            System.out.println(metric.compare(key, s) + " : " + key + " vs. " + s);
-        }
-
+        Arrays.sort(strings, (a, b) -> Float.compare(metric.compare(key, b), metric.compare(key, a)));
+        assertArrayEquals(stringsSorted, strings);
     }
 
     @Test
     public void testFindCoursesById() throws Exception {
-        fail();
+        String key = "aaaaaaa";
+        List<Course> courses = findRegistryCoursesController.findCoursesById(key)
+                .limit(10).collect(Collectors.toList());
+        assertNotNull(courses);
+        assertEquals(10, courses.size());
+        float lastVal = 1.0f;
+        for (Course c : courses) {
+            float newVal = metric.compare(key, c.getId());
+            assertTrue(newVal <= lastVal);
+            lastVal = newVal;
+        }
     }
 
     @Test
     public void testFindCoursesByName() throws Exception {
-        fail();
+        String key = "aaaaaaa";
+        List<Course> courses = findRegistryCoursesController.findCoursesByName(key, Locale.getDefault())
+                .limit(10).collect(Collectors.toList());
+        assertNotNull(courses);
+        assertEquals(10, courses.size());
+        float lastVal = 1.0f;
+        for (Course c : courses) {
+            float newVal = metric.compare(key, c.getName());
+            assertTrue(newVal <= lastVal);
+            lastVal = newVal;
+        }
     }
 }

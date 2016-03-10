@@ -2,8 +2,6 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.stream.Stream;
 
@@ -14,16 +12,15 @@ public class FindCoursesSisController extends ChooseCourseController implements 
 
     @Override
     public Stream<Course> findCourses(String key) {
-        return null;
+        throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     @Override
     public Stream<Course> findCoursesById(String id) {
-        return null;
-    }
+        throw new UnsupportedOperationException("Not implemented yet.");    }
 
     @Override
     public Stream<Course> findCoursesByName(String name, Locale locale) {
-        return null;
+        throw new UnsupportedOperationException("Not implemented yet.");
     }
 }

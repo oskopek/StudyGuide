@@ -4,7 +4,6 @@ import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.ChooseCourseDialogPane;
 import com.oskopek.studyguide.view.FindCoursePane;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
@@ -30,9 +29,6 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
 
     @FXML
     private TextField searchField;
-
-    @FXML
-    private Button searchButton;
 
     private List<FindCourses> findCoursesList;
 
@@ -79,12 +75,12 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
 
     /**
      * Returns the top 10 distinct courses, using the search function on all {@link FindCourses} instances.
-     * @param key the key parameter to search
-     * @param searchFunction
-     * @return
+     * @param searchFunction the function from {@link FindCourses} to {@link Stream}s of {@link Course}s
+     * @return top 10 list of distinct collected Courses
      */
-    private List<Course> findCoursesInternal(String key, Function<? super FindCourses, Stream<Course>> searchFunction) {
-        return findCoursesList.parallelStream().flatMap(searchFunction).distinct().limit(10).collect(Collectors.toList());
+    private List<Course> findCoursesInternal(Function<? super FindCourses, Stream<Course>> searchFunction) {
+        return findCoursesList.parallelStream().flatMap(searchFunction)
+                .distinct().limit(10).collect(Collectors.toList());
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
 
-import java.util.List;
 import java.util.Locale;
 import java.util.stream.Stream;
 
@@ -14,6 +13,8 @@ public interface FindCourses {
     /**
      * Search for courses in a implementation-specific way.
      * This method is optional.
+     * @param key the key to look for (implementation-specific)
+     * @return a non-null stream of {@link Course}s that match best (implementation-specific)
      */
     default Stream<Course> findCourses(String key) {
         throw new UnsupportedOperationException("This method is not implemented.");

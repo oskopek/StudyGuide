@@ -9,12 +9,23 @@ import java.util.Locale;
 import java.util.Random;
 
 /**
- * Created by skopeko on 10.3.16.
+ * Course generator util class.
  */
-public class CourseGenerator {
+public final class CourseGenerator {
 
     private static final Random random = new Random();
 
+    /**
+     * Empty default constructor.
+     */
+    private CourseGenerator() {
+        // intentionally empty
+    }
+
+    /**
+     * Generate a course with random data.
+     * @return a random course, non null.
+     */
     public static Course generateRandomCourse() {
         String id = generateRandomString(4);
         String name = generateRandomString(8);
@@ -26,10 +37,15 @@ public class CourseGenerator {
         return new Course(id, name, localizedName, locale, credits, teachers, reqCourses);
     }
 
+    /**
+     * Generates a random string of a given length, with chars in the range 'a' - 'c' inclusive.
+     * @param length the length of the returned string
+     * @return a random string of length {@code length}
+     */
     private static String generateRandomString(int length) {
         char[] chars = new char[length];
         for (int i = 0; i < chars.length; i++) {
-            chars[i] = (char)(random.nextInt('c'-'a') + 'a');
+            chars[i] = (char) (random.nextInt('d' - 'a') + 'a');
         }
         return String.valueOf(chars);
     }
