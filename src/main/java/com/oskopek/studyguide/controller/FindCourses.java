@@ -4,6 +4,7 @@ import com.oskopek.studyguide.model.courses.Course;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Stream;
 
 /**
  * Defines an interface for finding courses based on a string search key.
@@ -11,12 +12,28 @@ import java.util.Locale;
 public interface FindCourses {
 
     /**
-     * Search for courses corresponding to the given key in the data-source.
-     *
-     * @param key    the key to search for (id, name, ...)
-     * @param locale the locale in which to search the names ({@link Course#getLocalizedName()}).
-     * @return a non-null, five element list of {@link Course}s that match best
+     * Search for courses in a implementation-specific way.
+     * This method is optional.
      */
-    List<Course> findCourses(String key, Locale locale);
+    default Stream<Course> findCourses(String key) {
+        throw new UnsupportedOperationException("This method is not implemented.");
+    }
+
+    /**
+     * Search for courses corresponding to the given name in the data-source.
+     *
+     * @param id the course id
+     * @return a non-null stream of {@link Course}s that match best
+     */
+    Stream<Course> findCoursesById(String id);
+
+    /**
+     * Search for courses corresponding to the given id in the data-source.
+     *
+     * @param name the course name
+     * @param locale the locale in which to search the names ({@link Course#getLocalizedName()}).
+     * @return a non-null stream of {@link Course}s that match best
+     */
+    Stream<Course> findCoursesByName(String name, Locale locale);
 
 }

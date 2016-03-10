@@ -5,6 +5,7 @@ import com.oskopek.studyguide.model.courses.Course;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Stream;
 
 /**
  * Finds course being searched for in an <a href="https://www.cuni.cz/UK-4428.html">IS Studium</a> (SIS) instance.
@@ -12,7 +13,17 @@ import java.util.Locale;
 public class FindCoursesSisController extends ChooseCourseController implements FindCourses {
 
     @Override
-    public List<Course> findCourses(String key, Locale locale) {
-        return new ArrayList<>(); // TODO
+    public Stream<Course> findCourses(String key) {
+        return null;
+    }
+
+    @Override
+    public Stream<Course> findCoursesById(String id) {
+        return null;
+    }
+
+    @Override
+    public Stream<Course> findCoursesByName(String name, Locale locale) {
+        return null;
     }
 }

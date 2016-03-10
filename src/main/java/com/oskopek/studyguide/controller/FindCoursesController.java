@@ -17,7 +17,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Controller for searching courses in multiple data-sources.
@@ -47,7 +49,7 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
     @FXML
     public void handleSearch() {
         String input = searchField.getText();
-        List<Course> courses = findCourses(input, Locale.getDefault());
+        List<Course> courses = findCourses(input).collect(Collectors.toList());
         logger.debug("Courses found for input \"{}\": {}", input, Arrays.toString(courses.toArray()));
 
         ChooseCourseDialogPane pane = new ChooseCourseDialogPane();
@@ -76,15 +78,29 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
     }
 
     /**
-     * Search for courses corresponding to the given key in all {@link FindCourses} data-sources.
-     *
-     * @param key    the key to search for (id, name, ...)
-     * @param locale the locale in which to search the names ({@link Course#getLocalizedName()}).
-     * @return a non-null, five element list of {@link Course}s that match best
+     * Returns the top 10 distinct courses, using the search function on all {@link FindCourses} instances.
+     * @param key the key parameter to search
+     * @param searchFunction
+     * @return
      */
-    public List<Course> findCourses(String key, Locale locale) { // TODO search for ids and names
-        return findCoursesList.parallelStream().map((f) -> f.findCourses(key, locale)).flatMap(List::stream)
-                .distinct().limit(5).collect(Collectors.toList());
+    private List<Course> findCoursesInternal(String key, Function<? super FindCourses, Stream<Course>> searchFunction) {
+        return findCoursesList.parallelStream().flatMap(searchFunction).distinct().limit(10).collect(Collectors.toList());
+    }
+
+    @Override
+    public Stream<Course> findCourses(String key) {
+        return findCoursesList.parallelStream().flatMap((FindCourses f) -> f.findCourses(key))
+                .distinct().limit(10);
+    }
+
+    @Override
+    public Stream<Course> findCoursesById(String id) {
+        return findCoursesList.parallelStream().flatMap(f -> f.findCoursesById(id)).distinct().limit(10);
+    }
+
+    @Override
+    public Stream<Course> findCoursesByName(String name, Locale locale) {
+        return findCoursesList.parallelStream().flatMap(f -> f.findCoursesByName(name, locale)).distinct().limit(10);
     }
 
     /**
