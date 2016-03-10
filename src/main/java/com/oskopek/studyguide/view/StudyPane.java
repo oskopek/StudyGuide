@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.view;
 
+import com.oskopek.studyguide.controller.FindCoursesController;
 import com.oskopek.studyguide.controller.StudyController;
 import com.oskopek.studyguide.model.StudyPlan;
 import javafx.scene.Node;
@@ -13,12 +14,16 @@ import javafx.scene.layout.VBox;
  */
 public class StudyPane extends AbstractFXMLPane {
 
+    private FindCoursesController findCoursesController;
+
     @Override
     public Node load(StudyGuideApplication studyGuideApplication) {
         VBox studyPane = (VBox) super.load(studyGuideApplication);
 
-        VBox findCoursePane = (VBox) new FindCoursePane().load(studyGuideApplication);
-        studyPane.getChildren().add(findCoursePane);
+        FindCoursePane findCoursePane = new FindCoursePane();
+        VBox findCoursePaneBox = (VBox) findCoursePane.load(studyGuideApplication);
+        studyPane.getChildren().add(findCoursePaneBox);
+        findCoursesController = (FindCoursesController) findCoursePane.getController();
 
         Separator separator = new Separator();
         separator.setPrefWidth(200);
@@ -31,6 +36,14 @@ public class StudyPane extends AbstractFXMLPane {
         controller.setViewElement(this);
 
         return studyPane;
+    }
+
+    /**
+     * The {@link FindCoursesController} for the course search panel.
+     * @return non-null
+     */
+    public FindCoursesController getFindCoursesController() {
+        return findCoursesController;
     }
 
     @Override

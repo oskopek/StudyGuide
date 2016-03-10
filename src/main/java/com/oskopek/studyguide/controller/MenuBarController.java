@@ -8,7 +8,13 @@ import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.RootLayoutPane;
 import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.stage.FileChooser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -194,7 +200,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         if (studyGuideApplication.getStudyPlan() != null) {
             openedFile = file;
         }
-        studyGuideApplication.reinitializeSemesterBoxes();
+        studyGuideApplication.reinitialize();
     }
 
 }

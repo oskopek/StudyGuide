@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.view;
 
+import com.oskopek.studyguide.controller.FindCoursesController;
 import com.oskopek.studyguide.controller.SemesterController;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
@@ -19,6 +20,7 @@ public class StudyGuideApplication extends Application {
     private Stage primaryStage;
     private StudyPlan studyPlan;
     private SemesterController semesterController;
+    private FindCoursesController findCoursesController;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -43,8 +45,10 @@ public class StudyGuideApplication extends Application {
         rootBorderPane.setCenter(semesterBorderPane);
         semesterController = (SemesterController) semesterPane.getController();
 
-        VBox studyPane = (VBox) new StudyPane().load(this);
-        rootBorderPane.setRight(studyPane);
+        StudyPane studyPane = new StudyPane();
+        VBox studyPaneBox = (VBox) studyPane.load(this);
+        rootBorderPane.setRight(studyPaneBox);
+        findCoursesController = studyPane.getFindCoursesController();
 
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
@@ -79,10 +83,27 @@ public class StudyGuideApplication extends Application {
     }
 
     /**
-     * Util method, calls {@link SemesterController#reinitializeSemesterBoxes()}.
+     * Reinitializes the UI after f.e. loading the model from disk.
+     * @see #reinitializeFindCourses()
+     * @see #reinitializeSemesterBoxes()
      */
-    public void reinitializeSemesterBoxes() {
-        semesterController.reinitializeSemesterBoxes();
+    public void reinitialize() {
+        reinitializeSemesterBoxes();
+        reinitializeFindCourses();
+    }
+
+    /**
+     * Util method, calls {@link SemesterController#reinitialize()}.
+     */
+    private void reinitializeSemesterBoxes() {
+        semesterController.reinitialize();
+    }
+
+    /**
+     * Util method, calls {@link FindCoursesController#reinitialize()}.
+     */
+    private void reinitializeFindCourses() {
+        findCoursesController.reinitialize();
     }
 
     /**

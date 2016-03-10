@@ -17,6 +17,7 @@ public class FindCoursePane extends AbstractFXMLPane {
         FindCoursesController findCoursesController = (FindCoursesController) getController();
         findCoursesController.setViewElement(this);
         findCoursesController.setStudyGuideApplication(studyGuideApplication);
+        findCoursesController.reinitialize();
         return findCoursePane;
     }
 

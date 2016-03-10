@@ -18,13 +18,13 @@ public class CourseGroup {
     /**
      * Builds a new, non-empty course group.
      *
-     * @param courseGroupType the type of courses in this course
-     * @param courseList non-empty list of courses
+     * @param courseGroupType     the type of courses in this course
+     * @param courseList          non-empty list of courses
      * @param groupConstraintList non-empty list of constraints
      * @throws IllegalArgumentException if any parameter is null or any list is empty
      */
     public CourseGroup(CourseGroupType courseGroupType, List<Course> courseList,
-            List<GroupConstraint> groupConstraintList) throws IllegalArgumentException {
+                       List<GroupConstraint> groupConstraintList) throws IllegalArgumentException {
         if (courseGroupType == null || courseList == null || groupConstraintList == null || courseList.isEmpty()
                 || groupConstraintList.isEmpty()) {
             throw new IllegalArgumentException("The parameters cannot be null and the lists cannot be empty.");

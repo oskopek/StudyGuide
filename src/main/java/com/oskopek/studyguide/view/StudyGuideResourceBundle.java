@@ -32,7 +32,7 @@ public class StudyGuideResourceBundle extends ResourceBundle {
      * Gets a {@link PropertyResourceBundle} from {@code baseName_localeLanguage.properties}.
      *
      * @param baseName the base name of the bundle
-     * @param locale the locale from which to get the language
+     * @param locale   the locale from which to get the language
      */
     private StudyGuideResourceBundle(String baseName, Locale locale) {
         String resourceString = baseName + "_" + locale.getLanguage() + ".properties";

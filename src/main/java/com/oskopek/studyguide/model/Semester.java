@@ -1,6 +1,9 @@
 package com.oskopek.studyguide.model;
 
-import javafx.beans.property.*;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -13,8 +16,8 @@ import java.util.List;
  */
 public class Semester {
 
-    private StringProperty name;
-    private ListProperty<CourseEnrollment> courseEnrollmentList;
+    private final StringProperty name;
+    private final ListProperty<CourseEnrollment> courseEnrollmentList;
 
     /**
      * Private constructor for Jackson persistence.

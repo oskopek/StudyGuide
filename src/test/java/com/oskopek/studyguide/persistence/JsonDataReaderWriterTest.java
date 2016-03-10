@@ -3,7 +3,6 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import org.junit.After;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,6 +13,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * TODO finish
@@ -63,6 +65,18 @@ public class JsonDataReaderWriterTest {
     public void readFromStream() throws IOException {
         StudyPlan plan = jsonDataReaderWriter.readFrom(Files.newInputStream(jsonPath));
         assertNotNull(plan);
+    }
+
+    @Test
+    public void readComplexInput() throws IOException {
+        DefaultStudyPlan plan = (DefaultStudyPlan) jsonDataReaderWriter.readFrom(Files.newInputStream(
+                Paths.get("src/test/resources/com/oskopek/studyguide/persistence/my_study2.json")));
+        assertNotNull(plan);
+        assertNotNull(plan.getSemesterPlan());
+        assertNotNull(plan.getSemesterPlan().getSemesterList());
+        assertNotNull(plan.getConstraints());
+        assertNotNull(plan.getCourseRegistry());
+        assertNotNull(plan.getCourseRegistry().courseMapValues());
     }
 
     @Test(expected = IllegalArgumentException.class)

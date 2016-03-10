@@ -13,6 +13,13 @@ public final class Credits {
     private final IntegerProperty creditValue;
 
     /**
+     * Empty JSON constructor.
+     */
+    private Credits() {
+        creditValue = new SimpleIntegerProperty();
+    }
+
+    /**
      * Doesn't check the creditValue's value.
      * Please use {@link Credits#valueOf(int)}.
      *
@@ -52,6 +59,17 @@ public final class Credits {
      */
     public IntegerProperty creditValueProperty() {
         return creditValue;
+    }
+
+    /**
+     * Sets the credit value into {@link #creditValueProperty()}.
+     * @param creditValue greater than 0
+     */
+    public void setCreditValue(int creditValue) {
+        if (creditValue <= 0) {
+            throw new IllegalArgumentException("Credit value " + creditValue + " is less than 1.");
+        }
+        this.creditValue.set(creditValue);
     }
 
     @Override

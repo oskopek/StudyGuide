@@ -25,30 +25,17 @@ public class DefaultStudyPlan implements StudyPlan {
         this.semesterPlan = new SimpleObjectProperty<>(new SemesterPlan());
     }
 
-    /**
-     * The {@link com.oskopek.studyguide.constraints.Constraint}s placed on this plan.
-     *
-     * @return may be null
-     */
+    @Override
     public Constraints getConstraints() {
         return constraints.get();
     }
 
-    /**
-     * A registry of available {@link com.oskopek.studyguide.model.courses.Course}s.
-     * Not necessarily the only source of courses.
-     *
-     * @return may be null
-     */
+    @Override
     public CourseRegistry getCourseRegistry() {
         return courseRegistry.get();
     }
 
-    /**
-     * An enumeration of individual {@link Semester}s.
-     *
-     * @return may be null
-     */
+    @Override
     public SemesterPlan getSemesterPlan() {
         return semesterPlan.get();
     }

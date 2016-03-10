@@ -21,8 +21,8 @@ public class CourseEnrollment {
     /**
      * Create a basic instance of an enrollment.
      *
-     * @param course the enrolled course, non-null
-     * @param semester the semester student enrolled course in, non-null
+     * @param course    the enrolled course, non-null
+     * @param semester  the semester student enrolled course in, non-null
      * @param fulfilled true iff the student passed
      * @throws IllegalArgumentException if course or semester are null
      */

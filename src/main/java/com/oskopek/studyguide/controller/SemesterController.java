@@ -24,10 +24,11 @@ public class SemesterController extends AbstractController<SemesterPane> {
 
     /**
      * Clear the existing {@link TilePane} and build new {@link SemesterBoxPane}s for all semester in the model.
+     *
      * @see StudyGuideApplication#getStudyPlan()
      * @see SemesterPane#load(StudyGuideApplication)
      */
-    public void reinitializeSemesterBoxes() {
+    public void reinitialize() {
         tilePane.getChildren().clear();
         studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().stream().forEach(this::addSemester);
     }

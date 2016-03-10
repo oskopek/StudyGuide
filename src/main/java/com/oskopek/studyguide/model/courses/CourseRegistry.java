@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.model.courses;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -12,6 +13,7 @@ import java.util.Map;
  */
 public class CourseRegistry {
 
+    @JsonProperty("courses")
     private Map<String, Course> courseIdMap;
 
     /**
@@ -54,7 +56,7 @@ public class CourseRegistry {
      *
      * @return a non-null (may be empty) collection of courses
      */
-    public Collection<Course> getCourses() {
+    public Collection<Course> courseMapValues() {
         return courseIdMap.values();
     }
 

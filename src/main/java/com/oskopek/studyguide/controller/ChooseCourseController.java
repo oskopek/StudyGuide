@@ -6,8 +6,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +21,8 @@ import java.util.List;
 public class ChooseCourseController extends AbstractController<ChooseCourseDialogPane> {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
+
+    private Dialog<ButtonType> dialog;
 
     @FXML
     private TableView<Course> courseTableView;
@@ -32,9 +36,6 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
     @FXML
     private TableColumn<Course, Number> creditsColumn;
 
-    @FXML
-    private ButtonType applyButton;
-
     private ObservableList<Course> courseList;
 
     /**
@@ -45,6 +46,27 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCredits().creditValueProperty());
+    }
+
+    /**
+     * Handles submitting the dialog in case the user double clicks into the found course table.
+     * @param event the generated event
+     */
+    @FXML
+    private void handleOnMouseClicked(MouseEvent event) {
+        if (event.getClickCount() == 2) {
+            dialog.resultProperty().setValue(ButtonType.APPLY);
+            dialog.close();
+        }
+    }
+
+    /**
+     * Set the dialog (used for reporting double clicks in the table).
+     * @param dialog the dialog wrapper for {@link ChooseCourseDialogPane}
+     * @see FindCoursesController#handleSearch()
+     */
+    public void setDialog(Dialog<ButtonType> dialog) {
+        this.dialog = dialog;
     }
 
     /**

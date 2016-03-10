@@ -4,11 +4,19 @@ import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.ChooseCourseDialogPane;
 import com.oskopek.studyguide.view.FindCoursePane;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
+import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -40,11 +48,12 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
     public void handleSearch() {
         String input = searchField.getText();
         List<Course> courses = findCourses(input, Locale.getDefault());
-        logger.debug("Found courses for input {}: {}", input, Arrays.toString(courses.toArray()));
+        logger.debug("Courses found for input \"{}\": {}", input, Arrays.toString(courses.toArray()));
 
         ChooseCourseDialogPane pane = new ChooseCourseDialogPane();
         Dialog<ButtonType> chooseCourseDialog = new Dialog<>();
-        chooseCourseDialog.dialogPaneProperty().setValue((DialogPane) pane.load(studyGuideApplication, courses));
+        chooseCourseDialog.dialogPaneProperty()
+                .setValue((DialogPane) pane.load(studyGuideApplication, courses, chooseCourseDialog));
         ChooseCourseController controller = (ChooseCourseController) pane.getController();
 
         Optional<ButtonType> result = chooseCourseDialog.showAndWait();
@@ -69,13 +78,23 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
     /**
      * Search for courses corresponding to the given key in all {@link FindCourses} data-sources.
      *
-     * @param key the key to search for (id, name, ...)
+     * @param key    the key to search for (id, name, ...)
      * @param locale the locale in which to search the names ({@link Course#getLocalizedName()}).
      * @return a non-null, five element list of {@link Course}s that match best
      */
     public List<Course> findCourses(String key, Locale locale) { // TODO search for ids and names
         return findCoursesList.parallelStream().map((f) -> f.findCourses(key, locale)).flatMap(List::stream)
                 .distinct().limit(5).collect(Collectors.toList());
+    }
+
+    /**
+     * Clears the {@link #findCoursesList}
+     * and adds the default {@link com.oskopek.studyguide.model.courses.CourseRegistry} from the model.
+     */
+    public void reinitialize() {
+        findCoursesList.clear();
+        findCoursesList.add(new FindRegistryCoursesController(
+                studyGuideApplication.getStudyPlan().getCourseRegistry()));
     }
 
 }
