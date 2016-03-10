@@ -1,9 +1,9 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.view.SemesterBoxPane;
 import com.oskopek.studyguide.view.SemesterPane;
+import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
@@ -23,21 +23,38 @@ public class SemesterController extends AbstractController<SemesterPane> {
     private TilePane tilePane;
 
     /**
-     * Adds a default, initial semester. Needs to be done after loading the graphics.
+     * Clear the existing {@link TilePane} and build new {@link SemesterBoxPane}s for all semester in the model.
+     * @see StudyGuideApplication#getStudyPlan()
+     * @see SemesterPane#load(StudyGuideApplication)
      */
-    public void initializeSemesters(SemesterPlan semesterPlan) {
-        //for (Semester semester : semesterPlan.getSemesterList()) {
-            //semester.// TODO add semester loading correctly
-        //}
-    } // TODO add the add semester button to menu
+    public void reinitializeSemesterBoxes() {
+        tilePane.getChildren().clear();
+        studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().stream().forEach(this::addSemester);
+    }
 
     /**
      * Handles adding a new semester to the pane and model.
      */
     @FXML
-    private void onAddSemester() {
+    private void onAddSemester() {  // TODO add the add semester button to menu (make #addSemester public)
+        addSemester(null);
+    }
+
+    /**
+     * Add a new {@link SemesterBoxPane} with the given {@link Semester}.
+     * Does not add the semester to the model (except {@code semester == null}).
+     *
+     * @param semester if null, creates a new Semester and adds it to the model
+     */
+    private void addSemester(Semester semester) {
         SemesterBoxPane boxPane = new SemesterBoxPane(this.viewElement);
         BorderPane borderPane = (BorderPane) boxPane.load(studyGuideApplication);
+        SemesterBoxController controller = (SemesterBoxController) boxPane.getController();
+        if (semester != null) {
+            controller.setSemester(semester);
+        } else {
+            controller.initializeEmptySemester();
+        }
         boxPane.setBoxBorderPane(borderPane);
         tilePane.getChildren().add(borderPane);
     }

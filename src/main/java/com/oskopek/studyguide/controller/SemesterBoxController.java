@@ -26,6 +26,11 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
 
     private Semester semester;
 
+    /**
+     * Initializes the listener for Semester name changes.
+     *
+     * @see #onSemesterNameChange()
+     */
     @FXML
     private void initialize() {
         semesterNameArea.textProperty().addListener((observable) -> onSemesterNameChange());
@@ -36,11 +41,25 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      * Needed, because JavaFX's initialize method runs too soon (before we have a reference to the main app).
      *
      * @see AbstractController#setStudyGuideApplication(com.oskopek.studyguide.view.StudyGuideApplication)
-     * @see SemesterBoxPane#load(com.oskopek.studyguide.view.StudyGuideApplication)
+     * @see SemesterController#addSemester(Semester)
      */
-    public void addEmptySemester() {
+    public void initializeEmptySemester() {
         semester = new Semester("Semester" + index++);
+        setSemester(semester);
         studyGuideApplication.getStudyPlan().getSemesterPlan().addSemester(semester);
+    }
+
+
+    /**
+     * Set the semester into this box. Does not update the model.
+     *
+     * @param semester non-null
+     */
+    public void setSemester(Semester semester) {
+        if (semester == null) {
+            throw new IllegalArgumentException("Semester cannot be null.");
+        }
+        this.semester = semester;
         semesterNameArea.setText(semester.getName());
     }
 
@@ -69,7 +88,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      * Handles changing the name of this semester box. The name has to be unique (different than others in the list).
      */
     @FXML
-    public void onSemesterNameChange() { // TODO data binding? how to check uniqueness
+    public void onSemesterNameChange() {
         String newName = semesterNameArea.getText();
         if (semester.getName().equals(newName)) {
             return;

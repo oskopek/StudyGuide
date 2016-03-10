@@ -33,7 +33,6 @@ public class SemesterBoxPane extends AbstractFXMLPane {
         SemesterBoxController controller = (SemesterBoxController) getController();
         controller.setStudyGuideApplication(studyGuideApplication);
         controller.setViewElement(this);
-        controller.addEmptySemester();
         return semesterBox;
     }
 

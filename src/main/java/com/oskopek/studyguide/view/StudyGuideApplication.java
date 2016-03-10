@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.view;
 
+import com.oskopek.studyguide.controller.SemesterController;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import javafx.application.Application;
@@ -17,6 +18,7 @@ public class StudyGuideApplication extends Application {
 
     private Stage primaryStage;
     private StudyPlan studyPlan;
+    private SemesterController semesterController;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -36,8 +38,10 @@ public class StudyGuideApplication extends Application {
         AnchorPane rootAnchorPane = (AnchorPane) rootLayout.getChildren().get(1);
         BorderPane rootBorderPane = (BorderPane) rootAnchorPane.getChildren().get(0);
 
-        BorderPane semesterPane = (BorderPane) new SemesterPane().load(this);
-        rootBorderPane.setCenter(semesterPane);
+        SemesterPane semesterPane = new SemesterPane();
+        BorderPane semesterBorderPane = (BorderPane) semesterPane.load(this);
+        rootBorderPane.setCenter(semesterBorderPane);
+        semesterController = (SemesterController) semesterPane.getController();
 
         VBox studyPane = (VBox) new StudyPane().load(this);
         rootBorderPane.setRight(studyPane);
@@ -72,6 +76,13 @@ public class StudyGuideApplication extends Application {
      */
     public void setStudyPlan(StudyPlan studyPlan) {
         this.studyPlan = studyPlan;
+    }
+
+    /**
+     * Util method, calls {@link SemesterController#reinitializeSemesterBoxes()}.
+     */
+    public void reinitializeSemesterBoxes() {
+        semesterController.reinitializeSemesterBoxes();
     }
 
     /**

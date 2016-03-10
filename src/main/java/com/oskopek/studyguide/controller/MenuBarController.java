@@ -164,7 +164,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
             return;
         }
         try {
-            writer.writeTo(studyGuideApplication.getStudyPlan(), file.getAbsolutePath().toString());
+            writer.writeTo(studyGuideApplication.getStudyPlan(), file.getAbsolutePath());
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
             alert.showAndWait();
@@ -185,7 +185,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
             return;
         }
         try {
-            studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath().toString()));
+            studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath()));
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             alert.showAndWait();
@@ -194,7 +194,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         if (studyGuideApplication.getStudyPlan() != null) {
             openedFile = file;
         }
-        studyGuideApplication.get
+        studyGuideApplication.reinitializeSemesterBoxes();
     }
 
 }
