@@ -2,7 +2,6 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
-import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.SemesterBoxPane;
 import javafx.fxml.FXML;
@@ -41,7 +40,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     private TableColumn<CourseEnrollment, Number> creditsColumn;
 
     @FXML
-    private TableColumn<CourseEnrollment, String> fulfilledColumn;
+    private TableColumn<CourseEnrollment, String> fulfilledColumn; // TODO fulfilled buttons instead of strings
 
     @FXML
     private TableColumn<CourseEnrollment, String> removeColumn; // TODO remove buttons
@@ -60,8 +59,9 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
 
         idColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameProperty());
-        creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
-        fulfilledColumn.setCellValueFactory(cellData -> ObservableScellData.getValue().isFulfilled() == true ? "" : "");
+        creditsColumn.setCellValueFactory(
+                cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
+        fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledPropertyStringWrapper());
     }
 
     /**
@@ -89,6 +89,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
         }
         this.semester = semester;
         semesterNameArea.setText(semester.getName());
+        semesterTable.itemsProperty().bindBidirectional(semester.courseEnrollmentListProperty());
     }
 
     /**
@@ -108,6 +109,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      */
     @FXML
     public void onRemoveSemester() {
+        semesterTable.itemsProperty().unbindBidirectional(semester.courseEnrollmentListProperty());
         studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
         getParentController().removeSemester(this.viewElement);
     }

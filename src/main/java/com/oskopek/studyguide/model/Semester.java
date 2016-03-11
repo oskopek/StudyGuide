@@ -64,6 +64,12 @@ public class Semester {
         this.name.setValue(name);
     }
 
+    /**
+     * Generates and adds a {@link CourseEnrollment} to this semester.
+     *
+     * @param course the course to add to this semester, non-null
+     * @throws IllegalArgumentException if the {@link Course} is null
+     */
     public void addCourseEnrollment(Course course) throws IllegalArgumentException {
         if (course == null) {
             throw new IllegalArgumentException("Course cannot be null.");

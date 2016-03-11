@@ -71,6 +71,12 @@ public class SemesterPlan {
     }
 
 
+    /**
+     * Returns the last semester in the list of semesters.
+     *
+     * @see #getSemesterList()
+     * @return the last semester, null if the list is empty
+     */
     public Semester lastSemester() {
         if (semesterList.isEmpty()) {
             return null;

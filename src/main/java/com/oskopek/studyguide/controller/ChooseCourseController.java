@@ -2,8 +2,9 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.ChooseCourseDialogPane;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -12,8 +13,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -21,8 +20,6 @@ import java.util.List;
  * Controller for choosing a course out of several choices.
  */
 public class ChooseCourseController extends AbstractController<ChooseCourseDialogPane> {
-
-    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private Dialog<ButtonType> dialog;
 
@@ -38,13 +35,21 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
     @FXML
     private TableColumn<Course, Number> creditsColumn;
 
-    private ObservableList<Course> courseList;
+    private ListProperty<Course> courseListProperty;
+
+    /**
+     * Default constructor.
+     */
+    public ChooseCourseController() {
+        courseListProperty = new SimpleListProperty<>();
+    }
 
     /**
      * Initialize the {@link #courseTableView} data bindings.
      */
     @FXML
     private void initialize() {
+        courseTableView.itemsProperty().bind(courseListProperty);
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCredits().creditValueProperty());
@@ -72,6 +77,9 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
         }
     }
 
+    /**
+     * Closes the dialog as if the "Apply" button was clicked.
+     */
     private void applyDialog() {
         dialog.resultProperty().setValue(ButtonType.APPLY);
         dialog.close();
@@ -92,8 +100,7 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
      * @param courseList non-null
      */
     public void setCourseList(List<Course> courseList) {
-        this.courseList = FXCollections.observableList(courseList);
-        courseTableView.setItems(this.courseList);
+        courseListProperty.setValue(FXCollections.observableList(courseList));
     }
 
     /**
