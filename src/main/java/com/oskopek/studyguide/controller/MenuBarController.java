@@ -74,6 +74,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
     private void handleNew() {
         openedFile = null;
         studyGuideApplication.setStudyPlan(new DefaultStudyPlan());
+        studyGuideApplication.reinitialize();
     }
 
     /**
@@ -90,17 +91,6 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
             return;
         }
         openFromFile(chosen);
-    }
-
-    /**
-     * Menu item: File->Close.
-     * Close the opened model from the main app and clear it.
-     * Doesn't save the currently opened one!
-     */
-    @FXML
-    private void handleClose() {
-        openedFile = null;
-        studyGuideApplication.setStudyPlan(null);
     }
 
     /**

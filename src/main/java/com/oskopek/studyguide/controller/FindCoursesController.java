@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.controller;
 
+import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.ChooseCourseDialogPane;
 import com.oskopek.studyguide.view.FindCoursePane;
@@ -59,7 +60,8 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
             Course chosen = controller.getChosenCourse();
             if (chosen != null) {
                 logger.debug("Chosen course: {}", chosen);
-                // TODO add chosen course to semester
+                studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester().addCourseEnrollment(chosen);
+                studyGuideApplication.reinitialize();
             }
         }
     }

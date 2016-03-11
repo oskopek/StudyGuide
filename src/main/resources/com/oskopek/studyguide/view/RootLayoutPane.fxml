@@ -19,8 +19,6 @@
                         <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#handleOpen"
                                   text="%root.open"/>
                         <SeparatorMenuItem mnemonicParsing="false"/>
-                        <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#handleClose"
-                                  text="%root.close"/>
                         <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#handleSave"
                                   text="%root.save"/>
                         <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#handleSaveAs"

@@ -2,6 +2,12 @@ package com.oskopek.studyguide.model;
 
 import com.oskopek.studyguide.constraints.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.model.courses.Course;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.StringBinding;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -15,8 +21,10 @@ public class CourseEnrollment {
 
     private Course course;
     private Semester semester;
-    private boolean fulfilled;
+    private BooleanProperty fulfilled;
     private List<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
+
+    private StringBinding fulfilledWrapper;
 
     /**
      * Create a basic instance of an enrollment.
@@ -32,8 +40,9 @@ public class CourseEnrollment {
         }
         this.course = course;
         this.semester = semester;
-        this.fulfilled = fulfilled;
+        this.fulfilled = new SimpleBooleanProperty(fulfilled);
         this.courseEnrollmentConstraintList = new ArrayList<>();
+        this.fulfilledWrapper = Bindings.createStringBinding(() -> convertFullfiledToString(fulfilled), fulfilledProperty());
     }
 
     /**
@@ -60,7 +69,7 @@ public class CourseEnrollment {
      * @return true if passed, else not passed
      */
     public boolean isFulfilled() {
-        return fulfilled;
+        return fulfilled.get();
     }
 
     /**
@@ -69,7 +78,19 @@ public class CourseEnrollment {
      * @param fulfilled true iff passed
      */
     public void setFulfilled(boolean fulfilled) {
-        this.fulfilled = fulfilled;
+        this.fulfilled.setValue(fulfilled);
+    }
+
+    public BooleanProperty fulfilledProperty() {
+        return fulfilled;
+    }
+
+    private String convertFullfiledToString(boolean fulfilled) {
+        return fulfilled ? "v" : "X"; // TODO chars
+    }
+
+    public StringProperty fulfilledPropertyWrapper() {
+        return fulfilledWrapper.;
     }
 
     @Override

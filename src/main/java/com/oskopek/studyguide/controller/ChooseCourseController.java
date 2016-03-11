@@ -9,6 +9,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,9 +57,24 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
     @FXML
     private void handleOnMouseClicked(MouseEvent event) {
         if (event.getClickCount() == 2) {
-            dialog.resultProperty().setValue(ButtonType.APPLY);
-            dialog.close();
+            applyDialog();
         }
+    }
+
+    /**
+     * Handles submitting the dialog in case the user double clicks into the found course table.
+     * @param event the generated event
+     */
+    @FXML
+    private void handleOnKeyTyped(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            applyDialog();
+        }
+    }
+
+    private void applyDialog() {
+        dialog.resultProperty().setValue(ButtonType.APPLY);
+        dialog.close();
     }
 
     /**

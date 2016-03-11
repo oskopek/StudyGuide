@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.model;
 
+import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -63,13 +64,20 @@ public class Semester {
         this.name.setValue(name);
     }
 
+    public void addCourseEnrollment(Course course) throws IllegalArgumentException {
+        if (course == null) {
+            throw new IllegalArgumentException("Course cannot be null.");
+        }
+        addCourseEnrollment(new CourseEnrollment(course, this, false));
+    }
+
     /**
      * Add the {@link CourseEnrollment} to this semester.
      *
      * @param courseEnrollment the enrollment to add to this semester, non-null
      * @throws IllegalArgumentException if the {@link CourseEnrollment#getSemester()} isn't this this semester
      */
-    public void addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
+    private void addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
         if (courseEnrollment == null) {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
         }

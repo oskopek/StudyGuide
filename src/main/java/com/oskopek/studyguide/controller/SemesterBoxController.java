@@ -1,10 +1,14 @@
 package com.oskopek.studyguide.controller;
 
+import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.SemesterBoxPane;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +28,25 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     @FXML
     private TextField semesterNameArea;
 
+    @FXML
+    private TableView<CourseEnrollment> semesterTable;
+
+    @FXML
+    private TableColumn<CourseEnrollment, String> idColumn;
+
+    @FXML
+    private TableColumn<CourseEnrollment, String> nameColumn;
+
+    @FXML
+    private TableColumn<CourseEnrollment, Number> creditsColumn;
+
+    @FXML
+    private TableColumn<CourseEnrollment, String> fulfilledColumn;
+
+    @FXML
+    private TableColumn<CourseEnrollment, String> removeColumn; // TODO remove buttons
+
+
     private Semester semester;
 
     /**
@@ -34,6 +57,11 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     @FXML
     private void initialize() {
         semesterNameArea.textProperty().addListener((observable) -> onSemesterNameChange());
+
+        idColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().idProperty());
+        nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameProperty());
+        creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
+        fulfilledColumn.setCellValueFactory(cellData -> ObservableScellData.getValue().isFulfilled() == true ? "" : "");
     }
 
     /**

@@ -70,6 +70,14 @@ public class SemesterPlan {
         return semesterList;
     }
 
+
+    public Semester lastSemester() {
+        if (semesterList.isEmpty()) {
+            return null;
+        }
+        return semesterList.get(semesterList.size() - 1);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
