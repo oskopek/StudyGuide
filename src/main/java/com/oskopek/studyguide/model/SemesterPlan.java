@@ -24,7 +24,7 @@ public class SemesterPlan {
     }
 
     /**
-     * TODO: Internal semester list.
+     * The internal semester list.
      *
      * @return non-null list of {@link Semester}s
      */

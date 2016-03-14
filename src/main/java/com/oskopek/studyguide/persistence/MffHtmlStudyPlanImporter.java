@@ -28,7 +28,7 @@ public class MffHtmlStudyPlanImporter implements DataReader {
      * @throws IOException if an error occured while parsing
      */
     private static DefaultStudyPlan parseDefaultStudyPlan(InputStream stream) throws IOException {
-        // TODO
+        // TODO html study plan importer http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm
         return null;
     }
 

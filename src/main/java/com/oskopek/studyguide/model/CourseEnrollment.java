@@ -98,7 +98,7 @@ public class CourseEnrollment {
      * @deprecated Should be removed in favor of a button and handler
      */
     @Deprecated
-    private String convertFullfiledToString(boolean fulfilled) { // TODO remove this
+    private String convertFullfiledToString(boolean fulfilled) { // TODO this belongs into the gui, not model!
         return fulfilled ? "v" : "X";
     }
 

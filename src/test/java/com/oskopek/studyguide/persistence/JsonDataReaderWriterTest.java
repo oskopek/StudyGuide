@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * TODO finish
+ * Probably deserves more thorough testing.
  */
 public class JsonDataReaderWriterTest {
 
@@ -33,7 +33,6 @@ public class JsonDataReaderWriterTest {
         Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/json_empty.json"), jsonPath,
                 StandardCopyOption.REPLACE_EXISTING);
         plan = new DefaultStudyPlan();
-        // TODO fill plan
     }
 
     @After
