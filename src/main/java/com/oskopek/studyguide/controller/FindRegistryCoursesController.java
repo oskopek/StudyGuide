@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 /**
  * Finds course being searched for in the {@link CourseRegistry}.
  */
-public class FindRegistryCoursesController extends ChooseCourseController implements FindCourses {
+public class FindRegistryCoursesController extends ChooseCourseController implements FindCourses { // TODO Why extends?
 
     private CourseRegistry courseRegistry;
 
@@ -73,7 +73,7 @@ public class FindRegistryCoursesController extends ChooseCourseController implem
      * @return a stream of courses
      * @see #mapToSortedPairs(Function)
      */
-    private Stream<Course> findCoursesInternal(Function<? super Course, Float> valueFunction) {
+    private Stream<Course> findCoursesInternal(Function<? super Course, Float> valueFunction) { // TODO generalize?
         return mapToSortedPairs(valueFunction).map(Map.Entry::getValue);
     }
 
