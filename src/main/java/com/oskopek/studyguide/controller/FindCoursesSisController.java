@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 /**
  * Finds course being searched for in an <a href="https://www.cuni.cz/UK-4428.html">IS Studium</a> (SIS) instance.
  */
-public class FindCoursesSisController extends ChooseCourseController implements FindCourses {
+public class FindCoursesSisController implements FindCourses {
 
     @Override
     public Stream<Course> findCourses(String key) {

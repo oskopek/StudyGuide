@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 /**
  * Finds course being searched for in the {@link CourseRegistry}.
  */
-public class FindRegistryCoursesController extends ChooseCourseController implements FindCourses { // TODO Why extends?
+public class FindRegistryCoursesController implements FindCourses {
 
     private CourseRegistry courseRegistry;
 
