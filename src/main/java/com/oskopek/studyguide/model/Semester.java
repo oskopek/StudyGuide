@@ -68,7 +68,7 @@ public class Semester {
      * Generates and adds a {@link CourseEnrollment} to this semester.
      *
      * @param course the course to add to this semester, non-null
-     * @throws IllegalArgumentException if the {@link Course} is null
+     * @throws IllegalArgumentException if the {@link Course} is null or if {@link Course} is already enrolled
      */
     public void addCourseEnrollment(Course course) throws IllegalArgumentException {
         if (course == null) {
@@ -82,6 +82,7 @@ public class Semester {
      *
      * @param courseEnrollment the enrollment to add to this semester, non-null
      * @throws IllegalArgumentException if the {@link CourseEnrollment#getSemester()} isn't this this semester
+     * or if {@link Course} is already enrolled
      */
     private void addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
         if (courseEnrollment == null) {
@@ -91,6 +92,10 @@ public class Semester {
             throw new IllegalArgumentException(
                     "Cannot add courseEnrollment (" + courseEnrollment + ") with different semester ("
                             + courseEnrollment.getSemester() + ") to semester (" + this + ")");
+        }
+        if (courseEnrollmentList.contains(courseEnrollment)) {
+            throw new IllegalArgumentException("Semester (" + this + ") already contains course enrollment of course ("
+                    + courseEnrollment.getCourse() + ").");
         }
         courseEnrollmentList.add(courseEnrollment);
     }

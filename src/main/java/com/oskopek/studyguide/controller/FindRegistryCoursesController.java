@@ -73,7 +73,7 @@ public class FindRegistryCoursesController implements FindCourses {
      * @return a stream of courses
      * @see #mapToSortedPairs(Function)
      */
-    private Stream<Course> findCoursesInternal(Function<? super Course, Float> valueFunction) { // TODO generalize?
+    private Stream<Course> findCoursesInternal(Function<? super Course, Float> valueFunction) {
         return mapToSortedPairs(valueFunction).map(Map.Entry::getValue);
     }
 

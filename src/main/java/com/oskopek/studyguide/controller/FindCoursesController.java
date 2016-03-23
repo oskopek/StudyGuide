@@ -1,9 +1,11 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.ChooseCourseDialogPane;
 import com.oskopek.studyguide.view.FindCoursePane;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
@@ -59,7 +61,13 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
             Course chosen = controller.getChosenCourse();
             if (chosen != null) {
                 logger.debug("Chosen course: {}", chosen);
-                studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester().addCourseEnrollment(chosen);
+                try {
+                    studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester().addCourseEnrollment(chosen);
+                } catch (IllegalArgumentException e) {
+                    logger.debug("Added wrong course({}), showing error box.", chosen);
+                    AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
+                            AbstractFXMLPane.messages.getString("findCourses.courseAlreadyEnrolled"));
+                }
                 studyGuideApplication.reinitialize();
             }
         }

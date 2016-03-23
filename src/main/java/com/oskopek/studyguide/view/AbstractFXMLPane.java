@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 
@@ -74,10 +75,22 @@ public abstract class AbstractFXMLPane {
      * @throws IllegalStateException throws a wrapper exception around {@code e}
      */
     private void handleLoadLayoutError(IOException e) throws IllegalStateException {
-        Alert alert = new Alert(Alert.AlertType.ERROR, AbstractFXMLPane.messages.getString("error.cannotLoadLayout"),
-                ButtonType.CLOSE);
-        alert.showAndWait();
+        AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
+                AbstractFXMLPane.messages.getString("error.cannotLoadLayout"), ButtonType.CLOSE);
         throw new IllegalStateException(AbstractFXMLPane.messages.getString("error.cannotLoadLayout"), e);
+    }
+
+    /**
+     * A util method to display an {@link Alert} with the given parameters.
+     * @param alertType the type of the alert
+     * @param message the message to display
+     * @param buttonTypes the buttons to show
+     * @see Alert
+     */
+    public static void showAlert(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
+        Alert alert = new Alert(alertType, "", buttonTypes);
+        alert.getDialogPane().setContent(new Label(message));
+        alert.showAndWait();
     }
 
 }

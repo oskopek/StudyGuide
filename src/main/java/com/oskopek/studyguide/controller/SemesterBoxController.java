@@ -4,11 +4,16 @@ import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.SemesterBoxPane;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.CheckBoxTableCell;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,10 +45,10 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     private TableColumn<CourseEnrollment, Number> creditsColumn;
 
     @FXML
-    private TableColumn<CourseEnrollment, String> fulfilledColumn; // TODO fulfilled buttons instead of strings
+    private TableColumn<CourseEnrollment, Boolean> fulfilledColumn; // TODO editable
 
     @FXML
-    private TableColumn<CourseEnrollment, String> removeColumn; // TODO remove buttons
+    private TableColumn<CourseEnrollment, String> removeColumn;
 
 
     private Semester semester;
@@ -61,7 +66,31 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameProperty());
         creditsColumn.setCellValueFactory(
                 cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
-        fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledPropertyStringWrapper());
+        fulfilledColumn.setCellValueFactory(new PropertyValueFactory<>("fulfilled"));
+        fulfilledColumn.setCellFactory(CheckBoxTableCell.forTableColumn(fulfilledColumn));
+        removeColumn.setCellFactory((final TableColumn<CourseEnrollment, String> param) -> {
+            final TableCell<CourseEnrollment, String> cell = new TableCell<CourseEnrollment, String>()
+            {
+                final Button removeButton = new Button("✗");
+
+                @Override
+                public void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    setText(null);
+                    if (empty) {
+                        setGraphic(null);
+                    } else {
+                        removeButton.setOnAction((ActionEvent event) -> {
+                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
+                            semester.removeCourseEnrollment(enrollment);
+                            logger.debug("Removing Course Enrollment ({}) from Semester ({}).", enrollment, semester);
+                        });
+                        setGraphic(removeButton);
+                    }
+                }
+            };
+            return cell;
+        });
     }
 
     /**
@@ -124,9 +153,8 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
             return;
         }
         if (studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().contains(new Semester(newName))) {
-            Alert alert = new Alert(Alert.AlertType.WARNING,
+            AbstractFXMLPane.showAlert(Alert.AlertType.WARNING,
                     AbstractFXMLPane.messages.getString("semesterBox.nameNotUnique"));
-            alert.showAndWait();
             semesterNameArea.setText(semester.getName());
         } else {
             semester.setName(newName);

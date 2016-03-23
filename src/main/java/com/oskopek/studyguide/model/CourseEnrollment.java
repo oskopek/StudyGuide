@@ -4,8 +4,6 @@ import com.oskopek.studyguide.constraints.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -21,8 +19,6 @@ public class CourseEnrollment {
     private Semester semester;
     private BooleanProperty fulfilled;
     private List<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
-
-    private StringProperty fulfilledStringWrapper;
 
     /**
      * Create a basic instance of an enrollment.
@@ -40,10 +36,7 @@ public class CourseEnrollment {
         this.semester = semester;
         this.fulfilled = new SimpleBooleanProperty(fulfilled);
         this.courseEnrollmentConstraintList = new ArrayList<>();
-        this.fulfilledStringWrapper = new SimpleStringProperty();
-        this.fulfilled.addListener((observable, oldValue, newValue) -> {
-            this.fulfilledStringWrapper.setValue(newValue ? "✓" : "✗"); // TODO This belongs into the gui, not model!
-        });
+        this.fulfilled = new SimpleBooleanProperty(fulfilled);
     }
 
     /**
@@ -89,28 +82,6 @@ public class CourseEnrollment {
      */
     public BooleanProperty fulfilledProperty() {
         return fulfilled;
-    }
-
-    /**
-     * Converts the {@link #fulfilledProperty()} into a string representation (tick vs. cross).
-     * @param fulfilled the boolean value to convert
-     * @return a tick if true, a cross if false
-     * @deprecated Should be removed in favor of a button and handler
-     */
-    @Deprecated
-    private String convertFullfiledToString(boolean fulfilled) { // TODO this belongs into the gui, not model!
-        return fulfilled ? "v" : "X";
-    }
-
-    /**
-     * A wrapper of {@link #isFulfilled()}.
-     * @see #convertFullfiledToString(boolean)
-     * @return a property wrapper of {@link #isFulfilled()}
-     * @deprecated Should be removed in favor of a button and handler
-     */
-    @Deprecated
-    public StringProperty fulfilledPropertyStringWrapper() {
-        return fulfilledStringWrapper;
     }
 
     @Override

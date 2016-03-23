@@ -37,7 +37,7 @@ public class SemesterController extends AbstractController<SemesterPane> {
      * Handles adding a new semester to the pane and model.
      */
     @FXML
-    private void onAddSemester() { // TODO add the add semester button to menu (make #addSemester public)
+    private void onAddSemester() {
         addSemester(null);
     }
 

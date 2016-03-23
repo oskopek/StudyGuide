@@ -162,8 +162,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         try {
             writer.writeTo(studyGuideApplication.getStudyPlan(), file.getAbsolutePath());
         } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
-            alert.showAndWait();
+            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
             e.printStackTrace();
         }
     }
@@ -183,8 +182,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         try {
             studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath()));
         } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
-            alert.showAndWait();
+            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             e.printStackTrace();
         }
         if (studyGuideApplication.getStudyPlan() != null) {
