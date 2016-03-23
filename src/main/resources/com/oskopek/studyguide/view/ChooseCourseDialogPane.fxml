@@ -12,7 +12,7 @@
     <content>
         <BorderPane prefHeight="200.0" prefWidth="200.0">
             <center>
-                <TableView fx:id="courseTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" onMouseClicked="#handleOnMouseClicked" onKeyTyped="#handleOnKeyTyped">
+                <TableView fx:id="courseTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" onMouseClicked="#handleOnMouseClicked" onKeyPressed="#handleOnKeyPressed">
                     <columns>
                         <TableColumn fx:id="idColumn" editable="false" minWidth="50.0" prefWidth="75.0"
                                      text="%course.id"/>

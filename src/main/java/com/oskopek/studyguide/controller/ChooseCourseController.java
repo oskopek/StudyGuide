@@ -67,11 +67,11 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
     }
 
     /**
-     * Handles submitting the dialog in case the user double clicks into the found course table.
+     * Handles submitting the dialog in case the presses enter into the found course table.
      * @param event the generated event
      */
     @FXML
-    private void handleOnKeyTyped(KeyEvent event) {
+    private void handleOnKeyPressed(KeyEvent event) {
         if (event.getCode() == KeyCode.ENTER) {
             applyDialog();
         }
