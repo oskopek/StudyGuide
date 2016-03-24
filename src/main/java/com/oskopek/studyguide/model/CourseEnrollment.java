@@ -36,7 +36,6 @@ public class CourseEnrollment {
         this.semester = semester;
         this.fulfilled = new SimpleBooleanProperty(fulfilled);
         this.courseEnrollmentConstraintList = new ArrayList<>();
-        this.fulfilled = new SimpleBooleanProperty(fulfilled);
     }
 
     /**

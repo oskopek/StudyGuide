@@ -13,7 +13,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxTableCell;
-import javafx.scene.control.cell.PropertyValueFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +44,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     private TableColumn<CourseEnrollment, Number> creditsColumn;
 
     @FXML
-    private TableColumn<CourseEnrollment, Boolean> fulfilledColumn; // TODO editable
+    private TableColumn<CourseEnrollment, Boolean> fulfilledColumn;
 
     @FXML
     private TableColumn<CourseEnrollment, String> removeColumn;
@@ -66,8 +65,8 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameProperty());
         creditsColumn.setCellValueFactory(
                 cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
-        fulfilledColumn.setCellValueFactory(new PropertyValueFactory<>("fulfilled"));
-        fulfilledColumn.setCellFactory(CheckBoxTableCell.forTableColumn(fulfilledColumn));
+        fulfilledColumn.setCellFactory(CheckBoxTableCell.forTableColumn(fulfilledColumn)); // TODO make editable
+        fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
         removeColumn.setCellFactory((final TableColumn<CourseEnrollment, String> param) -> {
             final TableCell<CourseEnrollment, String> cell = new TableCell<CourseEnrollment, String>()
             {
