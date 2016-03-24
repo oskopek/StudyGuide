@@ -84,11 +84,22 @@ public class SemesterController extends AbstractController<SemesterPane> {
     }
 
     /**
-     * Handles the end of a {@link com.oskopek.studyguide.model.courses.Course} drag and drop action between semesters.
+     * Handles the end at the data target end of a {@link com.oskopek.studyguide.model.courses.Course}
+     * drag and drop action between semesters.
      *
      * @param box non-null
      */
-    public void dragEnded(SemesterBoxPane box) { // TODO drag n drop
+    public void dragDropped(SemesterBoxPane box) { // TODO drag n drop
+        logger.debug("Drag ended in box {}", box);
+    }
+
+    /**
+     * Handles the end at the data source end of a {@link com.oskopek.studyguide.model.courses.Course}
+     * drag and drop action between semesters.
+     *
+     * @param box non-null
+     */
+    public void dragDone(SemesterBoxPane box) { // TODO drag n drop
         logger.debug("Drag ended in box {}", box);
     }
 

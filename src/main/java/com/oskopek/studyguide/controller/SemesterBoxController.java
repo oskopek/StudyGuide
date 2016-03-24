@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxTableCell;
+import javafx.scene.input.DragEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -161,8 +162,8 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     }
 
     /**
-     * Handles the start of a {@link com.oskopek.studyguide.model.courses.Course} drag and drop event.
-     * Calls {@link SemesterController#dragDetected(SemesterBoxPane)}.
+     * Handles the start of a {@link com.oskopek.studyguide.model.courses.Course} drag and drop event
+     * at the data source. Calls {@link SemesterController#dragDetected(SemesterBoxPane)}.
      */
     @FXML
     public void onDragDetected() {
@@ -171,13 +172,29 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
     }
 
     /**
-     * Handles the end of a {@link com.oskopek.studyguide.model.courses.Course} drag and drop event.
-     * Calls {@link SemesterController#dragEnded(SemesterBoxPane)}.
+     * Handles the end of a {@link com.oskopek.studyguide.model.courses.Course} drag and drop event at the data target.
+     * Calls {@link SemesterController#dragDropped(SemesterBoxPane)}.
+     *
+     * @param e the drag event
      */
     @FXML
-    public void onDragDropped() {
-        getParentController().dragEnded(this.viewElement);
+    public void onDragDropped(DragEvent e) {
+        getParentController().dragDropped(this.viewElement);
         logger.debug("Drag dropped {}", this.semester);
+    }
+
+    /**
+     * Handles the end of a {@link com.oskopek.studyguide.model.courses.Course} drag and drop event at the data source.
+     * Calls {@link SemesterController#dragDone(SemesterBoxPane)}.
+     *
+     * @param e the drag event
+     */
+    @FXML
+    public void onDragDone(DragEvent e) {
+        logger.debug("Debug done {}, source {}", this.semester,
+                ((SemesterBoxController) e.getGestureSource()).semester);
+        getParentController().dragDone(this.viewElement);
+        logger.debug("Drag done {}", this.semester);
     }
 
 }
