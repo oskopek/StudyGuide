@@ -1,16 +1,12 @@
 package com.oskopek.studyguide.persistence;
 
-import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
-import com.oskopek.studyguide.model.courses.Credits;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * Default implementation of {@link CourseScraper} for the pages at
@@ -18,11 +14,15 @@ import java.util.Locale;
  */
 public class MFFWebScraper implements CourseScraper {
 
+    private final String sisWebUrl = "https://is.cuni.cz/studium"; // TODO move this somewhere
+    private SISWebScraper sisWebScraper = new SISWebScraper(sisWebUrl);
+
     @Override
-    public CourseRegistry scrapeCourses(String url) throws IOException {
+    public CourseRegistry scrapeCourses(String url) throws IOException { // TODO generally, make this more stable
         CourseRegistry registry = new CourseRegistry();
         Document document = Jsoup.connect(url).get();
         Elements tables = document.select("table");
+        // TODO gracefully handle other number of tables, but do not go to "recommended" plan
         for (int i = 0; i < 3; i++) {
             Element table = tables.get(i);
             boolean first = true; // skip header
@@ -32,12 +32,8 @@ public class MFFWebScraper implements CourseScraper {
                     continue;
                 }
                 Elements tableData = row.select("td");
-                String id = tableData.get(0).text();
-                String name = tableData.get(1).text();
-                Credits credits = Credits.valueOf(Integer.parseInt(tableData.get(3).text()));
-                Course course = new Course(id, name, name, Locale.forLanguageTag("cs"), credits,
-                        new ArrayList<>(), new ArrayList<>()); // TODO teachers and required courses
-                registry.putCourse(course);
+                String id = tableData.first().text();
+                registry.copyCoursesFrom(sisWebScraper.scrapeCourses(id));
             }
         }
         return registry;

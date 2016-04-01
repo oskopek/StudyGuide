@@ -38,6 +38,16 @@ public class CourseRegistry {
     }
 
     /**
+     * Copies (with overwriting) all courses from the registry into this registry.
+     * @param registry the registry to copy courses from
+     */
+    public void copyCoursesFrom(CourseRegistry registry) {
+        for (Course course : registry.courseMapValues()) {
+            putCourse(course);
+        }
+    }
+
+    /**
      * Get a course from the registry.
      *
      * @param id non-null
