@@ -1,0 +1,684 @@
+{
+  "semesterPlan" : {
+    "semesterList" : [ ]
+  },
+  "constraints" : {
+    "courseGroupList" : [ ],
+    "globalConstraintList" : [ ]
+  },
+  "courseRegistry" : {
+    "courses" : {
+      "NSWI141" : {
+        "id" : "NSWI141",
+        "name" : "Úvod do počítačových sítí",
+        "localizedName" : "Úvod do počítačových sítí",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 2
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN061" : {
+        "id" : "NTIN061",
+        "name" : "Algoritmy a datové struktury II",
+        "localizedName" : "Algoritmy a datové struktury II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI055" : {
+        "id" : "NMAI055",
+        "name" : "Matematická analýza II",
+        "localizedName" : "Matematická analýza II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI054" : {
+        "id" : "NMAI054",
+        "name" : "Matematická analýza I",
+        "localizedName" : "Matematická analýza I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI057" : {
+        "id" : "NMAI057",
+        "name" : "Lineární algebra I",
+        "localizedName" : "Lineární algebra I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI056" : {
+        "id" : "NMAI056",
+        "name" : "Matematická analýza III",
+        "localizedName" : "Matematická analýza III",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT048" : {
+        "id" : "NOPT048",
+        "name" : "Optimalizační metody",
+        "localizedName" : "Optimalizační metody",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI059" : {
+        "id" : "NMAI059",
+        "name" : "Pravděpodobnost a statistika",
+        "localizedName" : "Pravděpodobnost a statistika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI058" : {
+        "id" : "NMAI058",
+        "name" : "Lineární algebra II",
+        "localizedName" : "Lineární algebra II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI143" : {
+        "id" : "NSWI143",
+        "name" : "Architektura počítačů",
+        "localizedName" : "Architektura počítačů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT046" : {
+        "id" : "NOPT046",
+        "name" : "Diskrétní a spojitá optimalizace",
+        "localizedName" : "Diskrétní a spojitá optimalizace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG005" : {
+        "id" : "NPRG005",
+        "name" : "Neprocedurální programování",
+        "localizedName" : "Neprocedurální programování",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG003" : {
+        "id" : "NPRG003",
+        "name" : "Metodika programování a filozofie programovacích jazyků",
+        "localizedName" : "Metodika programování a filozofie programovacích jazyků",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG045" : {
+        "id" : "NPRG045",
+        "name" : "Ročníkový projekt",
+        "localizedName" : "Ročníkový projekt",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 4
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI084" : {
+        "id" : "NDMI084",
+        "name" : "Úvod do aproximačních a pravděpodobnostních algoritmů",
+        "localizedName" : "Úvod do aproximačních a pravděpodobnostních algoritmů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG041" : {
+        "id" : "NPRG041",
+        "name" : "Programování v C++",
+        "localizedName" : "Programování v C++",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN071" : {
+        "id" : "NTIN071",
+        "name" : "Automaty a gramatiky",
+        "localizedName" : "Automaty a gramatiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NJAZ091" : {
+        "id" : "NJAZ091",
+        "name" : "Anglický jazyk",
+        "localizedName" : "Anglický jazyk",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 1
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPGR020" : {
+        "id" : "NPGR020",
+        "name" : "Geometrie pro počítačovou grafiku",
+        "localizedName" : "Geometrie pro počítačovou grafiku",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI095" : {
+        "id" : "NSWI095",
+        "name" : "Úvod do UNIXu",
+        "localizedName" : "Úvod do UNIXu",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI062" : {
+        "id" : "NMAI062",
+        "name" : "Algebra I",
+        "localizedName" : "Algebra I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI090" : {
+        "id" : "NSWI090",
+        "name" : "Počítačové sítě I",
+        "localizedName" : "Počítačové sítě I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDBI026" : {
+        "id" : "NDBI026",
+        "name" : "Databázové aplikace",
+        "localizedName" : "Databázové aplikace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 4
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDBI025" : {
+        "id" : "NDBI025",
+        "name" : "Databázové systémy",
+        "localizedName" : "Databázové systémy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI063" : {
+        "id" : "NMAI063",
+        "name" : "Algebra II",
+        "localizedName" : "Algebra II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI009" : {
+        "id" : "NDMI009",
+        "name" : "Kombinatorická a výpočetní geometrie I",
+        "localizedName" : "Kombinatorická a výpočetní geometrie I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI015" : {
+        "id" : "NSWI015",
+        "name" : "Programování v Unixu",
+        "localizedName" : "Programování v Unixu",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI098" : {
+        "id" : "NSWI098",
+        "name" : "Principy překladačů",
+        "localizedName" : "Principy překladačů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI002" : {
+        "id" : "NDMI002",
+        "name" : "Diskrétní matematika",
+        "localizedName" : "Diskrétní matematika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL063" : {
+        "id" : "NAIL063",
+        "name" : "Teorie množin",
+        "localizedName" : "Teorie množin",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL062" : {
+        "id" : "NAIL062",
+        "name" : "Výroková a predikátová logika",
+        "localizedName" : "Výroková a predikátová logika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI011" : {
+        "id" : "NDMI011",
+        "name" : "Kombinatorika a grafy I",
+        "localizedName" : "Kombinatorika a grafy I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI012" : {
+        "id" : "NDMI012",
+        "name" : "Kombinatorika a grafy II",
+        "localizedName" : "Kombinatorika a grafy II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG013" : {
+        "id" : "NPRG013",
+        "name" : "Java",
+        "localizedName" : "Java",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN060" : {
+        "id" : "NTIN060",
+        "name" : "Algoritmy a datové struktury I",
+        "localizedName" : "Algoritmy a datové struktury I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG051" : {
+        "id" : "NPRG051",
+        "name" : "Pokročilé programování v C++",
+        "localizedName" : "Pokročilé programování v C++",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL063" : {
+        "id" : "NPFL063",
+        "name" : "Úvod do obecné lingvistiky",
+        "localizedName" : "Úvod do obecné lingvistiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NTVY014" : {
+        "id" : "NTVY014",
+        "name" : "Tělesná výchova I",
+        "localizedName" : "Tělesná výchova I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 1
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NTVY015" : {
+        "id" : "NTVY015",
+        "name" : "Tělesná výchova II",
+        "localizedName" : "Tělesná výchova II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 1
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI120" : {
+        "id" : "NSWI120",
+        "name" : "Principy počítačů",
+        "localizedName" : "Principy počítačů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWE002" : {
+        "id" : "NSWE002",
+        "name" : "Úvod do spolehlivých systémů",
+        "localizedName" : "Úvod do spolehlivých systémů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 1
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NTVY016" : {
+        "id" : "NTVY016",
+        "name" : "Tělesná výchova III",
+        "localizedName" : "Tělesná výchova III",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 1
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI089" : {
+        "id" : "NSWI089",
+        "name" : "Ochrana informací I",
+        "localizedName" : "Ochrana informací I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI045" : {
+        "id" : "NSWI045",
+        "name" : "Rodina protokolů TCP/IP",
+        "localizedName" : "Rodina protokolů TCP/IP",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSZZ031" : {
+        "id" : "NSZZ031",
+        "name" : "Vypracování a konzultace bakalářské práce",
+        "localizedName" : "Vypracování a konzultace bakalářské práce",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NTVY017" : {
+        "id" : "NTVY017",
+        "name" : "Tělesná výchova IV",
+        "localizedName" : "Tělesná výchova IV",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 1
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG021" : {
+        "id" : "NPRG021",
+        "name" : "Pokročilé programování na platformě Java",
+        "localizedName" : "Pokročilé programování na platformě Java",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPGR002" : {
+        "id" : "NPGR002",
+        "name" : "Digitální zpracování obrazu",
+        "localizedName" : "Digitální zpracování obrazu",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPGR003" : {
+        "id" : "NPGR003",
+        "name" : "Počítačová grafika I",
+        "localizedName" : "Počítačová grafika I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPGR004" : {
+        "id" : "NPGR004",
+        "name" : "Počítačová grafika II",
+        "localizedName" : "Počítačová grafika II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL054" : {
+        "id" : "NPFL054",
+        "name" : "Úvod do strojového učení",
+        "localizedName" : "Úvod do strojového učení",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI042" : {
+        "id" : "NMAI042",
+        "name" : "Numerická matematika",
+        "localizedName" : "Numerická matematika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI036" : {
+        "id" : "NSWI036",
+        "name" : "Programování pro Windows I",
+        "localizedName" : "Programování pro Windows I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDBI007" : {
+        "id" : "NDBI007",
+        "name" : "Organizace a zpracování dat I",
+        "localizedName" : "Organizace a zpracování dat I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 4
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL012" : {
+        "id" : "NPFL012",
+        "name" : "Úvod do počítačové lingvistiky",
+        "localizedName" : "Úvod do počítačové lingvistiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG038" : {
+        "id" : "NPRG038",
+        "name" : "Pokročilé programování pro .NET I",
+        "localizedName" : "Pokročilé programování pro .NET I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG036" : {
+        "id" : "NPRG036",
+        "name" : "Technologie XML",
+        "localizedName" : "Technologie XML",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI106" : {
+        "id" : "NSWI106",
+        "name" : "Administrace Unixu",
+        "localizedName" : "Administrace Unixu",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG035" : {
+        "id" : "NPRG035",
+        "name" : "Jazyk C# a platforma .NET",
+        "localizedName" : "Jazyk C# a platforma .NET",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG030" : {
+        "id" : "NPRG030",
+        "name" : "Programování I",
+        "localizedName" : "Programování I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG031" : {
+        "id" : "NPRG031",
+        "name" : "Programování II",
+        "localizedName" : "Programování II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      }
+    }
+  }
+}

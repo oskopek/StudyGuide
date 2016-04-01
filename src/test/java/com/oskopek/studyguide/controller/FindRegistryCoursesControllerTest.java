@@ -34,7 +34,7 @@ public class FindRegistryCoursesControllerTest {
     }
 
     @Test
-    public void testFindCourses() throws Exception {
+    public void testFindCourses() throws Exception { // TODO fix reliability of this test
         String key = "aaaaaaa";
         List<Course> courses = findRegistryCoursesController.findCourses(key).collect(Collectors.toList());
 
