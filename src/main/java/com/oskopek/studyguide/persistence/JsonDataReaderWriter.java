@@ -18,11 +18,10 @@ import java.nio.file.Paths;
 /**
  * Reads and writes the {@link com.oskopek.studyguide.model.StudyPlan} to a JSON formatted file.
  * <p>
- * Specifics of the format: TODO docs format spec + test thoroughly
+ * Specifics of the format can be found in docs/data_format.adoc
  */
 public class JsonDataReaderWriter implements DataReader, DataWriter {
 
-    //private Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
