@@ -5,6 +5,8 @@ import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.SemesterBoxPane;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -91,6 +93,15 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
             };
             return cell;
         });
+
+        EventHandler<Event> d = event -> { // TODO change to on focus
+            CourseEnrollment e = semesterTable.getSelectionModel().getSelectedItem();
+            logger.debug("Focused on CourseEnrollment {}", e);
+            // TODO view course details
+        };
+        semesterTable.setOnMouseClicked(d);
+        semesterTable.setOnKeyReleased(d);
+
     }
 
     /**
@@ -127,7 +138,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
      * @return non-null controller for {@link com.oskopek.studyguide.view.SemesterPane}
      * @see #onRemoveSemester()
      * @see #onDragDetected()
-     * @see #onDragDropped()
+     * @see #onDragDropped(DragEvent)
      */
     private SemesterController getParentController() {
         return (SemesterController) viewElement.getParent().getController();
