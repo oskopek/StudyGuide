@@ -20,7 +20,7 @@ import java.nio.file.Paths;
  * An online HTML scraper for the pages at
  * <a href="http://www.mff.cuni.cz/studium/bcmgr/">http://www.mff.cuni.cz/studium/bcmgr/</a>.
  */
-public class MFFHtmlScraper implements DataReader { // TODO check for nulls, ...
+public class MFFHtmlScraper implements DataReader {
 
     private SISHtmlScraper sisHtmlScraper;
 
@@ -29,6 +29,9 @@ public class MFFHtmlScraper implements DataReader { // TODO check for nulls, ...
      * @param sisUrl the url of a SIS instance
      */
     public MFFHtmlScraper(String sisUrl) {
+        if (sisUrl == null) {
+            throw new IllegalArgumentException("SIS Url cannot be null.");
+        }
         sisHtmlScraper = new SISHtmlScraper(sisUrl);
     }
 
@@ -71,6 +74,9 @@ public class MFFHtmlScraper implements DataReader { // TODO check for nulls, ...
      * @throws IOException if an exception occurs while reading the file
      */
     public StudyPlan scrapeStudyPlan(Path path) throws IOException {
+        if (path == null || !Files.isRegularFile(path)) {
+            throw new IllegalArgumentException("Path " + path + " is null or not a regular file.");
+        }
         InputStream is = Files.newInputStream(path);
         StudyPlan studyPlan = scrapeStudyPlan(is, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
         is.close();
@@ -84,6 +90,9 @@ public class MFFHtmlScraper implements DataReader { // TODO check for nulls, ...
      * @throws IOException if an exception occurs while loading the resource
      */
     public StudyPlan scrapeStudyPlan(String url) throws IOException {
+        if (url == null) {
+            throw new IllegalArgumentException("Url to scrape cannot be null.");
+        }
         URL urlObj = new URL(url);
         URLConnection connection = urlObj.openConnection();
         InputStream is = connection.getInputStream();
@@ -94,11 +103,17 @@ public class MFFHtmlScraper implements DataReader { // TODO check for nulls, ...
 
     @Override
     public StudyPlan readFrom(String fileName) throws IOException, IllegalArgumentException {
+        if (fileName == null) {
+            throw new IllegalArgumentException("File name cannot be null.");
+        }
         return scrapeStudyPlan(Paths.get(fileName));
     }
 
     @Override
     public StudyPlan readFrom(InputStream inputStream) throws IOException, IllegalArgumentException {
+        if (inputStream == null) {
+            throw new IllegalArgumentException("Input stream cannot be null.");
+        }
         return scrapeStudyPlan(inputStream, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
     }
 }

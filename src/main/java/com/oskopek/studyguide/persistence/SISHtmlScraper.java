@@ -36,6 +36,9 @@ public class SISHtmlScraper {
      * @param sisUrl the base url of the SIS instance (without a trailing slash)
      */
     public SISHtmlScraper(String sisUrl) {
+        if (sisUrl == null) {
+            throw new IllegalArgumentException("SIS url cannot be null.");
+        }
         this.sisUrl = sisUrl;
     }
 
@@ -46,6 +49,9 @@ public class SISHtmlScraper {
      * @throws IOException if an error occurs while downloading the pages to scrape
      */
     public CourseRegistry scrapeCourses(String courseId) throws IOException {
+        if (courseId == null) {
+            throw new IllegalArgumentException("Course id cannot be null.");
+        }
         logger.debug("Scraping from SIS: {}", courseId); // TODO OPTIONAL progress reporting action
         String urlString = sisUrl + "/predmety/index.php?do=predmet&kod=" + courseId;
 
