@@ -48,8 +48,9 @@ public class FindRegistryCoursesController implements FindCourses {
      */
     @Override
     public Stream<Course> findCourses(String key) {
+        // limit id search artificially to prevent weird results (a user searches names, mostly)
         Stream<? extends Map.Entry<Float, ? extends Course>> sortedById =
-                mapToSortedPairs(course -> metric.compare(key, course.getId())).limit(10);
+                mapToSortedPairs(course -> metric.compare(key, course.getId())).limit(3);
         Stream<? extends Map.Entry<Float, ? extends Course>> sortedByName =
                 mapToSortedPairs(course -> metric.compare(key, course.name(Locale.getDefault()))).limit(10);
         return Stream.concat(sortedById, sortedByName)
