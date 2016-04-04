@@ -3,7 +3,6 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.nio.file.Paths;
@@ -27,7 +26,6 @@ public class MFFHtmlScraperTest {
     }
 
     @Test
-    @Ignore("download rest of sis to finish this test (bash script)") // TODO fix this test
     public void testScrapeCourses() throws Exception {
         CourseRegistry registry = scraper.scrapeStudyPlan(Paths.get(mffIoiInfoPath)).getCourseRegistry();
         assertNotNull(registry);
