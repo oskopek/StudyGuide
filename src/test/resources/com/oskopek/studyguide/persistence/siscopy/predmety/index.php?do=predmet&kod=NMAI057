@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="formatter" content="is.cuni.cz" />
+		<meta name="robots" content="noarchive" />
+		<title>Předměty</title>
+		<link rel="shortcut icon" href="../img/stev.gif" type="image/gif" />
+		<style type="text/css" media="all">
+			<!-- @import url(../img/jquery-ui.css?1439462994); -->
+			<!-- @import url(../img/stev.css?1452690625); -->
+			<!-- @import url(../img/gray.css?1427716368); -->
+			<!-- @import url(../predmety/predmety.css); -->
+		</style>
+		<script type="text/javascript" src="../lib/js_jquery.js?ver=1417507915"></script>
+		<script type="text/javascript" src="../lib/js_jquery.placeholder.js?ver=1442233895"></script>
+		<script type="text/javascript" src="../lib/js_jquery.gray.js?ver=1427716368"></script>
+		<script type="text/javascript" src="../lib/js_jquery.ui.js?ver=1439462994"></script>
+		<script type="text/javascript" src="../lib/js_stev.js?ver=1451920539"></script>
+		<script type="text/javascript" src="../lib/js_ajax.js?ver=1434447280"></script>
+		<script type="text/javascript" src="../lib/html2canvas.js?ver=1441885882"></script>
+
+<script language="javascript" type="text/javascript">
+var dl_pie = false;
+</script>
+
+	</head>
+<body onclick="if(!isChildOfRegDiv(getEventSourceElement(event))) { HideAllRegisteredDivs(); }" class="pie_available">
+<a name="stev_top"></a>
+
+<script language="javascript" type="text/javascript">
+var dl_lang_id="cs"; var dl_lang = {};dl_lang["stev.js_input_bold"] = "Text, který má být tučný";dl_lang["stev.js_input_italic"] = "Text, který má být kurzívou";dl_lang["stev.js_input_underline"] = "Text, který má být podtržený";dl_lang["stev.js_input_sup"] = "Text, který má být horním indexem";dl_lang["stev.js_input_sub"] = "Text, který má být dolním indexem";dl_lang["stev.js_selected_multiple"] = "Označené položky (klikněte pro odznačení)";dl_lang["stev.js_session_timeout"] = "Sezení je ukončeno. Pro další práci s IS se znovu přihlašte.\nVeškerá neuložená data budou ztracena. Zkopírujte si rozepsaná data.";dl_lang["stev.order_kod_nazev"] = "Změnit třídění na kód - název";dl_lang["stev.order_nazev_kod"] = "Změnit třídění na název - kód";dl_lang["stev.notify.before"] = "před <min> min";dl_lang["stev.autocomplete.placeholder"] = "...hledat";dl_lang["stev.autocomplete.more.placeholder"] = "... další";dl_lang["stev.hlaseni_pripravuji"] = "Shromažďuji potřebné informace pro hlášení problému ...";dl_lang["stev.page_unlimited.warning"] = "POZOR: Nastavujete neomezené stránkování. To způsobí zobrazení všech možných výsledků, kterých může být MNOHO. Souhlasíte?";dl_lang["stev.pie.napoveda_zobraz"] = "Zobrazit nápovědu";
+</script>
+
+
+<script language="javascript" type="text/javascript">
+var dl_root = ".."; var dl_pie_switch = false; var dl_id="";var dl_tid=""; var dl_lang_id="cs";
+            var dl_config = {
+               stev : {
+                  resource_location: "",
+                  pie: {
+                        form_select: false
+                     }
+               }
+            };
+            var dl_module_id = "predmety";
+            var dl_page_info = {
+               url:      "/studium/predmety/index.php?do=predmet&kod=NMAI057",
+               module:   dl_module_id,
+               postdata: "YTowOnt9",
+               getdata : "YToyOntzOjI6ImRvIjtzOjc6InByZWRtZXQiO3M6Mzoia29kIjtzOjc6Ik5NQUkwNTciO30="
+            };
+
+            
+</script>
+
+<div id="hint" style="position:absolute; z-index:100; width:350px; margin-top: 20px; margin-left: 10px; visibility: hidden; display: none; border: 1px solid #FCAF3F;"><div id="hintlbl" style="padding: 4px 2px 4px 2px; background: #FEF7C1; color:#000000;"></div></div>
+
+<div id="stev_header_bkg"><div id="stev_header"><span id="stev_module_ico"><a href="../predmety/index.php" ><img src="../img/predmety.gif" width="32" height="32" alt="Předměty" title="Předměty"></a></span><span id="stev_nazev"><span id="stev_nazev_modulu_sverzi"><span style="" id="stev_nazev_modulu">Předměty</span><span id="verze_modulu">(verze: 768)</span></span><span id="sis_plus_icons"></span><br /><span id="stev_podtitul_modulu">Předmět, akademický rok 2015/2016</span></span></span><span id="stev_logo"></span><span id="stev_role_icons" class="anonym"><span id="stev_role"><span id="stev_role_prihlaseni"><form name="flogin" id="flogin" action="https://is.cuni.cz/studium/verif.php" method="POST"><input type="hidden" name="tstmp" value="1459777265"><input type="hidden" name="accode" value="as2f9nEj9ZvHY"><label for="login">Login :</label>&nbsp;<input type="text" class="inp2" size="30" maxlength="100" name="login" id="login"><label for="heslo">Heslo :</label>&nbsp;<input type="password" class="inp2" size="40" name="heslo" id="heslo"><input type="submit" name="all" value="Přihlásit se"> <a href="https://is.cuni.cz/studium/index.php?sso" style="color:white">Přihlásit přes CAS</a><img src="../img/div_tip.gif" style="cursor: help; margin-left: 3px;" onmousemove="ShowHint('hint',this.id,0,'Přihlášení pomocí Single Sign On umožňující plynulý přechod mezi aplikacemi IS UK, jež tento způsob autentizace podporují, bez nutnosti opětovného přihlašování.');" onmouseout="HideHint('hint');" alt="" title=""></form></span></span><span id="stev_icons"><a class="stev_ico stev_home" href="../index.php" title="zpět na úvodní stránku" id="stev_home" ></a><a class="stev_ico stev_login" href="../login.php?ret=predmety/index.php" title="přihlásit se" id="stev_login" ></a><a class="stev_ico stev_lang_en" href="/studium/eng/predmety/index.php?do=predmet&amp;kod=NMAI057" title="switch to english" id="stev_lang_en" ></a><a class="stev_ico stev_help" href="../help.php?modul=predmety&amp;tema=predm210" title="nápověda" id="stev_help" target="sis_help"></a></span></span></div></div>
+<div id="loading" style="z-index: 1000; left: 0; top: 100; width: 95%; position: absolute; visibility: hidden; cursor: wait;" onclick="ShowHide('loading',0); event.cancelBubble = true;">
+               <center>
+                  <div class="head1" style="width: 300px; color: #FFB675; font-weight: bold; padding: 3px 0px 3px 0px;">Studijní Informační Systém</div>
+                  <div style="width: 300px; background-color: #F5F5F5; border: 1px dotted #CACACA; border-top: 0px; padding-top: 10px; padding-bottom: 10px;">Stránka se načítá...<br>Aplikace<b> Předměty</b></div>
+               </center>
+               </div>
+
+<script language="javascript" type="text/javascript">
+addRegDiv('loading');
+</script>
+
+
+<script language="javascript" type="text/javascript">
+ShowHide('loading',1);
+</script>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0"><tr><td>
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 1px;" class="menu"><tr class="menu1"><td class="session" align="center" valign="middle" width="40" nowrap><span id="session" title="zbývající čas do konce sezení">--:--</span></td><td class="ico"><a class="home" href="../index.php" title="zpět na úvodní stránku"></a></td><td class="ico"><a href="#" class="modul" id="stev_modul" onclick="ShowHide('stev_modul_list', 3); this.blur(); event.cancelBubble = true; return false;" title="změna modulu"></a><div id="stev_modul_list" style="font-family: tahoma, arial, helvetica;"><table border="0" cellpadding="2" cellspacing="0" class="tab2" style="margin: 5px 8px 5px 5px;"><tr><td>&nbsp;</td><td nowrap><a href="../prijimacky/index.php?KEY=Az1"  class="link2">Přijímací řízení</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../term_st2/index.php?KEY=Az1"  class="link2">Termíny zkoušek - přihlašování</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../szz_st/index.php?KEY=Az1"  class="link2">Státní závěrečné zkoušky</a></td></tr><tr><td><span style="font-size: 80%; color: #F00; font-weight: bold;">x</span></td><td nowrap><a href="../predmety/index.php?KEY=Az1"  class="link2">Předměty</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../dipl_st/index.php?KEY=Az1"  class="link2">Témata prací (Výběr práce)</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../anketa/index.php?KEY=Az1"  class="link2">Anketa</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../rozvrhng/index.php?KEY=Az1"  class="link2">Rozvrh NG</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../komise/index.php?KEY=Az1"  class="link2">Komise</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../szz/index.php?KEY=Az1"  class="link2">Pozvánky na státní zkoušky a obhajoby</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../deda_amu/index.php?KEY=Az1"  class="link2">Pořádání akce s mezinárodní účastí</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../ckis/index.php?KEY=Az1"  class="link2">Centrální katalog</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../pez/index.php?KEY=Az1"  class="link2">Portál elektronických zdrojů</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../skolitel/index.php?KEY=Az1"  class="link2">Přehled školitelů</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../soub_mana/index.php?KEY=Az1"  class="link2">Souborový manažer</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../promoce/index.php?KEY=Az1"  class="link2">Promoce</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../harmonogram/index.php?KEY=Az1"  class="link2">Harmonogram</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../ekczv/index.php?KEY=Az1"  class="link2">Evidence kurzů CŽV</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../nastenka/index.php?KEY=Az1"  class="link2">Nástěnka</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../kdojekdo/index.php?KEY=Az1"  class="link2">Hledání osob</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../ciselniky/index.php?KEY=Az1"  class="link2">Číselníky 3</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../loginy/index.php?KEY=Az1"  class="link2">Vyhledávání loginů</a></td></tr></table></div>
+
+<script language="javascript" type="text/javascript">
+addRegDiv('stev_modul_list');
+</script>
+
+
+<script language="javascript" type="text/javascript">
+getE("stev_modul_list").style.display = "none";
+</script>
+</td><td class="ico"><a class="print" href="/studium/predmety/index.php?do=predmet&kod=NMAI057&stev_print=on" target="_blank" title="verze pro tisk"></a></td><td><div class="menu_empty">&nbsp;</div></td>
+<td nowrap><a href="../predmety/index.php?do=search"  class="menu">Hledání ...</a></td>
+<td nowrap><a href="../predmety/index.php?do=ucit"  class="menu">Vyučující</a></td>
+<td nowrap><a href="../predmety/index.php?do=ustav"  class="menu">Katedry</a></td>
+<td nowrap><a href="../predmety/index.php?do=trida"  class="menu">Třídy</a></td>
+<td nowrap><a href="../predmety/index.php?do=klas"  class="menu">Klasifikace</a></td>
+<td nowrap><a href="../predmety/index.php?do=prohl"  class="menu">Prohlížení dle oborů/plánů</a></td>
+<td nowrap><a href="../predmety/index.php?do=setup"  class="menu">Nastavení</a></td><td width="100%"><div class="menu_empty" style="border-right: 1px solid #9EB69B;">&nbsp;</div></td></tr></table>
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0px;" class="menu">
+                     <tr class="menu2">
+                        <td width="42"><div class="menu_empty" style="width: 20px; border-left: 1px solid #9EB69B;">&nbsp;</div></td> <td><div class="menu_empty">&nbsp;</div></td>
+<td nowrap style="border-top: 2px solid #F2A92F; border-left: 1px solid #888888; border-right: 1px solid #888888;"><a href="../predmety/index.php?do=predmet&amp;kod=NMAI057"  class="menu_a">Detail</a></td><td width="100%"><div class="menu_empty" style="border-right: 1px solid #9EB69B;">&nbsp;</div></td></tr><tr><td colspan="2"><div class="shadow">&nbsp;</div></td><td style="border: 0px;"><div class="shadow_a">&nbsp;</div></td><td><div class="shadow">&nbsp;</div></td></tr></table>
+
+
+<div id="content">
+<noscript><table cellspacing="0" cellpadding="1" border="0" width="100%" class="warning"><tr><td align="center" valign="middle" class="warning_ico"><img src="../img/div_warning.gif"  alt="" title=""></td><td class="warning_text"><ul class="warning_text"><li>Váš prohlížeč nepodporuje JavaScript nebo je jeho podpora vypnutá. Některé funkce nemusejí být dostupné.</li></ul></td></tr></table></noscript>
+
+<div class="form_div pageBlock">
+<div class="form_div_title">Lineární algebra I - NMAI057</div>
+
+<table cellspacing="0" cellpadding="0" border="0">
+         <tr><td valign="top">
+<table cellpadding="3" cellspacing="0" class="tab2"><tr>
+                  <th>Anglický název:</th>
+                  <td>Linear Algebra I</td>
+               </tr><tr>
+                  <th>Zajišťuje:</th>
+                  <td><a href="../predmety/redir.php?redir=sezn_kat&amp;fak=11320&amp;kod=32-KAM"  class="link3">Katedra aplikované matematiky (32-KAM)</a></td>
+               </tr><tr>
+                  <th>Fakulta:</th>
+                  <td><a href="../predmety/redir.php?redir=sezn_fak&amp;kod=11320"  class="link3">Matematicko-fyzikální fakulta</a></td>
+               </tr><tr>
+                  <th>Platnost:</th>
+                  <td>od 2015</td>
+               </tr><tr>
+                  <th>Semestr:</th>
+                  <td>zimní</td>
+               </tr><tr>
+                  <th>E-Kredity:</th>
+                  <td>5</td>
+               </tr><tr>
+                  <th>Rozsah, examinace:</th>
+                  <td>zimní s.:2/2  <span style="font-size: 90%; color: #666;">[hodiny/týden]</span></td>
+               </tr><tr>
+                  <th>Počet míst:</th>
+                  <td>neomezen</td>
+               </tr><tr>
+                  <th>Minimální obsazenost:</th>
+                  <td>neomezen</td>
+               </tr><tr>
+                  <th>Stav předmětu:</th>
+                  <td> vyučován</td>
+               </tr><tr>
+                  <th>Jazyk výuky:</th>
+                  <td>čeština, angličtina</td>
+               </tr><tr>
+                  <th>Způsob výuky:</th>
+                  <td> prezenční</td>
+               </tr></table>
+</td><td valign="top">
+<table cellpadding="3" cellspacing="0" class="tab2" style="margin-left: 15px;"><tr>
+                  <th>Garant:</th>
+                  <td><a href="../predmety/redir.php?redir=sezn_ucit&amp;kod=12439"  class="link3">prof. RNDr. Luděk Kučera, DrSc.</a><br /><a href="../predmety/redir.php?redir=sezn_ucit&amp;kod=11306"  class="link3">RNDr. Ondřej Pangrác, Ph.D.</a><br /><a href="../predmety/redir.php?redir=sezn_ucit&amp;kod=11286"  class="link3">doc. Mgr. Zdeněk Dvořák, Ph.D.</a></td>
+               </tr><tr>
+                        <th>Třída:</th>
+                        <td><a href="../predmety/redir.php?redir=sezn_trida&amp;fak=11320&amp;kod=IB"  class="link3">Informatika Bc.</a></td>
+                     </tr><tr>
+                        <th>Klasifikace:</th>
+                        <td><a href="../predmety/redir.php?redir=sezn_klas&amp;kod=MAT"  class="link3">Matematika</a> <b>&gt;</b> <a href="../predmety/redir.php?redir=sezn_klas&amp;kod=MATALG"  class="link3">Algebra</a></td>
+                     </tr><tr>
+                        <th>Je korekvizitou pro:</th>
+                        <td><a href="../predmety/index.php?do=predmet&kod=NMAI058" class="link3" onmousemove="ShowHint('hint',this.id,0,'Lineární algebra II (pro: zápis)');" onmouseout="HideHint('hint');">NMAI058</a></td>
+                     </tr></table>
+</td></tr></table><div style="padding: 2px; margin-top: 5px; background-color: #EEE; border-top:1px solid #CACACA; text-align: right;"><a href="../anketa/redir.php?redir=anketa_v&amp;povinn=NMAI057&amp;fak=11320"  class="link8">Výsledky anket</a>&nbsp;&nbsp;&nbsp;<a href="../term_st2/redir.php?redir=predmet&amp;kod_predmet=NMAI057&amp;fak=11320"  class="link8">Termíny zkoušek</a>&nbsp;&nbsp;&nbsp;<a href="../rozvrhng/redir.php?fakulta=11320&amp;skr=2015&amp;sem=1&amp;predmet=NMAI057"  class="link8">Rozvrh</a>&nbsp;&nbsp;&nbsp;<a href="../nastenka/redir.php?kod=NMAI057"  class="link8">Nástěnka</a>&nbsp;&nbsp;&nbsp;</div>
+<span class="clear"></span></div><div style="border-top: 1px solid #DADADA; margin-bottom: 5px;"></div>
+<table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
+         <tr class="head3">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Anotace</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_A" data-title="">
+
+<script language="javascript" type="text/javascript">
+var pamela_A_showhide_data = Array();pamela_A_showhide_data["CZE"] = "pamela_A_CZE";pamela_A_showhide_data["ENG"] = "pamela_A_ENG";
+</script>
+<select name="pamela_A" id="pamela_A" class="inp1"   onchange="dl_showhide(this, pamela_A_showhide_data);"  ><option class="opt1" value="">---</option><option value="CZE" selected>čeština</option><option value="ENG" >angličtina</option></select></span></td><td></td></tr></table></td>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #006699">
+<div id="pamela_A_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: G_I (11.04.2003)</div><br>Základy lineární algebry (vektorové prostory, lineární zobrazení, řešení soustav lineárních rovnic, matice).</div>
+<div id="pamela_A_ENG" style="padding: 3px 5px 3px 5px; visibility: hidden; display: none;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: G_I (11.04.2003)</div><br>Basics of linear algebra (vector spaces and linear maps, solutions of linear equations, matrices).</div>   </td>
+         </tr>
+         </table><table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
+         <tr class="head3">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Literatura</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_L" data-title="">
+
+<script language="javascript" type="text/javascript">
+var pamela_L_showhide_data = Array();pamela_L_showhide_data["CZE"] = "pamela_L_CZE";pamela_L_showhide_data["ENG"] = "pamela_L_ENG";
+</script>
+<select name="pamela_L" id="pamela_L" class="inp1"   onchange="dl_showhide(this, pamela_L_showhide_data);"  ><option class="opt1" value="">---</option><option value="CZE" selected>čeština</option><option value="ENG" >angličtina</option></select></span></td><td></td></tr></table></td>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #006699">
+<div id="pamela_L_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: doc. Mgr. Milan Hladík, Ph.D. (17.04.2012)</div><br><p>J. Bečvář. Lineární algebra. Matfyzpress, Praha, 3. vydání, 2005.</p>
+<p>L. Bican. Lineární algebra a geometrie. Academia, Praha, 2. vydání, 2009.</p>
+<p>J. Rohn. Lineární algebra a optimalizace. Karolinum, Praha, 2004.</p>
+<p>J. Tůma. Texty k pednásce Lineární algebra, 2003, http://www.karlin.mff.cuni.cz/~tuma/NNlinalg.htm</p>
+<p></p></div>
+<div id="pamela_L_ENG" style="padding: 3px 5px 3px 5px; visibility: hidden; display: none;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: doc. Mgr. Milan Hladík, Ph.D. (22.11.2012)</div><br><p>W. Gareth. Linear Algebra with Applications. Jones and Bartlett Publishers, Boston, 4th edition, 2001.</p>
+<p></p>
+<p>C. D. Meyer. Matrix analysis and applied linear algebra. SIAM, Philadelphia, PA, 2000. http://www.matrixanalysis.com/DownloadChapters.html</p>
+<p></p>
+<p>G. Strang. Linear algebra and its applications. Thomson, USA, 4rd edition, 2006.</p></div>   </td>
+         </tr>
+         </table><table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
+         <tr class="head3">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Sylabus</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_S" data-title="">
+
+<script language="javascript" type="text/javascript">
+var pamela_S_showhide_data = Array();pamela_S_showhide_data["CZE"] = "pamela_S_CZE";pamela_S_showhide_data["ENG"] = "pamela_S_ENG";
+</script>
+<select name="pamela_S" id="pamela_S" class="inp1"   onchange="dl_showhide(this, pamela_S_showhide_data);"  ><option class="opt1" value="">---</option><option value="CZE" selected>čeština</option><option value="ENG" >angličtina</option></select></span></td><td></td></tr></table></td>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #006699">
+<div id="pamela_S_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: FIALA/MFF.CUNI.CZ (19.04.2010)</div><br><p>Základní maticové operace, inverzní matice, Gaussova eliminace, odstupňovaný tvar matice, řešení soustav lineárních rovnic. Vektorové prostory: základní pojmy, báze, dimenze, lineární zobrazení. Aplikace lineární algebry.</p>
+<p></p></div>
+<div id="pamela_S_ENG" style="padding: 3px 5px 3px 5px; visibility: hidden; display: none;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: doc. Mgr. Milan Hladík, Ph.D. (17.04.2012)</div><br><p>Basic matrix operations, inverse matrices. Gaussian elimination, row echelon form, solving systems of linear equations. Vector spaces: basic concepts, basis, dimension, linear mapping. Applications of linear algebra.</p></div>   </td>
+         </tr>
+         </table></div><table border="0" cellspacing="0" cellpadding="0" width="100%" id="foot" style="margin-top: 5px;">
+                     <tr>
+                        <td>&nbsp;</td><td nowrap><a class="top" href="#stev_top" title="na začátek stránky"></a></td><td nowrap><a class="tisk" href="/studium/predmety/index.php?do=predmet&kod=NMAI057&stev_print=on" target="_blank" title="verze pro tisk"></a></td><td nowrap><a href="http://is.cuni.cz/studium/info/index.php">Kontakty</a></td>   <td width="100%">&nbsp;</td>
+                     </tr>
+                     </table><div class="shadow">&nbsp;</div>
+</td></tr></table>
+
+<div id="paticka2"><a href="http://www.cuni.cz">Univerzita Karlova v Praze</a> | <a href="https://is.cuni.cz">Informační systém UK</a></div>
+
+<script language="javascript" type="text/javascript">
+ShowHide('loading',0);
+</script>
+
+</body></html>
