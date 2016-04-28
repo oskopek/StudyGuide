@@ -83,7 +83,7 @@ public class StudyGuideApplication extends Application {
     }
 
     /**
-     * Reinitializes the UI after f.e. loading the model from disk.
+     * Re-initializes the UI after f.e. loading the model from disk.
      * @see #reinitializeFindCourses()
      * @see #reinitializeSemesterBoxes()
      */
