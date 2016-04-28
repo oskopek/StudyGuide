@@ -1,11 +1,16 @@
 package com.oskopek.studyguide.model;
 
+import com.oskopek.studyguide.constraint.BrokenConstraintsEvent;
 import com.oskopek.studyguide.model.constraints.Constraints;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableValue;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+
+import javax.enterprise.event.Event;
+import javax.enterprise.event.Observes;
 
 /**
  * Default implementation of a {@link StudyPlan}.
@@ -92,6 +97,29 @@ public class DefaultStudyPlan implements StudyPlan {
      */
     public ObjectProperty<CourseRegistry> courseRegistryProperty() {
         return courseRegistry;
+    }
+
+    /**
+     * Delegate an intercepted value change event to {@link Constraints} with a current copy of the
+     * {@link #semesterPlanProperty()}.
+     *
+     * @param changed the value that was changed
+     * @param <Changed_> the internal type of an observable value
+     */
+    public <Changed_> void delegateChange(@Observes ObservableValue<Changed_> changed) {
+        System.out.println("Changed!"); // TODO fix me and remove me
+        constraints.get().recalculate(semesterPlan.get(), changed.getValue());
+    }
+
+    /**
+     * Temp. method.
+     * @deprecated  remove me
+     * @param brokenConstraintsEventEvent the eventevent
+     */
+    // TODO remove me
+    public void printBrokenConstraintsEvents(@Observes Event<BrokenConstraintsEvent> brokenConstraintsEventEvent) {
+        System.err.println(brokenConstraintsEventEvent);
+        System.exit(1);
     }
 
     @Override

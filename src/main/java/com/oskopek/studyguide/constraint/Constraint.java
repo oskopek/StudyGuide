@@ -21,6 +21,6 @@ public interface Constraint {
      *
      * @param plan the {@link SemesterPlan} to check
      */
-    void fireIfBroken(SemesterPlan plan);
+    void fireIfBroken(SemesterPlan plan); // TODO reevaluate this
 
 }
