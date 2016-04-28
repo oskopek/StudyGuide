@@ -48,9 +48,7 @@ public class MFFHtmlScraper implements DataReader {
         CourseRegistry registry = new CourseRegistry();
         Document document = Jsoup.parse(stream, encoding, ""); // do not need to resolve relative links
         Elements tables = document.select("table");
-        // TODO gracefully handle other number of tables, but do not go to "recommended" plan
-        for (int i = 0; i < 3; i++) {
-            Element table = tables.get(i);
+        for (Element table : tables) {
             boolean first = true; // skip header
             for (Element row : table.select("tr")) {
                 if (first) {
@@ -58,8 +56,10 @@ public class MFFHtmlScraper implements DataReader {
                     continue;
                 }
                 Elements tableData = row.select("td");
-                String id = tableData.first().text();
-                registry.copyCoursesFrom(sisHtmlScraper.scrapeCourses(id));
+                String id = tableData.first().text().replaceAll("[^a-zA-Z0-9]+", "");
+                if (!id.isEmpty()) { // skip empty lines
+                    registry.copyCoursesFrom(sisHtmlScraper.scrapeCourses(id));
+                }
             }
         }
         DefaultStudyPlan studyPlan = new DefaultStudyPlan();

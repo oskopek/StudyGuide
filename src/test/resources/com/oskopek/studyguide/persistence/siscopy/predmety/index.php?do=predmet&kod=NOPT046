@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="../lib/js_jquery.placeholder.js?ver=1442233895"></script>
 		<script type="text/javascript" src="../lib/js_jquery.gray.js?ver=1427716368"></script>
 		<script type="text/javascript" src="../lib/js_jquery.ui.js?ver=1439462994"></script>
-		<script type="text/javascript" src="../lib/js_stev.js?ver=1451920539"></script>
+		<script type="text/javascript" src="../lib/js_stev.js?ver=1460361380"></script>
 		<script type="text/javascript" src="../lib/js_ajax.js?ver=1434447280"></script>
 		<script type="text/javascript" src="../lib/html2canvas.js?ver=1441885882"></script>
 
@@ -29,7 +29,7 @@ var dl_pie = false;
 <a name="stev_top"></a>
 
 <script language="javascript" type="text/javascript">
-var dl_lang_id="cs"; var dl_lang = {};dl_lang["stev.js_input_bold"] = "Text, který má být tučný";dl_lang["stev.js_input_italic"] = "Text, který má být kurzívou";dl_lang["stev.js_input_underline"] = "Text, který má být podtržený";dl_lang["stev.js_input_sup"] = "Text, který má být horním indexem";dl_lang["stev.js_input_sub"] = "Text, který má být dolním indexem";dl_lang["stev.js_selected_multiple"] = "Označené položky (klikněte pro odznačení)";dl_lang["stev.js_session_timeout"] = "Sezení je ukončeno. Pro další práci s IS se znovu přihlašte.\nVeškerá neuložená data budou ztracena. Zkopírujte si rozepsaná data.";dl_lang["stev.order_kod_nazev"] = "Změnit třídění na kód - název";dl_lang["stev.order_nazev_kod"] = "Změnit třídění na název - kód";dl_lang["stev.notify.before"] = "před <min> min";dl_lang["stev.autocomplete.placeholder"] = "...hledat";dl_lang["stev.autocomplete.more.placeholder"] = "... další";dl_lang["stev.hlaseni_pripravuji"] = "Shromažďuji potřebné informace pro hlášení problému ...";dl_lang["stev.page_unlimited.warning"] = "POZOR: Nastavujete neomezené stránkování. To způsobí zobrazení všech možných výsledků, kterých může být MNOHO. Souhlasíte?";dl_lang["stev.pie.napoveda_zobraz"] = "Zobrazit nápovědu";
+var dl_lang_id="cs"; var dl_lang = {};dl_lang["stev.js_input_bold"] = "Text, který má být tučný";dl_lang["stev.js_input_italic"] = "Text, který má být kurzívou";dl_lang["stev.js_input_underline"] = "Text, který má být podtržený";dl_lang["stev.js_input_sup"] = "Text, který má být horním indexem";dl_lang["stev.js_input_sub"] = "Text, který má být dolním indexem";dl_lang["stev.js_selected_multiple"] = "Označené položky (klikněte pro odznačení)";dl_lang["stev.js_session_timeout"] = "Sezení je ukončeno. Pro další práci s IS se znovu přihlašte.\nVeškerá neuložená data budou ztracena. Zkopírujte si rozepsaná data.";dl_lang["stev.order_kod_nazev"] = "Změnit třídění na kód - název";dl_lang["stev.order_nazev_kod"] = "Změnit třídění na název - kód";dl_lang["stev.notify.before"] = "před <min> min";dl_lang["stev.autocomplete.placeholder"] = "...hledat";dl_lang["stev.autocomplete.more.placeholder"] = "... další";dl_lang["stev.hlaseni_pripravuji"] = "Shromažďuji potřebné informace pro hlášení problému ...";dl_lang["stev.page_unlimited.warning"] = "POZOR: Nastavujete neomezené stránkování. To způsobí zobrazení všech možných výsledků, kterých může být MNOHO. Souhlasíte?";dl_lang["stev.pie.napoveda_zobraz"] = "Zobrazit nápovědu";dl_lang["stev.form.html_check"] = "VAROVÁNÍ: Způsob zápisu HTML značek uvedený v tomto políčku může způsobovat špatné zobrazení na stránce.";dl_lang["stev.form.html_check.navrh"] = "Navrhovaná úprava:";dl_lang["stev.form.html_check.problems"] = "Nalezené problémy a opravy (validátor Tidy):";dl_lang["stev.form.html_check.pouzit"] = "Opravit";dl_lang["stev.form.html_check.navrhnout"] = "Návrh opravy";
 </script>
 
 
@@ -56,7 +56,7 @@ var dl_root = ".."; var dl_pie_switch = false; var dl_id="";var dl_tid=""; var d
 
 <div id="hint" style="position:absolute; z-index:100; width:350px; margin-top: 20px; margin-left: 10px; visibility: hidden; display: none; border: 1px solid #FCAF3F;"><div id="hintlbl" style="padding: 4px 2px 4px 2px; background: #FEF7C1; color:#000000;"></div></div>
 
-<div id="stev_header_bkg"><div id="stev_header"><span id="stev_module_ico"><a href="../predmety/index.php" ><img src="../img/predmety.gif" width="32" height="32" alt="Předměty" title="Předměty"></a></span><span id="stev_nazev"><span id="stev_nazev_modulu_sverzi"><span style="" id="stev_nazev_modulu">Předměty</span><span id="verze_modulu">(verze: 768)</span></span><span id="sis_plus_icons"></span><br /><span id="stev_podtitul_modulu">Předmět, akademický rok 2015/2016</span></span></span><span id="stev_logo"></span><span id="stev_role_icons" class="anonym"><span id="stev_role"><span id="stev_role_prihlaseni"><form name="flogin" id="flogin" action="https://is.cuni.cz/studium/verif.php" method="POST"><input type="hidden" name="tstmp" value="1459777265"><input type="hidden" name="accode" value="as2f9nEj9ZvHY"><label for="login">Login :</label>&nbsp;<input type="text" class="inp2" size="30" maxlength="100" name="login" id="login"><label for="heslo">Heslo :</label>&nbsp;<input type="password" class="inp2" size="40" name="heslo" id="heslo"><input type="submit" name="all" value="Přihlásit se"> <a href="https://is.cuni.cz/studium/index.php?sso" style="color:white">Přihlásit přes CAS</a><img src="../img/div_tip.gif" style="cursor: help; margin-left: 3px;" onmousemove="ShowHint('hint',this.id,0,'Přihlášení pomocí Single Sign On umožňující plynulý přechod mezi aplikacemi IS UK, jež tento způsob autentizace podporují, bez nutnosti opětovného přihlašování.');" onmouseout="HideHint('hint');" alt="" title=""></form></span></span><span id="stev_icons"><a class="stev_ico stev_home" href="../index.php" title="zpět na úvodní stránku" id="stev_home" ></a><a class="stev_ico stev_login" href="../login.php?ret=predmety/index.php" title="přihlásit se" id="stev_login" ></a><a class="stev_ico stev_lang_en" href="/studium/eng/predmety/index.php?do=predmet&amp;kod=NOPT046" title="switch to english" id="stev_lang_en" ></a><a class="stev_ico stev_help" href="../help.php?modul=predmety&amp;tema=predm210" title="nápověda" id="stev_help" target="sis_help"></a></span></span></div></div>
+<div id="stev_header_bkg"><div id="stev_header"><span id="stev_module_ico"><a href="../predmety/index.php" ><img src="../img/predmety.gif" width="32" height="32" alt="Předměty" title="Předměty"></a></span><span id="stev_nazev"><span id="stev_nazev_modulu_sverzi"><span style="" id="stev_nazev_modulu">Předměty</span><span id="verze_modulu">(verze: 768)</span></span><span id="sis_plus_icons"></span><br /><span id="stev_podtitul_modulu">Předmět, akademický rok 2015/2016</span></span></span><span id="stev_logo"></span><span id="stev_role_icons" class="anonym"><span id="stev_role"><span id="stev_role_prihlaseni"><form name="flogin" id="flogin" action="https://is.cuni.cz/studium/verif.php" method="POST"><input type="hidden" name="tstmp" value="1461831956"><input type="hidden" name="accode" value="asq4jGM/q8be."><label for="login">Login :</label>&nbsp;<input type="text" class="inp2" size="30" maxlength="100" name="login" id="login"><label for="heslo">Heslo :</label>&nbsp;<input type="password" class="inp2" size="40" name="heslo" id="heslo"><input type="submit" name="all" value="Přihlásit se"> <a href="https://is.cuni.cz/studium/index.php?sso" style="color:white">Přihlásit přes CAS</a><img src="../img/div_tip.gif" style="cursor: help; margin-left: 3px;" onmousemove="ShowHint('hint',this.id,0,'Přihlášení pomocí Single Sign On umožňující plynulý přechod mezi aplikacemi IS UK, jež tento způsob autentizace podporují, bez nutnosti opětovného přihlašování.');" onmouseout="HideHint('hint');" alt="" title=""></form></span></span><span id="stev_icons"><a class="stev_ico stev_home" href="../index.php" title="zpět na úvodní stránku" id="stev_home" ></a><a class="stev_ico stev_login" href="../login.php?ret=predmety/index.php" title="přihlásit se" id="stev_login" ></a><a class="stev_ico stev_lang_en" href="/studium/eng/predmety/index.php?do=predmet&amp;kod=NOPT046" title="switch to english" id="stev_lang_en" ></a><a class="stev_ico stev_help" href="../help.php?modul=predmety&amp;tema=predm210" title="nápověda" id="stev_help" target="sis_help"></a></span></span></div></div>
 <div id="loading" style="z-index: 1000; left: 0; top: 100; width: 95%; position: absolute; visibility: hidden; cursor: wait;" onclick="ShowHide('loading',0); event.cancelBubble = true;">
                <center>
                   <div class="head1" style="width: 300px; color: #FFB675; font-weight: bold; padding: 3px 0px 3px 0px;">Studijní Informační Systém</div>
@@ -120,7 +120,7 @@ getE("stev_modul_list").style.display = "none";
                   <td><a href="../predmety/redir.php?redir=sezn_fak&amp;kod=11320"  class="link3">Matematicko-fyzikální fakulta</a></td>
                </tr><tr>
                   <th>Platnost:</th>
-                  <td>od 2015</td>
+                  <td>od 2015 do 2015</td>
                </tr><tr>
                   <th>Semestr:</th>
                   <td>letní</td>
@@ -167,7 +167,7 @@ getE("stev_modul_list").style.display = "none";
 <span class="clear"></span></div><div style="border-top: 1px solid #DADADA; margin-bottom: 5px;"></div>
 <table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
          <tr class="head3">
-            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Anotace</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_A" data-title="">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Anotace</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_A" data-title="" data-param_empty_option_text="'---'">
 
 <script language="javascript" type="text/javascript">
 var pamela_A_showhide_data = Array();pamela_A_showhide_data["CZE"] = "pamela_A_CZE";pamela_A_showhide_data["ENG"] = "pamela_A_ENG";
@@ -181,7 +181,7 @@ var pamela_A_showhide_data = Array();pamela_A_showhide_data["CZE"] = "pamela_A_C
          </tr>
          </table><table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
          <tr class="head3">
-            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Literatura</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_L" data-title="">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Literatura</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_L" data-title="" data-param_empty_option_text="'---'">
 
 <script language="javascript" type="text/javascript">
 var pamela_L_showhide_data = Array();pamela_L_showhide_data["CZE"] = "pamela_L_CZE";pamela_L_showhide_data["ENG"] = "pamela_L_ENG";
@@ -201,7 +201,7 @@ var pamela_L_showhide_data = Array();pamela_L_showhide_data["CZE"] = "pamela_L_C
          </tr>
          </table><table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
          <tr class="head3">
-            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Sylabus</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_S" data-title="">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Sylabus</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_S" data-title="" data-param_empty_option_text="'---'">
 
 <script language="javascript" type="text/javascript">
 var pamela_S_showhide_data = Array();pamela_S_showhide_data["CZE"] = "pamela_S_CZE";pamela_S_showhide_data["ENG"] = "pamela_S_ENG";
@@ -210,7 +210,7 @@ var pamela_S_showhide_data = Array();pamela_S_showhide_data["CZE"] = "pamela_S_C
          </tr>
          <tr>
             <td style="border: 1px solid #006699">
-<div id="pamela_S_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: doc. Mgr. Milan Hladík, Ph.D. (04.05.2015)</div><br><p>Základy diskrétní optimalizace:</p>
+<div id="pamela_S_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: doc. Mgr. Milan Hladík, Ph.D. (07.04.2016)</div><br><p>Základy diskrétní optimalizace:</p>
 <p></p>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li>  Úvod, příklady optimalizačních problémů a optimalizačních technik. Analýza algoritmů, implementace, složitost.</li></ul>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Eulerovská procházka, hladový algoritmus, nejkratsi cesta a jejich souvislosti.</li></ul>
@@ -220,14 +220,15 @@ var pamela_S_showhide_data = Array();pamela_S_showhide_data["CZE"] = "pamela_S_C
 <p></p>
 <p>Základy spojité optimalizace:</p>
 <p></p>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Konvexní funkce a množiny, teorie a metody konvexní optimalizace </li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Konvexní funkce a množiny</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Konvexní optimalizace </li></ul>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Kvadratické programování</li></ul>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Vicekriteriální optimalizace</li></ul>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Globální optimalizace</li></ul>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Heuristiky a metaheuristiky</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Kuželové programování a dualita</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Karush-Kuhn-Tuckerovy podmí­nky optimality</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Základní metody</li></ul>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Programování s nepřesnými daty, robustní optimalizace </li></ul>
 <p></p></div>
-<div id="pamela_S_ENG" style="padding: 3px 5px 3px 5px; visibility: hidden; display: none;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: doc. Mgr. Milan Hladík, Ph.D. (04.05.2015)</div><br><p>Fundamentals of discrete optimization:</p>
+<div id="pamela_S_ENG" style="padding: 3px 5px 3px 5px; visibility: hidden; display: none;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: doc. Mgr. Milan Hladík, Ph.D. (07.04.2016)</div><br><p>Fundamentals of discrete optimization:</p>
 <p></p>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li>  Introduction, examples of optimization examples and techniques. Analysis of algorithms, implementation and complexity.</li></ul>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Euler walk, greedy algorithms, shortest path and relations.</li></ul>
@@ -237,11 +238,12 @@ var pamela_S_showhide_data = Array();pamela_S_showhide_data["CZE"] = "pamela_S_C
 <p></p>
 <p>Fundamentals of continuous optimization:</p>
 <p></p>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Convex functions and sets, theory and methods of convex optimization</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Convex functions and sets</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Convex optimization</li></ul>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Quadratic programming</li></ul>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Multiobjective optimization</li></ul>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Global optimization</li></ul>
-<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Heuristics a metaheuristics</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Cone programming and duality</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Karush-Kuhn-Tucker optimality conditions</li></ul>
+<ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Basic methods</li></ul>
 <ul style="margin: 0px 0px 0px 0px; padding-left: 15px;"><li> Programming with uncertain data, robust optimization</li></ul>
 <p></p></div>   </td>
          </tr>

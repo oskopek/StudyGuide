@@ -30,8 +30,7 @@ public class MFFHtmlScraperTest {
         CourseRegistry registry = scraper.scrapeStudyPlan(Paths.get(mffIoiInfoPath)).getCourseRegistry();
         assertNotNull(registry);
         assertNotNull(registry.courseMapValues());
-        assertEquals(65, registry.courseMapValues().size()); // 61 base from IOI + 4 required courses
-
+        assertEquals(70, registry.courseMapValues().size()); // 61 base from IOI + 4 required courses + random deps
         StudyPlan studyPlan = new JsonDataReaderWriter().readFrom(referenceFile);
         assertArrayEquals(studyPlan.getCourseRegistry().courseMapValues().toArray(),
                 registry.courseMapValues().toArray());

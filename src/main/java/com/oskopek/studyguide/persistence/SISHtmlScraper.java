@@ -57,7 +57,7 @@ public class SISHtmlScraper {
 
         InputStream is;
         String encoding;
-        if (urlString.startsWith("file://")) { // TODO hack
+        if (urlString.startsWith("file://")) { // TODO OPTIONAL hack
             urlString = urlString.substring(7);
             is = Files.newInputStream(Paths.get(urlString));
             encoding = "utf-8"; // TODO OPTIONAL UTF-8 is wrong
