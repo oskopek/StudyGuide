@@ -35,14 +35,23 @@ public class CourseRegistry {
             throw new IllegalArgumentException("Cannot add null Course to registry.");
         }
         courseIdMap.put(course.getId(), course);
+        putAllCourses(course.getRequiredCourses());
     }
 
     /**
      * Copies (with overwriting) all courses from the registry into this registry.
      * @param registry the registry to copy courses from
      */
-    public void copyCoursesFrom(CourseRegistry registry) {
-        for (Course course : registry.courseMapValues()) {
+    public void putAllCourses(CourseRegistry registry) {
+        putAllCourses(registry.courseMapValues());
+    }
+
+    /**
+     * Copies (with overwriting) all courses from the iterable into this registry.
+     * @param courses the iterable to copy courses from
+     */
+    public void putAllCourses(Iterable<Course> courses) {
+        for (Course course : courses) {
             putCourse(course);
         }
     }

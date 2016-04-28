@@ -62,7 +62,7 @@ public class MFFWebScraperIT {
 
     private void scrapeAllParallel(String urlBase, String[] urlExt, String refFileBase,
                                    String[] refFiles) throws Exception {
-        int shortenedLength = 1; // urlExt.length;
+        int shortenedLength = 1; //urlExt.length;
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         for (int i = 0; i < shortenedLength; i++) {
             logger.debug("Scheduling scrape for plan {}...", refFiles[i]);
