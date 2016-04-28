@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.controller;
 
+import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.ChooseCourseDialogPane;
@@ -62,8 +63,13 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
             if (chosen != null) {
                 logger.debug("Chosen course: {}", chosen);
                 try {
-                    // TODO bug when adding course with no semesters initialized
-                    studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester().addCourseEnrollment(chosen);
+                    Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
+                    if (addTo == null) { // no semester in plan
+                        AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
+                                AbstractFXMLPane.messages.getString("findCourses.noSemester"));
+                    } else {
+                        addTo.addCourseEnrollment(chosen);
+                    }
                 } catch (IllegalArgumentException e) {
                     logger.debug("Added wrong course({}), showing error box.", chosen);
                     AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
