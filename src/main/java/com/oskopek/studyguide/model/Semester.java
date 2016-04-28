@@ -74,24 +74,18 @@ public class Semester {
         if (course == null) {
             throw new IllegalArgumentException("Course cannot be null.");
         }
-        addCourseEnrollment(new CourseEnrollment(course, this, false));
+        addCourseEnrollment(new CourseEnrollment(course, false));
     }
 
     /**
      * Add the {@link CourseEnrollment} to this semester.
      *
      * @param courseEnrollment the enrollment to add to this semester, non-null
-     * @throws IllegalArgumentException if the {@link CourseEnrollment#getSemester()} isn't this this semester
-     * or if {@link Course} is already enrolled
+     * @throws IllegalArgumentException if the {@link Course} is already enrolled
      */
     private void addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
         if (courseEnrollment == null) {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
-        }
-        if (!equals(courseEnrollment.getSemester())) {
-            throw new IllegalArgumentException(
-                    "Cannot add courseEnrollment (" + courseEnrollment + ") with different semester ("
-                            + courseEnrollment.getSemester() + ") to semester (" + this + ")");
         }
         if (courseEnrollmentList.contains(courseEnrollment)) {
             throw new IllegalArgumentException("Semester (" + this + ") already contains course enrollment of course ("
@@ -104,16 +98,11 @@ public class Semester {
      * Remove the {@link CourseEnrollment} from this semester.
      *
      * @param courseEnrollment the enrollment to remove from this semester, non-null
-     * @throws IllegalArgumentException if the {@link CourseEnrollment#getSemester()} isn't this this semester
+     * @throws IllegalArgumentException if the course enrollment is null
      */
     public void removeCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
         if (courseEnrollment == null) {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
-        }
-        if (!equals(courseEnrollment.getSemester())) {
-            throw new IllegalArgumentException(
-                    "Cannot remove courseEnrollment (" + courseEnrollment + ") with different semester ("
-                            + courseEnrollment.getSemester() + ") from semester (" + this + ")");
         }
         courseEnrollmentList.remove(courseEnrollment);
     }

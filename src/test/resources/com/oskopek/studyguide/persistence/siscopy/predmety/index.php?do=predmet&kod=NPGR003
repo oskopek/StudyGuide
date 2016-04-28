@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="formatter" content="is.cuni.cz" />
+		<meta name="robots" content="noarchive" />
+		<title>Předměty</title>
+		<link rel="shortcut icon" href="../img/stev.gif" type="image/gif" />
+		<style type="text/css" media="all">
+			<!-- @import url(../img/jquery-ui.css?1439462994); -->
+			<!-- @import url(../img/stev.css?1452690625); -->
+			<!-- @import url(../img/gray.css?1427716368); -->
+			<!-- @import url(../predmety/predmety.css); -->
+		</style>
+		<script type="text/javascript" src="../lib/js_jquery.js?ver=1417507915"></script>
+		<script type="text/javascript" src="../lib/js_jquery.placeholder.js?ver=1442233895"></script>
+		<script type="text/javascript" src="../lib/js_jquery.gray.js?ver=1427716368"></script>
+		<script type="text/javascript" src="../lib/js_jquery.ui.js?ver=1439462994"></script>
+		<script type="text/javascript" src="../lib/js_stev.js?ver=1460361380"></script>
+		<script type="text/javascript" src="../lib/js_ajax.js?ver=1434447280"></script>
+		<script type="text/javascript" src="../lib/html2canvas.js?ver=1441885882"></script>
+
+<script language="javascript" type="text/javascript">
+var dl_pie = false;
+</script>
+
+	</head>
+<body onclick="if(!isChildOfRegDiv(getEventSourceElement(event))) { HideAllRegisteredDivs(); }" class="pie_available">
+<a name="stev_top"></a>
+
+<script language="javascript" type="text/javascript">
+var dl_lang_id="cs"; var dl_lang = {};dl_lang["stev.js_input_bold"] = "Text, který má být tučný";dl_lang["stev.js_input_italic"] = "Text, který má být kurzívou";dl_lang["stev.js_input_underline"] = "Text, který má být podtržený";dl_lang["stev.js_input_sup"] = "Text, který má být horním indexem";dl_lang["stev.js_input_sub"] = "Text, který má být dolním indexem";dl_lang["stev.js_selected_multiple"] = "Označené položky (klikněte pro odznačení)";dl_lang["stev.js_session_timeout"] = "Sezení je ukončeno. Pro další práci s IS se znovu přihlašte.\nVeškerá neuložená data budou ztracena. Zkopírujte si rozepsaná data.";dl_lang["stev.order_kod_nazev"] = "Změnit třídění na kód - název";dl_lang["stev.order_nazev_kod"] = "Změnit třídění na název - kód";dl_lang["stev.notify.before"] = "před <min> min";dl_lang["stev.autocomplete.placeholder"] = "...hledat";dl_lang["stev.autocomplete.more.placeholder"] = "... další";dl_lang["stev.hlaseni_pripravuji"] = "Shromažďuji potřebné informace pro hlášení problému ...";dl_lang["stev.page_unlimited.warning"] = "POZOR: Nastavujete neomezené stránkování. To způsobí zobrazení všech možných výsledků, kterých může být MNOHO. Souhlasíte?";dl_lang["stev.pie.napoveda_zobraz"] = "Zobrazit nápovědu";dl_lang["stev.form.html_check"] = "VAROVÁNÍ: Způsob zápisu HTML značek uvedený v tomto políčku může způsobovat špatné zobrazení na stránce.";dl_lang["stev.form.html_check.navrh"] = "Navrhovaná úprava:";dl_lang["stev.form.html_check.problems"] = "Nalezené problémy a opravy (validátor Tidy):";dl_lang["stev.form.html_check.pouzit"] = "Opravit";dl_lang["stev.form.html_check.navrhnout"] = "Návrh opravy";
+</script>
+
+
+<script language="javascript" type="text/javascript">
+var dl_root = ".."; var dl_pie_switch = false; var dl_id="";var dl_tid=""; var dl_lang_id="cs";
+            var dl_config = {
+               stev : {
+                  resource_location: "",
+                  pie: {
+                        form_select: false
+                     }
+               }
+            };
+            var dl_module_id = "predmety";
+            var dl_page_info = {
+               url:      "/studium/predmety/index.php?do=predmet&kod=NPGR003",
+               module:   dl_module_id,
+               postdata: "YTowOnt9",
+               getdata : "YToyOntzOjI6ImRvIjtzOjc6InByZWRtZXQiO3M6Mzoia29kIjtzOjc6Ik5QR1IwMDMiO30="
+            };
+
+            
+</script>
+
+<div id="hint" style="position:absolute; z-index:100; width:350px; margin-top: 20px; margin-left: 10px; visibility: hidden; display: none; border: 1px solid #FCAF3F;"><div id="hintlbl" style="padding: 4px 2px 4px 2px; background: #FEF7C1; color:#000000;"></div></div>
+
+<div id="stev_header_bkg"><div id="stev_header"><span id="stev_module_ico"><a href="../predmety/index.php" ><img src="../img/predmety.gif" width="32" height="32" alt="Předměty" title="Předměty"></a></span><span id="stev_nazev"><span id="stev_nazev_modulu_sverzi"><span style="" id="stev_nazev_modulu">Předměty</span><span id="verze_modulu">(verze: 768)</span></span><span id="sis_plus_icons"></span><br /><span id="stev_podtitul_modulu">Předmět, akademický rok 2015/2016</span></span></span><span id="stev_logo"></span><span id="stev_role_icons" class="anonym"><span id="stev_role"><span id="stev_role_prihlaseni"><form name="flogin" id="flogin" action="https://is.cuni.cz/studium/verif.php" method="POST"><input type="hidden" name="tstmp" value="1461831956"><input type="hidden" name="accode" value="asq4jGM/q8be."><label for="login">Login :</label>&nbsp;<input type="text" class="inp2" size="30" maxlength="100" name="login" id="login"><label for="heslo">Heslo :</label>&nbsp;<input type="password" class="inp2" size="40" name="heslo" id="heslo"><input type="submit" name="all" value="Přihlásit se"> <a href="https://is.cuni.cz/studium/index.php?sso" style="color:white">Přihlásit přes CAS</a><img src="../img/div_tip.gif" style="cursor: help; margin-left: 3px;" onmousemove="ShowHint('hint',this.id,0,'Přihlášení pomocí Single Sign On umožňující plynulý přechod mezi aplikacemi IS UK, jež tento způsob autentizace podporují, bez nutnosti opětovného přihlašování.');" onmouseout="HideHint('hint');" alt="" title=""></form></span></span><span id="stev_icons"><a class="stev_ico stev_home" href="../index.php" title="zpět na úvodní stránku" id="stev_home" ></a><a class="stev_ico stev_login" href="../login.php?ret=predmety/index.php" title="přihlásit se" id="stev_login" ></a><a class="stev_ico stev_lang_en" href="/studium/eng/predmety/index.php?do=predmet&amp;kod=NPGR003" title="switch to english" id="stev_lang_en" ></a><a class="stev_ico stev_help" href="../help.php?modul=predmety&amp;tema=predm210" title="nápověda" id="stev_help" target="sis_help"></a></span></span></div></div>
+<div id="loading" style="z-index: 1000; left: 0; top: 100; width: 95%; position: absolute; visibility: hidden; cursor: wait;" onclick="ShowHide('loading',0); event.cancelBubble = true;">
+               <center>
+                  <div class="head1" style="width: 300px; color: #FFB675; font-weight: bold; padding: 3px 0px 3px 0px;">Studijní Informační Systém</div>
+                  <div style="width: 300px; background-color: #F5F5F5; border: 1px dotted #CACACA; border-top: 0px; padding-top: 10px; padding-bottom: 10px;">Stránka se načítá...<br>Aplikace<b> Předměty</b></div>
+               </center>
+               </div>
+
+<script language="javascript" type="text/javascript">
+addRegDiv('loading');
+</script>
+
+
+<script language="javascript" type="text/javascript">
+ShowHide('loading',1);
+</script>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0"><tr><td>
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 1px;" class="menu"><tr class="menu1"><td class="session" align="center" valign="middle" width="40" nowrap><span id="session" title="zbývající čas do konce sezení">--:--</span></td><td class="ico"><a class="home" href="../index.php" title="zpět na úvodní stránku"></a></td><td class="ico"><a href="#" class="modul" id="stev_modul" onclick="ShowHide('stev_modul_list', 3); this.blur(); event.cancelBubble = true; return false;" title="změna modulu"></a><div id="stev_modul_list" style="font-family: tahoma, arial, helvetica;"><table border="0" cellpadding="2" cellspacing="0" class="tab2" style="margin: 5px 8px 5px 5px;"><tr><td>&nbsp;</td><td nowrap><a href="../prijimacky/index.php?KEY=Az1"  class="link2">Přijímací řízení</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../term_st2/index.php?KEY=Az1"  class="link2">Termíny zkoušek - přihlašování</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../szz_st/index.php?KEY=Az1"  class="link2">Státní závěrečné zkoušky</a></td></tr><tr><td><span style="font-size: 80%; color: #F00; font-weight: bold;">x</span></td><td nowrap><a href="../predmety/index.php?KEY=Az1"  class="link2">Předměty</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../dipl_st/index.php?KEY=Az1"  class="link2">Témata prací (Výběr práce)</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../anketa/index.php?KEY=Az1"  class="link2">Anketa</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../rozvrhng/index.php?KEY=Az1"  class="link2">Rozvrh NG</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../komise/index.php?KEY=Az1"  class="link2">Komise</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../szz/index.php?KEY=Az1"  class="link2">Pozvánky na státní zkoušky a obhajoby</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../deda_amu/index.php?KEY=Az1"  class="link2">Pořádání akce s mezinárodní účastí</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../ckis/index.php?KEY=Az1"  class="link2">Centrální katalog</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../pez/index.php?KEY=Az1"  class="link2">Portál elektronických zdrojů</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../skolitel/index.php?KEY=Az1"  class="link2">Přehled školitelů</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../soub_mana/index.php?KEY=Az1"  class="link2">Souborový manažer</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../promoce/index.php?KEY=Az1"  class="link2">Promoce</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../harmonogram/index.php?KEY=Az1"  class="link2">Harmonogram</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../ekczv/index.php?KEY=Az1"  class="link2">Evidence kurzů CŽV</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../nastenka/index.php?KEY=Az1"  class="link2">Nástěnka</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../kdojekdo/index.php?KEY=Az1"  class="link2">Hledání osob</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../ciselniky/index.php?KEY=Az1"  class="link2">Číselníky 3</a></td></tr><tr><td>&nbsp;</td><td nowrap><a href="../loginy/index.php?KEY=Az1"  class="link2">Vyhledávání loginů</a></td></tr></table></div>
+
+<script language="javascript" type="text/javascript">
+addRegDiv('stev_modul_list');
+</script>
+
+
+<script language="javascript" type="text/javascript">
+getE("stev_modul_list").style.display = "none";
+</script>
+</td><td class="ico"><a class="print" href="/studium/predmety/index.php?do=predmet&kod=NPGR003&stev_print=on" target="_blank" title="verze pro tisk"></a></td><td><div class="menu_empty">&nbsp;</div></td>
+<td nowrap><a href="../predmety/index.php?do=search"  class="menu">Hledání ...</a></td>
+<td nowrap><a href="../predmety/index.php?do=ucit"  class="menu">Vyučující</a></td>
+<td nowrap><a href="../predmety/index.php?do=ustav"  class="menu">Katedry</a></td>
+<td nowrap><a href="../predmety/index.php?do=trida"  class="menu">Třídy</a></td>
+<td nowrap><a href="../predmety/index.php?do=klas"  class="menu">Klasifikace</a></td>
+<td nowrap><a href="../predmety/index.php?do=prohl"  class="menu">Prohlížení dle oborů/plánů</a></td>
+<td nowrap><a href="../predmety/index.php?do=setup"  class="menu">Nastavení</a></td><td width="100%"><div class="menu_empty" style="border-right: 1px solid #9EB69B;">&nbsp;</div></td></tr></table>
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0px;" class="menu">
+                     <tr class="menu2">
+                        <td width="42"><div class="menu_empty" style="width: 20px; border-left: 1px solid #9EB69B;">&nbsp;</div></td> <td><div class="menu_empty">&nbsp;</div></td>
+<td nowrap style="border-top: 2px solid #F2A92F; border-left: 1px solid #888888; border-right: 1px solid #888888;"><a href="../predmety/index.php?do=predmet&amp;kod=NPGR003"  class="menu_a">Detail</a></td><td width="100%"><div class="menu_empty" style="border-right: 1px solid #9EB69B;">&nbsp;</div></td></tr><tr><td colspan="2"><div class="shadow">&nbsp;</div></td><td style="border: 0px;"><div class="shadow_a">&nbsp;</div></td><td><div class="shadow">&nbsp;</div></td></tr></table>
+
+
+<div id="content">
+<noscript><table cellspacing="0" cellpadding="1" border="0" width="100%" class="warning"><tr><td align="center" valign="middle" class="warning_ico"><img src="../img/div_warning.gif"  alt="" title=""></td><td class="warning_text"><ul class="warning_text"><li>Váš prohlížeč nepodporuje JavaScript nebo je jeho podpora vypnutá. Některé funkce nemusejí být dostupné.</li></ul></td></tr></table></noscript>
+
+<div class="form_div pageBlock">
+<div class="form_div_title">Počítačová grafika I - NPGR003</div>
+
+<table cellspacing="0" cellpadding="0" border="0">
+         <tr><td valign="top">
+<table cellpadding="3" cellspacing="0" class="tab2"><tr>
+                  <th>Anglický název:</th>
+                  <td>Computer Graphics I</td>
+               </tr><tr>
+                  <th>Zajišťuje:</th>
+                  <td><a href="../predmety/redir.php?redir=sezn_kat&amp;fak=11320&amp;kod=32-KSVI"  class="link3">Katedra softwaru a výuky informatiky (32-KSVI)</a></td>
+               </tr><tr>
+                  <th>Fakulta:</th>
+                  <td><a href="../predmety/redir.php?redir=sezn_fak&amp;kod=11320"  class="link3">Matematicko-fyzikální fakulta</a></td>
+               </tr><tr>
+                  <th>Platnost:</th>
+                  <td>od 2015</td>
+               </tr><tr>
+                  <th>Semestr:</th>
+                  <td>zimní</td>
+               </tr><tr>
+                  <th>E-Kredity:</th>
+                  <td>6</td>
+               </tr><tr>
+                  <th>Rozsah, examinace:</th>
+                  <td>zimní s.:2/2  <span style="font-size: 90%; color: #666;">[hodiny/týden]</span></td>
+               </tr><tr>
+                  <th>Počet míst:</th>
+                  <td>neomezen</td>
+               </tr><tr>
+                  <th>Minimální obsazenost:</th>
+                  <td>neomezen</td>
+               </tr><tr>
+                  <th>Stav předmětu:</th>
+                  <td> vyučován</td>
+               </tr><tr>
+                  <th>Jazyk výuky:</th>
+                  <td>čeština, angličtina</td>
+               </tr><tr>
+                  <th>Způsob výuky:</th>
+                  <td> prezenční</td>
+               </tr><tr>
+                  <th>Další informace:</th>
+                  <td><a href="http://cgg.mff.cuni.cz/lectures/npgr003.cz.php"  class="link3">http://cgg.mff.cuni.cz/lectures/npgr003.cz.php</a></td>
+               </tr></table>
+</td><td valign="top">
+<table cellpadding="3" cellspacing="0" class="tab2" style="margin-left: 15px;"><tr>
+                  <th>Garant:</th>
+                  <td><a href="../predmety/redir.php?redir=sezn_ucit&amp;kod=11804"  class="link3">RNDr. Josef Pelikán</a></td>
+               </tr><tr>
+                        <th>Třída:</th>
+                        <td><a href="../predmety/redir.php?redir=sezn_trida&amp;fak=11320&amp;kod=IB"  class="link3">Informatika Bc.</a><br><a href="../predmety/redir.php?redir=sezn_trida&amp;fak=11320&amp;kod=IMU"  class="link3">Informatika Mgr. - učitelské studium informatiky</a><br><a href="../predmety/redir.php?redir=sezn_trida&amp;fak=11320&amp;kod=IM2"  class="link3">Informatika Mgr. - Softwarové systémy</a></td>
+                     </tr><tr>
+                        <th>Klasifikace:</th>
+                        <td><a href="../predmety/redir.php?redir=sezn_klas&amp;kod=INF"  class="link3">Informatika</a> <b>&gt;</b> <a href="../predmety/redir.php?redir=sezn_klas&amp;kod=INFCGR"  class="link3">Počítačová grafika a geometrie</a></td>
+                     </tr><tr>
+                        <th>Je korekvizitou pro:</th>
+                        <td><a href="../predmety/index.php?do=predmet&kod=NPGR019" class="link3" onmousemove="ShowHint('hint',this.id,0,'Hardware pro počítačovou grafiku (pro: zápis)');" onmouseout="HideHint('hint');">NPGR019</a>, <a href="../predmety/index.php?do=predmet&kod=NPGR005" class="link3" onmousemove="ShowHint('hint',this.id,0,'Speciální seminář z počítačové grafiky (pro: zápis)');" onmouseout="HideHint('hint');">NPGR005</a>, <a href="../predmety/index.php?do=predmet&kod=NPGR004" class="link3" onmousemove="ShowHint('hint',this.id,0,'Počítačová grafika II (pro: zápis)');" onmouseout="HideHint('hint');">NPGR004</a></td>
+                     </tr></table>
+</td></tr></table><div style="padding: 2px; margin-top: 5px; background-color: #EEE; border-top:1px solid #CACACA; text-align: right;"><a href="../anketa/redir.php?redir=anketa_v&amp;povinn=NPGR003&amp;fak=11320"  class="link8">Výsledky anket</a>&nbsp;&nbsp;&nbsp;<a href="../term_st2/redir.php?redir=predmet&amp;kod_predmet=NPGR003&amp;fak=11320"  class="link8">Termíny zkoušek</a>&nbsp;&nbsp;&nbsp;<a href="../rozvrhng/redir.php?fakulta=11320&amp;skr=2015&amp;sem=1&amp;predmet=NPGR003"  class="link8">Rozvrh</a>&nbsp;&nbsp;&nbsp;<a href="../nastenka/redir.php?kod=NPGR003"  class="link8">Nástěnka</a>&nbsp;&nbsp;&nbsp;</div>
+<span class="clear"></span></div><div style="border-top: 1px solid #DADADA; margin-bottom: 5px;"></div>
+<table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
+         <tr class="head3">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Anotace</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_A" data-title="" data-param_empty_option_text="'---'">
+
+<script language="javascript" type="text/javascript">
+var pamela_A_showhide_data = Array();pamela_A_showhide_data["CZE"] = "pamela_A_CZE";pamela_A_showhide_data["ENG"] = "pamela_A_ENG";
+</script>
+<select name="pamela_A" id="pamela_A" class="inp1"   onchange="dl_showhide(this, pamela_A_showhide_data);"  ><option class="opt1" value="">---</option><option value="CZE" selected>čeština</option><option value="ENG" >angličtina</option></select></span></td><td></td></tr></table></td>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #006699">
+<div id="pamela_A_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: T_KSVI (26.04.2001)</div><br>Přednáška pokrývá základy 2D i 3D počítačové grafiky algoritmy pro kreslení a ořezávání v rovině, použití a zobrazování
+barev, zvětšování barevného rozlišení, kódování obrazu a rastrové grafické formáty, lineární transformace a projekce, metody
+reprezentace a zobrazování 3D scén, algoritmy výpočtu viditelnosti. Přednáška
+je doplněna cvičením - výroba modulů do knihovny JaGrLib v jazyce Java.
+
+V letním semestru na ni navazují přednášky pro vážnější zájemce Počítačová
+grafika II (PGR004) a Pokročilá 2D počítačová grafika (PGR007). </div>
+<div id="pamela_A_ENG" style="padding: 3px 5px 3px 5px; visibility: hidden; display: none;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: RNDr. Josef Pelikán (29.09.2010)</div><br>Basic course of 2D and 3D computer graphics - topics: 2D drawing, filling and clipping, introduction to color science, rendering of color images,
+raster image coding and simple compression methods, raster graphic formats, linear 2D and 3D transformations, projections, 3D scene
+representation, algorithms for hidden line/surface removal, introduction to OpenGL
+
+Labs: programming in C#.
+
+Computer graphics curicullum continues with Computer Graphics II (PGR004), Real-time Graphics (PGR019)
+and Advanced 2D Computer Graphics (PGR007).</div>   </td>
+         </tr>
+         </table><table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
+         <tr class="head3">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Literatura</b></td><td></td></tr></table></td>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #006699">
+<div id="pamela_L_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: prof. Pavel Pelikán (02.05.2005)</div><br><p>Foley, Van Dam, Feiner, Hughes: Computer Graphics, Principles and Practice in C, Addison-Wesley, 1995 </p>
+<p></p>
+<p>Žára J., Sochor J., Beneš B. a Felkel P.: Moderní počítačová grafika, 2. vydání, Computer Press, 2004</p>
+<p></p></div>   </td>
+         </tr>
+         </table><table cellpadding="2" cellspacing="0" class="tab1" width="100%" style="margin-bottom: 10px;">
+         <tr class="head3">
+            <td valign="bottom"><table class="tab3" style="width:100%;"><col><col width="16"><tr><td><b>Sylabus</b> - <span class="form_select form_obj param_empty_option param_empty_option_text param_dialog_kod param_dialog_nazev_kod param_autolink param_autocomplete jepovinne" data-object="pamela_S" data-title="" data-param_empty_option_text="'---'">
+
+<script language="javascript" type="text/javascript">
+var pamela_S_showhide_data = Array();pamela_S_showhide_data["CZE"] = "pamela_S_CZE";pamela_S_showhide_data["ENG"] = "pamela_S_ENG";
+</script>
+<select name="pamela_S" id="pamela_S" class="inp1"   onchange="dl_showhide(this, pamela_S_showhide_data);"  ><option class="opt1" value="">---</option><option value="CZE" selected>čeština</option><option value="ENG" >angličtina</option></select></span></td><td></td></tr></table></td>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #006699">
+<div id="pamela_S_CZE" style="padding: 3px 5px 3px 5px;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: RNDr. Josef Pelikán (29.09.2010)</div><br><span style="font-weight: bold;"> 1. vidění a barvy:</span><br>
+lidský zrakový systém, barvy a jejich vnímání, barevné systémy, skládání barev, gamma-korekce, reprodukce barev, tisk, půltónování a rozptylování<p />
+<p></p>
+<span style="font-weight: bold;"> 2. rastrová grafika:</span><br>
+vektorová a rastrová grafika, vlastnosti rastrových obrázků, průhlednost, HDR grafika, základní grafické formáty<p />
+<p></p>
+<span style="font-weight: bold;"> 3. operace s rastrovým obrazem:</span><br>
+histogram a operace s ním, přechodová funkce, jednoduché filtrace (konvoluce i nelineární), kódování obrazu<p />
+<p></p>
+<span style="font-weight: bold;"> 4. rastrové kreslení:</span><br>
+kreslení úsečky, křivek, vyplňování (N-úhelník i souvoslá oblast), písmo, ořezávání, anti-aliasing<p />
+<p></p>
+<span style="font-weight: bold;"> 5. základy 3D grafiky: </span><br>
+homogenní souřadnice, transformační matice, základní transformace, konstrukce složitějších transformací, projekce (rovnoběžná i perspektivní)<p />
+<p></p>
+<span style="font-weight: bold;"> 6. reprezentace 3D scén:</span><br>
+povrchový model, trojúhelnékové sítě, objemové reprezentace a jejich zobrazování (CSG, vrhání paprsku)<p />
+<p></p>
+<span style="font-weight: bold;"> 7. základy OpenGL:</span><br>
+architektura grafické karty, data pro GPU, souřadné soustavy, kreslená primitiva, viditelnost, textury, ..<p />
+<p></p>
+<span style="font-weight: bold;"> 8. výpočet viditelnosti a stínování: </span><br>
+příklady algoritmů zobrazijících povrchový model: plovoucí horizont, Appel, malířův algoritmus, Z-buffer, Watkinsův algoritmus, základní osvětlovací model (Phong), spojité stínovací metody<p />
+<p></p></div>
+<div id="pamela_S_ENG" style="padding: 3px 5px 3px 5px; visibility: hidden; display: none;"><div style="color: grey; font-style: italic; text-align: right">Poslední úprava: prof. Pavel Pelikán (02.05.2005)</div><br><span style="font-weight: bold;"> 1. graphic hardware: </span><br>
+vector and raster displays, color palettes, frame-buffers, printers and plotters<p />
+<p></p>
+<span style="font-weight: bold;"> 2. 2D drawing: </span><br>
+line drawing - DDA algorithm, Bresenham algorithm, circle, ellipse, polygonal curve <p />
+<p></p>
+<span style="font-weight: bold;"> 3. 2D filling: </span><br>
+polygon filling - scanline algorithm, flood fill, seed fill, scanline algorithms, hatching <p />
+<p></p>
+<span style="font-weight: bold;"> 4. clipping: </span><br>
+line-clipping algorithms, polygon clipping <p />
+<p></p>
+<span style="font-weight: bold;"> 5. halftoning and dithering: </span><br>
+patterns and their matrix representations, incremental patterns, ordered dither, cluster dither, random dither, error distribution - Floyd-Steinberg, modifications for more output values and color images <p />
+<p></p>
+<span style="font-weight: bold;"> 6. colors: </span><br>
+human color perception, use of color in human-computer interaction, color spaces RGB, HSV, CMY(K), color mixing, RGB<->HSV and RGB->grayscale conversions <p />
+<p></p>
+<span style="font-weight: bold;"> 7. color reproduction: </span><br>
+'true-color' devices, colormaps, 3-3-2 colormap, topological colormaps, color quantization - Heckbert's median cut algorithm, special colormap effects, colormap animation <p />
+<p></p>
+<span style="font-weight: bold;"> 8. 2D raster image representation: </span><br>
+RLE coding, quadtree - coding and decoding algorithms, 'X-transition list', set operations, raster graphic formats <p />
+<p></p>
+<span style="font-weight: bold;"> 9. linear transformations: </span><br>
+homogeneous coordinates, matrix transformation, elementar (atomic) transformations, construction of complex transformations <p />
+<p></p>
+<span style="font-weight: bold;"> 10. projections: </span><br>
+parallel projection - orthogonal and oblique projection, perspective projection, implemetation of projections <p />
+<p></p>
+<span style="font-weight: bold;"> 11. 3D scene representation: </span><br>
+enumeration - cell model, octree, volume representation - CSG tree (rendering by ray-casting), boundary representations - VEFS model, winged edge <p />
+<p></p>
+<span style="font-weight: bold;"> 12. hidden surfaces removal: </span><br>
+floating horizont method, back-face culling, Z-buffer, painter's algorithm, scanline algorithms (Watkins), .. <p />
+<p></p></div>   </td>
+         </tr>
+         </table></div><table border="0" cellspacing="0" cellpadding="0" width="100%" id="foot" style="margin-top: 5px;">
+                     <tr>
+                        <td>&nbsp;</td><td nowrap><a class="top" href="#stev_top" title="na začátek stránky"></a></td><td nowrap><a class="tisk" href="/studium/predmety/index.php?do=predmet&kod=NPGR003&stev_print=on" target="_blank" title="verze pro tisk"></a></td><td nowrap><a href="http://is.cuni.cz/studium/info/index.php">Kontakty</a></td>   <td width="100%">&nbsp;</td>
+                     </tr>
+                     </table><div class="shadow">&nbsp;</div>
+</td></tr></table>
+
+<div id="paticka2"><a href="http://www.cuni.cz">Univerzita Karlova v Praze</a> | <a href="https://is.cuni.cz">Informační systém UK</a></div>
+
+<script language="javascript" type="text/javascript">
+ShowHide('loading',0);
+</script>
+
+</body></html>

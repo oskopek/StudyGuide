@@ -47,10 +47,10 @@ public class FindRegistryCoursesControllerTest {
         assertEquals(10, courses.size());
         int index = 0;
         for (Course c : courses) {
-            if (courseId.get(0).equals(c)) {
-                courseId.remove(0);
-            } else if (courseName.get(0).equals(c)) {
-                courseName.remove(0);
+            if (courseName.contains(c)) {
+                courseName.remove(c);
+            } else if (courseId.contains(c)) {
+                courseId.remove(c);
             } else {
                 fail("The course at " + index  + " is out of order: " + c);
             }
