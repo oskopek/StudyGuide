@@ -1,0 +1,821 @@
+{
+  "semesterPlan" : {
+    "semesterList" : [ ]
+  },
+  "constraints" : {
+    "courseGroupList" : [ ],
+    "globalConstraintList" : [ ]
+  },
+  "courseRegistry" : {
+    "courses" : {
+      "NAIL076" : {
+        "id" : "NAIL076",
+        "name" : "Logic Programming I",
+        "localizedName" : "Logické programování I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Jan Hric" ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL087" : {
+        "id" : "NPFL087",
+        "name" : "Statistical Machine Translation",
+        "localizedName" : "Statistický strojový překlad",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. Ondřej Bojar, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL031" : {
+        "id" : "NAIL031",
+        "name" : "Representations of Boolean Functions",
+        "localizedName" : "Reprezentace booleovských funkcí",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Petr Savický, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL078" : {
+        "id" : "NAIL078",
+        "name" : "Lambda Calculus and Functional Programming I",
+        "localizedName" : "Lambda-kalkulus a funkcionální programování I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "RNDr. Jan Hric" ],
+        "requiredCourses" : [ ]
+      },
+      "NDBI031" : {
+        "id" : "NDBI031",
+        "name" : "Statistical Methods in Data Mining Systems",
+        "localizedName" : "Statistické metody v systémech pro dobývání znalostí z dat",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Ing. Martin Holeňa, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN066" : {
+        "id" : "NTIN066",
+        "name" : "Data Structures I",
+        "localizedName" : "Datové struktury I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL077" : {
+        "id" : "NAIL077",
+        "name" : "Logic Programming II",
+        "localizedName" : "Logické programování II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Jan Hric" ],
+        "requiredCourses" : [ {
+          "id" : "NAIL076",
+          "name" : "Logic Programming I",
+          "localizedName" : "Logické programování I",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 3
+          },
+          "teacherNames" : [ "RNDr. Jan Hric" ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NAIL110" : {
+        "id" : "NAIL110",
+        "name" : "Practical Course in Robotics",
+        "localizedName" : "Praktikum z robotiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Dr. Libor Přeučil", "RNDr. Miroslav Kulich, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL079" : {
+        "id" : "NAIL079",
+        "name" : "Lambda Calculus and Functional Programming II",
+        "localizedName" : "Lambda-kalkulus a funkcionální programování II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "RNDr. Jan Hric" ],
+        "requiredCourses" : [ {
+          "id" : "NAIL078",
+          "name" : "Lambda Calculus and Functional Programming I",
+          "localizedName" : "Lambda-kalkulus a funkcionální programování I",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 5
+          },
+          "teacherNames" : [ "RNDr. Jan Hric" ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NSWI103" : {
+        "id" : "NSWI103",
+        "name" : "Project Management – System Dynamics I",
+        "localizedName" : "Řízení projektů – Systémová dynamika I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Mirko Křivánek, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL070" : {
+        "id" : "NAIL070",
+        "name" : "Artificial Intelligence II",
+        "localizedName" : "Umělá inteligence II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT042" : {
+        "id" : "NOPT042",
+        "name" : "Constraint Programming",
+        "localizedName" : "Programování s omezujícími podmínkami",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI104" : {
+        "id" : "NSWI104",
+        "name" : "Company Management – System Dynamics II",
+        "localizedName" : "Řízení firem – Systémová dynamika II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Mirko Křivánek, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL071" : {
+        "id" : "NAIL071",
+        "name" : "Planning and Scheduling",
+        "localizedName" : "Plánování a rozvrhování",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL074" : {
+        "id" : "NAIL074",
+        "name" : "Robot II",
+        "localizedName" : "Robot II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL073" : {
+        "id" : "NAIL073",
+        "name" : "Robot I",
+        "localizedName" : "Robot I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL029" : {
+        "id" : "NAIL029",
+        "name" : "Machine Learning",
+        "localizedName" : "Strojové učení",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "Mgr. Marta Vomlelová, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL106" : {
+        "id" : "NAIL106",
+        "name" : "Multiagent Systems",
+        "localizedName" : "Multiagentní systémy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL028" : {
+        "id" : "NAIL028",
+        "name" : "Introduction to Robotics",
+        "localizedName" : "Úvod do robotiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL105" : {
+        "id" : "NAIL105",
+        "name" : "Internet and Classification Methods",
+        "localizedName" : "Internet a klasifikační metody",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Ing. Martin Holeňa, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL108" : {
+        "id" : "NAIL108",
+        "name" : "Mobile Robotics",
+        "localizedName" : "Mobilní robotika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL107" : {
+        "id" : "NAIL107",
+        "name" : "Machine Learning in Bioinformatics",
+        "localizedName" : "Strojové učení v bioinformatice",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL021" : {
+        "id" : "NAIL021",
+        "name" : "Boolean Functions and Their Applications",
+        "localizedName" : "Booleovské funkce a jejich aplikace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL065" : {
+        "id" : "NAIL065",
+        "name" : "Evolutionary Robotics",
+        "localizedName" : "Evoluční robotika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI060" : {
+        "id" : "NMAI060",
+        "name" : "Probabilistic Methods",
+        "localizedName" : "Pravděpodobnostní metody",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Jaromír Antoch, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL022" : {
+        "id" : "NAIL022",
+        "name" : "Methods of Logic Programming",
+        "localizedName" : "Metody logického programování",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Jan Hric" ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL025" : {
+        "id" : "NAIL025",
+        "name" : "Evolutionary Algorithms I",
+        "localizedName" : "Evoluční algoritmy I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL069" : {
+        "id" : "NAIL069",
+        "name" : "Artificial Intelligence I",
+        "localizedName" : "Umělá inteligence I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL068" : {
+        "id" : "NAIL068",
+        "name" : "Human-like Artificial Agents",
+        "localizedName" : "Umělé bytosti",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Cyril Brom, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL101" : {
+        "id" : "NAIL101",
+        "name" : "Probabilistic Robotics",
+        "localizedName" : "Pravděpodobnostní robotika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI061" : {
+        "id" : "NMAI061",
+        "name" : "Methods of Mathematical Statistics",
+        "localizedName" : "Metody matematické statistiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. RNDr. Zdeněk Hlávka, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL104" : {
+        "id" : "NAIL104",
+        "name" : "Probabilistic graphical models",
+        "localizedName" : "Pravděpodobnostní grafické modely",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "Mgr. Marta Vomlelová, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDBI023" : {
+        "id" : "NDBI023",
+        "name" : "Data Mining",
+        "localizedName" : "Dobývání znalostí",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 9
+        },
+        "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL038" : {
+        "id" : "NPFL038",
+        "name" : "Fundamentals of Speech Recognition and Generation",
+        "localizedName" : "Základy rozpoznávání a generování mluvené řeči",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Nino Peterek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI067" : {
+        "id" : "NMAI067",
+        "name" : "Logic in Computer Science",
+        "localizedName" : "Logika v informatice",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Pavel Pudlák, DrSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL061" : {
+        "id" : "NAIL061",
+        "name" : "Seminar on Mobile Robotics",
+        "localizedName" : "Seminář z mobilní robotiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "requiredCourses" : [ {
+          "id" : "NAIL028",
+          "name" : "Introduction to Robotics",
+          "localizedName" : "Úvod do robotiky",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 6
+          },
+          "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NSWI054" : {
+        "id" : "NSWI054",
+        "name" : "Software Engineering for Dependable Systems",
+        "localizedName" : "Softwarové inženýrství pro spolehlivé systémy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Tomáš Bureš, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL060" : {
+        "id" : "NAIL060",
+        "name" : "Neural Networks Implementation I",
+        "localizedName" : "Implementace neuronových sítí I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. Petr Božovský, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL079" : {
+        "id" : "NPFL079",
+        "name" : "Algorithms in Speech Recognition",
+        "localizedName" : "Algoritmy rozpoznávání mluvené řeči",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Nino Peterek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL062" : {
+        "id" : "NAIL062",
+        "name" : "Propositional and Predicate Logic",
+        "localizedName" : "Výroková a predikátová logika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Petr Gregor, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL099" : {
+        "id" : "NAIL099",
+        "name" : "Seminar of machine learning and modelling I",
+        "localizedName" : "Seminář strojového učení a modelování I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 2
+        },
+        "teacherNames" : [ "doc. RNDr. Ing. Martin Holeňa, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL013" : {
+        "id" : "NAIL013",
+        "name" : "Applications of Neural Networks Theory",
+        "localizedName" : "Aplikace teorie neuronových sítí",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL015" : {
+        "id" : "NAIL015",
+        "name" : "Neural Networks Implementation II",
+        "localizedName" : "Implementace neuronových sítí II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. Petr Božovský, CSc." ],
+        "requiredCourses" : [ {
+          "id" : "NAIL060",
+          "name" : "Neural Networks Implementation I",
+          "localizedName" : "Implementace neuronových sítí I",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 6
+          },
+          "teacherNames" : [ "RNDr. Petr Božovský, CSc." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NTIN084" : {
+        "id" : "NTIN084",
+        "name" : "Bioinformatics Algorithms",
+        "localizedName" : "Bioinformatické algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT021" : {
+        "id" : "NOPT021",
+        "name" : "Game Theory",
+        "localizedName" : "Teorie her",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Karel Zimmermann, DrSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL104" : {
+        "id" : "NPFL104",
+        "name" : "Machine Learning Methods",
+        "localizedName" : "Metody strojového učení",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D.", "RNDr. Ondřej Bojar, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL103" : {
+        "id" : "NPFL103",
+        "name" : "Information Retrieval",
+        "localizedName" : "Vyhledávání informací",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. Pavel Pecina, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL094" : {
+        "id" : "NAIL094",
+        "name" : "Decision Procedures and Verification",
+        "localizedName" : "Rozhodovací procedury a verifikace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NSWE001" : {
+        "id" : "NSWE001",
+        "name" : "Embedded and Real Time Systems",
+        "localizedName" : "Vestavěné systémy a systémy reálného času",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "doc. RNDr. Tomáš Bureš, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL068" : {
+        "id" : "NPFL068",
+        "name" : "Statistical Methods in Natural Language Processing II",
+        "localizedName" : "Statistické metody zpracování přirozených jazyků II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
+        "requiredCourses" : [ {
+          "id" : "NPFL067",
+          "name" : "Statistical Methods in Natural Language Processing I",
+          "localizedName" : "Statistické metody zpracování přirozených jazyků I",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 6
+          },
+          "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NAIL052" : {
+        "id" : "NAIL052",
+        "name" : "Seminar on Artificial Intelligence II",
+        "localizedName" : "Seminář z umělé inteligence II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D.", "prof. RNDr. Roman Barták, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL067" : {
+        "id" : "NPFL067",
+        "name" : "Statistical Methods in Natural Language Processing I",
+        "localizedName" : "Statistické metody zpracování přirozených jazyků I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG027" : {
+        "id" : "NPRG027",
+        "name" : "Credit for Project",
+        "localizedName" : "Zápočet k projektu",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Informatika Mgr. - Softwarové systémy", "Informatika Mgr. - Matematická lingvistika" ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG023" : {
+        "id" : "NPRG023",
+        "name" : "Software Project",
+        "localizedName" : "Softwarový projekt",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 9
+        },
+        "teacherNames" : [ "Informatika Mgr. - Softwarové systémy", "Informatika Mgr. - Matematická lingvistika" ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN090" : {
+        "id" : "NTIN090",
+        "name" : "Introduction to Complexity and Computability",
+        "localizedName" : "Základy složitosti a vyčíslitelnosti",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NPGR001" : {
+        "id" : "NPGR001",
+        "name" : "Computer vision and intelligent robotics",
+        "localizedName" : "Počítačové vidění a inteligentní robotika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. Ing. Václav Hlaváč, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NPGR002" : {
+        "id" : "NPGR002",
+        "name" : "Digital Image Processing",
+        "localizedName" : "Digitální zpracování obrazu",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "prof. Ing. Jan Flusser, DrSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL087" : {
+        "id" : "NAIL087",
+        "name" : "Computers and Cognitive Sciences I",
+        "localizedName" : "Informatika a kognitivní vědy I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Cyril Brom, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NPFL054" : {
+        "id" : "NPFL054",
+        "name" : "Introduction to Machine Learning",
+        "localizedName" : "Úvod do strojového učení",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Barbora Vidová Hladká, Ph.D.", "RNDr. Martin Holub, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL086" : {
+        "id" : "NAIL086",
+        "name" : "Evolutionary Algorithms II",
+        "localizedName" : "Evoluční algoritmy II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
+        "requiredCourses" : [ {
+          "id" : "NAIL025",
+          "name" : "Evolutionary Algorithms I",
+          "localizedName" : "Evoluční algoritmy I",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 6
+          },
+          "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NPFL097" : {
+        "id" : "NPFL097",
+        "name" : "Selected Problems in Machine Learning",
+        "localizedName" : "Vybrané problémy ve strojovém učení",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL002" : {
+        "id" : "NAIL002",
+        "name" : "Neural Networks",
+        "localizedName" : "Neuronové sítě",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 9
+        },
+        "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc.", "RNDr. František Mráz, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NAIL004" : {
+        "id" : "NAIL004",
+        "name" : "Seminar on Artificial Intelligence I",
+        "localizedName" : "Seminář z umělé inteligence I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D.", "prof. RNDr. Roman Barták, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NSZZ025" : {
+        "id" : "NSZZ025",
+        "name" : "Diploma Thesis III",
+        "localizedName" : "Diplomová práce III",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 15
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSZZ023" : {
+        "id" : "NSZZ023",
+        "name" : "Diploma Thesis I",
+        "localizedName" : "Diplomová práce I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSZZ024" : {
+        "id" : "NSZZ024",
+        "name" : "Diploma Thesis II",
+        "localizedName" : "Diplomová práce II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 9
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSWI035" : {
+        "id" : "NSWI035",
+        "name" : "Principles of Distributed Systems",
+        "localizedName" : "Principy distribuovaných systémů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NPRG037" : {
+        "id" : "NPRG037",
+        "name" : "Microcontroller Programming",
+        "localizedName" : "Programování mikrokontrolerů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "requiredCourses" : [ ]
+      }
+    }
+  }
+}

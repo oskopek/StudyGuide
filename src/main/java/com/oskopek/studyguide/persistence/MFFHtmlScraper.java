@@ -44,7 +44,6 @@ public class MFFHtmlScraper implements DataReader {
      * @throws IOException if an exception occurs while reading the stream
      */
     private DefaultStudyPlan scrapeStudyPlan(InputStream stream, String encoding) throws IOException {
-        // TODO generally, make this more stable, has to handle all default (Bc & Mgr) MFF study plans
         CourseRegistry registry = new CourseRegistry();
         Document document = Jsoup.parse(stream, encoding, ""); // do not need to resolve relative links
         Elements tables = document.select("table");

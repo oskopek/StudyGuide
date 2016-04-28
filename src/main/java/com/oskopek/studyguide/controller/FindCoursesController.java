@@ -62,6 +62,7 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
             if (chosen != null) {
                 logger.debug("Chosen course: {}", chosen);
                 try {
+                    // TODO bug when adding course with no semesters initialized
                     studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester().addCourseEnrollment(chosen);
                 } catch (IllegalArgumentException e) {
                     logger.debug("Added wrong course({}), showing error box.", chosen);

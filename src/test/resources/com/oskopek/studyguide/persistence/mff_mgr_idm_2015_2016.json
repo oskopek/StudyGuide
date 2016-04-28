@@ -1,0 +1,603 @@
+{
+  "semesterPlan" : {
+    "semesterList" : [ ]
+  },
+  "constraints" : {
+    "courseGroupList" : [ ],
+    "globalConstraintList" : [ ]
+  },
+  "courseRegistry" : {
+    "courses" : {
+      "NAIL076" : {
+        "id" : "NAIL076",
+        "name" : "Logic Programming I",
+        "localizedName" : "Logické programování I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. Jan Hric" ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN067" : {
+        "id" : "NTIN067",
+        "name" : "Data Structures II",
+        "localizedName" : "Datové struktury II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "requiredCourses" : [ {
+          "id" : "NTIN066",
+          "name" : "Data Structures I",
+          "localizedName" : "Datové struktury I",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 5
+          },
+          "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NMMA931" : {
+        "id" : "NMMA931",
+        "name" : "Introduction to Functional Analysis (O)",
+        "localizedName" : "Úvod do funkcionální analýzy (O)",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 8
+        },
+        "teacherNames" : [ "doc. RNDr. Ondřej Kalenda, Ph.D., DSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN066" : {
+        "id" : "NTIN066",
+        "name" : "Data Structures I",
+        "localizedName" : "Datové struktury I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN022" : {
+        "id" : "NTIN022",
+        "name" : "Probabilistic Techniques",
+        "localizedName" : "Pravděpodobnostní techniky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "doc. Mgr. Robert Šámal, Ph.D.", "prof. RNDr. Jiří Sgall, DrSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN063" : {
+        "id" : "NTIN063",
+        "name" : "Complexity",
+        "localizedName" : "Složitost",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "requiredCourses" : [ {
+          "id" : "NTIN062",
+          "name" : "Complexity I",
+          "localizedName" : "Složitost I",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 5
+          },
+          "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NTIN064" : {
+        "id" : "NTIN064",
+        "name" : "Computability",
+        "localizedName" : "Vyčíslitelnost",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc.", "RNDr. Petr Kučera, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN062" : {
+        "id" : "NTIN062",
+        "name" : "Complexity I",
+        "localizedName" : "Složitost I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT042" : {
+        "id" : "NOPT042",
+        "name" : "Constraint Programming",
+        "localizedName" : "Programování s omezujícími podmínkami",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI037" : {
+        "id" : "NDMI037",
+        "name" : "Geometric Representations of Graphs I",
+        "localizedName" : "Geometrické reprezentace grafů I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Jan Kratochvíl, CSc.", "RNDr. Vít Jelínek, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI036" : {
+        "id" : "NDMI036",
+        "name" : "Combinatorial Structures",
+        "localizedName" : "Kombinatorické struktury",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Jan Kratochvíl, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI088" : {
+        "id" : "NDMI088",
+        "name" : "Graph Algorithms II",
+        "localizedName" : "Grafové algoritmy II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT008" : {
+        "id" : "NOPT008",
+        "name" : "Nonlinear Optimisation Algorithms",
+        "localizedName" : "Algoritmy nelineární optimalizace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Ing. David Hartman, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI045" : {
+        "id" : "NDMI045",
+        "name" : "Analytic and Combinatorial Number Theory",
+        "localizedName" : "Analytická a kombinatorická teorie čísel",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Martin Klazar, Dr." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT051" : {
+        "id" : "NOPT051",
+        "name" : "Interval Methods",
+        "localizedName" : "Intervalové metody",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "doc. Mgr. Milan Hladík, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI064" : {
+        "id" : "NMAI064",
+        "name" : "Mathematical Structures",
+        "localizedName" : "Matematické struktury",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Aleš Pultr, DrSc.", "doc. RNDr. Martin Klazar, Dr." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI066" : {
+        "id" : "NMAI066",
+        "name" : "Topological and Algebraic Methods",
+        "localizedName" : "Topologické a algebraické metody",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Aleš Pultr, DrSc." ],
+        "requiredCourses" : [ {
+          "id" : "NMAI064",
+          "name" : "Mathematical Structures",
+          "localizedName" : "Matematické struktury",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 6
+          },
+          "teacherNames" : [ "prof. RNDr. Aleš Pultr, DrSc.", "doc. RNDr. Martin Klazar, Dr." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NDMI009" : {
+        "id" : "NDMI009",
+        "name" : "Combinatorial and Computational Geometry I",
+        "localizedName" : "Kombinatorická a výpočetní geometrie I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Jiří Matoušek, DrSc.", "doc. RNDr. Pavel Valtr, Dr.", "RNDr. Martin Tancer, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI065" : {
+        "id" : "NMAI065",
+        "name" : "Fundamentals of Category Theory for Computer Scientists",
+        "localizedName" : "Základy teorie kategorií pro informatiky",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Aleš Pultr, DrSc." ],
+        "requiredCourses" : [ {
+          "id" : "NMAI064",
+          "name" : "Mathematical Structures",
+          "localizedName" : "Matematické struktury",
+          "locale" : "cs",
+          "credits" : {
+            "creditValue" : 6
+          },
+          "teacherNames" : [ "prof. RNDr. Aleš Pultr, DrSc.", "doc. RNDr. Martin Klazar, Dr." ],
+          "requiredCourses" : [ ]
+        } ]
+      },
+      "NMAI067" : {
+        "id" : "NMAI067",
+        "name" : "Logic in Computer Science",
+        "localizedName" : "Logika v informatice",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Pavel Pudlák, DrSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN017" : {
+        "id" : "NTIN017",
+        "name" : "Parallel Algorithms",
+        "localizedName" : "Paralelní algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI055" : {
+        "id" : "NDMI055",
+        "name" : "Selected Chapters on Combinatorics I",
+        "localizedName" : "Vybrané kapitoly z kombinatoriky I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Jaroslav Nešetřil, DrSc.", "Andrew Goodall" ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI056" : {
+        "id" : "NDMI056",
+        "name" : "Selected Chapters on Combinatorics II",
+        "localizedName" : "Vybrané kapitoly z kombinatoriky II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Jaroslav Nešetřil, DrSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT018" : {
+        "id" : "NOPT018",
+        "name" : "Fundamentals of Nonlinear Optimization",
+        "localizedName" : "Základy nelineární optimalizace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "doc. Mgr. Milan Hladík, Ph.D.", "prof. RNDr. Martin Loebl, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT017" : {
+        "id" : "NOPT017",
+        "name" : "Multiobjective Optimisation",
+        "localizedName" : "Vícekriteriální optimalizace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. Mgr. Milan Hladík, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI010" : {
+        "id" : "NDMI010",
+        "name" : "Graph Algorithms",
+        "localizedName" : "Grafové algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT016" : {
+        "id" : "NOPT016",
+        "name" : "Integer Programming",
+        "localizedName" : "Celočíselné programování",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "doc. Mgr. Milan Hladík, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI071" : {
+        "id" : "NMAI071",
+        "name" : "Math++",
+        "localizedName" : "Matematika++",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. Martin Tancer, Ph.D.", "doc. Mgr. Robert Šámal, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI018" : {
+        "id" : "NDMI018",
+        "name" : "Approximation and Online Algorithms",
+        "localizedName" : "Aproximační a online algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc.", "Dr. rer. nat. Morteza Monemizadeh" ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI015" : {
+        "id" : "NDMI015",
+        "name" : "Combinatorial Counting",
+        "localizedName" : "Kombinatorické počítání",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Martin Klazar, Dr." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI059" : {
+        "id" : "NDMI059",
+        "name" : "Graph Minors and Tree Decompositions",
+        "localizedName" : "Grafové minory a stromové rozklady",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Jiří Fiala, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI013" : {
+        "id" : "NDMI013",
+        "name" : "Combinatorial and Computational Geometry II",
+        "localizedName" : "Kombinatorická a výpočetní geometrie II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Jiří Matoušek, DrSc.", "doc. RNDr. Pavel Valtr, Dr." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI066" : {
+        "id" : "NDMI066",
+        "name" : "Algebraic Number Theory",
+        "localizedName" : "Algebraická teorie čísel",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Martin Klazar, Dr." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI067" : {
+        "id" : "NDMI067",
+        "name" : "Flows, Paths and Cuts",
+        "localizedName" : "Toky, cesty a řezy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. Mgr. Petr Kolman, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI064" : {
+        "id" : "NDMI064",
+        "name" : "Applied Discrete Mathematics",
+        "localizedName" : "Aplikovaná diskrétní matematika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "prof. RNDr. Martin Loebl, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAG337" : {
+        "id" : "NMAG337",
+        "name" : "Introduction to Group Theory",
+        "localizedName" : "Úvod do teorie grup",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "Mgr. Jan Šaroch, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI065" : {
+        "id" : "NDMI065",
+        "name" : "Matroid Theory",
+        "localizedName" : "Teorie matroidů",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "RNDr. Ondřej Pangrác, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI060" : {
+        "id" : "NDMI060",
+        "name" : "Coloring of Graphs and Other Combinatorial Structures",
+        "localizedName" : "Barevnost grafů a kombinatorických struktur",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. Mgr. Zdeněk Dvořák, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NTIN090" : {
+        "id" : "NTIN090",
+        "name" : "Introduction to Complexity and Computability",
+        "localizedName" : "Základy složitosti a vyčíslitelnosti",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NMMA901" : {
+        "id" : "NMMA901",
+        "name" : "Introduction to Complex Analysis (O)",
+        "localizedName" : "Úvod do komplexní analýzy (O)",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "Mgr. Petr Honzík, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NMAI040" : {
+        "id" : "NMAI040",
+        "name" : "Introduction to Number Theory",
+        "localizedName" : "Úvod do teorie čísel",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 3
+        },
+        "teacherNames" : [ "doc. RNDr. Martin Klazar, Dr." ],
+        "requiredCourses" : [ ]
+      },
+      "NSZZ025" : {
+        "id" : "NSZZ025",
+        "name" : "Diploma Thesis III",
+        "localizedName" : "Diplomová práce III",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 15
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NSZZ023" : {
+        "id" : "NSZZ023",
+        "name" : "Diploma Thesis I",
+        "localizedName" : "Diplomová práce I",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI028" : {
+        "id" : "NDMI028",
+        "name" : "Linear Algebra Applications in Combinatorics",
+        "localizedName" : "Aplikace lineární algebry v kombinatorice",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Jan Kratochvíl, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NSZZ024" : {
+        "id" : "NSZZ024",
+        "name" : "Diploma Thesis II",
+        "localizedName" : "Diplomová práce II",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 9
+        },
+        "teacherNames" : [ ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI025" : {
+        "id" : "NDMI025",
+        "name" : "Randomized Algorithms",
+        "localizedName" : "Pravděpodobnostní algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NMMA903" : {
+        "id" : "NMMA903",
+        "name" : "Measure and Integration Theory (O)",
+        "localizedName" : "Teorie míry a integrálu (O)",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 8
+        },
+        "teacherNames" : [ "prof. RNDr. Jan Rataj, CSc." ],
+        "requiredCourses" : [ ]
+      },
+      "NOPT034" : {
+        "id" : "NOPT034",
+        "name" : "Mathematical Programming and Polyhedral Combinatorics",
+        "localizedName" : "Matematické programování a polyedrální kombinatorika",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 5
+        },
+        "teacherNames" : [ "prof. RNDr. Martin Loebl, CSc.", "doc. Mgr. Petr Kolman, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI073" : {
+        "id" : "NDMI073",
+        "name" : "Combinatorics and Graph Theory III",
+        "localizedName" : "Kombinatorika a grafy III",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "doc. Mgr. Zdeněk Dvořák, Ph.D." ],
+        "requiredCourses" : [ ]
+      },
+      "NDMI074" : {
+        "id" : "NDMI074",
+        "name" : "Algorithms and Their Implementation",
+        "localizedName" : "Algoritmy a jejich implementace",
+        "locale" : "cs",
+        "credits" : {
+          "creditValue" : 6
+        },
+        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
+        "requiredCourses" : [ ]
+      }
+    }
+  }
+}

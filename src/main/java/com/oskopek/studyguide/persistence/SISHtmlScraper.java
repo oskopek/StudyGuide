@@ -75,7 +75,7 @@ public class SISHtmlScraper {
      *
      * @param is the stream from which to parse the SIS course html
      * @param encoding the encoding of html in the stream
-     * @param courseId the id of the course being parsed TODO redundant (find it in the html)
+     * @param courseId the id of the course being parsed
      * @return a registry containing the course and all courses required for this course
      * @throws IOException if an error occurs during reading the input stream
      */
@@ -83,7 +83,7 @@ public class SISHtmlScraper {
         Document document = Jsoup.parse(is, encoding, ""); // we do not need a base url
 
         String localizedName = document.select("div.form_div_title").text();
-        localizedName = localizedName.substring(0, localizedName.lastIndexOf("-"));
+        localizedName = localizedName.substring(0, localizedName.lastIndexOf("-")).trim();
 
         Elements tab2s = document.select("table.tab2");
         // skip table 0
@@ -92,8 +92,11 @@ public class SISHtmlScraper {
         Credits credits = Credits.valueOf(Integer.parseInt(table1.get(5).select("td").first().text()));
 
         Elements table2 = tab2s.get(2).select("tr");
-        List<String> teacherList = table2.get(0).select("td").first().select("a.link3")
-                .stream().map(Element::text).collect(Collectors.toList());
+        List<String> teacherList = new ArrayList<>();
+        if (!table2.isEmpty()) {
+            teacherList = table2.get(0).select("td").first().select("a.link3")
+                    .stream().map(Element::text).collect(Collectors.toList());
+        }
 
         // TODO correctly distinguish prereqs and coreqs
         CourseRegistry registry = new CourseRegistry();
