@@ -108,7 +108,7 @@ public class SISHtmlScraper {
 
         CourseRegistry prereqs = new CourseRegistry();
         CourseRegistry coreqs = new CourseRegistry();
-        for (Element tableRow : table2) { // TODO check for and fail on circular dependencies
+        for (Element tableRow : table2) { // TODO OPTIONAL check for and fail on circular dependencies
             String headerText = tableRow.select("th").first().text().toLowerCase();
             CourseRegistry addTo;
             if (headerText.contains("korekvizity")) {

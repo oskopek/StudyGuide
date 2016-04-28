@@ -5,4 +5,5 @@ package com.oskopek.studyguide.constraint;
  * {@link com.oskopek.studyguide.model.StudyPlan}.
  */
 public abstract class GlobalConstraint implements Constraint {
+    // intentionally empty for now
 }

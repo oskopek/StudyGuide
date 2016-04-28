@@ -74,7 +74,7 @@ public class Semester {
         if (course == null) {
             throw new IllegalArgumentException("Course cannot be null.");
         }
-        addCourseEnrollment(new CourseEnrollment(course, false));
+        addCourseEnrollment(new CourseEnrollment(course, this, false));
     }
 
     /**

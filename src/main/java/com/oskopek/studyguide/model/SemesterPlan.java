@@ -6,13 +6,14 @@ import javafx.collections.FXCollections;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Represents the {@link com.oskopek.studyguide.model.courses.Course} distribution in the {@link StudyPlan}.
  */
 
-public class SemesterPlan {
+public class SemesterPlan implements Iterable<Semester> {
 
     private ListProperty<Semester> semesterList;
 
@@ -82,6 +83,11 @@ public class SemesterPlan {
             return null;
         }
         return semesterList.get(semesterList.size() - 1);
+    }
+
+    @Override
+    public Iterator<Semester> iterator() {
+        return semesterList.iterator();
     }
 
     @Override

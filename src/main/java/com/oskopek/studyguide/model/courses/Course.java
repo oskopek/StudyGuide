@@ -6,11 +6,14 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -18,7 +21,7 @@ import java.util.Locale;
  * Background information about a course students can enroll in.
  * There should be only one instance of this per course.
  */
-public class Course {
+public class Course extends ObservableValueBase<Course> implements Comparable<Course> {
 
     private final StringProperty id;
     private final StringProperty name;
@@ -38,9 +41,10 @@ public class Course {
         this.localizedName = new SimpleStringProperty();
         this.locale = new SimpleObjectProperty<>(Locale.getDefault());
         this.credits = new SimpleObjectProperty<>();
-        this.teacherNames = new SimpleListProperty<>();
-        this.prerequisites = new SimpleListProperty<>();
-        this.corequisites = new SimpleListProperty<>();
+        this.teacherNames = new SimpleListProperty<>(FXCollections.observableArrayList());
+        this.prerequisites = new SimpleListProperty<>(FXCollections.observableArrayList());
+        this.corequisites = new SimpleListProperty<>(FXCollections.observableArrayList());
+        registerChangeEventListeners();
     }
 
     /**
@@ -86,6 +90,7 @@ public class Course {
         } else {
             this.corequisites = new SimpleListProperty<>(FXCollections.observableArrayList(corequisites));
         }
+        registerChangeEventListeners();
     }
 
     /**
@@ -342,6 +347,50 @@ public class Course {
             throw new IllegalArgumentException("The teacher names list cannot be null.");
         }
         this.teacherNames.set(FXCollections.observableArrayList(teacherNames));
+    }
+
+    /**
+     * Register {@link javafx.beans.value.ChangeListener}s to important attributes and notify of a course change
+     * using {@link #fireValueChangedEvent()}.
+     */
+    private void registerChangeEventListeners() {
+        id.addListener((x, y, z) -> fireValueChangedEvent());
+//        name.addListener((x, y, z) -> fireValueChangedEvent());
+//        localizedName.addListener((x, y, z) -> fireValueChangedEvent());
+//        locale.addListener((x, y, z) -> fireValueChangedEvent());
+        credits.addListener((x, y, z) -> fireValueChangedEvent());
+//        teacherNames.addListener((x, y, z) -> fireValueChangedEvent());
+        prerequisites.addListener((x, y, z) -> fireValueChangedEvent());
+        corequisites.addListener((x, y, z) -> fireValueChangedEvent());
+    }
+
+    @Override
+    public int compareTo(Course o) {
+        return new CompareToBuilder().append(id, o.id).toComparison();
+    }
+
+    /**
+     * Creates a shallow copy of the given Course. Used for events.
+     *
+     * @see #fireValueChangedEvent()
+     * @param original the course to copy
+     * @return a new Course copy
+     */
+    public static Course copy(Course original) {
+        String id = original.getId();
+        String name = original.getName();
+        String localizedName = original.getLocalizedName();
+        Locale locale = original.getLocale();
+        Credits credits = original.getCredits();
+        List<String> teacherNames = new ArrayList<>(original.getTeacherNames());
+        List<Course> prerequisites = new ArrayList<>(original.getPrerequisites());
+        List<Course> corequisites = new ArrayList<>(original.getCorequisites());
+        return new Course(id, name, localizedName, locale, credits, teacherNames, prerequisites, corequisites);
+    }
+
+    @Override
+    public Course getValue() {
+        return Course.copy(this);
     }
 
     @Override

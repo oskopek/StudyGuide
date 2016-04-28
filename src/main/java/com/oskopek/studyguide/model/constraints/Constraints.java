@@ -1,6 +1,8 @@
 package com.oskopek.studyguide.model.constraints;
 
 import com.oskopek.studyguide.constraint.Constraint;
+import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
+import com.oskopek.studyguide.constraint.CourseGroupConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -14,29 +16,47 @@ import java.util.List;
  */
 public class Constraints {
 
-    private ListProperty<CourseGroup> courseGroupList;
+    private ListProperty<CourseGroupConstraint> courseGroupConstraintList;
     private ListProperty<GlobalConstraint> globalConstraintList;
+    private ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
 
     /**
      * Initialize an empty set of constraints.
      */
     public Constraints() {
-        courseGroupList = new SimpleListProperty<>(FXCollections.observableArrayList());
+        courseGroupConstraintList = new SimpleListProperty<>(FXCollections.observableArrayList());
         globalConstraintList = new SimpleListProperty<>(FXCollections.observableArrayList());
+        courseEnrollmentConstraintList = new SimpleListProperty<>(FXCollections.observableArrayList());
     }
-
     /**
-     * Get the list property of course groups (which can have constraints specific to them).
+     * Get the list of {@link CourseGroup} constraints.
      *
      * @return non-null
-     * @see CourseGroup#courseGroupConstraintListProperty()
      */
-    public ListProperty<CourseGroup> courseGroupListProperty() {
-        return courseGroupList;
+    public ObservableList<CourseGroupConstraint> getCourseGroupConstraintList() {
+        return courseGroupConstraintList.get();
     }
 
     /**
-     * Get the list property of global constraint.
+     * Get the list property of {@link CourseGroup} constraints.
+     *
+     * @return non-null
+     */
+    public ListProperty<CourseGroupConstraint> courseGroupConstraintListProperty() {
+        return courseGroupConstraintList;
+    }
+
+    /**
+     * Get the list of global constraints.
+     *
+     * @return non-null
+     */
+    public ObservableList<GlobalConstraint> getGlobalConstraintList() {
+        return globalConstraintList.get();
+    }
+
+    /**
+     * Get the list property of global constraints.
      *
      * @return non-null
      */
@@ -45,30 +65,21 @@ public class Constraints {
     }
 
     /**
-     * The internal global constraint list.
+     * Get the list of {@link com.oskopek.studyguide.model.CourseEnrollment} constraints.
      *
-     * @return non-null list of {@link GlobalConstraint}s
+     * @return non-null
      */
-    public ObservableList<GlobalConstraint> getGlobalConstraintList() {
-        return globalConstraintList.get();
+    public ObservableList<CourseEnrollmentConstraint> getCourseEnrollmentConstraintList() {
+        return courseEnrollmentConstraintList.get();
     }
 
     /**
-     * The internal course group list.
+     * Get the list property of {@link com.oskopek.studyguide.model.CourseEnrollment} constraints.
      *
-     * @return non-null list of {@link CourseGroup}s
+     * @return non-null
      */
-    public ObservableList<CourseGroup> getCourseGroupList() {
-        return courseGroupList.get();
-    }
-
-    /**
-     * Private setter for Jackson persistence.
-     *
-     * @param courseGroupList the list of {@link CourseGroup}s to set
-     */
-    private void setCourseGroupList(List<CourseGroup> courseGroupList) {
-        this.courseGroupList.set(FXCollections.observableArrayList(courseGroupList));
+    public ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintListProperty() {
+        return courseEnrollmentConstraintList;
     }
 
     /**
@@ -78,5 +89,23 @@ public class Constraints {
      */
     private void setGlobalConstraintList(List<GlobalConstraint> globalConstraintList) {
         this.globalConstraintList.set(FXCollections.observableArrayList(globalConstraintList));
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param courseGroupConstraintList the list of {@link CourseGroupConstraint}s to set
+     */
+    private void setCourseGroupConstraintList(List<CourseGroupConstraint> courseGroupConstraintList) {
+        this.courseGroupConstraintList.set(FXCollections.observableArrayList(courseGroupConstraintList));
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param courseEnrollmentConstraintList the list of {@link CourseEnrollmentConstraint}s to set
+     */
+    private void setCourseEnrollmentConstraintList(List<CourseEnrollmentConstraint> courseEnrollmentConstraintList) {
+        this.courseEnrollmentConstraintList.set(FXCollections.observableArrayList(courseEnrollmentConstraintList));
     }
 }
