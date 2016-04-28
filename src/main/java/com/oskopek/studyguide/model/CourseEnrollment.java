@@ -1,6 +1,6 @@
 package com.oskopek.studyguide.model;
 
-import com.oskopek.studyguide.constraints.CourseEnrollmentConstraint;
+import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;

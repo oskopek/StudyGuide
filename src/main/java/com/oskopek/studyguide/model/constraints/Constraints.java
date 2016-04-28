@@ -1,7 +1,7 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.oskopek.studyguide.constraints.Constraint;
-import com.oskopek.studyguide.constraints.GlobalConstraint;
+import com.oskopek.studyguide.constraint.Constraint;
+import com.oskopek.studyguide.constraint.GlobalConstraint;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -36,7 +36,7 @@ public class Constraints {
     }
 
     /**
-     * Get the list property of global constraints.
+     * Get the list property of global constraint.
      *
      * @return non-null
      */

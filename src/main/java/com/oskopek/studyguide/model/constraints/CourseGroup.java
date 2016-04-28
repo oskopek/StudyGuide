@@ -1,6 +1,6 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.oskopek.studyguide.constraints.CourseGroupConstraint;
+import com.oskopek.studyguide.constraint.CourseGroupConstraint;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseGroupType;
 import javafx.beans.property.ListProperty;
@@ -13,7 +13,7 @@ import javafx.collections.ObservableList;
 import java.util.List;
 
 /**
- * Defines a group of courses that can be validated against a {@link com.oskopek.studyguide.constraints.Constraint}.
+ * Defines a group of courses that can be validated against a {@link com.oskopek.studyguide.constraint.Constraint}.
  */
 public class CourseGroup {
 

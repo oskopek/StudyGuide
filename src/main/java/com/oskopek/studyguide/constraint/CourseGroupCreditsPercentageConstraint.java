@@ -1,4 +1,4 @@
-package com.oskopek.studyguide.constraints;
+package com.oskopek.studyguide.constraint;
 
 /**
  * Checks if the {@link com.oskopek.studyguide.model.courses.Credits} ratio fulfilled to total number of

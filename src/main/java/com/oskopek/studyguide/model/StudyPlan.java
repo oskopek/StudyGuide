@@ -9,7 +9,7 @@ import com.oskopek.studyguide.model.courses.CourseRegistry;
 public interface StudyPlan {
 
     /**
-     * The {@link com.oskopek.studyguide.constraints.Constraint}s placed on this plan.
+     * The {@link com.oskopek.studyguide.constraint.Constraint}s placed on this plan.
      *
      * @return may be null
      */

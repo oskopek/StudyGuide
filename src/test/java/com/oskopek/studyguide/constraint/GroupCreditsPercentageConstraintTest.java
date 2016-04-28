@@ -1,4 +1,4 @@
-package com.oskopek.studyguide.constraints;
+package com.oskopek.studyguide.constraint;
 
 /**
  * Test of {@link CourseGroupCreditsPercentageConstraint}.

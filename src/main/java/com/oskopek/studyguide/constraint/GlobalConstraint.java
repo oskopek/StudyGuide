@@ -1,4 +1,4 @@
-package com.oskopek.studyguide.constraints;
+package com.oskopek.studyguide.constraint;
 
 /**
  * Constraint on a global level (on all {@link com.oskopek.studyguide.model.CourseEnrollment}s in the

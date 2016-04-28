@@ -1,4 +1,4 @@
-package com.oskopek.studyguide.constraints;
+package com.oskopek.studyguide.constraint;
 
 /**
  * Constraint on the level of individual {@link com.oskopek.studyguide.model.constraints.CourseGroup}s.
