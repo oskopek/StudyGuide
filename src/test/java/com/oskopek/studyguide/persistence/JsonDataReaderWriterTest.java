@@ -69,7 +69,7 @@ public class JsonDataReaderWriterTest {
     @Test
     public void readComplexInput() throws IOException {
         DefaultStudyPlan plan = (DefaultStudyPlan) jsonDataReaderWriter.readFrom(Files.newInputStream(
-                Paths.get("src/test/resources/com/oskopek/studyguide/persistence/my_study2.json")));
+                Paths.get("src/test/resources/com/oskopek/studyguide/persistence/my_study.json")));
         assertNotNull(plan);
         assertNotNull(plan.getSemesterPlan());
         assertNotNull(plan.getSemesterPlan().getSemesterList());

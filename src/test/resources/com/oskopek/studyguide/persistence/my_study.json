@@ -32,6 +32,51 @@
     "globalConstraintList": []
   },
   "courseRegistry": {
-    "courses": {}
+    "courses": {
+      "NMAI054": {
+        "id": "NMAI054",
+        "name": "Mathematical analysis I",
+        "localizedName": "Matematicka analyza I",
+        "locale": "cz",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "Klazar",
+          "Vybiral"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NMAI055": {
+        "id": "NMAI055",
+        "name": "Mathematical analysis II",
+        "localizedName": "Matematicka analyza II",
+        "locale": "cz",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "Klazar",
+          "Vybiral"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NMAI056": {
+        "id": "NMAI056",
+        "name": "Mathematical analysis III",
+        "localizedName": "Matematicka analyza III",
+        "locale": "cz",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "Klazar"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      }
+    }
   }
 }

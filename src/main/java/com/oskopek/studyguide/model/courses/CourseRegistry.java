@@ -24,7 +24,7 @@ public class CourseRegistry {
     }
 
     /**
-     * Put (add or replace) a course into the registry.
+     * Put (add or replace) a course and all it's dependencies into the registry.
      *
      * @param course non-null
      * @throws IllegalArgumentException if course is null
@@ -35,7 +35,22 @@ public class CourseRegistry {
             throw new IllegalArgumentException("Cannot add null Course to registry.");
         }
         courseIdMap.put(course.getId(), course);
-        putAllCourses(course.getRequiredCourses());
+        putAllCourses(course.getPrerequisites());
+        putAllCourses(course.getCorequisites());
+    }
+
+    /**
+     * Put (add or replace) a course and without it's dependencies into the registry.
+     *
+     * @param course non-null
+     * @throws IllegalArgumentException if course is null
+     * @see Course#equals(Object)
+     */
+    public void putCourseSimple(Course course) throws IllegalArgumentException {
+        if (course == null) {
+            throw new IllegalArgumentException("Cannot add null Course to registry.");
+        }
+        courseIdMap.put(course.getId(), course);
     }
 
     /**

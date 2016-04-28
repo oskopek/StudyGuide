@@ -26,7 +26,8 @@ public class Course {
     private final ObjectProperty<Locale> locale;
     private final ObjectProperty<Credits> credits;
     private final ListProperty<String> teacherNames;
-    private final ListProperty<Course> requiredCourses;
+    private final ListProperty<Course> prerequisites;
+    private final ListProperty<Course> corequisites;
 
     /**
      * Empty default constructor for JSON.
@@ -38,7 +39,8 @@ public class Course {
         this.locale = new SimpleObjectProperty<>(Locale.getDefault());
         this.credits = new SimpleObjectProperty<>();
         this.teacherNames = new SimpleListProperty<>();
-        this.requiredCourses = new SimpleListProperty<>();
+        this.prerequisites = new SimpleListProperty<>();
+        this.corequisites = new SimpleListProperty<>();
     }
 
     /**
@@ -50,13 +52,14 @@ public class Course {
      * @param locale          the locale of the localized course name, non-null if {@code localizedName} is non-null
      * @param credits         the credits awarded after fulfilling this course, non-null
      * @param teacherNames    teachers of this course
-     * @param requiredCourses courses required
-     * as per {@link com.oskopek.studyguide.constraints.CourseEnrollmentRequirementsUnfulfilledConstraint}
+     * @param prerequisites   courses to be fulfilled before enrolling in this course
+     * @param corequisites    courses to be enrolled in before (or at the same time) enrolling in this course
      * @throws IllegalArgumentException if id, name or credits are null
      *                                  or if the locale is null when localizedName is non-null
      */
     public Course(String id, String name, String localizedName, Locale locale, Credits credits,
-                  List<String> teacherNames, List<Course> requiredCourses) throws IllegalArgumentException {
+                  List<String> teacherNames, List<Course> prerequisites, List<Course> corequisites)
+            throws IllegalArgumentException {
         if (id == null || name == null || credits == null) {
             throw new IllegalArgumentException("Id, name and credits cannot be null.");
         }
@@ -73,10 +76,15 @@ public class Course {
         } else {
             this.teacherNames = new SimpleListProperty<>(FXCollections.observableArrayList(teacherNames));
         }
-        if (requiredCourses == null) {
-            this.requiredCourses = new SimpleListProperty<>();
+        if (prerequisites == null) {
+            this.prerequisites = new SimpleListProperty<>();
         } else {
-            this.requiredCourses = new SimpleListProperty<>(FXCollections.observableArrayList(requiredCourses));
+            this.prerequisites = new SimpleListProperty<>(FXCollections.observableArrayList(prerequisites));
+        }
+        if (corequisites == null) {
+            this.corequisites = new SimpleListProperty<>();
+        } else {
+            this.corequisites = new SimpleListProperty<>(FXCollections.observableArrayList(corequisites));
         }
     }
 
@@ -127,13 +135,21 @@ public class Course {
     }
 
     /**
-     * Courses required to fulfill this course.
+     * Courses that need to be fulfilled in order to enroll in this course.
      *
      * @return non-null, may be empty
-     * @see com.oskopek.studyguide.constraints.CourseEnrollmentRequirementsUnfulfilledConstraint
      */
-    public ObservableList<Course> getRequiredCourses() {
-        return requiredCourses.get();
+    public ObservableList<Course> getPrerequisites() {
+        return prerequisites.get();
+    }
+
+    /**
+     * Courses required to be enrolled in before enrolling in this course.
+     *
+     * @return non-null, may be empty
+     */
+    public ObservableList<Course> getCorequisites() {
+        return corequisites.get();
     }
 
     /**
@@ -230,12 +246,20 @@ public class Course {
     }
 
     /**
-     * The JavaFX property for {@link #getRequiredCourses()}.
+     * The JavaFX property for {@link #getPrerequisites()}.
      *
-     * @return the property of {@link #getRequiredCourses()}
+     * @return the property of {@link #getPrerequisites()}
      */
-    public ListProperty<Course> requiredCoursesProperty() {
-        return requiredCourses;
+    public ListProperty<Course> prerequisitesProperty() {
+        return prerequisites;
+    }
+    /**
+     * The JavaFX property for {@link #getCorequisites()}.
+     *
+     * @return the property of {@link #getCorequisites()}
+     */
+    public ListProperty<Course> corequisitesProperty() {
+        return corequisites;
     }
 
     /**
@@ -288,14 +312,25 @@ public class Course {
     }
 
     /**
-     * Setter into {@link #requiredCoursesProperty()}.
-     * @param requiredCourses non-null
+     * Setter into {@link #prerequisitesProperty()}.
+     * @param prerequisites non-null
      */
-    public void setRequiredCourses(List<Course> requiredCourses) {
-        if (requiredCourses == null) {
-            throw new IllegalArgumentException("The required courses list cannot be null.");
+    public void setPrerequisites(List<Course> prerequisites) {
+        if (prerequisites == null) {
+            throw new IllegalArgumentException("The prerequisites list cannot be null.");
         }
-        this.requiredCourses.set(FXCollections.observableArrayList(requiredCourses));
+        this.prerequisites.set(FXCollections.observableArrayList(prerequisites));
+    }
+
+    /**
+     * Setter into {@link #corequisitesProperty()}.
+     * @param corequisites non-null
+     */
+    public void setCorequisites(List<Course> corequisites) {
+        if (corequisites == null) {
+            throw new IllegalArgumentException("The corequisites list cannot be null.");
+        }
+        this.corequisites.set(FXCollections.observableArrayList(corequisites));
     }
 
     /**
@@ -324,14 +359,15 @@ public class Course {
         return new EqualsBuilder().append(getId(), course.getId()).append(getName(), course.getName())
                 .append(getLocalizedName(), course.getLocalizedName()).append(getLocale(), course.getLocale())
                 .append(getCredits(), course.getCredits()).append(getTeacherNames(), course.getTeacherNames())
-                .append(getRequiredCourses(), course.getRequiredCourses()).isEquals();
+                .append(getPrerequisites(), course.getPrerequisites())
+                .append(getCorequisites(), course.getCorequisites()).isEquals();
     }
 
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37).append(getId()).append(getName()).append(getLocalizedName())
-                .append(getLocale()).append(getCredits()).append(getTeacherNames()).append(getRequiredCourses())
-                .toHashCode();
+                .append(getLocale()).append(getCredits()).append(getTeacherNames()).append(getPrerequisites())
+                .append(getCorequisites()).toHashCode();
     }
 
     @Override

@@ -17,7 +17,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NTIN066",
           "name" : "Data Structures I",
           "localizedName" : "Datové struktury I",
@@ -26,7 +27,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NTIN066" : {
@@ -38,7 +40,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI141" : {
         "id" : "NSWI141",
@@ -49,7 +52,8 @@
           "creditValue" : 2
         },
         "teacherNames" : [ "RNDr. Libor Forst" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NOFY056" : {
         "id" : "NOFY056",
@@ -60,7 +64,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI036" : {
         "id" : "NDBI036",
@@ -71,7 +76,7 @@
           "creditValue" : 4
         },
         "teacherNames" : [ "RNDr. Ondřej Zýka" ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NDBI025",
           "name" : "Database Systems",
           "localizedName" : "Databázové systémy",
@@ -80,7 +85,8 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         }, {
           "id" : "NDBI007",
           "name" : "Data Organisation and Processing I",
@@ -90,8 +96,10 @@
             "creditValue" : 4
           },
           "teacherNames" : [ "RNDr. David Hoksza, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NDBI034" : {
         "id" : "NDBI034",
@@ -102,7 +110,7 @@
           "creditValue" : 4
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NDBI025",
           "name" : "Database Systems",
           "localizedName" : "Databázové systémy",
@@ -111,8 +119,10 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NSWI149" : {
         "id" : "NSWI149",
@@ -123,7 +133,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI021" : {
         "id" : "NSWI021",
@@ -134,7 +145,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI142" : {
         "id" : "NSWI142",
@@ -145,7 +157,7 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D.", "RNDr. Martin Kruliš, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NSWI141",
           "name" : "Introduction to networking",
           "localizedName" : "Úvod do počítačových sítí",
@@ -154,8 +166,10 @@
             "creditValue" : 2
           },
           "teacherNames" : [ "RNDr. Libor Forst" ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NSWI144" : {
         "id" : "NSWI144",
@@ -166,7 +180,8 @@
           "creditValue" : 4
         },
         "teacherNames" : [ "RNDr. Tomáš Knap, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI068" : {
         "id" : "NSWI068",
@@ -177,7 +192,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Bureš, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI101" : {
         "id" : "NSWI101",
@@ -188,7 +204,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. Ing. František Plášil, DrSc.", "RNDr. Jan Kofroň, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI145" : {
         "id" : "NSWI145",
@@ -199,7 +216,7 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. Tomáš Knap, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NPRG036",
           "name" : "XML Technologies",
           "localizedName" : "Technologie XML",
@@ -208,8 +225,10 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NPRG043" : {
         "id" : "NPRG043",
@@ -220,7 +239,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Ing. Lubomír Bulej, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG041" : {
         "id" : "NPRG041",
@@ -231,7 +251,7 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NPRM045",
           "name" : "Programming II",
           "localizedName" : "Programování II",
@@ -240,7 +260,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         }, {
           "id" : "NOFY056",
           "name" : "Programming for Physicists",
@@ -250,7 +271,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         }, {
           "id" : "NPRG031",
           "name" : "Programming II",
@@ -260,17 +282,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
-          "id" : "NMIN101",
-          "name" : "Programming 1",
-          "localizedName" : "Programování 1",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         }, {
           "id" : "NMIN102",
           "name" : "Programming 2",
@@ -280,7 +293,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ {
+          "prerequisites" : [ ],
+          "corequisites" : [ {
             "id" : "NMIN101",
             "name" : "Programming 1",
             "localizedName" : "Programování 1",
@@ -289,9 +303,11 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           } ]
-        } ]
+        } ],
+        "corequisites" : [ ]
       },
       "NAIL029" : {
         "id" : "NAIL029",
@@ -302,7 +318,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Marta Vomlelová, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG042" : {
         "id" : "NPRG042",
@@ -313,27 +330,7 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Jakub Yaghob, Ph.D." ],
-        "requiredCourses" : [ {
-          "id" : "NPRM045",
-          "name" : "Programming II",
-          "localizedName" : "Programování II",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
-          "id" : "NOFY056",
-          "name" : "Programming for Physicists",
-          "localizedName" : "Programování pro fyziky",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
+        "prerequisites" : [ {
           "id" : "NPRG041",
           "name" : "Programming in C++",
           "localizedName" : "Programování v C++",
@@ -342,7 +339,7 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D." ],
-          "requiredCourses" : [ {
+          "prerequisites" : [ {
             "id" : "NPRM045",
             "name" : "Programming II",
             "localizedName" : "Programování II",
@@ -351,7 +348,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           }, {
             "id" : "NOFY056",
             "name" : "Programming for Physicists",
@@ -361,7 +359,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           }, {
             "id" : "NPRG031",
             "name" : "Programming II",
@@ -371,17 +370,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
-          }, {
-            "id" : "NMIN101",
-            "name" : "Programming 1",
-            "localizedName" : "Programování 1",
-            "locale" : "cs",
-            "credits" : {
-              "creditValue" : 5
-            },
-            "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           }, {
             "id" : "NMIN102",
             "name" : "Programming 2",
@@ -391,7 +381,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ {
+            "prerequisites" : [ ],
+            "corequisites" : [ {
               "id" : "NMIN101",
               "name" : "Programming 1",
               "localizedName" : "Programování 1",
@@ -400,50 +391,13 @@
                 "creditValue" : 5
               },
               "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-              "requiredCourses" : [ ]
+              "prerequisites" : [ ],
+              "corequisites" : [ ]
             } ]
-          } ]
-        }, {
-          "id" : "NPRG031",
-          "name" : "Programming II",
-          "localizedName" : "Programování II",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
-          "id" : "NMIN101",
-          "name" : "Programming 1",
-          "localizedName" : "Programování 1",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
-          "id" : "NMIN102",
-          "name" : "Programming 2",
-          "localizedName" : "Programování 2",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ {
-            "id" : "NMIN101",
-            "name" : "Programming 1",
-            "localizedName" : "Programování 1",
-            "locale" : "cs",
-            "credits" : {
-              "creditValue" : 5
-            },
-            "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
-          } ]
-        } ]
+          } ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NSWI094" : {
         "id" : "NSWI094",
@@ -454,7 +408,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. Tomáš Rubač" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI021" : {
         "id" : "NDBI021",
@@ -465,7 +420,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "prof. RNDr. Peter Vojtáš, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMAI060" : {
         "id" : "NMAI060",
@@ -476,7 +432,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Jaromír Antoch, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI130" : {
         "id" : "NSWI130",
@@ -487,7 +444,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI025" : {
         "id" : "NDBI025",
@@ -498,7 +456,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI023" : {
         "id" : "NDBI023",
@@ -509,7 +468,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI131" : {
         "id" : "NSWI131",
@@ -520,7 +480,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG014" : {
         "id" : "NPRG014",
@@ -531,7 +492,8 @@
           "creditValue" : 2
         },
         "teacherNames" : [ "doc. Ing. Petr Tůma, Dr.", "doc. RNDr. Tomáš Bureš, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG059" : {
         "id" : "NPRG059",
@@ -542,7 +504,8 @@
           "creditValue" : 2
         },
         "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG054" : {
         "id" : "NPRG054",
@@ -553,27 +516,7 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. David Bednárek, Ph.D." ],
-        "requiredCourses" : [ {
-          "id" : "NPRM045",
-          "name" : "Programming II",
-          "localizedName" : "Programování II",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
-          "id" : "NOFY056",
-          "name" : "Programming for Physicists",
-          "localizedName" : "Programování pro fyziky",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
+        "prerequisites" : [ {
           "id" : "NPRG041",
           "name" : "Programming in C++",
           "localizedName" : "Programování v C++",
@@ -582,7 +525,7 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D." ],
-          "requiredCourses" : [ {
+          "prerequisites" : [ {
             "id" : "NPRM045",
             "name" : "Programming II",
             "localizedName" : "Programování II",
@@ -591,7 +534,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           }, {
             "id" : "NOFY056",
             "name" : "Programming for Physicists",
@@ -601,7 +545,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           }, {
             "id" : "NPRG031",
             "name" : "Programming II",
@@ -611,17 +556,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
-          }, {
-            "id" : "NMIN101",
-            "name" : "Programming 1",
-            "localizedName" : "Programování 1",
-            "locale" : "cs",
-            "credits" : {
-              "creditValue" : 5
-            },
-            "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           }, {
             "id" : "NMIN102",
             "name" : "Programming 2",
@@ -631,7 +567,8 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ {
+            "prerequisites" : [ ],
+            "corequisites" : [ {
               "id" : "NMIN101",
               "name" : "Programming 1",
               "localizedName" : "Programování 1",
@@ -640,50 +577,13 @@
                 "creditValue" : 5
               },
               "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-              "requiredCourses" : [ ]
+              "prerequisites" : [ ],
+              "corequisites" : [ ]
             } ]
-          } ]
-        }, {
-          "id" : "NPRG031",
-          "name" : "Programming II",
-          "localizedName" : "Programování II",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
-          "id" : "NMIN101",
-          "name" : "Programming 1",
-          "localizedName" : "Programování 1",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
-        }, {
-          "id" : "NMIN102",
-          "name" : "Programming 2",
-          "localizedName" : "Programování 2",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ {
-            "id" : "NMIN101",
-            "name" : "Programming 1",
-            "localizedName" : "Programování 1",
-            "locale" : "cs",
-            "credits" : {
-              "creditValue" : 5
-            },
-            "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-            "requiredCourses" : [ ]
-          } ]
-        } ]
+          } ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NSWI041" : {
         "id" : "NSWI041",
@@ -694,7 +594,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN043" : {
         "id" : "NTIN043",
@@ -705,7 +606,7 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D.", "RNDr. Pavel Parízek, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NSWI041",
           "name" : "Introduction to Software Engineering",
           "localizedName" : "Úvod do softwarového inženýrství",
@@ -714,8 +615,10 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NPRM045" : {
         "id" : "NPRM045",
@@ -726,7 +629,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI080" : {
         "id" : "NSWI080",
@@ -737,7 +641,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI019" : {
         "id" : "NDBI019",
@@ -748,7 +653,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI004" : {
         "id" : "NSWI004",
@@ -759,7 +665,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI126" : {
         "id" : "NSWI126",
@@ -770,7 +677,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Petr Hnětynka, Ph.D.", "RNDr. Pavel Parízek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI016" : {
         "id" : "NDBI016",
@@ -781,7 +689,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Jakub Lokoč, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI120" : {
         "id" : "NSWI120",
@@ -792,7 +701,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Pavel Ježek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI045" : {
         "id" : "NSWI045",
@@ -803,7 +713,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG027" : {
         "id" : "NPRG027",
@@ -814,7 +725,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Informatika Mgr. - Softwarové systémy", "Informatika Mgr. - Matematická lingvistika" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG023" : {
         "id" : "NPRG023",
@@ -825,7 +737,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ "Informatika Mgr. - Softwarové systémy", "Informatika Mgr. - Matematická lingvistika" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG024" : {
         "id" : "NPRG024",
@@ -836,7 +749,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN090" : {
         "id" : "NTIN090",
@@ -847,7 +761,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL054" : {
         "id" : "NPFL054",
@@ -858,7 +773,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Barbora Vidová Hladká, Ph.D.", "RNDr. Martin Holub, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI072" : {
         "id" : "NSWI072",
@@ -869,7 +785,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI043" : {
         "id" : "NDBI043",
@@ -880,7 +797,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI073" : {
         "id" : "NSWI073",
@@ -891,7 +809,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NSWI021",
           "name" : "Computer Networks II",
           "localizedName" : "Počítačové sítě II",
@@ -900,7 +819,8 @@
             "creditValue" : 3
           },
           "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         }, {
           "id" : "NSWI045",
           "name" : "TCP/IP Protocol Suite",
@@ -910,7 +830,8 @@
             "creditValue" : 3
           },
           "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NSWI150" : {
@@ -922,7 +843,7 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Jakub Yaghob, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NSWI120",
           "name" : "Principles of Computers",
           "localizedName" : "Principy počítačů",
@@ -931,8 +852,10 @@
             "creditValue" : 3
           },
           "teacherNames" : [ "Mgr. Pavel Ježek, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NDBI042" : {
         "id" : "NDBI042",
@@ -943,7 +866,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. David Hoksza, Ph.D.", "doc. RNDr. Tomáš Skopal, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI152" : {
         "id" : "NSWI152",
@@ -954,7 +878,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI001" : {
         "id" : "NDBI001",
@@ -965,7 +890,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "prof. RNDr. Jaroslav Pokorný, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ025" : {
         "id" : "NSZZ025",
@@ -976,7 +902,8 @@
           "creditValue" : 15
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI007" : {
         "id" : "NDBI007",
@@ -987,7 +914,8 @@
           "creditValue" : 4
         },
         "teacherNames" : [ "RNDr. David Hoksza, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ023" : {
         "id" : "NSZZ023",
@@ -998,7 +926,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI006" : {
         "id" : "NDBI006",
@@ -1009,7 +938,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "prof. RNDr. Jaroslav Pokorný, CSc.", "prof. RNDr. Peter Vojtáš, DrSc." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NDBI001",
           "name" : "Query Languages I",
           "localizedName" : "Dotazovací jazyky I",
@@ -1018,7 +948,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "prof. RNDr. Jaroslav Pokorný, CSc." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NSZZ024" : {
@@ -1030,7 +961,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI153" : {
         "id" : "NSWI153",
@@ -1041,17 +973,7 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Martin Kruliš, Ph.D." ],
-        "requiredCourses" : [ {
-          "id" : "NSWI141",
-          "name" : "Introduction to networking",
-          "localizedName" : "Úvod do počítačových sítí",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 2
-          },
-          "teacherNames" : [ "RNDr. Libor Forst" ],
-          "requiredCourses" : [ ]
-        }, {
+        "prerequisites" : [ {
           "id" : "NSWI142",
           "name" : "Web Applications",
           "localizedName" : "Webové aplikace",
@@ -1060,7 +982,7 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D.", "RNDr. Martin Kruliš, Ph.D." ],
-          "requiredCourses" : [ {
+          "prerequisites" : [ {
             "id" : "NSWI141",
             "name" : "Introduction to networking",
             "localizedName" : "Úvod do počítačových sítí",
@@ -1069,9 +991,12 @@
               "creditValue" : 2
             },
             "teacherNames" : [ "RNDr. Libor Forst" ],
-            "requiredCourses" : [ ]
-          } ]
-        } ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          } ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NSWI035" : {
         "id" : "NSWI035",
@@ -1082,7 +1007,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG039" : {
         "id" : "NPRG039",
@@ -1093,7 +1019,7 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NPRG036",
           "name" : "XML Technologies",
           "localizedName" : "Technologie XML",
@@ -1102,7 +1028,8 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         }, {
           "id" : "NDBI025",
           "name" : "Database Systems",
@@ -1112,8 +1039,10 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NPRG036" : {
         "id" : "NPRG036",
@@ -1124,7 +1053,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI108" : {
         "id" : "NSWI108",
@@ -1135,7 +1065,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "prof. RNDr. Peter Vojtáš, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG031" : {
         "id" : "NPRG031",
@@ -1146,7 +1077,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMIN101" : {
         "id" : "NMIN101",
@@ -1157,7 +1089,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMIN102" : {
         "id" : "NMIN102",
@@ -1168,7 +1101,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NMIN101",
           "name" : "Programming 1",
           "localizedName" : "Programování 1",
@@ -1177,7 +1111,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NDBI040" : {
@@ -1189,7 +1124,7 @@
           "creditValue" : 4
         },
         "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NDBI025",
           "name" : "Database Systems",
           "localizedName" : "Databázové systémy",
@@ -1198,8 +1133,10 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       }
     }
   }

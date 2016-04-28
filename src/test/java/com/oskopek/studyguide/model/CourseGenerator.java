@@ -33,8 +33,9 @@ public final class CourseGenerator {
         Locale locale = Locale.forLanguageTag("cs");
         Credits credits = Credits.valueOf(random.nextInt(10));
         List<String> teachers = new ArrayList<>();
-        List<Course> reqCourses = new ArrayList<>();
-        return new Course(id, name, localizedName, locale, credits, teachers, reqCourses);
+        List<Course> prereqCourses = new ArrayList<>();
+        List<Course> coreqCourses = new ArrayList<>();
+        return new Course(id, name, localizedName, locale, credits, teachers, prereqCourses, coreqCourses);
     }
 
     /**
