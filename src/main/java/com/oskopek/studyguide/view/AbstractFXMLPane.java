@@ -1,13 +1,16 @@
 package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.controller.AbstractController;
+import com.oskopek.studyguide.weld.MessagesProducer;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
+import javax.inject.Inject;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 /**
  * Abstraction of a pane to be loaded from an FXML file. Subclasses should specify the return type.
@@ -15,9 +18,11 @@ import java.io.IOException;
 public abstract class AbstractFXMLPane {
 
     /**
-     * A static instance of {@link StudyGuideResourceBundle} for translating strings in the view.
+     * An injected instance of {@link ResourceBundle} for translating strings in the view or constraints.
+     * @see MessagesProducer#createMessagesResourceBundle()
      */
-    public static final StudyGuideResourceBundle messages = new StudyGuideResourceBundle();
+    @Inject
+    protected ResourceBundle messages;
 
     protected AbstractController controller;
     protected StudyGuideApplication studyGuideApplication;
@@ -31,7 +36,7 @@ public abstract class AbstractFXMLPane {
     public Node load(StudyGuideApplication studyGuideApplication) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(getFxmlResource()));
-        loader.setResources(AbstractFXMLPane.messages);
+        loader.setResources(messages);
         Node node = null;
         try {
             node = loader.load();
@@ -76,8 +81,8 @@ public abstract class AbstractFXMLPane {
      */
     private void handleLoadLayoutError(IOException e) throws IllegalStateException {
         AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
-                AbstractFXMLPane.messages.getString("error.cannotLoadLayout"), ButtonType.CLOSE);
-        throw new IllegalStateException(AbstractFXMLPane.messages.getString("error.cannotLoadLayout"), e);
+                messages.getString("error.cannotLoadLayout"), ButtonType.CLOSE);
+        throw new IllegalStateException(messages.getString("error.cannotLoadLayout"), e);
     }
 
     /**
