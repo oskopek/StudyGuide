@@ -3,6 +3,8 @@ package com.oskopek.studyguide.model;
 import com.oskopek.studyguide.model.constraints.Constraints;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 
+import javax.inject.Singleton;
+
 /**
  * Representation of the whole study plan model.
  */

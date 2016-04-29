@@ -40,6 +40,12 @@
             <children>
                 <BorderPane prefHeight="449.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0"
                             AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <center>
+                        <fx:include source="SemesterPane.fxml"/>
+                    </center>
+                    <right>
+                        <fx:include source="StudyPane.fxml"/>
+                    </right>
                 </BorderPane>
             </children>
         </AnchorPane>

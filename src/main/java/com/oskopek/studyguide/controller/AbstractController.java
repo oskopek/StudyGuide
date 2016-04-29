@@ -1,40 +1,22 @@
 package com.oskopek.studyguide.controller;
 
-import com.oskopek.studyguide.view.AbstractFXMLPane;
 import com.oskopek.studyguide.view.StudyGuideApplication;
+import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import java.util.ResourceBundle;
 
 /**
- * Abstraction over controllers for {@link AbstractFXMLPane} successors.
- *
- * @param <T> the type of pane the controller controls
+ * Abstraction over controllers.
  */
-public abstract class AbstractController<T extends AbstractFXMLPane> {
+public abstract class AbstractController {
 
-    protected T viewElement;
-
+    @Inject
     protected StudyGuideApplication studyGuideApplication;
 
     @Inject
-    protected ResourceBundle messages;
+    protected transient Logger logger;
 
-    /**
-     * Set the {@link AbstractFXMLPane} successor to control.
-     *
-     * @param viewElement non-null
-     */
-    public void setViewElement(T viewElement) {
-        this.viewElement = viewElement;
-    }
-
-    /**
-     * Set the main app (and model) reference.
-     *
-     * @param studyGuideApplication non-null
-     */
-    public void setStudyGuideApplication(StudyGuideApplication studyGuideApplication) {
-        this.studyGuideApplication = studyGuideApplication;
-    }
+    @Inject
+    protected transient ResourceBundle messages;
 }

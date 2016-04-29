@@ -2,9 +2,7 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.courses.Course;
-import com.oskopek.studyguide.view.AbstractFXMLPane;
-import com.oskopek.studyguide.view.ChooseCourseDialogPane;
-import com.oskopek.studyguide.view.FindCoursePane;
+import com.oskopek.studyguide.view.ChooseCourseDialogPaneCreator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -14,6 +12,7 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,7 +25,7 @@ import java.util.stream.Stream;
 /**
  * Controller for searching courses in multiple data-sources.
  */
-public class FindCoursesController extends AbstractController<FindCoursePane> implements FindCourses {
+public class FindCoursesController extends AbstractController implements FindCourses {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -34,6 +33,9 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
     private TextField searchField;
 
     private List<FindCourses> findCoursesList;
+
+    @Inject
+    private ChooseCourseDialogPaneCreator chooseCourseDialogPaneCreator;
 
     /**
      * Creates an empty instance.
@@ -51,11 +53,8 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
         List<Course> courses = findCourses(input).collect(Collectors.toList());
         logger.debug("Courses found for input \"{}\": {}", input, Arrays.toString(courses.toArray()));
 
-        ChooseCourseDialogPane pane = new ChooseCourseDialogPane();
         Dialog<ButtonType> chooseCourseDialog = new Dialog<>();
-        chooseCourseDialog.dialogPaneProperty()
-                .setValue((DialogPane) pane.load(studyGuideApplication, courses, chooseCourseDialog));
-        ChooseCourseController controller = (ChooseCourseController) pane.getController();
+        ChooseCourseController controller = chooseCourseDialogPaneCreator.create(courses, chooseCourseDialog);
 
         Optional<ButtonType> result = chooseCourseDialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
@@ -66,16 +65,15 @@ public class FindCoursesController extends AbstractController<FindCoursePane> im
                     Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
                     if (addTo == null) { // no semester in plan
                         AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
-                                AbstractFXMLPane.messages.getString("findCourses.noSemester"));
+                                messages.getString("findCourses.noSemester"));
                     } else {
                         addTo.addCourseEnrollment(chosen);
                     }
                 } catch (IllegalArgumentException e) {
                     logger.debug("Added wrong course({}), showing error box.", chosen);
                     AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
-                            AbstractFXMLPane.messages.getString("findCourses.courseAlreadyEnrolled"));
+                            messages.getString("findCourses.courseAlreadyEnrolled"));
                 }
-                studyGuideApplication.reinitialize();
             }
         }
     }

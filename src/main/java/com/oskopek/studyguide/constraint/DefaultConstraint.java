@@ -11,6 +11,6 @@ public abstract class DefaultConstraint implements Constraint {
     protected SemesterPlan semesterPlan;
 
     @Inject
-    protected ResourceBundle messages;
+    protected transient ResourceBundle messages;
 
 }

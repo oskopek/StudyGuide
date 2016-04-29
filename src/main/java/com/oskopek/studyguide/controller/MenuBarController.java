@@ -4,8 +4,6 @@ import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.persistence.DataReader;
 import com.oskopek.studyguide.persistence.DataWriter;
 import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
-import com.oskopek.studyguide.view.AbstractFXMLPane;
-import com.oskopek.studyguide.view.RootLayoutPane;
 import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -19,21 +17,26 @@ import javafx.stage.FileChooser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import java.io.File;
 import java.io.IOException;
 
 /**
  * Handles all action in the menu bar of the main app.
  */
-public class MenuBarController extends AbstractController<RootLayoutPane> {
-
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+public class MenuBarController extends AbstractController {
 
     private File openedFile;
 
     private DataReader reader = new JsonDataReaderWriter();
 
     private DataWriter writer = new JsonDataReaderWriter();
+
+    @Inject
+    private SemesterController semesterController;
+
+    @Inject
+    private FindCoursesController findCoursesController;
 
     @FXML
     private MenuBar menuBar;
@@ -74,7 +77,6 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
     private void handleNew() {
         openedFile = null;
         studyGuideApplication.setStudyPlan(new DefaultStudyPlan());
-        studyGuideApplication.reinitialize();
     }
 
     /**
@@ -141,8 +143,8 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         Dialog<Label> dialog = new Dialog<>();
         dialog.setContentText(
                 "                               StudyGuide\n" + "    <https://github.com/oskopek/StudyGuide>\n"
-                        + AbstractFXMLPane.messages.getString("menu.author") + ": Ondrej Skopek <oskopek@matfyz.cz>");
-        dialog.setTitle(AbstractFXMLPane.messages.getString("root.about"));
+                        + messages.getString("menu.author") + ": Ondrej Skopek <oskopek@matfyz.cz>");
+        dialog.setTitle(messages.getString("root.about"));
         dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
         dialog.showAndWait();
     }
@@ -162,7 +164,7 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         try {
             writer.writeTo(studyGuideApplication.getStudyPlan(), file.getAbsolutePath());
         } catch (IOException e) {
-            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
+//            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to save study plan: " + e); // TODO
             e.printStackTrace();
         }
     }
@@ -182,13 +184,12 @@ public class MenuBarController extends AbstractController<RootLayoutPane> {
         try {
             studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath()));
         } catch (IOException e) {
-            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
+//            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e); // TODO
             e.printStackTrace();
         }
         if (studyGuideApplication.getStudyPlan() != null) {
             openedFile = file;
         }
-        studyGuideApplication.reinitialize();
     }
 
 }

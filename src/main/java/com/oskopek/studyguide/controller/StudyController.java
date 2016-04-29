@@ -1,11 +1,9 @@
 package com.oskopek.studyguide.controller;
 
-import com.oskopek.studyguide.view.StudyPane;
-
 /**
- * Controller for {@link StudyPane}.
+ * Controller for StudyPane.
  */
-public class StudyController extends AbstractController<StudyPane> {
+public class StudyController extends AbstractController {
 
 
 }

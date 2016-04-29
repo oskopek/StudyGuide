@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 public abstract class StringMessageEvent {
 
     @Inject
-    protected ResourceBundle messages;
+    protected transient ResourceBundle messages;
 
     private String message;
 

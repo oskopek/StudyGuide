@@ -5,7 +5,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <BorderPane fx:id="semesterPane" prefHeight="300.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT"
             xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.oskopek.studyguide.controller.SemesterController">
@@ -25,14 +26,19 @@
         </HBox>
     </top>
     <center>
-        <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="TOP_LEFT">
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" BorderPane.alignment="TOP_LEFT">
             <content>
-                <TilePane fx:id="tilePane" alignment="TOP_CENTER" hgap="8.0" prefColumns="2" prefRows="3"
-                          tileAlignment="TOP_CENTER" vgap="8.0">
-                    <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                    </padding>
-                </TilePane>
+                <TableView fx:id="semesterBoxTable" minHeight="200.0" minWidth="200.0" onDragDetected="#onDragDetected"
+                           onDragDone="#onDragDone" onDragDropped="#onDragDropped"
+                           BorderPane.alignment="CENTER">
+                    <columns>
+                        <TableColumn fx:id="winterSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.winter"/>
+                        <TableColumn fx:id="summerSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.summer"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
             </content>
         </ScrollPane>
     </center>
