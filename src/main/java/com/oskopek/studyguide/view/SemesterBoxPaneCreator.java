@@ -18,10 +18,12 @@ public class SemesterBoxPaneCreator {
 
     public ObservableValue<BorderPane> create(Semester semester) {
         BorderPane semesterBoxPane = null;
+        fxmlLoader.setLocation(getClass().getResource("SemesterBoxPane.fxml")); // TODO fix multiple fxml loaders
         try (InputStream is = getClass().getResourceAsStream("SemesterBoxPane.fxml")) {
             semesterBoxPane = fxmlLoader.load(is);
         } catch (IOException e) {
-            AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
+            //AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e); // TODO // FIXME: 4/30/16
+            throw new IllegalStateException("Error loading layout.", e);
         }
         SemesterBoxController semesterBoxController = fxmlLoader.getController();
         semesterBoxController.setSemester(semester);

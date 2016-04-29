@@ -3,29 +3,19 @@ package com.oskopek.studyguide.controller;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import com.oskopek.studyguide.model.courses.Credits;
-import javafx.beans.InvalidationListener;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.Property;
-import javafx.beans.property.ReadOnlyBooleanProperty;
-import javafx.beans.property.ReadOnlyIntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import org.apache.commons.lang.StringUtils;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -49,9 +39,9 @@ public class CourseEnrollmentDetailController extends AbstractController {
     @FXML
     private TextField corequisitesField;
 
-    private StringProperty creditsValueProperty;
+    private CreditsStringProperty creditsValueProperty;
 
-    private StringProperty teacherNamesProperty;
+    private StringListStringProperty teacherNamesProperty;
 
     private CourseListStringProperty prerequisitesProperty;
 
@@ -62,13 +52,10 @@ public class CourseEnrollmentDetailController extends AbstractController {
     @FXML
     private void initialize() {
         course = new SimpleObjectProperty<>();
-        creditsValueProperty = new SimpleStringProperty();
-        teacherNamesProperty = new SimpleStringProperty();
+        creditsValueProperty = new CreditsStringProperty();
+        teacherNamesProperty = new StringListStringProperty();
         prerequisitesProperty = new CourseListStringProperty();
         corequisitesProperty = new CourseListStringProperty();
-
-
-
     }
 
 
@@ -79,16 +66,12 @@ public class CourseEnrollmentDetailController extends AbstractController {
     public void setCourse(Course newCourse) {
         this.course.set(newCourse);
 
-        creditsValueProperty.addListener((observable, oldValue, newValue)
-                -> course.get().setCredits(Credits.valueOf(Integer.parseInt(newValue)))); // TODO check value is valid
-
         idField.textProperty().bindBidirectional(course.get().idProperty());
         nameField.textProperty().bindBidirectional(course.get().nameProperty());
-        creditsField.textProperty().bindBidirectional(creditsValueProperty);
-        corequisitesProperty.bindBidirectional(course.get().corequisitesProperty(), teacherNamesField.textProperty());
-
-        this.creditsValueProperty.setValue(Integer.toString(course.get().getCredits().getCreditValue())); // TODO move me
-        this.teacherNamesProperty.setValue(
+        creditsValueProperty.bindBidirectional(course.get().creditsProperty(), creditsField.textProperty());
+        teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(), teacherNamesField.textProperty());
+        corequisitesProperty.bindBidirectional(course.get().corequisitesProperty(), corequisitesField.textProperty());
+        prerequisitesProperty.bindBidirectional(course.get().prerequisitesProperty(), prerequisitesField.textProperty());
     }
 
     private static class CourseListStringProperty {
@@ -112,24 +95,119 @@ public class CourseEnrollmentDetailController extends AbstractController {
             this.stringProperty = stringProperty;
 
             listProperty.addListener((observable, oldValue, newValue) -> {
-                synchronizeFromList();
+                if (!oldValue.equals(newValue)) {
+                    synchronizeFromList();
+                }
             });
             stringProperty.addListener((observable, oldValue, newValue) -> {
-                if (oldValue.equals()) // TODO finished here
-                synchronizeFromString();
+                if (!oldValue.equals(newValue)) {
+                    synchronizeFromString();
+                }
             });
         }
 
         private void synchronizeFromList() {
             synchronized (this) {
-                stringList = list.stream().map(c -> c.getName()).reduce(", ", String::join);
+                stringList = list.stream().map(Course::getName).reduce(", ", String::join);
+                stringProperty.setValue(stringList);
             }
         }
 
         private void synchronizeFromString() {
             synchronized (this) {
-                list = Stream.of(stringList.split(",")).map(String::trim).map(id -> courseRegistry.getCourse(id))
+                list = Stream.of(stringList.split(",")).map(String::trim).map(id -> courseRegistry.getCourse(id)) // TODO check if valid correctly
                         .filter(x -> x != null).collect(Collectors.toList());
+                listProperty.setValue(FXCollections.observableArrayList(list));
+            }
+        }
+
+    }
+
+    private static class CreditsStringProperty {
+
+        private ObjectProperty<Credits> creditsProperty;
+
+        private Credits credits;
+        private String string;
+
+        private StringProperty stringProperty;
+
+        public CreditsStringProperty() {
+            // intentionally empty
+        }
+
+        public void bindBidirectional(ObjectProperty<Credits> creditsProperty, StringProperty stringProperty) {
+            this.creditsProperty = creditsProperty;
+            this.stringProperty = stringProperty;
+
+            creditsProperty.addListener((observable, oldValue, newValue) -> {
+                if (!oldValue.equals(newValue)) {
+                    synchronizeFromCredits();
+                }
+            });
+            stringProperty.addListener((observable, oldValue, newValue) -> {
+                if (!oldValue.equals(newValue)) {
+                    synchronizeFromString();
+                }
+            });
+        }
+
+        private void synchronizeFromCredits() {
+            synchronized (this) {
+                string = Integer.toString(credits.getCreditValue());
+                stringProperty.setValue(string);
+            }
+        }
+
+        private void synchronizeFromString() {
+            synchronized (this) {
+                credits = Credits.valueOf(Integer.parseInt(string));
+                creditsProperty.setValue(credits);
+            }
+        }
+
+    }
+
+    private static class StringListStringProperty {
+
+        private ListProperty<String> listProperty;
+
+        private List<String> list;
+        private String string;
+
+        private StringProperty stringProperty;
+
+        public StringListStringProperty() {
+            // intentionally empty
+        }
+
+        public void bindBidirectional(ListProperty<String> listProperty, StringProperty stringProperty) {
+            this.listProperty = listProperty;
+            this.stringProperty = stringProperty;
+
+            listProperty.addListener((observable, oldValue, newValue) -> {
+                if (!oldValue.equals(newValue)) {
+                    synchronizeFromList();
+                }
+            });
+            stringProperty.addListener((observable, oldValue, newValue) -> {
+                if (!oldValue.equals(newValue)) {
+                    synchronizeFromString();
+                }
+            });
+        }
+
+        private void synchronizeFromList() {
+            synchronized (this) {
+                string = String.join(", ", list);
+                stringProperty.setValue(string);
+            }
+        }
+
+        private void synchronizeFromString() {
+            synchronized (this) {
+                list = Stream.of(string.split(",")).map(String::trim).collect(Collectors.toList());
+                listProperty.setValue(FXCollections.observableArrayList(list));
             }
         }
 

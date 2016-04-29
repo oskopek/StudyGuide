@@ -39,7 +39,7 @@
                 <Font size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="idField" text="..." disabled="true">
+        <TextField fx:id="idField" text="..." disable="true">
             <font>
                 <Font size="12.0"/>
             </font>
@@ -50,7 +50,7 @@
                 <Font size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="nameField" text="..." disabled="true">
+        <TextField fx:id="nameField" text="..." disable="true">
             <font>
                 <Font size="12.0"/>
             </font>
@@ -61,7 +61,7 @@
                 <Font size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="creditsField" text="..." disabled="true">
+        <TextField fx:id="creditsField" text="..." disable="true">
             <font>
                 <Font size="12.0"/>
             </font>
@@ -72,7 +72,7 @@
                 <Font size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="teacherNamesField" text="..." disabled="true">
+        <TextField fx:id="teacherNamesField" text="..." disable="true">
             <font>
                 <Font size="12.0"/>
             </font>
@@ -83,7 +83,7 @@
                 <Font size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="prerequisiteField" text="..." disabled="true">
+        <TextField fx:id="prerequisitesField" text="..." disable="true">
             <font>
                 <Font size="12.0"/>
             </font>
@@ -94,7 +94,7 @@
                 <Font size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="coerequisiteField" text="..." disabled="true">
+        <TextField fx:id="corequisitesField" text="..." disable="true">
             <font>
                 <Font size="12.0"/>
             </font>
