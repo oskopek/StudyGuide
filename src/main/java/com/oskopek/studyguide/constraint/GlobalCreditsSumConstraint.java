@@ -10,7 +10,7 @@ import com.oskopek.studyguide.model.courses.Credits;
  */
 public class GlobalCreditsSumConstraint extends GlobalConstraint {
 
-    private final String message = "%constraint.globalcreditssuminvalid";
+    private final String message = "constraint.globalCreditsSumInvalid";
     private final Credits totalNeeded;
 
     /**
@@ -34,8 +34,7 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
         }
     }
 
-    private static String generateMessage(String message, Credits got, Credits needed) {
-        // TODO expand first
-        return String.format(message, needed.getCreditValue(), got.getCreditValue());
+    private String generateMessage(String message, Credits got, Credits needed) {
+        return String.format(messages.getString(message), needed.getCreditValue(), got.getCreditValue());
     }
 }

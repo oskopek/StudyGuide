@@ -70,29 +70,27 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
                 cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
         fulfilledColumn.setCellFactory(CheckBoxTableCell.forTableColumn(fulfilledColumn)); // TODO make editable
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
-        removeColumn.setCellFactory((final TableColumn<CourseEnrollment, String> param) -> {
-            final TableCell<CourseEnrollment, String> cell = new TableCell<CourseEnrollment, String>()
-            {
-                final Button removeButton = new Button("✗");
+        removeColumn.setCellFactory((final TableColumn<CourseEnrollment, String> param) ->
+                new TableCell<CourseEnrollment, String>() {
+                    final Button removeButton = new Button("✗");
 
-                @Override
-                public void updateItem(String item, boolean empty) {
-                    super.updateItem(item, empty);
-                    setText(null);
-                    if (empty) {
-                        setGraphic(null);
-                    } else {
-                        removeButton.setOnAction((ActionEvent event) -> {
-                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                            semester.removeCourseEnrollment(enrollment);
-                            logger.debug("Removing Course Enrollment ({}) from Semester ({}).", enrollment, semester);
-                        });
-                        setGraphic(removeButton);
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(null);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            removeButton.setOnAction((ActionEvent event) -> {
+                                CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
+                                semester.removeCourseEnrollment(enrollment);
+                                logger.debug("Removing Course Enrollment ({}) from Semester ({}).",
+                                        enrollment, semester);
+                            });
+                            setGraphic(removeButton);
+                        }
                     }
-                }
-            };
-            return cell;
-        });
+                });
 
         EventHandler<Event> d = event -> { // TODO change to on focus
             CourseEnrollment e = semesterTable.getSelectionModel().getSelectedItem();
@@ -101,7 +99,6 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
         };
         semesterTable.setOnMouseClicked(d);
         semesterTable.setOnKeyReleased(d);
-
     }
 
     /**
@@ -165,7 +162,7 @@ public class SemesterBoxController extends AbstractController<SemesterBoxPane> {
         }
         if (studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().contains(new Semester(newName))) {
             AbstractFXMLPane.showAlert(Alert.AlertType.WARNING,
-                    AbstractFXMLPane.messages.getString("semesterBox.nameNotUnique"));
+                    messages.getString("semesterBox.nameNotUnique"));
             semesterNameArea.setText(semester.getName());
         } else {
             semester.setName(newName);

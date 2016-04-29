@@ -14,7 +14,7 @@ import java.util.List;
 public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConstraint {
 
     // TODO OPTIONAL merge this with Prereq constraint (more efficient)
-    private final String message = "%constraint.unfulfilledcorequisite"; // TODO eval this
+    private final String message = "constraint.unfulfilledCorequisite";
 
     private CourseEnrollmentCorequisiteConstraint() {
         // needed by CDI

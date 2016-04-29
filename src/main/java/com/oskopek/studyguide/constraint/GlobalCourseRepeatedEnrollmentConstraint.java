@@ -1,9 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Course;
-import com.oskopek.studyguide.model.courses.Credits;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +13,7 @@ import java.util.stream.Collectors;
 public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     private int maxRepeatedEnrollment;
-    private String message = "%constraint.globalcourserepeatedenrollmmentinvalid";
+    private static final String message = "constraint.globalCourseRepeatedEnrollmentInvalid";
 
     /**
      * Default course.
@@ -40,7 +38,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
         }
     }
 
-    private static String generateMessage(String message, int enrolledTimes, int maxRepeatedEnrollment, Course course) {
-        return String.format(message, enrolledTimes, maxRepeatedEnrollment, course.getName()); // TODO expand message first
+    private String generateMessage(String message, int enrolledTimes, int maxRepeatedEnrollment, Course course) {
+        return String.format(messages.getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
     }
 }

@@ -79,9 +79,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
         brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent("C", null));
     }
 
-
-    protected static String generateMessage(String message, List<Course> brokenRequirements) {
-        // TODO expand first
-        return String.format(message, StringUtils.join(brokenRequirements.iterator(), ", "));
+    protected String generateMessage(String message, List<Course> brokenRequirements) {
+        return String.format(messages.getString(message), StringUtils.join(brokenRequirements.iterator(), ", "));
     }
 }

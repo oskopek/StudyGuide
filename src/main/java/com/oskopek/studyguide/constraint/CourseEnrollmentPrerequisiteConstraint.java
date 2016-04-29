@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  */
 public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentConstraint {
 
-    private final String message = "%constraint.unfulfilledprerequisite"; // TODO eval this
+    private final String message = "constraint.unfulfilledPrerequisite";
 
     private CourseEnrollmentPrerequisiteConstraint() {
         // needed for CDI

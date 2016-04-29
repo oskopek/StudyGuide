@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstraint {
 
     private Fraction neededFraction;
-    private String message = "%constraint.coursegroupcreditspercentageinvalid"; // TODO expand
+    private String message = "constraint.courseGroupCreditsPercentageInvalid";
     private static DecimalFormat percentageFormat = new DecimalFormat("##0.00");
 
     /**
@@ -44,9 +44,8 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
         }
     }
 
-    private static String generateMessage(String message, Fraction got, Fraction needed) {
-        // TODO expand first
-        return String.format(message, toPercent(needed), toPercent(got));
+    private String generateMessage(String message, Fraction got, Fraction needed) {
+        return String.format(messages.getString(message), toPercent(needed), toPercent(got));
     }
 
     private static String toPercent(Fraction fraction) {

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class GlobalCourseEnrolledTwiceInASemesterConstraint extends GlobalConstraint {
 
-    private final static String message = "%constraint.courseenrolledtwiceinsemester"; // TODO expand
+    private final static String message = "constraint.courseEnrolledTwiceInSemester";
 
     public GlobalCourseEnrolledTwiceInASemesterConstraint() {
         // intentionally empty
@@ -20,7 +20,7 @@ public class GlobalCourseEnrolledTwiceInASemesterConstraint extends GlobalConstr
     public void validate() {
         for (Semester semester : semesterPlan) {
             Map<Course, List<CourseEnrollment>> groupedByCourse = semester.getCourseEnrollmentList().stream()
-                    .collect(Collectors.groupingBy(ce -> ce.getCourse()));
+                    .collect(Collectors.groupingBy(CourseEnrollment::getCourse));
             for (Map.Entry<Course, List<CourseEnrollment>> entry : groupedByCourse.entrySet()) {
                 if (entry.getValue().size() > 1) {
                     Course course = entry.getKey();
@@ -30,8 +30,7 @@ public class GlobalCourseEnrolledTwiceInASemesterConstraint extends GlobalConstr
         }
     }
 
-    private static String generateMessage(Semester semester, Course course) {
-        // TODO expand message first
-        return String.format(message, course.getName(), semester.getName());
+    private String generateMessage(Semester semester, Course course) {
+        return String.format(messages.getString(message), course.getName(), semester.getName());
     }
 }

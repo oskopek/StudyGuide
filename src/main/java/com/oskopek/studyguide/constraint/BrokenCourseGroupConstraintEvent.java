@@ -19,8 +19,8 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
 
     @Override
     public String message() {
-        return "%constraint.coursegroupinvalid" + getMessage();
-    } // TODO expand
+        return messages.getString("constraint.courseGroupInvalid") + getMessage();
+    }
 
     @Override
     public String toString() {

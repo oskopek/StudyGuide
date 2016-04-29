@@ -8,8 +8,8 @@ public class BrokenGlobalConstraintEvent extends StringMessageEvent {
 
     @Override
     public String message() {
-        return "%constraint.globalinvalid" + getMessage();
-    } // TODO expand
+        return messages.getString("constraint.globalInvalid") + getMessage();
+    }
 
     @Override
     public String toString() {

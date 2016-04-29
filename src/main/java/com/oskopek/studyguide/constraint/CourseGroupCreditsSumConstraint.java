@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
 
     private Credits totalNeeded;
-    private String message = "%constraint.coursegroupcreditssuminvalid"; // TODO expand
+    private String message = "constraint.courseGroupCreditsSumInvalid";
 
     /**
      * Default constructor.
@@ -41,9 +41,8 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
         }
     }
 
-    private static String generateMessage(String message, Credits got, Credits needed) {
-        // TODO expand first
-        return String.format(message, needed.getCreditValue(), got.creditValueProperty());
+    private String generateMessage(String message, Credits got, Credits needed) {
+        return String.format(messages.getString(message), needed.getCreditValue(), got.creditValueProperty());
     }
 
 }
