@@ -134,7 +134,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment> {
 
     @Override
     public String toString() {
-        return "CourseEnr[" + course + ']';
+        return "CourseEnr[" + course.get() + ", " + semester.get() + ']';
     }
 
     @Override

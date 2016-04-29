@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.jboss.weld.environment.se.StartMain;
 
 /**
  * StudyGuide JavaFX main class.
@@ -36,6 +37,7 @@ public class StudyGuideApplication extends Application {
      * Initializes the root layout.
      */
     private void initRootLayout() {
+        StartMain.main(new String[0]); // Start Weld
         VBox rootLayout = (VBox) new RootLayoutPane().load(this);
         AnchorPane rootAnchorPane = (AnchorPane) rootLayout.getChildren().get(1);
         BorderPane rootBorderPane = (BorderPane) rootAnchorPane.getChildren().get(0);
