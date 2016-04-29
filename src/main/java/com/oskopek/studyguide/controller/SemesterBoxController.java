@@ -55,6 +55,9 @@ public class SemesterBoxController extends AbstractController {
     @Inject
     private SemesterController parentSemesterController;
 
+    @Inject
+    private CourseEnrollmentDetailController courseEnrollmentDetailController;
+
     private Semester semester;
 
     /**
@@ -97,7 +100,7 @@ public class SemesterBoxController extends AbstractController {
         EventHandler<Event> d = event -> { // TODO change to on focus
             CourseEnrollment e = semesterTable.getSelectionModel().getSelectedItem();
             logger.debug("Focused on CourseEnrollment {}", e);
-            // TODO view course details
+            courseEnrollmentDetailController.setCourse(e.getCourse());
         };
         semesterTable.setOnMouseClicked(d);
         semesterTable.setOnKeyReleased(d);
