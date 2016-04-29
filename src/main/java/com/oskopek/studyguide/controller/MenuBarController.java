@@ -7,16 +7,8 @@ import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import java.io.File;

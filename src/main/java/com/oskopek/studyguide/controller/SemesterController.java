@@ -2,16 +2,11 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.view.SemesterBoxPaneCreator;
-import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.TilePane;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 

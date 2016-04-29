@@ -2,12 +2,9 @@ package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.controller.ChooseCourseController;
 import com.oskopek.studyguide.model.courses.Course;
-import com.oskopek.studyguide.weld.FXMLLoaderProducer;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogPane;
 
 import javax.inject.Inject;
 import java.io.IOException;

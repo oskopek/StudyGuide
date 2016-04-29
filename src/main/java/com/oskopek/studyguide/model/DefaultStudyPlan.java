@@ -7,8 +7,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.enterprise.inject.Produces;
-
 /**
  * Default implementation of a {@link StudyPlan}.
  */

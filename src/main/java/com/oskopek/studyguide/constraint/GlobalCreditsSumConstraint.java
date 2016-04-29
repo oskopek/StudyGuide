@@ -1,7 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Credits;
 
 /**

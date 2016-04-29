@@ -8,17 +8,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -118,7 +113,7 @@ public class FindCoursesController extends AbstractController implements FindCou
      * Clears the {@link #findCoursesList}
      * and adds the default {@link com.oskopek.studyguide.model.courses.CourseRegistry} from the model.
      */
-    public void reinitialize() {
+    public void reinitialize() { // TODO remove in favour of a binding
         findCoursesList.clear();
         findCoursesList.add(new FindRegistryCoursesController(
                 studyGuideApplication.getStudyPlan().getCourseRegistry()));

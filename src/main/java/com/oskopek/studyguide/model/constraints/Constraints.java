@@ -4,16 +4,12 @@ import com.oskopek.studyguide.constraint.Constraint;
 import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.constraint.CourseGroupConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
-import com.oskopek.studyguide.model.SemesterPlan;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import javax.enterprise.event.Event;
-import javax.inject.Inject;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * A set of {@link CourseGroup}s and their {@link Constraint}s, along with global constraints.

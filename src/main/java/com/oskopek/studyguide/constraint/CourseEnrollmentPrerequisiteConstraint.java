@@ -2,12 +2,10 @@ package com.oskopek.studyguide.constraint;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
-import org.apache.commons.lang.StringUtils;
 
 import javax.enterprise.event.Observes;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Checks if all the prerequisite courses for a {@link com.oskopek.studyguide.model.CourseEnrollment}
