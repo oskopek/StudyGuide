@@ -8,6 +8,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Represents the {@link com.oskopek.studyguide.model.courses.Course} distribution in the {@link StudyPlan}.
@@ -83,6 +84,10 @@ public class SemesterPlan implements Iterable<Semester> {
             return null;
         }
         return semesterList.get(semesterList.size() - 1);
+    }
+
+    public Stream<CourseEnrollment> allCourseEnrollments() {
+        return getSemesterList().stream().flatMap(ce -> ce.getCourseEnrollmentList().stream());
     }
 
     @Override

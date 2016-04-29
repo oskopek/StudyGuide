@@ -89,7 +89,7 @@ public class StudyGuideApplication extends Application {
      * @see #reinitializeFindCourses()
      * @see #reinitializeSemesterBoxes()
      */
-    public void reinitialize() {
+    public void reinitialize() { // TODO rework this to Weld (advanced)
         reinitializeSemesterBoxes();
         reinitializeFindCourses();
     }

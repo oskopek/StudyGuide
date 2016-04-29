@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.oskopek.studyguide.constraint.BrokenConstraintsEvent;
 import com.oskopek.studyguide.constraint.Constraint;
 import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.constraint.CourseGroupConstraint;
@@ -25,9 +24,6 @@ public class Constraints {
     private ListProperty<GlobalConstraint> globalConstraintList;
     private ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
 
-    @Inject
-    private Event<BrokenConstraintsEvent> brokenConstraintsEvent;
-
     /**
      * Initialize an empty set of constraints.
      */
@@ -35,47 +31,6 @@ public class Constraints {
         courseGroupConstraintList = new SimpleListProperty<>(FXCollections.observableArrayList());
         globalConstraintList = new SimpleListProperty<>(FXCollections.observableArrayList());
         courseEnrollmentConstraintList = new SimpleListProperty<>(FXCollections.observableArrayList());
-    }
-
-    /**
-     * Private copy constructor making an immutable copy.
-     *
-     * @see BrokenConstraintsEvent
-     * @see #recalculate(SemesterPlan, Object)
-     * @param courseGroupConstraintList the broken course group constraints
-     * @param globalConstraintList the broken global constraints
-     * @param courseEnrollmentConstraintList the broken course enrollment constraints
-     */
-    private Constraints(List<CourseGroupConstraint> courseGroupConstraintList,
-                       List<GlobalConstraint> globalConstraintList,
-                       List<CourseEnrollmentConstraint> courseEnrollmentConstraintList) {
-        this.courseGroupConstraintList = new SimpleListProperty<>(FXCollections.unmodifiableObservableList(
-                FXCollections.observableArrayList(courseGroupConstraintList)));
-        this.globalConstraintList = new SimpleListProperty<>(FXCollections.unmodifiableObservableList(
-                FXCollections.observableArrayList(globalConstraintList)));
-        this.courseEnrollmentConstraintList = new SimpleListProperty<>(FXCollections.unmodifiableObservableList(
-                FXCollections.observableArrayList(courseEnrollmentConstraintList)));
-    }
-
-    /**
-     * Recalculates all possible constraint conflicts.
-     *
-     * @deprecated remove me in favor of a more dynamic approach.
-     * @param plan the plan in which to check
-     * @param changed the changed value, ignored right now
-     * @param <Changed_> the internal type of the changed value
-     */
-    public <Changed_> void recalculate(SemesterPlan plan, Changed_ changed) {
-        // TODO what about displaying broken constraints inline?
-        // TODO do not recalculate everything?
-        List<CourseGroupConstraint> brokenCourseGroupConstraints
-                = courseGroupConstraintList.stream().filter(c -> c.isBroken(plan)).collect(Collectors.toList());
-        List<GlobalConstraint> brokenGlobalConstraints
-                = globalConstraintList.stream().filter(c -> c.isBroken(plan)).collect(Collectors.toList());
-        List<CourseEnrollmentConstraint> brokenCourseEnrollmentConstraints
-                = courseEnrollmentConstraintList.stream().filter(c -> c.isBroken(plan)).collect(Collectors.toList());
-        brokenConstraintsEvent.fire(new BrokenConstraintsEvent(new Constraints(brokenCourseGroupConstraints,
-                brokenGlobalConstraints, brokenCourseEnrollmentConstraints)));
     }
 
     /**

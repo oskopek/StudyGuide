@@ -1,9 +1,9 @@
 package com.oskopek.studyguide.constraint;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Course;
 
+import javax.enterprise.event.Observes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +12,13 @@ import java.util.List;
  * are enrolled in (at the latest this current semester).
  */
 public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConstraint {
+
+    // TODO OPTIONAL merge this with Prereq constraint (more efficient)
+    private final String message = "%constraint.unfulfilledcorequisite"; // TODO eval this
+
+    private CourseEnrollmentCorequisiteConstraint() {
+        // needed by CDI
+    }
 
     /**
      * Default constructor.
@@ -23,8 +30,8 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     }
 
     @Override
-    public boolean isBroken(SemesterPlan plan) {
-        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(plan, getEnrollment().getSemester());
+    public void validate(@Observes CourseEnrollment courseEnrollment) {
+        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan, getEnrollment().getSemester());
         List<Course> corequisites = new ArrayList<>(getEnrollment().getCourse().getCorequisites());
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = corequisites.indexOf(enrollment.getCourse());
@@ -32,11 +39,8 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
                 corequisites.remove(found);
             }
         }
-        return !corequisites.isEmpty();
-    }
-
-    @Override
-    public void fireIfBroken(SemesterPlan plan) {
-        // TODO impl
+        if (!corequisites.isEmpty()) {
+            fireBrokenEvent(generateMessage(message, corequisites), courseEnrollment);
+        }
     }
 }

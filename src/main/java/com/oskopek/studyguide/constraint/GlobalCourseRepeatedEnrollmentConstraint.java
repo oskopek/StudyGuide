@@ -3,6 +3,7 @@ package com.oskopek.studyguide.constraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.model.courses.Credits;
 
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     private int maxRepeatedEnrollment;
+    private String message = "%constraint.globalcourserepeatedenrollmmentinvalid";
 
     /**
      * Default course.
@@ -25,20 +27,20 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
     }
 
     @Override
-    public boolean isBroken(SemesterPlan plan) {
-        Map<Course, List<CourseEnrollment>> groupByCourse = plan.getSemesterList().stream()
+    public void validate() {
+        Map<Course, List<CourseEnrollment>> groupByCourse = semesterPlan.getSemesterList().stream()
                 .flatMap(s -> s.getCourseEnrollmentList().stream())
                 .collect(Collectors.groupingBy(ce -> ce.getCourse()));
-        for (List<CourseEnrollment> enrollments : groupByCourse.values()) {
+        for (Map.Entry<Course, List<CourseEnrollment>> entry : groupByCourse.entrySet()) {
+            Course course = entry.getKey();
+            List<CourseEnrollment> enrollments = entry.getValue();
             if (enrollments.size() > maxRepeatedEnrollment) {
-                return true;
+                fireBrokenEvent(generateMessage(message, enrollments.size(), maxRepeatedEnrollment, course));
             }
         }
-        return false;
     }
 
-    @Override
-    public void fireIfBroken(SemesterPlan plan) {
-        // TODO impl
+    private static String generateMessage(String message, int enrolledTimes, int maxRepeatedEnrollment, Course course) {
+        return String.format(message, enrolledTimes, maxRepeatedEnrollment, course.getName()); // TODO expand message first
     }
 }

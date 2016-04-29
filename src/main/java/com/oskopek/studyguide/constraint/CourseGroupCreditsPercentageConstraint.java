@@ -1,10 +1,10 @@
 package com.oskopek.studyguide.constraint;
 
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.math.Fraction;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -16,6 +16,8 @@ import java.util.stream.Stream;
 public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstraint {
 
     private Fraction neededFraction;
+    private String message = "%constraint.coursegroupcreditspercentageinvalid"; // TODO expand
+    private static DecimalFormat percentageFormat = new DecimalFormat("##0.00");
 
     /**
      * Default constructor.
@@ -29,19 +31,26 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     }
 
     @Override
-    public boolean isBroken(SemesterPlan plan) {
+    public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
-        Stream<Course> fulfilledGroupCourses = plan.getSemesterList().stream()
+        Stream<Course> fulfilledGroupCourses = semesterPlan.getSemesterList().stream()
                 .flatMap(s -> s.getCourseEnrollmentList().stream())
                 .filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse()).filter(c -> groupCourses.contains(c));
         int creditSum = groupCourses.stream().map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         int fulfilledSum = fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         Fraction gotFraction = Fraction.getFraction(fulfilledSum, creditSum);
-        return neededFraction.compareTo(gotFraction) > 0;
+        if (neededFraction.compareTo(gotFraction) > 0) {
+            fireBrokenEvent(generateMessage(message, gotFraction, neededFraction));
+        }
     }
 
-    @Override
-    public void fireIfBroken(SemesterPlan plan) {
-        // TODO impl
+    private static String generateMessage(String message, Fraction got, Fraction needed) {
+        // TODO expand first
+        return String.format(message, toPercent(needed), toPercent(got));
+    }
+
+    private static String toPercent(Fraction fraction) {
+        // TODO math3 fraction.percentageValue()
+        return percentageFormat.format(fraction.doubleValue()*100d);
     }
 }

@@ -2,13 +2,14 @@ package com.oskopek.studyguide.model.courses;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
  * An abstraction of the ECTS credit value for a {@link Course}.
  */
-public final class Credits {
+public final class Credits implements Comparable<Credits> {
 
     private final IntegerProperty creditValue;
 
@@ -92,5 +93,10 @@ public final class Credits {
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37).append(getCreditValue()).toHashCode();
+    }
+
+    @Override
+    public int compareTo(Credits o) {
+        return new CompareToBuilder().append(getCreditValue(), o.getCreditValue()).toComparison();
     }
 }

@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.constraint;
 
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
@@ -16,6 +15,7 @@ import java.util.stream.Stream;
 public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
 
     private Credits totalNeeded;
+    private String message = "%constraint.coursegroupcreditssuminvalid"; // TODO expand
 
     /**
      * Default constructor.
@@ -29,18 +29,21 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
     }
 
     @Override
-    public boolean isBroken(SemesterPlan plan) {
+    public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
-        Stream<Course> fulfilledGroupCourses = plan.getSemesterList().stream()
+        Stream<Course> fulfilledGroupCourses = semesterPlan.getSemesterList().stream()
                 .flatMap(s -> s.getCourseEnrollmentList().stream())
                 .filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse()).filter(c -> groupCourses.contains(c));
-        int fulfilledSum = fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
-        return fulfilledSum < totalNeeded.getCreditValue();
+        Credits fulfilledSum = Credits.valueOf(
+                fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum));
+        if (fulfilledSum.compareTo(totalNeeded) < 0) {
+            fireBrokenEvent(generateMessage(message, fulfilledSum, totalNeeded));
+        }
     }
 
-    @Override
-    public void fireIfBroken(SemesterPlan plan) {
-        // TODO impl
+    private static String generateMessage(String message, Credits got, Credits needed) {
+        // TODO expand first
+        return String.format(message, needed.getCreditValue(), got.creditValueProperty());
     }
 
 }

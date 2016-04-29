@@ -10,6 +10,7 @@ import com.oskopek.studyguide.model.courses.Credits;
  */
 public class GlobalCreditsSumConstraint extends GlobalConstraint {
 
+    private final String message = "%constraint.globalcreditssuminvalid";
     private final Credits totalNeeded;
 
     /**
@@ -22,14 +23,19 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
     }
 
     @Override
-    public boolean isBroken(SemesterPlan plan) {
-        return plan.getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
+    public void validate() {
+        Credits fulfilledCourseCreditSum = Credits.valueOf(
+                semesterPlan.getSemesterList().stream()
+                .flatMap(s -> s.getCourseEnrollmentList().stream())
                 .filter(CourseEnrollment::isFulfilled).map(ce -> ce.getCourse().getCredits().getCreditValue())
-                .reduce(0, Integer::sum) >= totalNeeded.getCreditValue();
+                .reduce(0, Integer::sum));
+        if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
+            fireBrokenEvent(generateMessage(message, fulfilledCourseCreditSum, totalNeeded));
+        }
     }
 
-    @Override
-    public void fireIfBroken(SemesterPlan plan) {
-        // TODO impl
+    private static String generateMessage(String message, Credits got, Credits needed) {
+        // TODO expand first
+        return String.format(message, needed.getCreditValue(), got.getCreditValue());
     }
 }

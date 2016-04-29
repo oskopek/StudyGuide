@@ -3,7 +3,12 @@ package com.oskopek.studyguide.constraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.SemesterPlan;
+import com.oskopek.studyguide.model.courses.Course;
+import org.apache.commons.lang.StringUtils;
 
+import javax.enterprise.event.Event;
+import javax.enterprise.event.Observes;
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +16,16 @@ import java.util.List;
  * Constraint on the level of individual {@link com.oskopek.studyguide.model.CourseEnrollment}s.
  * Is an abstract parent of constraints for checking course prerequisites and corequisites.
  */
-public abstract class CourseEnrollmentConstraint extends GlobalConstraint {
+public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
     private CourseEnrollment enrollment;
+
+    @Inject
+    private Event<BrokenCourseEnrollmentConstraintEvent> brokenEvent;
+
+    protected CourseEnrollmentConstraint() {
+        // needed for CDI
+    }
 
     /**
      * Default constructor.
@@ -41,7 +53,7 @@ public abstract class CourseEnrollmentConstraint extends GlobalConstraint {
      * @param semester the semester to stop collecting at (still included in the list)
      * @return the collected list
      */
-    protected static List<CourseEnrollment> takeUntilSemester(SemesterPlan plan, Semester semester) {
+    protected static List<CourseEnrollment> takeUntilSemester(SemesterPlan plan, Semester semester) { // TODO rework this
         List<CourseEnrollment> enrollments = new ArrayList<>();
         for (Semester pSemester : plan) {
             enrollments.addAll(pSemester.getCourseEnrollmentList());
@@ -50,5 +62,26 @@ public abstract class CourseEnrollmentConstraint extends GlobalConstraint {
             }
         }
         return enrollments;
+    }
+
+    @Override
+    public void validate(@Observes Course changed) {
+        semesterPlan.allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
+    }
+
+    @Override
+    public void fireBrokenEvent(String reason, CourseEnrollment enrollment) {
+        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, enrollment));
+    }
+
+    @Override
+    public void fireBrokenEvent(String reason, Course course) {
+        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent("C", null));
+    }
+
+
+    protected static String generateMessage(String message, List<Course> brokenRequirements) {
+        // TODO expand first
+        return String.format(message, StringUtils.join(brokenRequirements.iterator(), ", "));
     }
 }

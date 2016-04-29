@@ -2,37 +2,36 @@ package com.oskopek.studyguide.constraint;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Course;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class GlobalCourseEnrollmentTwiceInASemesterConstraint extends GlobalConstraint {
+public class GlobalCourseEnrolledTwiceInASemesterConstraint extends GlobalConstraint {
 
-    public GlobalCourseEnrollmentTwiceInASemesterConstraint() {
+    private final static String message = "%constraint.courseenrolledtwiceinsemester"; // TODO expand
+
+    public GlobalCourseEnrolledTwiceInASemesterConstraint() {
         // intentionally empty
     }
 
     @Override
-    public boolean isBroken(SemesterPlan plan) {
-        boolean broken = false;
-        for (Semester semester : plan) {
+    public void validate() {
+        for (Semester semester : semesterPlan) {
             Map<Course, List<CourseEnrollment>> groupedByCourse = semester.getCourseEnrollmentList().stream()
                     .collect(Collectors.groupingBy(ce -> ce.getCourse()));
             for (Map.Entry<Course, List<CourseEnrollment>> entry : groupedByCourse.entrySet()) {
                 if (entry.getValue().size() > 1) {
-                    broken = true;
-                    // TODO fire an event here
+                    Course course = entry.getKey();
+                    fireBrokenEvent(generateMessage(semester, course));
                 }
             }
         }
-        return broken;
     }
 
-    @Override
-    public void fireIfBroken(SemesterPlan plan) {
-        // TODO impl
+    private static String generateMessage(Semester semester, Course course) {
+        // TODO expand message first
+        return String.format(message, course.getName(), semester.getName());
     }
 }
