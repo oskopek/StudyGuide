@@ -2,6 +2,7 @@ package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.controller.ChooseCourseController;
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.weld.FXMLLoaderProducer;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.ButtonType;
@@ -27,7 +28,7 @@ public class ChooseCourseDialogPaneCreator {
         try (InputStream is = getClass().getResourceAsStream("ChooseCourseDialogPane.fxml")) {
             fxmlLoader.load(is);
         } catch (IOException e) {
-            throw new IllegalStateException("An error occurred while reading the choose course dialog pane layout.", e);
+            AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
         ChooseCourseController chooseCourseController = fxmlLoader.getController();
         chooseCourseController.setCourseList(courseList);

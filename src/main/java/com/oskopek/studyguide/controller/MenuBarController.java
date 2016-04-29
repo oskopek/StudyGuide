@@ -4,6 +4,7 @@ import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.persistence.DataReader;
 import com.oskopek.studyguide.persistence.DataWriter;
 import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
+import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -164,7 +165,7 @@ public class MenuBarController extends AbstractController {
         try {
             writer.writeTo(studyGuideApplication.getStudyPlan(), file.getAbsolutePath());
         } catch (IOException e) {
-//            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to save study plan: " + e); // TODO
+            AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
             e.printStackTrace();
         }
     }
@@ -184,7 +185,7 @@ public class MenuBarController extends AbstractController {
         try {
             studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath()));
         } catch (IOException e) {
-//            AbstractFXMLPane.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e); // TODO
+            AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             e.printStackTrace();
         }
         if (studyGuideApplication.getStudyPlan() != null) {

@@ -24,11 +24,12 @@ public class StudyGuideApplicationStarter {
      * @param primaryStage the primaryStage delegated from the {@link javafx.application.Application} that calls us
      */
     private void initRootLayout(@Observes @StartupStage Stage primaryStage) {
-        VBox rootLayout;
+        VBox rootLayout = null;
+        fxmlLoader.setLocation(getClass().getResource("RootLayoutPane.fxml"));
         try (InputStream is = getClass().getResourceAsStream("RootLayoutPane.fxml")) {
             rootLayout = fxmlLoader.load(is);
         } catch (IOException e) {
-            throw new IllegalStateException("An error occurred while reading the root layout.", e);
+            AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);

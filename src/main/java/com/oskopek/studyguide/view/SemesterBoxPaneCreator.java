@@ -17,11 +17,11 @@ public class SemesterBoxPaneCreator {
     private FXMLLoader fxmlLoader;
 
     public ObservableValue<BorderPane> create(Semester semester) {
-        BorderPane semesterBoxPane;
+        BorderPane semesterBoxPane = null;
         try (InputStream is = getClass().getResourceAsStream("SemesterBoxPane.fxml")) {
             semesterBoxPane = fxmlLoader.load(is);
         } catch (IOException e) {
-            throw new IllegalStateException("An error occurred while reading the semester box pane layout.", e);
+            AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
         SemesterBoxController semesterBoxController = fxmlLoader.getController();
         semesterBoxController.setSemester(semester);

@@ -2,6 +2,7 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.ChooseCourseDialogPaneCreator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -64,14 +65,14 @@ public class FindCoursesController extends AbstractController implements FindCou
                 try {
                     Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
                     if (addTo == null) { // no semester in plan
-                        AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
+                        AlertCreator.showAlert(Alert.AlertType.ERROR,
                                 messages.getString("findCourses.noSemester"));
                     } else {
                         addTo.addCourseEnrollment(chosen);
                     }
                 } catch (IllegalArgumentException e) {
                     logger.debug("Added wrong course({}), showing error box.", chosen);
-                    AbstractFXMLPane.showAlert(Alert.AlertType.ERROR,
+                    AlertCreator.showAlert(Alert.AlertType.ERROR,
                             messages.getString("findCourses.courseAlreadyEnrolled"));
                 }
             }

@@ -2,6 +2,7 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.view.AlertCreator;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -145,7 +146,7 @@ public class SemesterBoxController extends AbstractController {
             return;
         }
         if (studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().contains(new Semester(newName))) {
-            AbstractFXMLPane.showAlert(Alert.AlertType.WARNING,
+            AlertCreator.showAlert(Alert.AlertType.WARNING,
                     messages.getString("semesterBox.nameNotUnique"));
             semesterNameArea.setText(semester.getName());
         } else {
