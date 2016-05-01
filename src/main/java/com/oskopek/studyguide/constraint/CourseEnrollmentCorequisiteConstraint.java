@@ -16,6 +16,9 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     // TODO OPTIONAL merge this with Prereq constraint (more efficient)
     private final String message = "constraint.unfulfilledCorequisite";
 
+    /**
+     * Private default constructor, needed by CDI.
+     */
     private CourseEnrollmentCorequisiteConstraint() {
         // needed by CDI
     }

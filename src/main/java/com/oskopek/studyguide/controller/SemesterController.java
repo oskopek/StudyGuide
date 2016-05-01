@@ -31,6 +31,9 @@ public class SemesterController extends AbstractController {
     @Inject
     private SemesterBoxPaneCreator semesterBoxPaneCreator;
 
+    /**
+     * Initializes the {@link #semesterBoxTable} data bindings.
+     */
     @FXML
     private void initialize() {
         winterSemesterColumn.setCellValueFactory(cellData -> semesterBoxPaneCreator.create(cellData.getValue()));
@@ -50,23 +53,35 @@ public class SemesterController extends AbstractController {
     /**
      * Removes a semester from the semester pane.
      *
+     * @param semester the semester to remove
      */
     public void removeSemester(Semester semester) {
         studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
     }
 
+    /**
+     * Handler of detected drag in the table.
+     */
     @FXML
     public void onDragDetected() {
         logger.debug("Drag detected {}");
     }
 
-
+    /**
+     * Handler of dropped drag in the table.
+     *
+     * @param e the drag event
+     */
     @FXML
     public void onDragDropped(DragEvent e) {
         logger.debug("Drag dropped {}");
     }
 
-
+    /**
+     * Handler of finished drag in the table.
+     *
+     * @param e the drag event
+     */
     @FXML
     public void onDragDone(DragEvent e) {
         logger.debug("Drag done {}");

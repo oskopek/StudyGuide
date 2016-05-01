@@ -86,6 +86,11 @@ public class SemesterPlan implements Iterable<Semester> {
         return semesterList.get(semesterList.size() - 1);
     }
 
+    /**
+     * Concatenates all course enrollments from all semesters into one stream.
+     *
+     * @return a serial stream of all course enrollments in the plan
+     */
     public Stream<CourseEnrollment> allCourseEnrollments() {
         return getSemesterList().stream().flatMap(ce -> ce.getCourseEnrollmentList().stream());
     }

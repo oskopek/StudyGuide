@@ -1,7 +1,15 @@
 package com.oskopek.studyguide.constraint;
 
+/**
+ * The event used for reporting broken global constraints.
+ */
 public class BrokenGlobalConstraintEvent extends StringMessageEvent {
 
+    /**
+     * Default constructor.
+     *
+     * @param message the message to use as a reason why the constraint is broken
+     */
     public BrokenGlobalConstraintEvent(String message) {
         super(message);
     }

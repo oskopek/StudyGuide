@@ -23,6 +23,9 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     @Inject
     private Event<BrokenCourseEnrollmentConstraintEvent> brokenEvent;
 
+    /**
+     * Private default constructor, needed by CDI.
+     */
     protected CourseEnrollmentConstraint() {
         // needed for CDI
     }
@@ -53,7 +56,8 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
      * @param semester the semester to stop collecting at (still included in the list)
      * @return the collected list
      */
-    protected static List<CourseEnrollment> takeUntilSemester(SemesterPlan plan, Semester semester) { // TODO rework this
+    protected static List<CourseEnrollment> takeUntilSemester(SemesterPlan plan, Semester semester) {
+        // TODO rework this
         List<CourseEnrollment> enrollments = new ArrayList<>();
         for (Semester pSemester : plan) {
             enrollments.addAll(pSemester.getCourseEnrollmentList());
@@ -79,6 +83,14 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
         brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent("C", null));
     }
 
+    /**
+     * Generates a message from the given parameters (localized). Used for populating the message of
+     * {@link StringMessageEvent}s (usually upon breaking a constraint).
+     *
+     * @param message the message to broadcast
+     * @param brokenRequirements the courses whose requirements were broken
+     * @return the String to use as a message, localized
+     */
     protected String generateMessage(String message, List<Course> brokenRequirements) {
         return String.format(messages.getString(message), StringUtils.join(brokenRequirements.iterator(), ", "));
     }

@@ -26,8 +26,17 @@ public abstract class GlobalConstraint extends DefaultConstraint {
         validate();
     }
 
+    /**
+     * The method should verify if the given global constraint was broken, and if so,
+     * call {@link #fireBrokenEvent(String)} with the specific reason.
+     */
     protected abstract void validate();
 
+    /**
+     * Used for firing the {@link BrokenGlobalConstraintEvent} if the constraint is broken.
+     *
+     * @param message the reason why the constraint is broken
+     */
     protected void fireBrokenEvent(String message) {
         brokenEvent.fire(new BrokenGlobalConstraintEvent(message));
     }

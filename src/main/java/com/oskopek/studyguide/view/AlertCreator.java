@@ -7,7 +7,17 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
-public class AlertCreator {
+/**
+ * Utility class for creating and displaying alert pop-up windows.
+ */
+public final class AlertCreator {
+
+    /**
+     * Private default constructor to forbid instantiation.
+     */
+    private AlertCreator() {
+        // intentionally empty
+    }
 
     /**
      * A util method to display an {@link Alert} with the given parameters.
@@ -26,6 +36,7 @@ public class AlertCreator {
     /**
      * Show a GUI alert when an exception loading FXMLs occurs.
      *
+     * @param messages the message to show in the alert
      * @param e the exception to throw
      * @throws IllegalStateException throws a wrapper exception around {@code e}
      */

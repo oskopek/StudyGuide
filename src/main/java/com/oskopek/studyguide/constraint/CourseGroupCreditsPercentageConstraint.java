@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstraint {
 
     private Fraction neededFraction;
-    private String message = "constraint.courseGroupCreditsPercentageInvalid";
+    private final String message = "constraint.courseGroupCreditsPercentageInvalid";
     private static DecimalFormat percentageFormat = new DecimalFormat("##0.00");
 
     /**
@@ -40,16 +40,31 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
         int fulfilledSum = fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         Fraction gotFraction = Fraction.getFraction(fulfilledSum, creditSum);
         if (neededFraction.compareTo(gotFraction) > 0) {
-            fireBrokenEvent(generateMessage(message, gotFraction, neededFraction));
+            fireBrokenEvent(generateMessage(gotFraction, neededFraction));
         }
     }
 
-    private String generateMessage(String message, Fraction got, Fraction needed) {
+    /**
+     * Generates a message from the given parameters (localized). Used for populating the message of
+     * {@link StringMessageEvent}s (usually upon breaking a constraint).
+     *
+     * @param got the passed course fraction the student achieved
+     * @param needed the fraction of passed courses the student needs to pass
+     * @return the String to use as a message, localized
+     */
+    private String generateMessage(Fraction got, Fraction needed) {
         return String.format(messages.getString(message), toPercent(needed), toPercent(got));
     }
 
+    /**
+     * Utility method for converting {@link Fraction}s to percentage points with two decimal places.
+     * To be replaced with Apache's {@code lang3} Fraction.
+     *
+     * @param fraction the fraction to convert
+     * @return the percentage representation in a String
+     */
     private static String toPercent(Fraction fraction) {
         // TODO math3 fraction.percentageValue()
-        return percentageFormat.format(fraction.doubleValue()*100d);
+        return percentageFormat.format(fraction.doubleValue() * 100d);
     }
 }

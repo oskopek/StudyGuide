@@ -15,6 +15,9 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
 
     private final String message = "constraint.unfulfilledPrerequisite";
 
+    /**
+     * Private default constructor, needed for CDI.
+     */
     private CourseEnrollmentPrerequisiteConstraint() {
         // needed for CDI
     }
@@ -39,7 +42,8 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
             return;
         }
 
-        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan, semesterPlan.getSemesterList().get(semesterIndex));
+        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
+                semesterPlan.getSemesterList().get(semesterIndex));
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = corequisites.indexOf(enrollment.getCourse());
             if (found >= 0 && enrollment.isFulfilled()) {

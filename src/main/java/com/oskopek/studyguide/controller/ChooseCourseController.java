@@ -45,7 +45,7 @@ public class ChooseCourseController extends AbstractController {
     }
 
     /**
-     * Initialize the {@link #courseTableView} data bindings.
+     * Initializes the {@link #courseTableView} data bindings.
      */
     @FXML
     private void initialize() {

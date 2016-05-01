@@ -29,11 +29,19 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
                 .filter(CourseEnrollment::isFulfilled).map(ce -> ce.getCourse().getCredits().getCreditValue())
                 .reduce(0, Integer::sum));
         if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
-            fireBrokenEvent(generateMessage(message, fulfilledCourseCreditSum, totalNeeded));
+            fireBrokenEvent(generateMessage(fulfilledCourseCreditSum, totalNeeded));
         }
     }
 
-    private String generateMessage(String message, Credits got, Credits needed) {
+    /**
+     * Generates a message from the given parameters (localized). Used for populating the message of
+     * {@link StringMessageEvent}s (usually upon breaking a constraint).
+     *
+     * @param got the amount of credit the student achieved
+     * @param needed the credit amount the student needed to achieve to pass this constraint
+     * @return the String to use as a message, localized
+     */
+    private String generateMessage(Credits got, Credits needed) {
         return String.format(messages.getString(message), needed.getCreditValue(), got.getCreditValue());
     }
 }

@@ -34,7 +34,7 @@ public class StudyGuideApplication extends Application {
         this.primaryStage.setTitle("StudyGuide");
         this.primaryStage.getIcons().add(new Image(StudyGuideApplication.class.getResourceAsStream("logo_64x64.png")));
 
-        container.event().select(Stage.class, new AnnotationLiteral<StartupStage>(){}).fire(primaryStage);
+        container.event().select(Stage.class, new AnnotationLiteral<StartupStage>() { }).fire(primaryStage);
     }
 
     /**
@@ -55,6 +55,10 @@ public class StudyGuideApplication extends Application {
         return studyPlan.get();
     }
 
+    /**
+     * The JavaFX property for {@link #getStudyPlan()}.
+     * @return the study plan property
+     */
     public ObjectProperty<StudyPlan> studyPlanProperty() {
         return studyPlan;
     }

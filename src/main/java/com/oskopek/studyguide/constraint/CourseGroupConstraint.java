@@ -18,13 +18,15 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     @Inject
     private Event<BrokenCourseGroupConstraintEvent> brokenEvent;
 
+    /**
+     * Private default constructor, needed by CDI.
+     */
     protected CourseGroupConstraint() {
         // needed by CDI
     }
 
     /**
      * Default constructor.
-     *
      *
      * @param courseGroup the referenced course group
      */
@@ -41,6 +43,10 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
         return courseGroup;
     }
 
+    /**
+     * The method should verify if the given constraint was broken, and if so,
+     * call the {@link #fireBrokenEvent(String)} with the specific reason.
+     */
     protected abstract void validate();
 
     @Override
@@ -55,6 +61,11 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
         validate(changed.getCourse());
     }
 
+    /**
+     * Used for firing the {@link BrokenCourseGroupConstraintEvent} if the constraint is broken.
+     *
+     * @param message the reason why the constraint is broken
+     */
     public void fireBrokenEvent(String message) {
         brokenEvent.fire(new BrokenCourseGroupConstraintEvent(message, courseGroup));
     }

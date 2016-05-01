@@ -8,13 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Checks if the number of times a student is enrolled in a given course in a single semester is not more than one.
+ */
 public class GlobalCourseEnrolledTwiceInASemesterConstraint extends GlobalConstraint {
 
-    private final static String message = "constraint.courseEnrolledTwiceInSemester";
-
-    public GlobalCourseEnrolledTwiceInASemesterConstraint() {
-        // intentionally empty
-    }
+    private final String message = "constraint.courseEnrolledTwiceInSemester";
 
     @Override
     public void validate() {
@@ -30,6 +29,14 @@ public class GlobalCourseEnrolledTwiceInASemesterConstraint extends GlobalConstr
         }
     }
 
+    /**
+     * Generates a message from the given parameters (localized). Used for populating the message of
+     * {@link StringMessageEvent}s (usually upon breaking a constraint).
+     *
+     * @param semester the semester in which the constraint was broken
+     * @param course the course that was enrolled twice in the given semester
+     * @return the String to use as a message, localized
+     */
     private String generateMessage(Semester semester, Course course) {
         return String.format(messages.getString(message), course.getName(), semester.getName());
     }

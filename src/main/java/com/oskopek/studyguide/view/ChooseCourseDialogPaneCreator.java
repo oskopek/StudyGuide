@@ -21,6 +21,13 @@ public class ChooseCourseDialogPaneCreator {
     @Inject
     private FXMLLoader fxmlLoader;
 
+    /**
+     * Create the dialog for choosing courses.
+     *
+     * @param courseList the list of courses to show in the dialog (let the user pick from them)
+     * @param dialog the dialog instance
+     * @return the controller of the dialog window, enabling to display the dialog and read the selected result
+     */
     public ChooseCourseController create(List<Course> courseList, Dialog<ButtonType> dialog) {
         try (InputStream is = getClass().getResourceAsStream("ChooseCourseDialogPane.fxml")) {
             fxmlLoader.load(is);

@@ -11,11 +11,21 @@ import javax.inject.Inject;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Creates a new semester box (to be put into a Semester pane). Loads the view from the corresponding fxml file.
+ */
 public class SemesterBoxPaneCreator {
 
     @Inject
     private FXMLLoader fxmlLoader;
 
+    /**
+     * Create a new BorderPane element from {@code SemesterBoxPane.fxml}. Opens a UI alert pop-up on error.
+     *
+     * @see com.oskopek.studyguide.controller.SemesterController#semesterBoxTable
+     * @param semester the semester for which we're creating the box
+     * @return an observable BorderPane, ready to be put into a Semester pane
+     */
     public ObservableValue<BorderPane> create(Semester semester) {
         BorderPane semesterBoxPane = null;
         fxmlLoader.setLocation(getClass().getResource("SemesterBoxPane.fxml")); // TODO fix multiple fxml loaders

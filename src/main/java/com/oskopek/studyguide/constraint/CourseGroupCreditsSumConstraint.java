@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
 
     private Credits totalNeeded;
-    private String message = "constraint.courseGroupCreditsSumInvalid";
+    private final String message = "constraint.courseGroupCreditsSumInvalid";
 
     /**
      * Default constructor.
@@ -37,11 +37,21 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
         Credits fulfilledSum = Credits.valueOf(
                 fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum));
         if (fulfilledSum.compareTo(totalNeeded) < 0) {
-            fireBrokenEvent(generateMessage(message, fulfilledSum, totalNeeded));
+            fireBrokenEvent(generateMessage(fulfilledSum, totalNeeded));
         }
     }
 
-    private String generateMessage(String message, Credits got, Credits needed) {
+    // TODO what do we do with fixed constraints?
+
+    /**
+     * Generates a message from the given parameters (localized). Used for populating the message of
+     * {@link StringMessageEvent}s (usually upon breaking a constraint).
+     *
+     * @param got the credit amount the student achieved
+     * @param needed the credit amount the student needed to pass this constraint
+     * @return the String to use as a message, localized
+     */
+    private String generateMessage(Credits got, Credits needed) {
         return String.format(messages.getString(message), needed.getCreditValue(), got.creditValueProperty());
     }
 
