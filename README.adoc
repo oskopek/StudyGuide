@@ -143,14 +143,14 @@ The following is a grammar of the input/output data format. Do note it may be ou
 
 *Conventions*:
 
-* JSON uses the character pair "{" and "}" often,
-therefore we write zero-or-more repeated statements using "(" and ")*",
+* JSON uses the character pair `{` and `}` often,
+therefore we write zero-or-more repeated statements using `(` and `)*`,
 which JSON doesn't use (just like regexes).
-* Also, since JSON uses "[" and "]" for lists,
-they do not mean an optional statement - we use "(" and ")" (without the star) for that.
-* Under "<character>" we assume any valid UTF-8 character.
-* Under "<string>" we assume any *valid, non-empty* sequence of UTF-8 characters.
-* Under "<integer>" we assume any *non-negative* whole number smaller than or equal to `2^31 - 1`.
+* Also, since JSON uses `[` and `]` for lists,
+they do not mean an optional statement - we use `(` and `)` (without the star) for that.
+* Under `<character>` we assume any valid UTF-8 character.
+* Under `<string>` we assume any *valid, non-empty* sequence of UTF-8 characters.
+* Under `<integer>` we assume any *non-negative* whole number smaller than or equal to `2^31 - 1`.
 
 // TODO constraint detail grammar
 // TODO check course_enrollment
