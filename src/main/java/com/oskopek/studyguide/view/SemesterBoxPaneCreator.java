@@ -2,8 +2,6 @@ package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.controller.SemesterBoxController;
 import com.oskopek.studyguide.model.Semester;
-import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
@@ -27,11 +25,11 @@ public class SemesterBoxPaneCreator {
     /**
      * Create a new BorderPane element from {@code SemesterBoxPane.fxml}. Opens a UI alert pop-up on error.
      *
-     * @see com.oskopek.studyguide.controller.SemesterController#semesterBoxTable
+     * @see com.oskopek.studyguide.controller.SemesterController#semesterBoxes
      * @param semester the semester for which we're creating the box
      * @return an observable BorderPane, ready to be put into a Semester pane
      */
-    public ObservableValue<BorderPane> create(Semester semester) {
+    public BorderPane create(Semester semester) {
         FXMLLoader fxmlLoader = this.fxmlLoader.get();
         BorderPane semesterBoxPane = null;
         try (InputStream is = getClass().getResourceAsStream("SemesterBoxPane.fxml")) {
@@ -41,6 +39,6 @@ public class SemesterBoxPaneCreator {
         }
         SemesterBoxController semesterBoxController = fxmlLoader.getController();
         semesterBoxController.setSemester(semester);
-        return new ReadOnlyObjectWrapper<>(semesterBoxPane);
+        return semesterBoxPane;
     }
 }

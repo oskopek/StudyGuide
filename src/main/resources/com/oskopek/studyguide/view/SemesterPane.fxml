@@ -26,17 +26,10 @@
     <center>
         <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" BorderPane.alignment="TOP_LEFT">
             <content>
-                <TableView fx:id="semesterBoxTable" minHeight="200.0" minWidth="200.0" onDragDetected="#onDragDetected"
+                <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0" onDragDetected="#onDragDetected"
                            onDragDone="#onDragDone" onDragDropped="#onDragDropped"
                            BorderPane.alignment="CENTER">
-                    <columns>
-                        <TableColumn fx:id="winterSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.winter" sortable="false"/>
-                        <TableColumn fx:id="summerSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.summer" sortable="false"/>
-                    </columns>
-                    <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
-                    </columnResizePolicy>
-                </TableView>
+                </GridPane>
             </content>
         </ScrollPane>
     </center>

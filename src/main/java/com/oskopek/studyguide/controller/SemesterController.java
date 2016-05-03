@@ -1,21 +1,28 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.SemesterBoxPaneCreator;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -28,13 +35,7 @@ public class SemesterController extends AbstractController {
     private int id = 0;
 
     @FXML
-    private TableView<Semester> semesterBoxTable;
-
-    @FXML
-    private TableColumn<Semester, BorderPane> winterSemesterColumn;
-
-    @FXML
-    private TableColumn<Semester, BorderPane> summerSemesterColumn;
+    private GridPane semesterBoxes;
 
     @Inject
     private SemesterBoxPaneCreator semesterBoxPaneCreator;
@@ -42,15 +43,30 @@ public class SemesterController extends AbstractController {
     @Inject
     private CourseDetailController courseDetailController;
 
+    private ChangeListener<List<Semester>> listChangeListener;
+
     /**
-     * Initializes the {@link #semesterBoxTable} data bindings.
+     * Initializes the {@link #semesterBoxes} data bindings.
      */
     @FXML
-    private void initialize() {
-        winterSemesterColumn.setCellValueFactory(cellData -> semesterBoxPaneCreator.create(cellData.getValue()));
-        summerSemesterColumn.setCellValueFactory(cellData -> semesterBoxPaneCreator.create(cellData.getValue()));
-        semesterBoxTable.itemsProperty().bindBidirectional(
-                studyGuideApplication.getStudyPlan().getSemesterPlan().semesterListProperty());
+    private void initialize() { // TODO do I have all the binds in a wrong way?
+        listChangeListener = (observable, oldValue, newValue) -> reinitializeSemesterBoxes();
+        studyGuideApplication.studyPlanProperty().addListener(((observable, oldValue, newValue) -> {
+            oldValue.getSemesterPlan().semesterListProperty().removeListener(listChangeListener);
+            newValue.getSemesterPlan().semesterListProperty().addListener(listChangeListener);
+            reinitializeSemesterBoxes();
+        }));
+        reinitializeSemesterBoxes();
+    }
+
+    private void reinitializeSemesterBoxes() {
+        semesterBoxes.getChildren().clear();
+        int i = 0;
+        for (Semester semester : studyGuideApplication.getStudyPlan().getSemesterPlan()) {
+            BorderPane semesterBox = semesterBoxPaneCreator.create(semester);
+            semesterBoxes.add(semesterBox, i % 2, i / 2);
+            i++;
+        }
     }
 
     /**
