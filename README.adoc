@@ -23,7 +23,7 @@ https://github.com/oskopek/StudyGuide/issues[open an issue].
 * To *clean*, run: `mvn clean`
 * *Run StudyGuide*:
 ** If you want to run a release, just try: `java -jar StudyGuide.jar`
-** If you followed the build environment setup and want to run your version of Study Guide,
+** If you followed the build environment setup and want to run your version of StudyGuide,
 run `mvn exec:java` from the main project directory.
 
 StudyGuide uses http://semver.org/[semantic versioning].
@@ -135,11 +135,71 @@ please set-up https://github.com/oskopek/ide-config[IDE coding templates] first
 === Data format
 
 For all input and output format, we use JSON.
+Currently, the input/output format depends directly on the model, and may be subject to future changes.
 
-//TODO finish this
+==== Data format details
 
-==== Input data format
+The following is a grammar of the input/output data format. Do note it may be outdated.
 
-The current input/output format depends
+*Conventions*:
 
-==== Output data format
+* JSON uses the character pair "{" and "}" often,
+therefore we write zero-or-more repeated statements using "(" and ")*",
+which JSON doesn't use (just like regexes).
+* Also, since JSON uses "[" and "]" for lists,
+they do not mean an optional statement - we use "(" and ")" (without the star) for that.
+* Under "<character>" we assume any valid UTF-8 character.
+* Under "<string>" we assume any *valid, non-empty* sequence of UTF-8 characters.
+* Under "<integer>" we assume any *non-negative* whole number smaller than or equal to `2^31 - 1`.
+
+// TODO constraint detail grammar
+// TODO check course_enrollment
+
+```
+<study_plan> ::= {
+                   "semesterPlan" : <semester_plan>,
+                   "constraints" : <constraints>,
+                   "courseRegistry" : <course_registry>
+                 }
+<semester_plan> ::= {
+                      "semesterList" : [ (<semester>}, )* ]
+                    }
+<constraints> ::= {
+                    "courseGroupConstraintList": [ (<course_group_constraint>, )* ],
+                    "globalConstraintList": [ (<global_constraint>, )* ],
+                    "courseEnrollmentConstraintList": [ (<course_enrollment_constraint>, )* ]
+                  }
+<course_registry> ::= {
+                        "courses" : {
+                                      ("<string>" : <course>, )*
+                                    }
+                      }
+<semester> ::= {
+                 "name": "<string>",
+                 "courseEnrollmentList": [ (<course_enrollment>, )* ]
+               }
+<course_group_constraint> ::=
+<global_constraint> ::=
+<course_enrollment_constraint> ::=
+<string> ::= <character>(<character>)*
+<course> ::= {
+               "id" : <string>,
+               "name" : <string>,
+               "localizedName" : <string>,
+               "locale" : <locale>,
+               "credits" : <credits>,
+               "teacherNames" : [ (<string>, )* ],
+               "prerequisites" : [ (<course>, )* ],
+               "corequisites" : [ (<course>, )* ]
+             }
+<course_enrollment> ::= {
+                          "course" : <course>,
+                          "fulfilled" : <boolean>,
+                          "semester" : <semester>
+                        }
+<locale> ::= <character><character>
+<credits> ::= {
+                "creditValue" : <integer>
+              }
+<boolean> ::= "true" | "false"
+```
