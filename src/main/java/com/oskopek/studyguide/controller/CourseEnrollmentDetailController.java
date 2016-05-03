@@ -76,14 +76,28 @@ public class CourseEnrollmentDetailController extends AbstractController {
      */
     public void setCourse(Course newCourse) {
         this.course.set(newCourse);
+        if (course == null) {
+            nameField.setDisable(true);
+            creditsField.setDisable(true);
+            teacherNamesField.setDisable(true);
+            prerequisitesField.setDisable(true);
+            corequisitesField.setDisable(true);
+        } else {
+            nameField.setDisable(false);
+            creditsField.setDisable(false);
+            teacherNamesField.setDisable(false);
+            prerequisitesField.setDisable(false);
+            corequisitesField.setDisable(false);
 
-        idField.textProperty().bindBidirectional(course.get().idProperty());
-        nameField.textProperty().bindBidirectional(course.get().nameProperty());
-        creditsValueProperty.bindBidirectional(course.get().creditsProperty(), creditsField.textProperty());
-        teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(), teacherNamesField.textProperty());
-        corequisitesProperty.bindBidirectional(course.get().corequisitesProperty(), corequisitesField.textProperty());
-        prerequisitesProperty.bindBidirectional(course.get().prerequisitesProperty(),
-                prerequisitesField.textProperty());
+
+            idField.textProperty().bindBidirectional(course.get().idProperty());
+            nameField.textProperty().bindBidirectional(course.get().nameProperty());
+            creditsValueProperty.bindBidirectional(course.get().creditsProperty(), creditsField.textProperty());
+            teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(), teacherNamesField.textProperty());
+            corequisitesProperty.bindBidirectional(course.get().corequisitesProperty(), corequisitesField.textProperty());
+            prerequisitesProperty.bindBidirectional(course.get().prerequisitesProperty(),
+                    prerequisitesField.textProperty());
+        }
     }
 
     /**

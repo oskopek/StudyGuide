@@ -28,8 +28,8 @@
                            onDragDone="#onDragDone" onDragDropped="#onDragDropped"
                            BorderPane.alignment="CENTER">
                     <columns>
-                        <TableColumn fx:id="winterSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.winter"/>
-                        <TableColumn fx:id="summerSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.summer"/>
+                        <TableColumn fx:id="winterSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.winter" sortable="false"/>
+                        <TableColumn fx:id="summerSemesterColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%semester.summer" sortable="false"/>
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>

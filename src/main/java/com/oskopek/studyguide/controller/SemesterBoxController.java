@@ -3,6 +3,8 @@ package com.oskopek.studyguide.controller;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.view.AlertCreator;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -91,13 +93,11 @@ public class SemesterBoxController extends AbstractController {
                     }
                 });
 
-        EventHandler<Event> d = event -> { // TODO change to on focus
-            CourseEnrollment e = semesterTable.getSelectionModel().getSelectedItem();
-            logger.debug("Focused on CourseEnrollment {}", e);
-            courseEnrollmentDetailController.setCourse(e.getCourse());
-        };
-        semesterTable.setOnMouseClicked(d);
-        semesterTable.setOnKeyReleased(d);
+        semesterTable.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldEnrollment, newEnrollment) -> {
+            logger.debug("Focused on CourseEnrollment {}", newEnrollment);
+            courseEnrollmentDetailController.setCourse(newEnrollment.getCourse());
+        });
     }
 
     /**
@@ -112,16 +112,6 @@ public class SemesterBoxController extends AbstractController {
         this.semester = semester;
         semesterNameArea.setText(semester.getName());
         semesterTable.itemsProperty().bindBidirectional(semester.courseEnrollmentListProperty());
-    }
-
-    /**
-     * Get the parent controller. Used for inter-semester data exchange.
-     *
-     * @return non-null controller for SemesterPane
-     * @see #onRemoveSemester()
-     */
-    private SemesterController getParentController() {
-        return parentSemesterController;
     }
 
     /**
