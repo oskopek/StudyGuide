@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.ChooseCourseDialogPaneCreator;
@@ -12,7 +13,9 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.event.Observes;
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -21,6 +24,7 @@ import java.util.stream.Stream;
 /**
  * Controller for searching courses in multiple data-sources.
  */
+@Singleton
 public class FindCoursesController extends AbstractController implements FindCourses {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -38,6 +42,13 @@ public class FindCoursesController extends AbstractController implements FindCou
      */
     public FindCoursesController() {
         this.findCoursesList = new ArrayList<>();
+    }
+
+    @FXML
+    private void initialize() {
+        studyGuideApplication.studyPlanProperty().addListener((observable, oldValue, newValue) -> {
+            reinitialize(newValue);
+        });
     }
 
     /**
@@ -119,10 +130,13 @@ public class FindCoursesController extends AbstractController implements FindCou
      * Clears the {@link #findCoursesList}
      * and adds the default {@link com.oskopek.studyguide.model.courses.CourseRegistry} from the model.
      */
-    public void reinitialize() { // TODO remove in favour of a binding
+    private void reinitialize(StudyPlan studyPlan) {
         findCoursesList.clear();
+        if (studyPlan == null) {
+            return;
+        }
         findCoursesList.add(new FindRegistryCoursesController(
-                studyGuideApplication.getStudyPlan().getCourseRegistry()));
+                studyPlan.getCourseRegistry()));
     }
 
 }

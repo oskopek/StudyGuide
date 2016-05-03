@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
 import javax.enterprise.inject.Instance;
-import javax.enterprise.inject.New;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -35,12 +34,10 @@ public class SemesterBoxPaneCreator {
     public ObservableValue<BorderPane> create(Semester semester) {
         FXMLLoader fxmlLoader = this.fxmlLoader.get();
         BorderPane semesterBoxPane = null;
-        fxmlLoader.setLocation(getClass().getResource("SemesterBoxPane.fxml")); // TODO fix multiple fxml loaders
         try (InputStream is = getClass().getResourceAsStream("SemesterBoxPane.fxml")) {
             semesterBoxPane = fxmlLoader.load(is);
         } catch (IOException e) {
-            //AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e); // TODO // FIXME: 4/30/16
-            throw new IllegalStateException("Error loading layout.", e);
+            AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
         SemesterBoxController semesterBoxController = fxmlLoader.getController();
         semesterBoxController.setSemester(semester);
