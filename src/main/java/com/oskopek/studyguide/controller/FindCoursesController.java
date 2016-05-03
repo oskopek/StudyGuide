@@ -49,6 +49,12 @@ public class FindCoursesController extends AbstractController implements FindCou
         List<Course> courses = findCourses(input).collect(Collectors.toList());
         logger.debug("Courses found for input \"{}\": {}", input, Arrays.toString(courses.toArray()));
 
+        if (courses.isEmpty()) {
+            AlertCreator.showAlert(Alert.AlertType.INFORMATION, "No courses found for search string: \""
+                    + input + "\"");
+            return;
+        }
+
         Dialog<ButtonType> chooseCourseDialog = new Dialog<>();
         ChooseCourseController controller = chooseCourseDialogPaneCreator.create(courses, chooseCourseDialog);
 

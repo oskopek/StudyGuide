@@ -8,12 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.io.IOException;
 import java.io.InputStream;
 
 /**
  * Creates a new semester box (to be put into a Semester pane). Loads the view from the corresponding fxml file.
  */
+@Singleton
 public class SemesterBoxPaneCreator {
 
     @Inject

@@ -18,6 +18,8 @@
             <children>
                 <Button fx:id="addSemesterButton" mnemonicParsing="false" onAction="#onAddSemester"
                         text="%semesterPane.addSemester"/>
+                <Button fx:id="newCourseButton" mnemonicParsing="false" onAction="#onNewCourse"
+                        text="%semesterPane.newCourse"/>
             </children>
         </HBox>
     </top>

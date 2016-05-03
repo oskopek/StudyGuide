@@ -3,11 +3,7 @@ package com.oskopek.studyguide.controller;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.view.AlertCreator;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
@@ -52,7 +48,7 @@ public class SemesterBoxController extends AbstractController {
     private SemesterController parentSemesterController;
 
     @Inject
-    private CourseEnrollmentDetailController courseEnrollmentDetailController;
+    private CourseDetailController courseDetailController;
 
     private Semester semester;
 
@@ -96,7 +92,7 @@ public class SemesterBoxController extends AbstractController {
         semesterTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldEnrollment, newEnrollment) -> {
             logger.debug("Focused on CourseEnrollment {}", newEnrollment);
-            courseEnrollmentDetailController.setCourse(newEnrollment.getCourse());
+            courseDetailController.setCourse(newEnrollment.getCourse());
         });
     }
 

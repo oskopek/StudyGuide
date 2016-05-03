@@ -7,6 +7,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
  *
  * @see ChooseCourseController
  */
+@Singleton
 public class ChooseCourseDialogPaneCreator {
 
     @Inject

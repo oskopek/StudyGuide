@@ -3,9 +3,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <VBox prefHeight="451.0" prefWidth="211.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/null"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oskopek.studyguide.controller.StudyController">
+      xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <fx:include source="FindCoursePane.fxml"/>
-        <fx:include source="CourseEnrollmentDetailPane.fxml"/>
+        <fx:include source="CourseDetailPane.fxml"/>
     </children>
 </VBox>

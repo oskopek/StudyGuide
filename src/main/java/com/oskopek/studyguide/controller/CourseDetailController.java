@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -19,7 +20,8 @@ import java.util.stream.Stream;
 /**
  * Controller for displaying selected course details (and editing them).
  */
-public class CourseEnrollmentDetailController extends AbstractController {
+@Singleton
+public class CourseDetailController extends AbstractController {
 
     @FXML
     private TextField idField;
@@ -72,6 +74,7 @@ public class CourseEnrollmentDetailController extends AbstractController {
 
     /**
      * Sets the current shown course and binds the text properties of all the corresponding {@link TextField}s.
+     *
      * @param newCourse the course to set
      */
     public void setCourse(Course newCourse) {
@@ -110,18 +113,14 @@ public class CourseEnrollmentDetailController extends AbstractController {
         private CourseRegistry courseRegistry; // TODO check if this works (could there be more instances?)
 
         private ListProperty<Course> listProperty;
-
-        private List<Course> list;
-        private String stringList;
-
         private StringProperty stringProperty;
 
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
-         * and synchronizes them via {@link javafx.beans.value.ChangeListener}s and intermediate value caches.
+         * and synchronizes them via {@link javafx.beans.value.ChangeListener}s.
          * The String property is a comma-separated list of {@link Course#getName()}s from the list.
          *
-         * @param listProperty the list property to bind
+         * @param listProperty   the list property to bind
          * @param stringProperty the string property to bind
          */
         public void bindBidirectional(ListProperty<Course> listProperty, StringProperty stringProperty) {
@@ -130,12 +129,12 @@ public class CourseEnrollmentDetailController extends AbstractController {
 
             listProperty.addListener((observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
-                    synchronizeFromList();
+                    synchronizeFromList(newValue);
                 }
             });
             stringProperty.addListener((observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
-                    synchronizeFromString();
+                    synchronizeFromString(newValue);
                 }
             });
         }
@@ -143,24 +142,20 @@ public class CourseEnrollmentDetailController extends AbstractController {
         /**
          * Computes a new String representation of the List. Called on a List change.
          */
-        private void synchronizeFromList() {
-            synchronized (this) {
-                stringList = list.stream().map(Course::getName).reduce(", ", String::join);
-                stringProperty.setValue(stringList);
-            }
+        private void synchronizeFromList(List<Course> list) {
+            String stringList = list.stream().map(Course::getName).reduce(", ", String::join);
+            stringProperty.setValue(stringList);
         }
 
         /**
          * Computes a new List representation of the String. Called on a String change.
          * This transitively applies changes to the bound list property.
          */
-        private void synchronizeFromString() {
-            synchronized (this) {
-                // TODO check if valid correctly
-                list = Stream.of(stringList.split(",")).map(String::trim).map(id -> courseRegistry.getCourse(id))
-                        .filter(x -> x != null).collect(Collectors.toList());
-                listProperty.setValue(FXCollections.observableArrayList(list));
-            }
+        private void synchronizeFromString(String stringList) {
+            // TODO check if valid correctly
+            List<Course> list = Stream.of(stringList.split(",")).map(String::trim)
+                    .map(id -> courseRegistry.getCourse(id)).filter(x -> x != null).collect(Collectors.toList());
+            listProperty.setValue(FXCollections.observableArrayList(list));
         }
 
     }
@@ -172,10 +167,6 @@ public class CourseEnrollmentDetailController extends AbstractController {
     private static class CreditsStringProperty {
 
         private ObjectProperty<Credits> creditsProperty;
-
-        private Credits credits;
-        private String string;
-
         private StringProperty stringProperty;
 
         /**
@@ -184,7 +175,7 @@ public class CourseEnrollmentDetailController extends AbstractController {
          * The String property is textual representation of the value of the Credits.
          *
          * @param creditsProperty the {@link Credits} property to bind
-         * @param stringProperty the string property to bind
+         * @param stringProperty  the string property to bind
          */
         public void bindBidirectional(ObjectProperty<Credits> creditsProperty, StringProperty stringProperty) {
             this.creditsProperty = creditsProperty;
@@ -192,12 +183,12 @@ public class CourseEnrollmentDetailController extends AbstractController {
 
             creditsProperty.addListener((observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
-                    synchronizeFromCredits();
+                    synchronizeFromCredits(newValue);
                 }
             });
             stringProperty.addListener((observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
-                    synchronizeFromString();
+                    synchronizeFromString(newValue);
                 }
             });
         }
@@ -205,24 +196,25 @@ public class CourseEnrollmentDetailController extends AbstractController {
         /**
          * Computes a new String representation of the Credits. Called on a Credits change.
          */
-        private void synchronizeFromCredits() {
-            synchronized (this) {
-                string = Integer.toString(credits.getCreditValue());
-                stringProperty.setValue(string);
-            }
+        private void synchronizeFromCredits(Credits credits) {
+            String string = Integer.toString(credits.getCreditValue());
+            stringProperty.setValue(string);
         }
 
         /**
          * Computes a new Credits representation of the String. Called on a String change.
          * This transitively applies changes to the bound object property.
          */
-        private void synchronizeFromString() {
-            synchronized (this) {
-                credits = Credits.valueOf(Integer.parseInt(string));
-                creditsProperty.setValue(credits);
+        private void synchronizeFromString(String string) {
+            int val;
+            try {
+                val = Integer.parseInt(string);
+            } catch (NumberFormatException e) {
+                return; // TODO do not ignore the wrong value
             }
+            Credits credits = Credits.valueOf(val);
+            creditsProperty.setValue(credits);
         }
-
     }
 
     /**
@@ -232,18 +224,14 @@ public class CourseEnrollmentDetailController extends AbstractController {
     private static class StringListStringProperty {
 
         private ListProperty<String> listProperty;
-
-        private List<String> list;
-        private String string;
-
         private StringProperty stringProperty;
 
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
-         * and synchronizes them via {@link javafx.beans.value.ChangeListener}s and intermediate value caches.
+         * and synchronizes them via {@link javafx.beans.value.ChangeListener}s.
          * The String property is a comma-separated list of values from the list.
          *
-         * @param listProperty the list property to bind
+         * @param listProperty   the list property to bind
          * @param stringProperty the string property to bind
          */
         public void bindBidirectional(ListProperty<String> listProperty, StringProperty stringProperty) {
@@ -252,12 +240,12 @@ public class CourseEnrollmentDetailController extends AbstractController {
 
             listProperty.addListener((observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
-                    synchronizeFromList();
+                    synchronizeFromList(newValue);
                 }
             });
             stringProperty.addListener((observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
-                    synchronizeFromString();
+                    synchronizeFromString(newValue);
                 }
             });
         }
@@ -265,23 +253,22 @@ public class CourseEnrollmentDetailController extends AbstractController {
         /**
          * Computes a new String representation of the List. Called on a List change.
          */
-        private void synchronizeFromList() {
-            synchronized (this) {
-                string = String.join(", ", list);
-                stringProperty.setValue(string);
-            }
+        private void synchronizeFromList(List<String> list) {
+            String string = String.join(", ", list);
+            stringProperty.setValue(string);
         }
 
         /**
          * Computes a new List representation of the String. Called on a String change.
          * This transitively applies changes to the bound list property.
          */
-        private void synchronizeFromString() {
-            synchronized (this) {
-                list = Stream.of(string.split(",")).map(String::trim).collect(Collectors.toList());
-                listProperty.setValue(FXCollections.observableArrayList(list));
+        private void synchronizeFromString(String string) {
+            if (string == null) {
+                return;
             }
+            List<String> list = Stream.of(string.split(",")).map(String::trim).collect(Collectors.toList());
+            listProperty.setValue(FXCollections.observableArrayList(list));
         }
-
     }
+
 }

@@ -1,20 +1,30 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.SemesterBoxPaneCreator;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.layout.BorderPane;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 
 /**
  * Controller for SemesterPane.
  * Handles adding/removing {@link com.oskopek.studyguide.model.Semester}s
  * and dragging {@link com.oskopek.studyguide.model.courses.Course}s between them.
  */
+@Singleton
 public class SemesterController extends AbstractController {
 
     private int id = 0;
@@ -30,6 +40,9 @@ public class SemesterController extends AbstractController {
 
     @Inject
     private SemesterBoxPaneCreator semesterBoxPaneCreator;
+
+    @Inject
+    private CourseDetailController courseDetailController;
 
     /**
      * Initializes the {@link #semesterBoxTable} data bindings.
@@ -47,7 +60,32 @@ public class SemesterController extends AbstractController {
      */
     @FXML
     private void onAddSemester() {
-        studyGuideApplication.getStudyPlan().getSemesterPlan().addSemester(new Semester("Semester" + id++));
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan == null) {
+            AlertCreator.showAlert(Alert.AlertType.ERROR, "Cannot create a course when there is no study plan loaded!");
+            return;
+        }
+        studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++));
+    }
+
+    /**
+     * Handles creating a new course and adding it to the latest semester for editing.
+     */
+    @FXML
+    private void onNewCourse() {
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan == null) {
+            AlertCreator.showAlert(Alert.AlertType.ERROR, "Cannot create a course when there is no study plan loaded!");
+            return;
+        }
+        int courseId = 0;
+        while (studyPlan.getCourseRegistry().getCourse("Course" + courseId) != null) {
+            courseId++;
+        }
+        Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(), Credits.valueOf(0),
+                new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
+        studyPlan.getCourseRegistry().putCourse(course);
+        courseDetailController.setCourse(course);
     }
 
     /**

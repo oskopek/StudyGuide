@@ -11,12 +11,14 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.io.File;
 import java.io.IOException;
 
 /**
  * Handles all action in the menu bar of the main app.
  */
+@Singleton
 public class MenuBarController extends AbstractController {
 
     private File openedFile;
