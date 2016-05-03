@@ -1,7 +1,7 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.courses.Course;
-import com.oskopek.studyguide.view.ChooseCourseDialogPane;
+import com.oskopek.studyguide.view.ChooseCourseDialogPaneCreator;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Controller for choosing a course out of several choices.
  */
-public class ChooseCourseController extends AbstractController<ChooseCourseDialogPane> {
+public class ChooseCourseController extends AbstractController {
 
     private Dialog<ButtonType> dialog;
 
@@ -45,11 +45,11 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
     }
 
     /**
-     * Initialize the {@link #courseTableView} data bindings.
+     * Initializes the {@link #courseTableView} data bindings.
      */
     @FXML
-    private void initialize() {
-        courseTableView.itemsProperty().bind(courseListProperty);
+    private void initialize() { // TODO PRIORITY fix me not working
+        courseTableView.itemsProperty().bindBidirectional(courseListProperty);
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCredits().creditValueProperty());
@@ -87,7 +87,7 @@ public class ChooseCourseController extends AbstractController<ChooseCourseDialo
 
     /**
      * Set the dialog (used for reporting double clicks in the table).
-     * @param dialog the dialog wrapper for {@link ChooseCourseDialogPane}
+     * @param dialog the dialog wrapper for {@link ChooseCourseDialogPaneCreator}
      * @see FindCoursesController#handleSearch()
      */
     public void setDialog(Dialog<ButtonType> dialog) {

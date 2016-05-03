@@ -6,13 +6,15 @@ import javafx.collections.FXCollections;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Represents the {@link com.oskopek.studyguide.model.courses.Course} distribution in the {@link StudyPlan}.
  */
 
-public class SemesterPlan {
+public class SemesterPlan implements Iterable<Semester> {
 
     private ListProperty<Semester> semesterList;
 
@@ -82,6 +84,20 @@ public class SemesterPlan {
             return null;
         }
         return semesterList.get(semesterList.size() - 1);
+    }
+
+    /**
+     * Concatenates all course enrollments from all semesters into one stream.
+     *
+     * @return a serial stream of all course enrollments in the plan
+     */
+    public Stream<CourseEnrollment> allCourseEnrollments() {
+        return getSemesterList().stream().flatMap(ce -> ce.getCourseEnrollmentList().stream());
+    }
+
+    @Override
+    public Iterator<Semester> iterator() {
+        return semesterList.iterator();
     }
 
     @Override

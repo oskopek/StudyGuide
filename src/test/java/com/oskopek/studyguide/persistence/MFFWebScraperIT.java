@@ -3,6 +3,7 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -12,10 +13,6 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 /**
  * A simple and non stable integration test for {@link MFFHtmlScraper}.
@@ -37,7 +34,7 @@ public class MFFWebScraperIT {
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
         String[] refFiles  = {"mff_bc_ioi_2015_2016.json", "mff_bc_ipss_2015_2016.json", "mff_bc_isdi_2015_2016.json"};
         String[] urlExt = {"ib3a21.htm", "ib3a22.htm", "ib3a23.htm"};
-        scrapeAll(mffUrlBase, urlExt, refFileBase, refFiles);
+        scrapeAllParallel(mffUrlBase, urlExt, refFileBase, refFiles);
     }
 
     @Test
@@ -47,7 +44,7 @@ public class MFFWebScraperIT {
                 "mff_mgr_isdim_2015_2016.json", "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json",
                 "mff_mgr_iui_2015_2016.json", "mff_mgr_ipgvph_2015_2016.json"};
         String[] urlExt = {"i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm", "i3b25.htm", "i3b26.htm", "i3b27.htm"};
-        scrapeAll(mffUrlBase, urlExt, refFileBase, refFiles);
+        scrapeAllParallel(mffUrlBase, urlExt, refFileBase, refFiles);
     }
 
     private void scrapeAll(String urlBase, String[] urlExt, String refFileBase, String[] refFiles) throws Exception {

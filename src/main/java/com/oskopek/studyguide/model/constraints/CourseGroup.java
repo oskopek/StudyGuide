@@ -1,63 +1,58 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.oskopek.studyguide.constraints.GroupConstraint;
 import com.oskopek.studyguide.model.courses.Course;
-import com.oskopek.studyguide.model.courses.CourseGroupType;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.ReadOnlyListProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.List;
 
 /**
- * Defines a group of courses that can be validated against a {@link com.oskopek.studyguide.constraints.Constraint}.
+ * Defines a group of courses that can be validated against a {@link com.oskopek.studyguide.constraint.Constraint}.
  */
 public class CourseGroup {
 
-    private CourseGroupType courseGroupType;
-    private List<Course> courseList;
-    private List<GroupConstraint> groupConstraintList;
+    private final ListProperty<Course> courseList;
 
     /**
      * Builds a new, non-empty course group.
      *
-     * @param courseGroupType     the type of courses in this course
      * @param courseList          non-empty list of courses
-     * @param groupConstraintList non-empty list of constraints
      * @throws IllegalArgumentException if any parameter is null or any list is empty
      */
-    public CourseGroup(CourseGroupType courseGroupType, List<Course> courseList,
-                       List<GroupConstraint> groupConstraintList) throws IllegalArgumentException {
-        if (courseGroupType == null || courseList == null || groupConstraintList == null || courseList.isEmpty()
-                || groupConstraintList.isEmpty()) {
+    public CourseGroup(List<Course> courseList) throws IllegalArgumentException {
+        if (courseList == null || courseList.isEmpty()) {
             throw new IllegalArgumentException("The parameters cannot be null and the lists cannot be empty.");
         }
-        this.courseGroupType = courseGroupType;
-        this.courseList = courseList;
-        this.groupConstraintList = groupConstraintList;
+        this.courseList = new SimpleListProperty<>(FXCollections.observableArrayList(courseList));
     }
 
     /**
-     * The type of courses in this course group.
-     *
-     * @return non-null
-     */
-    public CourseGroupType getCourseGroupType() {
-        return courseGroupType;
-    }
-
-    /**
-     * The courses in this group.
+     * The list property of courses in this group.
      *
      * @return non-null, not empty
      */
-    public List<Course> getCourseList() {
+    public ReadOnlyListProperty<Course> courseListProperty() {
         return courseList;
     }
 
     /**
-     * The constraints imposed on this group.
+     * The internal course list.
      *
-     * @return non-null, not empty
+     * @return non-null list of {@link Course}s
      */
-    public List<GroupConstraint> getGroupConstraintList() {
-        return groupConstraintList;
+    private ObservableList<Course> getCourseList() {
+        return courseList.get();
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param courseList the list of {@link Course}s to set
+     */
+    private void setCourseList(List<Course> courseList) {
+        this.courseList.set(FXCollections.observableArrayList(courseList));
     }
 }

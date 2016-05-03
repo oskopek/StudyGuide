@@ -43,14 +43,19 @@ public class SISHtmlScraper {
     }
 
     /**
-     * Scrapes the given SIS instance for a specific course, returning all required courses too.
+     * Scrapes the given SIS instance for a specific course, adding all required courses to the registry.
+     * @param registry a {@link CourseRegistry} not containing this course
      * @param courseId the subject id to search in SIS
-     * @return a {@link CourseRegistry} containing this course and all required courses
      * @throws IOException if an error occurs while downloading the pages to scrape
+     * @return the course of the given id we scraped, non-null
      */
-    public CourseRegistry scrapeCourses(String courseId) throws IOException {
+    public Course scrapeCourse(CourseRegistry registry, String courseId) throws IOException {
         if (courseId == null) {
             throw new IllegalArgumentException("Course id cannot be null.");
+        }
+        Course course = registry.getCourse(courseId);
+        if (course != null) {
+            return course;
         }
         logger.debug("Scraping from SIS: {}", courseId); // TODO OPTIONAL progress reporting action
         String urlString = sisUrl + "/predmety/index.php?do=predmet&kod=" + courseId;
@@ -67,19 +72,22 @@ public class SISHtmlScraper {
             is = urlConnection.getInputStream();
             encoding = urlConnection.getContentEncoding();
         }
-        return scrapeCourses(is, encoding, courseId);
+        return scrapeCourse(registry, is, encoding, courseId);
     }
 
     /**
-     * The actual implementation of the scraper.
+     * The actual implementation of the scraper. Adds the course and all courses required for this course to the
+     * registry.
      *
+     * @param registry a {@link CourseRegistry} not containing this course
      * @param is the stream from which to parse the SIS course html
      * @param encoding the encoding of html in the stream
      * @param courseId the id of the course being parsed
-     * @return a registry containing the course and all courses required for this course
      * @throws IOException if an error occurs during reading the input stream
+     * @return the course of the given id we scraped, non-null
      */
-    private CourseRegistry scrapeCourses(InputStream is, String encoding, String courseId) throws IOException {
+    private Course scrapeCourse(CourseRegistry registry, InputStream is, String encoding, String courseId)
+            throws IOException {
         Document document = Jsoup.parse(is, encoding, ""); // we do not need a base url
 
         String localizedName = document.select("div.form_div_title").text();
@@ -98,31 +106,34 @@ public class SISHtmlScraper {
                     .stream().map(Element::text).collect(Collectors.toList());
         }
 
-        // TODO correctly distinguish prereqs and coreqs
-        CourseRegistry registry = new CourseRegistry();
-        for (Element tableRow : table2) {
+        CourseRegistry prereqs = new CourseRegistry();
+        CourseRegistry coreqs = new CourseRegistry();
+        for (Element tableRow : table2) { // TODO OPTIONAL check for and fail on circular dependencies
             String headerText = tableRow.select("th").first().text().toLowerCase();
-            if (!headerText.contains("korekvizity") && !headerText.contains("prerekvizity")) {
+            CourseRegistry addTo;
+            if (headerText.contains("korekvizity")) {
+                addTo = coreqs;
+            } else if (headerText.contains("prerekvizity")) {
+                addTo = prereqs;
+            } else {
                 continue;
             }
-            // TODO handle "nebo" conjunction correctly (i.e. not as an AND)
-            List<CourseRegistry> partialRegistryList = tableRow.select("td").first().select("a.link3")
-                    .stream().map(Element::text).map((String id) -> {
-                        try {
-                            return scrapeCourses(id);
-                        } catch (IOException e) {
-                            throw new IllegalStateException("Failed to parse required course: " + id
-                                    + " of course " + courseId, e);
-                        }
-                    }).collect(Collectors.toList());
-            for (CourseRegistry partialRegistry : partialRegistryList) {
-                registry.copyCoursesFrom(partialRegistry);
+            for (Element link : tableRow.select("td").first().select("a.link3")) {
+                String id = link.text();
+                Course dependency;
+                try {
+                    dependency = scrapeCourse(registry, id);
+                } catch (IOException e) {
+                    throw new IllegalStateException("Failed to parse required course: " + id
+                            + " of course " + courseId, e);
+                }
+                addTo.putCourseSimple(dependency);
             }
         }
 
         Course course = new Course(courseId, name, localizedName, Locale.forLanguageTag("cs"), credits, teacherList,
-                new ArrayList<>(registry.courseMapValues()));
+                new ArrayList<>(prereqs.courseMapValues()), new ArrayList<>(coreqs.courseMapValues()));
         registry.putCourse(course);
-        return registry;
+        return course;
     }
 }

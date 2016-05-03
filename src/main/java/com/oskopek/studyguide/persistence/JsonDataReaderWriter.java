@@ -6,19 +6,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
  * Reads and writes the {@link com.oskopek.studyguide.model.StudyPlan} to a JSON formatted file.
  * <p>
- * Specifics of the format can be found in docs/data_format.adoc
+ * Specifics of the format can be found in the README(.adoc)
  */
 public class JsonDataReaderWriter implements DataReader, DataWriter {
 

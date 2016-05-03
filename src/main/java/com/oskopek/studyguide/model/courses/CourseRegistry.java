@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +12,7 @@ import java.util.Map;
 /**
  * Serves as a cache and/or database for/of {@link Course}s.
  */
+@ApplicationScoped
 public class CourseRegistry {
 
     @JsonProperty("courses")
@@ -24,7 +26,7 @@ public class CourseRegistry {
     }
 
     /**
-     * Put (add or replace) a course into the registry.
+     * Put (add or replace) a course and all it's dependencies into the registry.
      *
      * @param course non-null
      * @throws IllegalArgumentException if course is null
@@ -35,14 +37,38 @@ public class CourseRegistry {
             throw new IllegalArgumentException("Cannot add null Course to registry.");
         }
         courseIdMap.put(course.getId(), course);
+        putAllCourses(course.getPrerequisites());
+        putAllCourses(course.getCorequisites());
+    }
+
+    /**
+     * Put (add or replace) a course and without it's dependencies into the registry.
+     *
+     * @param course non-null
+     * @throws IllegalArgumentException if course is null
+     * @see Course#equals(Object)
+     */
+    public void putCourseSimple(Course course) throws IllegalArgumentException {
+        if (course == null) {
+            throw new IllegalArgumentException("Cannot add null Course to registry.");
+        }
+        courseIdMap.put(course.getId(), course);
     }
 
     /**
      * Copies (with overwriting) all courses from the registry into this registry.
      * @param registry the registry to copy courses from
      */
-    public void copyCoursesFrom(CourseRegistry registry) {
-        for (Course course : registry.courseMapValues()) {
+    public void putAllCourses(CourseRegistry registry) {
+        putAllCourses(registry.courseMapValues());
+    }
+
+    /**
+     * Copies (with overwriting) all courses from the iterable into this registry.
+     * @param courses the iterable to copy courses from
+     */
+    public void putAllCourses(Iterable<Course> courses) {
+        for (Course course : courses) {
             putCourse(course);
         }
     }

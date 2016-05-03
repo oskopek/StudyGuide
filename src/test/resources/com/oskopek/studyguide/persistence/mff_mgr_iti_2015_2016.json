@@ -3,8 +3,9 @@
     "semesterList" : [ ]
   },
   "constraints" : {
-    "courseGroupList" : [ ],
-    "globalConstraintList" : [ ]
+    "courseGroupConstraintList": [],
+    "globalConstraintList": [],
+    "courseEnrollmentConstraintList": []
   },
   "courseRegistry" : {
     "courses" : {
@@ -17,7 +18,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D.", "Mgr. Petr Gregor, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN067" : {
         "id" : "NTIN067",
@@ -28,7 +30,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NTIN066",
           "name" : "Data Structures I",
           "localizedName" : "Datové struktury I",
@@ -37,7 +40,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NTIN023" : {
@@ -49,7 +53,7 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Vladan Majerech, Dr." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ {
           "id" : "NTIN062",
           "name" : "Complexity I",
           "localizedName" : "Složitost I",
@@ -58,8 +62,10 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-          "requiredCourses" : [ ]
-        } ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
       },
       "NAIL031" : {
         "id" : "NAIL031",
@@ -70,7 +76,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Petr Savický, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN087" : {
         "id" : "NTIN087",
@@ -81,7 +88,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN066" : {
         "id" : "NTIN066",
@@ -92,7 +100,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN022" : {
         "id" : "NTIN022",
@@ -103,7 +112,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "doc. Mgr. Robert Šámal, Ph.D.", "prof. RNDr. Jiří Sgall, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN088" : {
         "id" : "NTIN088",
@@ -114,7 +124,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN063" : {
         "id" : "NTIN063",
@@ -125,7 +136,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NTIN062",
           "name" : "Complexity I",
           "localizedName" : "Složitost I",
@@ -134,7 +146,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NTIN085" : {
@@ -146,7 +159,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN064" : {
         "id" : "NTIN064",
@@ -157,7 +171,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc.", "RNDr. Petr Kučera, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN086" : {
         "id" : "NTIN086",
@@ -168,7 +183,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN062" : {
         "id" : "NTIN062",
@@ -179,7 +195,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN084" : {
         "id" : "NTIN084",
@@ -190,7 +207,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. František Mráz, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NALG117" : {
         "id" : "NALG117",
@@ -201,7 +219,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. Mgr. Libor Barto, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NOPT042" : {
         "id" : "NOPT042",
@@ -212,7 +231,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI018" : {
         "id" : "NDMI018",
@@ -223,7 +243,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc.", "Dr. rer. nat. Morteza Monemizadeh" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL094" : {
         "id" : "NAIL094",
@@ -234,7 +255,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN006" : {
         "id" : "NTIN006",
@@ -245,7 +267,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Václav Koubek, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI013" : {
         "id" : "NDMI013",
@@ -256,7 +279,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. RNDr. Jiří Matoušek, DrSc.", "doc. RNDr. Pavel Valtr, Dr." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI088" : {
         "id" : "NDMI088",
@@ -267,7 +291,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI067" : {
         "id" : "NDMI067",
@@ -278,7 +303,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. Mgr. Petr Kolman, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMAG536" : {
         "id" : "NMAG536",
@@ -289,7 +315,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Jan Krajíček, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN090" : {
         "id" : "NTIN090",
@@ -300,7 +327,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL021" : {
         "id" : "NAIL021",
@@ -311,7 +339,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI072" : {
         "id" : "NSWI072",
@@ -322,7 +351,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN098" : {
         "id" : "NTIN098",
@@ -333,7 +363,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Jan Bulánek", "Mgr. Vladimír Čunát", "prof. RNDr. Václav Koubek, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN033" : {
         "id" : "NTIN033",
@@ -344,7 +375,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN099" : {
         "id" : "NTIN099",
@@ -355,7 +387,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Petr Kučera, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN096" : {
         "id" : "NTIN096",
@@ -366,7 +399,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN097" : {
         "id" : "NTIN097",
@@ -377,7 +411,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Petr Gregor, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN073" : {
         "id" : "NTIN073",
@@ -388,7 +423,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ025" : {
         "id" : "NSZZ025",
@@ -399,7 +435,8 @@
           "creditValue" : 15
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ023" : {
         "id" : "NSZZ023",
@@ -410,7 +447,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN018" : {
         "id" : "NTIN018",
@@ -421,7 +459,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ024" : {
         "id" : "NSZZ024",
@@ -432,7 +471,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMAI067" : {
         "id" : "NMAI067",
@@ -443,7 +483,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Pavel Pudlák, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN017" : {
         "id" : "NTIN017",
@@ -454,7 +495,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. František Mráz, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI025" : {
         "id" : "NDMI025",
@@ -465,7 +507,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NOPT034" : {
         "id" : "NOPT034",
@@ -476,7 +519,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "prof. RNDr. Martin Loebl, CSc.", "doc. Mgr. Petr Kolman, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI077" : {
         "id" : "NDMI077",
@@ -487,7 +531,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Jiří Fiala, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMAG446" : {
         "id" : "NMAG446",
@@ -498,7 +543,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Michael Pinsker, dipl. ing." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI010" : {
         "id" : "NDMI010",
@@ -509,7 +555,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NOPT016" : {
         "id" : "NOPT016",
@@ -520,7 +567,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "doc. Mgr. Milan Hladík, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDMI074" : {
         "id" : "NDMI074",
@@ -531,7 +579,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN081" : {
         "id" : "NTIN081",
@@ -542,7 +591,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Václav Koubek, DrSc." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NTIN063",
           "name" : "Complexity",
           "localizedName" : "Složitost",
@@ -551,7 +601,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-          "requiredCourses" : [ {
+          "prerequisites" : [ ],
+          "corequisites" : [ {
             "id" : "NTIN062",
             "name" : "Complexity I",
             "localizedName" : "Složitost I",
@@ -560,18 +611,9 @@
               "creditValue" : 5
             },
             "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-            "requiredCourses" : [ ]
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
           } ]
-        }, {
-          "id" : "NTIN062",
-          "name" : "Complexity I",
-          "localizedName" : "Složitost I",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-          "requiredCourses" : [ ]
         } ]
       },
       "NTIN082" : {
@@ -583,7 +625,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Václav Koubek, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       }
     }
   }

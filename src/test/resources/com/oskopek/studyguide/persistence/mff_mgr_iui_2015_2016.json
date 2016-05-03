@@ -3,8 +3,9 @@
     "semesterList" : [ ]
   },
   "constraints" : {
-    "courseGroupList" : [ ],
-    "globalConstraintList" : [ ]
+    "courseGroupConstraintList": [],
+    "globalConstraintList": [],
+    "courseEnrollmentConstraintList": []
   },
   "courseRegistry" : {
     "courses" : {
@@ -17,7 +18,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Jan Hric" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL087" : {
         "id" : "NPFL087",
@@ -28,7 +30,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Ondřej Bojar, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL031" : {
         "id" : "NAIL031",
@@ -39,7 +42,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Petr Savický, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL078" : {
         "id" : "NAIL078",
@@ -50,7 +54,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. Jan Hric" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI031" : {
         "id" : "NDBI031",
@@ -61,7 +66,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Ing. Martin Holeňa, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN066" : {
         "id" : "NTIN066",
@@ -72,7 +78,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL077" : {
         "id" : "NAIL077",
@@ -83,7 +90,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Jan Hric" ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NAIL076",
           "name" : "Logic Programming I",
           "localizedName" : "Logické programování I",
@@ -92,7 +100,8 @@
             "creditValue" : 3
           },
           "teacherNames" : [ "RNDr. Jan Hric" ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NAIL110" : {
@@ -104,7 +113,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Dr. Libor Přeučil", "RNDr. Miroslav Kulich, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL079" : {
         "id" : "NAIL079",
@@ -115,7 +125,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. Jan Hric" ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NAIL078",
           "name" : "Lambda Calculus and Functional Programming I",
           "localizedName" : "Lambda-kalkulus a funkcionální programování I",
@@ -124,7 +135,8 @@
             "creditValue" : 5
           },
           "teacherNames" : [ "RNDr. Jan Hric" ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NSWI103" : {
@@ -136,7 +148,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Mirko Křivánek, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL070" : {
         "id" : "NAIL070",
@@ -147,7 +160,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NOPT042" : {
         "id" : "NOPT042",
@@ -158,7 +172,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI104" : {
         "id" : "NSWI104",
@@ -169,7 +184,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Mirko Křivánek, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL071" : {
         "id" : "NAIL071",
@@ -180,7 +196,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL074" : {
         "id" : "NAIL074",
@@ -191,7 +208,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL073" : {
         "id" : "NAIL073",
@@ -202,7 +220,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL029" : {
         "id" : "NAIL029",
@@ -213,7 +232,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Marta Vomlelová, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL106" : {
         "id" : "NAIL106",
@@ -224,7 +244,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL028" : {
         "id" : "NAIL028",
@@ -235,7 +256,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL105" : {
         "id" : "NAIL105",
@@ -246,7 +268,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Ing. Martin Holeňa, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL108" : {
         "id" : "NAIL108",
@@ -257,7 +280,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL107" : {
         "id" : "NAIL107",
@@ -268,7 +292,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. František Mráz, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL021" : {
         "id" : "NAIL021",
@@ -279,7 +304,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL065" : {
         "id" : "NAIL065",
@@ -290,7 +316,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "RNDr. František Mráz, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMAI060" : {
         "id" : "NMAI060",
@@ -301,7 +328,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Jaromír Antoch, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL022" : {
         "id" : "NAIL022",
@@ -312,7 +340,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Jan Hric" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL025" : {
         "id" : "NAIL025",
@@ -323,7 +352,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL069" : {
         "id" : "NAIL069",
@@ -334,7 +364,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL068" : {
         "id" : "NAIL068",
@@ -345,7 +376,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Cyril Brom, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL101" : {
         "id" : "NAIL101",
@@ -356,7 +388,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMAI061" : {
         "id" : "NMAI061",
@@ -367,7 +400,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Zdeněk Hlávka, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL104" : {
         "id" : "NAIL104",
@@ -378,7 +412,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "Mgr. Marta Vomlelová, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NDBI023" : {
         "id" : "NDBI023",
@@ -389,7 +424,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL038" : {
         "id" : "NPFL038",
@@ -400,7 +436,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Nino Peterek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NMAI067" : {
         "id" : "NMAI067",
@@ -411,7 +448,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Pavel Pudlák, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL061" : {
         "id" : "NAIL061",
@@ -422,7 +460,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NAIL028",
           "name" : "Introduction to Robotics",
           "localizedName" : "Úvod do robotiky",
@@ -431,7 +470,8 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NSWI054" : {
@@ -443,7 +483,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Bureš, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL060" : {
         "id" : "NAIL060",
@@ -454,7 +495,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Petr Božovský, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL079" : {
         "id" : "NPFL079",
@@ -465,7 +507,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Nino Peterek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL062" : {
         "id" : "NAIL062",
@@ -476,7 +519,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Petr Gregor, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL099" : {
         "id" : "NAIL099",
@@ -487,7 +531,8 @@
           "creditValue" : 2
         },
         "teacherNames" : [ "doc. RNDr. Ing. Martin Holeňa, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL013" : {
         "id" : "NAIL013",
@@ -498,7 +543,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL015" : {
         "id" : "NAIL015",
@@ -509,7 +555,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Petr Božovský, CSc." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NAIL060",
           "name" : "Neural Networks Implementation I",
           "localizedName" : "Implementace neuronových sítí I",
@@ -518,7 +565,8 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "RNDr. Petr Božovský, CSc." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NTIN084" : {
@@ -530,7 +578,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. František Mráz, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NOPT021" : {
         "id" : "NOPT021",
@@ -541,7 +590,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. RNDr. Karel Zimmermann, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL104" : {
         "id" : "NPFL104",
@@ -552,7 +602,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D.", "RNDr. Ondřej Bojar, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL103" : {
         "id" : "NPFL103",
@@ -563,7 +614,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Pavel Pecina, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL094" : {
         "id" : "NAIL094",
@@ -574,7 +626,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWE001" : {
         "id" : "NSWE001",
@@ -585,7 +638,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "doc. RNDr. Tomáš Bureš, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL068" : {
         "id" : "NPFL068",
@@ -596,7 +650,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NPFL067",
           "name" : "Statistical Methods in Natural Language Processing I",
           "localizedName" : "Statistické metody zpracování přirozených jazyků I",
@@ -605,7 +660,8 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NAIL052" : {
@@ -617,7 +673,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D.", "prof. RNDr. Roman Barták, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL067" : {
         "id" : "NPFL067",
@@ -628,7 +685,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG027" : {
         "id" : "NPRG027",
@@ -639,7 +697,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Informatika Mgr. - Softwarové systémy", "Informatika Mgr. - Matematická lingvistika" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG023" : {
         "id" : "NPRG023",
@@ -650,7 +709,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ "Informatika Mgr. - Softwarové systémy", "Informatika Mgr. - Matematická lingvistika" ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NTIN090" : {
         "id" : "NTIN090",
@@ -661,7 +721,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPGR001" : {
         "id" : "NPGR001",
@@ -672,7 +733,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "prof. Ing. Václav Hlaváč, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPGR002" : {
         "id" : "NPGR002",
@@ -683,7 +745,8 @@
           "creditValue" : 5
         },
         "teacherNames" : [ "prof. Ing. Jan Flusser, DrSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL087" : {
         "id" : "NAIL087",
@@ -694,7 +757,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Cyril Brom, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPFL054" : {
         "id" : "NPFL054",
@@ -705,7 +769,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Barbora Vidová Hladká, Ph.D.", "RNDr. Martin Holub, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL086" : {
         "id" : "NAIL086",
@@ -716,7 +781,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
-        "requiredCourses" : [ {
+        "prerequisites" : [ ],
+        "corequisites" : [ {
           "id" : "NAIL025",
           "name" : "Evolutionary Algorithms I",
           "localizedName" : "Evoluční algoritmy I",
@@ -725,7 +791,8 @@
             "creditValue" : 6
           },
           "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
-          "requiredCourses" : [ ]
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
         } ]
       },
       "NPFL097" : {
@@ -737,7 +804,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL002" : {
         "id" : "NAIL002",
@@ -748,7 +816,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc.", "RNDr. František Mráz, CSc." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NAIL004" : {
         "id" : "NAIL004",
@@ -759,7 +828,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D.", "prof. RNDr. Roman Barták, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ025" : {
         "id" : "NSZZ025",
@@ -770,7 +840,8 @@
           "creditValue" : 15
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ023" : {
         "id" : "NSZZ023",
@@ -781,7 +852,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSZZ024" : {
         "id" : "NSZZ024",
@@ -792,7 +864,8 @@
           "creditValue" : 9
         },
         "teacherNames" : [ ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NSWI035" : {
         "id" : "NSWI035",
@@ -803,7 +876,8 @@
           "creditValue" : 3
         },
         "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
       "NPRG037" : {
         "id" : "NPRG037",
@@ -814,7 +888,8 @@
           "creditValue" : 6
         },
         "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
-        "requiredCourses" : [ ]
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       }
     }
   }

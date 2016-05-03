@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.TilePane?>
-<BorderPane fx:id="semesterPane" prefHeight="300.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT"
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="semesterPane" minHeight="300.0" minWidth="400.0" BorderPane.alignment="CENTER"
+            maxHeight="Infinity" maxWidth="Infinity"
             xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.oskopek.studyguide.controller.SemesterController">
     <top>
@@ -21,18 +19,19 @@
             <children>
                 <Button fx:id="addSemesterButton" mnemonicParsing="false" onAction="#onAddSemester"
                         text="%semesterPane.addSemester"/>
+                <Button fx:id="newCourseButton" mnemonicParsing="false" onAction="#onNewCourse"
+                        text="%semesterPane.newCourse"/>
             </children>
         </HBox>
     </top>
     <center>
-        <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="TOP_LEFT">
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="CENTER">
             <content>
-                <TilePane fx:id="tilePane" alignment="TOP_CENTER" hgap="8.0" prefColumns="2" prefRows="3"
-                          tileAlignment="TOP_CENTER" vgap="8.0">
-                    <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                    </padding>
-                </TilePane>
+                <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0"
+                           onDragDetected="#onDragDetected"
+                           onDragDone="#onDragDone" onDragDropped="#onDragDropped"
+                           BorderPane.alignment="CENTER">
+                </GridPane>
             </content>
         </ScrollPane>
     </center>

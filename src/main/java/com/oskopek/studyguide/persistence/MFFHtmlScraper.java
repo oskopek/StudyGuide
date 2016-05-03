@@ -57,7 +57,7 @@ public class MFFHtmlScraper implements DataReader {
                 Elements tableData = row.select("td");
                 String id = tableData.first().text().replaceAll("[^a-zA-Z0-9]+", "");
                 if (!id.isEmpty()) { // skip empty lines
-                    registry.copyCoursesFrom(sisHtmlScraper.scrapeCourses(id));
+                    sisHtmlScraper.scrapeCourse(registry, id);
                 }
             }
         }

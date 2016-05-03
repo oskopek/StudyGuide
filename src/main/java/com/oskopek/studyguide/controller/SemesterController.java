@@ -1,36 +1,79 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
-import com.oskopek.studyguide.view.SemesterBoxPane;
-import com.oskopek.studyguide.view.SemesterPane;
-import com.oskopek.studyguide.view.StudyGuideApplication;
+import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.view.AlertCreator;
+import com.oskopek.studyguide.view.SemesterBoxPaneCreator;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.input.DragEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.TilePane;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 /**
- * Controller for {@link SemesterPane}.
+ * Controller for SemesterPane.
  * Handles adding/removing {@link com.oskopek.studyguide.model.Semester}s
  * and dragging {@link com.oskopek.studyguide.model.courses.Course}s between them.
  */
-public class SemesterController extends AbstractController<SemesterPane> {
+public class SemesterController extends AbstractController {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private int id = 0;
 
     @FXML
-    private TilePane tilePane;
+    private GridPane semesterBoxes;
+
+    @Inject
+    private SemesterBoxPaneCreator semesterBoxPaneCreator;
+
+    @Inject
+    private CourseDetailController courseDetailController;
+
+    private ChangeListener<List<Semester>> listChangeListener;
 
     /**
-     * Clear the existing {@link TilePane} and build new {@link SemesterBoxPane}s for all semester in the model.
-     *
-     * @see StudyGuideApplication#getStudyPlan()
-     * @see SemesterPane#load(StudyGuideApplication)
+     * Initializes the {@link #semesterBoxes} data bindings.
      */
-    public void reinitialize() {
-        tilePane.getChildren().clear();
-        studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().stream().forEach(this::addSemester);
+    @FXML
+    private void initialize() { // TODO do we have all the binds in a wrong way?
+        listChangeListener = (observable, oldValue, newValue) -> reinitializeSemesterBoxes();
+        studyGuideApplication.studyPlanProperty().addListener(((observable, oldValue, newValue) -> {
+            if (oldValue != null) {
+                oldValue.getSemesterPlan().semesterListProperty().removeListener(listChangeListener);
+            }
+            newValue.getSemesterPlan().semesterListProperty().addListener(listChangeListener);
+            reinitializeSemesterBoxes();
+        }));
+
+        // add column constraints for both columns
+        ColumnConstraints columnConstraints = new ColumnConstraints();
+        columnConstraints.setFillWidth(true);
+        columnConstraints.setHgrow(Priority.ALWAYS);
+        semesterBoxes.getColumnConstraints().add(columnConstraints);
+        semesterBoxes.getColumnConstraints().add(columnConstraints);
+    }
+
+    /**
+     * Clears the semester boxes and creates new one upon a change.
+     */
+    private void reinitializeSemesterBoxes() {
+        semesterBoxes.getChildren().clear();
+        int i = 0;
+        for (Semester semester : studyGuideApplication.getStudyPlan().getSemesterPlan()) {
+            BorderPane semesterBox = semesterBoxPaneCreator.create(semester);
+            semesterBoxes.add(semesterBox, i % 2, i / 2);
+            i++;
+        }
     }
 
     /**
@@ -38,69 +81,69 @@ public class SemesterController extends AbstractController<SemesterPane> {
      */
     @FXML
     private void onAddSemester() {
-        addSemester(null);
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan == null) {
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("semester.cannotAdd"));
+            return;
+        }
+        studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++));
     }
 
     /**
-     * Add a new {@link SemesterBoxPane} with the given {@link Semester}.
-     * Does not add the semester to the model (except {@code semester == null}).
-     *
-     * @param semester if null, creates a new Semester and adds it to the model
+     * Handles creating a new course and adding it to the latest semester for editing.
      */
-    private void addSemester(Semester semester) {
-        SemesterBoxPane boxPane = new SemesterBoxPane(this.viewElement);
-        BorderPane borderPane = (BorderPane) boxPane.load(studyGuideApplication);
-        SemesterBoxController controller = (SemesterBoxController) boxPane.getController();
-        if (semester != null) {
-            controller.setSemester(semester);
-        } else {
-            controller.initializeEmptySemester();
+    @FXML
+    private void onNewCourse() {
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan == null) {
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("course.cannotAdd"));
+            return;
         }
-        boxPane.setBoxBorderPane(borderPane);
-        tilePane.getChildren().add(borderPane);
+        int courseId = 0;
+        while (studyPlan.getCourseRegistry().getCourse("Course" + courseId) != null) {
+            courseId++;
+        }
+        Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(),
+                Credits.valueOf(0), new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
+        studyPlan.getCourseRegistry().putCourse(course);
+        courseDetailController.setCourse(course);
     }
 
     /**
      * Removes a semester from the semester pane.
      *
-     * @param box non-null, with a non null {@link SemesterBoxPane#getBoxBorderPane()}
+     * @param semester the semester to remove
      */
-    public void removeSemester(SemesterBoxPane box) {
-        BorderPane borderPane = box.getBoxBorderPane();
-        if (borderPane == null) {
-            throw new IllegalStateException("No such semester box found!");
-        }
-        tilePane.getChildren().remove(borderPane);
+    public void removeSemester(Semester semester) {
+        studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
     }
 
     /**
-     * Handles the start of a {@link com.oskopek.studyguide.model.courses.Course}
-     * drag and drop action between semesters.
-     *
-     * @param box non-null
+     * Handler of detected drag in the table.
      */
-    public void dragDetected(SemesterBoxPane box) { // TODO drag n drop
-        logger.debug("Drag detected in box {}", box);
+    @FXML
+    public void onDragDetected() {
+        logger.debug("Drag detected {}");
     }
 
     /**
-     * Handles the end at the data target end of a {@link com.oskopek.studyguide.model.courses.Course}
-     * drag and drop action between semesters.
+     * Handler of dropped drag in the table.
      *
-     * @param box non-null
+     * @param e the drag event
      */
-    public void dragDropped(SemesterBoxPane box) { // TODO drag n drop
-        logger.debug("Drag ended in box {}", box);
+    @FXML
+    public void onDragDropped(DragEvent e) {
+        logger.debug("Drag dropped {}");
     }
 
     /**
-     * Handles the end at the data source end of a {@link com.oskopek.studyguide.model.courses.Course}
-     * drag and drop action between semesters.
+     * Handler of finished drag in the table.
      *
-     * @param box non-null
+     * @param e the drag event
      */
-    public void dragDone(SemesterBoxPane box) { // TODO drag n drop
-        logger.debug("Drag ended in box {}", box);
+    @FXML
+    public void onDragDone(DragEvent e) {
+        logger.debug("Drag done {}");
     }
 
 }
