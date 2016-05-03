@@ -11,7 +11,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.input.DragEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -52,8 +54,18 @@ public class SemesterController extends AbstractController {
             newValue.getSemesterPlan().semesterListProperty().addListener(listChangeListener);
             reinitializeSemesterBoxes();
         }));
+
+        // add column constraints for both columns
+        ColumnConstraints columnConstraints = new ColumnConstraints();
+        columnConstraints.setFillWidth(true);
+        columnConstraints.setHgrow(Priority.ALWAYS);
+        semesterBoxes.getColumnConstraints().add(columnConstraints);
+        semesterBoxes.getColumnConstraints().add(columnConstraints);
     }
 
+    /**
+     * Clears the semester boxes and creates new one upon a change.
+     */
     private void reinitializeSemesterBoxes() {
         semesterBoxes.getChildren().clear();
         int i = 0;

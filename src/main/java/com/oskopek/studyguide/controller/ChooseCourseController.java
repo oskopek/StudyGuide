@@ -48,8 +48,8 @@ public class ChooseCourseController extends AbstractController {
      * Initializes the {@link #courseTableView} data bindings.
      */
     @FXML
-    private void initialize() {
-        courseTableView.itemsProperty().bind(courseListProperty);
+    private void initialize() { // TODO PRIORITY fix me not working
+        courseTableView.itemsProperty().bindBidirectional(courseListProperty);
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCredits().creditValueProperty());

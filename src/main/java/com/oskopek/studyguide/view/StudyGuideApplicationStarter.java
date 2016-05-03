@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.view;
 
-import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

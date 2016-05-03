@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.*;
@@ -44,6 +43,9 @@ public class FindCoursesController extends AbstractController implements FindCou
         this.findCoursesList = new ArrayList<>();
     }
 
+    /**
+     * Initialize the JavaFX bindings.
+     */
     @FXML
     private void initialize() {
         studyGuideApplication.studyPlanProperty().addListener((observable, oldValue, newValue) -> {
@@ -129,6 +131,8 @@ public class FindCoursesController extends AbstractController implements FindCou
     /**
      * Clears the {@link #findCoursesList}
      * and adds the default {@link com.oskopek.studyguide.model.courses.CourseRegistry} from the model.
+     *
+     * @param studyPlan the model from which to add the registry
      */
     private void reinitialize(StudyPlan studyPlan) {
         findCoursesList.clear();

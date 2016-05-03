@@ -25,10 +25,9 @@
         </HBox>
     </top>
     <center>
-        <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" BorderPane.alignment="CENTER">
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="CENTER">
             <content>
                 <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0"
-                           maxHeight="Infinity" maxWidth="Infinity"
                            onDragDetected="#onDragDetected"
                            onDragDone="#onDragDone" onDragDropped="#onDragDropped"
                            BorderPane.alignment="CENTER">

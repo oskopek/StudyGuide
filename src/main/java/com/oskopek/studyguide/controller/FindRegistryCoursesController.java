@@ -8,7 +8,6 @@ import org.simmetrics.metrics.CosineSimilarity;
 import org.simmetrics.simplifiers.Simplifiers;
 import org.simmetrics.tokenizers.Tokenizers;
 
-import javax.enterprise.event.Observes;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Locale;
