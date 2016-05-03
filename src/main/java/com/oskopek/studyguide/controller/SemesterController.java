@@ -82,8 +82,8 @@ public class SemesterController extends AbstractController {
         while (studyPlan.getCourseRegistry().getCourse("Course" + courseId) != null) {
             courseId++;
         }
-        Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(), Credits.valueOf(0),
-                new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
+        Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(),
+                Credits.valueOf(0), new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
         studyPlan.getCourseRegistry().putCourse(course);
         courseDetailController.setCourse(course);
     }

@@ -41,8 +41,6 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
         }
     }
 
-    // TODO what do we do with fixed constraints?
-
     /**
      * Generates a message from the given parameters (localized). Used for populating the message of
      * {@link StringMessageEvent}s (usually upon breaking a constraint).

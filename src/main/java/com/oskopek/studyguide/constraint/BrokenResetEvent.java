@@ -46,7 +46,7 @@ public class BrokenResetEvent {
     }
 
     @Override
-    public String toString() { // TODO make em all listen
+    public String toString() { // TODO make em all listen and throw
         return "BrokenResetEvent[" + originallyBroken + "]";
     }
 }

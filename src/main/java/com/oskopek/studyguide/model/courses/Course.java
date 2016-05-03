@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.model.courses;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
@@ -384,6 +385,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     @Override
+    @JsonIgnore
     public Course getValue() {
         return Course.copy(this);
     }

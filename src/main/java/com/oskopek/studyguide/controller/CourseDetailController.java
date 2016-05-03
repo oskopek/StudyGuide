@@ -96,8 +96,10 @@ public class CourseDetailController extends AbstractController {
             idField.textProperty().bindBidirectional(course.get().idProperty());
             nameField.textProperty().bindBidirectional(course.get().nameProperty());
             creditsValueProperty.bindBidirectional(course.get().creditsProperty(), creditsField.textProperty());
-            teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(), teacherNamesField.textProperty());
-            corequisitesProperty.bindBidirectional(course.get().corequisitesProperty(), corequisitesField.textProperty());
+            teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(),
+                    teacherNamesField.textProperty());
+            corequisitesProperty.bindBidirectional(course.get().corequisitesProperty(),
+                    corequisitesField.textProperty());
             prerequisitesProperty.bindBidirectional(course.get().prerequisitesProperty(),
                     prerequisitesField.textProperty());
         }
@@ -141,6 +143,8 @@ public class CourseDetailController extends AbstractController {
 
         /**
          * Computes a new String representation of the List. Called on a List change.
+         *
+         * @param list the new list value
          */
         private void synchronizeFromList(List<Course> list) {
             String stringList = list.stream().map(Course::getName).reduce(", ", String::join);
@@ -150,6 +154,8 @@ public class CourseDetailController extends AbstractController {
         /**
          * Computes a new List representation of the String. Called on a String change.
          * This transitively applies changes to the bound list property.
+         *
+         * @param stringList the new stringList value
          */
         private void synchronizeFromString(String stringList) {
             // TODO check if valid correctly
@@ -195,6 +201,8 @@ public class CourseDetailController extends AbstractController {
 
         /**
          * Computes a new String representation of the Credits. Called on a Credits change.
+         *
+         * @param credits the new credits value
          */
         private void synchronizeFromCredits(Credits credits) {
             String string = Integer.toString(credits.getCreditValue());
@@ -204,6 +212,8 @@ public class CourseDetailController extends AbstractController {
         /**
          * Computes a new Credits representation of the String. Called on a String change.
          * This transitively applies changes to the bound object property.
+         *
+         * @param string the new string value
          */
         private void synchronizeFromString(String string) {
             int val;
@@ -252,6 +262,8 @@ public class CourseDetailController extends AbstractController {
 
         /**
          * Computes a new String representation of the List. Called on a List change.
+         *
+         * @param list the new list value
          */
         private void synchronizeFromList(List<String> list) {
             String string = String.join(", ", list);
@@ -261,6 +273,8 @@ public class CourseDetailController extends AbstractController {
         /**
          * Computes a new List representation of the String. Called on a String change.
          * This transitively applies changes to the bound list property.
+         *
+         * @param string the new string value
          */
         private void synchronizeFromString(String string) {
             if (string == null) {

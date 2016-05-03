@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import javax.inject.Singleton;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +12,7 @@ import java.util.Map;
 /**
  * Serves as a cache and/or database for/of {@link Course}s.
  */
+@Singleton
 public class CourseRegistry {
 
     @JsonProperty("courses")
