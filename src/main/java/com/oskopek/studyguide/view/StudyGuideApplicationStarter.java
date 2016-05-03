@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.view;
 
+import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -21,6 +22,9 @@ public class StudyGuideApplicationStarter {
     @Inject
     @Named("fxmlloader")
     private Instance<FXMLLoader> fxmlLoader;
+
+    @Inject
+    private StudyGuideApplication studyGuideApplication;
 
     /**
      * Initializes the root layout.

@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.view;
 
-import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.application.Application;
@@ -21,7 +20,7 @@ import javax.inject.Singleton;
 public class StudyGuideApplication extends Application {
 
     private Stage primaryStage;
-    private ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>(new DefaultStudyPlan());
+    private ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
 
     private WeldContainer container;
 
@@ -68,7 +67,7 @@ public class StudyGuideApplication extends Application {
      *
      * @param studyPlan the new model
      */
-    public void setStudyPlan(StudyPlan studyPlan) { // TODO add handlers for this
+    public void setStudyPlan(StudyPlan studyPlan) {
         this.studyPlan.setValue(studyPlan);
     }
 

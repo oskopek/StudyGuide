@@ -3,7 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<BorderPane fx:id="semesterPane" prefHeight="300.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT"
+<BorderPane fx:id="semesterPane" minHeight="300.0" minWidth="400.0" BorderPane.alignment="CENTER"
+            maxHeight="Infinity" maxWidth="Infinity"
             xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.oskopek.studyguide.controller.SemesterController">
     <top>
@@ -24,9 +25,11 @@
         </HBox>
     </top>
     <center>
-        <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" BorderPane.alignment="TOP_LEFT">
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" BorderPane.alignment="CENTER">
             <content>
-                <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0" onDragDetected="#onDragDetected"
+                <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0"
+                           maxHeight="Infinity" maxWidth="Infinity"
+                           onDragDetected="#onDragDetected"
                            onDragDone="#onDragDone" onDragDropped="#onDragDropped"
                            BorderPane.alignment="CENTER">
                 </GridPane>

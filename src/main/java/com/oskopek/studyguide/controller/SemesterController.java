@@ -1,20 +1,14 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.Semester;
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.SemesterBoxPaneCreator;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -49,14 +43,15 @@ public class SemesterController extends AbstractController {
      * Initializes the {@link #semesterBoxes} data bindings.
      */
     @FXML
-    private void initialize() { // TODO do I have all the binds in a wrong way?
+    private void initialize() { // TODO do we have all the binds in a wrong way?
         listChangeListener = (observable, oldValue, newValue) -> reinitializeSemesterBoxes();
         studyGuideApplication.studyPlanProperty().addListener(((observable, oldValue, newValue) -> {
-            oldValue.getSemesterPlan().semesterListProperty().removeListener(listChangeListener);
+            if (oldValue != null) {
+                oldValue.getSemesterPlan().semesterListProperty().removeListener(listChangeListener);
+            }
             newValue.getSemesterPlan().semesterListProperty().addListener(listChangeListener);
             reinitializeSemesterBoxes();
         }));
-        reinitializeSemesterBoxes();
     }
 
     private void reinitializeSemesterBoxes() {
@@ -76,7 +71,7 @@ public class SemesterController extends AbstractController {
     private void onAddSemester() {
         StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
         if (studyPlan == null) {
-            AlertCreator.showAlert(Alert.AlertType.ERROR, "Cannot create a course when there is no study plan loaded!");
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("semester.cannotAdd"));
             return;
         }
         studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++));
@@ -89,7 +84,7 @@ public class SemesterController extends AbstractController {
     private void onNewCourse() {
         StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
         if (studyPlan == null) {
-            AlertCreator.showAlert(Alert.AlertType.ERROR, "Cannot create a course when there is no study plan loaded!");
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("course.cannotAdd"));
             return;
         }
         int courseId = 0;
