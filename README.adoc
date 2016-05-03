@@ -1,30 +1,103 @@
 = StudyGuide
 
-image:https://travis-ci.com/oskopek/StudyGuide.svg?token=bw12aB3sCJh79ytwo7U1["Build Status", link="https://travis-ci.com/oskopek/StudyGuide"]
+image:https://travis-ci.org/oskopek/StudyGuide.svg?branch=master["Build Status", link="https://travis-ci.org/oskopek/StudyGuide"]
 // image:https://coveralls.io/repos/oskopek/StudyGuide/badge.png?branch=master["Coverage status", link="https://coveralls.io/r/oskopek/StudyGuide?branch=master"]
 // image:https://www.ohloh.net/p/StudyGuide/widgets/project_thin_badge.gif["Ohloh widget", link="https://www.ohloh.net/p/StudyGuide"]
 
-Planner and verifier for all the requirements of your studies (for European-style university school systems).
+Planning and verifying tool for all the requirements of your studies (for European-style university school systems).
 
-////
-=== Screenshot
-image:./docs/img/screenshot.png["StudyGuide screenshot", scalewidth="20%"]
-////
+//=== Screenshot
+//image:./docs/img/screenshot.png["StudyGuide screenshot", scalewidth="20%"]
 
-=== Building
-* See: How-to setup your *build environment*:
-link:./docs/howto-setup-environment-windows.adoc[Windows], link:./docs/howto-setup-environment-linux.adoc[Linux & Mac]
+=== Getting help
+
+Post any questions or comments you may have on Stack Overflow and/or don't hesitate to
+https://github.com/oskopek/StudyGuide/issues[open an issue].
+
+=== Building & running StudyGuide
+
+* See the section (further down) on How-to setup your *build environment* first.
 * *Recommended*: `mvn clean install -DskipTests`
 * To run *unit tests*: `mvn clean install`
 * To run *integration tests*: `mvn clean install -Pit`
 * To *clean*, run: `mvn clean`
-* Run a simple link:./docs/usage.adoc[StudyGuide demo]
+* *Run StudyGuide*:
+** If you want to run a release, just try: `java -jar StudyGuide.jar`
+** If you followed the build environment setup and want to run your version of Study Guide,
+run `mvn exec:java` from the main project directory.
 
 StudyGuide uses http://semver.org/[semantic versioning].
 
-=== Getting help
+=== Setup your build environment
 
-* Post questions or comments on StackOverflow
+==== Linux & Mac
+
+. *Install Git*
+** Fedora: `sudo dnf install git`
+** Ubuntu: `sudo apt-get install git`
+
+. *Install Java8 JDK* -- link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle JDK Downloads] -- Select: Java Platform (JDK)
+** *NOTE*: You need `jdk-8u40` or newer (JavaFX 8 dependency).
+
+. *Install Maven* -- preferably the latest version you can.
+Usually, your distribution's package management repository is enough:
+** Fedora: `sudo dnf install mvn`
+** Ubuntu: `sudo apt-get install maven`
+
+. *Fork the repository* -- Create a fork of the link:https://github.com/oskopek/StudyGuide/[oskopek/StudyGuide repository]
+(right upper corner) on GitHub, usually the fork will be called: `yourusername/StudyGuide`.
+
+. *Clone the your fork* -- run `git clone https://github.com/yourusername/StudyGuide.git`
+ (or, preferably, use SSH: `git clone git@github.com:yourusername/StudyGuide.git`)
+
+. *Run the build* (see the Building section)
+
+==== Windows
+
+. *Install Java8 JDK* -- link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle JDK Downloads] -- Select: Java Platform (JDK)
+
+. *Install Maven* -- (preferably the latest version you can).
+See: http://maven.apache.org/guides/getting-started/windows-prerequisites.html[Maven on Windows]
+ and http://maven.apache.org/download.cgi[Maven Downloads].
+
+. Download and install GitHub for Windows at http://windows.github.com/[]. If you encounter any problems,
+see the http://windows.github.com/help.html[GitHub for Windows FAQ].
+
+. Find the `oskopek/StudyGuide` https://github.com/oskopek/StudyGuide[repository] on GitHub.
+
+. Create a fork of the repository (right upper corner), usually the fork will be called `yourusername/StudyGuide`.
+
+. *Run the build* (see the Building section)
+
+. The following workflow may be useful for you, if you're not familiar with Git/GitHub for Windows:
+
+.. In the upper left window, you can view all uncommitted changes.
+Write the name and description of your changes and click the *check* button.
+
+.. Once in a while, be sure to *sync* to send all commits to your GitHub fork.
+
+.. After testing your changes, submit a pull request to `oskopek/StudyGuide` through https://github.com/oskopek/StudyGuide/compare[GitHub].
+... Click on compare across forks.
+... Set the following:
+**** base fork: `oskopek/StudyGuide`
+**** base: `master`
+**** head fork: `yourusername/StudyGuide`
+**** compare: `branchname`
+
+.. Click on *Click to create a pull request for this comparison*.
+
+.. Our Travis continuous integration server will test the merge of your pull request.
+You can view the results in the thread of the pull request.
+
+.. Congratulations! Your pull request will get reviewed and probably be merged in.
+
+=== Submitting an Issue
+
+We use the https://github.com/oskopek/StudyGuide/issues[GitHub issue tracker] to track bugs and features. Before
+submitting a bug report or feature request, check to make sure it hasn't
+already been submitted. When submitting a bug report, please include a https://gist.github.com/[Gist]
+that includes a stack trace and any details that may be necessary to reproduce
+the bug, including your Java version and operating system.
 
 === Contributing
 
@@ -46,19 +119,27 @@ Here are some ways *you* can contribute:
 * by closing https://github.com/oskopek/StudyGuide/issues[issues]
 * by reviewing patches
 
-=== Submitting an Issue
-We use the https://github.com/oskopek/StudyGuide/issues[GitHub issue tracker] to track bugs and features. Before
-submitting a bug report or feature request, check to make sure it hasn't
-already been submitted. When submitting a bug report, please include a https://gist.github.com/[Gist]
-that includes a stack trace and any details that may be necessary to reproduce
-the bug, including your Java version and operating system.
-
 === Submitting a Pull Request
 . http://help.github.com/fork-a-repo/[Fork the repository]
 . http://learn.github.com/p/branching.html[Create a topic branch]
+. Optional: To ease the process of contributing code back into StudyGuide,
+please set-up https://github.com/oskopek/ide-config[IDE coding templates] first
 . Implement your feature or bug fix
-. If applicable, add tests for your feature or bug fix
+. If applicable, add tests and documentation for your feature or bug fix
+(see link:./docs/howto-write-documentation.adoc[How-to write documentation])
 . Run `mvn clean install -Pit`
 . If the tests fail, return to step 3 and 4
 . Add, commit, and push your changes
 . http://help.github.com/send-pull-requests/[Submit a pull request]
+
+=== Data format
+
+For all input and output format, we use JSON.
+
+//TODO finish this
+
+==== Input data format
+
+The current input/output format depends
+
+==== Output data format
