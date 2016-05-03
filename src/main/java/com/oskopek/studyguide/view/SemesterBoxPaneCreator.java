@@ -7,7 +7,10 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
+import javax.enterprise.inject.Instance;
+import javax.enterprise.inject.New;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +22,8 @@ import java.io.InputStream;
 public class SemesterBoxPaneCreator {
 
     @Inject
-    private FXMLLoader fxmlLoader;
+    @Named("fxmlloader")
+    private Instance<FXMLLoader> fxmlLoader;
 
     /**
      * Create a new BorderPane element from {@code SemesterBoxPane.fxml}. Opens a UI alert pop-up on error.
@@ -29,6 +33,7 @@ public class SemesterBoxPaneCreator {
      * @return an observable BorderPane, ready to be put into a Semester pane
      */
     public ObservableValue<BorderPane> create(Semester semester) {
+        FXMLLoader fxmlLoader = this.fxmlLoader.get();
         BorderPane semesterBoxPane = null;
         fxmlLoader.setLocation(getClass().getResource("SemesterBoxPane.fxml")); // TODO fix multiple fxml loaders
         try (InputStream is = getClass().getResourceAsStream("SemesterBoxPane.fxml")) {

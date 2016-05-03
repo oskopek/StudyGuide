@@ -14,7 +14,6 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.layout.BorderPane;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
@@ -24,7 +23,6 @@ import java.util.Locale;
  * Handles adding/removing {@link com.oskopek.studyguide.model.Semester}s
  * and dragging {@link com.oskopek.studyguide.model.courses.Course}s between them.
  */
-@Singleton
 public class SemesterController extends AbstractController {
 
     private int id = 0;

@@ -7,7 +7,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import javax.enterprise.event.Observes;
+import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -17,13 +19,15 @@ import java.io.InputStream;
 public class StudyGuideApplicationStarter {
 
     @Inject
-    private FXMLLoader fxmlLoader;
+    @Named("fxmlloader")
+    private Instance<FXMLLoader> fxmlLoader;
 
     /**
      * Initializes the root layout.
      * @param primaryStage the primaryStage delegated from the {@link javafx.application.Application} that calls us
      */
     private void initRootLayout(@Observes @StartupStage Stage primaryStage) {
+        FXMLLoader fxmlLoader = this.fxmlLoader.get();
         VBox rootLayout = null;
         fxmlLoader.setLocation(getClass().getResource("RootLayoutPane.fxml"));
         try (InputStream is = getClass().getResourceAsStream("RootLayoutPane.fxml")) {

@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.weld;
 
 import javax.enterprise.inject.Produces;
+import javax.inject.Singleton;
 import java.util.ResourceBundle;
 
 /**
@@ -13,6 +14,7 @@ public class MessagesProducer {
      * @return an initialized resource bundle used for localization
      */
     @Produces
+    @Singleton
     public ResourceBundle createMessagesResourceBundle() {
         return ResourceBundle.getBundle("com.oskopek.studyguide.view.messages");
     }

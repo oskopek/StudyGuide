@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 
+import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +23,8 @@ import java.util.List;
 public class ChooseCourseDialogPaneCreator {
 
     @Inject
-    private FXMLLoader fxmlLoader;
+    @Named("fxmlloader")
+    private Instance<FXMLLoader> fxmlLoader;
 
     /**
      * Create the dialog for choosing courses.
@@ -31,6 +34,7 @@ public class ChooseCourseDialogPaneCreator {
      * @return the controller of the dialog window, enabling to display the dialog and read the selected result
      */
     public ChooseCourseController create(List<Course> courseList, Dialog<ButtonType> dialog) {
+        FXMLLoader fxmlLoader = this.fxmlLoader.get();
         try (InputStream is = getClass().getResourceAsStream("ChooseCourseDialogPane.fxml")) {
             fxmlLoader.load(is);
         } catch (IOException e) {

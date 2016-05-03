@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.ResourceBundle;
 
 /**
@@ -24,6 +25,7 @@ public class FXMLLoaderProducer {
      * @return an initialized FXML loader
      */
     @Produces
+    @Named("fxmlloader")
     public FXMLLoader createLoader() {
         FXMLLoader loader = new FXMLLoader();
         loader.setResources(messages);
