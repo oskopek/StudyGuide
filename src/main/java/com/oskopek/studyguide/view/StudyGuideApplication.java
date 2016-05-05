@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
+import org.jboss.weld.exceptions.IllegalStateException;
 
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Singleton;
@@ -85,7 +86,6 @@ public class StudyGuideApplication extends Application {
         initStage.setX(bounds.getMinX() + bounds.getWidth() / 2 - SPLASH_WIDTH / 2);
         initStage.setY(bounds.getMinY() + bounds.getHeight() / 2 - SPLASH_HEIGHT / 2);
         initStage.initStyle(StageStyle.TRANSPARENT);
-        initStage.setAlwaysOnTop(true);
         initStage.show();
         new Thread(mainStageTask).start();
     }

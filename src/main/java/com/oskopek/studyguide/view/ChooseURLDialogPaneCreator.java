@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.controller.ChooseCourseController;
+import com.oskopek.studyguide.controller.ChooseURLController;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
@@ -16,36 +17,34 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * Dialog for choosing found courses. Returns a DialogPane encapsulated in it's controller.
+ * Dialog for entering a URL. Creates a DialogPane encapsulated in it's controller.
  *
  * @see ChooseCourseController
  */
 @Singleton
-public class ChooseCourseDialogPaneCreator {
+public class ChooseURLDialogPaneCreator {
 
     @Inject
     @Named("fxmlloader")
     private Instance<FXMLLoader> fxmlLoader;
 
     /**
-     * Create the dialog for choosing courses.
+     * Create the dialog for entering a URL.
      *
-     * @param courseList the list of courses to show in the dialog (let the user pick from them)
      * @return the controller of the dialog window, enabling to display the dialog and read the selected result
      */
-    public ChooseCourseController create(List<Course> courseList) {
+    public ChooseURLController create() {
         FXMLLoader fxmlLoader = this.fxmlLoader.get();
         DialogPane dialogPane = null;
-        try (InputStream is = getClass().getResourceAsStream("ChooseCourseDialogPane.fxml")) {
+        try (InputStream is = getClass().getResourceAsStream("ChooseURLDialogPaneCreator.fxml")) {
             dialogPane = fxmlLoader.load(is);
         } catch (IOException e) {
             AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
-        ChooseCourseController chooseCourseController = fxmlLoader.getController();
-        chooseCourseController.setCourseList(courseList);
+        ChooseURLController chooseURLController = fxmlLoader.getController();
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setDialogPane(dialogPane);
-        chooseCourseController.setDialog(dialog);
-        return chooseCourseController;
+        chooseURLController.setDialog(dialog);
+        return chooseURLController;
     }
 }

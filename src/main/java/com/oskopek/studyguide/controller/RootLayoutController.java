@@ -65,6 +65,11 @@ public class RootLayoutController extends AbstractController {
         // TODO priority handle scrape from
     }
 
+    @FXML
+    private void handleScrapeCoursesFrom(){
+        // TODO priority handle scrape courses from
+    }
+
     /**
      * Menu item: File->Save.
      * Save the opened model from the main app.

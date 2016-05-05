@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+<DialogPane fx:id="dialogPane" headerText="%enterUrl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oskopek.studyguide.controller.ChooseURLController">
+    <content>
+        <TextField fx:id="urlField" />
+    </content>
+    <buttonTypes>
+        <ButtonType fx:constant="APPLY" />
+        <ButtonType fx:constant="CANCEL" />
+    </buttonTypes>
+</DialogPane>

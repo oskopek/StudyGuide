@@ -199,7 +199,7 @@ public class CourseDetailController extends AbstractController {
          */
         private void synchronizeFromString(String stringList) {
             if (stringList == null) {
-                return; // TODO check if valid correctly
+                return; // TODO OPTIONAL check if valid correctly
             }
             logger.debug("Synchronizing from stringList {} using course registry {}", stringList, courseRegistry);
             List<Course> list = Stream.of(stringList.split(",")).map(String::trim)
