@@ -68,9 +68,8 @@ public class FindCoursesController extends AbstractController implements FindCou
             return;
         }
 
-        Dialog<ButtonType> chooseCourseDialog = new Dialog<>();
-        ChooseCourseController controller = chooseCourseDialogPaneCreator.create(courses, chooseCourseDialog);
-
+        ChooseCourseController controller = chooseCourseDialogPaneCreator.create(courses);
+        Dialog<ButtonType> chooseCourseDialog = controller.getDialog();
         Optional<ButtonType> result = chooseCourseDialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             Course chosen = controller.getChosenCourse();

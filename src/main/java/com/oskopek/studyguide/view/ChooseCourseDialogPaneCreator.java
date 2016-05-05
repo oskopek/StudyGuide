@@ -5,6 +5,7 @@ import com.oskopek.studyguide.model.courses.Course;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
 
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
@@ -30,18 +31,20 @@ public class ChooseCourseDialogPaneCreator {
      * Create the dialog for choosing courses.
      *
      * @param courseList the list of courses to show in the dialog (let the user pick from them)
-     * @param dialog the dialog instance
      * @return the controller of the dialog window, enabling to display the dialog and read the selected result
      */
-    public ChooseCourseController create(List<Course> courseList, Dialog<ButtonType> dialog) {
+    public ChooseCourseController create(List<Course> courseList) {
         FXMLLoader fxmlLoader = this.fxmlLoader.get();
+        DialogPane dialogPane = null;
         try (InputStream is = getClass().getResourceAsStream("ChooseCourseDialogPane.fxml")) {
-            fxmlLoader.load(is);
+            dialogPane = fxmlLoader.load(is);
         } catch (IOException e) {
             AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
         ChooseCourseController chooseCourseController = fxmlLoader.getController();
         chooseCourseController.setCourseList(courseList);
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setDialogPane(dialogPane);
         chooseCourseController.setDialog(dialog);
         return chooseCourseController;
     }

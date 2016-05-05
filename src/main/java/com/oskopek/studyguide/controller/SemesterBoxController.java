@@ -2,6 +2,7 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AlertCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,9 +81,10 @@ public class SemesterBoxController extends AbstractController {
                         } else {
                             removeButton.setOnAction((ActionEvent event) -> {
                                 CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                                semester.removeCourseEnrollment(enrollment);
                                 logger.debug("Removing Course Enrollment ({}) from Semester ({}).",
                                         enrollment, semester);
+                                semester.removeCourseEnrollment(enrollment);
+
                             });
                             setGraphic(removeButton);
                         }
@@ -91,9 +93,13 @@ public class SemesterBoxController extends AbstractController {
 
         semesterTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldEnrollment, newEnrollment) -> {
-            logger.debug("Focused on CourseEnrollment {}", newEnrollment);
-            courseDetailController.setCourse(newEnrollment.getCourse());
-        });
+                    logger.debug("Focused on CourseEnrollment {}", newEnrollment);
+                    Course toSet = null;
+                    if (newEnrollment != null) {
+                        toSet = newEnrollment.getCourse();
+                    }
+                    courseDetailController.setCourse(toSet);
+                });
     }
 
     /**

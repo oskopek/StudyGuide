@@ -7,6 +7,7 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -56,6 +57,7 @@ public class CourseDetailController extends AbstractController {
      */
     @FXML
     private void initialize() {
+        // TODO PRIORITY why do correct courses not display all the other properties? (the manual synced)
         course = new SimpleObjectProperty<>();
         creditsValueProperty = new CreditsStringProperty();
         teacherNamesProperty = new StringListStringProperty();
@@ -78,12 +80,27 @@ public class CourseDetailController extends AbstractController {
      * @param newCourse the course to set
      */
     public void setCourse(Course newCourse) {
+        if (course.get() != null) {
+            idField.textProperty().unbindBidirectional(course.get().idProperty());
+            nameField.textProperty().unbindBidirectional(course.get().nameProperty());
+            creditsValueProperty.unbindBidirectional();
+            teacherNamesProperty.unbindBidirectional();
+            corequisitesProperty.unbindBidirectional();
+            prerequisitesProperty.unbindBidirectional();
+        }
+
         this.course.set(newCourse);
-        if (course == null) {
+        logger.debug("New Course: {}, Course set: {}", newCourse, course.get());
+        if (course.get() == null) {
+            nameField.setText("");
             nameField.setDisable(true);
+            creditsField.setText("");
             creditsField.setDisable(true);
+            teacherNamesField.setText("");
             teacherNamesField.setDisable(true);
+            prerequisitesField.setText("");
             prerequisitesField.setDisable(true);
+            corequisitesField.setText("");
             corequisitesField.setDisable(true);
         } else {
             nameField.setDisable(false);
@@ -91,7 +108,6 @@ public class CourseDetailController extends AbstractController {
             teacherNamesField.setDisable(false);
             prerequisitesField.setDisable(false);
             corequisitesField.setDisable(false);
-
 
             idField.textProperty().bindBidirectional(course.get().idProperty());
             nameField.textProperty().bindBidirectional(course.get().nameProperty());
@@ -116,6 +132,8 @@ public class CourseDetailController extends AbstractController {
 
         private ListProperty<Course> listProperty;
         private StringProperty stringProperty;
+        private ChangeListener<List<Course>> listListener;
+        private ChangeListener<String> stringListener;
 
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
@@ -129,16 +147,28 @@ public class CourseDetailController extends AbstractController {
             this.listProperty = listProperty;
             this.stringProperty = stringProperty;
 
-            listProperty.addListener((observable, oldValue, newValue) -> {
+            listListener = (observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
                     synchronizeFromList(newValue);
                 }
-            });
-            stringProperty.addListener((observable, oldValue, newValue) -> {
+            };
+            listProperty.addListener(listListener);
+            stringListener = (observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
                     synchronizeFromString(newValue);
                 }
-            });
+            };
+            stringProperty.addListener(stringListener);
+        }
+
+        /**
+         * Removes the binding and removes all listeners.
+         */
+        public void unbindBidirectional() {
+            listProperty.removeListener(listListener);
+            listProperty = null;
+            stringProperty.removeListener(stringListener);
+            stringProperty = null;
         }
 
         /**
@@ -174,6 +204,8 @@ public class CourseDetailController extends AbstractController {
 
         private ObjectProperty<Credits> creditsProperty;
         private StringProperty stringProperty;
+        private ChangeListener<Credits> creditsListener;
+        private ChangeListener<String> stringListener;
 
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
@@ -187,16 +219,28 @@ public class CourseDetailController extends AbstractController {
             this.creditsProperty = creditsProperty;
             this.stringProperty = stringProperty;
 
-            creditsProperty.addListener((observable, oldValue, newValue) -> {
+            creditsListener = (observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
                     synchronizeFromCredits(newValue);
                 }
-            });
-            stringProperty.addListener((observable, oldValue, newValue) -> {
+            };
+            creditsProperty.addListener(creditsListener);
+            stringListener = (observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
                     synchronizeFromString(newValue);
                 }
-            });
+            };
+            stringProperty.addListener(stringListener);
+        }
+
+        /**
+         * Removes the binding and removes all listeners.
+         */
+        public void unbindBidirectional() {
+            creditsProperty.removeListener(creditsListener);
+            creditsProperty = null;
+            stringProperty.removeListener(stringListener);
+            stringProperty = null;
         }
 
         /**
@@ -235,6 +279,8 @@ public class CourseDetailController extends AbstractController {
 
         private ListProperty<String> listProperty;
         private StringProperty stringProperty;
+        private ChangeListener<List<String>> listListener;
+        private ChangeListener<String> stringListener;
 
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
@@ -248,16 +294,28 @@ public class CourseDetailController extends AbstractController {
             this.listProperty = listProperty;
             this.stringProperty = stringProperty;
 
-            listProperty.addListener((observable, oldValue, newValue) -> {
+            listListener = ((observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
                     synchronizeFromList(newValue);
                 }
             });
-            stringProperty.addListener((observable, oldValue, newValue) -> {
+            listProperty.addListener(listListener);
+            stringListener = (observable, oldValue, newValue) -> {
                 if (!oldValue.equals(newValue)) {
                     synchronizeFromString(newValue);
                 }
-            });
+            };
+            stringProperty.addListener(stringListener);
+        }
+
+        /**
+         * Removes the binding and removes all listeners.
+         */
+        public void unbindBidirectional() {
+            listProperty.removeListener(listListener);
+            listProperty = null;
+            stringProperty.removeListener(stringListener);
+            stringProperty = null;
         }
 
         /**

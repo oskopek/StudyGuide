@@ -48,7 +48,7 @@ public class ChooseCourseController extends AbstractController {
      * Initializes the {@link #courseTableView} data bindings.
      */
     @FXML
-    private void initialize() { // TODO PRIORITY fix me not working
+    private void initialize() {
         courseTableView.itemsProperty().bindBidirectional(courseListProperty);
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
@@ -92,6 +92,14 @@ public class ChooseCourseController extends AbstractController {
      */
     public void setDialog(Dialog<ButtonType> dialog) {
         this.dialog = dialog;
+    }
+
+    /**
+     * Get the dialog (used for reporting double clicks in the table).
+     * @return the dialog
+     */
+    public Dialog<ButtonType> getDialog() {
+        return dialog;
     }
 
     /**
