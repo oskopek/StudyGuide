@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0"
       prefWidth="640.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.oskopek.studyguide.controller.MenuBarController">
+      fx:controller="com.oskopek.studyguide.controller.RootLayoutController">
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <menus>

@@ -19,7 +19,7 @@ import java.io.IOException;
  * Handles all action in the menu bar of the main app.
  */
 @Singleton
-public class MenuBarController extends AbstractController {
+public class RootLayoutController extends AbstractController {
 
     private File openedFile;
 
