@@ -17,10 +17,12 @@
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
             <children>
-                <Button fx:id="addSemesterButton" mnemonicParsing="false" onAction="#onAddSemester"
+                <Button fx:id="addSemesterButton" mnemonicParsing="false" onAction="#handleAddSemester"
                         text="%semesterPane.addSemester"/>
-                <Button fx:id="newCourseButton" mnemonicParsing="false" onAction="#onNewCourse"
+                <Button fx:id="newCourseButton" mnemonicParsing="false" onAction="#handleNewCourse"
                         text="%semesterPane.newCourse"/>
+                <Button fx:id="addCourseFromButton" mnemonicParsing="false" onAction="#handleAddCourseFrom"
+                        text="%semesterPane.addCourseFrom"/>
             </children>
         </HBox>
     </top>

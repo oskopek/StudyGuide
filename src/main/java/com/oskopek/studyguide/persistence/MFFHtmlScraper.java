@@ -3,6 +3,8 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -20,9 +22,11 @@ import java.nio.file.Paths;
  * An online HTML scraper for the pages at
  * <a href="http://www.mff.cuni.cz/studium/bcmgr/">http://www.mff.cuni.cz/studium/bcmgr/</a>.
  */
-public class MFFHtmlScraper implements DataReader {
+public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
     private SISHtmlScraper sisHtmlScraper;
+
+    private DoubleProperty progressProperty = new SimpleDoubleProperty();
 
     /**
      * Default constructor.
@@ -49,7 +53,10 @@ public class MFFHtmlScraper implements DataReader {
         Elements tables = document.select("table");
         for (Element table : tables) {
             boolean first = true; // skip header
-            for (Element row : table.select("tr")) {
+            Elements rows = table.select("tr");
+            int rowIndex = 0;
+            for (Element row : rows) {
+                progressProperty.set(rowIndex / (double) rows.size());
                 if (first) {
                     first = false;
                     continue;
@@ -59,8 +66,10 @@ public class MFFHtmlScraper implements DataReader {
                 if (!id.isEmpty()) { // skip empty lines
                     sisHtmlScraper.scrapeCourse(registry, id);
                 }
+                rowIndex++;
             }
         }
+        progressProperty.set(1d);
         DefaultStudyPlan studyPlan = new DefaultStudyPlan();
         studyPlan.courseRegistryProperty().setValue(registry);
         return studyPlan;
@@ -92,12 +101,16 @@ public class MFFHtmlScraper implements DataReader {
         if (url == null) {
             throw new IllegalArgumentException("Url to scrape cannot be null.");
         }
-        URL urlObj = new URL(url);
-        URLConnection connection = urlObj.openConnection();
-        InputStream is = connection.getInputStream();
-        StudyPlan studyPlan = scrapeStudyPlan(is, connection.getContentEncoding());
-        is.close();
-        return studyPlan;
+        try {
+            URL urlObj = new URL(url);
+            URLConnection connection = urlObj.openConnection();
+            InputStream is = connection.getInputStream();
+            StudyPlan studyPlan = scrapeStudyPlan(is, connection.getContentEncoding());
+            is.close();
+            return studyPlan;
+        } catch (IOException e) {
+            throw new IOException("Failed to scrape study plan from: " + url, e);
+        }
     }
 
     @Override
@@ -114,5 +127,9 @@ public class MFFHtmlScraper implements DataReader {
             throw new IllegalArgumentException("Input stream cannot be null.");
         }
         return scrapeStudyPlan(inputStream, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
+    }
+
+    public DoubleProperty progressProperty() {
+        return progressProperty;
     }
 }

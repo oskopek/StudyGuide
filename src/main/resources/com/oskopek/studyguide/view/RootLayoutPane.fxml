@@ -12,9 +12,7 @@
                     <items>
                         <MenuItem fx:id="newMenuItem" mnemonicParsing="false" onAction="#handleNew" text="%root.new" />
                         <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#handleOpen" text="%root.open" />
-                        <MenuItem fx:id="scrapeFromItem" mnemonicParsing="false" onAction="#handleScrapeFrom" text="%root.scrapeFrom" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem fx:id="scrapeCoursesFromItem" mnemonicParsing="false" onAction="#handleScrapeCoursesFrom" text="%root.scrapeCoursesFrom" />
+                        <MenuItem fx:id="scrapeFromItem" mnemonicParsing="false" onAction="#handleOpenFrom" text="%root.openFrom" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#handleSave" text="%root.save" />
                         <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#handleSaveAs" text="%root.saveAs" />

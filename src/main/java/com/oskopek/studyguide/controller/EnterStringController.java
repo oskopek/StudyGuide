@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.controller;
 
+import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
 import javafx.fxml.FXML;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -8,7 +9,7 @@ import javafx.scene.control.TextField;
 /**
  * Controller for choosing a course out of several choices.
  */
-public class ChooseURLController extends AbstractController {
+public class EnterStringController extends AbstractController {
 
     private Dialog<ButtonType> dialog;
 
@@ -25,7 +26,7 @@ public class ChooseURLController extends AbstractController {
 
     /**
      * Set the dialog (used for reporting double clicks in the table).
-     * @param dialog the dialog wrapper for {@link com.oskopek.studyguide.view.ChooseURLDialogPaneCreator}
+     * @param dialog the dialog wrapper for {@link EnterStringDialogPaneCreator}
      */
     public void setDialog(Dialog<ButtonType> dialog) {
         this.dialog = dialog;

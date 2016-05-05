@@ -1,19 +1,27 @@
 package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.DefaultStudyPlan;
+import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.persistence.DataReader;
 import com.oskopek.studyguide.persistence.DataWriter;
 import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
+import com.oskopek.studyguide.persistence.MFFHtmlScraper;
+import com.oskopek.studyguide.persistence.MFFWebScraperUtil;
 import com.oskopek.studyguide.view.AlertCreator;
+import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
+import com.oskopek.studyguide.view.ProgressCreator;
 import com.oskopek.studyguide.view.StudyGuideApplication;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 /**
  * Handles all action in the menu bar of the main app.
@@ -32,6 +40,9 @@ public class RootLayoutController extends AbstractController {
 
     @Inject
     private FindCoursesController findCoursesController;
+
+    @Inject
+    private EnterStringDialogPaneCreator enterStringDialogPaneCreator;
 
     /**
      * Menu item: File->New.
@@ -61,13 +72,41 @@ public class RootLayoutController extends AbstractController {
     }
 
     @FXML
-    private void handleScrapeFrom(){
-        // TODO priority handle scrape from
-    }
+    private void handleOpenFrom() {
+        EnterStringController enterStringController = enterStringDialogPaneCreator.create(
+                messages.getString("root.enterUrl"));
+        Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.APPLY) {
+            String submittedURL = enterStringController.getSubmittedURL();
+            // TODO OPTIONAL replace with a setting
+            MFFHtmlScraper scraper = new MFFHtmlScraper(MFFWebScraperUtil.sisWebUrl);
+            Stage progressDialog = ProgressCreator.showProgress(scraper, messages.getString("progress.pleaseWait"));
+            Task<StudyPlan> studyPlanTask = new Task<StudyPlan>() {
+                @Override
+                protected StudyPlan call() throws Exception {
+                    return scraper.scrapeStudyPlan(submittedURL);
+                }
+            };
+            studyPlanTask.exceptionProperty().addListener((observable, oldValue, newValue) -> {
+                progressDialog.close();
+                AlertCreator.showAlert(Alert.AlertType.ERROR,
+                        messages.getString("root.openFromFailed") + ":\n\n"
+                                + newValue.getLocalizedMessage());
+                throw new IllegalStateException("Open from failed.", newValue);
+            });
+            studyPlanTask.setOnSucceeded(event -> {
+                progressDialog.close();
+                studyGuideApplication.setStudyPlan(studyPlanTask.getValue());
+                openedFile = null;
+            });
+            studyPlanTask.setOnFailed(event -> {
+                progressDialog.close();
+                AlertCreator.showAlert(Alert.AlertType.ERROR,
+                        messages.getString("root.openFromFailed"));
+            });
 
-    @FXML
-    private void handleScrapeCoursesFrom(){
-        // TODO priority handle scrape courses from
+            new Thread(studyPlanTask).start();
+        }
     }
 
     /**

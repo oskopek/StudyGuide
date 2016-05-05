@@ -3,6 +3,8 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import com.oskopek.studyguide.model.courses.Credits;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -25,11 +27,13 @@ import java.util.stream.Collectors;
  * Scrapes a SIS instance (f.e. <a href="https://is.cuni.cz/studium">https://is.cuni.cz/studium</a>).
  * <strong>Works only in Czech locale!</strong>
  */
-public class SISHtmlScraper {
+public class SISHtmlScraper implements ProgressObservable {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private String sisUrl;
+
+    private DoubleProperty progressProperty = new SimpleDoubleProperty();
 
     /**
      * Default constructor.
@@ -53,6 +57,7 @@ public class SISHtmlScraper {
         if (courseId == null) {
             throw new IllegalArgumentException("Course id cannot be null.");
         }
+        progressProperty().setValue(0d);
         Course course = registry.getCourse(courseId);
         if (course != null) {
             return course;
@@ -92,12 +97,15 @@ public class SISHtmlScraper {
 
         String localizedName = document.select("div.form_div_title").text();
         localizedName = localizedName.substring(0, localizedName.lastIndexOf("-")).trim();
+        progressProperty().setValue(0.1d);
 
         Elements tab2s = document.select("table.tab2");
         // skip table 0
         Elements table1 = tab2s.get(1).select("tr");
         String name = table1.get(0).select("td").first().text();
+        progressProperty().setValue(0.2d);
         Credits credits = Credits.valueOf(Integer.parseInt(table1.get(5).select("td").first().text()));
+        progressProperty().setValue(0.3d);
 
         Elements table2 = tab2s.get(2).select("tr");
         List<String> teacherList = new ArrayList<>();
@@ -105,10 +113,13 @@ public class SISHtmlScraper {
             teacherList = table2.get(0).select("td").first().select("a.link3")
                     .stream().map(Element::text).collect(Collectors.toList());
         }
+        progressProperty().setValue(0.4d);
 
         CourseRegistry prereqs = new CourseRegistry();
         CourseRegistry coreqs = new CourseRegistry();
+        int index = 0;
         for (Element tableRow : table2) { // TODO OPTIONAL check for and fail on circular dependencies
+            progressProperty().setValue(0.5d + (index / (double) table2.size())/2d);
             String headerText = tableRow.select("th").first().text().toLowerCase();
             CourseRegistry addTo;
             if (headerText.contains("korekvizity")) {
@@ -129,11 +140,17 @@ public class SISHtmlScraper {
                 }
                 addTo.putCourseSimple(dependency);
             }
+            index++;
         }
 
         Course course = new Course(courseId, name, localizedName, Locale.forLanguageTag("cs"), credits, teacherList,
                 new ArrayList<>(prereqs.courseMapValues()), new ArrayList<>(coreqs.courseMapValues()));
         registry.putCourse(course);
+        progressProperty().setValue(1d);
         return course;
+    }
+
+    public DoubleProperty progressProperty() {
+        return progressProperty;
     }
 }

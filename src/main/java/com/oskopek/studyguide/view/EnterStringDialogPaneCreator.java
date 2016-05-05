@@ -1,8 +1,6 @@
 package com.oskopek.studyguide.view;
 
-import com.oskopek.studyguide.controller.ChooseCourseController;
-import com.oskopek.studyguide.controller.ChooseURLController;
-import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.controller.EnterStringController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -14,37 +12,36 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 /**
- * Dialog for entering a URL. Creates a DialogPane encapsulated in it's controller.
- *
- * @see ChooseCourseController
+ * Dialog for entering a String. Creates a DialogPane encapsulated in it's controller.
  */
 @Singleton
-public class ChooseURLDialogPaneCreator {
+public class EnterStringDialogPaneCreator {
 
     @Inject
     @Named("fxmlloader")
     private Instance<FXMLLoader> fxmlLoader;
 
     /**
-     * Create the dialog for entering a URL.
+     * Create the dialog for entering a String.
      *
+     * @param prompt the string message to prompt the user with
      * @return the controller of the dialog window, enabling to display the dialog and read the selected result
      */
-    public ChooseURLController create() {
+    public EnterStringController create(String prompt) {
         FXMLLoader fxmlLoader = this.fxmlLoader.get();
         DialogPane dialogPane = null;
-        try (InputStream is = getClass().getResourceAsStream("ChooseURLDialogPaneCreator.fxml")) {
+        try (InputStream is = getClass().getResourceAsStream("EnterStringDialogPane.fxml")) {
             dialogPane = fxmlLoader.load(is);
         } catch (IOException e) {
             AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
-        ChooseURLController chooseURLController = fxmlLoader.getController();
+        dialogPane.setHeaderText(prompt);
+        EnterStringController enterStringController = fxmlLoader.getController();
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setDialogPane(dialogPane);
-        chooseURLController.setDialog(dialog);
-        return chooseURLController;
+        enterStringController.setDialog(dialog);
+        return enterStringController;
     }
 }

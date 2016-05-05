@@ -13,7 +13,7 @@ import java.util.Arrays;
 public final class MFFWebScraperUtil {
 
     private static final String mffIoiInfoUrl = "http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm";
-    private static final String sisWebUrl = "https://is.cuni.cz/studium";
+    public static final String sisWebUrl = "https://is.cuni.cz/studium";
     private static MFFHtmlScraper scraper = new MFFHtmlScraper(sisWebUrl);
 
     /**
