@@ -5,6 +5,7 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Singleton;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Map;
 /**
  * Serves as a cache and/or database for/of {@link Course}s.
  */
-@ApplicationScoped
+@Singleton
 public class CourseRegistry {
 
     @JsonProperty("courses")

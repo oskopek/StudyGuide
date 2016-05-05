@@ -5,6 +5,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -12,7 +13,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 /**
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
  */
-public class CourseEnrollment extends ObservableValueBase<CourseEnrollment> {
+public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
+        implements ObservableValue<CourseEnrollment> {
 
     private final ObjectProperty<Course> course;
     private final BooleanProperty fulfilled;

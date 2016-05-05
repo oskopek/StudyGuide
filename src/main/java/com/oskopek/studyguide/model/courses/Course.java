@@ -2,6 +2,7 @@ package com.oskopek.studyguide.model.courses;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javafx.beans.property.*;
+import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,7 +18,7 @@ import java.util.Locale;
  * Background information about a course students can enroll in.
  * There should be only one instance of this per course.
  */
-public class Course extends ObservableValueBase<Course> implements Comparable<Course> {
+public class Course extends ObservableValueBase<Course> implements Comparable<Course>, ObservableValue<Course> {
 
     private final StringProperty id;
     private final StringProperty name;

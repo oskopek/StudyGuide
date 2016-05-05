@@ -11,6 +11,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -57,7 +59,6 @@ public class CourseDetailController extends AbstractController {
      */
     @FXML
     private void initialize() {
-        // TODO PRIORITY why do correct courses not display all the other properties? (the manual synced)
         course = new SimpleObjectProperty<>();
         creditsValueProperty = new CreditsStringProperty();
         teacherNamesProperty = new StringListStringProperty();
@@ -114,10 +115,10 @@ public class CourseDetailController extends AbstractController {
             creditsValueProperty.bindBidirectional(course.get().creditsProperty(), creditsField.textProperty());
             teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(),
                     teacherNamesField.textProperty());
-            corequisitesProperty.bindBidirectional(course.get().corequisitesProperty(),
-                    corequisitesField.textProperty());
-            prerequisitesProperty.bindBidirectional(course.get().prerequisitesProperty(),
-                    prerequisitesField.textProperty());
+            corequisitesProperty.bindBidirectional(studyGuideApplication.getStudyPlan().getCourseRegistry(),
+                    course.get().corequisitesProperty(), corequisitesField.textProperty());
+            prerequisitesProperty.bindBidirectional(studyGuideApplication.getStudyPlan().getCourseRegistry(),
+                    course.get().prerequisitesProperty(), prerequisitesField.textProperty());
         }
     }
 
@@ -127,13 +128,27 @@ public class CourseDetailController extends AbstractController {
      */
     private static class CourseListStringProperty {
 
-        @Inject
-        private CourseRegistry courseRegistry; // TODO check if this works (could there be more instances?)
+        private CourseRegistry courseRegistry;
+
+        private Logger logger = LoggerFactory.getLogger(getClass());
 
         private ListProperty<Course> listProperty;
         private StringProperty stringProperty;
         private ChangeListener<List<Course>> listListener;
         private ChangeListener<String> stringListener;
+
+        public CourseListStringProperty() {
+            listListener = (observable, oldValue, newValue) -> {
+                if (oldValue == null || !oldValue.equals(newValue)) {
+                    synchronizeFromList(newValue);
+                }
+            };
+            stringListener = (observable, oldValue, newValue) -> {
+                if (oldValue == null || !oldValue.equals(newValue)) {
+                    synchronizeFromString(newValue);
+                }
+            };
+        }
 
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
@@ -143,28 +158,20 @@ public class CourseDetailController extends AbstractController {
          * @param listProperty   the list property to bind
          * @param stringProperty the string property to bind
          */
-        public void bindBidirectional(ListProperty<Course> listProperty, StringProperty stringProperty) {
+        public void bindBidirectional(CourseRegistry registry, ListProperty<Course> listProperty, StringProperty stringProperty) {
+            this.courseRegistry = registry;
             this.listProperty = listProperty;
             this.stringProperty = stringProperty;
-
-            listListener = (observable, oldValue, newValue) -> {
-                if (!oldValue.equals(newValue)) {
-                    synchronizeFromList(newValue);
-                }
-            };
-            listProperty.addListener(listListener);
-            stringListener = (observable, oldValue, newValue) -> {
-                if (!oldValue.equals(newValue)) {
-                    synchronizeFromString(newValue);
-                }
-            };
-            stringProperty.addListener(stringListener);
+            this.listProperty.addListener(listListener);
+            this.stringProperty.addListener(stringListener);
+            listListener.changed(listProperty, null, listProperty.get());
         }
 
         /**
          * Removes the binding and removes all listeners.
          */
         public void unbindBidirectional() {
+            courseRegistry = null;
             listProperty.removeListener(listListener);
             listProperty = null;
             stringProperty.removeListener(stringListener);
@@ -177,8 +184,11 @@ public class CourseDetailController extends AbstractController {
          * @param list the new list value
          */
         private void synchronizeFromList(List<Course> list) {
-            String stringList = list.stream().map(Course::getName).reduce(", ", String::join);
+            logger.debug("Synchronizing from list {} using course registry {}", list, courseRegistry);
+            String stringList = String.join(", ", list.stream().map(Course::getId).collect(Collectors.toList()));
             stringProperty.setValue(stringList);
+            logger.debug("Synchronized to stringList {}", stringList);
+
         }
 
         /**
@@ -188,10 +198,14 @@ public class CourseDetailController extends AbstractController {
          * @param stringList the new stringList value
          */
         private void synchronizeFromString(String stringList) {
-            // TODO check if valid correctly
+            if (stringList == null) {
+                return; // TODO check if valid correctly
+            }
+            logger.debug("Synchronizing from stringList {} using course registry {}", stringList, courseRegistry);
             List<Course> list = Stream.of(stringList.split(",")).map(String::trim)
                     .map(id -> courseRegistry.getCourse(id)).filter(x -> x != null).collect(Collectors.toList());
             listProperty.setValue(FXCollections.observableArrayList(list));
+            logger.debug("Synchronized to list {}", list);
         }
 
     }
@@ -207,6 +221,22 @@ public class CourseDetailController extends AbstractController {
         private ChangeListener<Credits> creditsListener;
         private ChangeListener<String> stringListener;
 
+        @Inject
+        private Logger logger;
+
+        public CreditsStringProperty() {
+            creditsListener = (observable, oldValue, newValue) -> {
+                if (oldValue == null || !oldValue.equals(newValue)) {
+                    synchronizeFromCredits(newValue);
+                }
+            };
+            stringListener = (observable, oldValue, newValue) -> {
+                if (oldValue == null || !oldValue.equals(newValue)) {
+                    synchronizeFromString(newValue);
+                }
+            };
+        }
+
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
          * and synchronizes them via {@link javafx.beans.value.ChangeListener}s and intermediate value caches.
@@ -218,19 +248,9 @@ public class CourseDetailController extends AbstractController {
         public void bindBidirectional(ObjectProperty<Credits> creditsProperty, StringProperty stringProperty) {
             this.creditsProperty = creditsProperty;
             this.stringProperty = stringProperty;
-
-            creditsListener = (observable, oldValue, newValue) -> {
-                if (!oldValue.equals(newValue)) {
-                    synchronizeFromCredits(newValue);
-                }
-            };
-            creditsProperty.addListener(creditsListener);
-            stringListener = (observable, oldValue, newValue) -> {
-                if (!oldValue.equals(newValue)) {
-                    synchronizeFromString(newValue);
-                }
-            };
-            stringProperty.addListener(stringListener);
+            this.creditsProperty.addListener(creditsListener);
+            this.stringProperty.addListener(stringListener);
+            creditsListener.changed(creditsProperty, null, creditsProperty.get());
         }
 
         /**
@@ -264,7 +284,8 @@ public class CourseDetailController extends AbstractController {
             try {
                 val = Integer.parseInt(string);
             } catch (NumberFormatException e) {
-                return; // TODO do not ignore the wrong value
+                logger.info("Wrong number format ({}), ignoring the credit value.", string);
+                return; // TODO OPTIONAL do not ignore the wrong value
             }
             Credits credits = Credits.valueOf(val);
             creditsProperty.setValue(credits);
@@ -282,6 +303,19 @@ public class CourseDetailController extends AbstractController {
         private ChangeListener<List<String>> listListener;
         private ChangeListener<String> stringListener;
 
+        public StringListStringProperty() {
+            listListener = ((observable, oldValue, newValue) -> {
+                if (oldValue == null || !oldValue.equals(newValue)) {
+                    synchronizeFromList(newValue);
+                }
+            });
+            stringListener = (observable, oldValue, newValue) -> {
+                if (oldValue == null || !oldValue.equals(newValue)) {
+                    synchronizeFromString(newValue);
+                }
+            };
+        }
+
         /**
          * Bind a pair of type-differing JavaFX properties bidirectionally. Keeps the two properties internally
          * and synchronizes them via {@link javafx.beans.value.ChangeListener}s.
@@ -293,19 +327,9 @@ public class CourseDetailController extends AbstractController {
         public void bindBidirectional(ListProperty<String> listProperty, StringProperty stringProperty) {
             this.listProperty = listProperty;
             this.stringProperty = stringProperty;
-
-            listListener = ((observable, oldValue, newValue) -> {
-                if (!oldValue.equals(newValue)) {
-                    synchronizeFromList(newValue);
-                }
-            });
-            listProperty.addListener(listListener);
-            stringListener = (observable, oldValue, newValue) -> {
-                if (!oldValue.equals(newValue)) {
-                    synchronizeFromString(newValue);
-                }
-            };
-            stringProperty.addListener(stringListener);
+            this.listProperty.addListener(listListener);
+            this.stringProperty.addListener(stringListener);
+            listListener.changed(listProperty, null, listProperty.get());
         }
 
         /**

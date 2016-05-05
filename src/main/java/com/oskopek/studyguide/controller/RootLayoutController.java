@@ -62,7 +62,7 @@ public class RootLayoutController extends AbstractController {
 
     @FXML
     private void handleScrapeFrom(){
-
+        // TODO priority handle scrape from
     }
 
     /**
