@@ -1,23 +1,14 @@
 package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.persistence.ProgressObservable;
-import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import javax.inject.Inject;
-import java.io.IOException;
-import java.util.ResourceBundle;
-import java.util.TimerTask;
 
 /**
  * Utility class for creating and displaying blocking progress pop-ups.
@@ -33,9 +24,13 @@ public final class ProgressCreator {
 
     /**
      * A util method to display a blocking progress pop-up with the given parameters.
+     *
+     * @param progressObservable the observable object that gives us the progress
+     * @param message the message to display while waiting
+     * @return the stage of the opened dialog with the progress bar
      */
-    public static <ProgressObservable_ extends ProgressObservable> Stage showProgress(
-            ProgressObservable_ progressObservable, String message) {
+    public static Stage showProgress(
+            ProgressObservable progressObservable, String message) {
         Stage dialogStage = new Stage();
         ProgressBar progressBar = new ProgressBar();
 
@@ -55,7 +50,7 @@ public final class ProgressCreator {
         Scene scene = new Scene(vBox);
         dialogStage.setScene(scene);
         dialogStage.toFront();
-        dialogStage.setOnCloseRequest(event -> event.consume()); // prevent closing
+        dialogStage.setOnCloseRequest(event -> event.consume()); // prevent closing of the dialog window
         dialogStage.show();
         return dialogStage;
     }

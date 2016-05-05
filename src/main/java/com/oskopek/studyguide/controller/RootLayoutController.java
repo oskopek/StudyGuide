@@ -71,14 +71,18 @@ public class RootLayoutController extends AbstractController {
         openFromFile(chosen);
     }
 
+    /**
+     * Menu item: File->Open From....
+     * Scrape a study plan off the network resource and load it into the main app.
+     * Doesn't save the currently opened one!
+     */
     @FXML
     private void handleOpenFrom() {
         EnterStringController enterStringController = enterStringDialogPaneCreator.create(
                 messages.getString("root.enterUrl"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
-            String submittedURL = enterStringController.getSubmittedURL();
-            // TODO OPTIONAL replace with a setting
+            String submittedURL = enterStringController.getSubmittedString();
             MFFHtmlScraper scraper = new MFFHtmlScraper(MFFWebScraperUtil.sisWebUrl);
             Stage progressDialog = ProgressCreator.showProgress(scraper, messages.getString("progress.pleaseWait"));
             Task<StudyPlan> studyPlanTask = new Task<StudyPlan>() {

@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
-import org.jboss.weld.exceptions.IllegalStateException;
 
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Singleton;

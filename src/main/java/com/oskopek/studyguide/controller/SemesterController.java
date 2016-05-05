@@ -23,7 +23,6 @@ import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 import javax.inject.Inject;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -121,6 +120,10 @@ public class SemesterController extends AbstractController {
         courseDetailController.setCourse(course);
     }
 
+    /**
+     * Handles creating adding a new course from a network resource based on it's ID.
+     * @see SISHtmlScraper#scrapeCourse(com.oskopek.studyguide.model.courses.CourseRegistry, String)
+     */
     @FXML
     private void handleAddCourseFrom() {
         StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
@@ -132,8 +135,7 @@ public class SemesterController extends AbstractController {
                 messages.getString("semester.enterCourseId"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
-            String submittedCourseId = enterStringController.getSubmittedURL();
-            // TODO OPTIONAL replace with a setting
+            String submittedCourseId = enterStringController.getSubmittedString();
             SISHtmlScraper scraper = new SISHtmlScraper(MFFWebScraperUtil.sisWebUrl);
             Stage progressDialog = ProgressCreator.showProgress(scraper, messages.getString("progress.pleaseWait"));
             Task<Course> courseTask = new Task<Course>() {

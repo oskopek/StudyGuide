@@ -129,6 +129,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         return scrapeStudyPlan(inputStream, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
     }
 
+    @Override
     public DoubleProperty progressProperty() {
         return progressProperty;
     }

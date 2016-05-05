@@ -137,7 +137,10 @@ public class CourseDetailController extends AbstractController {
         private ChangeListener<List<Course>> listListener;
         private ChangeListener<String> stringListener;
 
-        public CourseListStringProperty() {
+        /**
+         * Default constructor.
+         */
+        CourseListStringProperty() {
             listListener = (observable, oldValue, newValue) -> {
                 if (oldValue == null || !oldValue.equals(newValue)) {
                     synchronizeFromList(newValue);
@@ -155,10 +158,12 @@ public class CourseDetailController extends AbstractController {
          * and synchronizes them via {@link javafx.beans.value.ChangeListener}s.
          * The String property is a comma-separated list of {@link Course#getName()}s from the list.
          *
+         * @param registry the course registry from which to recognize inputted courses
          * @param listProperty   the list property to bind
          * @param stringProperty the string property to bind
          */
-        public void bindBidirectional(CourseRegistry registry, ListProperty<Course> listProperty, StringProperty stringProperty) {
+        public void bindBidirectional(CourseRegistry registry, ListProperty<Course> listProperty,
+                                      StringProperty stringProperty) {
             this.courseRegistry = registry;
             this.listProperty = listProperty;
             this.stringProperty = stringProperty;
@@ -224,7 +229,10 @@ public class CourseDetailController extends AbstractController {
         @Inject
         private Logger logger;
 
-        public CreditsStringProperty() {
+        /**
+         * Default constructor.
+         */
+        CreditsStringProperty() {
             creditsListener = (observable, oldValue, newValue) -> {
                 if (oldValue == null || !oldValue.equals(newValue)) {
                     synchronizeFromCredits(newValue);
@@ -303,7 +311,10 @@ public class CourseDetailController extends AbstractController {
         private ChangeListener<List<String>> listListener;
         private ChangeListener<String> stringListener;
 
-        public StringListStringProperty() {
+        /**
+         * Default constructor.
+         */
+        StringListStringProperty() {
             listListener = ((observable, oldValue, newValue) -> {
                 if (oldValue == null || !oldValue.equals(newValue)) {
                     synchronizeFromList(newValue);

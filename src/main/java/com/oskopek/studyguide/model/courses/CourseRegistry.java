@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Singleton;
 import java.util.Collection;
 import java.util.HashMap;
