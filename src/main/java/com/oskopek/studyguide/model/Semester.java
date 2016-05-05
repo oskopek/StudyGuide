@@ -74,6 +74,9 @@ public class Semester {
         if (course == null) {
             throw new IllegalArgumentException("Course cannot be null.");
         }
+        if (courseEnrollmentList.stream().filter(ce -> ce.getCourse().equals(course)).findFirst().isPresent()) {
+            throw new IllegalArgumentException("Course already enrolled in.");
+        }
         addCourseEnrollment(new CourseEnrollment(course, this, false));
     }
 

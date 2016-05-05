@@ -33,36 +33,6 @@ public class RootLayoutController extends AbstractController {
     @Inject
     private FindCoursesController findCoursesController;
 
-    @FXML
-    private MenuBar menuBar;
-
-    @FXML
-    private Menu fileMenu;
-
-    @FXML
-    private MenuItem newMenuItem;
-
-    @FXML
-    private MenuItem openMenuItem;
-
-    @FXML
-    private MenuItem closeMenuItem;
-
-    @FXML
-    private MenuItem saveMenuItem;
-
-    @FXML
-    private MenuItem saveAsMenuItem;
-
-    @FXML
-    private MenuItem quitMenuItem;
-
-    @FXML
-    private Menu helpMenu;
-
-    @FXML
-    private MenuItem aboutMenuItem;
-
     /**
      * Menu item: File->New.
      * Creates a new model in the main app.
@@ -88,6 +58,11 @@ public class RootLayoutController extends AbstractController {
             return;
         }
         openFromFile(chosen);
+    }
+
+    @FXML
+    private void handleScrapeFrom(){
+
     }
 
     /**
