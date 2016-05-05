@@ -23,8 +23,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Singleton;
@@ -49,8 +47,7 @@ public class StudyGuideApplication extends Application {
         Task<ObservableValue<Stage>> mainStageTask = new Task<ObservableValue<Stage>>() {
             @Override
             protected ObservableValue<Stage> call() throws Exception {
-                // Initialize Weld CDI
-                container = new Weld().initialize();
+                container = new Weld().initialize(); // Initialize Weld CDI
                 primaryStage.setTitle("StudyGuide");
                 primaryStage.getIcons().add(new Image(StudyGuideApplication.class.getResourceAsStream(logoResource)));
                 container.event().select(Stage.class, new AnnotationLiteral<StartupStage>() { }).fire(primaryStage);
