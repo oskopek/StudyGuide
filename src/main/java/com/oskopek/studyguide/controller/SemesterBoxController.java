@@ -22,14 +22,11 @@ import java.util.Optional;
 
 /**
  * Controller for SemesterBoxPane.
- * Represents a single {@link Semester} in a {@link com.oskopek.studyguide.model.SemesterPlan}
- *
+ * Represents a single {@link Semester} in a {@link com.oskopek.studyguide.model.SemesterPlan}.
  */
 public class SemesterBoxController extends AbstractController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
-
-    private static int index = 0;
 
     @FXML
     private TextField semesterNameArea;
@@ -61,6 +58,9 @@ public class SemesterBoxController extends AbstractController {
     private Semester semester;
 
     private BorderPane pane;
+
+    private static final DataFormat semesterFormat = new DataFormat("semester");
+    private static final DataFormat enrollmentIndexFormat = new DataFormat("enrollment");
 
     /**
      * Initializes the listener for Semester name changes.
@@ -176,27 +176,83 @@ public class SemesterBoxController extends AbstractController {
         }
     }
 
+    /**
+     * Get the {@link BorderPane} UI element that this controller controls.
+     *
+     * @return the border pane to get
+     */
     public BorderPane getPane() {
         return pane;
     }
 
+    /**
+     * Set the {@link BorderPane} UI element that this controller controls.
+     * Used by {@link com.oskopek.studyguide.view.SemesterBoxPaneCreator}.
+     *
+     * @param pane the border pane to set
+     */
     public void setPane(BorderPane pane) {
         this.pane = pane;
     }
 
-    public Semester getSemester() {
-        return semester;
+    /**
+     * Handler of finished drag in the table.
+     *
+     * @param e the drag event
+     */
+    @FXML
+    private void onDragDropped(DragEvent e) {
+        Semester semesterTo = semester;
+        logger.trace("Drag dropped in {}", semester);
+        Dragboard dragboard = e.getDragboard();
+        if (dragboard.hasContent(semesterFormat) && dragboard.hasContent(enrollmentIndexFormat)) {
+            String semesterName = (String) dragboard.getContent(semesterFormat);
+            int selectedIndex = (Integer) dragboard.getContent(enrollmentIndexFormat);
+            logger.debug("Drag dropping payload: {} from {} to {}", selectedIndex, semesterName, semesterTo.getName());
+            Optional<Semester> semesterFrom
+                    = studyGuideApplication.getStudyPlan().getSemesterPlan().findSemester(semesterName);
+            if (!semesterFrom.isPresent()) {
+                throw new IllegalStateException("No such semester exists! Cannot drop the drag.");
+            }
+            CourseEnrollment enrollment = semesterFrom.get().getCourseEnrollmentList().get(selectedIndex);
+            parentSemesterController.moveCourseEnrollment(semesterFrom.get(), semesterTo, enrollment);
+        }
+        e.consume();
     }
 
-    public int getSelectedCourseEnrollmentIndex() {
-        return semesterTable.getSelectionModel().getSelectedIndex();
+    /**
+     * Handler of dragging an enrollment over a table. Used for accepting/rejecting the payload.
+     *
+     * @param event the drag event
+     */
+    @FXML
+    private void onDragOver(DragEvent event) {
+        logger.trace("Drag over in {}", semester);
+        if (event.getGestureSource() != pane && event.getDragboard().hasContent(enrollmentIndexFormat)
+                && event.getDragboard().hasContent(semesterFormat)) {
+            event.acceptTransferModes(TransferMode.MOVE);
+            logger.trace("Accepting drag over in {}", semester);
+        }
+        event.consume();
     }
 
-    public Dragboard startDragAndDrop() {
-        return semesterTable.startDragAndDrop(TransferMode.MOVE);
-    }
-
-    public TableView<CourseEnrollment> getSemesterTable() {
-        return semesterTable;
+    /**
+     * Handler of detected drag in the table.
+     *
+     * @param event the event that initiated the drag
+     */
+    @FXML
+    private void onDragDetected(MouseEvent event) {
+        int selectedIndex = semesterTable.getSelectionModel().getSelectedIndex();
+        logger.debug("Drag detected in {}", semester);
+        if (selectedIndex >= 0) {
+            logger.debug("Drag detected: {} from {}.", selectedIndex, semester);
+            Dragboard dragboard = pane.startDragAndDrop(TransferMode.MOVE);
+            ClipboardContent clipboardContent = new ClipboardContent();
+            clipboardContent.put(semesterFormat, semester.getName());
+            clipboardContent.put(enrollmentIndexFormat, selectedIndex);
+            dragboard.setContent(clipboardContent);
+        }
+        event.consume();
     }
 }

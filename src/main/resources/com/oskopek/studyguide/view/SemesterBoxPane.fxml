@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <BorderPane minHeight="300.0" minWidth="400.0" xmlns="http://javafx.com/javafx/null"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oskopek.studyguide.controller.SemesterBoxController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oskopek.studyguide.controller.SemesterBoxController"
+            onDragDropped="#onDragDropped" onDragOver="#onDragOver">
     <top>
         <BorderPane maxHeight="30.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" BorderPane.alignment="CENTER">
             <padding>
@@ -34,7 +35,8 @@
         </BorderPane>
     </top>
     <center>
-        <TableView fx:id="semesterTable" minHeight="200.0" minWidth="200.0" BorderPane.alignment="CENTER">
+        <TableView fx:id="semesterTable" minHeight="200.0" minWidth="200.0" BorderPane.alignment="CENTER"
+        onDragDetected="#onDragDetected">
             <columns>
                 <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="60.0" prefWidth="70.0" text="%course.id"/>
                 <TableColumn fx:id="nameColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%course.name"/>

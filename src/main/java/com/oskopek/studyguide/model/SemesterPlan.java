@@ -55,8 +55,14 @@ public class SemesterPlan implements Iterable<Semester> {
         semesterList.add(semester);
     }
 
+    /**
+     * Find the semester with the given name in this plan. Note, semester names are unique.
+     *
+     * @param name the name to look for
+     * @return an optional semester (will be present if we found a semester with the given name in this plan)
+     */
     public Optional<Semester> findSemester(String name) {
-        return semesterList.stream().filter(s -> s.getName().equals(name)).findFirst();
+        return semesterList.stream().filter(s -> s.getName().equals(name)).findAny();
     }
 
     /**

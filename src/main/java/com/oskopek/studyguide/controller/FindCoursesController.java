@@ -84,7 +84,7 @@ public class FindCoursesController extends AbstractController implements FindCou
                         addTo.addCourseEnrollment(chosen);
                     }
                 } catch (IllegalArgumentException e) {
-                    logger.debug("Added wrong course({}), showing error box.", chosen);
+                    logger.debug("Added wrong course ({}), showing error box.", chosen);
                     AlertCreator.showAlert(Alert.AlertType.ERROR,
                             messages.getString("findCourses.courseAlreadyEnrolled"));
                 }
