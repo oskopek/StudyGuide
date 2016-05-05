@@ -62,7 +62,7 @@ public class MFFHtmlScraper implements DataReader {
             }
         }
         DefaultStudyPlan studyPlan = new DefaultStudyPlan();
-        studyPlan.courseRegistryProperty().setValue(registry); // TODO constraints
+        studyPlan.courseRegistryProperty().setValue(registry);
         return studyPlan;
     }
 

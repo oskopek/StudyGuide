@@ -26,7 +26,7 @@ public interface Constraint {
      */
     void validate(@Observes CourseEnrollment changed);
 
-    // TODO rework fire methods
+    // TODO OPTIONAL rework fire methods
 
     /**
      * Used for firing a broken constraint event if the constraint is broken.

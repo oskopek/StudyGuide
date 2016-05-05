@@ -57,7 +57,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
      * @return the collected list
      */
     protected static List<CourseEnrollment> takeUntilSemester(SemesterPlan plan, Semester semester) {
-        // TODO rework this
+        // TODO OPTIONAL rewrite this
         List<CourseEnrollment> enrollments = new ArrayList<>();
         for (Semester pSemester : plan) {
             enrollments.addAll(pSemester.getCourseEnrollmentList());
