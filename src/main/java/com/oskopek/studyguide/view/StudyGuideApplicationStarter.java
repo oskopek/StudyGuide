@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.weld.StartupStage;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
@@ -39,7 +40,9 @@ public class StudyGuideApplicationStarter {
             AlertCreator.handleLoadLayoutError(fxmlLoader.getResources(), e);
         }
         Scene scene = new Scene(rootLayout);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        Platform.runLater(() -> {
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        });
     }
 }
