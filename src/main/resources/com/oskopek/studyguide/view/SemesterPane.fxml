@@ -29,10 +29,7 @@
     <center>
         <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="CENTER">
             <content>
-                <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0"
-                           onDragDetected="#onDragDetected"
-                           onDragDone="#onDragDone" onDragDropped="#onDragDropped"
-                           BorderPane.alignment="CENTER">
+                <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0" BorderPane.alignment="CENTER">
                 </GridPane>
             </content>
         </ScrollPane>

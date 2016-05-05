@@ -7,10 +7,18 @@ import com.oskopek.studyguide.view.AlertCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.layout.BorderPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
+import java.util.Optional;
 
 /**
  * Controller for SemesterBoxPane.
@@ -51,6 +59,8 @@ public class SemesterBoxController extends AbstractController {
     private CourseDetailController courseDetailController;
 
     private Semester semester;
+
+    private BorderPane pane;
 
     /**
      * Initializes the listener for Semester name changes.
@@ -166,4 +176,27 @@ public class SemesterBoxController extends AbstractController {
         }
     }
 
+    public BorderPane getPane() {
+        return pane;
+    }
+
+    public void setPane(BorderPane pane) {
+        this.pane = pane;
+    }
+
+    public Semester getSemester() {
+        return semester;
+    }
+
+    public int getSelectedCourseEnrollmentIndex() {
+        return semesterTable.getSelectionModel().getSelectedIndex();
+    }
+
+    public Dragboard startDragAndDrop() {
+        return semesterTable.startDragAndDrop(TransferMode.MOVE);
+    }
+
+    public TableView<CourseEnrollment> getSemesterTable() {
+        return semesterTable;
+    }
 }

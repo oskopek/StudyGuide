@@ -21,7 +21,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     private final ObjectProperty<Course> course;
     private final BooleanProperty fulfilled;
     @JsonBackReference
-    private final ObjectProperty<Semester> semester;
+    private final ObjectProperty<Semester> semester; // TODO fix correct deserialization
 
     /**
      * Private constructor for Jackson persistence.

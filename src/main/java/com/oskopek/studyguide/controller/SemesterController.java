@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.controller;
 
+import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
@@ -13,9 +14,17 @@ import com.oskopek.studyguide.view.SemesterBoxPaneCreator;
 import javafx.beans.value.ChangeListener;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.geometry.Point2D;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableView;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
 import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -52,6 +61,9 @@ public class SemesterController extends AbstractController {
 
     private ChangeListener<List<Semester>> listChangeListener;
 
+    private static final DataFormat semesterFormat = new DataFormat("semester");
+    private static final DataFormat enrollmentIndexFormat = new DataFormat("enrollment");
+
     /**
      * Initializes the {@link #semesterBoxes} data bindings.
      */
@@ -81,10 +93,22 @@ public class SemesterController extends AbstractController {
         semesterBoxes.getChildren().clear();
         int i = 0;
         for (Semester semester : studyGuideApplication.getStudyPlan().getSemesterPlan()) {
-            BorderPane semesterBox = semesterBoxPaneCreator.create(semester);
+            SemesterBoxController semesterBoxController = semesterBoxPaneCreator.create(semester);
+            logger.debug("Creating semester box controller {}", semesterBoxController);
+            TableView<CourseEnrollment> semesterTable = semesterBoxController.getSemesterTable();
+            BorderPane semesterBox = semesterBoxController.getPane();
+            semesterTable.setOnDragDetected(event -> onDragDetected(event, semesterBoxController));
+            semesterBox.setOnDragDone(event -> onDragDone(event, semesterBoxController));
             semesterBoxes.add(semesterBox, i % 2, i / 2);
             i++;
         }
+        semesterBoxes.setOnDragDone(event -> {
+            logger.debug("Handling drag drop in {}", this);
+            for (Node child : semesterBoxes.getChildren()) { // TODO how do we differentiate where to delegate?
+                child.getOnDragDone().handle(event);
+            }
+        });
+
     }
 
     /**
@@ -176,19 +200,19 @@ public class SemesterController extends AbstractController {
     /**
      * Handler of detected drag in the table.
      */
-    @FXML
-    public void onDragDetected() {
-        logger.debug("Drag detected {}");
-    }
-
-    /**
-     * Handler of dropped drag in the table.
-     *
-     * @param e the drag event
-     */
-    @FXML
-    public void onDragDropped(DragEvent e) {
-        logger.debug("Drag dropped {}");
+    private void onDragDetected(MouseEvent event, SemesterBoxController semesterBoxController) {
+        int selectedIndex = semesterBoxController.getSelectedCourseEnrollmentIndex();
+        Semester semester = semesterBoxController.getSemester();
+        logger.debug("Drag detected in {}", semester);
+        if (selectedIndex >= 0) {
+            logger.debug("Drag detected: {} from {}.", selectedIndex, semester);
+            Dragboard dragboard = semesterBoxes.startDragAndDrop(TransferMode.MOVE);
+            ClipboardContent clipboardContent = new ClipboardContent();
+            clipboardContent.put(semesterFormat, semester.getName());
+            clipboardContent.put(enrollmentIndexFormat, selectedIndex);
+            dragboard.setContent(clipboardContent);
+        }
+        event.consume();
     }
 
     /**
@@ -196,9 +220,24 @@ public class SemesterController extends AbstractController {
      *
      * @param e the drag event
      */
-    @FXML
-    public void onDragDone(DragEvent e) {
-        logger.debug("Drag done {}");
+    private void onDragDone(DragEvent e, SemesterBoxController semesterBoxController) {
+        Semester semesterTo = semesterBoxController.getSemester();
+        logger.debug("Drag done in {}", semesterTo);
+        Dragboard dragboard = e.getDragboard();
+        if (dragboard.hasContent(semesterFormat) && dragboard.hasContent(enrollmentIndexFormat)) {
+            String semesterName = (String) dragboard.getContent(semesterFormat);
+            int selectedIndex = (Integer) dragboard.getContent(enrollmentIndexFormat);
+            logger.debug("Drag payload: {} from {} to {}", selectedIndex, semesterName, semesterTo.getName());
+            Optional<Semester> semesterFrom
+                    = studyGuideApplication.getStudyPlan().getSemesterPlan().findSemester(semesterName);
+            if (!semesterFrom.isPresent()) {
+                throw new IllegalStateException("No such semester exists! Cannot drop the drag.");
+            }
+            CourseEnrollment enrollment = semesterFrom.get().getCourseEnrollmentList().get(selectedIndex);
+            semesterFrom.get().removeCourseEnrollment(enrollment);
+            enrollment.semesterProperty().set(semesterTo);
+            semesterTo.addCourseEnrollment(enrollment);
+        }
+        e.consume();
     }
-
 }

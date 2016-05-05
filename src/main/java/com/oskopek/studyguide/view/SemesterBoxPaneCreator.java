@@ -29,7 +29,7 @@ public class SemesterBoxPaneCreator {
      * @param semester the semester for which we're creating the box
      * @return an observable BorderPane, ready to be put into a Semester pane
      */
-    public BorderPane create(Semester semester) {
+    public SemesterBoxController create(Semester semester) {
         FXMLLoader fxmlLoader = this.fxmlLoader.get();
         BorderPane semesterBoxPane = null;
         try (InputStream is = getClass().getResourceAsStream("SemesterBoxPane.fxml")) {
@@ -39,6 +39,7 @@ public class SemesterBoxPaneCreator {
         }
         SemesterBoxController semesterBoxController = fxmlLoader.getController();
         semesterBoxController.setSemester(semester);
-        return semesterBoxPane;
+        semesterBoxController.setPane(semesterBoxPane);
+        return semesterBoxController;
     }
 }

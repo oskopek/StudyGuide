@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -81,12 +82,12 @@ public class Semester {
     }
 
     /**
-     * Add the {@link CourseEnrollment} to this semester.
+     * Add the {@link CourseEnrollment} to this semester. Does not change the course enrollment's semester property.
      *
      * @param courseEnrollment the enrollment to add to this semester, non-null
      * @throws IllegalArgumentException if the {@link Course} is already enrolled
      */
-    private void addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
+    public void addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
         if (courseEnrollment == null) {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
         }

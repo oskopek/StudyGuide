@@ -8,6 +8,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 /**
@@ -52,6 +53,10 @@ public class SemesterPlan implements Iterable<Semester> {
      */
     public void addSemester(Semester semester) {
         semesterList.add(semester);
+    }
+
+    public Optional<Semester> findSemester(String name) {
+        return semesterList.stream().filter(s -> s.getName().equals(name)).findFirst();
     }
 
     /**

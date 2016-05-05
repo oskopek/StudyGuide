@@ -34,8 +34,7 @@
         </BorderPane>
     </top>
     <center>
-        <TableView fx:id="semesterTable" minHeight="200.0" minWidth="200.0"
-                   BorderPane.alignment="CENTER">
+        <TableView fx:id="semesterTable" minHeight="200.0" minWidth="200.0" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="60.0" prefWidth="70.0" text="%course.id"/>
                 <TableColumn fx:id="nameColumn" editable="false" minWidth="100.0" prefWidth="120.0" text="%course.name"/>
