@@ -67,20 +67,25 @@ public class SemesterBoxController extends AbstractController {
                 cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
         fulfilledColumn.setCellFactory((final TableColumn<CourseEnrollment, Boolean> param) ->
                 new TableCell<CourseEnrollment, Boolean>() {
-                    final CheckBox fulfilledCheckBox = new CheckBox();
+                    public final CheckBox fulfilledCheckBox;
+
+                    {
+                        fulfilledCheckBox = new CheckBox();
+                        fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
+                            logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
+                                    newValue, enrollment, semester);
+                            enrollment.setFulfilled(newValue);
+                            fulfilledCheckBox.setSelected(newValue);
+                        });
+                    }
+
                     @Override
                     public void updateItem(Boolean item, boolean empty) {
                         super.updateItem(item, empty);
                         if (empty) {
                             setGraphic(null);
                         } else {
-                            fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                                CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                                logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
-                                        newValue, enrollment, semester);
-                                enrollment.setFulfilled(newValue);
-                                fulfilledCheckBox.setSelected(newValue);
-                            });
                             fulfilledCheckBox.setSelected(item);
                             setGraphic(fulfilledCheckBox);
                         }
@@ -89,7 +94,7 @@ public class SemesterBoxController extends AbstractController {
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
         removeColumn.setCellFactory((final TableColumn<CourseEnrollment, String> param) ->
                 new TableCell<CourseEnrollment, String>() {
-                    final Button removeButton = new Button("✗");
+                    final Button removeButton = new Button(messages.getString("crossmark"));
 
                     @Override
                     public void updateItem(String item, boolean empty) {
@@ -109,7 +114,6 @@ public class SemesterBoxController extends AbstractController {
                         }
                     }
                 });
-
         semesterTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldEnrollment, newEnrollment) -> {
                     logger.debug("Focused on CourseEnrollment {}", newEnrollment);
