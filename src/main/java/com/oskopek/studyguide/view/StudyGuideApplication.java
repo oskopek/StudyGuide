@@ -4,6 +4,7 @@ import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleObjectProperty;
@@ -22,6 +23,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Singleton;
@@ -54,6 +57,11 @@ public class StudyGuideApplication extends Application {
                 return new ReadOnlyObjectWrapper<>(primaryStage);
             }
         };
+        mainStageTask.exceptionProperty().addListener((observable, oldValue, newValue) -> {
+                    Platform.runLater(() -> {
+                        throw new IllegalStateException("Main stage loading failed.", newValue);
+                    });
+                });
         showSplashScreen(initStage, mainStageTask);
     }
 

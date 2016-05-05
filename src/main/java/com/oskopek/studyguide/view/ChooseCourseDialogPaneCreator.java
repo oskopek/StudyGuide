@@ -46,6 +46,7 @@ public class ChooseCourseDialogPaneCreator {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setDialogPane(dialogPane);
         chooseCourseController.setDialog(dialog);
+        dialog.setTitle("StudyGuide");
         return chooseCourseController;
     }
 }

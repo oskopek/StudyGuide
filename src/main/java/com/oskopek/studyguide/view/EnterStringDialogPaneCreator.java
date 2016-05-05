@@ -42,6 +42,7 @@ public class EnterStringDialogPaneCreator {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setDialogPane(dialogPane);
         enterStringController.setDialog(dialog);
+        dialog.setTitle("StudyGuide");
         return enterStringController;
     }
 }
