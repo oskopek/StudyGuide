@@ -1,5 +1,7 @@
 package com.oskopek.studyguide.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
@@ -18,6 +20,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
 
     private final ObjectProperty<Course> course;
     private final BooleanProperty fulfilled;
+    @JsonBackReference
     private final ObjectProperty<Semester> semester;
 
     /**
@@ -44,6 +47,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         this.course = new SimpleObjectProperty<>(course);
         this.fulfilled = new SimpleBooleanProperty(fulfilled);
         this.semester = new SimpleObjectProperty<>(semester);
+        registerChangeEventListeners();
     }
 
     /**
@@ -53,6 +57,15 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      */
     public Course getCourse() {
         return course.get();
+    }
+
+    /**
+     * Private setter for the course the student is enrolled in (for Jackson).
+     *
+     * @param course the course to set
+     */
+    private void setCourse(Course course) {
+        this.course.set(course);
     }
 
     /**
@@ -99,6 +112,16 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     public Semester getSemester() {
         return semester.get();
     }
+
+    /**
+     * Private setter for the semester the student is enrolled in the course (for Jackson).
+     *
+     * @param semester the semester to set
+     */
+    private void setSemester(Semester semester) {
+        this.semester.set(semester);
+    }
+
     /**
      * The JavaFX property for {@link #getSemester()}.
      *
@@ -108,6 +131,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         return semester;
     }
 
+    @JsonIgnore
     @Override
     public CourseEnrollment getValue() {
         return CourseEnrollment.copy(this);

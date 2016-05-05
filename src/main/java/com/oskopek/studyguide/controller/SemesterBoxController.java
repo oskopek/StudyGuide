@@ -7,7 +7,6 @@ import com.oskopek.studyguide.view.AlertCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.CheckBoxTableCell;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -66,7 +65,27 @@ public class SemesterBoxController extends AbstractController {
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameProperty());
         creditsColumn.setCellValueFactory(
                 cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
-        fulfilledColumn.setCellFactory(CheckBoxTableCell.forTableColumn(fulfilledColumn)); // TODO make editable
+        fulfilledColumn.setCellFactory((final TableColumn<CourseEnrollment, Boolean> param) ->
+                new TableCell<CourseEnrollment, Boolean>() {
+                    final CheckBox fulfilledCheckBox = new CheckBox();
+                    @Override
+                    public void updateItem(Boolean item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+                                CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
+                                logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
+                                        newValue, enrollment, semester);
+                                enrollment.setFulfilled(newValue);
+                                fulfilledCheckBox.setSelected(newValue);
+                            });
+                            fulfilledCheckBox.setSelected(item);
+                            setGraphic(fulfilledCheckBox);
+                        }
+                    }
+                });
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
         removeColumn.setCellFactory((final TableColumn<CourseEnrollment, String> param) ->
                 new TableCell<CourseEnrollment, String>() {

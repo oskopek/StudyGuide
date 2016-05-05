@@ -1,82 +1,81 @@
 {
-  "semesterPlan": {
-    "semesterList": [
-      {
-        "name": "2014ZS",
-        "courseEnrollmentList": []
-      },
-      {
-        "name": "2015LS",
-        "courseEnrollmentList": []
-      },
-      {
-        "name": "2015ZS",
-        "courseEnrollmentList": []
-      },
-      {
-        "name": "2016LS",
-        "courseEnrollmentList": []
-      },
-      {
-        "name": "2016ZS",
-        "courseEnrollmentList": []
-      },
-      {
-        "name": "2017LS",
-        "courseEnrollmentList": []
-      }
-    ]
+  "semesterPlan" : {
+    "semesterList" : [ {
+      "name" : "2014ZS",
+      "courseEnrollmentList" : [ ]
+    }, {
+      "name" : "2015LS",
+      "courseEnrollmentList" : [ ]
+    }, {
+      "name" : "2015ZS",
+      "courseEnrollmentList" : [ ]
+    }, {
+      "name" : "2016LS",
+      "courseEnrollmentList" : [ ]
+    }, {
+      "name" : "2016ZS",
+      "courseEnrollmentList" : [ ]
+    }, {
+      "name" : "2017LS",
+      "courseEnrollmentList" : [ {
+        "course" : {
+          "id" : "NMAI055",
+          "name" : "Mathematical analysis II",
+          "localizedName" : "Matematicka analyza II",
+          "locale" : "cz",
+          "credits" : {
+            "creditValue" : 5
+          },
+          "teacherNames" : [ "Klazar", "Vybiral" ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        },
+        "fulfilled" : true
+      } ]
+    } ]
   },
-  "constraints": {
-    "courseGroupConstraintList": [],
-    "globalConstraintList": [],
-    "courseEnrollmentConstraintList": []
+  "constraints" : {
+    "courseGroupConstraintList" : [ ],
+    "globalConstraintList" : [ ],
+    "courseEnrollmentConstraintList" : [ ]
   },
-  "courseRegistry": {
-    "courses": {
-      "NMAI054": {
-        "id": "NMAI054",
-        "name": "Mathematical analysis I",
-        "localizedName": "Matematicka analyza I",
-        "locale": "cz",
-        "credits": {
-          "creditValue": 5
+  "courseRegistry" : {
+    "courses" : {
+      "NMAI054" : {
+        "id" : "NMAI054",
+        "name" : "Mathematical analysis I",
+        "localizedName" : "Matematicka analyza I",
+        "locale" : "cz",
+        "credits" : {
+          "creditValue" : 5
         },
-        "teacherNames": [
-          "Klazar",
-          "Vybiral"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "teacherNames" : [ "Klazar", "Vybiral" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NMAI055": {
-        "id": "NMAI055",
-        "name": "Mathematical analysis II",
-        "localizedName": "Matematicka analyza II",
-        "locale": "cz",
-        "credits": {
-          "creditValue": 5
+      "NMAI055" : {
+        "id" : "NMAI055",
+        "name" : "Mathematical analysis II",
+        "localizedName" : "Matematicka analyza II",
+        "locale" : "cz",
+        "credits" : {
+          "creditValue" : 5
         },
-        "teacherNames": [
-          "Klazar",
-          "Vybiral"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "teacherNames" : [ "Klazar", "Vybiral" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NMAI056": {
-        "id": "NMAI056",
-        "name": "Mathematical analysis III",
-        "localizedName": "Matematicka analyza III",
-        "locale": "cz",
-        "credits": {
-          "creditValue": 6
+      "NMAI056" : {
+        "id" : "NMAI056",
+        "name" : "Mathematical analysis III",
+        "localizedName" : "Matematicka analyza III",
+        "locale" : "cz",
+        "credits" : {
+          "creditValue" : 6
         },
-        "teacherNames": [
-          "Klazar"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "teacherNames" : [ "Klazar" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       }
     }
   }

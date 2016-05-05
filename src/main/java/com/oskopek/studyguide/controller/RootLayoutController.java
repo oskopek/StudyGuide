@@ -185,6 +185,7 @@ public class RootLayoutController extends AbstractController {
             AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
             e.printStackTrace();
         }
+        openedFile = file;
     }
 
     /**

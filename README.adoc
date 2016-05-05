@@ -153,7 +153,6 @@ they do not mean an optional statement - we use `(` and `)` (without the star) f
 * Under `<integer>` we assume any *non-negative* whole number smaller than or equal to `2^31 - 1`.
 
 // TODO constraint detail grammar
-// TODO check course_enrollment
 
 ```
 <study_plan> ::= {
@@ -194,8 +193,7 @@ they do not mean an optional statement - we use `(` and `)` (without the star) f
              }
 <course_enrollment> ::= {
                           "course" : <course>,
-                          "fulfilled" : <boolean>,
-                          "semester" : <semester>
+                          "fulfilled" : <boolean>
                         }
 <locale> ::= <character><character>
 <credits> ::= {
