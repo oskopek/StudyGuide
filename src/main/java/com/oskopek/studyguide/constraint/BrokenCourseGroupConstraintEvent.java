@@ -17,8 +17,8 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
      * @param message the message to use as a reason why the constraint is broken
      * @param courseGroup the course group that the constraint broke on
      */
-    public BrokenCourseGroupConstraintEvent(String message, CourseGroup courseGroup) {
-        super(message);
+    public BrokenCourseGroupConstraintEvent(String message, Constraint broken, CourseGroup courseGroup) {
+        super(message, broken);
         this.courseGroup = courseGroup;
     }
 

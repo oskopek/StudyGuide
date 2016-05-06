@@ -2,6 +2,8 @@ package com.oskopek.studyguide.constraint;
 
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.event.Observes;
 import java.util.ArrayList;
@@ -15,6 +17,8 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
 
     // TODO OPTIONAL merge this with Prereq constraint (more efficient)
     private final String message = "constraint.unfulfilledCorequisite";
+
+    private transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * Private default constructor, needed by CDI.
@@ -34,6 +38,9 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
 
     @Override
     public void validate(@Observes CourseEnrollment courseEnrollment) {
+        logger.debug("Validating {} on {}", courseEnrollment, this);
+        // TODO why are these not called? because they are not fired!
+        // TODO -> redo the firing in course and course enrollment
         List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
                 getCourseEnrollment().getSemester());
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());

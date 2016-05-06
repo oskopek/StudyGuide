@@ -77,12 +77,12 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
     @Override
     public void fireBrokenEvent(String reason, Course course) {
-        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, null));
+        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, this, null));
     }
 
     @Override
     public void fireBrokenEvent(String reason, CourseEnrollment enrollment) {
-        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, enrollment));
+        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, this, enrollment));
     }
 
     /**

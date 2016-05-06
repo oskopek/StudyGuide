@@ -6,20 +6,27 @@ import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AlertCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,7 +71,27 @@ public class SemesterBoxController extends AbstractController {
     @FXML
     private void initialize() {
         semesterNameArea.textProperty().addListener((observable) -> onSemesterNameChange());
+        semesterTable.setRowFactory(param -> new TableRow<CourseEnrollment>() {
 
+            @Override
+            protected void updateItem(CourseEnrollment item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setTooltip(null);
+                } else {
+                    item.brokenConstraintProperty().addListener((observable, oldValue, newValue) -> {
+                        if (newValue == null) {
+                            setTooltip(null);
+                            setBackground(Background.EMPTY);
+                        } else {
+                            setTooltip(new Tooltip(newValue.getMessage()));
+                            setBackground(new Background(
+                                    new BackgroundFill(Color.valueOf("red"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        }
+                    });
+                }
+            }
+        });
         idColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameProperty());
         creditsColumn.setCellValueFactory(
@@ -251,4 +278,5 @@ public class SemesterBoxController extends AbstractController {
         }
         event.consume();
     }
+
 }

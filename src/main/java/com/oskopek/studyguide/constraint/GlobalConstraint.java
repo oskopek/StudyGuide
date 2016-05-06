@@ -48,6 +48,6 @@ public abstract class GlobalConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     protected void fireBrokenEvent(String message) {
-        brokenEvent.fire(new BrokenGlobalConstraintEvent(message));
+        brokenEvent.fire(new BrokenGlobalConstraintEvent(message, this));
     }
 }

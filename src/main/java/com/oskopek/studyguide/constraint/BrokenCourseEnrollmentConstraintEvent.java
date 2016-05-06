@@ -17,8 +17,8 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
      * @param message the message to use as a reason why the constraint is broken
      * @param enrollment the course enrollment that the constraint broke on
      */
-    public BrokenCourseEnrollmentConstraintEvent(String message, CourseEnrollment enrollment) {
-        super(message);
+    public BrokenCourseEnrollmentConstraintEvent(String message, Constraint broken, CourseEnrollment enrollment) {
+        super(message, broken);
         this.enrollment = enrollment;
     }
 

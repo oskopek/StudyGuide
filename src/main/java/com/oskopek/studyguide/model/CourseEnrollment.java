@@ -2,6 +2,8 @@ package com.oskopek.studyguide.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.oskopek.studyguide.constraint.BrokenCourseEnrollmentConstraintEvent;
+import com.oskopek.studyguide.constraint.BrokenResetEvent;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
@@ -11,6 +13,10 @@ import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.enterprise.event.Observes;
 
 /**
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
@@ -22,6 +28,10 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     private final BooleanProperty fulfilled;
     @JsonBackReference("semester-courseenrollment")
     private final ObjectProperty<Semester> semester;
+    private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint
+            = new SimpleObjectProperty<>(); // TODO PRIORITY move this somewhere
+
+    private transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * Private constructor for Jackson persistence.
@@ -30,6 +40,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         course = new SimpleObjectProperty<>();
         fulfilled = new SimpleBooleanProperty();
         semester = new SimpleObjectProperty<>();
+        registerChangeEventListeners();
     }
 
     /**
@@ -62,6 +73,23 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         boolean fulfilled = original.fulfilled.get();
         Semester semester = original.getSemester();
         return new CourseEnrollment(course, semester, fulfilled);
+    }
+
+    private void onFixedConstraint(@Observes BrokenResetEvent event) {
+        if (brokenConstraint.get() != null
+                && brokenConstraint.get().getBrokenConstraint().equals(event.getOriginallyBroken())) {
+            brokenConstraint.set(null);
+        }
+    }
+
+    private void onBrokenConstraint(@Observes BrokenCourseEnrollmentConstraintEvent event) {
+        if (equals(event.getEnrollment())) {
+            brokenConstraint.set(event);
+        }
+    }
+
+    public ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraintProperty() {
+        return brokenConstraint;
     }
 
     /**
@@ -180,6 +208,6 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
 
     @Override
     public String toString() {
-        return "CourseEnr[" + course.get() + ", " + semester.get() + ']';
+        return "CourseEnrollment[" + course.get() + ", " + semester.get() + ']';
     }
 }

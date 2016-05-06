@@ -16,6 +16,7 @@ public abstract class StringMessageEvent {
     protected transient ResourceBundle messages;
 
     private String message;
+    private Constraint brokenConstraint;
 
     /**
      * Private default constructor, needed by CDI.
@@ -29,8 +30,9 @@ public abstract class StringMessageEvent {
      *
      * @param message the message to broadcast
      */
-    public StringMessageEvent(String message) {
+    public StringMessageEvent(String message, Constraint brokenConstraint) {
         this.message = message;
+        this.brokenConstraint = brokenConstraint;
     }
 
     /**
@@ -40,6 +42,10 @@ public abstract class StringMessageEvent {
      */
     public String getMessage() {
         return message;
+    }
+
+    public Constraint getBrokenConstraint() {
+        return brokenConstraint;
     }
 
     /**

@@ -79,7 +79,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     public void fireBrokenEvent(String message) {
-        brokenEvent.fire(new BrokenCourseGroupConstraintEvent(message, courseGroup));
+        brokenEvent.fire(new BrokenCourseGroupConstraintEvent(message, this, courseGroup));
     }
 
     @Override

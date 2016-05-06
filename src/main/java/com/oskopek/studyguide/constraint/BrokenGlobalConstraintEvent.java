@@ -10,8 +10,8 @@ public class BrokenGlobalConstraintEvent extends StringMessageEvent {
      *
      * @param message the message to use as a reason why the constraint is broken
      */
-    public BrokenGlobalConstraintEvent(String message) {
-        super(message);
+    public BrokenGlobalConstraintEvent(String message, Constraint broken) {
+        super(message, broken);
     }
 
     @Override
