@@ -116,6 +116,7 @@ public class DefaultStudyPlan implements StudyPlan {
 
     @Override
     public String toString() {
-        return "DefaultStudyPlan[" + getSemesterPlan() + ']';
+        return "DefaultStudyPlan[semesters=" + getSemesterPlan() + ", courses=" + getCourseRegistry()
+                + ", constraints=" + getConstraints() + ']';
     }
 }

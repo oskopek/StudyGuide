@@ -30,7 +30,8 @@ public class JsonDataReaderWriterTest {
     public void setUp() throws IOException {
         jsonDataReaderWriter = new JsonDataReaderWriter();
         jsonPath = Files.createTempFile("tmpPlan", ".json");
-        Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/json_empty.json"), jsonPath,
+        Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/mff_bc_ioi_2015_2016.json"),
+                jsonPath,
                 StandardCopyOption.REPLACE_EXISTING);
         plan = new DefaultStudyPlan();
     }
@@ -68,8 +69,7 @@ public class JsonDataReaderWriterTest {
 
     @Test
     public void readComplexInput() throws IOException {
-        DefaultStudyPlan plan = (DefaultStudyPlan) jsonDataReaderWriter.readFrom(Files.newInputStream(
-                Paths.get("src/test/resources/com/oskopek/studyguide/persistence/my_study.json")));
+        DefaultStudyPlan plan = (DefaultStudyPlan) jsonDataReaderWriter.readFrom(Files.newInputStream(jsonPath));
         assertNotNull(plan);
         assertNotNull(plan.getSemesterPlan());
         assertNotNull(plan.getSemesterPlan().getSemesterList());

@@ -68,16 +68,19 @@ public class Semester {
      * Generates and adds a {@link CourseEnrollment} to this semester.
      *
      * @param course the course to add to this semester, non-null
+     * @return the course enrollment that was created and added to this semester
      * @throws IllegalArgumentException if the {@link Course} is null or if {@link Course} is already enrolled
      */
-    public void addCourseEnrollment(Course course) throws IllegalArgumentException {
+    public CourseEnrollment addCourseEnrollment(Course course) throws IllegalArgumentException {
         if (course == null) {
             throw new IllegalArgumentException("Course cannot be null.");
         }
         if (courseEnrollmentList.stream().filter(ce -> ce.getCourse().equals(course)).findFirst().isPresent()) {
             throw new IllegalArgumentException("Course already enrolled in.");
         }
-        addCourseEnrollment(new CourseEnrollment(course, this, false));
+        CourseEnrollment enrollment = new CourseEnrollment(course, this, false);
+        addCourseEnrollment(enrollment);
+        return enrollment;
     }
 
     /**

@@ -407,9 +407,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getId()).append(getName()).append(getLocalizedName())
-                .append(getLocale()).append(getCredits()).append(getTeacherNames()).append(getPrerequisites())
-                .append(getCorequisites()).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getId()).toHashCode();
     }
 
     @Override
@@ -417,18 +415,11 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         if (this == o) {
             return true;
         }
-
         if (!(o instanceof Course)) {
             return false;
         }
-
         Course course = (Course) o;
-
-        return new EqualsBuilder().append(getId(), course.getId()).append(getName(), course.getName())
-                .append(getLocalizedName(), course.getLocalizedName()).append(getLocale(), course.getLocale())
-                .append(getCredits(), course.getCredits()).append(getTeacherNames(), course.getTeacherNames())
-                .append(getPrerequisites(), course.getPrerequisites())
-                .append(getCorequisites(), course.getCorequisites()).isEquals();
+        return new EqualsBuilder().append(getId(), course.getId()).isEquals();
     }
 
     @Override

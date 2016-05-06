@@ -110,13 +110,10 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
         if (this == o) {
             return true;
         }
-
         if (!(o instanceof CourseEnrollmentConstraint)) {
             return false;
         }
-
         CourseEnrollmentConstraint that = (CourseEnrollmentConstraint) o;
-
         return new EqualsBuilder()
                 .append(getEnrollment(), that.getEnrollment())
                 // used for differentiating types of Course Enrollment constraints

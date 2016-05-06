@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.controller;
 
+import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
@@ -79,18 +80,24 @@ public class FindCoursesController extends AbstractController implements FindCou
             Course chosen = controller.getChosenCourse();
             if (chosen != null) {
                 logger.debug("Chosen course: {}", chosen);
-                try {
-                    Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
-                    if (addTo == null) { // no semester in plan
-                        AlertCreator.showAlert(Alert.AlertType.ERROR,
-                                messages.getString("findCourses.noSemester"));
-                    } else {
-                        addTo.addCourseEnrollment(chosen);
-                    }
-                } catch (IllegalArgumentException e) {
-                    logger.debug("Added wrong course ({}), showing error box.", chosen);
+
+                Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
+                if (addTo == null) { // no semester in plan
                     AlertCreator.showAlert(Alert.AlertType.ERROR,
-                            messages.getString("findCourses.courseAlreadyEnrolled"));
+                            messages.getString("findCourses.noSemester"));
+                    return;
+                } else {
+                    CourseEnrollment enrollment;
+                    try {
+                        enrollment = addTo.addCourseEnrollment(chosen);
+                    } catch (IllegalArgumentException e) {
+                        logger.debug("Added wrong course ({}), showing error box.", chosen);
+                        AlertCreator.showAlert(Alert.AlertType.ERROR,
+                                messages.getString("findCourses.courseAlreadyEnrolled"));
+                        return;
+                    }
+                    studyGuideApplication.getStudyPlan().getConstraints()
+                            .addAllCourseEnrollmentConstraints(enrollment);
                 }
             }
         }

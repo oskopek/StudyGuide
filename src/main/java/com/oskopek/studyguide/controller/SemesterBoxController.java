@@ -111,6 +111,8 @@ public class SemesterBoxController extends AbstractController {
                                 CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
                                 logger.debug("Removing Course Enrollment ({}) from Semester ({}).",
                                         enrollment, semester);
+                                studyGuideApplication.getStudyPlan().getConstraints()
+                                        .removeAllCourseEnrollmentConstraints(enrollment);
                                 semester.removeCourseEnrollment(enrollment);
 
                             });

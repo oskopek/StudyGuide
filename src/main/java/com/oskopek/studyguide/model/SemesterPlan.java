@@ -126,4 +126,9 @@ public class SemesterPlan implements Iterable<Semester> {
         SemesterPlan that = (SemesterPlan) o;
         return new EqualsBuilder().append(getSemesterList(), that.getSemesterList()).isEquals();
     }
+
+    @Override
+    public String toString() {
+        return "SemesterPlan[" + semesterList.size() + ']';
+    }
 }

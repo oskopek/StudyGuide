@@ -16,6 +16,13 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
     private final String message = "constraint.courseGroupFulfilledAllInvalid";
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseGroupFulfilledAllConstraint() {
+        // needed by CDI
+    }
+
+    /**
      * Default constructor.
      *
      * @param courseGroup the referenced course group

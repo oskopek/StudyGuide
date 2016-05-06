@@ -3,6 +3,8 @@ package com.oskopek.studyguide.constraint;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Credits;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
  * Checks if the total {@link com.oskopek.studyguide.model.courses.Credits} sum of fulfilled
@@ -11,7 +13,14 @@ import com.oskopek.studyguide.model.courses.Credits;
 public class GlobalCreditsSumConstraint extends GlobalConstraint {
 
     private final String message = "constraint.globalCreditsSumInvalid";
-    private final Credits totalNeeded;
+    private Credits totalNeeded;
+
+    /**
+     * Private default constructor, needed by CDI.
+     */
+    protected GlobalCreditsSumConstraint() {
+        // needed by CDI
+    }
 
     /**
      * Default constructor.
@@ -46,8 +55,34 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
         return String.format(messages.getString(message), needed.getCreditValue(), got.getCreditValue());
     }
 
+    /**
+     * The credit sum to pass this constraint.
+     *
+     * @return the total needed credit sum
+     */
     @JsonGetter
     private Credits getTotalNeeded() {
         return totalNeeded;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getTotalNeeded())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GlobalCreditsSumConstraint)) {
+            return false;
+        }
+        GlobalCreditsSumConstraint that = (GlobalCreditsSumConstraint) o;
+        return new EqualsBuilder()
+                .append(getTotalNeeded(), that.getTotalNeeded())
+                .isEquals();
     }
 }

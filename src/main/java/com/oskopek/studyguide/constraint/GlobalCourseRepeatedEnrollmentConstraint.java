@@ -3,6 +3,8 @@ package com.oskopek.studyguide.constraint;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,13 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     private static final String message = "constraint.globalCourseRepeatedEnrollmentInvalid";
     private int maxRepeatedEnrollment;
+
+    /**
+     * Private default constructor, needed by CDI.
+     */
+    protected GlobalCourseRepeatedEnrollmentConstraint() {
+        // needed by CDI
+    }
 
     /**
      * Default course.
@@ -52,8 +61,34 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
         return String.format(messages.getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
     }
 
+    /**
+     * The max number of repeated enrollments of a specific course that still doesn't trigger this constraint.
+     *
+     * @return the max number of repeated enrollments
+     */
     @JsonGetter
     private int getMaxRepeatedEnrollment() {
         return maxRepeatedEnrollment;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getMaxRepeatedEnrollment())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GlobalCourseRepeatedEnrollmentConstraint)) {
+            return false;
+        }
+        GlobalCourseRepeatedEnrollmentConstraint that = (GlobalCourseRepeatedEnrollmentConstraint) o;
+        return new EqualsBuilder()
+                .append(getMaxRepeatedEnrollment(), that.getMaxRepeatedEnrollment())
+                .isEquals();
     }
 }

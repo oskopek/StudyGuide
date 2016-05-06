@@ -7,6 +7,8 @@ import javafx.beans.property.ReadOnlyListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,6 +19,14 @@ import java.util.List;
 public class CourseGroup {
 
     private final ListProperty<Course> courseList;
+
+    /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseGroup() {
+        // needed by CDI
+        this.courseList = new SimpleListProperty<>();
+    }
 
     /**
      * Builds a new, non-empty course group.
@@ -57,5 +67,31 @@ public class CourseGroup {
      */
     private void setCourseList(List<Course> courseList) {
         this.courseList.set(FXCollections.observableArrayList(courseList));
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getCourseList())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CourseGroup)) {
+            return false;
+        }
+        CourseGroup group = (CourseGroup) o;
+        return new EqualsBuilder()
+                .append(getCourseList(), group.getCourseList())
+                .isEquals();
+    }
+
+    @Override
+    public String toString() {
+        return "CourseGroup[" + courseList.size() + ']';
     }
 }

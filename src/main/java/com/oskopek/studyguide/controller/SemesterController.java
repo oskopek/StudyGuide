@@ -188,8 +188,7 @@ public class SemesterController extends AbstractController {
                 || !from.getCourseEnrollmentList().contains(enrollment) || !enrollment.getSemester().equals(from)) {
             throw new IllegalArgumentException("The course enrollment is not correctly set in the from semester.");
         }
-        from.removeCourseEnrollment(enrollment);
-        enrollment.semesterProperty().set(to);
+        // we do not change course enrollment constraints when moving
         try {
             to.addCourseEnrollment(enrollment);
         } catch (IllegalArgumentException e) {
@@ -197,7 +196,10 @@ public class SemesterController extends AbstractController {
                     enrollment, to);
             AlertCreator.showAlert(Alert.AlertType.ERROR,
                     messages.getString("findCourses.courseAlreadyEnrolled"));
+            return;
         }
+        from.removeCourseEnrollment(enrollment);
+        enrollment.semesterProperty().set(to);
     }
 
 }

@@ -1,13 +1,11 @@
 package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
-import com.oskopek.studyguide.model.courses.CourseRegistry;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.nio.file.Paths;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -30,13 +28,15 @@ public class MFFHtmlScraperTest {
 
     @Test
     public void testScrapeCourses() throws Exception {
-        CourseRegistry registry = scraper.scrapeStudyPlan(Paths.get(mffIoiInfoPath)).getCourseRegistry();
-        assertNotNull(registry);
-        assertNotNull(registry.courseMapValues());
-        assertEquals(70, registry.courseMapValues().size()); // 61 base from IOI + 4 required courses + random deps
-        StudyPlan studyPlan = new JsonDataReaderWriter().readFrom(referenceFile);
-        assertArrayEquals(studyPlan.getCourseRegistry().courseMapValues().toArray(),
-                registry.courseMapValues().toArray());
+        StudyPlan studyPlan = scraper.scrapeStudyPlan(Paths.get(mffIoiInfoPath));
+        assertNotNull(studyPlan);
+        // 61 base from IOI + 4 required courses + random deps
+        assertEquals(70, studyPlan.getCourseRegistry().courseMapValues().size());
+        StudyPlan verifyStudyPlan = new JsonDataReaderWriter().readFrom(referenceFile);
+        assertEquals(studyPlan.getCourseRegistry(), verifyStudyPlan.getCourseRegistry());
+        assertEquals(studyPlan.getSemesterPlan(), verifyStudyPlan.getSemesterPlan());
+        assertEquals(studyPlan.getConstraints(), verifyStudyPlan.getConstraints());
+        assertEquals(verifyStudyPlan, studyPlan);
     }
 
 }

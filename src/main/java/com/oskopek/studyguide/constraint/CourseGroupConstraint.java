@@ -3,6 +3,8 @@ package com.oskopek.studyguide.constraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.enterprise.event.Event;
 import javax.enterprise.event.Observes;
@@ -78,5 +80,31 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
      */
     public void fireBrokenEvent(String message) {
         brokenEvent.fire(new BrokenCourseGroupConstraintEvent(message, courseGroup));
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getCourseGroup())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CourseGroupConstraint)) {
+            return false;
+        }
+        CourseGroupConstraint that = (CourseGroupConstraint) o;
+        return new EqualsBuilder()
+                .append(getCourseGroup(), that.getCourseGroup())
+                .isEquals();
+    }
+
+    @Override
+    public String toString() {
+        return "CourseGroupConstraint[" + courseGroup.courseListProperty().size() + ']';
     }
 }

@@ -2,8 +2,11 @@ package com.oskopek.studyguide.model.constraints;
 
 import com.oskopek.studyguide.constraint.Constraint;
 import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
+import com.oskopek.studyguide.constraint.CourseEnrollmentCorequisiteConstraint;
+import com.oskopek.studyguide.constraint.CourseEnrollmentPrerequisiteConstraint;
 import com.oskopek.studyguide.constraint.CourseGroupConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
+import com.oskopek.studyguide.model.CourseEnrollment;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -112,6 +115,27 @@ public class Constraints {
         return courseEnrollmentConstraintList;
     }
 
+    /**
+     * Removes all {@link CourseEnrollmentConstraint}s that restrict the given course enrollment.
+     *
+     * @param courseEnrollment the course enrollment
+     */
+    public void removeAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
+        courseEnrollmentConstraintList.stream().filter(cec -> cec.getEnrollment().equals(courseEnrollment))
+                .forEach(cec -> courseEnrollmentConstraintList.remove(cec));
+    }
+
+    /**
+     * Adds all applicable {@link CourseEnrollmentConstraint}s that should restrict the given course enrollment.
+     *
+     * @param courseEnrollment the course enrollment
+     */
+    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
+        courseEnrollmentConstraintList
+                .addAll(new CourseEnrollmentCorequisiteConstraint(courseEnrollment),
+                        new CourseEnrollmentPrerequisiteConstraint(courseEnrollment));
+    }
+
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
@@ -135,5 +159,11 @@ public class Constraints {
                 .append(getGlobalConstraintList(), that.getGlobalConstraintList())
                 .append(getCourseEnrollmentConstraintList(), that.getCourseEnrollmentConstraintList())
                 .isEquals();
+    }
+
+    @Override
+    public String toString() {
+        return "Constraints[" + courseEnrollmentConstraintList.size() + ", " + courseGroupConstraintList.size() + ", "
+                + globalConstraintList.size() + "]";
     }
 }

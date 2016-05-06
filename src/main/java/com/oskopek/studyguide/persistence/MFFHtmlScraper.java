@@ -71,6 +71,15 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         return studyPlan;
     }
 
+    /**
+     * Scrapes the contents of the document, looking for
+     * {@link com.oskopek.studyguide.constraint.CourseGroupConstraint}s,
+     * {@link com.oskopek.studyguide.constraint.GlobalConstraint}s and {@link Course}s.
+     *
+     * @param document the document to scrape for courses and constraints
+     * @param studyPlan the plan to fill with scraped information from the document
+     * @throws IOException if an error during scraping occurs
+     */
     private void scrapeContents(Document document, DefaultStudyPlan studyPlan) throws IOException {
         Constraints constraints = new Constraints();
         CourseRegistry registry = new CourseRegistry();
@@ -125,21 +134,48 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
     }
 
     // TODO OPTIONAL rewrite to be generic where the filters are provided externally as callbacks
+
+    /**
+     * Check whether the given string is the header text of a compulsory {@link CourseGroup}.
+     *
+     * @param headerName the text in the header element
+     * @return true if it is this is the header text of a compulsory course group
+     */
     private boolean filterCompulsory(String headerName) {
         headerName = normalize(headerName);
         return headerName.startsWith("povinnepredmety");
     }
 
+    /**
+     * Check whether the given string is the header text of a semi-compulsory {@link CourseGroup}.
+     *
+     * @param headerName the text in the header element
+     * @return true if it is this is the header text of a semi-compulsory course group
+     */
     private boolean filterSemiCompulsory(String headerName) {
         headerName = normalize(headerName);
         return headerName.startsWith("povinnevolitelne");
     }
 
+    /**
+     * Deletes whitespace, removes diacritics, removes all non-ASCII characters and converts the string to lower
+     * case in this order.
+     *
+     * @param string the string to normalize
+     * @return the normalized string
+     */
     private String normalize(String string) {
         return Normalizer.normalize(StringUtils.deleteWhitespace(string), Normalizer.Form.NFD)
                 .replaceAll("[^\\x00-\\x7F]", "").toLowerCase();
     }
 
+    /**
+     * Filters the given string, looking for a token that could represent the needed credit sum needed to pass
+     * the {@link CourseGroupCreditsSumConstraint}.
+     *
+     * @param description the description to filter
+     * @return a credit instance representing the sum
+     */
     private Credits filterNeededCreditSum(String description) {
         description = normalize(description);
         Matcher matcher = Pattern.compile("([1-9][0-9]*)kredit").matcher(description);
@@ -157,13 +193,15 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
     }
 
     /**
-     * @param table
-     * @param registry
+     * Scrapes course IDs from a table element and fills the registry with the correctly parse courses.
+     * Uses a {@link SISHtmlScraper}.
+     *
+     * @param table the table from which to scrape course IDs
+     * @param registry the registry to fill with courses from the table
      * @return list of ids that were in the table
-     * @throws IOException
+     * @throws IOException if an error during scraping occurs
      */
     private List<String> scrapeCoursesFromTable(Element table, CourseRegistry registry) throws IOException {
-        // TODO add course enrollment constraints (not here, in the semester plan)
         List<String> ids = new ArrayList<>();
         Elements rows = table.select("tr");
         int rowIndex = 0;

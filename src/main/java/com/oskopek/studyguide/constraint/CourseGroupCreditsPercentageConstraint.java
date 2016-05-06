@@ -3,6 +3,8 @@ package com.oskopek.studyguide.constraint;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.math.Fraction;
 
 import java.text.DecimalFormat;
@@ -19,6 +21,13 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     private static DecimalFormat percentageFormat = new DecimalFormat("##0.00");
     private final String message = "constraint.courseGroupCreditsPercentageInvalid";
     private Fraction neededFraction;
+
+    /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseGroupCreditsPercentageConstraint() {
+        // needed by CDI
+    }
 
     /**
      * Default constructor.
@@ -43,6 +52,11 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
         return percentageFormat.format(fraction.doubleValue() * 100d);
     }
 
+    /**
+     * The fraction of fulfilled course credit sum to the total group credit sum needed to pass this constraint.
+     *
+     * @return the fulfilled course credit sum fraction needed
+     */
     @JsonGetter
     private Fraction getNeededFraction() {
         return neededFraction;
@@ -59,6 +73,29 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
         if (neededFraction.compareTo(gotFraction) > 0) {
             fireBrokenEvent(generateMessage(gotFraction, neededFraction));
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .appendSuper(super.hashCode())
+                .append(getNeededFraction())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CourseGroupCreditsPercentageConstraint)) {
+            return false;
+        }
+        CourseGroupCreditsPercentageConstraint that = (CourseGroupCreditsPercentageConstraint) o;
+        return new EqualsBuilder()
+                .appendSuper(super.equals(o))
+                .append(getNeededFraction(), that.getNeededFraction())
+                .isEquals();
     }
 
     /**

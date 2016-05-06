@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -17,6 +19,13 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
 
     private final String message = "constraint.courseGroupCreditsSumInvalid";
     private Credits totalNeeded;
+
+    /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseGroupCreditsSumConstraint() {
+        // needed by CDI
+    }
 
     /**
      * Default constructor.
@@ -41,6 +50,29 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
         }
     }
 
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .appendSuper(super.hashCode())
+                .append(getTotalNeeded())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CourseGroupCreditsSumConstraint)) {
+            return false;
+        }
+        CourseGroupCreditsSumConstraint that = (CourseGroupCreditsSumConstraint) o;
+        return new EqualsBuilder()
+                .appendSuper(super.equals(o))
+                .append(getTotalNeeded(), that.getTotalNeeded())
+                .isEquals();
+    }
+
     /**
      * Generates a message from the given parameters (localized). Used for populating the message of
      * {@link StringMessageEvent}s (usually upon breaking a constraint).
@@ -53,6 +85,11 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
         return String.format(messages.getString(message), needed.getCreditValue(), got.creditValueProperty());
     }
 
+    /**
+     * The credit sum to pass this constraint.
+     *
+     * @return the total needed credit sum
+     */
     @JsonGetter
     private Credits getTotalNeeded() {
         return totalNeeded;
