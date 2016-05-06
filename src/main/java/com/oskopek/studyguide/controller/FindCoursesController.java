@@ -107,6 +107,7 @@ public class FindCoursesController extends AbstractController implements FindCou
 
     /**
      * Returns the top 10 distinct courses, using the search function on all {@link FindCourses} instances.
+     *
      * @param searchFunction the function from {@link FindCourses} to {@link Stream}s of {@link Course}s
      * @return top 10 list of distinct collected Courses
      */

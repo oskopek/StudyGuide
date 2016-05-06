@@ -14,6 +14,7 @@ public final class MFFWebScraperUtil {
 
     /**
      * The base url for a SIS instance.
+     *
      * @deprecated To be replaced with user-configurable parameter.
      */
     public static final String sisWebUrl = "https://is.cuni.cz/studium";
@@ -35,10 +36,10 @@ public final class MFFWebScraperUtil {
      * @throws IOException if an exception during loading the page or writing the converted json happens
      */
     public static void main(String[] args) throws IOException {
-            StudyPlan studyPlan = scraper.scrapeStudyPlan(mffIoiInfoUrl);
-            System.out.println(Arrays.toString(studyPlan.getCourseRegistry().courseMapValues().toArray()));
-            Path outputFile = Paths.get("test-" + System.currentTimeMillis() + ".json");
-            System.out.println("Writing output to " + outputFile);
-            new JsonDataReaderWriter().writeTo(studyPlan, outputFile.toString());
+        StudyPlan studyPlan = scraper.scrapeStudyPlan(mffIoiInfoUrl);
+        System.out.println(Arrays.toString(studyPlan.getCourseRegistry().courseMapValues().toArray()));
+        Path outputFile = Paths.get("test-" + System.currentTimeMillis() + ".json");
+        System.out.println("Writing output to " + outputFile);
+        new JsonDataReaderWriter().writeTo(studyPlan, outputFile.toString());
     }
 }

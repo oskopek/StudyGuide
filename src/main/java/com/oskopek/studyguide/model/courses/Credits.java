@@ -64,6 +64,7 @@ public final class Credits implements Comparable<Credits> {
 
     /**
      * Sets the credit value into {@link #creditValueProperty()}.
+     *
      * @param creditValue greater than 0
      */
     public void setCreditValue(int creditValue) {

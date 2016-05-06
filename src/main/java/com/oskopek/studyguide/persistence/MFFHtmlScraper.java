@@ -30,6 +30,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
     /**
      * Default constructor.
+     *
      * @param sisUrl the url of a SIS instance
      */
     public MFFHtmlScraper(String sisUrl) {
@@ -77,6 +78,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
     /**
      * Scrape the study plan from a local html file.
+     *
      * @param path the path to load the file from
      * @return the scraped study plan
      * @throws IOException if an exception occurs while reading the file
@@ -93,6 +95,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
     /**
      * Scrape the resource for a complete study plan, with constraints.
+     *
      * @param url the url to scrape from
      * @return an initialized study plan
      * @throws IOException if an exception occurs while loading the resource

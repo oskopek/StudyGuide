@@ -17,7 +17,8 @@ public class FindCoursesSisController implements FindCourses { // TODO OPTIONAL:
 
     @Override
     public Stream<Course> findCoursesById(String id) {
-        throw new UnsupportedOperationException("Not implemented yet.");    }
+        throw new UnsupportedOperationException("Not implemented yet.");
+    }
 
     @Override
     public Stream<Course> findCoursesByName(String name, Locale locale) {

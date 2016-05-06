@@ -24,6 +24,7 @@ public final class CourseGenerator {
 
     /**
      * Generate a course with random data.
+     *
      * @return a random course, non null.
      */
     public static Course generateRandomCourse() {
@@ -40,6 +41,7 @@ public final class CourseGenerator {
 
     /**
      * Generates a random string of a given length, with chars in the range 'a' - 'c' inclusive.
+     *
      * @param length the length of the returned string
      * @return a random string of length {@code length}
      */

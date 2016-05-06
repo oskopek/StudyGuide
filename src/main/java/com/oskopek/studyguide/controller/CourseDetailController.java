@@ -159,7 +159,7 @@ public class CourseDetailController extends AbstractController {
          * The String property is a comma-separated list of {@link Course#getName()}s from the list.
          *
          * @param registry the course registry from which to recognize inputted courses
-         * @param listProperty   the list property to bind
+         * @param listProperty the list property to bind
          * @param stringProperty the string property to bind
          */
         public void bindBidirectional(CourseRegistry registry, ListProperty<Course> listProperty,
@@ -251,7 +251,7 @@ public class CourseDetailController extends AbstractController {
          * The String property is textual representation of the value of the Credits.
          *
          * @param creditsProperty the {@link Credits} property to bind
-         * @param stringProperty  the string property to bind
+         * @param stringProperty the string property to bind
          */
         public void bindBidirectional(ObjectProperty<Credits> creditsProperty, StringProperty stringProperty) {
             this.creditsProperty = creditsProperty;
@@ -332,7 +332,7 @@ public class CourseDetailController extends AbstractController {
          * and synchronizes them via {@link javafx.beans.value.ChangeListener}s.
          * The String property is a comma-separated list of values from the list.
          *
-         * @param listProperty   the list property to bind
+         * @param listProperty the list property to bind
          * @param stringProperty the string property to bind
          */
         public void bindBidirectional(ListProperty<String> listProperty, StringProperty stringProperty) {

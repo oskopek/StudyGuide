@@ -35,8 +35,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     /**
      * Create a basic instance of an enrollment.
      *
-     * @param course    the enrolled course, non-null
-     * @param semester  the semester the course is enrolled in
+     * @param course the enrolled course, non-null
+     * @param semester the semester the course is enrolled in
      * @param fulfilled true iff the student passed
      * @throws IllegalArgumentException if course or semester are null
      */
@@ -140,9 +140,9 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     /**
      * Creates a shallow copy of the given CourseEnrollment. Used for events.
      *
-     * @see #fireValueChangedEvent()
      * @param original the course enrollment to copy
      * @return a new CourseEnrollment copy
+     * @see #fireValueChangedEvent()
      */
     public static CourseEnrollment copy(CourseEnrollment original) {
         Course course = Course.copy(original.getCourse());

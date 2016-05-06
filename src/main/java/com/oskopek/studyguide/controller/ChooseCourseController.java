@@ -57,6 +57,7 @@ public class ChooseCourseController extends AbstractController {
 
     /**
      * Handles submitting the dialog in case the user double clicks into the found course table.
+     *
      * @param event the generated event
      */
     @FXML
@@ -68,6 +69,7 @@ public class ChooseCourseController extends AbstractController {
 
     /**
      * Handles submitting the dialog in case the presses enter into the found course table.
+     *
      * @param event the generated event
      */
     @FXML
@@ -87,6 +89,7 @@ public class ChooseCourseController extends AbstractController {
 
     /**
      * Set the dialog (used for reporting double clicks in the table).
+     *
      * @param dialog the dialog wrapper for {@link ChooseCourseDialogPaneCreator}
      * @see FindCoursesController#handleSearch()
      */
@@ -96,6 +99,7 @@ public class ChooseCourseController extends AbstractController {
 
     /**
      * Get the dialog (used for reporting double clicks in the table).
+     *
      * @return the dialog
      */
     public Dialog<ButtonType> getDialog() {

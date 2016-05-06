@@ -70,6 +70,7 @@ public class FindRegistryCoursesController implements FindCourses {
 
     /**
      * Returns a stream of courses, using the search function on all {@link FindCourses} instances.
+     *
      * @param valueFunction the function to compute a float, based on which courses are sorted
      * @return a stream of courses
      * @see #mapToSortedPairs(Function)
@@ -80,6 +81,7 @@ public class FindRegistryCoursesController implements FindCourses {
 
     /**
      * The {@link StringMetric} used to calculate string (id, name, ...) similarities.
+     *
      * @return the non-null metric
      */
     protected static StringMetric getMetric() {
@@ -88,6 +90,7 @@ public class FindRegistryCoursesController implements FindCourses {
 
     /**
      * Returns a stream of sorted float-course pairs, using the search function on all {@link FindCourses} instances.
+     *
      * @param valueFunction the function to compute a float, based on which courses are sorted
      * @return a stream of sorted float-course pairs
      */
@@ -101,6 +104,7 @@ public class FindRegistryCoursesController implements FindCourses {
     /**
      * A Float-Course pair comparator: first compare according to the float, if equal,
      * compare according to {@link Course#getName()}s lexicographically.
+     *
      * @param <T> an implementation of {@link java.util.Map.Entry}
      */
     private static class FloatCoursePairComparator<T extends Map.Entry<Float, ? extends Course>>

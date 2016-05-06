@@ -28,6 +28,7 @@ public class StudyGuideApplicationStarter {
 
     /**
      * Initializes the root layout.
+     *
      * @param primaryStage the primaryStage delegated from the {@link javafx.application.Application} that calls us
      */
     private void initRootLayout(@Observes @StartupStage Stage primaryStage) {

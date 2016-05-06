@@ -19,7 +19,7 @@ public class CourseGroup {
     /**
      * Builds a new, non-empty course group.
      *
-     * @param courseList          non-empty list of courses
+     * @param courseList non-empty list of courses
      * @throws IllegalArgumentException if any parameter is null or any list is empty
      */
     public CourseGroup(List<Course> courseList) throws IllegalArgumentException {

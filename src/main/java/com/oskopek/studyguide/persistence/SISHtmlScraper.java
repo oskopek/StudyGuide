@@ -37,6 +37,7 @@ public class SISHtmlScraper implements ProgressObservable {
 
     /**
      * Default constructor.
+     *
      * @param sisUrl the base url of the SIS instance (without a trailing slash)
      */
     public SISHtmlScraper(String sisUrl) {
@@ -48,10 +49,11 @@ public class SISHtmlScraper implements ProgressObservable {
 
     /**
      * Scrapes the given SIS instance for a specific course, adding all required courses to the registry.
+     *
      * @param registry a {@link CourseRegistry} not containing this course
      * @param courseId the subject id to search in SIS
-     * @throws IOException if an error occurs while downloading the pages to scrape
      * @return the course of the given id we scraped, non-null
+     * @throws IOException if an error occurs while downloading the pages to scrape
      */
     public Course scrapeCourse(CourseRegistry registry, String courseId) throws IOException {
         if (courseId == null) {
@@ -87,8 +89,8 @@ public class SISHtmlScraper implements ProgressObservable {
      * @param is the stream from which to parse the SIS course html
      * @param encoding the encoding of html in the stream
      * @param courseId the id of the course being parsed
-     * @throws IOException if an error occurs during reading the input stream
      * @return the course of the given id we scraped, non-null
+     * @throws IOException if an error occurs during reading the input stream
      */
     private Course scrapeCourse(CourseRegistry registry, InputStream is, String encoding, String courseId)
             throws IOException {

@@ -22,6 +22,7 @@ public class FXMLLoaderProducer {
     /**
      * Produces an {@link FXMLLoader} including the {@code messages} resource bundle. Useful for in all places
      * where an {@code *.fxml} component file is being loaded into a JavaFX container.
+     *
      * @return an initialized FXML loader
      */
     @Produces

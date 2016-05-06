@@ -35,7 +35,7 @@ public class MFFWebScraperIT {
     @Test
     public void testScrapeCoursesBc() throws Exception {
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
-        String[] refFiles  = {"mff_bc_ioi_2015_2016.json", "mff_bc_ipss_2015_2016.json", "mff_bc_isdi_2015_2016.json"};
+        String[] refFiles = {"mff_bc_ioi_2015_2016.json", "mff_bc_ipss_2015_2016.json", "mff_bc_isdi_2015_2016.json"};
         String[] urlExt = {"ib3a21.htm", "ib3a22.htm", "ib3a23.htm"};
         scrapeAllParallel(mffUrlBase, urlExt, refFileBase, refFiles);
     }
@@ -43,7 +43,7 @@ public class MFFWebScraperIT {
     @Test
     public void testScrapeCoursesMgr() throws Exception {
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
-        String[] refFiles  = {"mff_mgr_idm_2015_2016.json", "mff_mgr_iti_2015_2016.json",
+        String[] refFiles = {"mff_mgr_idm_2015_2016.json", "mff_mgr_iti_2015_2016.json",
                 "mff_mgr_isdim_2015_2016.json", "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json",
                 "mff_mgr_iui_2015_2016.json", "mff_mgr_ipgvph_2015_2016.json"};
         String[] urlExt = {"i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm", "i3b25.htm", "i3b26.htm", "i3b27.htm"};
@@ -74,12 +74,11 @@ public class MFFWebScraperIT {
         executorService.awaitTermination(10, TimeUnit.MINUTES);
     }
 
-
     private void scrapeAndVerify(String url, String referenceFile) {
         logger.debug("Scraping plan: {}", referenceFile);
         CourseRegistry registry;
         try {
-             registry = scraper.scrapeStudyPlan(url).getCourseRegistry();
+            registry = scraper.scrapeStudyPlan(url).getCourseRegistry();
         } catch (IOException e) {
             logger.error("An exception occurred while scraping plan {}: {}", referenceFile, e);
             fail();

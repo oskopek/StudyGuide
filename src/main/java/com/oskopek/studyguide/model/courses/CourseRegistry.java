@@ -57,6 +57,7 @@ public class CourseRegistry {
 
     /**
      * Copies (with overwriting) all courses from the registry into this registry.
+     *
      * @param registry the registry to copy courses from
      */
     public void putAllCourses(CourseRegistry registry) {
@@ -65,6 +66,7 @@ public class CourseRegistry {
 
     /**
      * Copies (with overwriting) all courses from the iterable into this registry.
+     *
      * @param courses the iterable to copy courses from
      */
     public void putAllCourses(Iterable<Course> courses) {

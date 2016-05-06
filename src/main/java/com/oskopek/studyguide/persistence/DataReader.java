@@ -15,7 +15,7 @@ public interface DataReader {
      *
      * @param fileName the file from which to read
      * @return an initialized StudyPlan
-     * @throws IOException              if reading the plan failed
+     * @throws IOException if reading the plan failed
      * @throws IllegalArgumentException if fileName is null
      */
     StudyPlan readFrom(String fileName) throws IOException, IllegalArgumentException;
@@ -25,7 +25,7 @@ public interface DataReader {
      *
      * @param inputStream the stream from which to read
      * @return an initialized StudyPlan
-     * @throws IOException              if reading the plan failed
+     * @throws IOException if reading the plan failed
      * @throws IllegalArgumentException if the inputStream is null
      */
     StudyPlan readFrom(InputStream inputStream) throws IOException, IllegalArgumentException;

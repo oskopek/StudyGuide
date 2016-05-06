@@ -124,6 +124,7 @@ public class SemesterController extends AbstractController {
 
     /**
      * Handles creating adding a new course from a network resource based on it's ID.
+     *
      * @see SISHtmlScraper#scrapeCourse(com.oskopek.studyguide.model.courses.CourseRegistry, String)
      */
     @FXML
@@ -184,7 +185,7 @@ public class SemesterController extends AbstractController {
      */
     public void moveCourseEnrollment(Semester from, Semester to, CourseEnrollment enrollment) {
         if (from == null || to == null || enrollment == null || enrollment.getSemester() == null
-        || !from.getCourseEnrollmentList().contains(enrollment) || !enrollment.getSemester().equals(from)) {
+                || !from.getCourseEnrollmentList().contains(enrollment) || !enrollment.getSemester().equals(from)) {
             throw new IllegalArgumentException("The course enrollment is not correctly set in the from semester.");
         }
         from.removeCourseEnrollment(enrollment);

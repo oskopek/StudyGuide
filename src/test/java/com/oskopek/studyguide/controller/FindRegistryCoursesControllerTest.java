@@ -56,7 +56,7 @@ public class FindRegistryCoursesControllerTest {
             } else if (courseId.contains(c)) {
                 courseId.remove(c);
             } else {
-                fail("The course at " + index  + " is out of order: " + c);
+                fail("The course at " + index + " is out of order: " + c);
             }
             index++;
         }

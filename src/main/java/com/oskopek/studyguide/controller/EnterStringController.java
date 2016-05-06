@@ -21,6 +21,7 @@ public class EnterStringController extends AbstractController {
 
     /**
      * Handles submitting the dialog in case the user double clicks into the found course table.
+     *
      * @param event the generated event
      */
     @FXML
@@ -32,6 +33,7 @@ public class EnterStringController extends AbstractController {
 
     /**
      * Handles submitting the dialog in case the presses enter into the found course table.
+     *
      * @param event the generated event
      */
     @FXML
@@ -51,6 +53,7 @@ public class EnterStringController extends AbstractController {
 
     /**
      * Set the dialog (used for reporting double clicks in the table).
+     *
      * @param dialog the dialog wrapper for {@link EnterStringDialogPaneCreator}
      */
     public void setDialog(Dialog<ButtonType> dialog) {
@@ -59,6 +62,7 @@ public class EnterStringController extends AbstractController {
 
     /**
      * Get the dialog (used for reporting double clicks in the table).
+     *
      * @return the dialog
      */
     public Dialog<ButtonType> getDialog() {
@@ -67,6 +71,7 @@ public class EnterStringController extends AbstractController {
 
     /**
      * Get the string the user submitted.
+     *
      * @return the submitted string
      */
     public String getSubmittedString() {

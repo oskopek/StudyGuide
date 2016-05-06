@@ -25,9 +25,9 @@ public class SemesterBoxPaneCreator {
     /**
      * Create a new BorderPane element from {@code SemesterBoxPane.fxml}. Opens a UI alert pop-up on error.
      *
-     * @see com.oskopek.studyguide.controller.SemesterController#semesterBoxes
      * @param semester the semester for which we're creating the box
      * @return an observable BorderPane, ready to be put into a Semester pane
+     * @see com.oskopek.studyguide.controller.SemesterController#semesterBoxes
      */
     public SemesterBoxController create(Semester semester) {
         FXMLLoader fxmlLoader = this.fxmlLoader.get();

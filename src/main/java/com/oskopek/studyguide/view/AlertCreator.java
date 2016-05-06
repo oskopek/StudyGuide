@@ -23,8 +23,8 @@ public final class AlertCreator {
     /**
      * A util method to display an {@link Alert} with the given parameters.
      *
-     * @param alertType   the type of the alert
-     * @param message     the message to display
+     * @param alertType the type of the alert
+     * @param message the message to display
      * @param buttonTypes the buttons to show
      * @see Alert
      */

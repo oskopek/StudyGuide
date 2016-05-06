@@ -13,6 +13,7 @@ public interface FindCourses {
     /**
      * Search for courses in a implementation-specific way.
      * This method is optional.
+     *
      * @param key the key to look for (implementation-specific)
      * @return a non-null stream of {@link Course}s that match best (implementation-specific)
      */

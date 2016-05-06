@@ -25,9 +25,9 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
     public void validate() {
         Credits fulfilledCourseCreditSum = Credits.valueOf(
                 semesterPlan.getSemesterList().stream()
-                .flatMap(s -> s.getCourseEnrollmentList().stream())
-                .filter(CourseEnrollment::isFulfilled).map(ce -> ce.getCourse().getCredits().getCreditValue())
-                .reduce(0, Integer::sum));
+                        .flatMap(s -> s.getCourseEnrollmentList().stream())
+                        .filter(CourseEnrollment::isFulfilled).map(ce -> ce.getCourse().getCredits().getCreditValue())
+                        .reduce(0, Integer::sum));
         if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
             fireBrokenEvent(generateMessage(fulfilledCourseCreditSum, totalNeeded));
         }

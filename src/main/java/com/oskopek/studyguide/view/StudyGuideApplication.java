@@ -50,15 +50,16 @@ public class StudyGuideApplication extends Application {
                 container = new Weld().initialize(); // Initialize Weld CDI
                 primaryStage.setTitle("StudyGuide");
                 primaryStage.getIcons().add(new Image(StudyGuideApplication.class.getResourceAsStream(logoResource)));
-                container.event().select(Stage.class, new AnnotationLiteral<StartupStage>() { }).fire(primaryStage);
+                container.event().select(Stage.class, new AnnotationLiteral<StartupStage>() {
+                }).fire(primaryStage);
                 return new ReadOnlyObjectWrapper<>(primaryStage);
             }
         };
         mainStageTask.exceptionProperty().addListener((observable, oldValue, newValue) -> {
-                    Platform.runLater(() -> {
-                        throw new IllegalStateException("Main stage loading failed.", newValue);
-                    });
-                });
+            Platform.runLater(() -> {
+                throw new IllegalStateException("Main stage loading failed.", newValue);
+            });
+        });
         showSplashScreen(initStage, mainStageTask);
     }
 
@@ -114,6 +115,7 @@ public class StudyGuideApplication extends Application {
 
     /**
      * The JavaFX property for {@link #getStudyPlan()}.
+     *
      * @return the study plan property
      */
     public ObjectProperty<StudyPlan> studyPlanProperty() {

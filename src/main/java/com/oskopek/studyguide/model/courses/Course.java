@@ -52,16 +52,16 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     /**
      * Create a new Course with the given parameters.
      *
-     * @param id              unique course id, non-null
-     * @param name            course name, non-null
-     * @param localizedName   course name in a local language
-     * @param locale          the locale of the localized course name, non-null if {@code localizedName} is non-null
-     * @param credits         the credits awarded after fulfilling this course, non-null
-     * @param teacherNames    teachers of this course
-     * @param prerequisites   courses to be fulfilled before enrolling in this course
-     * @param corequisites    courses to be enrolled in before (or at the same time) enrolling in this course
+     * @param id unique course id, non-null
+     * @param name course name, non-null
+     * @param localizedName course name in a local language
+     * @param locale the locale of the localized course name, non-null if {@code localizedName} is non-null
+     * @param credits the credits awarded after fulfilling this course, non-null
+     * @param teacherNames teachers of this course
+     * @param prerequisites courses to be fulfilled before enrolling in this course
+     * @param corequisites courses to be enrolled in before (or at the same time) enrolling in this course
      * @throws IllegalArgumentException if id, name or credits are null
-     *                                  or if the locale is null when localizedName is non-null
+     * or if the locale is null when localizedName is non-null
      */
     public Course(String id, String name, String localizedName, Locale locale, Credits credits,
                   List<String> teacherNames, List<Course> prerequisites, List<Course> corequisites)
@@ -260,6 +260,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     public ListProperty<Course> prerequisitesProperty() {
         return prerequisites;
     }
+
     /**
      * The JavaFX property for {@link #getCorequisites()}.
      *
@@ -271,6 +272,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #creditsProperty()}.
+     *
      * @param credits non-null
      */
     public void setCredits(Credits credits) {
@@ -282,6 +284,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #idProperty()}.
+     *
      * @param id non-null
      */
     public void setId(String id) {
@@ -293,6 +296,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #localeProperty()}.
+     *
      * @param locale can be null
      */
     public void setLocale(Locale locale) {
@@ -301,6 +305,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #localizedNameProperty()}.
+     *
      * @param localizedName can be null
      */
     public void setLocalizedName(String localizedName) {
@@ -309,6 +314,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #nameProperty()}.
+     *
      * @param name non-null
      */
     public void setName(String name) {
@@ -320,6 +326,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #prerequisitesProperty()}.
+     *
      * @param prerequisites non-null
      */
     public void setPrerequisites(List<Course> prerequisites) {
@@ -331,6 +338,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #corequisitesProperty()}.
+     *
      * @param corequisites non-null
      */
     public void setCorequisites(List<Course> corequisites) {
@@ -342,6 +350,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
 
     /**
      * Setter into {@link #teacherNamesProperty()}.
+     *
      * @param teacherNames non-null
      */
     public void setTeacherNames(List<String> teacherNames) {
@@ -357,11 +366,11 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
      */
     private void registerChangeEventListeners() {
         id.addListener((x, y, z) -> fireValueChangedEvent());
-//        name.addListener((x, y, z) -> fireValueChangedEvent());
-//        localizedName.addListener((x, y, z) -> fireValueChangedEvent());
-//        locale.addListener((x, y, z) -> fireValueChangedEvent());
+        //        name.addListener((x, y, z) -> fireValueChangedEvent());
+        //        localizedName.addListener((x, y, z) -> fireValueChangedEvent());
+        //        locale.addListener((x, y, z) -> fireValueChangedEvent());
         credits.addListener((x, y, z) -> fireValueChangedEvent());
-//        teacherNames.addListener((x, y, z) -> fireValueChangedEvent());
+        //        teacherNames.addListener((x, y, z) -> fireValueChangedEvent());
         prerequisites.addListener((x, y, z) -> fireValueChangedEvent());
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
     }
@@ -374,9 +383,9 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     /**
      * Creates a shallow copy of the given Course. Used for events.
      *
-     * @see #fireValueChangedEvent()
      * @param original the course to copy
      * @return a new Course copy
+     * @see #fireValueChangedEvent()
      */
     public static Course copy(Course original) {
         String id = original.getId();

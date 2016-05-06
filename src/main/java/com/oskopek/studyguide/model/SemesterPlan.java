@@ -83,12 +83,11 @@ public class SemesterPlan implements Iterable<Semester> {
         return semesterList;
     }
 
-
     /**
      * Returns the last semester in the list of semesters.
      *
-     * @see #getSemesterList()
      * @return the last semester, null if the list is empty
+     * @see #getSemesterList()
      */
     public Semester lastSemester() {
         if (semesterList.isEmpty()) {

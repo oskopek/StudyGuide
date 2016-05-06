@@ -13,6 +13,7 @@ public class LoggerProducer {
 
     /**
      * Create a logger for the class where we are injecting it in using reflection.
+     *
      * @param injectionPoint the logger injection point
      * @return an initialized logger specialized for the injecting class
      */

@@ -11,6 +11,7 @@ public class MessagesProducer {
 
     /**
      * Create a {@link ResourceBundle} {@code messages}, used for localization in the UI.
+     *
      * @return an initialized resource bundle used for localization
      */
     @Produces
