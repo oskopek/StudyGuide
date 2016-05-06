@@ -33,8 +33,8 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
 
     @Override
     public void validate(@Observes CourseEnrollment courseEnrollment) {
-        List<Course> corequisites = new ArrayList<>(getEnrollment().getCourse().getCorequisites());
-        int semesterIndex = semesterPlan.getSemesterList().indexOf(getEnrollment().getSemester()) - 1;
+        List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
+        int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
         if (semesterIndex < 0) {
             if (!corequisites.isEmpty()) {
                 fireBrokenEvent(generateMessage(message, corequisites), courseEnrollment);

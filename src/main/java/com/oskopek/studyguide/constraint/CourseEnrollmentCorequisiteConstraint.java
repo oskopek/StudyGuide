@@ -34,8 +34,9 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
 
     @Override
     public void validate(@Observes CourseEnrollment courseEnrollment) {
-        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan, getEnrollment().getSemester());
-        List<Course> corequisites = new ArrayList<>(getEnrollment().getCourse().getCorequisites());
+        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
+                getCourseEnrollment().getSemester());
+        List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = corequisites.indexOf(enrollment.getCourse());
             if (found >= 0) {

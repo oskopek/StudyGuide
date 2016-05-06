@@ -121,7 +121,7 @@ public class Constraints {
      * @param courseEnrollment the course enrollment
      */
     public void removeAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
-        courseEnrollmentConstraintList.stream().filter(cec -> cec.getEnrollment().equals(courseEnrollment))
+        courseEnrollmentConstraintList.stream().filter(cec -> cec.getCourseEnrollment().equals(courseEnrollment))
                 .forEach(cec -> courseEnrollmentConstraintList.remove(cec));
     }
 

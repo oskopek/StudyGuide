@@ -20,7 +20,7 @@ import java.util.List;
  */
 public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
-    private CourseEnrollment enrollment;
+    private CourseEnrollment courseEnrollment;
 
     @Inject
     private Event<BrokenCourseEnrollmentConstraintEvent> brokenEvent;
@@ -35,10 +35,10 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     /**
      * Default constructor.
      *
-     * @param enrollment the enrollment to check
+     * @param courseEnrollment the course enrollment to check
      */
-    public CourseEnrollmentConstraint(CourseEnrollment enrollment) {
-        this.enrollment = enrollment;
+    public CourseEnrollmentConstraint(CourseEnrollment courseEnrollment) {
+        this.courseEnrollment = courseEnrollment;
     }
 
     /**
@@ -62,12 +62,12 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     }
 
     /**
-     * Get the enrollment we're checking.
+     * Get the course enrollment we're checking.
      *
-     * @return the enrollment
+     * @return the course enrollment
      */
-    public CourseEnrollment getEnrollment() {
-        return enrollment;
+    public CourseEnrollment getCourseEnrollment() {
+        return courseEnrollment;
     }
 
     @Override
@@ -100,7 +100,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
-                .append(getEnrollment())
+                .append(getCourseEnrollment())
                 .append(getClass().getName())
                 .toHashCode();
     }
@@ -115,7 +115,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
         }
         CourseEnrollmentConstraint that = (CourseEnrollmentConstraint) o;
         return new EqualsBuilder()
-                .append(getEnrollment(), that.getEnrollment())
+                .append(getCourseEnrollment(), that.getCourseEnrollment())
                 // used for differentiating types of Course Enrollment constraints
                 .append(getClass().getName(), that.getClass().getName())
                 .isEquals();

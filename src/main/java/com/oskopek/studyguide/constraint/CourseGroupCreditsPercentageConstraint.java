@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -57,9 +58,29 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
      *
      * @return the fulfilled course credit sum fraction needed
      */
-    @JsonGetter
+    @JsonIgnore
     private Fraction getNeededFraction() {
         return neededFraction;
+    }
+
+    /**
+     * Util method for Jackson, to serialize the {@link #neededFraction} in a sane way.
+     *
+     * @return the needed fraction in a string representation
+     */
+    @JsonProperty("neededFraction")
+    private String getNeededFractionString() {
+        return getNeededFraction().toProperString();
+    }
+
+    /**
+     * Util method for Jackson, to deserialize the {@link #neededFraction} in a sane way.
+     *
+     * @param neededFractionString the needed fraction in a string representation
+     */
+    @JsonProperty("neededFraction")
+    private void setNeededFractionString(String neededFractionString) {
+        this.neededFraction = Fraction.getFraction(neededFractionString);
     }
 
     @Override

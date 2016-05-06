@@ -152,8 +152,6 @@ they do not mean an optional statement - we use `(` and `)` (without the star) f
 * Under `<string>` we assume any *valid, non-empty* sequence of UTF-8 characters.
 * Under `<integer>` we assume any *non-negative* whole number smaller than or equal to `2^31 - 1`.
 
-// TODO constraint detail grammar
-
 ```
 <study_plan> ::= {
                    "semesterPlan" : <semester_plan>,
@@ -177,9 +175,52 @@ they do not mean an optional statement - we use `(` and `)` (without the star) f
                  "name": "<string>",
                  "courseEnrollmentList": [ (<course_enrollment>, )* ]
                }
-<course_group_constraint> ::=
-<global_constraint> ::=
-<course_enrollment_constraint> ::=
+<course_group_constraint> ::= ((<course_group_credits_percentage_constraint>|<course_group_credits_sum_constraint>
+                                |<course_group_fulfilled_all_constraint>), )*
+<global_constraint> ::= ((<global_course_repeated_enrollment_constraint>|<global_credits_sum_constraint>), )*
+<course_enrollment_constraint> ::= ((<course_enrollment_corequisite_constraint>
+                                     |<course_enrollment_prerequisite_constraint>), )*
+<course_group_credits_percentage_constraint> ::= {
+                                                   "CourseGroupCreditsPercentageConstraint": {
+                                                     "courseGroup": <course_group>,
+                                                     "neededFraction": <fraction>
+                                                   }
+                                                 }
+<course_group_credits_sum_constraint> ::= {
+                                            "CourseGroupCreditsSumConstraint": {
+                                              "courseGroup": <course_group>,
+                                              "totalNeeded": <credits>
+                                            }
+                                          }
+<course_group_fulfilled_all_constraint> ::= {
+                                              "CourseGroupCreditsSumConstraint": {
+                                                "courseGroup": <course_group>
+                                              }
+                                            }
+<global_course_repeated_enrollment_constraint> ::= {
+                                                     "GlobalCourseRepeatedEnrollmentConstraint": {
+                                                       "maxRepeatedEnrollment": <integer>
+                                                     }
+                                                   }
+<global_credits_sum_constraint> ::= {
+                                      "GlobalCreditsSumConstraint": {
+                                        "totalNeeded": <credits>
+                                      }
+                                    }
+<course_enrollment_corequisite_constraint> ::= {
+                                                 "CourseEnrollmentCorequisiteConstraint": {
+                                                   "courseEnrollment": <course_enrollment>
+                                                 }
+                                               }
+<course_enrollment_prerequisite_constraint> ::= {
+                                                  "CourseEnrollmentCorequisiteConstraint": {
+                                                    "courseEnrollment": <course_enrollment>
+                                                  }
+                                                }
+<course_group> ::= {
+                     "courseList": [ (<course>, )* ]
+                   }
+<fraction> ::= " <integer> / <integer> "
 <string> ::= <character>(<character>)*
 <course> ::= {
                "id" : <string>,
