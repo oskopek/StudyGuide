@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
@@ -52,4 +53,8 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
         return String.format(messages.getString(message), needed.getCreditValue(), got.creditValueProperty());
     }
 
+    @JsonGetter
+    private Credits getTotalNeeded() {
+        return totalNeeded;
+    }
 }

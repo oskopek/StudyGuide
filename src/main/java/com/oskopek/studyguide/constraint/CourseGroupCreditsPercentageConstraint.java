@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.math.Fraction;
@@ -40,6 +41,11 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     private static String toPercent(Fraction fraction) {
         // TODO OPTIONAL math3 fraction.percentageValue()
         return percentageFormat.format(fraction.doubleValue() * 100d);
+    }
+
+    @JsonGetter
+    private Fraction getNeededFraction() {
+        return neededFraction;
     }
 
     @Override

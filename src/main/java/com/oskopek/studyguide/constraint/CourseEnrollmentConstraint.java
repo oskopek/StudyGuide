@@ -5,6 +5,8 @@ import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.enterprise.event.Event;
 import javax.enterprise.event.Observes;
@@ -93,5 +95,32 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
      */
     protected String generateMessage(String message, List<Course> brokenRequirements) {
         return String.format(messages.getString(message), StringUtils.join(brokenRequirements.iterator(), ", "));
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getEnrollment())
+                .append(getClass().getName())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof CourseEnrollmentConstraint)) {
+            return false;
+        }
+
+        CourseEnrollmentConstraint that = (CourseEnrollmentConstraint) o;
+
+        return new EqualsBuilder()
+                .append(getEnrollment(), that.getEnrollment())
+                // used for differentiating types of Course Enrollment constraints
+                .append(getClass().getName(), that.getClass().getName())
+                .isEquals();
     }
 }

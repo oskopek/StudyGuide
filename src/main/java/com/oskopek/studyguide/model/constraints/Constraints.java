@@ -8,6 +8,8 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.List;
 
@@ -108,5 +110,30 @@ public class Constraints {
      */
     public ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintListProperty() {
         return courseEnrollmentConstraintList;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getCourseGroupConstraintList())
+                .append(getGlobalConstraintList())
+                .append(getCourseEnrollmentConstraintList())
+                .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Constraints)) {
+            return false;
+        }
+        Constraints that = (Constraints) o;
+        return new EqualsBuilder()
+                .append(getCourseGroupConstraintList(), that.getCourseGroupConstraintList())
+                .append(getGlobalConstraintList(), that.getGlobalConstraintList())
+                .append(getCourseEnrollmentConstraintList(), that.getCourseEnrollmentConstraintList())
+                .isEquals();
     }
 }

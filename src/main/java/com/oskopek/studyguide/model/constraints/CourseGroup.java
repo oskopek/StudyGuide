@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.model.constraints;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ReadOnlyListProperty;
@@ -7,6 +8,7 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -22,7 +24,7 @@ public class CourseGroup {
      * @param courseList non-empty list of courses
      * @throws IllegalArgumentException if any parameter is null or any list is empty
      */
-    public CourseGroup(List<Course> courseList) throws IllegalArgumentException {
+    public CourseGroup(Collection<Course> courseList) throws IllegalArgumentException {
         if (courseList == null || courseList.isEmpty()) {
             throw new IllegalArgumentException("The parameters cannot be null and the lists cannot be empty.");
         }
@@ -43,6 +45,7 @@ public class CourseGroup {
      *
      * @return non-null list of {@link Course}s
      */
+    @JsonGetter
     private ObservableList<Course> getCourseList() {
         return courseList.get();
     }

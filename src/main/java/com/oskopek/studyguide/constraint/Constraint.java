@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -8,6 +9,7 @@ import javax.enterprise.event.Observes;
 /**
  * A general contract for all constraints operating on the {@link com.oskopek.studyguide.model.StudyPlan} model.
  */
+@JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.NAME)
 public interface Constraint {
 
     /**

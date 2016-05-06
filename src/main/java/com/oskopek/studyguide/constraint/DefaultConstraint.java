@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 public abstract class DefaultConstraint implements Constraint {
 
     @Inject
-    protected SemesterPlan semesterPlan;
+    protected transient SemesterPlan semesterPlan;
 
     @Inject
     protected transient ResourceBundle messages;

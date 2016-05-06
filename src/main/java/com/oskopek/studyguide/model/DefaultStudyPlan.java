@@ -105,13 +105,10 @@ public class DefaultStudyPlan implements StudyPlan {
         if (this == o) {
             return true;
         }
-
         if (!(o instanceof DefaultStudyPlan)) {
             return false;
         }
-
         DefaultStudyPlan that = (DefaultStudyPlan) o;
-
         return new EqualsBuilder().append(getSemesterPlan(), that.getSemesterPlan())
                 .append(getConstraints(), that.getConstraints()).append(getCourseRegistry(), that.getCourseRegistry())
                 .isEquals();

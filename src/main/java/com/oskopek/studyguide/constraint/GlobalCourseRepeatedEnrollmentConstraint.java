@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -49,5 +50,10 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
      */
     private String generateMessage(int enrolledTimes, int maxRepeatedEnrollment, Course course) {
         return String.format(messages.getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
+    }
+
+    @JsonGetter
+    private int getMaxRepeatedEnrollment() {
+        return maxRepeatedEnrollment;
     }
 }

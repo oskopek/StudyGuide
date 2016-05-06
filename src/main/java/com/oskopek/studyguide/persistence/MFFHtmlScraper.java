@@ -1,10 +1,19 @@
 package com.oskopek.studyguide.persistence;
 
+import com.oskopek.studyguide.constraint.CourseGroupCreditsSumConstraint;
+import com.oskopek.studyguide.constraint.CourseGroupFulfilledAllConstraint;
+import com.oskopek.studyguide.constraint.GlobalCourseRepeatedEnrollmentConstraint;
+import com.oskopek.studyguide.constraint.GlobalCreditsSumConstraint;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.model.constraints.Constraints;
+import com.oskopek.studyguide.model.constraints.CourseGroup;
+import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import com.oskopek.studyguide.model.courses.Credits;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -17,6 +26,13 @@ import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.Normalizer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * An online HTML scraper for the pages at
@@ -25,7 +41,6 @@ import java.nio.file.Paths;
 public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
     private SISHtmlScraper sisHtmlScraper;
-
     private DoubleProperty progressProperty = new SimpleDoubleProperty();
 
     /**
@@ -49,31 +64,127 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
      * @throws IOException if an exception occurs while reading the stream
      */
     private DefaultStudyPlan scrapeStudyPlan(InputStream stream, String encoding) throws IOException {
-        CourseRegistry registry = new CourseRegistry();
+        DefaultStudyPlan studyPlan = new DefaultStudyPlan();
         Document document = Jsoup.parse(stream, encoding, ""); // do not need to resolve relative links
-        Elements tables = document.select("table");
-        for (Element table : tables) {
-            boolean first = true; // skip header
-            Elements rows = table.select("tr");
-            int rowIndex = 0;
-            for (Element row : rows) {
-                progressProperty.set(rowIndex / (double) rows.size());
-                if (first) {
-                    first = false;
-                    continue;
-                }
-                Elements tableData = row.select("td");
-                String id = tableData.first().text().replaceAll("[^a-zA-Z0-9]+", "");
-                if (!id.isEmpty()) { // skip empty lines
-                    sisHtmlScraper.scrapeCourse(registry, id);
-                }
-                rowIndex++;
+        scrapeContents(document, studyPlan);
+        progressProperty.set(1d);
+        return studyPlan;
+    }
+
+    private void scrapeContents(Document document, DefaultStudyPlan studyPlan) throws IOException {
+        Constraints constraints = new Constraints();
+        CourseRegistry registry = new CourseRegistry();
+
+        Elements groupHeaderElements = document.select("h4");
+        for (Element header : groupHeaderElements) {
+            String headerName = header.text();
+            if (filterCompulsory(headerName)) {
+                Element table = header.nextElementSibling();
+                CourseRegistry compulsory = new CourseRegistry();
+                scrapeCoursesFromTable(table, compulsory);
+                // compulsory courses are transitive (their dependencies have to be compulsory), we can add all
+                registry.putAllCourses(compulsory);
+                CourseGroup group = new CourseGroup(registry.courseMapValues());
+                constraints.getCourseGroupConstraintList().add(new CourseGroupFulfilledAllConstraint(group));
+            } else if (filterSemiCompulsory(headerName)) {
+                Element desc = header.nextElementSibling();
+                Credits neededCreditSum = filterNeededCreditSum(desc.text());
+                Element table = desc.nextElementSibling();
+                CourseRegistry semiCompulsory = new CourseRegistry();
+                // semi-compulsory courses are NOT transitive, do not add their dependencies
+                List<String> courseIds = scrapeCoursesFromTable(table, semiCompulsory);
+                List<Course> courses = courseIds.stream().map(id -> semiCompulsory.getCourse(id))
+                        .collect(Collectors.toList());
+                registry.putAllCourses(courses);
+                CourseGroup group = new CourseGroup(courses);
+                constraints.getCourseGroupConstraintList()
+                        .add(new CourseGroupCreditsSumConstraint(group, neededCreditSum));
             }
         }
-        progressProperty.set(1d);
-        DefaultStudyPlan studyPlan = new DefaultStudyPlan();
-        studyPlan.courseRegistryProperty().setValue(registry);
-        return studyPlan;
+
+        // parse all tables in document (including ones we skipped before)
+        Elements tables = document.select("table");
+        for (Element table : tables) {
+            scrapeCoursesFromTable(table, registry);
+        }
+
+        // add global constraints we know to be of effect
+        GlobalCourseRepeatedEnrollmentConstraint c1 = new GlobalCourseRepeatedEnrollmentConstraint(2);
+
+        Optional<String> lastYear = document.select("h4").stream().map(Element::text)
+                .filter(row -> row.contains("rok studia")).sorted((x, y) -> -x.compareTo(y)).findFirst();
+        int lastYearInt = 2; // default for Mgr
+        if (lastYear.isPresent()) {
+            lastYearInt = lastYear.get().charAt(0) - '0';
+        }
+        GlobalCreditsSumConstraint c2 = new GlobalCreditsSumConstraint(Credits.valueOf(60 * lastYearInt));
+        constraints.getGlobalConstraintList().addAll(c1, c2);
+
+        studyPlan.courseRegistryProperty().set(registry);
+        studyPlan.constraintsProperty().set(constraints);
+    }
+
+    // TODO OPTIONAL rewrite to be generic where the filters are provided externally as callbacks
+    private boolean filterCompulsory(String headerName) {
+        headerName = normalize(headerName);
+        return headerName.startsWith("povinnepredmety");
+    }
+
+    private boolean filterSemiCompulsory(String headerName) {
+        headerName = normalize(headerName);
+        return headerName.startsWith("povinnevolitelne");
+    }
+
+    private String normalize(String string) {
+        return Normalizer.normalize(StringUtils.deleteWhitespace(string), Normalizer.Form.NFD)
+                .replaceAll("[^\\x00-\\x7F]", "").toLowerCase();
+    }
+
+    private Credits filterNeededCreditSum(String description) {
+        description = normalize(description);
+        Matcher matcher = Pattern.compile("([1-9][0-9]*)kredit").matcher(description);
+        if (matcher.find()) {
+            String creditsValue = matcher.group(1);
+            int value;
+            try {
+                value = Integer.parseInt(creditsValue);
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("Could not parse credit sum from: " + creditsValue, e);
+            }
+            return Credits.valueOf(value);
+        }
+        throw new IllegalArgumentException("Could not find credit sum in: " + description);
+    }
+
+    /**
+     * @param table
+     * @param registry
+     * @return list of ids that were in the table
+     * @throws IOException
+     */
+    private List<String> scrapeCoursesFromTable(Element table, CourseRegistry registry) throws IOException {
+        // TODO add course enrollment constraints (not here, in the semester plan)
+        List<String> ids = new ArrayList<>();
+        Elements rows = table.select("tr");
+        int rowIndex = 0;
+        for (Element row : rows) {
+            progressProperty.set(rowIndex / (double) rows.size());
+            if (rowIndex == 0) {
+                rowIndex++;
+                continue; // skip header
+            }
+            Elements tableData = row.select("td");
+            String id = tableData.first().text().replaceAll("[^a-zA-Z0-9]+", "");
+            if (id.isEmpty()) { // skip empty lines
+                continue;
+            }
+            ids.add(id);
+            if (registry.getCourse(id) == null) { // skip existing courses
+                sisHtmlScraper.scrapeCourse(registry, id);
+            }
+            rowIndex++;
+        }
+        return ids;
     }
 
     /**

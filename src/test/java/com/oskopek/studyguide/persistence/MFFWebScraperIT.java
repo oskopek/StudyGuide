@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.persistence;
 
-import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import org.junit.Before;
@@ -13,7 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
@@ -76,44 +75,43 @@ public class MFFWebScraperIT {
 
     private void scrapeAndVerify(String url, String referenceFile) {
         logger.debug("Scraping plan: {}", referenceFile);
-        CourseRegistry registry;
+        StudyPlan studyPlan;
         try {
-            registry = scraper.scrapeStudyPlan(url).getCourseRegistry();
+            studyPlan = scraper.scrapeStudyPlan(url);
         } catch (IOException e) {
-            logger.error("An exception occurred while scraping plan {}: {}", referenceFile, e);
+            logger.error("An exception occurred while scraping and verifying plan {}: {}", referenceFile, e);
             fail();
             return;
         }
-        assertNotNull(registry);
-        assertNotNull(registry.courseMapValues());
-        StudyPlan studyPlan;
+        StudyPlan localStudyPlan;
         try {
-            studyPlan = new JsonDataReaderWriter().readFrom(referenceFile);
+            localStudyPlan = new JsonDataReaderWriter().readFrom(referenceFile);
         } catch (IOException e) {
             logger.error("An exception occurred while comparing to reference file {}: {}", referenceFile, e);
             fail();
             return;
         }
-        assertArrayEquals(studyPlan.getCourseRegistry().courseMapValues().toArray(),
-                registry.courseMapValues().toArray());
+        assertEquals(studyPlan.getCourseRegistry(), localStudyPlan.getCourseRegistry());
+        assertEquals(studyPlan.getConstraints(), localStudyPlan.getConstraints());
+        assertEquals(studyPlan.getSemesterPlan(), localStudyPlan.getSemesterPlan());
+        assertEquals(studyPlan, localStudyPlan);
     }
 
     private void scrapeAndSave(String url, String referenceFile) {
         logger.debug("Scraping plan: {}", referenceFile);
-        CourseRegistry registry;
+        StudyPlan studyPlan;
         try {
-            registry = scraper.scrapeStudyPlan(url).getCourseRegistry();
+            studyPlan = scraper.scrapeStudyPlan(url);
         } catch (IOException e) {
-            logger.error("An exception occurred while scraping plan {}: {}", referenceFile, e);
+            logger.error("An exception occurred while scraping and saving plan {}: {}", referenceFile, e);
             fail();
             return;
         }
+        CourseRegistry registry = studyPlan.getCourseRegistry();
         assertNotNull(registry);
         assertNotNull(registry.courseMapValues());
-        DefaultStudyPlan sp = new DefaultStudyPlan();
-        sp.courseRegistryProperty().setValue(registry);
         try {
-            new JsonDataReaderWriter().writeTo(sp, referenceFile);
+            new JsonDataReaderWriter().writeTo(studyPlan, referenceFile);
         } catch (IOException e) {
             logger.error("An exception occurred while comparing to reference file {}: {}", referenceFile, e);
             fail();

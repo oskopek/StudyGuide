@@ -14,7 +14,7 @@ import javax.inject.Inject;
 public abstract class GlobalConstraint extends DefaultConstraint {
 
     @Inject
-    private Event<BrokenGlobalConstraintEvent> brokenEvent;
+    private transient Event<BrokenGlobalConstraintEvent> brokenEvent;
 
     @Override
     public void validate(@Observes Course changed) {

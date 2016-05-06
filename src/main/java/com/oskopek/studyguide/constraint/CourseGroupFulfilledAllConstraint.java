@@ -46,5 +46,4 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
         return messages.getString(message) + ": "
                 + String.join(", ", unfulfilled.stream().map(c -> c.getId()).collect(Collectors.toList()));
     }
-
 }
