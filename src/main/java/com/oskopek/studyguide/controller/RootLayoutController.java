@@ -13,7 +13,10 @@ import com.oskopek.studyguide.view.ProgressCreator;
 import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
