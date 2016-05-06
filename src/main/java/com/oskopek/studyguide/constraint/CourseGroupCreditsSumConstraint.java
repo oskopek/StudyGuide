@@ -31,8 +31,7 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
     @Override
     public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
-        Stream<Course> fulfilledGroupCourses = semesterPlan.getSemesterList().stream()
-                .flatMap(s -> s.getCourseEnrollmentList().stream())
+        Stream<Course> fulfilledGroupCourses = semesterPlan.allCourseEnrollments()
                 .filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse()).filter(c -> groupCourses.contains(c));
         Credits fulfilledSum = Credits.valueOf(
                 fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum));
