@@ -22,10 +22,10 @@ import static org.junit.Assert.fail;
  */
 public class MFFWebScraperIT {
 
-    private Logger logger = LoggerFactory.getLogger(getClass());
-    private MFFHtmlScraper scraper;
     private final String sisWebUrl = "https://is.cuni.cz/studium";
     private final String mffUrlBase = "http://www.mff.cuni.cz/studium/bcmgr/ok/";
+    private Logger logger = LoggerFactory.getLogger(getClass());
+    private MFFHtmlScraper scraper;
 
     @Before
     public void setUp() {

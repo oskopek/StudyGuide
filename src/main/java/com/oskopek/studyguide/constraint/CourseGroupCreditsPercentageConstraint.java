@@ -15,9 +15,9 @@ import java.util.stream.Stream;
  */
 public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstraint {
 
-    private Fraction neededFraction;
-    private final String message = "constraint.courseGroupCreditsPercentageInvalid";
     private static DecimalFormat percentageFormat = new DecimalFormat("##0.00");
+    private final String message = "constraint.courseGroupCreditsPercentageInvalid";
+    private Fraction neededFraction;
 
     /**
      * Default constructor.
@@ -28,6 +28,18 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     public CourseGroupCreditsPercentageConstraint(CourseGroup courseGroup, Fraction neededFraction) {
         super(courseGroup);
         this.neededFraction = neededFraction;
+    }
+
+    /**
+     * Utility method for converting {@link Fraction}s to percentage points with two decimal places.
+     * To be replaced with Apache's {@code lang3} Fraction.
+     *
+     * @param fraction the fraction to convert
+     * @return the percentage representation in a String
+     */
+    private static String toPercent(Fraction fraction) {
+        // TODO OPTIONAL math3 fraction.percentageValue()
+        return percentageFormat.format(fraction.doubleValue() * 100d);
     }
 
     @Override
@@ -54,17 +66,5 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
      */
     private String generateMessage(Fraction got, Fraction needed) {
         return String.format(messages.getString(message), toPercent(needed), toPercent(got));
-    }
-
-    /**
-     * Utility method for converting {@link Fraction}s to percentage points with two decimal places.
-     * To be replaced with Apache's {@code lang3} Fraction.
-     *
-     * @param fraction the fraction to convert
-     * @return the percentage representation in a String
-     */
-    private static String toPercent(Fraction fraction) {
-        // TODO OPTIONAL math3 fraction.percentageValue()
-        return percentageFormat.format(fraction.doubleValue() * 100d);
     }
 }

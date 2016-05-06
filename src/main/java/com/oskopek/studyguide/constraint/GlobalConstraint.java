@@ -26,6 +26,16 @@ public abstract class GlobalConstraint extends DefaultConstraint {
         validate();
     }
 
+    @Override
+    public void fireBrokenEvent(String message, Course changed) {
+        fireBrokenEvent(message);
+    }
+
+    @Override
+    public void fireBrokenEvent(String message, CourseEnrollment changed) {
+        fireBrokenEvent(message);
+    }
+
     /**
      * The method should verify if the given global constraint was broken, and if so,
      * call {@link #fireBrokenEvent(String)} with the specific reason.
@@ -39,15 +49,5 @@ public abstract class GlobalConstraint extends DefaultConstraint {
      */
     protected void fireBrokenEvent(String message) {
         brokenEvent.fire(new BrokenGlobalConstraintEvent(message));
-    }
-
-    @Override
-    public void fireBrokenEvent(String message, Course changed) {
-        fireBrokenEvent(message);
-    }
-
-    @Override
-    public void fireBrokenEvent(String message, CourseEnrollment changed) {
-        fireBrokenEvent(message);
     }
 }

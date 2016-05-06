@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
  */
 public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
-    private int maxRepeatedEnrollment;
     private static final String message = "constraint.globalCourseRepeatedEnrollmentInvalid";
+    private int maxRepeatedEnrollment;
 
     /**
      * Default course.

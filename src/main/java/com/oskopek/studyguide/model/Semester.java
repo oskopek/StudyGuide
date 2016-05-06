@@ -120,15 +120,6 @@ public class Semester {
     }
 
     /**
-     * The JavaFX property for {@link #getCourseEnrollmentList()}.
-     *
-     * @return the property of {@link #getCourseEnrollmentList()}
-     */
-    public ListProperty<CourseEnrollment> courseEnrollmentListProperty() {
-        return courseEnrollmentList;
-    }
-
-    /**
      * Private setter for Jackson persistence.
      *
      * @param courseEnrollmentList the list of {@link CourseEnrollment}s to set
@@ -137,9 +128,18 @@ public class Semester {
         this.courseEnrollmentList.set(FXCollections.observableArrayList(courseEnrollmentList));
     }
 
+    /**
+     * The JavaFX property for {@link #getCourseEnrollmentList()}.
+     *
+     * @return the property of {@link #getCourseEnrollmentList()}
+     */
+    public ListProperty<CourseEnrollment> courseEnrollmentListProperty() {
+        return courseEnrollmentList;
+    }
+
     @Override
-    public String toString() {
-        return "Semester[" + getName() + ']';
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(getName()).toHashCode();
     }
 
     @Override
@@ -155,7 +155,7 @@ public class Semester {
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getName()).toHashCode();
+    public String toString() {
+        return "Semester[" + getName() + ']';
     }
 }

@@ -96,12 +96,43 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     /**
+     * Creates a shallow copy of the given Course. Used for events.
+     *
+     * @param original the course to copy
+     * @return a new Course copy
+     * @see #fireValueChangedEvent()
+     */
+    public static Course copy(Course original) {
+        String id = original.getId();
+        String name = original.getName();
+        String localizedName = original.getLocalizedName();
+        Locale locale = original.getLocale();
+        Credits credits = original.getCredits();
+        List<String> teacherNames = new ArrayList<>(original.getTeacherNames());
+        List<Course> prerequisites = new ArrayList<>(original.getPrerequisites());
+        List<Course> corequisites = new ArrayList<>(original.getCorequisites());
+        return new Course(id, name, localizedName, locale, credits, teacherNames, prerequisites, corequisites);
+    }
+
+    /**
      * Credits awarded after fulfilling this course.
      *
      * @return non-null
      */
     public Credits getCredits() {
         return credits.get();
+    }
+
+    /**
+     * Setter into {@link #creditsProperty()}.
+     *
+     * @param credits non-null
+     */
+    public void setCredits(Credits credits) {
+        if (credits == null) {
+            throw new IllegalArgumentException("Credits cannot be null.");
+        }
+        this.credits.set(credits);
     }
 
     /**
@@ -114,12 +145,33 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     /**
+     * Setter into {@link #idProperty()}.
+     *
+     * @param id non-null
+     */
+    public void setId(String id) {
+        if (id == null) {
+            throw new IllegalArgumentException("Id cannot be null.");
+        }
+        this.id.set(id);
+    }
+
+    /**
      * Locale of {@link #getLocalizedName()}.
      *
      * @return the locale
      */
     public Locale getLocale() {
         return locale.get();
+    }
+
+    /**
+     * Setter into {@link #localeProperty()}.
+     *
+     * @param locale can be null
+     */
+    public void setLocale(Locale locale) {
+        this.locale.set(locale);
     }
 
     /**
@@ -133,12 +185,33 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     /**
+     * Setter into {@link #localizedNameProperty()}.
+     *
+     * @param localizedName can be null
+     */
+    public void setLocalizedName(String localizedName) {
+        this.localizedName.set(localizedName);
+    }
+
+    /**
      * The name of this course.
      *
      * @return non-null
      */
     public String getName() {
         return name.get();
+    }
+
+    /**
+     * Setter into {@link #nameProperty()}.
+     *
+     * @param name non-null
+     */
+    public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("The name cannot be null.");
+        }
+        this.name.set(name);
     }
 
     /**
@@ -151,6 +224,18 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     /**
+     * Setter into {@link #prerequisitesProperty()}.
+     *
+     * @param prerequisites non-null
+     */
+    public void setPrerequisites(List<Course> prerequisites) {
+        if (prerequisites == null) {
+            throw new IllegalArgumentException("The prerequisites list cannot be null.");
+        }
+        this.prerequisites.set(FXCollections.observableArrayList(prerequisites));
+    }
+
+    /**
      * Courses required to be enrolled in before enrolling in this course.
      *
      * @return non-null, may be empty
@@ -160,12 +245,36 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     /**
+     * Setter into {@link #corequisitesProperty()}.
+     *
+     * @param corequisites non-null
+     */
+    public void setCorequisites(List<Course> corequisites) {
+        if (corequisites == null) {
+            throw new IllegalArgumentException("The corequisites list cannot be null.");
+        }
+        this.corequisites.set(FXCollections.observableArrayList(corequisites));
+    }
+
+    /**
      * Names of teachers teaching this course.
      *
      * @return non-null
      */
     public ObservableList<String> getTeacherNames() {
         return teacherNames.get();
+    }
+
+    /**
+     * Setter into {@link #teacherNamesProperty()}.
+     *
+     * @param teacherNames non-null
+     */
+    public void setTeacherNames(List<String> teacherNames) {
+        if (teacherNames == null) {
+            throw new IllegalArgumentException("The teacher names list cannot be null.");
+        }
+        this.teacherNames.set(FXCollections.observableArrayList(teacherNames));
     }
 
     /**
@@ -271,96 +380,6 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     /**
-     * Setter into {@link #creditsProperty()}.
-     *
-     * @param credits non-null
-     */
-    public void setCredits(Credits credits) {
-        if (credits == null) {
-            throw new IllegalArgumentException("Credits cannot be null.");
-        }
-        this.credits.set(credits);
-    }
-
-    /**
-     * Setter into {@link #idProperty()}.
-     *
-     * @param id non-null
-     */
-    public void setId(String id) {
-        if (id == null) {
-            throw new IllegalArgumentException("Id cannot be null.");
-        }
-        this.id.set(id);
-    }
-
-    /**
-     * Setter into {@link #localeProperty()}.
-     *
-     * @param locale can be null
-     */
-    public void setLocale(Locale locale) {
-        this.locale.set(locale);
-    }
-
-    /**
-     * Setter into {@link #localizedNameProperty()}.
-     *
-     * @param localizedName can be null
-     */
-    public void setLocalizedName(String localizedName) {
-        this.localizedName.set(localizedName);
-    }
-
-    /**
-     * Setter into {@link #nameProperty()}.
-     *
-     * @param name non-null
-     */
-    public void setName(String name) {
-        if (name == null) {
-            throw new IllegalArgumentException("The name cannot be null.");
-        }
-        this.name.set(name);
-    }
-
-    /**
-     * Setter into {@link #prerequisitesProperty()}.
-     *
-     * @param prerequisites non-null
-     */
-    public void setPrerequisites(List<Course> prerequisites) {
-        if (prerequisites == null) {
-            throw new IllegalArgumentException("The prerequisites list cannot be null.");
-        }
-        this.prerequisites.set(FXCollections.observableArrayList(prerequisites));
-    }
-
-    /**
-     * Setter into {@link #corequisitesProperty()}.
-     *
-     * @param corequisites non-null
-     */
-    public void setCorequisites(List<Course> corequisites) {
-        if (corequisites == null) {
-            throw new IllegalArgumentException("The corequisites list cannot be null.");
-        }
-        this.corequisites.set(FXCollections.observableArrayList(corequisites));
-    }
-
-    /**
-     * Setter into {@link #teacherNamesProperty()}.
-     *
-     * @param teacherNames non-null
-     */
-    public void setTeacherNames(List<String> teacherNames) {
-        if (teacherNames == null) {
-            throw new IllegalArgumentException("The teacher names list cannot be null.");
-        }
-        this.teacherNames.set(FXCollections.observableArrayList(teacherNames));
-    }
-
-    /**
      * Register {@link javafx.beans.value.ChangeListener}s to important attributes and notify of a course change
      * using {@link #fireValueChangedEvent()}.
      */
@@ -380,29 +399,17 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         return new CompareToBuilder().append(id, o.id).toComparison();
     }
 
-    /**
-     * Creates a shallow copy of the given Course. Used for events.
-     *
-     * @param original the course to copy
-     * @return a new Course copy
-     * @see #fireValueChangedEvent()
-     */
-    public static Course copy(Course original) {
-        String id = original.getId();
-        String name = original.getName();
-        String localizedName = original.getLocalizedName();
-        Locale locale = original.getLocale();
-        Credits credits = original.getCredits();
-        List<String> teacherNames = new ArrayList<>(original.getTeacherNames());
-        List<Course> prerequisites = new ArrayList<>(original.getPrerequisites());
-        List<Course> corequisites = new ArrayList<>(original.getCorequisites());
-        return new Course(id, name, localizedName, locale, credits, teacherNames, prerequisites, corequisites);
-    }
-
     @Override
     @JsonIgnore
     public Course getValue() {
         return Course.copy(this);
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(getId()).append(getName()).append(getLocalizedName())
+                .append(getLocale()).append(getCredits()).append(getTeacherNames()).append(getPrerequisites())
+                .append(getCorequisites()).toHashCode();
     }
 
     @Override
@@ -422,13 +429,6 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
                 .append(getCredits(), course.getCredits()).append(getTeacherNames(), course.getTeacherNames())
                 .append(getPrerequisites(), course.getPrerequisites())
                 .append(getCorequisites(), course.getCorequisites()).isEquals();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getId()).append(getName()).append(getLocalizedName())
-                .append(getLocale()).append(getCredits()).append(getTeacherNames()).append(getPrerequisites())
-                .append(getCorequisites()).toHashCode();
     }
 
     @Override

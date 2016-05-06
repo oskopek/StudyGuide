@@ -52,19 +52,19 @@ public class DefaultStudyPlan implements StudyPlan {
     /**
      * Private setter for Jackson persistence.
      *
-     * @param constraints the {@link Constraints} to set
+     * @param courseRegistry the {@link CourseRegistry} to set
      */
-    private void setConstraints(Constraints constraints) {
-        this.constraints.set(constraints);
+    private void setCourseRegistry(CourseRegistry courseRegistry) {
+        this.courseRegistry.set(courseRegistry);
     }
 
     /**
      * Private setter for Jackson persistence.
      *
-     * @param courseRegistry the {@link CourseRegistry} to set
+     * @param constraints the {@link Constraints} to set
      */
-    private void setCourseRegistry(CourseRegistry courseRegistry) {
-        this.courseRegistry.set(courseRegistry);
+    private void setConstraints(Constraints constraints) {
+        this.constraints.set(constraints);
     }
 
     /**
@@ -95,8 +95,9 @@ public class DefaultStudyPlan implements StudyPlan {
     }
 
     @Override
-    public String toString() {
-        return "DefaultStudyPlan[" + getSemesterPlan() + ']';
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(getSemesterPlan()).append(getConstraints())
+                .append(getCourseRegistry()).toHashCode();
     }
 
     @Override
@@ -117,8 +118,7 @@ public class DefaultStudyPlan implements StudyPlan {
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getSemesterPlan()).append(getConstraints())
-                .append(getCourseRegistry()).toHashCode();
+    public String toString() {
+        return "DefaultStudyPlan[" + getSemesterPlan() + ']';
     }
 }

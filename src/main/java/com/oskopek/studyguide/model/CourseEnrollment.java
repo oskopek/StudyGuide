@@ -51,6 +51,20 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     }
 
     /**
+     * Creates a shallow copy of the given CourseEnrollment. Used for events.
+     *
+     * @param original the course enrollment to copy
+     * @return a new CourseEnrollment copy
+     * @see #fireValueChangedEvent()
+     */
+    public static CourseEnrollment copy(CourseEnrollment original) {
+        Course course = Course.copy(original.getCourse());
+        boolean fulfilled = original.fulfilled.get();
+        Semester semester = original.getSemester();
+        return new CourseEnrollment(course, semester, fulfilled);
+    }
+
+    /**
      * The course that the student enrolled in.
      *
      * @return non-null
@@ -138,20 +152,6 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     }
 
     /**
-     * Creates a shallow copy of the given CourseEnrollment. Used for events.
-     *
-     * @param original the course enrollment to copy
-     * @return a new CourseEnrollment copy
-     * @see #fireValueChangedEvent()
-     */
-    public static CourseEnrollment copy(CourseEnrollment original) {
-        Course course = Course.copy(original.getCourse());
-        boolean fulfilled = original.fulfilled.get();
-        Semester semester = original.getSemester();
-        return new CourseEnrollment(course, semester, fulfilled);
-    }
-
-    /**
      * Register {@link javafx.beans.value.ChangeListener}s to important attributes and notify of a course enrollment
      * change using {@link #fireValueChangedEvent()}.
      */
@@ -162,8 +162,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     }
 
     @Override
-    public String toString() {
-        return "CourseEnr[" + course.get() + ", " + semester.get() + ']';
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(course).append(semester).toHashCode();
     }
 
     @Override
@@ -179,7 +179,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(course).append(semester).toHashCode();
+    public String toString() {
+        return "CourseEnr[" + course.get() + ", " + semester.get() + ']';
     }
 }

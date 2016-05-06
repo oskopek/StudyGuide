@@ -20,13 +20,12 @@ import java.util.stream.Stream;
  */
 public class FindRegistryCoursesController implements FindCourses {
 
-    private CourseRegistry courseRegistry;
-
     private static final FloatCoursePairComparator<Map.Entry<Float, ? extends Course>> floatCoursePairComparator
             = new FloatCoursePairComparator<>();
     private static final StringMetric metric = StringMetricBuilder
             .with(new CosineSimilarity<>()).simplify(Simplifiers.toLowerCase()).simplify(Simplifiers.removeDiacritics())
             .tokenize(Tokenizers.qGram(1)).build();
+    private CourseRegistry courseRegistry;
 
     /**
      * Create a controller instance for a {@link CourseRegistry}.
@@ -35,6 +34,15 @@ public class FindRegistryCoursesController implements FindCourses {
      */
     public FindRegistryCoursesController(CourseRegistry courseRegistry) {
         this.courseRegistry = courseRegistry;
+    }
+
+    /**
+     * The {@link StringMetric} used to calculate string (id, name, ...) similarities.
+     *
+     * @return the non-null metric
+     */
+    protected static StringMetric getMetric() {
+        return metric;
     }
 
     /**
@@ -77,15 +85,6 @@ public class FindRegistryCoursesController implements FindCourses {
      */
     private Stream<Course> findCoursesInternal(Function<? super Course, Float> valueFunction) {
         return mapToSortedPairs(valueFunction).map(Map.Entry::getValue);
-    }
-
-    /**
-     * The {@link StringMetric} used to calculate string (id, name, ...) similarities.
-     *
-     * @return the non-null metric
-     */
-    protected static StringMetric getMetric() {
-        return metric;
     }
 
     /**

@@ -61,15 +61,6 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
         validate(changed.getCourse());
     }
 
-    /**
-     * Used for firing the {@link BrokenCourseGroupConstraintEvent} if the constraint is broken.
-     *
-     * @param message the reason why the constraint is broken
-     */
-    public void fireBrokenEvent(String message) {
-        brokenEvent.fire(new BrokenCourseGroupConstraintEvent(message, courseGroup));
-    }
-
     @Override
     public void fireBrokenEvent(String message, Course changed) {
         fireBrokenEvent(message);
@@ -78,5 +69,14 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     @Override
     public void fireBrokenEvent(String message, CourseEnrollment changed) {
         fireBrokenEvent(message);
+    }
+
+    /**
+     * Used for firing the {@link BrokenCourseGroupConstraintEvent} if the constraint is broken.
+     *
+     * @param message the reason why the constraint is broken
+     */
+    public void fireBrokenEvent(String message) {
+        brokenEvent.fire(new BrokenCourseGroupConstraintEvent(message, courseGroup));
     }
 }

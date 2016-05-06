@@ -29,6 +29,11 @@ public class BrokenResetEvent {
     }
 
     @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(getOriginallyBroken()).toHashCode();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -38,11 +43,6 @@ public class BrokenResetEvent {
         }
         BrokenResetEvent that = (BrokenResetEvent) o;
         return new EqualsBuilder().append(getOriginallyBroken(), that.getOriginallyBroken()).isEquals();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getOriginallyBroken()).toHashCode();
     }
 
     @Override

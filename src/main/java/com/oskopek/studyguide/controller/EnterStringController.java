@@ -52,21 +52,21 @@ public class EnterStringController extends AbstractController {
     }
 
     /**
-     * Set the dialog (used for reporting double clicks in the table).
-     *
-     * @param dialog the dialog wrapper for {@link EnterStringDialogPaneCreator}
-     */
-    public void setDialog(Dialog<ButtonType> dialog) {
-        this.dialog = dialog;
-    }
-
-    /**
      * Get the dialog (used for reporting double clicks in the table).
      *
      * @return the dialog
      */
     public Dialog<ButtonType> getDialog() {
         return dialog;
+    }
+
+    /**
+     * Set the dialog (used for reporting double clicks in the table).
+     *
+     * @param dialog the dialog wrapper for {@link EnterStringDialogPaneCreator}
+     */
+    public void setDialog(Dialog<ButtonType> dialog) {
+        this.dialog = dialog;
     }
 
     /**

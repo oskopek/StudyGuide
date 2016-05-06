@@ -50,8 +50,10 @@ public abstract class StringMessageEvent {
     public abstract String message();
 
     @Override
-    public String toString() {
-        return "StringMessageEvent[" + message + ']';
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getMessage())
+                .toHashCode();
     }
 
     @Override
@@ -69,9 +71,7 @@ public abstract class StringMessageEvent {
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getMessage())
-                .toHashCode();
+    public String toString() {
+        return "StringMessageEvent[" + message + ']';
     }
 }

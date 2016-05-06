@@ -33,13 +33,20 @@ import javax.inject.Singleton;
 @Singleton
 public class StudyGuideApplication extends Application {
 
-    private Stage primaryStage;
-    private ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
-
     private final String logoResource = "logo_64x64.png";
     private final String logoResourceLarge = "logo_640x640.png";
-
+    private Stage primaryStage;
+    private ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
     private WeldContainer container;
+
+    /**
+     * Main method.
+     *
+     * @param args command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage initStage) throws Exception {
@@ -114,15 +121,6 @@ public class StudyGuideApplication extends Application {
     }
 
     /**
-     * The JavaFX property for {@link #getStudyPlan()}.
-     *
-     * @return the study plan property
-     */
-    public ObjectProperty<StudyPlan> studyPlanProperty() {
-        return studyPlan;
-    }
-
-    /**
      * Set a new model instance.
      *
      * @param studyPlan the new model
@@ -132,11 +130,11 @@ public class StudyGuideApplication extends Application {
     }
 
     /**
-     * Main method.
+     * The JavaFX property for {@link #getStudyPlan()}.
      *
-     * @param args command line arguments
+     * @return the study plan property
      */
-    public static void main(String[] args) {
-        launch(args);
+    public ObjectProperty<StudyPlan> studyPlanProperty() {
+        return studyPlan;
     }
 }

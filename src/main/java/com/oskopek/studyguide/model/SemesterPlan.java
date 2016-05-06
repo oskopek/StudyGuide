@@ -36,6 +36,15 @@ public class SemesterPlan implements Iterable<Semester> {
     }
 
     /**
+     * Private setter for Jackson persistence.
+     *
+     * @param semesterList the list of {@link Semester}s to set
+     */
+    private void setSemesterList(List<Semester> semesterList) {
+        this.semesterList.set(FXCollections.observableArrayList(semesterList));
+    }
+
+    /**
      * Remove the {@link Semester} from the semester list.
      *
      * @param semester the semester to be removed
@@ -63,15 +72,6 @@ public class SemesterPlan implements Iterable<Semester> {
      */
     public Optional<Semester> findSemester(String name) {
         return semesterList.stream().filter(s -> s.getName().equals(name)).findAny();
-    }
-
-    /**
-     * Private setter for Jackson persistence.
-     *
-     * @param semesterList the list of {@link Semester}s to set
-     */
-    private void setSemesterList(List<Semester> semesterList) {
-        this.semesterList.set(FXCollections.observableArrayList(semesterList));
     }
 
     /**
@@ -111,6 +111,11 @@ public class SemesterPlan implements Iterable<Semester> {
     }
 
     @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(getSemesterList()).toHashCode();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -120,10 +125,5 @@ public class SemesterPlan implements Iterable<Semester> {
         }
         SemesterPlan that = (SemesterPlan) o;
         return new EqualsBuilder().append(getSemesterList(), that.getSemesterList()).isEquals();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getSemesterList()).toHashCode();
     }
 }

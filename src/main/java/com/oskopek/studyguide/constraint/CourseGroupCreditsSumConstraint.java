@@ -14,8 +14,8 @@ import java.util.stream.Stream;
  */
 public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
 
-    private Credits totalNeeded;
     private final String message = "constraint.courseGroupCreditsSumInvalid";
+    private Credits totalNeeded;
 
     /**
      * Default constructor.

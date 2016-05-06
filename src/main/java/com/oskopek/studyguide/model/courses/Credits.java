@@ -54,15 +54,6 @@ public final class Credits implements Comparable<Credits> {
     }
 
     /**
-     * The JavaFX property for {@link #getCreditValue()}.
-     *
-     * @return the property of {@link #getCreditValue()}
-     */
-    public IntegerProperty creditValueProperty() {
-        return creditValue;
-    }
-
-    /**
      * Sets the credit value into {@link #creditValueProperty()}.
      *
      * @param creditValue greater than 0
@@ -74,9 +65,18 @@ public final class Credits implements Comparable<Credits> {
         this.creditValue.set(creditValue);
     }
 
+    /**
+     * The JavaFX property for {@link #getCreditValue()}.
+     *
+     * @return the property of {@link #getCreditValue()}
+     */
+    public IntegerProperty creditValueProperty() {
+        return creditValue;
+    }
+
     @Override
-    public String toString() {
-        return "Credits[" + getCreditValue() + ']';
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(getCreditValue()).toHashCode();
     }
 
     @Override
@@ -92,8 +92,8 @@ public final class Credits implements Comparable<Credits> {
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getCreditValue()).toHashCode();
+    public String toString() {
+        return "Credits[" + getCreditValue() + ']';
     }
 
     @Override

@@ -32,41 +32,29 @@ import java.util.Optional;
  */
 public class SemesterBoxController extends AbstractController {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
-
-    @FXML
-    private TextField semesterNameArea;
-
-    @FXML
-    private TableView<CourseEnrollment> semesterTable;
-
-    @FXML
-    private TableColumn<CourseEnrollment, String> idColumn;
-
-    @FXML
-    private TableColumn<CourseEnrollment, String> nameColumn;
-
-    @FXML
-    private TableColumn<CourseEnrollment, Number> creditsColumn;
-
-    @FXML
-    private TableColumn<CourseEnrollment, Boolean> fulfilledColumn;
-
-    @FXML
-    private TableColumn<CourseEnrollment, String> removeColumn;
-
-    @Inject
-    private SemesterController parentSemesterController;
-
-    @Inject
-    private CourseDetailController courseDetailController;
-
-    private Semester semester;
-
-    private BorderPane pane;
-
     private static final DataFormat semesterFormat = new DataFormat("semester");
     private static final DataFormat enrollmentIndexFormat = new DataFormat("enrollment");
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    @FXML
+    private TextField semesterNameArea;
+    @FXML
+    private TableView<CourseEnrollment> semesterTable;
+    @FXML
+    private TableColumn<CourseEnrollment, String> idColumn;
+    @FXML
+    private TableColumn<CourseEnrollment, String> nameColumn;
+    @FXML
+    private TableColumn<CourseEnrollment, Number> creditsColumn;
+    @FXML
+    private TableColumn<CourseEnrollment, Boolean> fulfilledColumn;
+    @FXML
+    private TableColumn<CourseEnrollment, String> removeColumn;
+    @Inject
+    private SemesterController parentSemesterController;
+    @Inject
+    private CourseDetailController courseDetailController;
+    private Semester semester;
+    private BorderPane pane;
 
     /**
      * Initializes the listener for Semester name changes.

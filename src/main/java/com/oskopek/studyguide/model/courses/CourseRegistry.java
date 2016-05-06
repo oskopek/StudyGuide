@@ -99,8 +99,8 @@ public class CourseRegistry {
     }
 
     @Override
-    public String toString() {
-        return "CourseRegistry[" + courseIdMap.size() + ']';
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(courseIdMap).toHashCode();
     }
 
     @Override
@@ -116,7 +116,7 @@ public class CourseRegistry {
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(courseIdMap).toHashCode();
+    public String toString() {
+        return "CourseRegistry[" + courseIdMap.size() + ']';
     }
 }

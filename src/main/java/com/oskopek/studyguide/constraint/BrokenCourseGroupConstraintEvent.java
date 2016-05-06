@@ -37,8 +37,11 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
     }
 
     @Override
-    public String toString() {
-        return "BrokenCGConstraintEvent[" + courseGroup + ", " + getMessage() + "]";
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .appendSuper(super.hashCode())
+                .append(getCourseGroup())
+                .toHashCode();
     }
 
     @Override
@@ -57,10 +60,7 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .appendSuper(super.hashCode())
-                .append(getCourseGroup())
-                .toHashCode();
+    public String toString() {
+        return "BrokenCGConstraintEvent[" + courseGroup + ", " + getMessage() + "]";
     }
 }

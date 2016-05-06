@@ -5,9 +5,9 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
-<DialogPane fx:id="dialogPane" headerText="%course.choose" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0"
-            xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1"
+<DialogPane xmlns:fx="http://javafx.com/fxml/1" fx:id="dialogPane" headerText="%course.choose" maxHeight="-Infinity"
+            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="500.0" xmlns="http://javafx.com/javafx/null"
             fx:controller="com.oskopek.studyguide.controller.ChooseCourseController">
     <content>
         <BorderPane prefHeight="200.0" prefWidth="200.0">

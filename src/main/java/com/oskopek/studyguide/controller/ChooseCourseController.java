@@ -88,6 +88,15 @@ public class ChooseCourseController extends AbstractController {
     }
 
     /**
+     * Get the dialog (used for reporting double clicks in the table).
+     *
+     * @return the dialog
+     */
+    public Dialog<ButtonType> getDialog() {
+        return dialog;
+    }
+
+    /**
      * Set the dialog (used for reporting double clicks in the table).
      *
      * @param dialog the dialog wrapper for {@link ChooseCourseDialogPaneCreator}
@@ -95,15 +104,6 @@ public class ChooseCourseController extends AbstractController {
      */
     public void setDialog(Dialog<ButtonType> dialog) {
         this.dialog = dialog;
-    }
-
-    /**
-     * Get the dialog (used for reporting double clicks in the table).
-     *
-     * @return the dialog
-     */
-    public Dialog<ButtonType> getDialog() {
-        return dialog;
     }
 
     /**

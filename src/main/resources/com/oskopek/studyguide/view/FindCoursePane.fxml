@@ -6,8 +6,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<VBox alignment="CENTER" prefHeight="144.0" prefWidth="211.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.40"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oskopek.studyguide.controller.FindCoursesController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="144.0" prefWidth="211.0" spacing="20.0"
+      xmlns="http://javafx.com/javafx/8.0.40" fx:controller="com.oskopek.studyguide.controller.FindCoursesController">
     <children>
         <Label text="%studyPane.addCourse">
             <font>

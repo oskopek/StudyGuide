@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<BorderPane fx:id="semesterPane" minHeight="300.0" minWidth="400.0" BorderPane.alignment="CENTER"
-            maxHeight="Infinity" maxWidth="Infinity"
-            xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1"
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="semesterPane" minHeight="300.0" minWidth="400.0"
+            BorderPane.alignment="CENTER" maxHeight="Infinity"
+            maxWidth="Infinity" xmlns="http://javafx.com/javafx/null"
             fx:controller="com.oskopek.studyguide.controller.SemesterController">
     <top>
         <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="5.0"

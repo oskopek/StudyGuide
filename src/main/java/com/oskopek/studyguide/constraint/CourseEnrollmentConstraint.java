@@ -40,15 +40,6 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     }
 
     /**
-     * Get the enrollment we're checking.
-     *
-     * @return the enrollment
-     */
-    public CourseEnrollment getEnrollment() {
-        return enrollment;
-    }
-
-    /**
      * Utility method: takes semesters from the plan and while they are sooner in the plan than the given semester
      * collects all their {@link CourseEnrollment}s in a list. Simulates Haskell's takeWhile method.
      *
@@ -68,19 +59,28 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
         return enrollments;
     }
 
+    /**
+     * Get the enrollment we're checking.
+     *
+     * @return the enrollment
+     */
+    public CourseEnrollment getEnrollment() {
+        return enrollment;
+    }
+
     @Override
     public void validate(@Observes Course changed) {
         semesterPlan.allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
     }
 
     @Override
-    public void fireBrokenEvent(String reason, CourseEnrollment enrollment) {
-        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, enrollment));
+    public void fireBrokenEvent(String reason, Course course) {
+        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent("C", null));
     }
 
     @Override
-    public void fireBrokenEvent(String reason, Course course) {
-        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent("C", null));
+    public void fireBrokenEvent(String reason, CourseEnrollment enrollment) {
+        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, enrollment));
     }
 
     /**

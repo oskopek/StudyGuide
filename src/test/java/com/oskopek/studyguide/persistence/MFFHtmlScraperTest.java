@@ -16,12 +16,12 @@ import static org.junit.Assert.assertNotNull;
  */
 public class MFFHtmlScraperTest {
 
-    private MFFHtmlScraper scraper;
     private final String mffIoiInfoPath = "src/test/resources/com/oskopek/studyguide/persistence/ioi1516.html";
     private final String sisUrl = "file://" + Paths.get(".").toAbsolutePath()
             + "/src/test/resources/com/oskopek/studyguide/persistence/siscopy";
     private final String referenceFile
             = "src/test/resources/com/oskopek/studyguide/persistence/mff_bc_ioi_2015_2016.json";
+    private MFFHtmlScraper scraper;
 
     @Before
     public void setUp() {

@@ -37,8 +37,11 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
     }
 
     @Override
-    public String toString() {
-        return "BrokenCEConstraintEvent[" + enrollment + ", " + getMessage() + "]";
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .appendSuper(super.hashCode())
+                .append(getEnrollment())
+                .toHashCode();
     }
 
     @Override
@@ -57,10 +60,7 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .appendSuper(super.hashCode())
-                .append(getEnrollment())
-                .toHashCode();
+    public String toString() {
+        return "BrokenCEConstraintEvent[" + enrollment + ", " + getMessage() + "]";
     }
 }
