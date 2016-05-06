@@ -50,7 +50,7 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
      * @return the String to use as a message, localized
      */
     private String generateMessage(Collection<Course> unfulfilled) {
-        return messages.getString(message) + ": "
-                + String.join(", ", unfulfilled.stream().map(c -> c.getId()).collect(Collectors.toList()));
+        return messages.getString(message) + String
+                .join(", ", unfulfilled.stream().map(c -> c.getId()).collect(Collectors.toList()));
     }
 }

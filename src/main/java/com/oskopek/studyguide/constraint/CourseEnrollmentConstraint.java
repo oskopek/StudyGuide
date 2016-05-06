@@ -77,7 +77,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
     @Override
     public void fireBrokenEvent(String reason, Course course) {
-        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent("C", null));
+        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, null));
     }
 
     @Override
@@ -94,7 +94,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
      * @return the String to use as a message, localized
      */
     protected String generateMessage(String message, List<Course> brokenRequirements) {
-        return String.format(messages.getString(message), StringUtils.join(brokenRequirements.iterator(), ", "));
+        return messages.getString(message) + StringUtils.join(brokenRequirements.iterator(), ", ");
     }
 
     @Override
