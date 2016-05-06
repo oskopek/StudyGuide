@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -118,6 +119,7 @@ public class Semester {
      *
      * @return non-null, possibly empty
      */
+    @JsonManagedReference("semester-courseenrollment")
     public ObservableList<CourseEnrollment> getCourseEnrollmentList() {
         return courseEnrollmentList.get();
     }
