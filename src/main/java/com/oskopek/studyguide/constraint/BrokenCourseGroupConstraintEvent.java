@@ -15,6 +15,7 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
      * Default constructor.
      *
      * @param message the message to use as a reason why the constraint is broken
+     * @param broken the constraint that was broken and generated this event
      * @param courseGroup the course group that the constraint broke on
      */
     public BrokenCourseGroupConstraintEvent(String message, Constraint broken, CourseGroup courseGroup) {

@@ -10,7 +10,7 @@ public class BrokenResetEvent {
 
     private Constraint originallyBroken;
 
-    /**
+    /**Cou
      * Default constructor.
      *
      * @param originallyBroken the constraint that is not broken anymore

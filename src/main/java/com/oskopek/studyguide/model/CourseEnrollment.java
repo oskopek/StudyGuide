@@ -75,6 +75,11 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         return new CourseEnrollment(course, semester, fulfilled);
     }
 
+    /**
+     * Handler for constraint fixed events.
+     *
+     * @param event the observed event
+     */
     private void onFixedConstraint(@Observes BrokenResetEvent event) {
         if (brokenConstraint.get() != null
                 && brokenConstraint.get().getBrokenConstraint().equals(event.getOriginallyBroken())) {
@@ -82,12 +87,21 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         }
     }
 
+    /**
+     * Handler for constraint broken events.
+     *
+     * @param event the observed event
+     */
     private void onBrokenConstraint(@Observes BrokenCourseEnrollmentConstraintEvent event) {
         if (equals(event.getEnrollment())) {
             brokenConstraint.set(event);
         }
     }
 
+    /**
+     * The property indicating where this enrollment is breaking a constraint.
+     * @return the property
+     */
     public ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraintProperty() {
         return brokenConstraint;
     }

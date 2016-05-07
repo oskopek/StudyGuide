@@ -29,6 +29,7 @@ public abstract class StringMessageEvent {
      * Constructs a new message event with the given message.
      *
      * @param message the message to broadcast
+     * @param brokenConstraint the constraint that was broken and generated this event
      */
     public StringMessageEvent(String message, Constraint brokenConstraint) {
         this.message = message;
@@ -44,6 +45,11 @@ public abstract class StringMessageEvent {
         return message;
     }
 
+    /**
+     * Get the broken constraint this event originated at.
+     *
+     * @return the constraint
+     */
     public Constraint getBrokenConstraint() {
         return brokenConstraint;
     }
