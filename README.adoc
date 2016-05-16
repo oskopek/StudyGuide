@@ -25,6 +25,9 @@ https://github.com/oskopek/StudyGuide/issues[open an issue].
 ** If you want to run a release, just try: `java -jar StudyGuide.jar`
 ** If you followed the build environment setup and want to run your version of StudyGuide,
 run `mvn exec:java` from the main project directory.
+** If you want to run a translated version of StudyGuide, set your system locale accordingly and restart StudyGuide.
+If you want to try out a translated version (on Linux), try: `LC_ALL="LOCALE" java -jar StudyGuide.jar`, where
+`LOCALE` is any locale available on your system (run `locale -a` to view all available).
 
 StudyGuide uses http://semver.org/[semantic versioning].
 
