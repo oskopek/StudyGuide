@@ -278,29 +278,14 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     /**
-     * Get the localized or default name, depending on the locale.
-     *
-     * @param otherLocale the locale in which to get the name
-     * @return localized name iff the locale languages are the same
-     */
-    public String name(Locale otherLocale) {
-        if (getLocalizedName() == null || otherLocale == null
-                || !getLocale().getLanguage().equals(otherLocale.getLanguage())) {
-            return getName();
-        } else {
-            return getLocalizedName();
-        }
-    }
-
-    /**
      * Get the localized or default name property, depending on the locale.
      *
-     * @param otherLocale the locale in which to get the name property
-     * @return localized name property iff the locale languages are the same
+     * @return localized name property iff the locale languages are the same with the default
      */
-    public StringProperty nameProperty(Locale otherLocale) {
-        if (getLocalizedName() == null || otherLocale == null
-                || !getLocale().getLanguage().equals(otherLocale.getLanguage())) {
+    public StringProperty nameOrLocalizedNameProperty() {
+        Locale systemLocale = Locale.getDefault();
+        if (getLocalizedName() == null || systemLocale == null
+                || !systemLocale.getLanguage().equals(getLocale().getLanguage())) {
             return nameProperty();
         } else {
             return localizedNameProperty();
@@ -392,6 +377,21 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         //        teacherNames.addListener((x, y, z) -> fireValueChangedEvent());
         prerequisites.addListener((x, y, z) -> fireValueChangedEvent());
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
+    }
+
+    /**
+     * Get the localized or default name, depending on the locale.
+     *
+     * @return localized name iff the locale languages are the same with the default
+     */
+    public String nameOrLocalizedName() {
+        Locale systemLocale = Locale.getDefault();
+        if (getLocalizedName() == null || systemLocale == null
+                || !systemLocale.getLanguage().equals(getLocale().getLanguage())) {
+            return nameProperty().getValue();
+        } else {
+            return localizedNameProperty().getValue();
+        }
     }
 
     @Override

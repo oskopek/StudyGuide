@@ -83,7 +83,7 @@ public class CourseDetailController extends AbstractController {
     public void setCourse(Course newCourse) {
         if (course.get() != null) {
             idField.textProperty().unbindBidirectional(course.get().idProperty());
-            nameField.textProperty().unbindBidirectional(course.get().nameProperty());
+            nameField.textProperty().unbindBidirectional(course.get().nameOrLocalizedNameProperty());
             creditsValueProperty.unbindBidirectional();
             teacherNamesProperty.unbindBidirectional();
             corequisitesProperty.unbindBidirectional();
@@ -111,7 +111,7 @@ public class CourseDetailController extends AbstractController {
             corequisitesField.setDisable(false);
 
             idField.textProperty().bindBidirectional(course.get().idProperty());
-            nameField.textProperty().bindBidirectional(course.get().nameProperty());
+            nameField.textProperty().bindBidirectional(course.get().nameOrLocalizedNameProperty());
             creditsValueProperty.bindBidirectional(course.get().creditsProperty(), creditsField.textProperty());
             teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(),
                     teacherNamesField.textProperty());

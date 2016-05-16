@@ -93,7 +93,7 @@ public class SemesterBoxController extends AbstractController {
             }
         });
         idColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().idProperty());
-        nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameProperty());
+        nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameOrLocalizedNameProperty());
         creditsColumn.setCellValueFactory(
                 cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
         fulfilledColumn.setCellFactory((final TableColumn<CourseEnrollment, Boolean> param) ->

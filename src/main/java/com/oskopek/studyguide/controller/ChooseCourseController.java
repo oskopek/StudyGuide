@@ -51,7 +51,7 @@ public class ChooseCourseController extends AbstractController {
     private void initialize() {
         courseTableView.itemsProperty().bindBidirectional(courseListProperty);
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
-        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameOrLocalizedNameProperty());
         creditsColumn.setCellValueFactory(cellData -> cellData.getValue().getCredits().creditValueProperty());
     }
 

@@ -60,7 +60,7 @@ public class FindRegistryCoursesController implements FindCourses {
         Stream<? extends Map.Entry<Float, ? extends Course>> sortedById =
                 mapToSortedPairs(course -> metric.compare(key, course.getId())).limit(3);
         Stream<? extends Map.Entry<Float, ? extends Course>> sortedByName =
-                mapToSortedPairs(course -> metric.compare(key, course.name(Locale.getDefault()))).limit(10);
+                mapToSortedPairs(course -> metric.compare(key, course.nameOrLocalizedName())).limit(10);
         return Stream.concat(sortedById, sortedByName)
                 .sorted(floatCoursePairComparator).distinct()
                 .limit(10).map(Map.Entry::getValue);
@@ -73,7 +73,7 @@ public class FindRegistryCoursesController implements FindCourses {
 
     @Override
     public Stream<Course> findCoursesByName(String name, Locale locale) {
-        return findCoursesInternal(course -> metric.compare(name, course.name(locale)));
+        return findCoursesInternal(course -> metric.compare(name, course.nameOrLocalizedName()));
     }
 
     /**
