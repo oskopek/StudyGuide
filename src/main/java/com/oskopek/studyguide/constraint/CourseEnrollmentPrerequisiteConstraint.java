@@ -34,9 +34,9 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
-        logger.trace("Caught event {} at {}", changed, this);
+        logger.get().trace("Caught event {} at {}", changed, this);
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
-        int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
+        int semesterIndex = semesterPlan.get().getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
         if (semesterIndex < 0) {
             if (!corequisites.isEmpty()) {
                 fireBrokenEvent(generateMessage(message, corequisites), changed);
@@ -45,7 +45,7 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
         }
 
         List<CourseEnrollment> enrollmentsUntilNow =
-                takeUntilSemester(semesterPlan, semesterPlan.getSemesterList().get(semesterIndex));
+                takeUntilSemester(semesterPlan.get(), semesterPlan.get().getSemesterList().get(semesterIndex));
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = corequisites.indexOf(enrollment.getCourse());
             if (found >= 0 && enrollment.isFulfilled()) {

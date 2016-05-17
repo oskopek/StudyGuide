@@ -38,7 +38,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
     @Override
     public void validate() {
         Map<Course, List<CourseEnrollment>> groupByCourse =
-                semesterPlan.getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
+                semesterPlan.get().getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
                         .collect(Collectors.groupingBy(ce -> ce.getCourse()));
         for (Map.Entry<Course, List<CourseEnrollment>> entry : groupByCourse.entrySet()) {
             Course course = entry.getKey();

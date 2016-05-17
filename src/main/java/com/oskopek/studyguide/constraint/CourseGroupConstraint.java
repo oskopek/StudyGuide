@@ -49,7 +49,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(Course changed) {
-        logger.trace("Caught event {} at {}", changed, this);
+        logger.get().trace("Caught event {} at {}", changed, this);
         if (courseGroup.courseListProperty().contains(changed)) {
             validate();
         }
@@ -58,7 +58,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
-        logger.trace("Caught event {} at {}", changed, this);
+        logger.get().trace("Caught event {} at {}", changed, this);
         validate(changed.getCourse());
     }
 
@@ -78,7 +78,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     public void fireBrokenEvent(String message) {
-        eventBus.post(new BrokenCourseGroupConstraintEvent(message, this, courseGroup));
+        eventBus.get().post(new BrokenCourseGroupConstraintEvent(message, this, courseGroup));
     }
 
     @Override

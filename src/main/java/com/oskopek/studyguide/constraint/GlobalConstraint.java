@@ -21,14 +21,14 @@ public abstract class GlobalConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(Course changed) {
-        logger.trace("Caught event {} at {}", changed, this);
+        logger.get().trace("Caught event {} at {}", changed, this);
         validate();
     }
 
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
-        logger.trace("Caught event {} at {}", changed, this);
+        logger.get().trace("Caught event {} at {}", changed, this);
         validate();
     }
 
@@ -54,6 +54,6 @@ public abstract class GlobalConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     protected void fireBrokenEvent(String message) {
-        eventBus.post(new BrokenGlobalConstraintEvent(message, this));
+        eventBus.get().post(new BrokenGlobalConstraintEvent(message, this));
     }
 }
