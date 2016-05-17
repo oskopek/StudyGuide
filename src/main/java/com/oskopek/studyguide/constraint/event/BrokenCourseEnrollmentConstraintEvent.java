@@ -40,10 +40,7 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .appendSuper(super.hashCode())
-                .append(getEnrollment())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).appendSuper(super.hashCode()).append(getEnrollment()).toHashCode();
     }
 
     @Override
@@ -55,9 +52,7 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
             return false;
         }
         BrokenCourseEnrollmentConstraintEvent that = (BrokenCourseEnrollmentConstraintEvent) o;
-        return new EqualsBuilder()
-                .appendSuper(super.equals(o))
-                .append(getEnrollment(), that.getEnrollment())
+        return new EqualsBuilder().appendSuper(super.equals(o)).append(getEnrollment(), that.getEnrollment())
                 .isEquals();
     }
 

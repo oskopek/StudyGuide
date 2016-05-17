@@ -95,8 +95,9 @@ public class Semester {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
         }
         if (courseEnrollmentList.contains(courseEnrollment)) {
-            throw new IllegalArgumentException("Semester (" + this + ") already contains course enrollment of course ("
-                    + courseEnrollment.getCourse() + ").");
+            throw new IllegalArgumentException(
+                    "Semester (" + this + ") already contains course enrollment of course (" + courseEnrollment
+                            .getCourse() + ").");
         }
         courseEnrollmentList.add(courseEnrollment);
     }

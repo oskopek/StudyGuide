@@ -28,8 +28,7 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
     @Override
     public void validate() {
         Credits fulfilledCourseCreditSum = Credits.valueOf(
-                semesterPlan.getSemesterList().stream()
-                        .flatMap(s -> s.getCourseEnrollmentList().stream())
+                semesterPlan.getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
                         .filter(CourseEnrollment::isFulfilled).map(ce -> ce.getCourse().getCredits().getCreditValue())
                         .reduce(0, Integer::sum));
         if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
@@ -61,9 +60,7 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getTotalNeeded())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(getTotalNeeded()).toHashCode();
     }
 
     @Override
@@ -75,8 +72,6 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
             return false;
         }
         GlobalCreditsSumConstraint that = (GlobalCreditsSumConstraint) o;
-        return new EqualsBuilder()
-                .append(getTotalNeeded(), that.getTotalNeeded())
-                .isEquals();
+        return new EqualsBuilder().append(getTotalNeeded(), that.getTotalNeeded()).isEquals();
     }
 }

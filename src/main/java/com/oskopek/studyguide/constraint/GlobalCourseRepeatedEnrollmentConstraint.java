@@ -30,9 +30,9 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     @Override
     public void validate() {
-        Map<Course, List<CourseEnrollment>> groupByCourse = semesterPlan.getSemesterList().stream()
-                .flatMap(s -> s.getCourseEnrollmentList().stream())
-                .collect(Collectors.groupingBy(ce -> ce.getCourse()));
+        Map<Course, List<CourseEnrollment>> groupByCourse =
+                semesterPlan.getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
+                        .collect(Collectors.groupingBy(ce -> ce.getCourse()));
         for (Map.Entry<Course, List<CourseEnrollment>> entry : groupByCourse.entrySet()) {
             Course course = entry.getKey();
             List<CourseEnrollment> enrollments = entry.getValue();
@@ -67,9 +67,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getMaxRepeatedEnrollment())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(getMaxRepeatedEnrollment()).toHashCode();
     }
 
     @Override
@@ -81,8 +79,6 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
             return false;
         }
         GlobalCourseRepeatedEnrollmentConstraint that = (GlobalCourseRepeatedEnrollmentConstraint) o;
-        return new EqualsBuilder()
-                .append(getMaxRepeatedEnrollment(), that.getMaxRepeatedEnrollment())
-                .isEquals();
+        return new EqualsBuilder().append(getMaxRepeatedEnrollment(), that.getMaxRepeatedEnrollment()).isEquals();
     }
 }

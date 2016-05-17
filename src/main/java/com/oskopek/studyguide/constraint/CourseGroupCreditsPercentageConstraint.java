@@ -80,8 +80,9 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     @Override
     public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
-        Stream<Course> fulfilledGroupCourses = semesterPlan.allCourseEnrollments()
-                .filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse()).filter(c -> groupCourses.contains(c));
+        Stream<Course> fulfilledGroupCourses =
+                semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
+                        .filter(c -> groupCourses.contains(c));
         int creditSum = groupCourses.stream().map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         int fulfilledSum = fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         Fraction gotFraction = Fraction.getFraction(fulfilledSum, creditSum);
@@ -92,10 +93,7 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .appendSuper(super.hashCode())
-                .append(getNeededFraction())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).appendSuper(super.hashCode()).append(getNeededFraction()).toHashCode();
     }
 
     @Override
@@ -107,9 +105,7 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
             return false;
         }
         CourseGroupCreditsPercentageConstraint that = (CourseGroupCreditsPercentageConstraint) o;
-        return new EqualsBuilder()
-                .appendSuper(super.equals(o))
-                .append(getNeededFraction(), that.getNeededFraction())
+        return new EqualsBuilder().appendSuper(super.equals(o)).append(getNeededFraction(), that.getNeededFraction())
                 .isEquals();
     }
 

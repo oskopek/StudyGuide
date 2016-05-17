@@ -1,11 +1,6 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.oskopek.studyguide.constraint.Constraint;
-import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
-import com.oskopek.studyguide.constraint.CourseEnrollmentCorequisiteConstraint;
-import com.oskopek.studyguide.constraint.CourseEnrollmentPrerequisiteConstraint;
-import com.oskopek.studyguide.constraint.CourseGroupConstraint;
-import com.oskopek.studyguide.constraint.GlobalConstraint;
+import com.oskopek.studyguide.constraint.*;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -131,18 +126,14 @@ public class Constraints {
      * @param courseEnrollment the course enrollment
      */
     public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
-        courseEnrollmentConstraintList
-                .addAll(new CourseEnrollmentCorequisiteConstraint(courseEnrollment),
-                        new CourseEnrollmentPrerequisiteConstraint(courseEnrollment));
+        courseEnrollmentConstraintList.addAll(new CourseEnrollmentCorequisiteConstraint(courseEnrollment),
+                new CourseEnrollmentPrerequisiteConstraint(courseEnrollment));
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getCourseGroupConstraintList())
-                .append(getGlobalConstraintList())
-                .append(getCourseEnrollmentConstraintList())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(getCourseGroupConstraintList()).append(getGlobalConstraintList())
+                .append(getCourseEnrollmentConstraintList()).toHashCode();
     }
 
     @Override
@@ -154,11 +145,9 @@ public class Constraints {
             return false;
         }
         Constraints that = (Constraints) o;
-        return new EqualsBuilder()
-                .append(getCourseGroupConstraintList(), that.getCourseGroupConstraintList())
+        return new EqualsBuilder().append(getCourseGroupConstraintList(), that.getCourseGroupConstraintList())
                 .append(getGlobalConstraintList(), that.getGlobalConstraintList())
-                .append(getCourseEnrollmentConstraintList(), that.getCourseEnrollmentConstraintList())
-                .isEquals();
+                .append(getCourseEnrollmentConstraintList(), that.getCourseEnrollmentConstraintList()).isEquals();
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -11,10 +12,6 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 /**
  * A simple and non stable integration test for {@link MFFHtmlScraper}.
@@ -42,9 +39,9 @@ public class MFFWebScraperIT {
     @Test
     public void testScrapeCoursesMgr() throws Exception {
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
-        String[] refFiles = {"mff_mgr_idm_2015_2016.json", "mff_mgr_iti_2015_2016.json",
-                "mff_mgr_isdim_2015_2016.json", "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json",
-                "mff_mgr_iui_2015_2016.json", "mff_mgr_ipgvph_2015_2016.json"};
+        String[] refFiles = {"mff_mgr_idm_2015_2016.json", "mff_mgr_iti_2015_2016.json", "mff_mgr_isdim_2015_2016.json",
+                "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json", "mff_mgr_iui_2015_2016.json",
+                "mff_mgr_ipgvph_2015_2016.json"};
         String[] urlExt = {"i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm", "i3b25.htm", "i3b26.htm", "i3b27.htm"};
         scrapeAllParallel(mffUrlBase, urlExt, refFileBase, refFiles);
     }
@@ -59,8 +56,8 @@ public class MFFWebScraperIT {
         }
     }
 
-    private void scrapeAllParallel(String urlBase, String[] urlExt, String refFileBase,
-                                   String[] refFiles) throws Exception {
+    private void scrapeAllParallel(String urlBase, String[] urlExt, String refFileBase, String[] refFiles)
+            throws Exception {
         int shortenedLength = 1; // urlExt.length;
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         for (int i = 0; i < shortenedLength; i++) {

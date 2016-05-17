@@ -1,12 +1,7 @@
 package com.oskopek.studyguide.model.courses;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
@@ -64,7 +59,7 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
      * or if the locale is null when localizedName is non-null
      */
     public Course(String id, String name, String localizedName, Locale locale, Credits credits,
-                  List<String> teacherNames, List<Course> prerequisites, List<Course> corequisites)
+            List<String> teacherNames, List<Course> prerequisites, List<Course> corequisites)
             throws IllegalArgumentException {
         if (id == null || name == null || credits == null) {
             throw new IllegalArgumentException("Id, name and credits cannot be null.");
@@ -284,8 +279,8 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
      */
     public StringProperty nameOrLocalizedNameProperty() {
         Locale systemLocale = Locale.getDefault();
-        if (getLocalizedName() == null || systemLocale == null
-                || !systemLocale.getLanguage().equals(getLocale().getLanguage())) {
+        if (getLocalizedName() == null || systemLocale == null || !systemLocale.getLanguage()
+                .equals(getLocale().getLanguage())) {
             return nameProperty();
         } else {
             return localizedNameProperty();
@@ -386,8 +381,8 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
      */
     public String nameOrLocalizedName() {
         Locale systemLocale = Locale.getDefault();
-        if (getLocalizedName() == null || systemLocale == null
-                || !systemLocale.getLanguage().equals(getLocale().getLanguage())) {
+        if (getLocalizedName() == null || systemLocale == null || !systemLocale.getLanguage()
+                .equals(getLocale().getLanguage())) {
             return nameProperty().getValue();
         } else {
             return localizedNameProperty().getValue();

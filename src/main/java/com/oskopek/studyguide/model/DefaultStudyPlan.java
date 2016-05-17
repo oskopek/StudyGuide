@@ -30,9 +30,27 @@ public class DefaultStudyPlan implements StudyPlan {
         return constraints.get();
     }
 
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param constraints the {@link Constraints} to set
+     */
+    private void setConstraints(Constraints constraints) {
+        this.constraints.set(constraints);
+    }
+
     @Override
     public CourseRegistry getCourseRegistry() {
         return courseRegistry.get();
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param courseRegistry the {@link CourseRegistry} to set
+     */
+    private void setCourseRegistry(CourseRegistry courseRegistry) {
+        this.courseRegistry.set(courseRegistry);
     }
 
     @Override
@@ -47,24 +65,6 @@ public class DefaultStudyPlan implements StudyPlan {
      */
     private void setSemesterPlan(SemesterPlan semesterPlan) {
         this.semesterPlan.set(semesterPlan);
-    }
-
-    /**
-     * Private setter for Jackson persistence.
-     *
-     * @param courseRegistry the {@link CourseRegistry} to set
-     */
-    private void setCourseRegistry(CourseRegistry courseRegistry) {
-        this.courseRegistry.set(courseRegistry);
-    }
-
-    /**
-     * Private setter for Jackson persistence.
-     *
-     * @param constraints the {@link Constraints} to set
-     */
-    private void setConstraints(Constraints constraints) {
-        this.constraints.set(constraints);
     }
 
     /**
@@ -116,7 +116,7 @@ public class DefaultStudyPlan implements StudyPlan {
 
     @Override
     public String toString() {
-        return "DefaultStudyPlan[semesters=" + getSemesterPlan() + ", courses=" + getCourseRegistry()
-                + ", constraints=" + getConstraints() + ']';
+        return "DefaultStudyPlan[semesters=" + getSemesterPlan() + ", courses=" + getCourseRegistry() + ", constraints="
+                + getConstraints() + ']';
     }
 }

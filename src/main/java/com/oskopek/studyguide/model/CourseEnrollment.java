@@ -27,8 +27,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     private final BooleanProperty fulfilled;
     @JsonBackReference("semester-courseenrollment")
     private final ObjectProperty<Semester> semester;
-    private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint
-            = new SimpleObjectProperty<>(); // TODO PRIORITY move this somewhere
+    private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint =
+            new SimpleObjectProperty<>(); // TODO PRIORITY move this somewhere
 
     private transient Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -81,8 +81,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      */
     @Subscribe
     private void onFixedConstraint(BrokenResetEvent event) {
-        if (brokenConstraint.get() != null
-                && brokenConstraint.get().getBrokenConstraint().equals(event.getOriginallyBroken())) {
+        if (brokenConstraint.get() != null && brokenConstraint.get().getBrokenConstraint()
+                .equals(event.getOriginallyBroken())) {
             brokenConstraint.set(null);
         }
     }
@@ -101,6 +101,7 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
 
     /**
      * The property indicating where this enrollment is breaking a constraint.
+     *
      * @return the property
      */
     public ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraintProperty() {

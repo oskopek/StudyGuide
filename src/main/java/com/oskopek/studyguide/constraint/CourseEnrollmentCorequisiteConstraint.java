@@ -6,7 +6,6 @@ import com.oskopek.studyguide.model.courses.Course;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.enterprise.event.Observes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,8 +35,8 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
         logger.debug("Validating {} on {}", courseEnrollment, this);
         // TODO PRIORITY why are these not called? because they are not fired!
         // TODO PRIORITY -> redo the firing in course and course enrollment
-        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
-                getCourseEnrollment().getSemester());
+        List<CourseEnrollment> enrollmentsUntilNow =
+                takeUntilSemester(semesterPlan, getCourseEnrollment().getSemester());
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = corequisites.indexOf(enrollment.getCourse());

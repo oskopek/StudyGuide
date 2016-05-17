@@ -35,8 +35,9 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
     @Override
     public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
-        Stream<Course> fulfilledGroupCourses = semesterPlan.allCourseEnrollments()
-                .filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse()).filter(c -> groupCourses.contains(c));
+        Stream<Course> fulfilledGroupCourses =
+                semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
+                        .filter(c -> groupCourses.contains(c));
         Credits fulfilledSum = Credits.valueOf(
                 fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum));
         if (fulfilledSum.compareTo(totalNeeded) < 0) {
@@ -46,10 +47,7 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .appendSuper(super.hashCode())
-                .append(getTotalNeeded())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).appendSuper(super.hashCode()).append(getTotalNeeded()).toHashCode();
     }
 
     @Override
@@ -61,9 +59,7 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
             return false;
         }
         CourseGroupCreditsSumConstraint that = (CourseGroupCreditsSumConstraint) o;
-        return new EqualsBuilder()
-                .appendSuper(super.equals(o))
-                .append(getTotalNeeded(), that.getTotalNeeded())
+        return new EqualsBuilder().appendSuper(super.equals(o)).append(getTotalNeeded(), that.getTotalNeeded())
                 .isEquals();
     }
 

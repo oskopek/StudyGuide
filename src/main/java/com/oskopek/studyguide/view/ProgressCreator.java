@@ -29,8 +29,7 @@ public final class ProgressCreator {
      * @param message the message to display while waiting
      * @return the stage of the opened dialog with the progress bar
      */
-    public static Stage showProgress(
-            ProgressObservable progressObservable, String message) {
+    public static Stage showProgress(ProgressObservable progressObservable, String message) {
         Stage dialogStage = new Stage();
         ProgressBar progressBar = new ProgressBar();
 

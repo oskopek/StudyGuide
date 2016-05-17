@@ -3,6 +3,7 @@ package com.oskopek.studyguide.controller;
 import com.oskopek.studyguide.model.CourseGenerator;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.simmetrics.StringMetric;
@@ -11,12 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
-
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 /**
  * Unit test for {@link FindRegistryCoursesController}.
@@ -42,10 +37,10 @@ public class FindRegistryCoursesControllerTest {
         String key = "aaaaaaa";
         List<Course> courses = findRegistryCoursesController.findCourses(key).collect(Collectors.toList());
 
-        List<Course> courseId = findRegistryCoursesController.findCoursesById(key)
-                .limit(10).collect(Collectors.toList());
-        List<Course> courseName = findRegistryCoursesController.findCoursesByName(key, Locale.getDefault())
-                .limit(10).collect(Collectors.toList());
+        List<Course> courseId =
+                findRegistryCoursesController.findCoursesById(key).limit(10).collect(Collectors.toList());
+        List<Course> courseName = findRegistryCoursesController.findCoursesByName(key, Locale.getDefault()).limit(10)
+                .collect(Collectors.toList());
 
         assertNotNull(courses);
         assertEquals(10, courses.size());
@@ -74,8 +69,8 @@ public class FindRegistryCoursesControllerTest {
     @Test
     public void testFindCoursesById() throws Exception {
         String key = "aaaaaaa";
-        List<Course> courses = findRegistryCoursesController.findCoursesById(key)
-                .limit(10).collect(Collectors.toList());
+        List<Course> courses =
+                findRegistryCoursesController.findCoursesById(key).limit(10).collect(Collectors.toList());
         assertNotNull(courses);
         assertEquals(10, courses.size());
         float lastVal = 1.0f;
@@ -89,8 +84,8 @@ public class FindRegistryCoursesControllerTest {
     @Test
     public void testFindCoursesByName() throws Exception {
         String key = "aaaaaaa";
-        List<Course> courses = findRegistryCoursesController.findCoursesByName(key, Locale.getDefault())
-                .limit(10).collect(Collectors.toList());
+        List<Course> courses = findRegistryCoursesController.findCoursesByName(key, Locale.getDefault()).limit(10)
+                .collect(Collectors.toList());
         assertNotNull(courses);
         assertEquals(10, courses.size());
         float lastVal = 1.0f;

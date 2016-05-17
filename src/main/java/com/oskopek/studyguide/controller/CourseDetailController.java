@@ -113,8 +113,8 @@ public class CourseDetailController extends AbstractController {
             idField.textProperty().bindBidirectional(course.get().idProperty());
             nameField.textProperty().bindBidirectional(course.get().nameOrLocalizedNameProperty());
             creditsValueProperty.bindBidirectional(course.get().creditsProperty(), creditsField.textProperty());
-            teacherNamesProperty.bindBidirectional(course.get().teacherNamesProperty(),
-                    teacherNamesField.textProperty());
+            teacherNamesProperty
+                    .bindBidirectional(course.get().teacherNamesProperty(), teacherNamesField.textProperty());
             corequisitesProperty.bindBidirectional(studyGuideApplication.getStudyPlan().getCourseRegistry(),
                     course.get().corequisitesProperty(), corequisitesField.textProperty());
             prerequisitesProperty.bindBidirectional(studyGuideApplication.getStudyPlan().getCourseRegistry(),
@@ -163,7 +163,7 @@ public class CourseDetailController extends AbstractController {
          * @param stringProperty the string property to bind
          */
         public void bindBidirectional(CourseRegistry registry, ListProperty<Course> listProperty,
-                                      StringProperty stringProperty) {
+                StringProperty stringProperty) {
             this.courseRegistry = registry;
             this.listProperty = listProperty;
             this.stringProperty = stringProperty;
@@ -207,8 +207,9 @@ public class CourseDetailController extends AbstractController {
                 return; // TODO OPTIONAL check if valid correctly
             }
             logger.debug("Synchronizing from stringList {} using course registry {}", stringList, courseRegistry);
-            List<Course> list = Stream.of(stringList.split(",")).map(String::trim)
-                    .map(id -> courseRegistry.getCourse(id)).filter(x -> x != null).collect(Collectors.toList());
+            List<Course> list =
+                    Stream.of(stringList.split(",")).map(String::trim).map(id -> courseRegistry.getCourse(id))
+                            .filter(x -> x != null).collect(Collectors.toList());
             listProperty.setValue(FXCollections.observableArrayList(list));
             logger.debug("Synchronized to list {}", list);
         }

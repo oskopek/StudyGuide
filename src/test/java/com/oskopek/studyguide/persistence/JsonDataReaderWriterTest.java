@@ -3,6 +3,7 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import org.junit.After;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,9 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * Probably deserves more thorough testing.
@@ -31,8 +29,7 @@ public class JsonDataReaderWriterTest {
         jsonDataReaderWriter = new JsonDataReaderWriter();
         jsonPath = Files.createTempFile("tmpPlan", ".json");
         Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/mff_bc_ioi_2015_2016.json"),
-                jsonPath,
-                StandardCopyOption.REPLACE_EXISTING);
+                jsonPath, StandardCopyOption.REPLACE_EXISTING);
         plan = new DefaultStudyPlan();
     }
 

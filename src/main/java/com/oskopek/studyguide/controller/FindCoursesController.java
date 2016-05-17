@@ -16,11 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -68,8 +64,8 @@ public class FindCoursesController extends AbstractController implements FindCou
         logger.debug("Courses found for input \"{}\": {}", input, Arrays.toString(courses.toArray()));
 
         if (courses.isEmpty()) {
-            AlertCreator.showAlert(Alert.AlertType.INFORMATION, "No courses found for search string: \""
-                    + input + "\"");
+            AlertCreator
+                    .showAlert(Alert.AlertType.INFORMATION, "No courses found for search string: \"" + input + "\"");
             return;
         }
 
@@ -83,8 +79,7 @@ public class FindCoursesController extends AbstractController implements FindCou
 
                 Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
                 if (addTo == null) { // no semester in plan
-                    AlertCreator.showAlert(Alert.AlertType.ERROR,
-                            messages.getString("findCourses.noSemester"));
+                    AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("findCourses.noSemester"));
                     return;
                 } else {
                     CourseEnrollment enrollment;
@@ -96,8 +91,7 @@ public class FindCoursesController extends AbstractController implements FindCou
                                 messages.getString("findCourses.courseAlreadyEnrolled"));
                         return;
                     }
-                    studyGuideApplication.getStudyPlan().getConstraints()
-                            .addAllCourseEnrollmentConstraints(enrollment);
+                    studyGuideApplication.getStudyPlan().getConstraints().addAllCourseEnrollmentConstraints(enrollment);
                 }
             }
         }
@@ -119,14 +113,13 @@ public class FindCoursesController extends AbstractController implements FindCou
      * @return top 10 list of distinct collected Courses
      */
     private List<Course> findCoursesInternal(Function<? super FindCourses, Stream<Course>> searchFunction) {
-        return findCoursesList.parallelStream().flatMap(searchFunction)
-                .distinct().limit(10).collect(Collectors.toList());
+        return findCoursesList.parallelStream().flatMap(searchFunction).distinct().limit(10)
+                .collect(Collectors.toList());
     }
 
     @Override
     public Stream<Course> findCourses(String key) {
-        return findCoursesList.parallelStream().flatMap((FindCourses f) -> f.findCourses(key))
-                .distinct().limit(10);
+        return findCoursesList.parallelStream().flatMap((FindCourses f) -> f.findCourses(key)).distinct().limit(10);
     }
 
     @Override
@@ -150,8 +143,7 @@ public class FindCoursesController extends AbstractController implements FindCou
         if (studyPlan == null) {
             return;
         }
-        findCoursesList.add(new FindRegistryCoursesController(
-                studyPlan.getCourseRegistry()));
+        findCoursesList.add(new FindRegistryCoursesController(studyPlan.getCourseRegistry()));
     }
 
 }

@@ -64,9 +64,7 @@ public abstract class StringMessageEvent {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getMessage())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(getMessage()).toHashCode();
     }
 
     @Override
@@ -78,9 +76,7 @@ public abstract class StringMessageEvent {
             return false;
         }
         StringMessageEvent that = (StringMessageEvent) o;
-        return new EqualsBuilder()
-                .append(getMessage(), that.getMessage())
-                .isEquals();
+        return new EqualsBuilder().append(getMessage(), that.getMessage()).isEquals();
     }
 
     @Override

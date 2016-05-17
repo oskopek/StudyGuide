@@ -23,11 +23,7 @@ import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * Controller for SemesterPane.
@@ -116,8 +112,9 @@ public class SemesterController extends AbstractController {
         while (studyPlan.getCourseRegistry().getCourse("Course" + courseId) != null) {
             courseId++;
         }
-        Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(),
-                Credits.valueOf(0), new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
+        Course course =
+                new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(), Credits.valueOf(0),
+                        new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
         studyPlan.getCourseRegistry().putCourse(course);
         courseDetailController.setCourse(course);
     }
@@ -134,8 +131,8 @@ public class SemesterController extends AbstractController {
             AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("course.cannotAdd"));
             return;
         }
-        EnterStringController enterStringController = enterStringDialogPaneCreator.create(
-                messages.getString("semester.enterCourseId"));
+        EnterStringController enterStringController =
+                enterStringDialogPaneCreator.create(messages.getString("semester.enterCourseId"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedCourseId = enterStringController.getSubmittedString();
@@ -150,8 +147,8 @@ public class SemesterController extends AbstractController {
             courseTask.exceptionProperty().addListener((observable, oldValue, newValue) -> {
                 progressDialog.close();
                 AlertCreator.showAlert(Alert.AlertType.ERROR,
-                        messages.getString("semesterPane.addCourseFromFailed") + ":\n\n"
-                                + newValue.getLocalizedMessage());
+                        messages.getString("semesterPane.addCourseFromFailed") + ":\n\n" + newValue
+                                .getLocalizedMessage());
                 throw new IllegalStateException("Scrape courses from failed.", newValue);
             });
             courseTask.setOnSucceeded(event -> {
@@ -160,8 +157,7 @@ public class SemesterController extends AbstractController {
             });
             courseTask.setOnFailed(event -> {
                 progressDialog.close();
-                AlertCreator.showAlert(Alert.AlertType.ERROR,
-                        messages.getString("semesterPane.addCourseFromFailed"));
+                AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("semesterPane.addCourseFromFailed"));
             });
             new Thread(courseTask).start();
         }
@@ -184,8 +180,8 @@ public class SemesterController extends AbstractController {
      * @param enrollment the enrollment to move from the {@code from} semester to the {@code to} semester
      */
     public void moveCourseEnrollment(Semester from, Semester to, CourseEnrollment enrollment) {
-        if (from == null || to == null || enrollment == null || enrollment.getSemester() == null
-                || !from.getCourseEnrollmentList().contains(enrollment) || !enrollment.getSemester().equals(from)) {
+        if (from == null || to == null || enrollment == null || enrollment.getSemester() == null || !from
+                .getCourseEnrollmentList().contains(enrollment) || !enrollment.getSemester().equals(from)) {
             throw new IllegalArgumentException("The course enrollment is not correctly set in the from semester.");
         }
         // we do not change course enrollment constraints when moving
@@ -194,8 +190,7 @@ public class SemesterController extends AbstractController {
         } catch (IllegalArgumentException e) {
             logger.info("Moving Course enrollment ({}) to wrong semester({}), showing error box. (enrolled twice)",
                     enrollment, to);
-            AlertCreator.showAlert(Alert.AlertType.ERROR,
-                    messages.getString("findCourses.courseAlreadyEnrolled"));
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("findCourses.courseAlreadyEnrolled"));
             return;
         }
         from.removeCourseEnrollment(enrollment);

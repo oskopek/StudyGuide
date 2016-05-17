@@ -11,9 +11,6 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.enterprise.event.Event;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,10 +90,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getCourseEnrollment())
-                .append(getClass().getName())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(getCourseEnrollment()).append(getClass().getName()).toHashCode();
     }
 
     @Override
@@ -108,10 +102,8 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
             return false;
         }
         CourseEnrollmentConstraint that = (CourseEnrollmentConstraint) o;
-        return new EqualsBuilder()
-                .append(getCourseEnrollment(), that.getCourseEnrollment())
+        return new EqualsBuilder().append(getCourseEnrollment(), that.getCourseEnrollment())
                 // used for differentiating types of Course Enrollment constraints
-                .append(getClass().getName(), that.getClass().getName())
-                .isEquals();
+                .append(getClass().getName(), that.getClass().getName()).isEquals();
     }
 }

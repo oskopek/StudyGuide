@@ -108,8 +108,8 @@ public class SISHtmlScraper implements ProgressObservable {
         Elements table2 = tab2s.get(2).select("tr");
         List<String> teacherList = new ArrayList<>();
         if (!table2.isEmpty()) {
-            teacherList = table2.get(0).select("td").first().select("a.link3")
-                    .stream().map(Element::text).collect(Collectors.toList());
+            teacherList = table2.get(0).select("td").first().select("a.link3").stream().map(Element::text)
+                    .collect(Collectors.toList());
         }
 
         CourseRegistry prereqs = new CourseRegistry();
@@ -130,8 +130,8 @@ public class SISHtmlScraper implements ProgressObservable {
                 try {
                     dependency = scrapeCourse(registry, id);
                 } catch (IOException e) {
-                    throw new IllegalStateException("Failed to parse required course: " + id
-                            + " of course " + courseId, e);
+                    throw new IllegalStateException("Failed to parse required course: " + id + " of course " + courseId,
+                            e);
                 }
                 addTo.putCourseSimple(dependency);
             }

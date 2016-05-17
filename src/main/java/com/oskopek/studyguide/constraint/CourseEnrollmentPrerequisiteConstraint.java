@@ -4,7 +4,6 @@ import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
-import javax.enterprise.event.Observes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,8 +36,8 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
             return;
         }
 
-        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
-                semesterPlan.getSemesterList().get(semesterIndex));
+        List<CourseEnrollment> enrollmentsUntilNow =
+                takeUntilSemester(semesterPlan, semesterPlan.getSemesterList().get(semesterIndex));
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = corequisites.indexOf(enrollment.getCourse());
             if (found >= 0 && enrollment.isFulfilled()) {

@@ -2,11 +2,7 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
-import com.oskopek.studyguide.persistence.DataReader;
-import com.oskopek.studyguide.persistence.DataWriter;
-import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
-import com.oskopek.studyguide.persistence.MFFHtmlScraper;
-import com.oskopek.studyguide.persistence.MFFWebScraperUtil;
+import com.oskopek.studyguide.persistence.*;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
 import com.oskopek.studyguide.view.ProgressCreator;
@@ -81,8 +77,8 @@ public class RootLayoutController extends AbstractController {
      */
     @FXML
     private void handleOpenFrom() {
-        EnterStringController enterStringController = enterStringDialogPaneCreator.create(
-                messages.getString("root.enterUrl"));
+        EnterStringController enterStringController =
+                enterStringDialogPaneCreator.create(messages.getString("root.enterUrl"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedURL = enterStringController.getSubmittedString();
@@ -97,8 +93,7 @@ public class RootLayoutController extends AbstractController {
             studyPlanTask.exceptionProperty().addListener((observable, oldValue, newValue) -> {
                 progressDialog.close();
                 AlertCreator.showAlert(Alert.AlertType.ERROR,
-                        messages.getString("root.openFromFailed") + ":\n\n"
-                                + newValue.getLocalizedMessage());
+                        messages.getString("root.openFromFailed") + ":\n\n" + newValue.getLocalizedMessage());
                 throw new IllegalStateException("Open from failed.", newValue);
             });
             studyPlanTask.setOnSucceeded(event -> {
@@ -108,8 +103,7 @@ public class RootLayoutController extends AbstractController {
             });
             studyPlanTask.setOnFailed(event -> {
                 progressDialog.close();
-                AlertCreator.showAlert(Alert.AlertType.ERROR,
-                        messages.getString("root.openFromFailed"));
+                AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("root.openFromFailed"));
             });
 
             new Thread(studyPlanTask).start();

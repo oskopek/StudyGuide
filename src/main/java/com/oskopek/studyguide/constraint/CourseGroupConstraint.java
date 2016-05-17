@@ -8,10 +8,6 @@ import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.enterprise.event.Event;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
-
 /**
  * Constraint on the level of individual {@link com.oskopek.studyguide.model.constraints.CourseGroup}s.
  */
@@ -78,9 +74,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getCourseGroup())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(getCourseGroup()).toHashCode();
     }
 
     @Override
@@ -92,9 +86,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
             return false;
         }
         CourseGroupConstraint that = (CourseGroupConstraint) o;
-        return new EqualsBuilder()
-                .append(getCourseGroup(), that.getCourseGroup())
-                .isEquals();
+        return new EqualsBuilder().append(getCourseGroup(), that.getCourseGroup()).isEquals();
     }
 
     @Override

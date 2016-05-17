@@ -102,8 +102,8 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 CourseRegistry semiCompulsory = new CourseRegistry();
                 // semi-compulsory courses are NOT transitive, do not add their dependencies
                 List<String> courseIds = scrapeCoursesFromTable(table, semiCompulsory);
-                List<Course> courses = courseIds.stream().map(id -> semiCompulsory.getCourse(id))
-                        .collect(Collectors.toList());
+                List<Course> courses =
+                        courseIds.stream().map(id -> semiCompulsory.getCourse(id)).collect(Collectors.toList());
                 registry.putAllCourses(courses);
                 CourseGroup group = new CourseGroup(courses);
                 constraints.getCourseGroupConstraintList()
@@ -120,8 +120,9 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         // add global constraints we know to be of effect
         GlobalCourseRepeatedEnrollmentConstraint c1 = new GlobalCourseRepeatedEnrollmentConstraint(2);
 
-        Optional<String> lastYear = document.select("h4").stream().map(Element::text)
-                .filter(row -> row.contains("rok studia")).sorted((x, y) -> -x.compareTo(y)).findFirst();
+        Optional<String> lastYear =
+                document.select("h4").stream().map(Element::text).filter(row -> row.contains("rok studia"))
+                        .sorted((x, y) -> -x.compareTo(y)).findFirst();
         int lastYearInt = 2; // default for Mgr
         if (lastYear.isPresent()) {
             lastYearInt = lastYear.get().charAt(0) - '0';

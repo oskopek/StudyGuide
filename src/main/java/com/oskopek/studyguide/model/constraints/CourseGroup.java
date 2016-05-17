@@ -71,9 +71,7 @@ public class CourseGroup {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getCourseList())
-                .toHashCode();
+        return new HashCodeBuilder(17, 37).append(getCourseList()).toHashCode();
     }
 
     @Override
@@ -85,9 +83,7 @@ public class CourseGroup {
             return false;
         }
         CourseGroup group = (CourseGroup) o;
-        return new EqualsBuilder()
-                .append(getCourseList(), group.getCourseList())
-                .isEquals();
+        return new EqualsBuilder().append(getCourseList(), group.getCourseList()).isEquals();
     }
 
     @Override

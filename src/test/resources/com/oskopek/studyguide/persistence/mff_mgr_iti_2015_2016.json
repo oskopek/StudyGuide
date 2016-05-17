@@ -1,8 +1,8 @@
 {
-  "semesterPlan" : {
-    "semesterList" : [ ]
+  "semesterPlan": {
+    "semesterList": []
   },
-  "constraints" : {
+  "constraints": {
     "courseGroupConstraintList": [
       {
         "CourseGroupFulfilledAllConstraint": {
@@ -721,626 +721,745 @@
     ],
     "courseEnrollmentConstraintList": []
   },
-  "courseRegistry" : {
-    "courses" : {
-      "NTIN100" : {
-        "id" : "NTIN100",
-        "name" : "Introduction to Information Transmission and Processing",
-        "localizedName" : "Základy přenosu a zpracování informace",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
+  "courseRegistry": {
+    "courses": {
+      "NTIN100": {
+        "id": "NTIN100",
+        "name": "Introduction to Information Transmission and Processing",
+        "localizedName": "Základy přenosu a zpracování informace",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
         },
-        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D.", "Mgr. Petr Gregor, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
+        "teacherNames": [
+          "doc. Mgr. Michal Koucký, Ph.D.",
+          "Mgr. Petr Gregor, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
       },
-      "NTIN067" : {
-        "id" : "NTIN067",
-        "name" : "Data Structures II",
-        "localizedName" : "Datové struktury II",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
+      "NTIN067": {
+        "id": "NTIN067",
+        "name": "Data Structures II",
+        "localizedName": "Datové struktury II",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
         },
-        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ {
-          "id" : "NTIN066",
-          "name" : "Data Structures I",
-          "localizedName" : "Datové struktury I",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-          "prerequisites" : [ ],
-          "corequisites" : [ ]
-        } ]
-      },
-      "NTIN023" : {
-        "id" : "NTIN023",
-        "name" : "Dynamic Graph Data Structures",
-        "localizedName" : "Dynamické grafové datové struktury",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "Mgr. Vladan Majerech, Dr." ],
-        "prerequisites" : [ {
-          "id" : "NTIN062",
-          "name" : "Complexity I",
-          "localizedName" : "Složitost I",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-          "prerequisites" : [ ],
-          "corequisites" : [ ]
-        } ],
-        "corequisites" : [ ]
-      },
-      "NAIL031" : {
-        "id" : "NAIL031",
-        "name" : "Representations of Boolean Functions",
-        "localizedName" : "Reprezentace booleovských funkcí",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "RNDr. Petr Savický, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN087" : {
-        "id" : "NTIN087",
-        "name" : "String Algorithms",
-        "localizedName" : "Textové algoritmy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN066" : {
-        "id" : "NTIN066",
-        "name" : "Data Structures I",
-        "localizedName" : "Datové struktury I",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
-        },
-        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN022" : {
-        "id" : "NTIN022",
-        "name" : "Probabilistic Techniques",
-        "localizedName" : "Pravděpodobnostní techniky",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "doc. Mgr. Robert Šámal, Ph.D.", "prof. RNDr. Jiří Sgall, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN088" : {
-        "id" : "NTIN088",
-        "name" : "Algorithmic Randomness",
-        "localizedName" : "Algoritmická náhodnost",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN063" : {
-        "id" : "NTIN063",
-        "name" : "Complexity",
-        "localizedName" : "Složitost",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
-        },
-        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ {
-          "id" : "NTIN062",
-          "name" : "Complexity I",
-          "localizedName" : "Složitost I",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-          "prerequisites" : [ ],
-          "corequisites" : [ ]
-        } ]
-      },
-      "NTIN085" : {
-        "id" : "NTIN085",
-        "name" : "Selected Topics in Computational Complexity I",
-        "localizedName" : "Vybrané kapitoly z výpočetní složitosti I",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
-        },
-        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN064" : {
-        "id" : "NTIN064",
-        "name" : "Computability",
-        "localizedName" : "Vyčíslitelnost",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc.", "RNDr. Petr Kučera, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN086" : {
-        "id" : "NTIN086",
-        "name" : "Selected Topics in Computational Complexity II",
-        "localizedName" : "Vybrané kapitoly z výpočetní složitosti II",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
-        },
-        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN062" : {
-        "id" : "NTIN062",
-        "name" : "Complexity I",
-        "localizedName" : "Složitost I",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
-        },
-        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN084" : {
-        "id" : "NTIN084",
-        "name" : "Bioinformatics Algorithms",
-        "localizedName" : "Bioinformatické algoritmy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NALG117" : {
-        "id" : "NALG117",
-        "name" : "Introduction to Complexity of CSP",
-        "localizedName" : "Úvod do složitosti CSP",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. Mgr. Libor Barto, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NOPT042" : {
-        "id" : "NOPT042",
-        "name" : "Constraint Programming",
-        "localizedName" : "Programování s omezujícími podmínkami",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI018" : {
-        "id" : "NDMI018",
-        "name" : "Approximation and Online Algorithms",
-        "localizedName" : "Aproximační a online algoritmy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc.", "Dr. rer. nat. Morteza Monemizadeh" ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NAIL094" : {
-        "id" : "NAIL094",
-        "name" : "Decision Procedures and Verification",
-        "localizedName" : "Rozhodovací procedury a verifikace",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "RNDr. Pavel Surynek, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN006" : {
-        "id" : "NTIN006",
-        "name" : "Algebraic Algorithms",
-        "localizedName" : "Algebraické algoritmy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "prof. RNDr. Václav Koubek, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI013" : {
-        "id" : "NDMI013",
-        "name" : "Combinatorial and Computational Geometry II",
-        "localizedName" : "Kombinatorická a výpočetní geometrie II",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "prof. RNDr. Jiří Matoušek, DrSc.", "doc. RNDr. Pavel Valtr, Dr." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI088" : {
-        "id" : "NDMI088",
-        "name" : "Graph Algorithms II",
-        "localizedName" : "Grafové algoritmy II",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI067" : {
-        "id" : "NDMI067",
-        "name" : "Flows, Paths and Cuts",
-        "localizedName" : "Toky, cesty a řezy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. Mgr. Petr Kolman, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NMAG536" : {
-        "id" : "NMAG536",
-        "name" : "Proof Complexity and the P vs. NP Problem",
-        "localizedName" : "Důkazová složitost a P vs. NP problém",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "prof. RNDr. Jan Krajíček, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN090" : {
-        "id" : "NTIN090",
-        "name" : "Introduction to Complexity and Computability",
-        "localizedName" : "Základy složitosti a vyčíslitelnosti",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
-        },
-        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NAIL021" : {
-        "id" : "NAIL021",
-        "name" : "Boolean Functions and Their Applications",
-        "localizedName" : "Booleovské funkce a jejich aplikace",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NSWI072" : {
-        "id" : "NSWI072",
-        "name" : "Data Compression Algorithms",
-        "localizedName" : "Algoritmy komprese dat",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN098" : {
-        "id" : "NTIN098",
-        "name" : "Advanced Data Structures",
-        "localizedName" : "Pokročilé datové struktury",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "Mgr. Jan Bulánek", "Mgr. Vladimír Čunát", "prof. RNDr. Václav Koubek, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN033" : {
-        "id" : "NTIN033",
-        "name" : "Experimental Analysis of Algorithms",
-        "localizedName" : "Experimentální analýza algoritmů",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN099" : {
-        "id" : "NTIN099",
-        "name" : "Algorithmic Aspects of Boolean Functions and Parameterized Complexity",
-        "localizedName" : "Algoritmické aspekty booleovských funkcí a parametrizovaná složitost",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "RNDr. Petr Kučera, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN096" : {
-        "id" : "NTIN096",
-        "name" : "Pseudo-Boolean Optimization",
-        "localizedName" : "Pseudo-Booleovská optimalizace",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN097" : {
-        "id" : "NTIN097",
-        "name" : "Hypercube Problems",
-        "localizedName" : "Problémy na hyperkrychlích",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "Mgr. Petr Gregor, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN073" : {
-        "id" : "NTIN073",
-        "name" : "Recursion",
-        "localizedName" : "Rekurze",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NSZZ025" : {
-        "id" : "NSZZ025",
-        "name" : "Diploma Thesis III",
-        "localizedName" : "Diplomová práce III",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 15
-        },
-        "teacherNames" : [ ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NSZZ023" : {
-        "id" : "NSZZ023",
-        "name" : "Diploma Thesis I",
-        "localizedName" : "Diplomová práce I",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN018" : {
-        "id" : "NTIN018",
-        "name" : "Probabilistic Analysis of Algorithms",
-        "localizedName" : "Pravděpodobnostní analýza algoritmů",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NSZZ024" : {
-        "id" : "NSZZ024",
-        "name" : "Diploma Thesis II",
-        "localizedName" : "Diplomová práce II",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 9
-        },
-        "teacherNames" : [ ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NMAI067" : {
-        "id" : "NMAI067",
-        "name" : "Logic in Computer Science",
-        "localizedName" : "Logika v informatice",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "prof. RNDr. Pavel Pudlák, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN017" : {
-        "id" : "NTIN017",
-        "name" : "Parallel Algorithms",
-        "localizedName" : "Paralelní algoritmy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI025" : {
-        "id" : "NDMI025",
-        "name" : "Randomized Algorithms",
-        "localizedName" : "Pravděpodobnostní algoritmy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NOPT034" : {
-        "id" : "NOPT034",
-        "name" : "Mathematical Programming and Polyhedral Combinatorics",
-        "localizedName" : "Matematické programování a polyedrální kombinatorika",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 5
-        },
-        "teacherNames" : [ "prof. RNDr. Martin Loebl, CSc.", "doc. Mgr. Petr Kolman, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI077" : {
-        "id" : "NDMI077",
-        "name" : "Algorithms for Specific Graph Classes",
-        "localizedName" : "Algoritmy pro specifické třídy grafů",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "doc. RNDr. Jiří Fiala, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NMAG446" : {
-        "id" : "NMAG446",
-        "name" : "Logic and Complexity",
-        "localizedName" : "Logika a složitost",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "Michael Pinsker, dipl. ing." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI010" : {
-        "id" : "NDMI010",
-        "name" : "Graph Algorithms",
-        "localizedName" : "Grafové algoritmy",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NOPT016" : {
-        "id" : "NOPT016",
-        "name" : "Integer Programming",
-        "localizedName" : "Celočíselné programování",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "doc. Mgr. Milan Hladík, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NDMI074" : {
-        "id" : "NDMI074",
-        "name" : "Algorithms and Their Implementation",
-        "localizedName" : "Algoritmy a jejich implementace",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 6
-        },
-        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
-      },
-      "NTIN081" : {
-        "id" : "NTIN081",
-        "name" : "Structural Complexity",
-        "localizedName" : "Strukturální složitost",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
-        },
-        "teacherNames" : [ "prof. RNDr. Václav Koubek, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ {
-          "id" : "NTIN063",
-          "name" : "Complexity",
-          "localizedName" : "Složitost",
-          "locale" : "cs",
-          "credits" : {
-            "creditValue" : 5
-          },
-          "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
-          "prerequisites" : [ ],
-          "corequisites" : [ {
-            "id" : "NTIN062",
-            "name" : "Complexity I",
-            "localizedName" : "Složitost I",
-            "locale" : "cs",
-            "credits" : {
-              "creditValue" : 5
+        "teacherNames": [
+          "doc. Mgr. Michal Koucký, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": [
+          {
+            "id": "NTIN066",
+            "name": "Data Structures I",
+            "localizedName": "Datové struktury I",
+            "locale": "cs",
+            "credits": {
+              "creditValue": 5
             },
-            "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
-            "prerequisites" : [ ],
-            "corequisites" : [ ]
-          } ]
-        } ]
+            "teacherNames": [
+              "doc. Mgr. Michal Koucký, Ph.D."
+            ],
+            "prerequisites": [],
+            "corequisites": []
+          }
+        ]
       },
-      "NTIN082" : {
-        "id" : "NTIN082",
-        "name" : "Computational Complexity",
-        "localizedName" : "Výpočetní složitost",
-        "locale" : "cs",
-        "credits" : {
-          "creditValue" : 3
+      "NTIN023": {
+        "id": "NTIN023",
+        "name": "Dynamic Graph Data Structures",
+        "localizedName": "Dynamické grafové datové struktury",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
         },
-        "teacherNames" : [ "prof. RNDr. Václav Koubek, DrSc." ],
-        "prerequisites" : [ ],
-        "corequisites" : [ ]
+        "teacherNames": [
+          "Mgr. Vladan Majerech, Dr."
+        ],
+        "prerequisites": [
+          {
+            "id": "NTIN062",
+            "name": "Complexity I",
+            "localizedName": "Složitost I",
+            "locale": "cs",
+            "credits": {
+              "creditValue": 5
+            },
+            "teacherNames": [
+              "doc. RNDr. Ondřej Čepek, Ph.D."
+            ],
+            "prerequisites": [],
+            "corequisites": []
+          }
+        ],
+        "corequisites": []
+      },
+      "NAIL031": {
+        "id": "NAIL031",
+        "name": "Representations of Boolean Functions",
+        "localizedName": "Reprezentace booleovských funkcí",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "RNDr. Petr Savický, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN087": {
+        "id": "NTIN087",
+        "name": "String Algorithms",
+        "localizedName": "Textové algoritmy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Tomáš Dvořák, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN066": {
+        "id": "NTIN066",
+        "name": "Data Structures I",
+        "localizedName": "Datové struktury I",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. Mgr. Michal Koucký, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN022": {
+        "id": "NTIN022",
+        "name": "Probabilistic Techniques",
+        "localizedName": "Pravděpodobnostní techniky",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "doc. Mgr. Robert Šámal, Ph.D.",
+          "prof. RNDr. Jiří Sgall, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN088": {
+        "id": "NTIN088",
+        "name": "Algorithmic Randomness",
+        "localizedName": "Algoritmická náhodnost",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Antonín Kučera, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN063": {
+        "id": "NTIN063",
+        "name": "Complexity",
+        "localizedName": "Složitost",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. RNDr. Ondřej Čepek, Ph.D.",
+          "RNDr. Petr Kučera, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": [
+          {
+            "id": "NTIN062",
+            "name": "Complexity I",
+            "localizedName": "Složitost I",
+            "locale": "cs",
+            "credits": {
+              "creditValue": 5
+            },
+            "teacherNames": [
+              "doc. RNDr. Ondřej Čepek, Ph.D."
+            ],
+            "prerequisites": [],
+            "corequisites": []
+          }
+        ]
+      },
+      "NTIN085": {
+        "id": "NTIN085",
+        "name": "Selected Topics in Computational Complexity I",
+        "localizedName": "Vybrané kapitoly z výpočetní složitosti I",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. Mgr. Michal Koucký, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN064": {
+        "id": "NTIN064",
+        "name": "Computability",
+        "localizedName": "Vyčíslitelnost",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Antonín Kučera, CSc.",
+          "RNDr. Petr Kučera, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN086": {
+        "id": "NTIN086",
+        "name": "Selected Topics in Computational Complexity II",
+        "localizedName": "Vybrané kapitoly z výpočetní složitosti II",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. Mgr. Michal Koucký, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN062": {
+        "id": "NTIN062",
+        "name": "Complexity I",
+        "localizedName": "Složitost I",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. RNDr. Ondřej Čepek, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN084": {
+        "id": "NTIN084",
+        "name": "Bioinformatics Algorithms",
+        "localizedName": "Bioinformatické algoritmy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "RNDr. František Mráz, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NALG117": {
+        "id": "NALG117",
+        "name": "Introduction to Complexity of CSP",
+        "localizedName": "Úvod do složitosti CSP",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. Mgr. Libor Barto, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NOPT042": {
+        "id": "NOPT042",
+        "name": "Constraint Programming",
+        "localizedName": "Programování s omezujícími podmínkami",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "prof. RNDr. Roman Barták, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI018": {
+        "id": "NDMI018",
+        "name": "Approximation and Online Algorithms",
+        "localizedName": "Aproximační a online algoritmy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "prof. RNDr. Jiří Sgall, DrSc.",
+          "Dr. rer. nat. Morteza Monemizadeh"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NAIL094": {
+        "id": "NAIL094",
+        "name": "Decision Procedures and Verification",
+        "localizedName": "Rozhodovací procedury a verifikace",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "RNDr. Pavel Surynek, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN006": {
+        "id": "NTIN006",
+        "name": "Algebraic Algorithms",
+        "localizedName": "Algebraické algoritmy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "prof. RNDr. Václav Koubek, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI013": {
+        "id": "NDMI013",
+        "name": "Combinatorial and Computational Geometry II",
+        "localizedName": "Kombinatorická a výpočetní geometrie II",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "prof. RNDr. Jiří Matoušek, DrSc.",
+          "doc. RNDr. Pavel Valtr, Dr."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI088": {
+        "id": "NDMI088",
+        "name": "Graph Algorithms II",
+        "localizedName": "Grafové algoritmy II",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Mgr. Martin Mareš, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI067": {
+        "id": "NDMI067",
+        "name": "Flows, Paths and Cuts",
+        "localizedName": "Toky, cesty a řezy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. Mgr. Petr Kolman, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NMAG536": {
+        "id": "NMAG536",
+        "name": "Proof Complexity and the P vs. NP Problem",
+        "localizedName": "Důkazová složitost a P vs. NP problém",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "prof. RNDr. Jan Krajíček, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN090": {
+        "id": "NTIN090",
+        "name": "Introduction to Complexity and Computability",
+        "localizedName": "Základy složitosti a vyčíslitelnosti",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. RNDr. Ondřej Čepek, Ph.D.",
+          "RNDr. Petr Kučera, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NAIL021": {
+        "id": "NAIL021",
+        "name": "Boolean Functions and Their Applications",
+        "localizedName": "Booleovské funkce a jejich aplikace",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Ondřej Čepek, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSWI072": {
+        "id": "NSWI072",
+        "name": "Data Compression Algorithms",
+        "localizedName": "Algoritmy komprese dat",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Tomáš Dvořák, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN098": {
+        "id": "NTIN098",
+        "name": "Advanced Data Structures",
+        "localizedName": "Pokročilé datové struktury",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Mgr. Jan Bulánek",
+          "Mgr. Vladimír Čunát",
+          "prof. RNDr. Václav Koubek, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN033": {
+        "id": "NTIN033",
+        "name": "Experimental Analysis of Algorithms",
+        "localizedName": "Experimentální analýza algoritmů",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "RNDr. Alena Koubková, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN099": {
+        "id": "NTIN099",
+        "name": "Algorithmic Aspects of Boolean Functions and Parameterized Complexity",
+        "localizedName": "Algoritmické aspekty booleovských funkcí a parametrizovaná složitost",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "RNDr. Petr Kučera, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN096": {
+        "id": "NTIN096",
+        "name": "Pseudo-Boolean Optimization",
+        "localizedName": "Pseudo-Booleovská optimalizace",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Ondřej Čepek, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN097": {
+        "id": "NTIN097",
+        "name": "Hypercube Problems",
+        "localizedName": "Problémy na hyperkrychlích",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Mgr. Petr Gregor, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN073": {
+        "id": "NTIN073",
+        "name": "Recursion",
+        "localizedName": "Rekurze",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Antonín Kučera, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSZZ025": {
+        "id": "NSZZ025",
+        "name": "Diploma Thesis III",
+        "localizedName": "Diplomová práce III",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 15
+        },
+        "teacherNames": [],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSZZ023": {
+        "id": "NSZZ023",
+        "name": "Diploma Thesis I",
+        "localizedName": "Diplomová práce I",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN018": {
+        "id": "NTIN018",
+        "name": "Probabilistic Analysis of Algorithms",
+        "localizedName": "Pravděpodobnostní analýza algoritmů",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "RNDr. Alena Koubková, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSZZ024": {
+        "id": "NSZZ024",
+        "name": "Diploma Thesis II",
+        "localizedName": "Diplomová práce II",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 9
+        },
+        "teacherNames": [],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NMAI067": {
+        "id": "NMAI067",
+        "name": "Logic in Computer Science",
+        "localizedName": "Logika v informatice",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "prof. RNDr. Pavel Pudlák, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN017": {
+        "id": "NTIN017",
+        "name": "Parallel Algorithms",
+        "localizedName": "Paralelní algoritmy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "RNDr. František Mráz, CSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI025": {
+        "id": "NDMI025",
+        "name": "Randomized Algorithms",
+        "localizedName": "Pravděpodobnostní algoritmy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "prof. RNDr. Jiří Sgall, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NOPT034": {
+        "id": "NOPT034",
+        "name": "Mathematical Programming and Polyhedral Combinatorics",
+        "localizedName": "Matematické programování a polyedrální kombinatorika",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "prof. RNDr. Martin Loebl, CSc.",
+          "doc. Mgr. Petr Kolman, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI077": {
+        "id": "NDMI077",
+        "name": "Algorithms for Specific Graph Classes",
+        "localizedName": "Algoritmy pro specifické třídy grafů",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "doc. RNDr. Jiří Fiala, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NMAG446": {
+        "id": "NMAG446",
+        "name": "Logic and Complexity",
+        "localizedName": "Logika a složitost",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Michael Pinsker, dipl. ing."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI010": {
+        "id": "NDMI010",
+        "name": "Graph Algorithms",
+        "localizedName": "Grafové algoritmy",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Mgr. Martin Mareš, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NOPT016": {
+        "id": "NOPT016",
+        "name": "Integer Programming",
+        "localizedName": "Celočíselné programování",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "doc. Mgr. Milan Hladík, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI074": {
+        "id": "NDMI074",
+        "name": "Algorithms and Their Implementation",
+        "localizedName": "Algoritmy a jejich implementace",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "Mgr. Martin Mareš, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN081": {
+        "id": "NTIN081",
+        "name": "Structural Complexity",
+        "localizedName": "Strukturální složitost",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "prof. RNDr. Václav Koubek, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": [
+          {
+            "id": "NTIN063",
+            "name": "Complexity",
+            "localizedName": "Složitost",
+            "locale": "cs",
+            "credits": {
+              "creditValue": 5
+            },
+            "teacherNames": [
+              "doc. RNDr. Ondřej Čepek, Ph.D.",
+              "RNDr. Petr Kučera, Ph.D."
+            ],
+            "prerequisites": [],
+            "corequisites": [
+              {
+                "id": "NTIN062",
+                "name": "Complexity I",
+                "localizedName": "Složitost I",
+                "locale": "cs",
+                "credits": {
+                  "creditValue": 5
+                },
+                "teacherNames": [
+                  "doc. RNDr. Ondřej Čepek, Ph.D."
+                ],
+                "prerequisites": [],
+                "corequisites": []
+              }
+            ]
+          }
+        ]
+      },
+      "NTIN082": {
+        "id": "NTIN082",
+        "name": "Computational Complexity",
+        "localizedName": "Výpočetní složitost",
+        "locale": "cs",
+        "credits": {
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "prof. RNDr. Václav Koubek, DrSc."
+        ],
+        "prerequisites": [],
+        "corequisites": []
       }
     }
   }

@@ -7,21 +7,8 @@ import com.oskopek.studyguide.view.AlertCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DataFormat;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.control.*;
+import javafx.scene.input.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -94,22 +81,11 @@ public class SemesterBoxController extends AbstractController {
         });
         idColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameOrLocalizedNameProperty());
-        creditsColumn.setCellValueFactory(
-                cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
-        fulfilledColumn.setCellFactory((final TableColumn<CourseEnrollment, Boolean> param) ->
-                new TableCell<CourseEnrollment, Boolean>() {
+        creditsColumn
+                .setCellValueFactory(cellData -> cellData.getValue().getCourse().getCredits().creditValueProperty());
+        fulfilledColumn.setCellFactory(
+                (final TableColumn<CourseEnrollment, Boolean> param) -> new TableCell<CourseEnrollment, Boolean>() {
                     public final CheckBox fulfilledCheckBox;
-
-                    {
-                        fulfilledCheckBox = new CheckBox();
-                        fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                            logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
-                                    newValue, enrollment, semester);
-                            enrollment.setFulfilled(newValue);
-                            fulfilledCheckBox.setSelected(newValue);
-                        });
-                    }
 
                     @Override
                     public void updateItem(Boolean item, boolean empty) {
@@ -121,10 +97,21 @@ public class SemesterBoxController extends AbstractController {
                             setGraphic(fulfilledCheckBox);
                         }
                     }
+
+                    {
+                        fulfilledCheckBox = new CheckBox();
+                        fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
+                            logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
+                                    newValue, enrollment, semester);
+                            enrollment.setFulfilled(newValue);
+                            fulfilledCheckBox.setSelected(newValue);
+                        });
+                    }
                 });
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
-        removeColumn.setCellFactory((final TableColumn<CourseEnrollment, String> param) ->
-                new TableCell<CourseEnrollment, String>() {
+        removeColumn.setCellFactory(
+                (final TableColumn<CourseEnrollment, String> param) -> new TableCell<CourseEnrollment, String>() {
                     final Button removeButton = new Button(messages.getString("crossmark"));
 
                     @Override
@@ -136,8 +123,8 @@ public class SemesterBoxController extends AbstractController {
                         } else {
                             removeButton.setOnAction((ActionEvent event) -> {
                                 CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                                logger.debug("Removing Course Enrollment ({}) from Semester ({}).",
-                                        enrollment, semester);
+                                logger.debug("Removing Course Enrollment ({}) from Semester ({}).", enrollment,
+                                        semester);
                                 studyGuideApplication.getStudyPlan().getConstraints()
                                         .removeAllCourseEnrollmentConstraints(enrollment);
                                 semester.removeCourseEnrollment(enrollment);
@@ -147,8 +134,8 @@ public class SemesterBoxController extends AbstractController {
                         }
                     }
                 });
-        semesterTable.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldEnrollment, newEnrollment) -> {
+        semesterTable.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldEnrollment, newEnrollment) -> {
                     logger.debug("Focused on CourseEnrollment {}", newEnrollment);
                     Course toSet = null;
                     if (newEnrollment != null) {
@@ -191,8 +178,7 @@ public class SemesterBoxController extends AbstractController {
             return;
         }
         if (studyGuideApplication.getStudyPlan().getSemesterPlan().getSemesterList().contains(new Semester(newName))) {
-            AlertCreator.showAlert(Alert.AlertType.WARNING,
-                    messages.getString("semesterBox.nameNotUnique"));
+            AlertCreator.showAlert(Alert.AlertType.WARNING, messages.getString("semesterBox.nameNotUnique"));
             semesterNameArea.setText(semester.getName());
         } else {
             semester.setName(newName);
@@ -232,8 +218,8 @@ public class SemesterBoxController extends AbstractController {
             String semesterName = (String) dragboard.getContent(semesterFormat);
             int selectedIndex = (Integer) dragboard.getContent(enrollmentIndexFormat);
             logger.debug("Drag dropping payload: {} from {} to {}", selectedIndex, semesterName, semesterTo.getName());
-            Optional<Semester> semesterFrom
-                    = studyGuideApplication.getStudyPlan().getSemesterPlan().findSemester(semesterName);
+            Optional<Semester> semesterFrom =
+                    studyGuideApplication.getStudyPlan().getSemesterPlan().findSemester(semesterName);
             if (!semesterFrom.isPresent()) {
                 throw new IllegalStateException("No such semester exists! Cannot drop the drag.");
             }
@@ -251,8 +237,8 @@ public class SemesterBoxController extends AbstractController {
     @FXML
     private void onDragOver(DragEvent event) {
         logger.trace("Drag over in {}", semester);
-        if (event.getGestureSource() != pane && event.getDragboard().hasContent(enrollmentIndexFormat)
-                && event.getDragboard().hasContent(semesterFormat)) {
+        if (event.getGestureSource() != pane && event.getDragboard().hasContent(enrollmentIndexFormat) && event
+                .getDragboard().hasContent(semesterFormat)) {
             event.acceptTransferModes(TransferMode.MOVE);
             logger.trace("Accepting drag over in {}", semester);
         }

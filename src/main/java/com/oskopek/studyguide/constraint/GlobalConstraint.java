@@ -5,10 +5,6 @@ import com.oskopek.studyguide.constraint.event.BrokenGlobalConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
-import javax.enterprise.event.Event;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
-
 /**
  * Constraint on a global level (on all {@link com.oskopek.studyguide.model.CourseEnrollment}s in the
  * {@link com.oskopek.studyguide.model.StudyPlan}.
