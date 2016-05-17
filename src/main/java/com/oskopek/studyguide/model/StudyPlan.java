@@ -1,14 +1,12 @@
 package com.oskopek.studyguide.model;
 
-import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.constraints.Constraints;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
-import com.oskopek.studyguide.weld.EventBusTranslator;
 
 /**
  * Representation of the whole study plan model.
  */
-public interface StudyPlan {
+public interface StudyPlan extends Registrable<StudyPlan> {
 
     /**
      * The {@link com.oskopek.studyguide.constraint.Constraint}s placed on this plan.
@@ -31,9 +29,5 @@ public interface StudyPlan {
      * @return a non-null semester plan instance
      */
     SemesterPlan getSemesterPlan();
-
-    StudyPlan register(EventBus eventBus, EventBusTranslator eventBusTranslator);
-
-    StudyPlan unregister(EventBus eventBus, EventBusTranslator eventBusTranslator);
 
 }

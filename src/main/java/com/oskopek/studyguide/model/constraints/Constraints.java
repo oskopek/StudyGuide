@@ -1,7 +1,14 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.oskopek.studyguide.constraint.*;
+import com.google.common.eventbus.EventBus;
+import com.oskopek.studyguide.constraint.Constraint;
+import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
+import com.oskopek.studyguide.constraint.CourseEnrollmentCorequisiteConstraint;
+import com.oskopek.studyguide.constraint.CourseEnrollmentPrerequisiteConstraint;
+import com.oskopek.studyguide.constraint.CourseGroupConstraint;
+import com.oskopek.studyguide.constraint.GlobalConstraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
+import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -125,9 +132,13 @@ public class Constraints {
      *
      * @param courseEnrollment the course enrollment
      */
-    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
-        courseEnrollmentConstraintList.addAll(new CourseEnrollmentCorequisiteConstraint(courseEnrollment),
-                new CourseEnrollmentPrerequisiteConstraint(courseEnrollment));
+    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment, EventBus eventBus,
+                                                  EventBusTranslator eventBusTranslator) {
+        CourseEnrollmentConstraint c1 = new CourseEnrollmentCorequisiteConstraint(courseEnrollment);
+        CourseEnrollmentConstraint c2 = new CourseEnrollmentPrerequisiteConstraint(courseEnrollment);
+        c1.register(eventBus, eventBusTranslator);
+        c2.register(eventBus, eventBusTranslator);
+        courseEnrollmentConstraintList.addAll(c1, c2);
     }
 
     @Override

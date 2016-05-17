@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import javax.inject.Singleton;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +15,7 @@ import java.util.stream.Stream;
 /**
  * Represents the {@link com.oskopek.studyguide.model.courses.Course} distribution in the {@link StudyPlan}.
  */
-
+@Singleton
 public class SemesterPlan implements Iterable<Semester> {
 
     private ListProperty<Semester> semesterList;

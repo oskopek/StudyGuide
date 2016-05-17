@@ -2,10 +2,12 @@ package com.oskopek.studyguide.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
 import com.oskopek.studyguide.constraint.event.BrokenResetEvent;
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -20,7 +22,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
  */
 public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
-        implements ObservableValue<CourseEnrollment> {
+        implements ObservableValue<CourseEnrollment>, Registrable<CourseEnrollment> {
 
     private final ObjectProperty<Course> course;
     private final BooleanProperty fulfilled;
@@ -192,6 +194,18 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     @Override
     public CourseEnrollment getValue() {
         return CourseEnrollment.copy(this);
+    }
+
+    @Override
+    public CourseEnrollment register(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        eventBusTranslator.register(this);
+        return this;
+    }
+
+    @Override
+    public CourseEnrollment unregister(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        eventBusTranslator.unregister(this);
+        return this;
     }
 
     /**

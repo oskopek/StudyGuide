@@ -76,9 +76,9 @@ public class DefaultStudyPlan implements StudyPlan {
         Stream.concat(Stream.concat(getConstraints().getCourseEnrollmentConstraintList().stream(),
                 getConstraints().getCourseGroupConstraintList().stream()),
                 getConstraints().getGlobalConstraintList().stream())
-                .forEach(eventBus::register);
-        getCourseRegistry().courseMapValues().stream().forEach(eventBusTranslator::register);
-        getSemesterPlan().allCourseEnrollments().forEach(eventBusTranslator::register);
+                .forEach(c -> c.register(eventBus, eventBusTranslator));
+        getCourseRegistry().courseMapValues().stream().forEach(c -> c.register(eventBus, eventBusTranslator));
+        getSemesterPlan().allCourseEnrollments().forEach(c -> c.register(eventBus, eventBusTranslator));
         return this;
     }
 

@@ -49,6 +49,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(Course changed) {
+        logger.trace("Caught event {} at {}", changed, this);
         if (courseGroup.courseListProperty().contains(changed)) {
             validate();
         }
@@ -57,6 +58,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
+        logger.trace("Caught event {} at {}", changed, this);
         validate(changed.getCourse());
     }
 

@@ -2,9 +2,12 @@ package com.oskopek.studyguide.constraint;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
+import com.oskopek.studyguide.model.Registrable;
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.weld.EventBusTranslator;
 
 /**
  * A general contract for all constraints operating on the {@link com.oskopek.studyguide.model.StudyPlan} model.
@@ -23,7 +26,7 @@ import com.oskopek.studyguide.model.courses.Course;
         @JsonSubTypes.Type(value = GlobalCourseRepeatedEnrollmentConstraint.class,
                 name = "GlobalCourseRepeatedEnrollmentConstraint"),
         @JsonSubTypes.Type(value = GlobalCreditsSumConstraint.class, name = "GlobalCreditsSumConstraint")})
-public interface Constraint {
+public interface Constraint extends Registrable<Constraint> {
 
     /**
      * The method should verify if the given constraint was broken, and if so,
@@ -43,8 +46,6 @@ public interface Constraint {
     @Subscribe
     void validate(CourseEnrollment changed);
 
-    // TODO OPTIONAL rework fire methods
-
     /**
      * Used for firing a broken constraint event if the constraint is broken.
      *
@@ -61,4 +62,15 @@ public interface Constraint {
      */
     void fireBrokenEvent(String message, CourseEnrollment changed);
 
+    @Override
+    default Constraint register(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        eventBus.register(this);
+        return this;
+    }
+
+    @Override
+    default Constraint unregister(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        eventBus.unregister(this);
+        return this;
+    }
 }

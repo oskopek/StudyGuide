@@ -43,7 +43,7 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
     public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
         Stream<Course> fulfilledGroupCourses =
-                semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
+                semesterPlan.get().allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
                         .filter(c -> groupCourses.contains(c));
         Credits fulfilledSum = Credits.valueOf(
                 fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum));
@@ -79,7 +79,7 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
      * @return the String to use as a message, localized
      */
     private String generateMessage(Credits got, Credits needed) {
-        return String.format(messages.getString(message), needed.getCreditValue(), got.creditValueProperty());
+        return String.format(messages.get().getString(message), needed.getCreditValue(), got.creditValueProperty());
     }
 
     /**

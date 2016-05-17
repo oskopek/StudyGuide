@@ -1,6 +1,8 @@
 package com.oskopek.studyguide.controller;
 
+import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.view.StudyGuideApplication;
+import com.oskopek.studyguide.weld.EventBusTranslator;
 import org.slf4j.Logger;
 
 import javax.inject.Inject;
@@ -19,4 +21,11 @@ public abstract class AbstractController {
 
     @Inject
     protected transient ResourceBundle messages;
+
+    @Inject
+    protected EventBusTranslator eventBusTranslator;
+
+    @Inject
+    protected EventBus eventBus;
+
 }

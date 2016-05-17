@@ -33,12 +33,13 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
 
     @Override
     @Subscribe
-    public void validate(CourseEnrollment courseEnrollment) {
+    public void validate(CourseEnrollment changed) {
+        logger.trace("Caught event {} at {}", changed, this);
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
         int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
         if (semesterIndex < 0) {
             if (!corequisites.isEmpty()) {
-                fireBrokenEvent(generateMessage(message, corequisites), courseEnrollment);
+                fireBrokenEvent(generateMessage(message, corequisites), changed);
             }
             return;
         }
@@ -52,7 +53,7 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
             }
         }
         if (!corequisites.isEmpty()) {
-            fireBrokenEvent(generateMessage(message, corequisites), courseEnrollment);
+            fireBrokenEvent(generateMessage(message, corequisites), changed);
         }
     }
 }

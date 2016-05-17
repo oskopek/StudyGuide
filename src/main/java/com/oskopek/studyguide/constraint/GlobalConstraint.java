@@ -21,12 +21,14 @@ public abstract class GlobalConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(Course changed) {
+        logger.trace("Caught event {} at {}", changed, this);
         validate();
     }
 
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
+        logger.trace("Caught event {} at {}", changed, this);
         validate();
     }
 

@@ -59,7 +59,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
      * @return the String to use as a message, localized
      */
     private String generateMessage(int enrolledTimes, int maxRepeatedEnrollment, Course course) {
-        return String.format(messages.getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
+        return String.format(messages.get().getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
     }
 
     /**

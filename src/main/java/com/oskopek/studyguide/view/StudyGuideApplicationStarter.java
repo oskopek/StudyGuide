@@ -2,6 +2,7 @@ package com.oskopek.studyguide.view;
 
 import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.weld.DeadEventListener;
 import com.oskopek.studyguide.weld.EventBusTranslator;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.application.Platform;
@@ -35,6 +36,9 @@ public class StudyGuideApplicationStarter {
     @Inject
     private EventBus eventBus;
 
+    @Inject
+    private DeadEventListener deadEventListener;
+
     /**
      * Initializes the root layout.
      *
@@ -58,6 +62,7 @@ public class StudyGuideApplicationStarter {
             tryDeregister(oldValue);
             tryRegister(newValue);
         });
+        eventBus.register(deadEventListener);
     }
 
     private void tryDeregister(StudyPlan studyPlan) {

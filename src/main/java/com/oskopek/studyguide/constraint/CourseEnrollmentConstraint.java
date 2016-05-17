@@ -70,17 +70,18 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(Course changed) {
-        semesterPlan.allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
+        logger.get().trace("Caught event {} at {}", changed, this);
+        semesterPlan.get().allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
     }
 
     @Override
     public void fireBrokenEvent(String reason, Course course) {
-        eventBus.post(new BrokenCourseEnrollmentConstraintEvent(reason, this, null));
+        eventBus.get().post(new BrokenCourseEnrollmentConstraintEvent(reason, this, null));
     }
 
     @Override
     public void fireBrokenEvent(String reason, CourseEnrollment enrollment) {
-        eventBus.post(new BrokenCourseEnrollmentConstraintEvent(reason, this, enrollment));
+        eventBus.get().post(new BrokenCourseEnrollmentConstraintEvent(reason, this, enrollment));
     }
 
     /**
@@ -92,7 +93,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
      * @return the String to use as a message, localized
      */
     protected String generateMessage(String message, List<Course> brokenRequirements) {
-        return messages.getString(message) + StringUtils.join(brokenRequirements.iterator(), ", ");
+        return messages.get().getString(message) + StringUtils.join(brokenRequirements.iterator(), ", ");
     }
 
     @Override

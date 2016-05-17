@@ -1,6 +1,9 @@
 package com.oskopek.studyguide.model.courses;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.common.eventbus.EventBus;
+import com.oskopek.studyguide.model.Registrable;
+import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -24,7 +27,8 @@ import java.util.Locale;
  * Background information about a course students can enroll in.
  * There should be only one instance of this per course.
  */
-public class Course extends ObservableValueBase<Course> implements Comparable<Course>, ObservableValue<Course> {
+public class Course extends ObservableValueBase<Course> implements Comparable<Course>, ObservableValue<Course>,
+        Registrable<Course> {
 
     private final StringProperty id;
     private final StringProperty name;
@@ -406,6 +410,18 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         } else {
             return localizedNameProperty().getValue();
         }
+    }
+
+    @Override
+    public Course register(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        eventBusTranslator.register(this);
+        return this;
+    }
+
+    @Override
+    public Course unregister(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        eventBusTranslator.unregister(this);
+        return this;
     }
 
     @Override
