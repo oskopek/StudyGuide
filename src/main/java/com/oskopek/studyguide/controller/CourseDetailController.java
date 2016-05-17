@@ -14,7 +14,6 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -213,7 +212,6 @@ public class CourseDetailController extends AbstractController {
             listProperty.setValue(FXCollections.observableArrayList(list));
             logger.debug("Synchronized to list {}", list);
         }
-
     }
 
     /**
@@ -227,8 +225,7 @@ public class CourseDetailController extends AbstractController {
         private ChangeListener<Credits> creditsListener;
         private ChangeListener<String> stringListener;
 
-        @Inject
-        private Logger logger;
+        private Logger logger = LoggerFactory.getLogger(getClass());
 
         /**
          * Default constructor.
@@ -296,8 +293,7 @@ public class CourseDetailController extends AbstractController {
                 logger.info("Wrong number format ({}), ignoring the credit value.", string);
                 return; // TODO OPTIONAL do not ignore the wrong value
             }
-            Credits credits = Credits.valueOf(val);
-            creditsProperty.setValue(credits);
+            creditsProperty.get().setCreditValue(val);
         }
     }
 
@@ -311,6 +307,8 @@ public class CourseDetailController extends AbstractController {
         private StringProperty stringProperty;
         private ChangeListener<List<String>> listListener;
         private ChangeListener<String> stringListener;
+
+        private Logger logger = LoggerFactory.getLogger(getClass());
 
         /**
          * Default constructor.

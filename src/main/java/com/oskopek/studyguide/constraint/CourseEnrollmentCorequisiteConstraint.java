@@ -40,8 +40,6 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     @Subscribe
     public void validate(CourseEnrollment courseEnrollment) {
         logger.debug("Validating {} on {}", courseEnrollment, this);
-        // TODO PRIORITY why are these not called? because they are not fired!
-        // TODO PRIORITY -> redo the firing in course and course enrollment
         List<CourseEnrollment> enrollmentsUntilNow =
                 takeUntilSemester(semesterPlan, getCourseEnrollment().getSemester());
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());

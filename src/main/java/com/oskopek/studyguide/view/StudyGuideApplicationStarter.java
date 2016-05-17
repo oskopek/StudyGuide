@@ -1,5 +1,8 @@
 package com.oskopek.studyguide.view;
 
+import com.google.common.eventbus.EventBus;
+import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.weld.EventBusTranslator;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +29,12 @@ public class StudyGuideApplicationStarter {
     @Inject
     private StudyGuideApplication studyGuideApplication;
 
+    @Inject
+    private EventBusTranslator eventBusTranslator;
+
+    @Inject
+    private EventBus eventBus;
+
     /**
      * Initializes the root layout.
      *
@@ -45,5 +54,21 @@ public class StudyGuideApplicationStarter {
             primaryStage.setScene(scene);
             primaryStage.show();
         });
+        studyGuideApplication.studyPlanProperty().addListener((observable, oldValue, newValue) -> {
+            tryDeregister(oldValue);
+            tryRegister(newValue);
+        });
+    }
+
+    private void tryDeregister(StudyPlan studyPlan) {
+        if (studyPlan != null) {
+            studyPlan.unregister(eventBus, eventBusTranslator);
+        }
+    }
+
+    private void tryRegister(StudyPlan studyPlan) {
+        if (studyPlan != null) {
+            studyPlan.register(eventBus, eventBusTranslator);
+        }
     }
 }

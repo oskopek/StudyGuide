@@ -2,7 +2,11 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
-import com.oskopek.studyguide.persistence.*;
+import com.oskopek.studyguide.persistence.DataReader;
+import com.oskopek.studyguide.persistence.DataWriter;
+import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
+import com.oskopek.studyguide.persistence.MFFHtmlScraper;
+import com.oskopek.studyguide.persistence.MFFWebScraperUtil;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
 import com.oskopek.studyguide.view.ProgressCreator;
@@ -198,7 +202,8 @@ public class RootLayoutController extends AbstractController {
             return;
         }
         try {
-            studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath()));
+            StudyPlan studyPlan = reader.readFrom(file.getAbsolutePath());
+            studyGuideApplication.setStudyPlan(studyPlan);
         } catch (IOException e) {
             AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             e.printStackTrace();
@@ -207,5 +212,4 @@ public class RootLayoutController extends AbstractController {
             openedFile = file;
         }
     }
-
 }

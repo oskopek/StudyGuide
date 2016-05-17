@@ -10,12 +10,11 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
@@ -27,10 +26,10 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     private final BooleanProperty fulfilled;
     @JsonBackReference("semester-courseenrollment")
     private final ObjectProperty<Semester> semester;
+
     private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint =
             new SimpleObjectProperty<>(); // TODO PRIORITY move this somewhere
-
-    private transient Logger logger = LoggerFactory.getLogger(getClass());
+    private ChangeListener<Course> courseChangeListener = (observable, oldValue, newValue) -> fireValueChangedEvent();
 
     /**
      * Private constructor for Jackson persistence.
@@ -200,9 +199,19 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      * change using {@link #fireValueChangedEvent()}.
      */
     private void registerChangeEventListeners() {
-        course.addListener((x, y, z) -> fireValueChangedEvent());
+        course.addListener((x, y, z) -> onCourseChanged(x, y, z));
         fulfilled.addListener((x, y, z) -> fireValueChangedEvent());
         semester.addListener((x, y, z) -> fireValueChangedEvent());
+    }
+
+    private void onCourseChanged(ObservableValue<? extends Course> observableValue, Course oldValue, Course newValue) {
+        if (oldValue != null) {
+            oldValue.removeListener(courseChangeListener);
+        }
+        if (newValue != null) {
+            newValue.addListener(courseChangeListener);
+        }
+        fireValueChangedEvent();
     }
 
     @Override

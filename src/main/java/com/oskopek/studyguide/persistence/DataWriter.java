@@ -17,7 +17,6 @@ public interface DataWriter {
      * @param fileName the file to write to
      * @throws IOException if something writing the plan failed
      * @throws IllegalArgumentException if plan or fileName is null
-     * @see DataReader#readFrom(String)
      */
     void writeTo(StudyPlan plan, String fileName) throws IOException, IllegalArgumentException;
 
@@ -28,7 +27,6 @@ public interface DataWriter {
      * @param outputStream the stream to write to
      * @throws IOException if something writing the plan failed
      * @throws IllegalArgumentException if plan or outputStream is null
-     * @see DataReader#readFrom(java.io.InputStream)
      */
     void writeTo(StudyPlan plan, OutputStream outputStream) throws IOException, IllegalArgumentException;
 

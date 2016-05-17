@@ -1,11 +1,15 @@
 package com.oskopek.studyguide.model;
 
+import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.constraints.Constraints;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+
+import java.util.stream.Stream;
 
 /**
  * Default implementation of a {@link StudyPlan}.
@@ -67,6 +71,28 @@ public class DefaultStudyPlan implements StudyPlan {
         this.semesterPlan.set(semesterPlan);
     }
 
+    @Override
+    public StudyPlan register(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        Stream.concat(Stream.concat(getConstraints().getCourseEnrollmentConstraintList().stream(),
+                getConstraints().getCourseGroupConstraintList().stream()),
+                getConstraints().getGlobalConstraintList().stream())
+                .forEach(eventBus::register);
+        getCourseRegistry().courseMapValues().stream().forEach(eventBusTranslator::register);
+        getSemesterPlan().allCourseEnrollments().forEach(eventBusTranslator::register);
+        return this;
+    }
+
+    @Override
+    public StudyPlan unregister(EventBus eventBus, EventBusTranslator eventBusTranslator) {
+        Stream.concat(Stream.concat(getConstraints().getCourseEnrollmentConstraintList().stream(),
+                getConstraints().getCourseGroupConstraintList().stream()),
+                getConstraints().getGlobalConstraintList().stream())
+                .forEach(c -> tryDeregister(eventBus, c));
+        getCourseRegistry().courseMapValues().stream().forEach(eventBusTranslator::unregister);
+        getSemesterPlan().allCourseEnrollments().forEach(eventBusTranslator::unregister);
+        return this;
+    }
+
     /**
      * The JavaFX property for {@link #getSemesterPlan()}.
      *
@@ -92,6 +118,14 @@ public class DefaultStudyPlan implements StudyPlan {
      */
     public ObjectProperty<CourseRegistry> courseRegistryProperty() {
         return courseRegistry;
+    }
+
+    private void tryDeregister(EventBus eventBus, Object object) {
+        try {
+            eventBus.unregister(object);
+        } catch (IllegalArgumentException e) {
+            // intentionally ignored
+        }
     }
 
     @Override

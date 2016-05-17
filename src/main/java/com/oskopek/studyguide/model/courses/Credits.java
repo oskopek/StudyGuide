@@ -2,6 +2,8 @@ package com.oskopek.studyguide.model.courses;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ObservableValueBase;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -9,7 +11,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 /**
  * An abstraction of the ECTS credit value for a {@link Course}.
  */
-public final class Credits implements Comparable<Credits> {
+public final class Credits extends ObservableValueBase<Credits>
+        implements Comparable<Credits>, ObservableValue<Credits> {
 
     private final IntegerProperty creditValue;
 
@@ -17,7 +20,7 @@ public final class Credits implements Comparable<Credits> {
      * Empty JSON constructor.
      */
     private Credits() {
-        creditValue = new SimpleIntegerProperty();
+        this(0);
     }
 
     /**
@@ -28,6 +31,7 @@ public final class Credits implements Comparable<Credits> {
      */
     private Credits(int creditValue) {
         this.creditValue = new SimpleIntegerProperty(creditValue);
+        this.creditValue.addListener((x, y, z) -> fireValueChangedEvent());
     }
 
     /**
@@ -72,6 +76,11 @@ public final class Credits implements Comparable<Credits> {
      */
     public IntegerProperty creditValueProperty() {
         return creditValue;
+    }
+
+    @Override
+    public Credits getValue() {
+        return Credits.valueOf(getCreditValue());
     }
 
     @Override
