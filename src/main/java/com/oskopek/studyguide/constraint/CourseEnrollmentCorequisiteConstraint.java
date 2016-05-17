@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
+import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 import org.slf4j.Logger;
@@ -21,13 +22,6 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     private transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
-     * Private default constructor, needed by CDI.
-     */
-    private CourseEnrollmentCorequisiteConstraint() {
-        // needed by CDI
-    }
-
-    /**
      * Default constructor.
      *
      * @param enrollment the enrollment to check
@@ -37,7 +31,8 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     }
 
     @Override
-    public void validate(@Observes CourseEnrollment courseEnrollment) {
+    @Subscribe
+    public void validate(CourseEnrollment courseEnrollment) {
         logger.debug("Validating {} on {}", courseEnrollment, this);
         // TODO PRIORITY why are these not called? because they are not fired!
         // TODO PRIORITY -> redo the firing in course and course enrollment

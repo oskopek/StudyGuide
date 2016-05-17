@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -17,13 +18,6 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     private static final String message = "constraint.globalCourseRepeatedEnrollmentInvalid";
     private int maxRepeatedEnrollment;
-
-    /**
-     * Private default constructor, needed by CDI.
-     */
-    protected GlobalCourseRepeatedEnrollmentConstraint() {
-        // needed by CDI
-    }
 
     /**
      * Default course.

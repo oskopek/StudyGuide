@@ -1,5 +1,6 @@
-package com.oskopek.studyguide.constraint;
+package com.oskopek.studyguide.constraint.event;
 
+import com.oskopek.studyguide.constraint.Constraint;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -10,7 +11,7 @@ public class BrokenResetEvent {
 
     private Constraint originallyBroken;
 
-    /**Cou
+    /**
      * Default constructor.
      *
      * @param originallyBroken the constraint that is not broken anymore

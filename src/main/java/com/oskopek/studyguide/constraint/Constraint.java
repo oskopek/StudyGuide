@@ -2,6 +2,7 @@ package com.oskopek.studyguide.constraint;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -35,7 +36,8 @@ public interface Constraint {
      *
      * @param changed the course that triggered the constraint breakage
      */
-    void validate(@Observes Course changed);
+    @Subscribe
+    void validate(Course changed);
 
     /**
      * The method should verify if the given constraint was broken, and if so,
@@ -43,7 +45,8 @@ public interface Constraint {
      *
      * @param changed the course enrollment that triggered the constraint breakage
      */
-    void validate(@Observes CourseEnrollment changed);
+    @Subscribe
+    void validate(CourseEnrollment changed);
 
     // TODO OPTIONAL rework fire methods
 

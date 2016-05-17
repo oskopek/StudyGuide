@@ -1,4 +1,6 @@
-package com.oskopek.studyguide.constraint;
+package com.oskopek.studyguide.constraint.event;
+
+import com.oskopek.studyguide.constraint.Constraint;
 
 /**
  * The event used for reporting broken global constraints.

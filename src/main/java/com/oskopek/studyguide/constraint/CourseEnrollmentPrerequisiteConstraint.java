@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
+import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -16,13 +17,6 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
     private final String message = "constraint.unfulfilledPrerequisite";
 
     /**
-     * Private default constructor, needed for CDI.
-     */
-    private CourseEnrollmentPrerequisiteConstraint() {
-        // needed for CDI
-    }
-
-    /**
      * Default constructor.
      *
      * @param enrollment the enrollment to check
@@ -32,7 +26,8 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
     }
 
     @Override
-    public void validate(@Observes CourseEnrollment courseEnrollment) {
+    @Subscribe
+    public void validate(CourseEnrollment courseEnrollment) {
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
         int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
         if (semesterIndex < 0) {

@@ -1,5 +1,8 @@
 package com.oskopek.studyguide.constraint;
 
+import com.google.common.eventbus.Subscribe;
+import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
+import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.SemesterPlan;
@@ -21,16 +24,6 @@ import java.util.List;
 public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
     private CourseEnrollment courseEnrollment;
-
-    @Inject
-    private Event<BrokenCourseEnrollmentConstraintEvent> brokenEvent;
-
-    /**
-     * Private default constructor, needed by CDI.
-     */
-    protected CourseEnrollmentConstraint() {
-        // needed for CDI
-    }
 
     /**
      * Default constructor.
@@ -71,18 +64,19 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     }
 
     @Override
-    public void validate(@Observes Course changed) {
+    @Subscribe
+    public void validate(Course changed) {
         semesterPlan.allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
     }
 
     @Override
     public void fireBrokenEvent(String reason, Course course) {
-        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, this, null));
+        eventBus.post(new BrokenCourseEnrollmentConstraintEvent(reason, this, null));
     }
 
     @Override
     public void fireBrokenEvent(String reason, CourseEnrollment enrollment) {
-        brokenEvent.fire(new BrokenCourseEnrollmentConstraintEvent(reason, this, enrollment));
+        eventBus.post(new BrokenCourseEnrollmentConstraintEvent(reason, this, enrollment));
     }
 
     /**

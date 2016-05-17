@@ -2,8 +2,9 @@ package com.oskopek.studyguide.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.oskopek.studyguide.constraint.BrokenCourseEnrollmentConstraintEvent;
-import com.oskopek.studyguide.constraint.BrokenResetEvent;
+import com.google.common.eventbus.Subscribe;
+import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
+import com.oskopek.studyguide.constraint.event.BrokenResetEvent;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
@@ -15,8 +16,6 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.enterprise.event.Observes;
 
 /**
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
@@ -80,7 +79,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      *
      * @param event the observed event
      */
-    private void onFixedConstraint(@Observes BrokenResetEvent event) {
+    @Subscribe
+    private void onFixedConstraint(BrokenResetEvent event) {
         if (brokenConstraint.get() != null
                 && brokenConstraint.get().getBrokenConstraint().equals(event.getOriginallyBroken())) {
             brokenConstraint.set(null);
@@ -92,7 +92,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      *
      * @param event the observed event
      */
-    private void onBrokenConstraint(@Observes BrokenCourseEnrollmentConstraintEvent event) {
+    @Subscribe
+    private void onBrokenConstraint(BrokenCourseEnrollmentConstraintEvent event) {
         if (equals(event.getEnrollment())) {
             brokenConstraint.set(event);
         }

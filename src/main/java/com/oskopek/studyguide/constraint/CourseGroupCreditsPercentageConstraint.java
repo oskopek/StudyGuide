@@ -2,6 +2,7 @@ package com.oskopek.studyguide.constraint;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -22,13 +23,6 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     private static DecimalFormat percentageFormat = new DecimalFormat("##0.00");
     private final String message = "constraint.courseGroupCreditsPercentageInvalid";
     private Fraction neededFraction;
-
-    /**
-     * Private default constructor, needed by CDI.
-     */
-    protected CourseGroupCreditsPercentageConstraint() {
-        // needed by CDI
-    }
 
     /**
      * Default constructor.

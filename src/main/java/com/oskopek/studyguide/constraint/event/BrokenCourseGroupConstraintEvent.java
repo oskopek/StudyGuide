@@ -1,5 +1,6 @@
-package com.oskopek.studyguide.constraint;
+package com.oskopek.studyguide.constraint.event;
 
+import com.oskopek.studyguide.constraint.Constraint;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;

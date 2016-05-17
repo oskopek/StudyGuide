@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
@@ -19,13 +20,6 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
 
     private final String message = "constraint.courseGroupCreditsSumInvalid";
     private Credits totalNeeded;
-
-    /**
-     * Private default constructor, needed by CDI.
-     */
-    protected CourseGroupCreditsSumConstraint() {
-        // needed by CDI
-    }
 
     /**
      * Default constructor.

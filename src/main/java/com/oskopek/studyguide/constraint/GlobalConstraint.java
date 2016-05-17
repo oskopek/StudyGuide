@@ -1,5 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
+import com.google.common.eventbus.Subscribe;
+import com.oskopek.studyguide.constraint.event.BrokenGlobalConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -13,16 +15,15 @@ import javax.inject.Inject;
  */
 public abstract class GlobalConstraint extends DefaultConstraint {
 
-    @Inject
-    private transient Event<BrokenGlobalConstraintEvent> brokenEvent;
-
     @Override
-    public void validate(@Observes Course changed) {
+    @Subscribe
+    public void validate(Course changed) {
         validate();
     }
 
     @Override
-    public void validate(@Observes CourseEnrollment changed) {
+    @Subscribe
+    public void validate(CourseEnrollment changed) {
         validate();
     }
 
@@ -48,6 +49,6 @@ public abstract class GlobalConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     protected void fireBrokenEvent(String message) {
-        brokenEvent.fire(new BrokenGlobalConstraintEvent(message, this));
+        eventBus.post(new BrokenGlobalConstraintEvent(message, this));
     }
 }

@@ -1,5 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
+import com.google.common.eventbus.Subscribe;
+import com.oskopek.studyguide.constraint.event.BrokenCourseGroupConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
@@ -16,16 +18,6 @@ import javax.inject.Inject;
 public abstract class CourseGroupConstraint extends DefaultConstraint {
 
     private CourseGroup courseGroup;
-
-    @Inject
-    private Event<BrokenCourseGroupConstraintEvent> brokenEvent;
-
-    /**
-     * Private default constructor, needed by CDI.
-     */
-    protected CourseGroupConstraint() {
-        // needed by CDI
-    }
 
     /**
      * Default constructor.
@@ -52,14 +44,16 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     protected abstract void validate();
 
     @Override
-    public void validate(@Observes Course changed) {
+    @Subscribe
+    public void validate(Course changed) {
         if (courseGroup.courseListProperty().contains(changed)) {
             validate();
         }
     }
 
     @Override
-    public void validate(@Observes CourseEnrollment changed) {
+    @Subscribe
+    public void validate(CourseEnrollment changed) {
         validate(changed.getCourse());
     }
 
@@ -79,7 +73,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     public void fireBrokenEvent(String message) {
-        brokenEvent.fire(new BrokenCourseGroupConstraintEvent(message, this, courseGroup));
+        eventBus.post(new BrokenCourseGroupConstraintEvent(message, this, courseGroup));
     }
 
     @Override

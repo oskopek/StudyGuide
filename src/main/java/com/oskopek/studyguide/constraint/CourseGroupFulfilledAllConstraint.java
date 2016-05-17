@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.constraint;
 
+import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -14,13 +15,6 @@ import java.util.stream.Collectors;
 public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
 
     private final String message = "constraint.courseGroupFulfilledAllInvalid";
-
-    /**
-     * Private default constructor, needed by CDI.
-     */
-    protected CourseGroupFulfilledAllConstraint() {
-        // needed by CDI
-    }
 
     /**
      * Default constructor.
