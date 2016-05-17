@@ -16,6 +16,13 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
     private final String message = "constraint.unfulfilledPrerequisite";
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseEnrollmentPrerequisiteConstraint() {
+        // needed for CDI
+    }
+
+    /**
      * Default constructor.
      *
      * @param enrollment the enrollment to check

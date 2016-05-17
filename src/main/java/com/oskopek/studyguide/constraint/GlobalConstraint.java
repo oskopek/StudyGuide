@@ -11,6 +11,13 @@ import com.oskopek.studyguide.model.courses.Course;
  */
 public abstract class GlobalConstraint extends DefaultConstraint {
 
+    /**
+     * Private default constructor, needed by CDI.
+     */
+    protected GlobalConstraint() {
+        // needed for CDI
+    }
+
     @Override
     @Subscribe
     public void validate(Course changed) {

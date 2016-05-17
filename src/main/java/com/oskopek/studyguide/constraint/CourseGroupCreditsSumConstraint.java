@@ -22,6 +22,13 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
     private Credits totalNeeded;
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseGroupCreditsSumConstraint() {
+        // needed for CDI
+    }
+
+    /**
      * Default constructor.
      *
      * @param courseGroup the referenced course group

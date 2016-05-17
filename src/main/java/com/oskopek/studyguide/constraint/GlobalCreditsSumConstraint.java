@@ -17,6 +17,13 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
     private Credits totalNeeded;
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected GlobalCreditsSumConstraint() {
+        // needed for CDI
+    }
+
+    /**
      * Default constructor.
      *
      * @param totalNeeded the minimum credit amount the student needs to achieve over the course of the study plan

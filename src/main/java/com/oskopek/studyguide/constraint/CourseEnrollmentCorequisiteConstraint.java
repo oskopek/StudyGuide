@@ -21,6 +21,13 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     private transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseEnrollmentCorequisiteConstraint() {
+        // needed for CDI
+    }
+
+    /**
      * Default constructor.
      *
      * @param enrollment the enrollment to check

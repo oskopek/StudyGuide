@@ -25,6 +25,13 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     private Fraction neededFraction;
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseGroupCreditsPercentageConstraint() {
+        // needed for CDI
+    }
+
+    /**
      * Default constructor.
      *
      * @param courseGroup the referenced course group

@@ -20,6 +20,13 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
     private int maxRepeatedEnrollment;
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected GlobalCourseRepeatedEnrollmentConstraint() {
+        // needed for CDI
+    }
+
+    /**
      * Default course.
      *
      * @param maxRepeatedEnrollment the maximum count of course enrollments per course

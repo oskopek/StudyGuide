@@ -16,6 +16,13 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     private CourseGroup courseGroup;
 
     /**
+     * Private default constructor, needed by CDI.
+     */
+    protected CourseGroupConstraint() {
+        // needed for CDI
+    }
+
+    /**
      * Default constructor.
      *
      * @param courseGroup the referenced course group
