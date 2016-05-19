@@ -105,7 +105,9 @@ public class SemesterController extends AbstractController {
             AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("semester.cannotAdd"));
             return;
         }
-        studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++));
+        while (!studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++))) {
+            // intentionally empty
+        }
     }
 
     /**

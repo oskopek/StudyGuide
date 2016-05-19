@@ -61,8 +61,13 @@ public class SemesterPlan implements Iterable<Semester> {
      * @param semester the semester to be added
      * @see javafx.collections.ObservableList#add(Object)
      */
-    public void addSemester(Semester semester) {
-        semesterList.add(semester);
+    public boolean addSemester(Semester semester) {
+        if (findSemester(semester.getName()).isPresent()) {
+            return false;
+        } else {
+            semesterList.add(semester);
+            return true;
+        }
     }
 
     /**
