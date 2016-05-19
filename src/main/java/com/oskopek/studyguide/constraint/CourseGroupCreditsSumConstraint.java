@@ -49,6 +49,8 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
                 fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum));
         if (fulfilledSum.compareTo(totalNeeded) < 0) {
             fireBrokenEvent(generateMessage(fulfilledSum, totalNeeded));
+        } else {
+            fireFixedEvent(this);
         }
     }
 

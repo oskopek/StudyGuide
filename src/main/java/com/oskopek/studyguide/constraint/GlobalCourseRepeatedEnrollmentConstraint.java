@@ -45,8 +45,10 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
             List<CourseEnrollment> enrollments = entry.getValue();
             if (enrollments.size() > maxRepeatedEnrollment) {
                 fireBrokenEvent(generateMessage(enrollments.size(), maxRepeatedEnrollment, course));
+                return;
             }
         }
+        fireFixedEvent(this);
     }
 
     /**

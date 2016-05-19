@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.constraint;
 
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 import org.slf4j.Logger;
@@ -37,7 +36,6 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     }
 
     @Override
-    @Subscribe
     public void validate(CourseEnrollment changed) {
         if (!changed.equals(getCourseEnrollment())) {
             return;
@@ -54,6 +52,8 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
         }
         if (!corequisites.isEmpty()) {
             fireBrokenEvent(generateMessage(message, corequisites), changed);
+        } else {
+            fireFixedEvent(this);
         }
     }
 }

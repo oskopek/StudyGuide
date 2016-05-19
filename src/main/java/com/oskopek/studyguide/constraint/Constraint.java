@@ -3,7 +3,6 @@ package com.oskopek.studyguide.constraint;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Registrable;
 import com.oskopek.studyguide.model.courses.Course;
@@ -34,7 +33,6 @@ public interface Constraint extends Registrable<Constraint> {
      *
      * @param changed the course that triggered the constraint breakage
      */
-    @Subscribe
     void validate(Course changed);
 
     /**
@@ -43,7 +41,6 @@ public interface Constraint extends Registrable<Constraint> {
      *
      * @param changed the course enrollment that triggered the constraint breakage
      */
-    @Subscribe
     void validate(CourseEnrollment changed);
 
     /**
@@ -61,6 +58,8 @@ public interface Constraint extends Registrable<Constraint> {
      * @param changed the course enrollment that triggered the constraint breakage
      */
     void fireBrokenEvent(String message, CourseEnrollment changed);
+
+    void fireFixedEvent(Constraint original);
 
     @Override
     default Constraint register(EventBus eventBus, EventBusTranslator eventBusTranslator) {

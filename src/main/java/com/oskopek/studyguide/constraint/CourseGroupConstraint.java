@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.constraint;
 
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenCourseGroupConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
@@ -54,7 +53,6 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     protected abstract void validate();
 
     @Override
-    @Subscribe
     public void validate(Course changed) {
         logger.trace("Caught event {} at {}", changed, this);
         if (courseGroup.courseListProperty().contains(changed)) {
@@ -63,7 +61,6 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     }
 
     @Override
-    @Subscribe
     public void validate(CourseEnrollment changed) {
         logger.trace("Caught event {} at {}", changed, this);
         validate(changed.getCourse());

@@ -3,6 +3,7 @@ package com.oskopek.studyguide.weld;
 import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import org.slf4j.Logger;
@@ -17,6 +18,9 @@ public class EventBusTranslator {
     private EventBus eventBus;
 
     @Inject
+    private StudyGuideApplication app;
+
+    @Inject
     private Logger logger;
 
     private ChangeListener<Course> courseChangeListener = new ChangeListener<Course>() {
@@ -24,7 +28,8 @@ public class EventBusTranslator {
         public void changed(ObservableValue<? extends Course> observable, Course oldValue, Course newValue) {
             logger.trace("Translating course change: {}", newValue);
             if (newValue != null) {
-                eventBus.post(newValue);
+                //eventBus.post(newValue);
+                app.getStudyPlan().getConstraints().recheckAll();
             }
         }
     };
@@ -34,7 +39,8 @@ public class EventBusTranslator {
                             CourseEnrollment newValue) {
             logger.trace("Translating course enrollment change: {}", newValue);
             if (newValue != null) {
-                eventBus.post(newValue);
+                //eventBus.post(newValue);
+                app.getStudyPlan().getConstraints().recheckAll();
             }
         }
     };

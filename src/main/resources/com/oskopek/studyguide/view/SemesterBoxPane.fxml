@@ -2,7 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" minHeight="300.0" minWidth="400.0"
             xmlns="http://javafx.com/javafx/null"
@@ -39,9 +40,10 @@
         <TableView fx:id="semesterTable" minHeight="270.0" minWidth="270.0" BorderPane.alignment="CENTER"
                    onDragDetected="#onDragDetected">
             <columns>
+                <TableColumn fx:id="warnColumn" editable="false" maxWidth="30.0" minWidth="30.0" prefWidth="30.0"/>
                 <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="60.0" prefWidth="70.0"
                              text="%course.id"/>
-                <TableColumn fx:id="nameColumn" editable="false" minWidth="100.0" prefWidth="120.0"
+                <TableColumn fx:id="nameColumn" editable="false" minWidth="90.0" prefWidth="120.0"
                              text="%course.name"/>
                 <TableColumn fx:id="creditsColumn" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="90.0"
                              text="%course.credits"/>

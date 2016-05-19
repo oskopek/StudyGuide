@@ -9,6 +9,7 @@ import com.oskopek.studyguide.constraint.CourseGroupConstraint;
 import com.oskopek.studyguide.constraint.DefaultConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
+import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.weld.BeanManagerUtil;
 import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.ListProperty;
@@ -158,8 +159,25 @@ public class Constraints {
                 getCourseGroupConstraintList().stream()), getGlobalConstraintList().stream());
     }
 
+    public void recheckAll(Course course) {
+        courseEnrollmentConstraintList.stream().filter(c -> c.getCourseEnrollment().getCourse().equals(course))
+                .forEach(c -> c.validate(c.getCourseEnrollment()));
+        courseGroupConstraintList.stream().forEach(c -> c.validate(course));
+        globalConstraintList.stream().forEach(c -> c.validate(course));
+    }
+
+    public void recheckAll(CourseEnrollment enrollment) {
+        courseEnrollmentConstraintList.stream().filter(c -> c.getCourseEnrollment().equals(enrollment))
+                .forEach(c -> c.validate(c.getCourseEnrollment()));
+        courseGroupConstraintList.stream().forEach(c -> c.validate(enrollment));
+        globalConstraintList.stream().forEach(c -> c.validate(enrollment));
+    }
+
     public void recheckAll() {
-        // TODO PRIORITY recheck all constraints
+        courseEnrollmentConstraintList.stream().forEach(c -> c.validate(c.getCourseEnrollment()));
+        courseGroupConstraintList.stream().forEach(
+                c -> c.validate(c.getCourseGroup().courseListProperty().get(0).getValue())); // TODO PRIORITY FIX ME
+        globalConstraintList.stream().forEach(c -> c.validate((Course) null));
     }
 
     @Override

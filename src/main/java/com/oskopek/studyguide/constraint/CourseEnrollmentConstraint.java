@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.constraint;
 
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
 import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
@@ -81,7 +80,6 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     }
 
     @Override
-    @Subscribe
     public void validate(Course changed) {
         if (!changed.equals(getCourseEnrollment().getCourse())) {
             return;

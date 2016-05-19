@@ -9,8 +9,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import java.util.stream.Stream;
-
 /**
  * Default implementation of a {@link StudyPlan}.
  */
@@ -73,10 +71,10 @@ public class DefaultStudyPlan implements StudyPlan {
 
     @Override
     public StudyPlan register(EventBus eventBus, EventBusTranslator eventBusTranslator) {
-        Stream.concat(Stream.concat(getConstraints().getCourseEnrollmentConstraintList().stream(),
-                getConstraints().getCourseGroupConstraintList().stream()),
-                getConstraints().getGlobalConstraintList().stream())
-                .forEach(c -> c.register(eventBus, eventBusTranslator));
+        //        Stream.concat(Stream.concat(getConstraints().getCourseEnrollmentConstraintList().stream(),
+        //                getConstraints().getCourseGroupConstraintList().stream()),
+        //                getConstraints().getGlobalConstraintList().stream())
+        //                .forEach(c -> c.register(eventBus, eventBusTranslator));
         getCourseRegistry().courseMapValues().stream().forEach(c -> c.register(eventBus, eventBusTranslator));
         getSemesterPlan().allCourseEnrollments().forEach(c -> c.register(eventBus, eventBusTranslator));
         return this;
@@ -84,10 +82,10 @@ public class DefaultStudyPlan implements StudyPlan {
 
     @Override
     public StudyPlan unregister(EventBus eventBus, EventBusTranslator eventBusTranslator) {
-        Stream.concat(Stream.concat(getConstraints().getCourseEnrollmentConstraintList().stream(),
-                getConstraints().getCourseGroupConstraintList().stream()),
-                getConstraints().getGlobalConstraintList().stream())
-                .forEach(c -> tryDeregister(eventBus, c));
+        //        Stream.concat(Stream.concat(getConstraints().getCourseEnrollmentConstraintList().stream(),
+        //                getConstraints().getCourseGroupConstraintList().stream()),
+        //                getConstraints().getGlobalConstraintList().stream())
+        //                .forEach(c -> tryDeregister(eventBus, c));
         getCourseRegistry().courseMapValues().stream().forEach(eventBusTranslator::unregister);
         getSemesterPlan().allCourseEnrollments().forEach(eventBusTranslator::unregister);
         return this;
@@ -120,13 +118,13 @@ public class DefaultStudyPlan implements StudyPlan {
         return courseRegistry;
     }
 
-    private void tryDeregister(EventBus eventBus, Object object) {
-        try {
-            eventBus.unregister(object);
-        } catch (IllegalArgumentException e) {
-            // intentionally ignored
-        }
-    }
+    //    private void tryDeregister(EventBus eventBus, Object object) {
+    //        try {
+    //            eventBus.unregister(object);
+    //        } catch (IllegalArgumentException e) {
+    //            // intentionally ignored
+    //        }
+    //    }
 
     @Override
     public int hashCode() {

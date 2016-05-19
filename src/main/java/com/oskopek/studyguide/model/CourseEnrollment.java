@@ -86,7 +86,6 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      *
      * @param event the observed event
      */
-    @Subscribe
     public void onFixedConstraint(BrokenResetEvent event) {
         if (brokenConstraint.get() != null && brokenConstraint.get().getBrokenConstraint()
                 .equals(event.getOriginallyBroken())) {

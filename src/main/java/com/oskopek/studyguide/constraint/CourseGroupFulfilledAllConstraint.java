@@ -41,6 +41,8 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
         unfulfilledCompulsoryCourses.removeAll(fulfilledCompulsoryCourses);
         if (unfulfilledCompulsoryCourses.size() > 0) {
             fireBrokenEvent(generateMessage(unfulfilledCompulsoryCourses));
+        } else {
+            fireFixedEvent(this);
         }
     }
 

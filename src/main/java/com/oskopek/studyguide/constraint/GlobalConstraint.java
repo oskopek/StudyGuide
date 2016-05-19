@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.constraint;
 
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenGlobalConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
@@ -23,14 +22,12 @@ public abstract class GlobalConstraint extends DefaultConstraint {
     }
 
     @Override
-    @Subscribe
     public void validate(Course changed) {
         logger.trace("Caught event {} at {}", changed, this);
         validate();
     }
 
     @Override
-    @Subscribe
     public void validate(CourseEnrollment changed) {
         logger.trace("Caught event {} at {}", changed, this);
         validate();

@@ -200,6 +200,7 @@ public class RootLayoutController extends AbstractController {
             JsonDataReaderWriter reader = new JsonDataReaderWriter(messages, eventBus);
             StudyPlan studyPlan = reader.readFrom(file.getAbsolutePath());
             studyGuideApplication.setStudyPlan(studyPlan);
+            studyPlan.getConstraints().recheckAll();
         } catch (IOException e) {
             AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             e.printStackTrace();

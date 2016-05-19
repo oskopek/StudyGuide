@@ -40,6 +40,8 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
                         .reduce(0, Integer::sum));
         if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
             fireBrokenEvent(generateMessage(fulfilledCourseCreditSum, totalNeeded));
+        } else {
+            fireFixedEvent(this);
         }
     }
 

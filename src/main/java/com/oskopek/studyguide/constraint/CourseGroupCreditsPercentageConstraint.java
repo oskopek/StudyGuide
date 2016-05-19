@@ -95,6 +95,8 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
         Fraction gotFraction = Fraction.getFraction(fulfilledSum, creditSum);
         if (neededFraction.compareTo(gotFraction) > 0) {
             fireBrokenEvent(generateMessage(gotFraction, neededFraction));
+        } else {
+            fireFixedEvent(this);
         }
     }
 

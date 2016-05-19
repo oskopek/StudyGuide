@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.controller;
 
+import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.StudyPlan;
@@ -23,7 +24,11 @@ import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 import javax.inject.Inject;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * Controller for SemesterPane.
@@ -53,6 +58,7 @@ public class SemesterController extends AbstractController {
      */
     @FXML
     private void initialize() {
+        eventBus.register(this);
         listChangeListener = (observable, oldValue, newValue) -> reinitializeSemesterBoxes();
         studyGuideApplication.studyPlanProperty().addListener(((observable, oldValue, newValue) -> {
             if (oldValue != null) {
@@ -195,6 +201,18 @@ public class SemesterController extends AbstractController {
         }
         from.removeCourseEnrollment(enrollment);
         enrollment.semesterProperty().set(to);
+    }
+
+    @Subscribe
+    public void handleCourseChange(Course changed) {
+        logger.trace("Course changed: {}", changed);
+        studyGuideApplication.getStudyPlan().getConstraints().recheckAll(changed);
+    }
+
+    @Subscribe
+    public void handleCourseEnrollmentChange(CourseEnrollment changed) {
+        logger.trace("CourseEnrollment changed: {}", changed);
+        studyGuideApplication.getStudyPlan().getConstraints().recheckAll(changed);
     }
 
 }

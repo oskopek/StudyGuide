@@ -1,20 +1,21 @@
 package com.oskopek.studyguide.controller;
 
-import com.google.common.eventbus.Subscribe;
-import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
+import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AlertCreator;
+import javafx.beans.binding.ObjectBinding;
+import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
@@ -49,6 +50,8 @@ public class SemesterBoxController extends AbstractController {
     @FXML
     private TableView<CourseEnrollment> semesterTable;
     @FXML
+    private TableColumn<CourseEnrollment, Label> warnColumn;
+    @FXML
     private TableColumn<CourseEnrollment, String> idColumn;
     @FXML
     private TableColumn<CourseEnrollment, String> nameColumn;
@@ -72,29 +75,8 @@ public class SemesterBoxController extends AbstractController {
      */
     @FXML
     private void initialize() {
-        eventBus.register(this);
         semesterNameArea.textProperty().addListener((observable) -> onSemesterNameChange());
-        semesterTable.setRowFactory(param -> new TableRow<CourseEnrollment>() {
-
-            @Override
-            protected void updateItem(CourseEnrollment item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty) {
-                    setTooltip(null);
-                } else {
-                    item.brokenConstraintProperty().addListener((observable, oldValue, newValue) -> {
-                        if (newValue == null) {
-                            setTooltip(null);
-                            setBackground(Background.EMPTY);
-                        } else {
-                            setTooltip(new Tooltip(newValue.getMessage()));
-                            setBackground(new Background(
-                                    new BackgroundFill(Color.valueOf("red"), CornerRadii.EMPTY, Insets.EMPTY)));
-                        }
-                    });
-                }
-            }
-        });
+        warnColumn.setCellValueFactory(param -> new LabelBinding(param.getValue().brokenConstraintProperty()));
         idColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameOrLocalizedNameProperty());
         creditsColumn
@@ -282,9 +264,25 @@ public class SemesterBoxController extends AbstractController {
         event.consume();
     }
 
-    @Subscribe
-    public void onBrokenCourseEnrollmentConstraintEvent(BrokenCourseEnrollmentConstraintEvent event) {
-        logger.debug("BrokenCourseEnrollmentConstraintEvent caught: {}", event.message());
-    }
+    private class LabelBinding extends ObjectBinding<Label> {
 
+        private ObjectProperty<? extends StringMessageEvent> eventObjectProperty;
+
+        public LabelBinding(ObjectProperty<? extends StringMessageEvent> eventObjectProperty) {
+            bind(eventObjectProperty);
+            this.eventObjectProperty = eventObjectProperty;
+        }
+
+        @Override
+        protected Label computeValue() {
+            Label label = new Label();
+            if (eventObjectProperty.get() != null) {
+                label.setBackground(
+                        new Background(new BackgroundFill(Color.valueOf("red"), CornerRadii.EMPTY, Insets.EMPTY)));
+                label.setText(messages.getString("warning"));
+                label.setTooltip(new Tooltip(eventObjectProperty.get().message()));
+            }
+            return label;
+        }
+    }
 }
