@@ -1,12 +1,12 @@
 package com.oskopek.studyguide.model.constraints;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ReadOnlyListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -56,15 +56,16 @@ public class CourseGroup {
      * @return non-null list of {@link Course}s
      */
     @JsonGetter
-    private ObservableList<Course> getCourseList() {
+    private List<Course> getCourseList() {
         return courseList.get();
-    }
+    } // TODO OPTIONAL FIX THE GRAMMAR HERE
 
     /**
      * Private setter for Jackson persistence.
      *
      * @param courseList the list of {@link Course}s to set
      */
+    @JsonSetter
     private void setCourseList(List<Course> courseList) {
         this.courseList.set(FXCollections.observableArrayList(courseList));
     }

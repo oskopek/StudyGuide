@@ -69,7 +69,7 @@ public class JsonDataReaderWriterTest {
         StudyPlan plan = jsonDataReaderWriter.readFrom(jsonPath.toString());
         assertNotNull(plan);
         assertNotNull(plan.getSemesterPlan());
-        assertEquals(2, plan.getSemesterPlan().getSemesterList().size());
+        assertEquals(6, plan.getSemesterPlan().getSemesterList().size());
     }
 
     @Test

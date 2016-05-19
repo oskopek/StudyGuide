@@ -67,8 +67,8 @@ public final class Credits extends ObservableValueBase<Credits>
      * @param creditValue greater than 0
      */
     public void setCreditValue(int creditValue) {
-        if (creditValue <= 0) {
-            throw new IllegalArgumentException("Credit value " + creditValue + " is less than 1.");
+        if (creditValue < 0) {
+            throw new IllegalArgumentException("Credit value " + creditValue + " is less than 0.");
         }
         this.creditValue.set(creditValue);
     }

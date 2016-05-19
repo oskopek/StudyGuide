@@ -1,11 +1,13 @@
 package com.oskopek.studyguide.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.oskopek.studyguide.model.constraints.Constraints;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 
 /**
  * Representation of the whole study plan model.
  */
+@JsonPropertyOrder({"courseRegistry", "semesterPlan", "constraints"})
 public interface StudyPlan {
 
     /**
