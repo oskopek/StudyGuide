@@ -86,7 +86,7 @@ public class RootLayoutController extends AbstractController {
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedURL = enterStringController.getSubmittedString();
-            MFFHtmlScraper scraper = new MFFHtmlScraper(MFFWebScraperUtil.sisWebUrl);
+            MFFHtmlScraper scraper = new MFFHtmlScraper(beanManager, MFFWebScraperUtil.sisWebUrl);
             Stage progressDialog = ProgressCreator.showProgress(scraper, messages.getString("progress.pleaseWait"));
             Task<StudyPlan> studyPlanTask = new Task<StudyPlan>() {
                 @Override

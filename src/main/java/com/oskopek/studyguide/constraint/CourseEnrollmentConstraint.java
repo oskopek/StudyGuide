@@ -10,6 +10,8 @@ import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +22,9 @@ import java.util.List;
  */
 public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private CourseEnrollment courseEnrollment;
+
 
     /**
      * Private default constructor, needed by CDI.
@@ -67,21 +71,30 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
         return courseEnrollment;
     }
 
+    /**
+     * Set the course enrollment we're checking.
+     *
+     * @param courseEnrollment the course enrollment
+     */
+    public void setCourseEnrollment(CourseEnrollment courseEnrollment) {
+        this.courseEnrollment = courseEnrollment;
+    }
+
     @Override
     @Subscribe
     public void validate(Course changed) {
-        logger.get().trace("Caught event {} at {}", changed, this);
-        semesterPlan.get().allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
+        logger.trace("Caught event {} at {}", changed, this);
+        semesterPlan.allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
     }
 
     @Override
     public void fireBrokenEvent(String reason, Course course) {
-        eventBus.get().post(new BrokenCourseEnrollmentConstraintEvent(reason, this, null));
+        eventBus.post(new BrokenCourseEnrollmentConstraintEvent(messages, reason, this, null));
     }
 
     @Override
     public void fireBrokenEvent(String reason, CourseEnrollment enrollment) {
-        eventBus.get().post(new BrokenCourseEnrollmentConstraintEvent(reason, this, enrollment));
+        eventBus.post(new BrokenCourseEnrollmentConstraintEvent(messages, reason, this, enrollment));
     }
 
     /**
@@ -93,7 +106,7 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
      * @return the String to use as a message, localized
      */
     protected String generateMessage(String message, List<Course> brokenRequirements) {
-        return messages.get().getString(message) + StringUtils.join(brokenRequirements.iterator(), ", ");
+        return messages.getString(message) + StringUtils.join(brokenRequirements.iterator(), ", ");
     }
 
     @Override

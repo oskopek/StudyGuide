@@ -11,6 +11,7 @@ import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.weld.BeanManagerUtil;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import org.apache.commons.lang.StringUtils;
@@ -19,6 +20,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import javax.enterprise.inject.spi.BeanManager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -40,6 +42,7 @@ import java.util.stream.Collectors;
  */
 public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
+    private final BeanManager beanManager;
     private SISHtmlScraper sisHtmlScraper;
     private DoubleProperty progressProperty = new SimpleDoubleProperty();
 
@@ -48,10 +51,11 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
      *
      * @param sisUrl the url of a SIS instance
      */
-    public MFFHtmlScraper(String sisUrl) {
+    public MFFHtmlScraper(BeanManager beanManager, String sisUrl) {
         if (sisUrl == null) {
             throw new IllegalArgumentException("SIS Url cannot be null.");
         }
+        this.beanManager = beanManager;
         sisHtmlScraper = new SISHtmlScraper(sisUrl);
     }
 
@@ -94,7 +98,10 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 // compulsory courses are transitive (their dependencies have to be compulsory), we can add all
                 registry.putAllCourses(compulsory);
                 CourseGroup group = new CourseGroup(registry.courseMapValues());
-                constraints.getCourseGroupConstraintList().add(new CourseGroupFulfilledAllConstraint(group));
+                CourseGroupFulfilledAllConstraint constraint
+                        = BeanManagerUtil.createBeanInstance(beanManager, CourseGroupFulfilledAllConstraint.class);
+                constraint.setCourseGroup(group);
+                constraints.getCourseGroupConstraintList().add(constraint);
             } else if (filterSemiCompulsory(headerName)) {
                 Element desc = header.nextElementSibling();
                 Credits neededCreditSum = filterNeededCreditSum(desc.text());
@@ -106,8 +113,12 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                         courseIds.stream().map(id -> semiCompulsory.getCourse(id)).collect(Collectors.toList());
                 registry.putAllCourses(courses);
                 CourseGroup group = new CourseGroup(courses);
+                CourseGroupCreditsSumConstraint constraint
+                        = BeanManagerUtil.createBeanInstance(beanManager, CourseGroupCreditsSumConstraint.class);
+                constraint.setCourseGroup(group);
+                constraint.setTotalNeeded(neededCreditSum);
                 constraints.getCourseGroupConstraintList()
-                        .add(new CourseGroupCreditsSumConstraint(group, neededCreditSum));
+                        .add(constraint);
             }
         }
 
@@ -118,7 +129,9 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         }
 
         // add global constraints we know to be of effect
-        GlobalCourseRepeatedEnrollmentConstraint c1 = new GlobalCourseRepeatedEnrollmentConstraint(2);
+        GlobalCourseRepeatedEnrollmentConstraint c1 = BeanManagerUtil
+                .createBeanInstance(beanManager, GlobalCourseRepeatedEnrollmentConstraint.class);
+        c1.setMaxRepeatedEnrollment(2);
 
         Optional<String> lastYear =
                 document.select("h4").stream().map(Element::text).filter(row -> row.contains("rok studia"))
@@ -127,7 +140,9 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         if (lastYear.isPresent()) {
             lastYearInt = lastYear.get().charAt(0) - '0';
         }
-        GlobalCreditsSumConstraint c2 = new GlobalCreditsSumConstraint(Credits.valueOf(60 * lastYearInt));
+        GlobalCreditsSumConstraint c2 = BeanManagerUtil
+                .createBeanInstance(beanManager, GlobalCreditsSumConstraint.class);
+        c2.setTotalNeeded(Credits.valueOf(60 * lastYearInt));
         constraints.getGlobalConstraintList().addAll(c1, c2);
 
         studyPlan.courseRegistryProperty().set(registry);

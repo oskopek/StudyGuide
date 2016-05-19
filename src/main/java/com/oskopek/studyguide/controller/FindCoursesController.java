@@ -95,8 +95,8 @@ public class FindCoursesController extends AbstractController implements FindCou
                                 messages.getString("findCourses.courseAlreadyEnrolled"));
                         return;
                     }
-                    studyGuideApplication.getStudyPlan().getConstraints().addAllCourseEnrollmentConstraints(enrollment,
-                            eventBus, eventBusTranslator);
+                    studyGuideApplication.getStudyPlan().getConstraints()
+                            .addAllCourseEnrollmentConstraints(beanManager, enrollment, eventBus, eventBusTranslator);
                     enrollment.register(eventBus, eventBusTranslator);
                 }
             }

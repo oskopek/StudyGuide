@@ -18,7 +18,7 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     // TODO OPTIONAL merge this with Prereq constraint (more efficient)
     private final String message = "constraint.unfulfilledCorequisite";
 
-    private transient Logger logger = LoggerFactory.getLogger(getClass());
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * Private default constructor, needed by CDI.
@@ -41,7 +41,7 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     public void validate(CourseEnrollment changed) {
         logger.trace("Caught event {} at {}", changed, this);
         List<CourseEnrollment> enrollmentsUntilNow =
-                takeUntilSemester(semesterPlan.get(), getCourseEnrollment().getSemester());
+                takeUntilSemester(semesterPlan, getCourseEnrollment().getSemester());
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = corequisites.indexOf(enrollment.getCourse());

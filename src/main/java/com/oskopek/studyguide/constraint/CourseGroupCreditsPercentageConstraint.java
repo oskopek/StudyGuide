@@ -88,7 +88,7 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
         Stream<Course> fulfilledGroupCourses =
-                semesterPlan.get().allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
+                semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
                         .filter(c -> groupCourses.contains(c));
         int creditSum = groupCourses.stream().map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         int fulfilledSum = fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
@@ -125,6 +125,6 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
      * @return the String to use as a message, localized
      */
     private String generateMessage(Fraction got, Fraction needed) {
-        return String.format(messages.get().getString(message), toPercent(needed), toPercent(got));
+        return String.format(messages.getString(message), toPercent(needed), toPercent(got));
     }
 }

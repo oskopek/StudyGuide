@@ -2,9 +2,7 @@ package com.oskopek.studyguide.constraint;
 
 import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.SemesterPlan;
-import org.slf4j.Logger;
 
-import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import java.util.ResourceBundle;
 
@@ -15,15 +13,12 @@ import java.util.ResourceBundle;
 public abstract class DefaultConstraint implements Constraint {
 
     @Inject
-    protected transient Instance<SemesterPlan> semesterPlan;
+    protected transient SemesterPlan semesterPlan;
 
     @Inject
-    protected transient Instance<ResourceBundle> messages;
+    protected transient ResourceBundle messages;
 
     @Inject
-    protected transient Instance<EventBus> eventBus;
-
-    @Inject
-    protected transient Instance<Logger> logger;
+    protected transient EventBus eventBus;
 
 }

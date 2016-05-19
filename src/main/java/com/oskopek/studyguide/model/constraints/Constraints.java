@@ -8,6 +8,7 @@ import com.oskopek.studyguide.constraint.CourseEnrollmentPrerequisiteConstraint;
 import com.oskopek.studyguide.constraint.CourseGroupConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
+import com.oskopek.studyguide.weld.BeanManagerUtil;
 import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -16,6 +17,7 @@ import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import javax.enterprise.inject.spi.BeanManager;
 import java.util.List;
 
 /**
@@ -132,10 +134,16 @@ public class Constraints {
      *
      * @param courseEnrollment the course enrollment
      */
-    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment, EventBus eventBus,
+    public void addAllCourseEnrollmentConstraints(BeanManager beanManager, CourseEnrollment courseEnrollment,
+                                                  EventBus eventBus,
                                                   EventBusTranslator eventBusTranslator) {
-        CourseEnrollmentConstraint c1 = new CourseEnrollmentCorequisiteConstraint(courseEnrollment);
-        CourseEnrollmentConstraint c2 = new CourseEnrollmentPrerequisiteConstraint(courseEnrollment);
+
+        CourseEnrollmentConstraint c1 = BeanManagerUtil
+                .createBeanInstance(beanManager, CourseEnrollmentCorequisiteConstraint.class);
+        c1.setCourseEnrollment(courseEnrollment);
+        CourseEnrollmentConstraint c2 = BeanManagerUtil
+                .createBeanInstance(beanManager, CourseEnrollmentPrerequisiteConstraint.class);
+        c2.setCourseEnrollment(courseEnrollment);
         c1.register(eventBus, eventBusTranslator);
         c2.register(eventBus, eventBusTranslator);
         courseEnrollmentConstraintList.addAll(c1, c2);

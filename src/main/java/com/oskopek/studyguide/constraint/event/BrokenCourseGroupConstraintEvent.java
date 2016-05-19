@@ -5,6 +5,8 @@ import com.oskopek.studyguide.model.constraints.CourseGroup;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.ResourceBundle;
+
 /**
  * The event used for reporting broken course group constraints.
  */
@@ -19,8 +21,9 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
      * @param broken the constraint that was broken and generated this event
      * @param courseGroup the course group that the constraint broke on
      */
-    public BrokenCourseGroupConstraintEvent(String message, Constraint broken, CourseGroup courseGroup) {
-        super(message, broken);
+    public BrokenCourseGroupConstraintEvent(ResourceBundle messages, String message, Constraint broken,
+                                            CourseGroup courseGroup) {
+        super(messages, message, broken);
         this.courseGroup = courseGroup;
     }
 

@@ -4,12 +4,16 @@ import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenGlobalConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Constraint on a global level (on all {@link com.oskopek.studyguide.model.CourseEnrollment}s in the
  * {@link com.oskopek.studyguide.model.StudyPlan}.
  */
 public abstract class GlobalConstraint extends DefaultConstraint {
+
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * Private default constructor, needed by CDI.
@@ -21,14 +25,14 @@ public abstract class GlobalConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(Course changed) {
-        logger.get().trace("Caught event {} at {}", changed, this);
+        logger.trace("Caught event {} at {}", changed, this);
         validate();
     }
 
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
-        logger.get().trace("Caught event {} at {}", changed, this);
+        logger.trace("Caught event {} at {}", changed, this);
         validate();
     }
 
@@ -54,6 +58,6 @@ public abstract class GlobalConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     protected void fireBrokenEvent(String message) {
-        eventBus.get().post(new BrokenGlobalConstraintEvent(message, this));
+        eventBus.post(new BrokenGlobalConstraintEvent(messages, message, this));
     }
 }

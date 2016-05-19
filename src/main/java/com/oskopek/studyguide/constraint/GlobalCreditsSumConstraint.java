@@ -35,7 +35,7 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
     @Override
     public void validate() {
         Credits fulfilledCourseCreditSum = Credits.valueOf(
-                semesterPlan.get().getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
+                semesterPlan.getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
                         .filter(CourseEnrollment::isFulfilled).map(ce -> ce.getCourse().getCredits().getCreditValue())
                         .reduce(0, Integer::sum));
         if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
@@ -52,7 +52,7 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
      * @return the String to use as a message, localized
      */
     private String generateMessage(Credits got, Credits needed) {
-        return String.format(messages.get().getString(message), needed.getCreditValue(), got.getCreditValue());
+        return String.format(messages.getString(message), needed.getCreditValue(), got.getCreditValue());
     }
 
     /**
@@ -63,6 +63,15 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
     @JsonGetter
     private Credits getTotalNeeded() {
         return totalNeeded;
+    }
+
+    /**
+     * The credit sum to pass this constraint.
+     *
+     * @param totalNeeded the total needed credit sum
+     */
+    public void setTotalNeeded(Credits totalNeeded) {
+        this.totalNeeded = totalNeeded;
     }
 
     @Override

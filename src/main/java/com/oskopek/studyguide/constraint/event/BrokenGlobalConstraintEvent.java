@@ -2,6 +2,8 @@ package com.oskopek.studyguide.constraint.event;
 
 import com.oskopek.studyguide.constraint.Constraint;
 
+import java.util.ResourceBundle;
+
 /**
  * The event used for reporting broken global constraints.
  */
@@ -13,8 +15,8 @@ public class BrokenGlobalConstraintEvent extends StringMessageEvent {
      * @param message the message to use as a reason why the constraint is broken
      * @param broken the constraint that was broken and generated this event
      */
-    public BrokenGlobalConstraintEvent(String message, Constraint broken) {
-        super(message, broken);
+    public BrokenGlobalConstraintEvent(ResourceBundle messages, String message, Constraint broken) {
+        super(messages, message, broken);
     }
 
     @Override

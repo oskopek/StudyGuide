@@ -4,7 +4,6 @@ import com.oskopek.studyguide.constraint.Constraint;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.inject.Inject;
 import java.util.ResourceBundle;
 
 /**
@@ -13,18 +12,10 @@ import java.util.ResourceBundle;
  */
 public abstract class StringMessageEvent {
 
-    @Inject
     protected transient ResourceBundle messages;
 
     private String message;
     private Constraint brokenConstraint;
-
-    /**
-     * Private default constructor, needed by CDI.
-     */
-    private StringMessageEvent() {
-        // needed for CDI
-    }
 
     /**
      * Constructs a new message event with the given message.
@@ -32,7 +23,8 @@ public abstract class StringMessageEvent {
      * @param message the message to broadcast
      * @param brokenConstraint the constraint that was broken and generated this event
      */
-    public StringMessageEvent(String message, Constraint brokenConstraint) {
+    public StringMessageEvent(ResourceBundle messages, String message, Constraint brokenConstraint) {
+        this.messages = messages;
         this.message = message;
         this.brokenConstraint = brokenConstraint;
     }

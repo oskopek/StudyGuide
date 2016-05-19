@@ -38,7 +38,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
     @Override
     public void validate() {
         Map<Course, List<CourseEnrollment>> groupByCourse =
-                semesterPlan.get().getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
+                semesterPlan.getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
                         .collect(Collectors.groupingBy(ce -> ce.getCourse()));
         for (Map.Entry<Course, List<CourseEnrollment>> entry : groupByCourse.entrySet()) {
             Course course = entry.getKey();
@@ -59,7 +59,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
      * @return the String to use as a message, localized
      */
     private String generateMessage(int enrolledTimes, int maxRepeatedEnrollment, Course course) {
-        return String.format(messages.get().getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
+        return String.format(messages.getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
     }
 
     /**
@@ -70,6 +70,10 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
     @JsonGetter
     private int getMaxRepeatedEnrollment() {
         return maxRepeatedEnrollment;
+    }
+
+    public void setMaxRepeatedEnrollment(int maxRepeatedEnrollment) {
+        this.maxRepeatedEnrollment = maxRepeatedEnrollment;
     }
 
     @Override

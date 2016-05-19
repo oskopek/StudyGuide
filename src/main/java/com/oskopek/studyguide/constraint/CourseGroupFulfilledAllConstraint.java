@@ -35,7 +35,7 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
     @Override
     public void validate() {
         Set<Course> fulfilledCompulsoryCourses =
-                semesterPlan.get().allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
+                semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
                         .collect(Collectors.toSet());
         Set<Course> unfulfilledCompulsoryCourses = new HashSet<>(getCourseGroup().courseListProperty().get());
         unfulfilledCompulsoryCourses.removeAll(fulfilledCompulsoryCourses);
@@ -52,7 +52,7 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
      * @return the String to use as a message, localized
      */
     private String generateMessage(Collection<Course> unfulfilled) {
-        return messages.get().getString(message) + String
+        return messages.getString(message) + String
                 .join(", ", unfulfilled.stream().map(c -> c.getId()).collect(Collectors.toList()));
     }
 }
