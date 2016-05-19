@@ -18,6 +18,7 @@ import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -126,8 +127,11 @@ public class Constraints {
      * @param courseEnrollment the course enrollment
      */
     public void removeAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
+        List<CourseEnrollmentConstraint> courseEnrollmentConstraintListCopy
+                = new ArrayList<>(courseEnrollmentConstraintList);
         courseEnrollmentConstraintList.stream().filter(cec -> cec.getCourseEnrollment().equals(courseEnrollment))
-                .forEach(cec -> courseEnrollmentConstraintList.remove(cec));
+                .forEach(cec -> courseEnrollmentConstraintListCopy.remove(cec));
+        setCourseEnrollmentConstraintList(courseEnrollmentConstraintListCopy);
     }
 
     /**
@@ -135,8 +139,7 @@ public class Constraints {
      *
      * @param courseEnrollment the course enrollment
      */
-    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment,
-                                                  EventBus eventBus,
+    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment, EventBus eventBus,
                                                   EventBusTranslator eventBusTranslator) {
 
         CourseEnrollmentConstraint c1 = BeanManagerUtil
@@ -153,6 +156,10 @@ public class Constraints {
     public Stream<DefaultConstraint> allConstraintStream() {
         return Stream.concat(Stream.concat(getCourseEnrollmentConstraintList().stream(),
                 getCourseGroupConstraintList().stream()), getGlobalConstraintList().stream());
+    }
+
+    public void recheckAll() {
+        // TODO PRIORITY recheck all constraints
     }
 
     @Override

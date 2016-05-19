@@ -19,6 +19,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
@@ -31,10 +33,11 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     private final BooleanProperty fulfilled;
     @JsonBackReference("semester-courseenrollment")
     private final ObjectProperty<Semester> semester;
-
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint =
             new SimpleObjectProperty<>(); // TODO PRIORITY move this somewhere
-    private ChangeListener<Course> courseChangeListener = (observable, oldValue, newValue) -> fireValueChangedEvent();
+    private transient ChangeListener<Course> courseChangeListener
+            = (observable, oldValue, newValue) -> fireValueChangedEvent();
 
     /**
      * Private constructor for Jackson persistence.
@@ -84,9 +87,10 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      * @param event the observed event
      */
     @Subscribe
-    private void onFixedConstraint(BrokenResetEvent event) {
+    public void onFixedConstraint(BrokenResetEvent event) {
         if (brokenConstraint.get() != null && brokenConstraint.get().getBrokenConstraint()
                 .equals(event.getOriginallyBroken())) {
+            logger.debug("Constraint in {} fixed.", this);
             brokenConstraint.set(null);
         }
     }
@@ -97,8 +101,9 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
      * @param event the observed event
      */
     @Subscribe
-    private void onBrokenConstraint(BrokenCourseEnrollmentConstraintEvent event) {
+    public void onBrokenConstraint(BrokenCourseEnrollmentConstraintEvent event) {
         if (equals(event.getEnrollment())) {
+            logger.debug("Constraint in {} broken.", this);
             brokenConstraint.set(event);
         }
     }
@@ -202,12 +207,14 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
     @Override
     public CourseEnrollment register(EventBus eventBus, EventBusTranslator eventBusTranslator) {
         eventBusTranslator.register(this);
+        eventBus.register(this);
         return this;
     }
 
     @Override
     public CourseEnrollment unregister(EventBus eventBus, EventBusTranslator eventBusTranslator) {
         eventBusTranslator.unregister(this);
+        eventBus.unregister(this);
         return this;
     }
 

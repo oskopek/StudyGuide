@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.view;
 
 import com.google.common.eventbus.EventBus;
+import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.weld.DeadEventListener;
 import com.oskopek.studyguide.weld.EventBusTranslator;
@@ -61,6 +62,8 @@ public class StudyGuideApplicationStarter {
         studyGuideApplication.studyPlanProperty().addListener((observable, oldValue, newValue) -> {
             tryDeregister(oldValue);
             tryRegister(newValue);
+            ((DefaultStudyPlan) newValue).constraintsProperty().addListener((observable1, oldValue1, newValue1)
+                    -> newValue1.recheckAll()); // TODO OPTIONAL HACK
         });
         eventBus.register(deadEventListener);
     }
