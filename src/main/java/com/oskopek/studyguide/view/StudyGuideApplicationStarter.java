@@ -2,9 +2,7 @@ package com.oskopek.studyguide.view;
 
 import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
-import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.weld.DeadEventListener;
-import com.oskopek.studyguide.weld.EventBusTranslator;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -32,9 +30,6 @@ public class StudyGuideApplicationStarter {
     private StudyGuideApplication studyGuideApplication;
 
     @Inject
-    private EventBusTranslator eventBusTranslator;
-
-    @Inject
     private EventBus eventBus;
 
     @Inject
@@ -60,23 +55,9 @@ public class StudyGuideApplicationStarter {
             primaryStage.show();
         });
         studyGuideApplication.studyPlanProperty().addListener((observable, oldValue, newValue) -> {
-            tryDeregister(oldValue);
-            tryRegister(newValue);
             ((DefaultStudyPlan) newValue).constraintsProperty().addListener((observable1, oldValue1, newValue1)
                     -> newValue1.recheckAll()); // TODO OPTIONAL HACK
         });
         eventBus.register(deadEventListener);
-    }
-
-    private void tryDeregister(StudyPlan studyPlan) {
-        if (studyPlan != null) {
-            studyPlan.unregister(eventBus, eventBusTranslator);
-        }
-    }
-
-    private void tryRegister(StudyPlan studyPlan) {
-        if (studyPlan != null) {
-            studyPlan.register(eventBus, eventBusTranslator);
-        }
     }
 }

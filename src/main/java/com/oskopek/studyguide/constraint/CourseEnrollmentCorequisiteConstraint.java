@@ -36,11 +36,7 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     }
 
     @Override
-    public void validate(CourseEnrollment changed) {
-        if (!changed.equals(getCourseEnrollment())) {
-            return;
-        }
-        logger.trace("Caught event {} at {}", changed, this);
+    public void validate() {
         List<CourseEnrollment> enrollmentsUntilNow =
                 takeUntilSemester(semesterPlan, getCourseEnrollment().getSemester());
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
@@ -51,7 +47,7 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
             }
         }
         if (!corequisites.isEmpty()) {
-            fireBrokenEvent(generateMessage(message, corequisites), changed);
+            fireBrokenEvent(generateMessage(message, corequisites), getCourseEnrollment());
         } else {
             fireFixedEvent(this);
         }

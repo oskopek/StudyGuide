@@ -27,18 +27,23 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    private final EventBus injectableEventBus;
+
     public JsonDataReaderWriter() {
         this(null, null);
     }
 
     public JsonDataReaderWriter(ResourceBundle messages, EventBus eventBus) {
+        this.injectableEventBus = eventBus;
         InjectableValues injectableValues = new InjectableValues.Std()
                 .addValue(ResourceBundle.class, messages).addValue(EventBus.class, eventBus);
         objectMapper.setInjectableValues(injectableValues);
     }
 
-    private StudyPlan setConstraintsStudyPlan(StudyPlan studyPlan) {
+    private StudyPlan finalizeInjection(StudyPlan studyPlan) {
         studyPlan.getConstraints().allConstraintStream().forEach(c -> c.setSemesterPlan(studyPlan.getSemesterPlan()));
+        studyPlan.getCourseRegistry().courseMapValues().stream().forEach(c -> c.registerEventBus(injectableEventBus));
+        studyPlan.getSemesterPlan().allCourseEnrollments().forEach(c -> c.registerEventBus(injectableEventBus));
         return studyPlan;
     }
 
@@ -48,7 +53,7 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("FileName is null.");
         }
         try {
-            return setConstraintsStudyPlan(objectMapper.readValue(new File(fileName), DefaultStudyPlan.class));
+            return finalizeInjection(objectMapper.readValue(new File(fileName), DefaultStudyPlan.class));
         } catch (JsonParseException | JsonMappingException e) {
             throw new IOException("Failed to read StudyPlan from file (" + fileName + ").", e);
         }
@@ -60,7 +65,7 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("InputStream is null.");
         }
         try {
-            return setConstraintsStudyPlan(objectMapper.readValue(inputStream, DefaultStudyPlan.class));
+            return finalizeInjection(objectMapper.readValue(inputStream, DefaultStudyPlan.class));
         } catch (JsonMappingException | JsonParseException e) {
             throw new IOException("Failed to read StudyPlan from stream.", e);
         }

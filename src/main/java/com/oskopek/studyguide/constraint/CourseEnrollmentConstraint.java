@@ -9,8 +9,6 @@ import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +19,6 @@ import java.util.List;
  */
 public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
-    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private CourseEnrollment courseEnrollment;
 
 
@@ -80,17 +77,8 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     }
 
     @Override
-    public void validate(Course changed) {
-        if (!changed.equals(getCourseEnrollment().getCourse())) {
-            return;
-        }
-        logger.trace("Caught event {} at {}", changed, this);
-        semesterPlan.allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
-    }
-
-    @Override
     public void fireBrokenEvent(String reason, Course course) {
-        eventBus.post(new BrokenCourseEnrollmentConstraintEvent(messages, reason, this, null));
+        fireBrokenEvent(reason, (CourseEnrollment) null);
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.oskopek.studyguide.persistence;
 
 import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
-import com.oskopek.studyguide.model.CourseGenerator;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
@@ -94,7 +93,7 @@ public class JsonDataReaderWriterTest { // TODO create IT with CDI and test if i
         constraint.fireBrokenEvent("", (Course) null);
         verify(mockedEventBus, atLeastOnce()).post(anyObject());
         // this will (TODO probably) throw an exception if the studyPlan is not injected correctly
-        constraint.validate(CourseGenerator.generateRandomCourse());
+        constraint.validate();
     }
 
     @Test(expected = IllegalArgumentException.class)

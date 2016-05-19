@@ -46,26 +46,6 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
         this.courseGroup = courseGroup;
     }
 
-    /**
-     * The method should verify if the given constraint was broken, and if so,
-     * call the {@link #fireBrokenEvent(String)} with the specific reason.
-     */
-    protected abstract void validate();
-
-    @Override
-    public void validate(Course changed) {
-        logger.trace("Caught event {} at {}", changed, this);
-        if (courseGroup.courseListProperty().contains(changed)) {
-            validate();
-        }
-    }
-
-    @Override
-    public void validate(CourseEnrollment changed) {
-        logger.trace("Caught event {} at {}", changed, this);
-        validate(changed.getCourse());
-    }
-
     @Override
     public void fireBrokenEvent(String message, Course changed) {
         fireBrokenEvent(message);

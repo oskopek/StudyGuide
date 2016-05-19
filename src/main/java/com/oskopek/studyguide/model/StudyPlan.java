@@ -6,7 +6,7 @@ import com.oskopek.studyguide.model.courses.CourseRegistry;
 /**
  * Representation of the whole study plan model.
  */
-public interface StudyPlan extends Registrable<StudyPlan> {
+public interface StudyPlan {
 
     /**
      * The {@link com.oskopek.studyguide.constraint.Constraint}s placed on this plan.

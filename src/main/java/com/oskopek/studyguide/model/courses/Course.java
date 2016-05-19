@@ -2,8 +2,6 @@ package com.oskopek.studyguide.model.courses;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.eventbus.EventBus;
-import com.oskopek.studyguide.model.Registrable;
-import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -12,12 +10,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +26,7 @@ import java.util.Locale;
  * Background information about a course students can enroll in.
  * There should be only one instance of this per course.
  */
-public class Course extends ObservableValueBase<Course> implements Comparable<Course>, ObservableValue<Course>,
-        Registrable<Course> {
+public class Course implements Comparable<Course> {
 
     private final StringProperty id;
     private final StringProperty name;
@@ -38,7 +36,8 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     private final ListProperty<String> teacherNames;
     private final ListProperty<Course> prerequisites;
     private final ListProperty<Course> corequisites;
-
+    private transient final Logger logger = LoggerFactory.getLogger(getClass());
+    private transient EventBus eventBus;
     private final ChangeListener<Credits> creditsChangeListener = (x, y, z) -> fireValueChangedEvent();
 
     /**
@@ -119,6 +118,14 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         List<Course> prerequisites = new ArrayList<>(original.getPrerequisites());
         List<Course> corequisites = new ArrayList<>(original.getCorequisites());
         return new Course(id, name, localizedName, locale, credits, teacherNames, prerequisites, corequisites);
+    }
+
+    private void fireValueChangedEvent() {
+        logger.trace("Trying to fire course changed: {}", this);
+        if (eventBus != null) {
+            logger.debug("Firing course changed: {}", this);
+            eventBus.post(getValue());
+        }
     }
 
     /**
@@ -386,6 +393,10 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
     }
 
+    public void registerEventBus(EventBus eventBus) {
+        this.eventBus = eventBus;
+    }
+
     private void onCreditsChanged(ObservableValue<? extends Credits> observableValue, Credits oldValue,
                                   Credits newValue) {
         if (oldValue != null) {
@@ -413,26 +424,13 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     }
 
     @Override
-    public Course register(EventBus eventBus, EventBusTranslator eventBusTranslator) {
-        eventBusTranslator.register(this);
-        return this;
-    }
-
-    @Override
-    public Course unregister(EventBus eventBus, EventBusTranslator eventBusTranslator) {
-        eventBusTranslator.unregister(this);
-        return this;
-    }
-
-    @Override
     public int compareTo(Course o) {
         return new CompareToBuilder().append(id, o.id).toComparison();
     }
 
-    @Override
     @JsonIgnore
     public Course getValue() {
-        return Course.copy(this);
+        return this; //Course.copy(this);
     }
 
     @Override

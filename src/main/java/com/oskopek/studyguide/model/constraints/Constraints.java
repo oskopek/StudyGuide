@@ -1,6 +1,5 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.constraint.Constraint;
 import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.constraint.CourseEnrollmentCorequisiteConstraint;
@@ -9,15 +8,15 @@ import com.oskopek.studyguide.constraint.CourseGroupConstraint;
 import com.oskopek.studyguide.constraint.DefaultConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
-import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.weld.BeanManagerUtil;
-import com.oskopek.studyguide.weld.EventBusTranslator;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +27,7 @@ import java.util.stream.Stream;
  */
 public class Constraints {
 
+    private transient final Logger logger = LoggerFactory.getLogger(getClass());
     private ListProperty<CourseGroupConstraint> courseGroupConstraintList;
     private ListProperty<GlobalConstraint> globalConstraintList;
     private ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
@@ -140,8 +140,7 @@ public class Constraints {
      *
      * @param courseEnrollment the course enrollment
      */
-    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment, EventBus eventBus,
-                                                  EventBusTranslator eventBusTranslator) {
+    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
 
         CourseEnrollmentConstraint c1 = BeanManagerUtil
                 .createBeanInstance(CourseEnrollmentCorequisiteConstraint.class);
@@ -149,8 +148,6 @@ public class Constraints {
         CourseEnrollmentConstraint c2 = BeanManagerUtil
                 .createBeanInstance(CourseEnrollmentPrerequisiteConstraint.class);
         c2.setCourseEnrollment(courseEnrollment);
-        c1.register(eventBus, eventBusTranslator);
-        c2.register(eventBus, eventBusTranslator);
         courseEnrollmentConstraintList.addAll(c1, c2);
     }
 
@@ -159,25 +156,9 @@ public class Constraints {
                 getCourseGroupConstraintList().stream()), getGlobalConstraintList().stream());
     }
 
-    public void recheckAll(Course course) {
-        courseEnrollmentConstraintList.stream().filter(c -> c.getCourseEnrollment().getCourse().equals(course))
-                .forEach(c -> c.validate(c.getCourseEnrollment()));
-        courseGroupConstraintList.stream().forEach(c -> c.validate(course));
-        globalConstraintList.stream().forEach(c -> c.validate(course));
-    }
-
-    public void recheckAll(CourseEnrollment enrollment) {
-        courseEnrollmentConstraintList.stream().filter(c -> c.getCourseEnrollment().equals(enrollment))
-                .forEach(c -> c.validate(c.getCourseEnrollment()));
-        courseGroupConstraintList.stream().forEach(c -> c.validate(enrollment));
-        globalConstraintList.stream().forEach(c -> c.validate(enrollment));
-    }
-
     public void recheckAll() {
-        courseEnrollmentConstraintList.stream().forEach(c -> c.validate(c.getCourseEnrollment()));
-        courseGroupConstraintList.stream().forEach(
-                c -> c.validate(c.getCourseGroup().courseListProperty().get(0).getValue())); // TODO PRIORITY FIX ME
-        globalConstraintList.stream().forEach(c -> c.validate((Course) null));
+        logger.debug("Rechecking constraints...");
+        allConstraintStream().forEach(Constraint::validate);
     }
 
     @Override
