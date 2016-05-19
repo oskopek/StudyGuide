@@ -41,8 +41,6 @@ import java.util.stream.Collectors;
  */
 public class SemesterController extends AbstractController {
 
-    private int id = 0;
-
     @FXML
     private GridPane semesterBoxes;
 
@@ -105,6 +103,7 @@ public class SemesterController extends AbstractController {
             AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("semester.cannotAdd"));
             return;
         }
+        int id = 0;
         while (!studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++))) {
             // intentionally empty
         }
@@ -181,6 +180,8 @@ public class SemesterController extends AbstractController {
      * @param semester the semester to remove
      */
     public void removeSemester(Semester semester) {
+        studyGuideApplication.getStudyPlan().getConstraints()
+                .removeAllCourseEnrollmentConstraints(semester.getCourseEnrollmentList());
         studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
     }
 
@@ -212,13 +213,14 @@ public class SemesterController extends AbstractController {
     @Subscribe
     public void handleCourseChange(Course changed) {
         logger.trace("Course changed: {}", changed);
-        studyGuideApplication.getStudyPlan().getConstraints().recheckAll();
+        studyGuideApplication.getStudyPlan().getConstraints().recheckAll(changed);
     }
 
     @Subscribe
     public void handleCourseEnrollmentChange(CourseEnrollment changed) {
         logger.trace("CourseEnrollment changed: {}", changed);
-        studyGuideApplication.getStudyPlan().getConstraints().recheckAll();
+        studyGuideApplication.getStudyPlan().getConstraints().recheckAll(changed);
+
     }
 
     /**

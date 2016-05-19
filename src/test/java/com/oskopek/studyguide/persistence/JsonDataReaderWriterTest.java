@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.persistence;
 
 import com.google.common.eventbus.EventBus;
+import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
@@ -20,6 +21,7 @@ import java.nio.file.StandardCopyOption;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.anyObject;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
@@ -40,7 +42,7 @@ public class JsonDataReaderWriterTest { // TODO create IT with CDI and test if i
         jsonDataReaderWriter = new JsonDataReaderWriter(null, mockedEventBus);
 
         jsonPath = Files.createTempFile("tmpPlan", ".json");
-        Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/mff_bc_ioi_2015_2016.json"),
+        Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/my_study2.json"),
                 jsonPath, StandardCopyOption.REPLACE_EXISTING);
         plan = new DefaultStudyPlan();
     }
@@ -67,7 +69,7 @@ public class JsonDataReaderWriterTest { // TODO create IT with CDI and test if i
         StudyPlan plan = jsonDataReaderWriter.readFrom(jsonPath.toString());
         assertNotNull(plan);
         assertNotNull(plan.getSemesterPlan());
-        assertEquals(0, plan.getSemesterPlan().getSemesterList().size());
+        assertEquals(2, plan.getSemesterPlan().getSemesterList().size());
     }
 
     @Test
@@ -87,8 +89,15 @@ public class JsonDataReaderWriterTest { // TODO create IT with CDI and test if i
         assertNotNull(plan.getCourseRegistry().courseMapValues());
         assertNotNull(plan.getConstraints().getGlobalConstraintList());
         assertEquals(2, plan.getConstraints().getGlobalConstraintList().size());
+
         GlobalConstraint constraint = plan.getConstraints().getGlobalConstraintList().get(0);
         assertNotNull(constraint);
+        assertNotNull(constraint.getSemesterPlan());
+        assertTrue(constraint.getSemesterPlan() == plan.getSemesterPlan());
+
+        CourseEnrollmentConstraint constraint2 = plan.getConstraints().getCourseEnrollmentConstraintList().get(0);
+        assertNotNull(constraint2.getSemesterPlan());
+        assertTrue(constraint2.getSemesterPlan() == plan.getSemesterPlan());
         // this will throw an exception if the eventBus is not injected correctly
         constraint.fireBrokenEvent("", (Course) null);
         verify(mockedEventBus, atLeastOnce()).post(anyObject());

@@ -1,6 +1,8 @@
 package com.oskopek.studyguide.model.courses;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;
@@ -12,6 +14,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 /**
  * An abstraction of the ECTS credit value for a {@link Course}.
  */
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class)
 public final class Credits extends ObservableValueBase<Credits>
         implements Comparable<Credits>, ObservableValue<Credits> {
 

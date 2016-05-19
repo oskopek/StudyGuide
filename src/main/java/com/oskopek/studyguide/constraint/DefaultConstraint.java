@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
  */
 public abstract class DefaultConstraint implements Constraint {
 
-    @Inject
     protected transient SemesterPlan semesterPlan;
 
     @Inject
@@ -29,6 +28,10 @@ public abstract class DefaultConstraint implements Constraint {
     @Override
     public void fireFixedEvent(Constraint original) {
         eventBus.post(new BrokenResetEvent(original));
+    }
+
+    public SemesterPlan getSemesterPlan() {
+        return semesterPlan;
     }
 
     @JsonIgnore

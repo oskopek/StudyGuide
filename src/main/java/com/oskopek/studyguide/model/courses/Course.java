@@ -1,6 +1,8 @@
 package com.oskopek.studyguide.model.courses;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.google.common.eventbus.EventBus;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
@@ -26,6 +28,7 @@ import java.util.Locale;
  * Background information about a course students can enroll in.
  * There should be only one instance of this per course.
  */
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class)
 public class Course implements Comparable<Course> {
 
     private final StringProperty id;
@@ -384,17 +387,15 @@ public class Course implements Comparable<Course> {
      */
     private void registerChangeEventListeners() {
         id.addListener((x, y, z) -> fireValueChangedEvent());
-        //        name.addListener((x, y, z) -> fireValueChangedEvent());
-        //        localizedName.addListener((x, y, z) -> fireValueChangedEvent());
-        //        locale.addListener((x, y, z) -> fireValueChangedEvent());
         credits.addListener((x, y, z) -> onCreditsChanged(x, y, z));
-        //        teacherNames.addListener((x, y, z) -> fireValueChangedEvent());
         prerequisites.addListener((x, y, z) -> fireValueChangedEvent());
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
     }
 
     public void registerEventBus(EventBus eventBus) {
+        logger.trace("Registering event bus on course {}", this);
         this.eventBus = eventBus;
+        fireValueChangedEvent(); // fire on a new bus
     }
 
     private void onCreditsChanged(ObservableValue<? extends Credits> observableValue, Credits oldValue,

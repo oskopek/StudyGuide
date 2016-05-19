@@ -171,7 +171,9 @@ public class CourseEnrollment {
     }
 
     public void registerEventBus(EventBus eventBus) {
+        logger.trace("Registering event bus on course enrollment {}", this);
         this.eventBus = eventBus;
+        fireValueChangedEvent(); // fire on a new bus
     }
 
     private void fireValueChangedEvent() {

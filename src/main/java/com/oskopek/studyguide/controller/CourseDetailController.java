@@ -203,7 +203,7 @@ public class CourseDetailController extends AbstractController {
          */
         private void synchronizeFromString(String stringList) {
             if (stringList == null) {
-                return; // TODO OPTIONAL check if valid correctly
+                stringList = "";
             }
             logger.debug("Synchronizing from stringList {} using course registry {}", stringList, courseRegistry);
             List<Course> list =
@@ -370,7 +370,7 @@ public class CourseDetailController extends AbstractController {
          */
         private void synchronizeFromString(String string) {
             if (string == null) {
-                return;
+                string = "";
             }
             List<String> list = Stream.of(string.split(",")).map(String::trim).collect(Collectors.toList());
             listProperty.setValue(FXCollections.observableArrayList(list));
