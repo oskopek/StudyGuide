@@ -21,7 +21,7 @@ public class BrokenGlobalConstraintEvent extends StringMessageEvent {
 
     @Override
     public String message() {
-        return messages.getString("constraint.globalInvalid") + getMessage();
+        return messages.getString("constraint.globalInvalid") + " " + getMessage();
     }
 
     @Override

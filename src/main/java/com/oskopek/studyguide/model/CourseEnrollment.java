@@ -245,7 +245,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
             return false;
         }
         CourseEnrollment that = (CourseEnrollment) o;
-        return new EqualsBuilder().append(course, that.course).append(semester, that.semester).isEquals();
+        return new EqualsBuilder().append(getCourse(), that.getCourse()).append(getSemester(), that.getSemester())
+                .isEquals();
     }
 
     @Override

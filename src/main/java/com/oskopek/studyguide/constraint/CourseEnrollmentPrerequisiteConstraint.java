@@ -42,11 +42,11 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
             return;
         }
         logger.trace("Caught event {} at {}", changed, this);
-        List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
+        List<Course> prerequisites = new ArrayList<>(getCourseEnrollment().getCourse().getPrerequisites());
         int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
         if (semesterIndex < 0) {
-            if (!corequisites.isEmpty()) {
-                fireBrokenEvent(generateMessage(message, corequisites), changed);
+            if (!prerequisites.isEmpty()) {
+                fireBrokenEvent(generateMessage(message, prerequisites), changed);
             }
             return;
         }
@@ -54,13 +54,13 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
         List<CourseEnrollment> enrollmentsUntilNow =
                 takeUntilSemester(semesterPlan, semesterPlan.getSemesterList().get(semesterIndex));
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
-            int found = corequisites.indexOf(enrollment.getCourse());
+            int found = prerequisites.indexOf(enrollment.getCourse());
             if (found >= 0 && enrollment.isFulfilled()) {
-                corequisites.remove(found);
+                prerequisites.remove(found);
             }
         }
-        if (!corequisites.isEmpty()) {
-            fireBrokenEvent(generateMessage(message, corequisites), changed);
+        if (!prerequisites.isEmpty()) {
+            fireBrokenEvent(generateMessage(message, prerequisites), changed);
         }
     }
 }

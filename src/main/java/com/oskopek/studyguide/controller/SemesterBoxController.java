@@ -283,7 +283,7 @@ public class SemesterBoxController extends AbstractController {
     }
 
     @Subscribe
-    private void onBrokenCourseEnrollmentConstraintEvent(BrokenCourseEnrollmentConstraintEvent event) {
+    public void onBrokenCourseEnrollmentConstraintEvent(BrokenCourseEnrollmentConstraintEvent event) {
         logger.debug("BrokenCourseEnrollmentConstraintEvent caught: {}", event.message());
     }
 

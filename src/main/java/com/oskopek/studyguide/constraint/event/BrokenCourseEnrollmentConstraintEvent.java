@@ -38,7 +38,7 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
 
     @Override
     public String message() {
-        return messages.getString("constraint.courseEnrollmentInvalid") + getMessage();
+        return messages.getString("constraint.courseEnrollmentInvalid") + " " + getMessage();
     }
 
     @Override
