@@ -69,7 +69,8 @@ public class GlobalCreditsSumConstraintTest {
         GlobalCreditsSumConstraint spy = spy(globalCreditsSumConstraint);
         spy.validate();
         verify(spy, never()).fireBrokenEvent(anyString());
-        verify(spy.eventBus, never()).post(anyObject());
+        verify(spy, atLeastOnce()).fireFixedEvent(anyObject());
+        verify(spy.eventBus, atLeastOnce()).post(anyObject());
     }
 
     @Test
@@ -78,6 +79,7 @@ public class GlobalCreditsSumConstraintTest {
         GlobalCreditsSumConstraint spy = spy(globalCreditsSumConstraint);
         spy.validate();
         verify(spy, atLeastOnce()).fireBrokenEvent(anyString());
+        verify(spy, never()).fireFixedEvent(anyObject());
         verify(spy.eventBus, atLeastOnce()).post(anyObject());
     }
 
