@@ -20,6 +20,12 @@ public final class AlertCreator {
         // intentionally empty
     }
 
+    private static void showAlertInternal(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
+        Alert alert = new Alert(alertType, "", buttonTypes);
+        alert.getDialogPane().setContent(new Label(message));
+        alert.showAndWait();
+    }
+
     /**
      * A util method to display an {@link Alert} with the given parameters.
      *
@@ -30,9 +36,22 @@ public final class AlertCreator {
      */
     public static void showAlert(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
         Platform.runLater(() -> {
-            Alert alert = new Alert(alertType, "", buttonTypes);
-            alert.getDialogPane().setContent(new Label(message));
-            alert.showAndWait();
+            showAlertInternal(alertType, message, buttonTypes);
+        });
+    }
+
+    /**
+     * A util method to display an {@link Alert} with the given parameters.
+     *
+     * @param alertType the type of the alert
+     * @param message the message to display
+     * @param buttonTypes the buttons to show
+     * @see Alert
+     */
+    public static void showAlertAndClose(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
+        Platform.runLater(() -> {
+            showAlertInternal(alertType, message, buttonTypes);
+            System.exit(0);
         });
     }
 
@@ -44,11 +63,11 @@ public final class AlertCreator {
      * @param e the exception to throw
      */
     public static void handleLoadLayoutError(ResourceBundle messages, IOException e) {
-        AlertCreator.showAlert(Alert.AlertType.ERROR,
-                messages.getString("error.cannotLoadLayout") + ":\n\n" + e.getLocalizedMessage(), ButtonType.CLOSE);
         Platform.runLater(() -> {
             throw new IllegalStateException(messages.getString("error.cannotLoadLayout"), e);
         });
+        AlertCreator.showAlertAndClose(Alert.AlertType.ERROR,
+                messages.getString("error.cannotLoadLayout") + ":\n\n" + e.getLocalizedMessage(), ButtonType.CLOSE);
     }
 
 }

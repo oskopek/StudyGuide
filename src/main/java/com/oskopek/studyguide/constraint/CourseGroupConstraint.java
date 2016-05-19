@@ -31,7 +31,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
      */
     public CourseGroupConstraint(CourseGroup courseGroup) {
         this.courseGroup = courseGroup;
-    } // TODO PRIORITY remove these?
+    } // TODO OPTIONAL remove these?
 
     /**
      * Get the checked course group.

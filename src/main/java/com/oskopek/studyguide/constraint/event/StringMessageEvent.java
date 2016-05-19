@@ -73,6 +73,6 @@ public abstract class StringMessageEvent {
 
     @Override
     public String toString() {
-        return "StringMessageEvent[" + message + ']';
+        return messages.getString("warning") + " " + message();
     }
 }

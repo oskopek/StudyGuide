@@ -29,7 +29,7 @@ import static org.mockito.Mockito.verify;
 /**
  * Probably deserves more thorough testing.
  */
-public class JsonDataReaderWriterTest { // TODO create IT with CDI and test if injected correctly
+public class JsonDataReaderWriterTest {
 
     private JsonDataReaderWriter jsonDataReaderWriter;
     private Path jsonPath;
@@ -101,7 +101,7 @@ public class JsonDataReaderWriterTest { // TODO create IT with CDI and test if i
         // this will throw an exception if the eventBus is not injected correctly
         constraint.fireBrokenEvent("", (Course) null);
         verify(mockedEventBus, atLeastOnce()).post(anyObject());
-        // this will (TODO probably) throw an exception if the studyPlan is not injected correctly
+        // this will throw an exception if the studyPlan is not injected correctly
         constraint.validate();
     }
 

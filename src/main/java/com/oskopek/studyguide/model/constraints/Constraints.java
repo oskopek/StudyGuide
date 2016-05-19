@@ -171,22 +171,13 @@ public class Constraints {
                 getCourseGroupConstraintList().stream()), getGlobalConstraintList().stream());
     }
 
-    private void removeRedundantConstraints(Course course) {
-        // TODO
-        course.getCorequisites();
-        course.getCredits();
-        course.getPrerequisites();
-    }
-
     public void recheckAll(CourseEnrollment enrollment) {
         logger.debug("Rechecking all because of an enrollment change: {}", enrollment);
-        removeRedundantConstraints(enrollment.getCourse());
         recheckAll();
     }
 
     public void recheckAll(Course course) {
         logger.debug("Rechecking all because of a course change: {}", course);
-        removeRedundantConstraints(course);
         recheckAll();
     }
 

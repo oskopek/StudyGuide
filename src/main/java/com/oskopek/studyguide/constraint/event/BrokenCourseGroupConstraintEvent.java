@@ -58,9 +58,4 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
         return new EqualsBuilder().appendSuper(super.equals(o)).append(getCourseGroup(), that.getCourseGroup())
                 .isEquals();
     }
-
-    @Override
-    public String toString() {
-        return "BrokenCGConstraintEvent[" + courseGroup + ", " + getMessage() + "]";
-    }
 }

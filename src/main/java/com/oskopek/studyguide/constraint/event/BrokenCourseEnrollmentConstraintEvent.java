@@ -58,9 +58,4 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
         return new EqualsBuilder().appendSuper(super.equals(o)).append(getEnrollment(), that.getEnrollment())
                 .isEquals();
     }
-
-    @Override
-    public String toString() {
-        return "BrokenCEConstraintEvent[" + enrollment + ", " + getMessage() + "]";
-    }
 }
