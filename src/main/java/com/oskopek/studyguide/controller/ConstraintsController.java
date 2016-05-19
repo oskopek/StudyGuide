@@ -34,22 +34,31 @@ public class ConstraintsController extends AbstractController {
         constraintSet = new HashSet<>();
     }
 
+    private void onBrokenConstraintInternal(StringMessageEvent event) {
+        if (!constraintSet.contains(event.getBrokenConstraint())) {
+            constraintSet.add(event.getBrokenConstraint());
+        } else {
+            removeAllBrokenEventsFromList(event.getBrokenConstraint());
+        }
+        brokenConstraintEventList.add(event); // overwrite, use the newer one always
+    }
+
     @Subscribe
     public void onBrokenConstraint(BrokenCourseGroupConstraintEvent event) {
         logger.trace("CourseGroupConstraint {} broken.", event.getBrokenConstraint());
-        if (!constraintSet.contains(event.getBrokenConstraint())) {
-            constraintSet.add(event.getBrokenConstraint());
-            brokenConstraintEventList.add(event);
-        }
+        onBrokenConstraintInternal(event);
     }
 
     @Subscribe
     public void onBrokenConstraint(BrokenGlobalConstraintEvent event) {
         logger.trace("GlobalConstraint {} broken.", event.getBrokenConstraint());
-        if (!constraintSet.contains(event.getBrokenConstraint())) {
-            constraintSet.add(event.getBrokenConstraint());
-            brokenConstraintEventList.add(event);
-        }
+        onBrokenConstraintInternal(event);
+    }
+
+    private void removeAllBrokenEventsFromList(Constraint constraint) {
+        brokenConstraintEventList.removeIf(stringMessageEvent
+                -> stringMessageEvent.getBrokenConstraint()
+                .equals(constraint));
     }
 
     /**
@@ -62,9 +71,7 @@ public class ConstraintsController extends AbstractController {
         logger.debug("Constraint {} fixed.", event.getOriginallyBroken());
         if (constraintSet.contains(event.getOriginallyBroken())) {
             constraintSet.remove(event.getOriginallyBroken());
-            brokenConstraintEventList.removeIf(stringMessageEvent
-                    -> stringMessageEvent.getBrokenConstraint()
-                    .equals(event.getOriginallyBroken())); // TODO really remove all?
+            removeAllBrokenEventsFromList(event.getOriginallyBroken());
         }
     }
 

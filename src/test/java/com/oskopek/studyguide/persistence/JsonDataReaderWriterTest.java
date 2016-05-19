@@ -42,7 +42,7 @@ public class JsonDataReaderWriterTest {
         jsonDataReaderWriter = new JsonDataReaderWriter(null, mockedEventBus);
 
         jsonPath = Files.createTempFile("tmpPlan", ".json");
-        Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/my_study2.json"),
+        Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/my_study.json"),
                 jsonPath, StandardCopyOption.REPLACE_EXISTING);
         plan = new DefaultStudyPlan();
     }
