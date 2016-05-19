@@ -1,7 +1,9 @@
 package com.oskopek.studyguide.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
@@ -21,6 +23,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 /**
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
  */
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class)
 public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         implements ObservableValue<CourseEnrollment>, Registrable<CourseEnrollment> {
 

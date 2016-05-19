@@ -2,7 +2,6 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
-import com.oskopek.studyguide.persistence.DataReader;
 import com.oskopek.studyguide.persistence.DataWriter;
 import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
 import com.oskopek.studyguide.persistence.MFFHtmlScraper;
@@ -32,12 +31,8 @@ import java.util.Optional;
 @Singleton
 public class RootLayoutController extends AbstractController {
 
+    private final DataWriter writer = new JsonDataReaderWriter();
     private File openedFile;
-
-    private DataReader reader = new JsonDataReaderWriter();
-
-    private DataWriter writer = new JsonDataReaderWriter();
-
     @Inject
     private SemesterController semesterController;
 
@@ -86,7 +81,7 @@ public class RootLayoutController extends AbstractController {
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedURL = enterStringController.getSubmittedString();
-            MFFHtmlScraper scraper = new MFFHtmlScraper(beanManager, MFFWebScraperUtil.sisWebUrl);
+            MFFHtmlScraper scraper = new MFFHtmlScraper(MFFWebScraperUtil.sisWebUrl);
             Stage progressDialog = ProgressCreator.showProgress(scraper, messages.getString("progress.pleaseWait"));
             Task<StudyPlan> studyPlanTask = new Task<StudyPlan>() {
                 @Override
@@ -202,6 +197,7 @@ public class RootLayoutController extends AbstractController {
             return;
         }
         try {
+            JsonDataReaderWriter reader = new JsonDataReaderWriter(messages, eventBus);
             StudyPlan studyPlan = reader.readFrom(file.getAbsolutePath());
             studyGuideApplication.setStudyPlan(studyPlan);
         } catch (IOException e) {

@@ -4,11 +4,9 @@ import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.enterprise.inject.spi.BeanManager;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -30,8 +28,7 @@ public class MFFWebScraperIT {
 
     @Before
     public void setUp() {
-        BeanManager beanManager = Mockito.mock(BeanManager.class);
-        scraper = new MFFHtmlScraper(beanManager, sisWebUrl);
+        scraper = new MFFHtmlScraper(sisWebUrl);
     }
 
     @Test

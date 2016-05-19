@@ -5,7 +5,6 @@ import com.oskopek.studyguide.view.StudyGuideApplication;
 import com.oskopek.studyguide.weld.EventBusTranslator;
 import org.slf4j.Logger;
 
-import javax.enterprise.inject.spi.BeanManager;
 import javax.inject.Inject;
 import java.util.ResourceBundle;
 
@@ -28,8 +27,5 @@ public abstract class AbstractController {
 
     @Inject
     protected EventBus eventBus;
-
-    @Inject
-    protected transient BeanManager beanManager;
 
 }

@@ -1,14 +1,22 @@
 package com.oskopek.studyguide.persistence;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.InjectableValues;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ResourceBundle;
 
 /**
  * Reads and writes the {@link com.oskopek.studyguide.model.StudyPlan} to a JSON formatted file.
@@ -17,7 +25,22 @@ import java.nio.file.Paths;
  */
 public class JsonDataReaderWriter implements DataReader, DataWriter {
 
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
+    public JsonDataReaderWriter() {
+        this(null, null);
+    }
+
+    public JsonDataReaderWriter(ResourceBundle messages, EventBus eventBus) {
+        InjectableValues injectableValues = new InjectableValues.Std()
+                .addValue(ResourceBundle.class, messages).addValue(EventBus.class, eventBus);
+        objectMapper.setInjectableValues(injectableValues);
+    }
+
+    private StudyPlan setConstraintsStudyPlan(StudyPlan studyPlan) {
+        studyPlan.getConstraints().allConstraintStream().forEach(c -> c.setSemesterPlan(studyPlan.getSemesterPlan()));
+        return studyPlan;
+    }
 
     @Override
     public StudyPlan readFrom(String fileName) throws IOException, IllegalArgumentException {
@@ -25,7 +48,7 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("FileName is null.");
         }
         try {
-            return objectMapper.readValue(new File(fileName), DefaultStudyPlan.class);
+            return setConstraintsStudyPlan(objectMapper.readValue(new File(fileName), DefaultStudyPlan.class));
         } catch (JsonParseException | JsonMappingException e) {
             throw new IOException("Failed to read StudyPlan from file (" + fileName + ").", e);
         }
@@ -37,7 +60,7 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
             throw new IllegalArgumentException("InputStream is null.");
         }
         try {
-            return objectMapper.readValue(inputStream, DefaultStudyPlan.class);
+            return setConstraintsStudyPlan(objectMapper.readValue(inputStream, DefaultStudyPlan.class));
         } catch (JsonMappingException | JsonParseException e) {
             throw new IOException("Failed to read StudyPlan from stream.", e);
         }

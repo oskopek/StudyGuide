@@ -1,10 +1,15 @@
 package com.oskopek.studyguide.persistence;
 
+import com.google.common.eventbus.EventBus;
+import com.oskopek.studyguide.constraint.GlobalConstraint;
+import com.oskopek.studyguide.model.CourseGenerator;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.model.courses.Course;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,19 +21,25 @@ import java.nio.file.StandardCopyOption;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.anyObject;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.verify;
 
 /**
  * Probably deserves more thorough testing.
  */
-public class JsonDataReaderWriterTest {
+public class JsonDataReaderWriterTest { // TODO create IT with CDI and test if injected correctly
 
     private JsonDataReaderWriter jsonDataReaderWriter;
     private Path jsonPath;
     private StudyPlan plan;
+    private EventBus mockedEventBus;
 
     @Before
     public void setUp() throws IOException {
-        jsonDataReaderWriter = new JsonDataReaderWriter();
+        mockedEventBus = Mockito.mock(EventBus.class);
+        jsonDataReaderWriter = new JsonDataReaderWriter(null, mockedEventBus);
+
         jsonPath = Files.createTempFile("tmpPlan", ".json");
         Files.copy(Paths.get("src/test/resources/com/oskopek/studyguide/persistence/mff_bc_ioi_2015_2016.json"),
                 jsonPath, StandardCopyOption.REPLACE_EXISTING);
@@ -75,6 +86,15 @@ public class JsonDataReaderWriterTest {
         assertNotNull(plan.getConstraints());
         assertNotNull(plan.getCourseRegistry());
         assertNotNull(plan.getCourseRegistry().courseMapValues());
+        assertNotNull(plan.getConstraints().getGlobalConstraintList());
+        assertEquals(2, plan.getConstraints().getGlobalConstraintList().size());
+        GlobalConstraint constraint = plan.getConstraints().getGlobalConstraintList().get(0);
+        assertNotNull(constraint);
+        // this will throw an exception if the eventBus is not injected correctly
+        constraint.fireBrokenEvent("", (Course) null);
+        verify(mockedEventBus, atLeastOnce()).post(anyObject());
+        // this will (TODO probably) throw an exception if the studyPlan is not injected correctly
+        constraint.validate(CourseGenerator.generateRandomCourse());
     }
 
     @Test(expected = IllegalArgumentException.class)

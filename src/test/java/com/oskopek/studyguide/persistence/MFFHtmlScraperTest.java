@@ -3,9 +3,7 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.StudyPlan;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
-import javax.enterprise.inject.spi.BeanManager;
 import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
@@ -25,8 +23,7 @@ public class MFFHtmlScraperTest {
 
     @Before
     public void setUp() {
-        BeanManager beanManager = Mockito.mock(BeanManager.class);
-        scraper = new MFFHtmlScraper(beanManager, sisUrl);
+        scraper = new MFFHtmlScraper(sisUrl);
     }
 
     @Test

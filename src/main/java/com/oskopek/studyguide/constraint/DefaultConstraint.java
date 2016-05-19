@@ -1,5 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.model.SemesterPlan;
 
@@ -16,9 +18,15 @@ public abstract class DefaultConstraint implements Constraint {
     protected transient SemesterPlan semesterPlan;
 
     @Inject
+    @JacksonInject
     protected transient ResourceBundle messages;
 
     @Inject
+    @JacksonInject
     protected transient EventBus eventBus;
 
+    @JsonIgnore
+    public void setSemesterPlan(SemesterPlan semesterPlan) {
+        this.semesterPlan = semesterPlan;
+    }
 }

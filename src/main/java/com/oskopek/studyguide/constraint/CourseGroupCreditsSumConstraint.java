@@ -79,7 +79,7 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
      * @return the String to use as a message, localized
      */
     private String generateMessage(Credits got, Credits needed) {
-        return String.format(messages.getString(message), needed.getCreditValue(), got.creditValueProperty());
+        return String.format(messages.getString(message), needed.getCreditValue(), got.getCreditValue());
     }
 
     /**

@@ -2,8 +2,6 @@ package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
 
-import javax.enterprise.inject.spi.BeanManager;
-import javax.inject.Inject;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,15 +21,12 @@ public final class MFFWebScraperUtil {
     private static final String mffIoiInfoUrl = "http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm";
     private final MFFHtmlScraper scraper;
 
-    @Inject
-    private transient BeanManager beanManager;
-
     /**
      * An empty default private constructor.
      */
     private MFFWebScraperUtil() {
-        // intentionally empty // TODO PRIORITY add weld and initialize
-        scraper = new MFFHtmlScraper(beanManager, sisWebUrl);
+        // intentionally empty // TODO OPTIONAL add weld init
+        scraper = new MFFHtmlScraper(sisWebUrl);
     }
 
     /**

@@ -96,7 +96,7 @@ public class FindCoursesController extends AbstractController implements FindCou
                         return;
                     }
                     studyGuideApplication.getStudyPlan().getConstraints()
-                            .addAllCourseEnrollmentConstraints(beanManager, enrollment, eventBus, eventBusTranslator);
+                            .addAllCourseEnrollmentConstraints(enrollment, eventBus, eventBusTranslator);
                     enrollment.register(eventBus, eventBusTranslator);
                 }
             }

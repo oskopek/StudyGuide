@@ -83,6 +83,9 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
     @Override
     @Subscribe
     public void validate(Course changed) {
+        if (!changed.equals(getCourseEnrollment().getCourse())) {
+            return;
+        }
         logger.trace("Caught event {} at {}", changed, this);
         semesterPlan.allCourseEnrollments().filter(ce -> changed.equals(ce.getCourse())).forEach(this::validate);
     }

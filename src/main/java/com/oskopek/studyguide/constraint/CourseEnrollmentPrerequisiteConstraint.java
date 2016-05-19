@@ -38,6 +38,9 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
+        if (!changed.equals(getCourseEnrollment())) {
+            return;
+        }
         logger.trace("Caught event {} at {}", changed, this);
         List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
         int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;

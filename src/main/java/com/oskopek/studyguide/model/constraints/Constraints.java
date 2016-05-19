@@ -6,6 +6,7 @@ import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
 import com.oskopek.studyguide.constraint.CourseEnrollmentCorequisiteConstraint;
 import com.oskopek.studyguide.constraint.CourseEnrollmentPrerequisiteConstraint;
 import com.oskopek.studyguide.constraint.CourseGroupConstraint;
+import com.oskopek.studyguide.constraint.DefaultConstraint;
 import com.oskopek.studyguide.constraint.GlobalConstraint;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.weld.BeanManagerUtil;
@@ -17,8 +18,8 @@ import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.enterprise.inject.spi.BeanManager;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * A set of {@link CourseGroup}s and their {@link Constraint}s, along with global constraints.
@@ -134,19 +135,24 @@ public class Constraints {
      *
      * @param courseEnrollment the course enrollment
      */
-    public void addAllCourseEnrollmentConstraints(BeanManager beanManager, CourseEnrollment courseEnrollment,
+    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment,
                                                   EventBus eventBus,
                                                   EventBusTranslator eventBusTranslator) {
 
         CourseEnrollmentConstraint c1 = BeanManagerUtil
-                .createBeanInstance(beanManager, CourseEnrollmentCorequisiteConstraint.class);
+                .createBeanInstance(CourseEnrollmentCorequisiteConstraint.class);
         c1.setCourseEnrollment(courseEnrollment);
         CourseEnrollmentConstraint c2 = BeanManagerUtil
-                .createBeanInstance(beanManager, CourseEnrollmentPrerequisiteConstraint.class);
+                .createBeanInstance(CourseEnrollmentPrerequisiteConstraint.class);
         c2.setCourseEnrollment(courseEnrollment);
         c1.register(eventBus, eventBusTranslator);
         c2.register(eventBus, eventBusTranslator);
         courseEnrollmentConstraintList.addAll(c1, c2);
+    }
+
+    public Stream<DefaultConstraint> allConstraintStream() {
+        return Stream.concat(Stream.concat(getCourseEnrollmentConstraintList().stream(),
+                getCourseGroupConstraintList().stream()), getGlobalConstraintList().stream());
     }
 
     @Override

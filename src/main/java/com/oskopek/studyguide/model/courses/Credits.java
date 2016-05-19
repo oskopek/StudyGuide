@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.model.courses;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;
@@ -79,6 +80,7 @@ public final class Credits extends ObservableValueBase<Credits>
     }
 
     @Override
+    @JsonIgnore
     public Credits getValue() {
         return Credits.valueOf(getCreditValue());
     }

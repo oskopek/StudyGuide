@@ -39,6 +39,9 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     @Override
     @Subscribe
     public void validate(CourseEnrollment changed) {
+        if (!changed.equals(getCourseEnrollment())) {
+            return;
+        }
         logger.trace("Caught event {} at {}", changed, this);
         List<CourseEnrollment> enrollmentsUntilNow =
                 takeUntilSemester(semesterPlan, getCourseEnrollment().getSemester());
