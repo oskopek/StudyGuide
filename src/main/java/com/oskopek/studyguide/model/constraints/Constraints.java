@@ -1,12 +1,6 @@
 package com.oskopek.studyguide.model.constraints;
 
-import com.oskopek.studyguide.constraint.Constraint;
-import com.oskopek.studyguide.constraint.CourseEnrollmentConstraint;
-import com.oskopek.studyguide.constraint.CourseEnrollmentCorequisiteConstraint;
-import com.oskopek.studyguide.constraint.CourseEnrollmentPrerequisiteConstraint;
-import com.oskopek.studyguide.constraint.CourseGroupConstraint;
-import com.oskopek.studyguide.constraint.DefaultConstraint;
-import com.oskopek.studyguide.constraint.GlobalConstraint;
+import com.oskopek.studyguide.constraint.*;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Course;
@@ -20,12 +14,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -147,6 +136,7 @@ public class Constraints {
         courseEnrollmentConstraintList.stream().filter(cec -> !courseEnrollmentSet.contains(cec.getCourseEnrollment()))
                 .forEach(courseEnrollmentConstraintListCopy::add);
         setCourseEnrollmentConstraintList(courseEnrollmentConstraintListCopy);
+        recheckAll();
     }
 
     /**
