@@ -37,16 +37,18 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     @Override
     public void validate() {
-        Map<Course, List<CourseEnrollment>> groupByCourse =
-                semesterPlan.getSemesterList().stream().flatMap(s -> s.getCourseEnrollmentList().stream())
-                        .collect(Collectors.groupingBy(ce -> ce.getCourse()));
+        Map<Course, List<CourseEnrollment>> groupByCourse = semesterPlan.getSemesterList().stream()
+                .flatMap(s -> s.getCourseEnrollmentList().stream())
+                .collect(Collectors.groupingBy(CourseEnrollment::getCourse));
         for (Map.Entry<Course, List<CourseEnrollment>> entry : groupByCourse.entrySet()) {
             Course course = entry.getKey();
             List<CourseEnrollment> enrollments = entry.getValue();
             if (enrollments.size() > maxRepeatedEnrollment) {
                 fireBrokenEvent(generateMessage(enrollments.size(), maxRepeatedEnrollment, course));
+                return;
             }
         }
+        fireFixedEvent(this);
     }
 
     /**
@@ -70,6 +72,15 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
     @JsonGetter
     private int getMaxRepeatedEnrollment() {
         return maxRepeatedEnrollment;
+    }
+
+    /**
+     * Set the max number of repeated enrollments of a specific course that still doesn't trigger this constraint.
+     *
+     * @param maxRepeatedEnrollment the max number of repeated enrollments to set
+     */
+    public void setMaxRepeatedEnrollment(int maxRepeatedEnrollment) {
+        this.maxRepeatedEnrollment = maxRepeatedEnrollment;
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.oskopek.studyguide.constraint;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -28,22 +27,8 @@ public interface Constraint {
     /**
      * The method should verify if the given constraint was broken, and if so,
      * call the {@link #fireBrokenEvent(String, Course)} with the specific reason.
-     *
-     * @param changed the course that triggered the constraint breakage
      */
-    @Subscribe
-    void validate(Course changed);
-
-    /**
-     * The method should verify if the given constraint was broken, and if so,
-     * call the {@link #fireBrokenEvent(String, CourseEnrollment)} with the specific reason.
-     *
-     * @param changed the course enrollment that triggered the constraint breakage
-     */
-    @Subscribe
-    void validate(CourseEnrollment changed);
-
-    // TODO OPTIONAL rework fire methods
+    void validate();
 
     /**
      * Used for firing a broken constraint event if the constraint is broken.
@@ -61,4 +46,10 @@ public interface Constraint {
      */
     void fireBrokenEvent(String message, CourseEnrollment changed);
 
+    /**
+     * Used for firing a fixed constraint event if the constraint is fixed.
+     *
+     * @param originallyBroken the originally broken (now fixed) constraint
+     */
+    void fireFixedEvent(Constraint originallyBroken);
 }

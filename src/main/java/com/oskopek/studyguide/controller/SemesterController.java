@@ -1,7 +1,11 @@
 package com.oskopek.studyguide.controller;
 
+import com.google.common.eventbus.Subscribe;
+import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
+import com.oskopek.studyguide.constraint.event.FixedConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
+import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
@@ -21,9 +25,11 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Controller for SemesterPane.
@@ -31,8 +37,6 @@ import java.util.*;
  * and dragging {@link com.oskopek.studyguide.model.courses.Course}s between them.
  */
 public class SemesterController extends AbstractController {
-
-    private int id = 0;
 
     @FXML
     private GridPane semesterBoxes;
@@ -46,6 +50,9 @@ public class SemesterController extends AbstractController {
     @Inject
     private EnterStringDialogPaneCreator enterStringDialogPaneCreator;
 
+    @Inject
+    private transient Logger logger;
+
     private ChangeListener<List<Semester>> listChangeListener;
 
     /**
@@ -53,6 +60,7 @@ public class SemesterController extends AbstractController {
      */
     @FXML
     private void initialize() {
+        eventBus.register(this);
         listChangeListener = (observable, oldValue, newValue) -> reinitializeSemesterBoxes();
         studyGuideApplication.studyPlanProperty().addListener(((observable, oldValue, newValue) -> {
             if (oldValue != null) {
@@ -95,7 +103,10 @@ public class SemesterController extends AbstractController {
             AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("semester.cannotAdd"));
             return;
         }
-        studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++));
+        int id = 0;
+        while (!studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++))) {
+            continue; // intentionally empty
+        }
     }
 
     /**
@@ -112,9 +123,9 @@ public class SemesterController extends AbstractController {
         while (studyPlan.getCourseRegistry().getCourse("Course" + courseId) != null) {
             courseId++;
         }
-        Course course =
-                new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(), Credits.valueOf(0),
-                        new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
+        Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(),
+                Credits.valueOf(0), new ArrayList<>(Collections.singletonList("teacher")), new ArrayList<>(),
+                new ArrayList<>());
         studyPlan.getCourseRegistry().putCourse(course);
         courseDetailController.setCourse(course);
     }
@@ -131,8 +142,8 @@ public class SemesterController extends AbstractController {
             AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("course.cannotAdd"));
             return;
         }
-        EnterStringController enterStringController =
-                enterStringDialogPaneCreator.create(messages.getString("semester.enterCourseId"));
+        EnterStringController enterStringController = enterStringDialogPaneCreator
+                .create(messages.getString("semester.enterCourseId"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedCourseId = enterStringController.getSubmittedString();
@@ -169,6 +180,8 @@ public class SemesterController extends AbstractController {
      * @param semester the semester to remove
      */
     public void removeSemester(Semester semester) {
+        studyGuideApplication.getStudyPlan().getConstraints()
+                .removeAllCourseEnrollmentConstraints(semester.getCourseEnrollmentList());
         studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
     }
 
@@ -195,6 +208,72 @@ public class SemesterController extends AbstractController {
         }
         from.removeCourseEnrollment(enrollment);
         enrollment.semesterProperty().set(to);
+    }
+
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for changes in a {@link Course}.
+     *
+     * @param changed the changed course posted on the bus
+     */
+    @Subscribe
+    public void handleCourseChange(Course changed) {
+        logger.trace("Course changed: {}", changed);
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan != null) {
+            studyPlan.getConstraints().recheckAll(changed);
+        }
+    }
+
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for changes in a {@link CourseEnrollment}.
+     *
+     * @param changed the changed course enrollment posted on the bus
+     */
+    @Subscribe
+    public void handleCourseEnrollmentChange(CourseEnrollment changed) {
+        logger.trace("CourseEnrollment changed: {}", changed);
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan != null) {
+            studyPlan.getConstraints().recheckAll(changed);
+        }
+    }
+
+    /**
+     * Handler for constraint broken events.
+     *
+     * @param event the observed event
+     */
+    @Subscribe
+    public void onBrokenConstraint(BrokenCourseEnrollmentConstraintEvent event) {
+        logger.trace("CourseEnrollmentConstraint {} broken.", event.getBrokenConstraint());
+        event.getEnrollment().brokenConstraintProperty().setValue(event);
+    }
+
+    /**
+     * Handler for constraint fixed events.
+     *
+     * @param event the observed event
+     */
+    @Subscribe
+    public void onFixedConstraint(FixedConstraintEvent event) {
+        SemesterPlan semesterPlan = studyGuideApplication.getStudyPlan().getSemesterPlan();
+        List<CourseEnrollment> courseEnrollmentFixedList = semesterPlan.allCourseEnrollments().filter(c -> {
+            BrokenCourseEnrollmentConstraintEvent broken = c.brokenConstraintProperty().get();
+            if (broken == null) {
+                return false;
+            } else {
+                return broken.getBrokenConstraint().equals(event.getOriginallyBroken());
+            }
+        }).collect(Collectors.toList());
+        if (courseEnrollmentFixedList.size() > 1) {
+            logger.warn("Multiple course enrollments fixed by single fix: {}", courseEnrollmentFixedList);
+        }
+        for (CourseEnrollment enrollment : courseEnrollmentFixedList) {
+            logger.trace("Constraint {} in {} fixed.", event.getOriginallyBroken(), enrollment);
+            enrollment.brokenConstraintProperty().setValue(null);
+        }
     }
 
 }

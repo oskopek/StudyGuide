@@ -1,5 +1,8 @@
 package com.oskopek.studyguide.view;
 
+import com.google.common.eventbus.EventBus;
+import com.oskopek.studyguide.model.DefaultStudyPlan;
+import com.oskopek.studyguide.weld.DeadEventListener;
 import com.oskopek.studyguide.weld.StartupStage;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +20,7 @@ import java.io.InputStream;
 /**
  * A CDI-enabled version of {@link StudyGuideApplication} that initializes the root layout.
  */
-public class StudyGuideApplicationStarter {
+class StudyGuideApplicationStarter {
 
     @Inject
     @Named("fxmlloader")
@@ -25,6 +28,12 @@ public class StudyGuideApplicationStarter {
 
     @Inject
     private StudyGuideApplication studyGuideApplication;
+
+    @Inject
+    private EventBus eventBus;
+
+    @Inject
+    private DeadEventListener deadEventListener;
 
     /**
      * Initializes the root layout.
@@ -42,8 +51,15 @@ public class StudyGuideApplicationStarter {
         }
         Scene scene = new Scene(rootLayout);
         Platform.runLater(() -> {
+            primaryStage.setMinHeight(700d);
+            primaryStage.setMinWidth(1200d);
             primaryStage.setScene(scene);
             primaryStage.show();
         });
+        studyGuideApplication.studyPlanProperty().addListener((observable, oldValue, newValue) -> {
+            ((DefaultStudyPlan) newValue).constraintsProperty()
+                    .addListener((observable1, oldValue1, newValue1) -> newValue1.recheckAll()); // TODO OPTIONAL HACK
+        });
+        eventBus.register(deadEventListener);
     }
 }

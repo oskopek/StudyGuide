@@ -2,7 +2,10 @@ package com.oskopek.studyguide.controller;
 
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
-import com.oskopek.studyguide.persistence.*;
+import com.oskopek.studyguide.persistence.DataWriter;
+import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
+import com.oskopek.studyguide.persistence.MFFHtmlScraper;
+import com.oskopek.studyguide.persistence.MFFWebScraperUtil;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
 import com.oskopek.studyguide.view.ProgressCreator;
@@ -15,6 +18,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -28,11 +32,9 @@ import java.util.Optional;
 @Singleton
 public class RootLayoutController extends AbstractController {
 
+    private final DataWriter writer = new JsonDataReaderWriter();
+
     private File openedFile;
-
-    private DataReader reader = new JsonDataReaderWriter();
-
-    private DataWriter writer = new JsonDataReaderWriter();
 
     @Inject
     private SemesterController semesterController;
@@ -42,6 +44,9 @@ public class RootLayoutController extends AbstractController {
 
     @Inject
     private EnterStringDialogPaneCreator enterStringDialogPaneCreator;
+
+    @Inject
+    private transient Logger logger;
 
     /**
      * Menu item: File->New.
@@ -77,8 +82,8 @@ public class RootLayoutController extends AbstractController {
      */
     @FXML
     private void handleOpenFrom() {
-        EnterStringController enterStringController =
-                enterStringDialogPaneCreator.create(messages.getString("root.enterUrl"));
+        EnterStringController enterStringController = enterStringDialogPaneCreator
+                .create(messages.getString("root.enterUrl"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedURL = enterStringController.getSubmittedString();
@@ -198,7 +203,10 @@ public class RootLayoutController extends AbstractController {
             return;
         }
         try {
-            studyGuideApplication.setStudyPlan(reader.readFrom(file.getAbsolutePath()));
+            JsonDataReaderWriter reader = new JsonDataReaderWriter(messages, eventBus);
+            StudyPlan studyPlan = reader.readFrom(file.getAbsolutePath());
+            studyGuideApplication.setStudyPlan(studyPlan);
+            studyPlan.getConstraints().recheckAll();
         } catch (IOException e) {
             AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
             e.printStackTrace();
@@ -207,5 +215,4 @@ public class RootLayoutController extends AbstractController {
             openedFile = file;
         }
     }
-
 }

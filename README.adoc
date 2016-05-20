@@ -6,8 +6,8 @@ image:https://travis-ci.org/oskopek/StudyGuide.svg?branch=master["Build Status",
 
 Planning and verifying tool for all the requirements of your studies (for European-style university school systems).
 
-//=== Screenshot
-//image:./docs/img/screenshot.png["StudyGuide screenshot", scalewidth="20%"]
+=== Screenshot
+image:./docs/img/screenshot.png["StudyGuide screenshot", scaledwidth="20%"]
 
 === Getting help
 
@@ -157,9 +157,10 @@ they do not mean an optional statement - we use `(` and `)` (without the star) f
 
 ```
 <study_plan> ::= {
+                   "courseRegistry" : <course_registry>,
                    "semesterPlan" : <semester_plan>,
-                   "constraints" : <constraints>,
-                   "courseRegistry" : <course_registry>
+                   "constraints" : <constraints>
+
                  }
 <semester_plan> ::= {
                       "semesterList" : [ (<semester>}, )* ]
@@ -226,6 +227,7 @@ they do not mean an optional statement - we use `(` and `)` (without the star) f
 <fraction> ::= " <integer> / <integer> "
 <string> ::= <character>(<character>)*
 <course> ::= {
+               "@id" : <uuid>,
                "id" : <string>,
                "name" : <string>,
                "localizedName" : <string>,
@@ -236,12 +238,15 @@ they do not mean an optional statement - we use `(` and `)` (without the star) f
                "corequisites" : [ (<course>, )* ]
              }
 <course_enrollment> ::= {
+                          "@id" : <uuid>,
                           "course" : <course>,
                           "fulfilled" : <boolean>
                         }
 <locale> ::= <character><character>
 <credits> ::= {
+                "@id" : <uuid>,
                 "creditValue" : <integer>
               }
-<boolean> ::= "true" | "false"
+<boolean> ::= true | false
+<uuid> ::= (<character> | <integer>)(<character> | <integer> | -)*
 ```

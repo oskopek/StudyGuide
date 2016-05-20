@@ -1,13 +1,52 @@
 {
+  "courseRegistry": {
+    "courses": {
+      "Course0": {
+        "@id": "9af3d4e5-7b6a-48be-aad4-e99c48365285",
+        "id": "Course0",
+        "name": "Name",
+        "localizedName": "LocalizedName",
+        "locale": "en_US",
+        "credits": {
+          "@id": "1f7692c8-3f2a-42b5-9358-2f244c3b9475",
+          "creditValue": 1
+        },
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      }
+    }
+  },
   "semesterPlan": {
-    "semesterList": []
+    "semesterList": [
+      {
+        "name": "Semester0",
+        "courseEnrollmentList": [
+          {
+            "@id": "ce4ffedf-0357-472e-8abf-e299c255d1ec",
+            "course": "9af3d4e5-7b6a-48be-aad4-e99c48365285",
+            "fulfilled": false
+          }
+        ]
+      }
+    ]
   },
   "constraints": {
     "courseGroupConstraintList": [],
     "globalConstraintList": [],
-    "courseEnrollmentConstraintList": []
-  },
-  "courseRegistry": {
-    "courses": {}
+    "courseEnrollmentConstraintList": [
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "ce4ffedf-0357-472e-8abf-e299c255d1ec"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "ce4ffedf-0357-472e-8abf-e299c255d1ec"
+        }
+      }
+    ]
   }
 }

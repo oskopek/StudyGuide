@@ -29,5 +29,4 @@ public interface DataReader {
      * @throws IllegalArgumentException if the inputStream is null
      */
     StudyPlan readFrom(InputStream inputStream) throws IOException, IllegalArgumentException;
-
 }

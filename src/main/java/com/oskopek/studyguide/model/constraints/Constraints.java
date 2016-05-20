@@ -2,23 +2,30 @@ package com.oskopek.studyguide.model.constraints;
 
 import com.oskopek.studyguide.constraint.*;
 import com.oskopek.studyguide.model.CourseEnrollment;
+import com.oskopek.studyguide.model.SemesterPlan;
+import com.oskopek.studyguide.model.courses.Course;
+import com.oskopek.studyguide.weld.BeanManagerUtil;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * A set of {@link CourseGroup}s and their {@link Constraint}s, along with global constraints.
  */
 public class Constraints {
 
-    private ListProperty<CourseGroupConstraint> courseGroupConstraintList;
-    private ListProperty<GlobalConstraint> globalConstraintList;
-    private ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
+    private final ListProperty<CourseGroupConstraint> courseGroupConstraintList;
+    private final ListProperty<GlobalConstraint> globalConstraintList;
+    private final ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
 
     /**
      * Initialize an empty set of constraints.
@@ -116,18 +123,80 @@ public class Constraints {
      * @param courseEnrollment the course enrollment
      */
     public void removeAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
-        courseEnrollmentConstraintList.stream().filter(cec -> cec.getCourseEnrollment().equals(courseEnrollment))
-                .forEach(cec -> courseEnrollmentConstraintList.remove(cec));
+        removeAllCourseEnrollmentConstraints(Collections.singleton(courseEnrollment));
+    }
+
+    /**
+     * Removes all {@link CourseEnrollmentConstraint}s that restrict the given course enrollments.
+     *
+     * @param courseEnrollments the collection of course enrollments whose constraints to remove
+     */
+    public void removeAllCourseEnrollmentConstraints(Collection<CourseEnrollment> courseEnrollments) {
+        Set<CourseEnrollment> courseEnrollmentSet = new HashSet<>(courseEnrollments);
+        List<CourseEnrollmentConstraint> courseEnrollmentConstraintListCopy = new ArrayList<>(
+                courseEnrollmentConstraintList.size() - courseEnrollmentSet.size() * 2);
+        courseEnrollmentConstraintList.stream().filter(cec -> !courseEnrollmentSet.contains(cec.getCourseEnrollment()))
+                .forEach(courseEnrollmentConstraintListCopy::add);
+        setCourseEnrollmentConstraintList(courseEnrollmentConstraintListCopy);
+        recheckAll();
     }
 
     /**
      * Adds all applicable {@link CourseEnrollmentConstraint}s that should restrict the given course enrollment.
      *
      * @param courseEnrollment the course enrollment
+     * @param semesterPlan the semesterPlan to set into them
      */
-    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment) {
-        courseEnrollmentConstraintList.addAll(new CourseEnrollmentCorequisiteConstraint(courseEnrollment),
-                new CourseEnrollmentPrerequisiteConstraint(courseEnrollment));
+    public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment, SemesterPlan semesterPlan) {
+        CourseEnrollmentConstraint c1 = BeanManagerUtil.createBeanInstance(CourseEnrollmentCorequisiteConstraint.class);
+        c1.setCourseEnrollment(courseEnrollment);
+        c1.setSemesterPlan(semesterPlan);
+        CourseEnrollmentConstraint c2 = BeanManagerUtil
+                .createBeanInstance(CourseEnrollmentPrerequisiteConstraint.class);
+        c2.setCourseEnrollment(courseEnrollment);
+        c2.setSemesterPlan(semesterPlan);
+        courseEnrollmentConstraintList.addAll(c1, c2);
+    }
+
+    /**
+     * Constructs a stream of all the constraints (of all types) contained in this object.
+     *
+     * @return a stream of constraints
+     */
+    public Stream<DefaultConstraint> allConstraintStream() {
+        return Stream.concat(Stream
+                        .concat(getCourseEnrollmentConstraintList().stream(), getCourseGroupConstraintList().stream()),
+                getGlobalConstraintList().stream());
+    }
+
+    /**
+     * Recheck all constraints because a course enrollment changed in the model.
+     *
+     * @param enrollment the course enrollment that caused this recheck
+     * @see #recheckAll()
+     */
+    public void recheckAll(CourseEnrollment enrollment) {
+        logger.debug("Rechecking all because of an enrollment change: {}", enrollment);
+        recheckAll();
+    }
+
+    /**
+     * Recheck all constraints because a course changed in the model.
+     *
+     * @param course the course that caused this recheck
+     * @see #recheckAll()
+     */
+    public void recheckAll(Course course) {
+        logger.debug("Rechecking all because of a course change: {}", course);
+        recheckAll();
+    }
+
+    /**
+     * Recheck all constraints and fire appropriate events.
+     */
+    public void recheckAll() {
+        logger.debug("Rechecking constraints...");
+        allConstraintStream().forEach(Constraint::validate);
     }
 
     @Override

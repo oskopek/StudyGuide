@@ -20,12 +20,12 @@ import java.util.stream.Stream;
  */
 public class FindRegistryCoursesController implements FindCourses {
 
-    private static final FloatCoursePairComparator<Map.Entry<Float, ? extends Course>> floatCoursePairComparator =
-            new FloatCoursePairComparator<>();
-    private static final StringMetric metric =
-            StringMetricBuilder.with(new CosineSimilarity<>()).simplify(Simplifiers.toLowerCase())
-                    .simplify(Simplifiers.removeDiacritics()).tokenize(Tokenizers.qGram(1)).build();
-    private CourseRegistry courseRegistry;
+    private static final FloatCoursePairComparator<Map.Entry<Float, ? extends Course>> floatCoursePairComparator
+            = new FloatCoursePairComparator<>();
+    private static final StringMetric metric = StringMetricBuilder.with(new CosineSimilarity<>())
+            .simplify(Simplifiers.toLowerCase()).simplify(Simplifiers.removeDiacritics()).tokenize(Tokenizers.qGram(1))
+            .build();
+    private final CourseRegistry courseRegistry;
 
     /**
      * Create a controller instance for a {@link CourseRegistry}.
@@ -57,10 +57,10 @@ public class FindRegistryCoursesController implements FindCourses {
     @Override
     public Stream<Course> findCourses(String key) {
         // limit id search artificially to prevent weird results (a user searches names, mostly)
-        Stream<? extends Map.Entry<Float, ? extends Course>> sortedById =
-                mapToSortedPairs(course -> metric.compare(key, course.getId())).limit(3);
-        Stream<? extends Map.Entry<Float, ? extends Course>> sortedByName =
-                mapToSortedPairs(course -> metric.compare(key, course.nameOrLocalizedName())).limit(10);
+        Stream<? extends Map.Entry<Float, ? extends Course>> sortedById = mapToSortedPairs(
+                course -> metric.compare(key, course.getId())).limit(3);
+        Stream<? extends Map.Entry<Float, ? extends Course>> sortedByName = mapToSortedPairs(
+                course -> metric.compare(key, course.nameOrLocalizedName())).limit(10);
         return Stream.concat(sortedById, sortedByName).sorted(floatCoursePairComparator).distinct().limit(10)
                 .map(Map.Entry::getValue);
     }

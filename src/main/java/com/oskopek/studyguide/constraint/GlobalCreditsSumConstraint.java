@@ -40,6 +40,8 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
                         .reduce(0, Integer::sum));
         if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
             fireBrokenEvent(generateMessage(fulfilledCourseCreditSum, totalNeeded));
+        } else {
+            fireFixedEvent(this);
         }
     }
 
@@ -63,6 +65,15 @@ public class GlobalCreditsSumConstraint extends GlobalConstraint {
     @JsonGetter
     private Credits getTotalNeeded() {
         return totalNeeded;
+    }
+
+    /**
+     * The credit sum to pass this constraint.
+     *
+     * @param totalNeeded the total needed credit sum
+     */
+    public void setTotalNeeded(Credits totalNeeded) {
+        this.totalNeeded = totalNeeded;
     }
 
     @Override

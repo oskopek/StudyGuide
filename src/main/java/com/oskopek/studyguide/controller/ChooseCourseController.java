@@ -21,21 +21,16 @@ import java.util.List;
  */
 public class ChooseCourseController extends AbstractController {
 
+    private final ListProperty<Course> courseListProperty;
     private Dialog<ButtonType> dialog;
-
     @FXML
     private TableView<Course> courseTableView;
-
     @FXML
     private TableColumn<Course, String> idColumn;
-
     @FXML
     private TableColumn<Course, String> nameColumn;
-
     @FXML
     private TableColumn<Course, Number> creditsColumn;
-
-    private ListProperty<Course> courseListProperty;
 
     /**
      * Default constructor.

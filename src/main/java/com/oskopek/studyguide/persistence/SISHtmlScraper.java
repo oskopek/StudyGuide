@@ -30,10 +30,8 @@ import java.util.stream.Collectors;
 public class SISHtmlScraper implements ProgressObservable {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
-
+    private final DoubleProperty progressProperty = new SimpleDoubleProperty(-1d);
     private String sisUrl;
-
-    private DoubleProperty progressProperty = new SimpleDoubleProperty(-1d);
 
     /**
      * Default constructor.
@@ -71,7 +69,7 @@ public class SISHtmlScraper implements ProgressObservable {
         if (urlString.startsWith("file://")) { // TODO OPTIONAL hack
             urlString = urlString.substring(7);
             is = Files.newInputStream(Paths.get(urlString));
-            encoding = "utf-8"; // TODO OPTIONAL UTF-8 is wrong
+            encoding = "utf-8";
         } else {
             URL url = new URL(urlString); // http://www.dmurph.com/2011/01/java-uri-encoder/
             URLConnection urlConnection = url.openConnection();

@@ -1,17 +1,16 @@
 package com.oskopek.studyguide.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.common.eventbus.Subscribe;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.google.common.eventbus.EventBus;
 import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
-import com.oskopek.studyguide.constraint.event.BrokenResetEvent;
 import com.oskopek.studyguide.model.courses.Course;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.beans.value.ObservableValueBase;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.slf4j.Logger;
@@ -20,17 +19,19 @@ import org.slf4j.LoggerFactory;
 /**
  * An instance (enrollment) of a {@link Course} in a given {@link Semester}.
  */
-public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
-        implements ObservableValue<CourseEnrollment> {
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class)
+public class CourseEnrollment {
 
     private final ObjectProperty<Course> course;
     private final BooleanProperty fulfilled;
     @JsonBackReference("semester-courseenrollment")
     private final ObjectProperty<Semester> semester;
-    private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint =
-            new SimpleObjectProperty<>(); // TODO PRIORITY move this somewhere
 
-    private transient Logger logger = LoggerFactory.getLogger(getClass());
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
+    private final transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint
+            = new SimpleObjectProperty<>();
+    @JsonIgnore
+    private EventBus eventBus;
 
     /**
      * Private constructor for Jackson persistence.
@@ -72,31 +73,6 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         boolean fulfilled = original.fulfilled.get();
         Semester semester = original.getSemester();
         return new CourseEnrollment(course, semester, fulfilled);
-    }
-
-    /**
-     * Handler for constraint fixed events.
-     *
-     * @param event the observed event
-     */
-    @Subscribe
-    private void onFixedConstraint(BrokenResetEvent event) {
-        if (brokenConstraint.get() != null && brokenConstraint.get().getBrokenConstraint()
-                .equals(event.getOriginallyBroken())) {
-            brokenConstraint.set(null);
-        }
-    }
-
-    /**
-     * Handler for constraint broken events.
-     *
-     * @param event the observed event
-     */
-    @Subscribe
-    private void onBrokenConstraint(BrokenCourseEnrollmentConstraintEvent event) {
-        if (equals(event.getEnrollment())) {
-            brokenConstraint.set(event);
-        }
     }
 
     /**
@@ -189,10 +165,38 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
         return semester;
     }
 
+    /**
+     * Get a value representing this object. To be used in events and constraints.
+     *
+     * @return the course enrollment value
+     */
     @JsonIgnore
-    @Override
     public CourseEnrollment getValue() {
-        return CourseEnrollment.copy(this);
+        return this; //;CourseEnrollment.copy(this);
+    }
+
+    /**
+     * Register this enrollment on the {@link EventBus}. Does not actually call {@link EventBus#register(Object)},
+     * since this class doesn't subscribe to any events, just sets the bus that it will use to communicate it's
+     * changes.
+     *
+     * @param eventBus the event bus to set
+     */
+    public void registerEventBus(EventBus eventBus) {
+        logger.trace("Registering event bus on course enrollment {}", this);
+        this.eventBus = eventBus;
+        fireValueChangedEvent(); // fire on a new bus
+    }
+
+    /**
+     * Post an event on the {@link EventBus}, notifying everyone listening of a change in this course enrollment.
+     */
+    private void fireValueChangedEvent() {
+        logger.trace("Trying to fire course enrollment changed: {}", this);
+        if (eventBus != null) {
+            logger.debug("Firing course enrollment changed: {}", this);
+            eventBus.post(getValue());
+        }
     }
 
     /**
@@ -219,7 +223,8 @@ public class CourseEnrollment extends ObservableValueBase<CourseEnrollment>
             return false;
         }
         CourseEnrollment that = (CourseEnrollment) o;
-        return new EqualsBuilder().append(course, that.course).append(semester, that.semester).isEquals();
+        return new EqualsBuilder().append(getCourse(), that.getCourse()).append(getSemester(), that.getSemester())
+                .isEquals();
     }
 
     @Override

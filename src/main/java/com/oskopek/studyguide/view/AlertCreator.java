@@ -21,7 +21,20 @@ public final class AlertCreator {
     }
 
     /**
-     * A util method to display an {@link Alert} with the given parameters.
+     * An internal method to display an {@link Alert} with the given parameters in the current thread.
+     *
+     * @param alertType the type of the alert
+     * @param message the message to display
+     * @param buttonTypes the buttons to show
+     */
+    private static void showAlertInternal(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
+        Alert alert = new Alert(alertType, "", buttonTypes);
+        alert.getDialogPane().setContent(new Label(message));
+        alert.showAndWait();
+    }
+
+    /**
+     * A util method to display an {@link Alert} with the given parameters in the UI thread.
      *
      * @param alertType the type of the alert
      * @param message the message to display
@@ -29,10 +42,22 @@ public final class AlertCreator {
      * @see Alert
      */
     public static void showAlert(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
+        Platform.runLater(() -> showAlertInternal(alertType, message, buttonTypes));
+    }
+
+    /**
+     * A util method to display an {@link Alert} with the given parameters in the UI thread, exiting the process
+     * after the dialog is closed.
+     *
+     * @param alertType the type of the alert
+     * @param message the message to display
+     * @param buttonTypes the buttons to show
+     * @see Alert
+     */
+    public static void showAlertAndExit(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
         Platform.runLater(() -> {
-            Alert alert = new Alert(alertType, "", buttonTypes);
-            alert.getDialogPane().setContent(new Label(message));
-            alert.showAndWait();
+            showAlertInternal(alertType, message, buttonTypes);
+            System.exit(0);
         });
     }
 
@@ -44,11 +69,11 @@ public final class AlertCreator {
      * @param e the exception to throw
      */
     public static void handleLoadLayoutError(ResourceBundle messages, IOException e) {
-        AlertCreator.showAlert(Alert.AlertType.ERROR,
-                messages.getString("error.cannotLoadLayout") + ":\n\n" + e.getLocalizedMessage(), ButtonType.CLOSE);
         Platform.runLater(() -> {
             throw new IllegalStateException(messages.getString("error.cannotLoadLayout"), e);
         });
+        AlertCreator.showAlertAndExit(Alert.AlertType.ERROR,
+                messages.getString("error.cannotLoadLayout") + ":\n\n" + e.getLocalizedMessage(), ButtonType.CLOSE);
     }
 
 }

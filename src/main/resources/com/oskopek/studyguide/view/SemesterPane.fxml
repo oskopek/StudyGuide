@@ -17,22 +17,18 @@
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
-            <children>
-                <Button fx:id="addSemesterButton" mnemonicParsing="false" onAction="#handleAddSemester"
-                        text="%semesterPane.addSemester"/>
-                <Button fx:id="newCourseButton" mnemonicParsing="false" onAction="#handleNewCourse"
-                        text="%semesterPane.newCourse"/>
-                <Button fx:id="addCourseFromButton" mnemonicParsing="false" onAction="#handleAddCourseFrom"
-                        text="%semesterPane.addCourseFrom"/>
-            </children>
+            <Button fx:id="addSemesterButton" mnemonicParsing="false" onAction="#handleAddSemester"
+                    text="%semesterPane.addSemester"/>
+            <Button fx:id="newCourseButton" mnemonicParsing="false" onAction="#handleNewCourse"
+                    text="%semesterPane.newCourse"/>
+            <Button fx:id="addCourseFromButton" mnemonicParsing="false" onAction="#handleAddCourseFrom"
+                    text="%semesterPane.addCourseFrom"/>
         </HBox>
     </top>
     <center>
         <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="CENTER">
-            <content>
-                <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0" BorderPane.alignment="CENTER">
-                </GridPane>
-            </content>
+            <GridPane fx:id="semesterBoxes" minHeight="200.0" minWidth="200.0" BorderPane.alignment="CENTER">
+            </GridPane>
         </ScrollPane>
     </center>
 </BorderPane>

@@ -7,7 +7,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.oskopek.studyguide" level="INFO"/>
+    <logger name="com.oskopek.studyguide" level="DEBUG"/>
 
     <root level="debug">
         <appender-ref ref="STDOUT"/>

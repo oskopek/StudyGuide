@@ -44,6 +44,9 @@ public class CourseDetailController extends AbstractController {
     @FXML
     private TextField corequisitesField;
 
+    @Inject
+    private transient Logger logger;
+
     private CreditsStringProperty creditsValueProperty;
 
     private StringListStringProperty teacherNamesProperty;
@@ -128,14 +131,12 @@ public class CourseDetailController extends AbstractController {
      */
     private static class CourseListStringProperty {
 
+        private final Logger logger = LoggerFactory.getLogger(getClass());
+        private final ChangeListener<List<Course>> listListener;
+        private final ChangeListener<String> stringListener;
         private CourseRegistry courseRegistry;
-
-        private Logger logger = LoggerFactory.getLogger(getClass());
-
         private ListProperty<Course> listProperty;
         private StringProperty stringProperty;
-        private ChangeListener<List<Course>> listListener;
-        private ChangeListener<String> stringListener;
 
         /**
          * Default constructor.
@@ -204,16 +205,14 @@ public class CourseDetailController extends AbstractController {
          */
         private void synchronizeFromString(String stringList) {
             if (stringList == null) {
-                return; // TODO OPTIONAL check if valid correctly
+                stringList = "";
             }
             logger.debug("Synchronizing from stringList {} using course registry {}", stringList, courseRegistry);
-            List<Course> list =
-                    Stream.of(stringList.split(",")).map(String::trim).map(id -> courseRegistry.getCourse(id))
-                            .filter(x -> x != null).collect(Collectors.toList());
+            List<Course> list = Stream.of(stringList.split(",")).map(String::trim)
+                    .map(id -> courseRegistry.getCourse(id)).filter(x -> x != null).collect(Collectors.toList());
             listProperty.setValue(FXCollections.observableArrayList(list));
             logger.debug("Synchronized to list {}", list);
         }
-
     }
 
     /**
@@ -222,13 +221,11 @@ public class CourseDetailController extends AbstractController {
      */
     private static class CreditsStringProperty {
 
+        private final ChangeListener<Credits> creditsListener;
+        private final ChangeListener<String> stringListener;
+        private final Logger logger = LoggerFactory.getLogger(getClass());
         private ObjectProperty<Credits> creditsProperty;
         private StringProperty stringProperty;
-        private ChangeListener<Credits> creditsListener;
-        private ChangeListener<String> stringListener;
-
-        @Inject
-        private Logger logger;
 
         /**
          * Default constructor.
@@ -296,8 +293,7 @@ public class CourseDetailController extends AbstractController {
                 logger.info("Wrong number format ({}), ignoring the credit value.", string);
                 return; // TODO OPTIONAL do not ignore the wrong value
             }
-            Credits credits = Credits.valueOf(val);
-            creditsProperty.setValue(credits);
+            creditsProperty.get().setCreditValue(val);
         }
     }
 
@@ -307,10 +303,11 @@ public class CourseDetailController extends AbstractController {
      */
     private static class StringListStringProperty {
 
+        private final ChangeListener<List<String>> listListener;
+        private final ChangeListener<String> stringListener;
         private ListProperty<String> listProperty;
         private StringProperty stringProperty;
-        private ChangeListener<List<String>> listListener;
-        private ChangeListener<String> stringListener;
+        private Logger logger = LoggerFactory.getLogger(getClass());
 
         /**
          * Default constructor.
@@ -372,7 +369,7 @@ public class CourseDetailController extends AbstractController {
          */
         private void synchronizeFromString(String string) {
             if (string == null) {
-                return;
+                string = "";
             }
             List<String> list = Stream.of(string.split(",")).map(String::trim).collect(Collectors.toList());
             listProperty.setValue(FXCollections.observableArrayList(list));

@@ -16,17 +16,15 @@
             <right>
                 <HBox alignment="CENTER_RIGHT" minHeight="100.0" minWidth="200.0" spacing="5.0"
                       BorderPane.alignment="CENTER">
-                    <children>
-                        <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
-                                text=" - ">
-                            <font>
-                                <Font name="System Bold" size="13.0"/>
-                            </font>
-                        </Button>
-                    </children>
                     <padding>
                         <Insets left="5.0" right="5.0"/>
                     </padding>
+                    <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
+                            text=" - ">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Button>
                 </HBox>
             </right>
             <left>
@@ -39,13 +37,15 @@
         <TableView fx:id="semesterTable" minHeight="270.0" minWidth="270.0" BorderPane.alignment="CENTER"
                    onDragDetected="#onDragDetected">
             <columns>
-                <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="60.0" prefWidth="70.0"
+                <TableColumn fx:id="warnColumn" editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"
+                             text="%warning"/>
+                <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0"
                              text="%course.id"/>
-                <TableColumn fx:id="nameColumn" editable="false" minWidth="100.0" prefWidth="120.0"
+                <TableColumn fx:id="nameColumn" editable="false" minWidth="90.0"
                              text="%course.name"/>
                 <TableColumn fx:id="creditsColumn" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="90.0"
                              text="%course.credits"/>
-                <TableColumn fx:id="fulfilledColumn" editable="true" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"
+                <TableColumn fx:id="fulfilledColumn" editable="true" maxWidth="25.0" minWidth="25.0" prefWidth="25.0"
                              text="%checkmark"/>
                 <TableColumn fx:id="removeColumn" editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"
                              text="%crossmark"/>

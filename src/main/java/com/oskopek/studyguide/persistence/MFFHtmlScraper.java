@@ -5,12 +5,14 @@ import com.oskopek.studyguide.constraint.CourseGroupFulfilledAllConstraint;
 import com.oskopek.studyguide.constraint.GlobalCourseRepeatedEnrollmentConstraint;
 import com.oskopek.studyguide.constraint.GlobalCreditsSumConstraint;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
+import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.constraints.Constraints;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.weld.BeanManagerUtil;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import org.apache.commons.lang.StringUtils;
@@ -40,8 +42,8 @@ import java.util.stream.Collectors;
  */
 public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
+    private final DoubleProperty progressProperty = new SimpleDoubleProperty();
     private SISHtmlScraper sisHtmlScraper;
-    private DoubleProperty progressProperty = new SimpleDoubleProperty();
 
     /**
      * Default constructor.
@@ -83,6 +85,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
     private void scrapeContents(Document document, DefaultStudyPlan studyPlan) throws IOException {
         Constraints constraints = new Constraints();
         CourseRegistry registry = new CourseRegistry();
+        SemesterPlan semesterPlan = studyPlan.getSemesterPlan();
 
         Elements groupHeaderElements = document.select("h4");
         for (Element header : groupHeaderElements) {
@@ -94,7 +97,11 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 // compulsory courses are transitive (their dependencies have to be compulsory), we can add all
                 registry.putAllCourses(compulsory);
                 CourseGroup group = new CourseGroup(registry.courseMapValues());
-                constraints.getCourseGroupConstraintList().add(new CourseGroupFulfilledAllConstraint(group));
+                CourseGroupFulfilledAllConstraint constraint = BeanManagerUtil
+                        .createBeanInstance(CourseGroupFulfilledAllConstraint.class);
+                constraint.setCourseGroup(group);
+                constraint.setSemesterPlan(semesterPlan);
+                constraints.getCourseGroupConstraintList().add(constraint);
             } else if (filterSemiCompulsory(headerName)) {
                 Element desc = header.nextElementSibling();
                 Credits neededCreditSum = filterNeededCreditSum(desc.text());
@@ -102,12 +109,16 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 CourseRegistry semiCompulsory = new CourseRegistry();
                 // semi-compulsory courses are NOT transitive, do not add their dependencies
                 List<String> courseIds = scrapeCoursesFromTable(table, semiCompulsory);
-                List<Course> courses =
-                        courseIds.stream().map(id -> semiCompulsory.getCourse(id)).collect(Collectors.toList());
+                List<Course> courses = courseIds.stream().map(semiCompulsory::getCourse)
+                        .collect(Collectors.toList());
                 registry.putAllCourses(courses);
                 CourseGroup group = new CourseGroup(courses);
-                constraints.getCourseGroupConstraintList()
-                        .add(new CourseGroupCreditsSumConstraint(group, neededCreditSum));
+                CourseGroupCreditsSumConstraint constraint = BeanManagerUtil
+                        .createBeanInstance(CourseGroupCreditsSumConstraint.class);
+                constraint.setCourseGroup(group);
+                constraint.setSemesterPlan(semesterPlan);
+                constraint.setTotalNeeded(neededCreditSum);
+                constraints.getCourseGroupConstraintList().add(constraint);
             }
         }
 
@@ -118,16 +129,20 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         }
 
         // add global constraints we know to be of effect
-        GlobalCourseRepeatedEnrollmentConstraint c1 = new GlobalCourseRepeatedEnrollmentConstraint(2);
+        GlobalCourseRepeatedEnrollmentConstraint c1 = BeanManagerUtil
+                .createBeanInstance(GlobalCourseRepeatedEnrollmentConstraint.class);
+        c1.setMaxRepeatedEnrollment(2);
+        c1.setSemesterPlan(semesterPlan);
 
-        Optional<String> lastYear =
-                document.select("h4").stream().map(Element::text).filter(row -> row.contains("rok studia"))
-                        .sorted((x, y) -> -x.compareTo(y)).findFirst();
+        Optional<String> lastYear = document.select("h4").stream().map(Element::text)
+                .filter(row -> row.contains("rok studia")).sorted((x, y) -> -x.compareTo(y)).findFirst();
         int lastYearInt = 2; // default for Mgr
         if (lastYear.isPresent()) {
             lastYearInt = lastYear.get().charAt(0) - '0';
         }
-        GlobalCreditsSumConstraint c2 = new GlobalCreditsSumConstraint(Credits.valueOf(60 * lastYearInt));
+        GlobalCreditsSumConstraint c2 = BeanManagerUtil.createBeanInstance(GlobalCreditsSumConstraint.class);
+        c2.setTotalNeeded(Credits.valueOf(60 * lastYearInt));
+        c2.setSemesterPlan(semesterPlan);
         constraints.getGlobalConstraintList().addAll(c1, c2);
 
         studyPlan.courseRegistryProperty().set(registry);
@@ -238,7 +253,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
             throw new IllegalArgumentException("Path " + path + " is null or not a regular file.");
         }
         InputStream is = Files.newInputStream(path);
-        StudyPlan studyPlan = scrapeStudyPlan(is, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
+        StudyPlan studyPlan = scrapeStudyPlan(is, "utf-8");
         is.close();
         return studyPlan;
     }
@@ -279,7 +294,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         if (inputStream == null) {
             throw new IllegalArgumentException("Input stream cannot be null.");
         }
-        return scrapeStudyPlan(inputStream, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
+        return scrapeStudyPlan(inputStream, "utf-8");
     }
 
     @Override

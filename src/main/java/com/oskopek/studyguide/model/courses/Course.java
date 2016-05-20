@@ -1,14 +1,19 @@
 package com.oskopek.studyguide.model.courses;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.google.common.eventbus.EventBus;
 import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +23,8 @@ import java.util.Locale;
  * Background information about a course students can enroll in.
  * There should be only one instance of this per course.
  */
-public class Course extends ObservableValueBase<Course> implements Comparable<Course>, ObservableValue<Course> {
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class)
+public class Course implements Comparable<Course> {
 
     private final StringProperty id;
     private final StringProperty name;
@@ -28,6 +34,9 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
     private final ListProperty<String> teacherNames;
     private final ListProperty<Course> prerequisites;
     private final ListProperty<Course> corequisites;
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
+    private transient EventBus eventBus;
+    private final transient ChangeListener<Credits> creditsChangeListener = (x, y, z) -> fireValueChangedEvent();
 
     /**
      * Empty default constructor for JSON.
@@ -107,6 +116,17 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         List<Course> prerequisites = new ArrayList<>(original.getPrerequisites());
         List<Course> corequisites = new ArrayList<>(original.getCorequisites());
         return new Course(id, name, localizedName, locale, credits, teacherNames, prerequisites, corequisites);
+    }
+
+    /**
+     * Post an event on the {@link EventBus}, notifying everyone listening of a change in this course.
+     */
+    private void fireValueChangedEvent() {
+        logger.trace("Trying to fire course changed: {}", this);
+        if (eventBus != null) {
+            logger.debug("Firing course changed: {}", this);
+            eventBus.post(getValue());
+        }
     }
 
     /**
@@ -365,13 +385,41 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
      */
     private void registerChangeEventListeners() {
         id.addListener((x, y, z) -> fireValueChangedEvent());
-        //        name.addListener((x, y, z) -> fireValueChangedEvent());
-        //        localizedName.addListener((x, y, z) -> fireValueChangedEvent());
-        //        locale.addListener((x, y, z) -> fireValueChangedEvent());
-        credits.addListener((x, y, z) -> fireValueChangedEvent());
-        //        teacherNames.addListener((x, y, z) -> fireValueChangedEvent());
+        credits.addListener(this::onCreditsChanged);
         prerequisites.addListener((x, y, z) -> fireValueChangedEvent());
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
+    }
+
+    /**
+     * Register this course on the {@link EventBus}. Does not actually call {@link EventBus#register(Object)},
+     * since this class doesn't subscribe to any events, just sets the bus that it will use to communicate it's
+     * changes.
+     *
+     * @param eventBus the event bus to set
+     */
+    public void registerEventBus(EventBus eventBus) {
+        logger.trace("Registering event bus on course {}", this);
+        this.eventBus = eventBus;
+        fireValueChangedEvent(); // fire on a new bus
+    }
+
+    /**
+     * A change listener method implementation, used for adding and removing a change listener on the credits
+     * instance of this course. Translates a credits change into a course change (transitively).
+     *
+     * @param observableValue the observable that changed, unused
+     * @param oldValue the old credit value
+     * @param newValue the new credit value
+     */
+    private void onCreditsChanged(ObservableValue<? extends Credits> observableValue, Credits oldValue,
+            Credits newValue) {
+        if (oldValue != null) {
+            oldValue.removeListener(creditsChangeListener);
+        }
+        if (newValue != null) {
+            newValue.addListener(creditsChangeListener);
+        }
+        fireValueChangedEvent();
     }
 
     /**
@@ -394,10 +442,14 @@ public class Course extends ObservableValueBase<Course> implements Comparable<Co
         return new CompareToBuilder().append(id, o.id).toComparison();
     }
 
-    @Override
+    /**
+     * Get a value representing this object. To be used in events and constraints.
+     *
+     * @return the course value
+     */
     @JsonIgnore
     public Course getValue() {
-        return Course.copy(this);
+        return this; //Course.copy(this);
     }
 
     @Override

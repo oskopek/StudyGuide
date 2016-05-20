@@ -7,16 +7,16 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 /**
  * The event used for removing UI element warnings on broken constraints.
  */
-public class BrokenResetEvent {
+public class FixedConstraintEvent {
 
-    private Constraint originallyBroken;
+    private final Constraint originallyBroken;
 
     /**
      * Default constructor.
      *
      * @param originallyBroken the constraint that is not broken anymore
      */
-    public BrokenResetEvent(Constraint originallyBroken) {
+    public FixedConstraintEvent(Constraint originallyBroken) {
         this.originallyBroken = originallyBroken;
     }
 
@@ -39,15 +39,15 @@ public class BrokenResetEvent {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof BrokenResetEvent)) {
+        if (!(o instanceof FixedConstraintEvent)) {
             return false;
         }
-        BrokenResetEvent that = (BrokenResetEvent) o;
+        FixedConstraintEvent that = (FixedConstraintEvent) o;
         return new EqualsBuilder().append(getOriginallyBroken(), that.getOriginallyBroken()).isEquals();
     }
 
     @Override
     public String toString() {
-        return "BrokenResetEvent[" + originallyBroken + "]";
+        return "FixedConstraintEvent[" + originallyBroken + "]";
     }
 }

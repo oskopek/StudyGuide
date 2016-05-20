@@ -1,4 +1,445 @@
 {
+  "courseRegistry": {
+    "courses": {
+      "NPFL087": {
+        "@id": "8b10c472-22c9-47f0-9a4e-b4088abf8488",
+        "id": "NPFL087",
+        "name": "Statistical Machine Translation",
+        "localizedName": "Statistický strojový překlad",
+        "locale": "cs",
+        "credits": {
+          "@id": "d9a4c1bb-c741-4e6d-b90a-8f3a7a63bec2",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "RNDr. Ondřej Bojar, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPOZ009": {
+        "@id": "8cc09145-b63f-4be2-a0ea-c0f534399c2c",
+        "id": "NPOZ009",
+        "name": "Professional Language and Style",
+        "localizedName": "Odborné vyjadřování a styl",
+        "locale": "cs",
+        "credits": {
+          "@id": "1851ddaa-e905-4b06-ab07-3ecd52f9a010",
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Mgr. Veronika Kolářová, Ph.D.",
+          "Mgr. Magda Ševčíková, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL063": {
+        "@id": "244db72e-6acb-458a-ba14-b552c8d7cb50",
+        "id": "NPFL063",
+        "name": "Introduction to General Linguistics",
+        "localizedName": "Úvod do obecné lingvistiky",
+        "locale": "cs",
+        "credits": {
+          "@id": "7e726ca3-f01b-46cf-bfed-b7fd5eb0c32d",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "RNDr. Jiří Hana, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN066": {
+        "@id": "3a4c96fb-7012-43ab-82ba-7ec91d59772d",
+        "id": "NTIN066",
+        "name": "Data Structures I",
+        "localizedName": "Datové struktury I",
+        "locale": "cs",
+        "credits": {
+          "@id": "2683aacc-faf2-4358-a0ac-b907bc27976c",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. Mgr. Michal Koucký, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL083": {
+        "@id": "a86a7341-2fd8-49df-9d5f-9fa283267bfa",
+        "id": "NPFL083",
+        "name": "Linguistic Theory and Grammar Formalisms",
+        "localizedName": "Lingvistická teorie a gramatické formalismy",
+        "locale": "cs",
+        "credits": {
+          "@id": "f62db5cb-c357-4694-bc8c-33ea09b1a757",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "Ing. Alexandr Rosen, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL082": {
+        "@id": "fce7f26e-f247-4e86-b5e9-bf959e5d62a6",
+        "id": "NPFL082",
+        "name": "Information Structure of Sentences and Discourse Structure",
+        "localizedName": "Informační struktura věty a výstavba diskurzu",
+        "locale": "cs",
+        "credits": {
+          "@id": "cce4d1d7-6dd7-42d5-9297-d70bb6ff9f5d",
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "prof. PhDr. Eva Hajičová, DrSc.",
+          "PhDr. Šárka Zikánová, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL006": {
+        "@id": "f7ab0975-3a27-40a2-826e-3c87917734c5",
+        "id": "NPFL006",
+        "name": "Introduction to Formal Linguistics",
+        "localizedName": "Úvod do formální lingvistiky",
+        "locale": "cs",
+        "credits": {
+          "@id": "de0e7b66-5fe9-4dfc-8448-03a25a79123b",
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Mgr. Magda Ševčíková, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL104": {
+        "@id": "b81d567e-f565-4a99-8b43-e92d4b681e7b",
+        "id": "NPFL104",
+        "name": "Machine Learning Methods",
+        "localizedName": "Metody strojového učení",
+        "locale": "cs",
+        "credits": {
+          "@id": "e08a283c-1981-4f92-abe0-211c407694b8",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
+          "RNDr. Ondřej Bojar, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL103": {
+        "@id": "43877d7b-d0aa-49c5-9a79-1b58a649a788",
+        "id": "NPFL103",
+        "name": "Information Retrieval",
+        "localizedName": "Vyhledávání informací",
+        "locale": "cs",
+        "credits": {
+          "@id": "002f25d5-1a19-4eea-9ce7-bd874152f0b1",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "RNDr. Pavel Pecina, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL068": {
+        "@id": "e4d460fd-3cf5-417b-a146-857897ad5202",
+        "id": "NPFL068",
+        "name": "Statistical Methods in Natural Language Processing II",
+        "localizedName": "Statistické metody zpracování přirozených jazyků II",
+        "locale": "cs",
+        "credits": {
+          "@id": "adbc9563-cf2e-486c-b78b-7c0482a25b6c",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "prof. RNDr. Jan Hajič, Dr."
+        ],
+        "prerequisites": [],
+        "corequisites": [
+          {
+            "@id": "671040de-be85-4abb-9e71-be1258d022f5",
+            "id": "NPFL067",
+            "name": "Statistical Methods in Natural Language Processing I",
+            "localizedName": "Statistické metody zpracování přirozených jazyků I",
+            "locale": "cs",
+            "credits": {
+              "@id": "352340f6-f8a7-4bfe-be84-e12d79916140",
+              "creditValue": 6
+            },
+            "teacherNames": [
+              "prof. RNDr. Jan Hajič, Dr."
+            ],
+            "prerequisites": [],
+            "corequisites": []
+          }
+        ]
+      },
+      "NPFL067": "671040de-be85-4abb-9e71-be1258d022f5",
+      "NPRG027": {
+        "@id": "4a3a05f2-1a00-4a14-b48e-09fc1aba8796",
+        "id": "NPRG027",
+        "name": "Credit for Project",
+        "localizedName": "Zápočet k projektu",
+        "locale": "cs",
+        "credits": {
+          "@id": "24c9ae41-73ef-44b3-a5ef-662440a113f7",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "Informatika Mgr. - Softwarové systémy",
+          "Informatika Mgr. - Matematická lingvistika"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPRG023": {
+        "@id": "651800c5-95f3-4f6e-9f2c-e83f2488e8f4",
+        "id": "NPRG023",
+        "name": "Software Project",
+        "localizedName": "Softwarový projekt",
+        "locale": "cs",
+        "credits": {
+          "@id": "3c31b2ac-d03b-4b5e-9c9c-61960e90d646",
+          "creditValue": 9
+        },
+        "teacherNames": [
+          "Informatika Mgr. - Softwarové systémy",
+          "Informatika Mgr. - Matematická lingvistika"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NTIN090": {
+        "@id": "d3f3d2a9-2904-4f1f-9ffc-26fc7db6f6cc",
+        "id": "NTIN090",
+        "name": "Introduction to Complexity and Computability",
+        "localizedName": "Základy složitosti a vyčíslitelnosti",
+        "locale": "cs",
+        "credits": {
+          "@id": "f41171cc-d0be-4ed3-a722-44ce69969a99",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. RNDr. Ondřej Čepek, Ph.D.",
+          "RNDr. Petr Kučera, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL075": {
+        "@id": "65d42f90-1a44-4114-af41-e068074d9aed",
+        "id": "NPFL075",
+        "name": "Prague Dependency Treebank",
+        "localizedName": "Pražský závislostní korpus",
+        "locale": "cs",
+        "credits": {
+          "@id": "21eaea52-e562-40d9-8e1a-794429283eb4",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "doc. RNDr. Markéta Lopatková, Ph.D.",
+          "RNDr. Jiří Mírovský, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL096": {
+        "@id": "2c78db8b-2d31-4c94-9653-aa057a70217e",
+        "id": "NPFL096",
+        "name": "Computational Morphology",
+        "localizedName": "Komputační morfologie",
+        "locale": "cs",
+        "credits": {
+          "@id": "66f05a29-b923-41e9-92e7-a3a7c2f254d6",
+          "creditValue": 4
+        },
+        "teacherNames": [
+          "RNDr. Jiří Hana, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL095": {
+        "@id": "0fa68040-c87b-4b73-8ef1-095797296fdc",
+        "id": "NPFL095",
+        "name": "Modern Methods in Computational Linguistics",
+        "localizedName": "Moderní metody v počítačové lingvistice",
+        "locale": "cs",
+        "credits": {
+          "@id": "376bd90b-c2d1-4bb4-909b-77d8f6380018",
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "Mgr. Martin Popel"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL094": {
+        "@id": "ec946947-c558-451d-af8c-52d1dd16396a",
+        "id": "NPFL094",
+        "name": "Morphological and Syntactic Analysis I",
+        "localizedName": "Morfologická a syntaktická analýza",
+        "locale": "cs",
+        "credits": {
+          "@id": "a4347577-b6e5-4c73-a72f-0fbb9e786972",
+          "creditValue": 3
+        },
+        "teacherNames": [
+          "RNDr. Daniel Zeman, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL093": {
+        "@id": "8daa621f-6073-40d8-82a8-79038734519f",
+        "id": "NPFL093",
+        "name": "NLP Applications",
+        "localizedName": "Aplikace NLP",
+        "locale": "cs",
+        "credits": {
+          "@id": "2141ee4e-447f-49d3-a53d-828eb87af5e2",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. RNDr. Vladislav Kuboň, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL092": {
+        "@id": "56f56e6d-368b-49da-b873-ba10397c5c8a",
+        "id": "NPFL092",
+        "name": "NLP Technology",
+        "localizedName": "Technologie pro NLP",
+        "locale": "cs",
+        "credits": {
+          "@id": "07741d9e-54d2-48d2-abe6-57a19b9b4adc",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
+          "Mgr. Rudolf Rosa"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL070": {
+        "@id": "3815c846-8c43-4dba-92eb-b6f90646c309",
+        "id": "NPFL070",
+        "name": "Language Data Resources",
+        "localizedName": "Zdroje lingvistických dat",
+        "locale": "cs",
+        "credits": {
+          "@id": "3bc3f420-f941-4fb5-a206-e5d317ebdaa2",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
+          "Mgr. Martin Popel"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSZZ025": {
+        "@id": "b08d6f50-4378-40e7-8c2b-85eb4f95d6d6",
+        "id": "NSZZ025",
+        "name": "Diploma Thesis III",
+        "localizedName": "Diplomová práce III",
+        "locale": "cs",
+        "credits": {
+          "@id": "7406fc9d-4dea-43d9-a65a-8ac7f0699526",
+          "creditValue": 15
+        },
+        "teacherNames": [],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSZZ023": {
+        "@id": "714fcb84-7dc8-4ad1-a8fc-153ff20e3572",
+        "id": "NSZZ023",
+        "name": "Diploma Thesis I",
+        "localizedName": "Diplomová práce I",
+        "locale": "cs",
+        "credits": {
+          "@id": "b5ef6230-7bbe-4c3a-8e36-8e80fb4dbb60",
+          "creditValue": 6
+        },
+        "teacherNames": [],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL038": {
+        "@id": "47a7403a-d074-4fb7-8c2e-f350a1d8c1af",
+        "id": "NPFL038",
+        "name": "Fundamentals of Speech Recognition and Generation",
+        "localizedName": "Základy rozpoznávání a generování mluvené řeči",
+        "locale": "cs",
+        "credits": {
+          "@id": "c0209dde-c760-4845-9601-62f424526f84",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "Mgr. Nino Peterek, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSZZ024": {
+        "@id": "73101989-1409-412f-bce4-e8512553c477",
+        "id": "NSZZ024",
+        "name": "Diploma Thesis II",
+        "localizedName": "Diplomová práce II",
+        "locale": "cs",
+        "credits": {
+          "@id": "b1237b0f-dd35-4aff-8926-f9b619d1627a",
+          "creditValue": 9
+        },
+        "teacherNames": [],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL079": {
+        "@id": "33948f3c-3936-4160-bbe0-dcf4bbc0fb92",
+        "id": "NPFL079",
+        "name": "Algorithms in Speech Recognition",
+        "localizedName": "Algoritmy rozpoznávání mluvené řeči",
+        "locale": "cs",
+        "credits": {
+          "@id": "13f2984d-a343-49c9-ae2c-5ac3ba3ba41e",
+          "creditValue": 6
+        },
+        "teacherNames": [
+          "Mgr. Nino Peterek, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NPFL099": {
+        "@id": "16ed29fd-bfed-4441-83e5-98fe8b19aa6d",
+        "id": "NPFL099",
+        "name": "Statistical Dialogue Systems",
+        "localizedName": "Statistické dialogové systémy",
+        "locale": "cs",
+        "credits": {
+          "@id": "afa6ef8e-a10d-443f-b031-9ca8c76c0261",
+          "creditValue": 5
+        },
+        "teacherNames": [
+          "Mgr. Ing. Filip Jurčíček, Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      }
+    }
+  },
   "semesterPlan": {
     "semesterList": []
   },
@@ -8,106 +449,21 @@
         "CourseGroupFulfilledAllConstraint": {
           "courseGroup": {
             "courseList": [
+              "244db72e-6acb-458a-ba14-b552c8d7cb50",
+              "3a4c96fb-7012-43ab-82ba-7ec91d59772d",
+              "56f56e6d-368b-49da-b873-ba10397c5c8a",
+              "b08d6f50-4378-40e7-8c2b-85eb4f95d6d6",
+              "d3f3d2a9-2904-4f1f-9ffc-26fc7db6f6cc",
+              "714fcb84-7dc8-4ad1-a8fc-153ff20e3572",
+              "73101989-1409-412f-bce4-e8512553c477",
               {
-                "id": "NPFL063",
-                "name": "Introduction to General Linguistics",
-                "localizedName": "Úvod do obecné lingvistiky",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. Jiří Hana, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NTIN066",
-                "name": "Data Structures I",
-                "localizedName": "Datové struktury I",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Mgr. Michal Koucký, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL092",
-                "name": "NLP Technology",
-                "localizedName": "Technologie pro NLP",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-                  "Mgr. Rudolf Rosa"
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSZZ025",
-                "name": "Diploma Thesis III",
-                "localizedName": "Diplomová práce III",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 15
-                },
-                "teacherNames": [],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NTIN090",
-                "name": "Introduction to Complexity and Computability",
-                "localizedName": "Základy složitosti a vyčíslitelnosti",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. RNDr. Ondřej Čepek, Ph.D.",
-                  "RNDr. Petr Kučera, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSZZ023",
-                "name": "Diploma Thesis I",
-                "localizedName": "Diplomová práce I",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSZZ024",
-                "name": "Diploma Thesis II",
-                "localizedName": "Diplomová práce II",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 9
-                },
-                "teacherNames": [],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
+                "@id": "b59aee33-fb43-47cf-ba7c-3c54edf4ba77",
                 "id": "NPFL067",
                 "name": "Statistical Methods in Natural Language Processing I",
                 "localizedName": "Statistické metody zpracování přirozených jazyků I",
                 "locale": "cs",
                 "credits": {
+                  "@id": "68a4d6de-5e3e-43a1-b42d-3ee66b9beb02",
                   "creditValue": 6
                 },
                 "teacherNames": [
@@ -124,297 +480,29 @@
         "CourseGroupCreditsSumConstraint": {
           "courseGroup": {
             "courseList": [
-              {
-                "id": "NPFL006",
-                "name": "Introduction to Formal Linguistics",
-                "localizedName": "Úvod do formální lingvistiky",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "Mgr. Magda Ševčíková, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL038",
-                "name": "Fundamentals of Speech Recognition and Generation",
-                "localizedName": "Základy rozpoznávání a generování mluvené řeči",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "Mgr. Nino Peterek, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL068",
-                "name": "Statistical Methods in Natural Language Processing II",
-                "localizedName": "Statistické metody zpracování přirozených jazyků II",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "prof. RNDr. Jan Hajič, Dr."
-                ],
-                "prerequisites": [],
-                "corequisites": [
-                  {
-                    "id": "NPFL067",
-                    "name": "Statistical Methods in Natural Language Processing I",
-                    "localizedName": "Statistické metody zpracování přirozených jazyků I",
-                    "locale": "cs",
-                    "credits": {
-                      "creditValue": 6
-                    },
-                    "teacherNames": [
-                      "prof. RNDr. Jan Hajič, Dr."
-                    ],
-                    "prerequisites": [],
-                    "corequisites": []
-                  }
-                ]
-              },
-              {
-                "id": "NPFL070",
-                "name": "Language Data Resources",
-                "localizedName": "Zdroje lingvistických dat",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-                  "Mgr. Martin Popel"
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL075",
-                "name": "Prague Dependency Treebank",
-                "localizedName": "Pražský závislostní korpus",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "doc. RNDr. Markéta Lopatková, Ph.D.",
-                  "RNDr. Jiří Mírovský, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL079",
-                "name": "Algorithms in Speech Recognition",
-                "localizedName": "Algoritmy rozpoznávání mluvené řeči",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "Mgr. Nino Peterek, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL082",
-                "name": "Information Structure of Sentences and Discourse Structure",
-                "localizedName": "Informační struktura věty a výstavba diskurzu",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "prof. PhDr. Eva Hajičová, DrSc.",
-                  "PhDr. Šárka Zikánová, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL083",
-                "name": "Linguistic Theory and Grammar Formalisms",
-                "localizedName": "Lingvistická teorie a gramatické formalismy",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "Ing. Alexandr Rosen, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL087",
-                "name": "Statistical Machine Translation",
-                "localizedName": "Statistický strojový překlad",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "RNDr. Ondřej Bojar, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL093",
-                "name": "NLP Applications",
-                "localizedName": "Aplikace NLP",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. RNDr. Vladislav Kuboň, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL094",
-                "name": "Morphological and Syntactic Analysis I",
-                "localizedName": "Morfologická a syntaktická analýza",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "RNDr. Daniel Zeman, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL095",
-                "name": "Modern Methods in Computational Linguistics",
-                "localizedName": "Moderní metody v počítačové lingvistice",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "Mgr. Martin Popel"
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL096",
-                "name": "Computational Morphology",
-                "localizedName": "Komputační morfologie",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 4
-                },
-                "teacherNames": [
-                  "RNDr. Jiří Hana, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL099",
-                "name": "Statistical Dialogue Systems",
-                "localizedName": "Statistické dialogové systémy",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "Mgr. Ing. Filip Jurčíček, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL103",
-                "name": "Information Retrieval",
-                "localizedName": "Vyhledávání informací",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "RNDr. Pavel Pecina, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPFL104",
-                "name": "Machine Learning Methods",
-                "localizedName": "Metody strojového učení",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-                  "RNDr. Ondřej Bojar, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPOZ009",
-                "name": "Professional Language and Style",
-                "localizedName": "Odborné vyjadřování a styl",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "Mgr. Veronika Kolářová, Ph.D.",
-                  "Mgr. Magda Ševčíková, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG027",
-                "name": "Credit for Project",
-                "localizedName": "Zápočet k projektu",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "Informatika Mgr. - Softwarové systémy",
-                  "Informatika Mgr. - Matematická lingvistika"
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG023",
-                "name": "Software Project",
-                "localizedName": "Softwarový projekt",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 9
-                },
-                "teacherNames": [
-                  "Informatika Mgr. - Softwarové systémy",
-                  "Informatika Mgr. - Matematická lingvistika"
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              }
+              "f7ab0975-3a27-40a2-826e-3c87917734c5",
+              "47a7403a-d074-4fb7-8c2e-f350a1d8c1af",
+              "e4d460fd-3cf5-417b-a146-857897ad5202",
+              "3815c846-8c43-4dba-92eb-b6f90646c309",
+              "65d42f90-1a44-4114-af41-e068074d9aed",
+              "33948f3c-3936-4160-bbe0-dcf4bbc0fb92",
+              "fce7f26e-f247-4e86-b5e9-bf959e5d62a6",
+              "a86a7341-2fd8-49df-9d5f-9fa283267bfa",
+              "8b10c472-22c9-47f0-9a4e-b4088abf8488",
+              "8daa621f-6073-40d8-82a8-79038734519f",
+              "ec946947-c558-451d-af8c-52d1dd16396a",
+              "0fa68040-c87b-4b73-8ef1-095797296fdc",
+              "2c78db8b-2d31-4c94-9653-aa057a70217e",
+              "16ed29fd-bfed-4441-83e5-98fe8b19aa6d",
+              "43877d7b-d0aa-49c5-9a79-1b58a649a788",
+              "b81d567e-f565-4a99-8b43-e92d4b681e7b",
+              "8cc09145-b63f-4be2-a0ea-c0f534399c2c",
+              "4a3a05f2-1a00-4a14-b48e-09fc1aba8796",
+              "651800c5-95f3-4f6e-9f2c-e83f2488e8f4"
             ]
           },
           "totalNeeded": {
+            "@id": "0eb9ef52-494d-404c-b2a3-2a020e795777",
             "creditValue": 42
           }
         }
@@ -429,411 +517,12 @@
       {
         "GlobalCreditsSumConstraint": {
           "totalNeeded": {
+            "@id": "ca2f5296-5fb6-46fc-8845-8cd84dc0ed95",
             "creditValue": 120
           }
         }
       }
     ],
     "courseEnrollmentConstraintList": []
-  },
-  "courseRegistry": {
-    "courses": {
-      "NPFL087": {
-        "id": "NPFL087",
-        "name": "Statistical Machine Translation",
-        "localizedName": "Statistický strojový překlad",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "RNDr. Ondřej Bojar, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPOZ009": {
-        "id": "NPOZ009",
-        "name": "Professional Language and Style",
-        "localizedName": "Odborné vyjadřování a styl",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 3
-        },
-        "teacherNames": [
-          "Mgr. Veronika Kolářová, Ph.D.",
-          "Mgr. Magda Ševčíková, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL063": {
-        "id": "NPFL063",
-        "name": "Introduction to General Linguistics",
-        "localizedName": "Úvod do obecné lingvistiky",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "RNDr. Jiří Hana, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NTIN066": {
-        "id": "NTIN066",
-        "name": "Data Structures I",
-        "localizedName": "Datové struktury I",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. Mgr. Michal Koucký, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL083": {
-        "id": "NPFL083",
-        "name": "Linguistic Theory and Grammar Formalisms",
-        "localizedName": "Lingvistická teorie a gramatické formalismy",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "Ing. Alexandr Rosen, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL082": {
-        "id": "NPFL082",
-        "name": "Information Structure of Sentences and Discourse Structure",
-        "localizedName": "Informační struktura věty a výstavba diskurzu",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 3
-        },
-        "teacherNames": [
-          "prof. PhDr. Eva Hajičová, DrSc.",
-          "PhDr. Šárka Zikánová, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL006": {
-        "id": "NPFL006",
-        "name": "Introduction to Formal Linguistics",
-        "localizedName": "Úvod do formální lingvistiky",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 3
-        },
-        "teacherNames": [
-          "Mgr. Magda Ševčíková, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL104": {
-        "id": "NPFL104",
-        "name": "Machine Learning Methods",
-        "localizedName": "Metody strojového učení",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-          "RNDr. Ondřej Bojar, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL103": {
-        "id": "NPFL103",
-        "name": "Information Retrieval",
-        "localizedName": "Vyhledávání informací",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "RNDr. Pavel Pecina, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL068": {
-        "id": "NPFL068",
-        "name": "Statistical Methods in Natural Language Processing II",
-        "localizedName": "Statistické metody zpracování přirozených jazyků II",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "prof. RNDr. Jan Hajič, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          {
-            "id": "NPFL067",
-            "name": "Statistical Methods in Natural Language Processing I",
-            "localizedName": "Statistické metody zpracování přirozených jazyků I",
-            "locale": "cs",
-            "credits": {
-              "creditValue": 6
-            },
-            "teacherNames": [
-              "prof. RNDr. Jan Hajič, Dr."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ]
-      },
-      "NPFL067": {
-        "id": "NPFL067",
-        "name": "Statistical Methods in Natural Language Processing I",
-        "localizedName": "Statistické metody zpracování přirozených jazyků I",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "prof. RNDr. Jan Hajič, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPRG027": {
-        "id": "NPRG027",
-        "name": "Credit for Project",
-        "localizedName": "Zápočet k projektu",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "Informatika Mgr. - Softwarové systémy",
-          "Informatika Mgr. - Matematická lingvistika"
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPRG023": {
-        "id": "NPRG023",
-        "name": "Software Project",
-        "localizedName": "Softwarový projekt",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 9
-        },
-        "teacherNames": [
-          "Informatika Mgr. - Softwarové systémy",
-          "Informatika Mgr. - Matematická lingvistika"
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NTIN090": {
-        "id": "NTIN090",
-        "name": "Introduction to Complexity and Computability",
-        "localizedName": "Základy složitosti a vyčíslitelnosti",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. RNDr. Ondřej Čepek, Ph.D.",
-          "RNDr. Petr Kučera, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL075": {
-        "id": "NPFL075",
-        "name": "Prague Dependency Treebank",
-        "localizedName": "Pražský závislostní korpus",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "doc. RNDr. Markéta Lopatková, Ph.D.",
-          "RNDr. Jiří Mírovský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL096": {
-        "id": "NPFL096",
-        "name": "Computational Morphology",
-        "localizedName": "Komputační morfologie",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 4
-        },
-        "teacherNames": [
-          "RNDr. Jiří Hana, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL095": {
-        "id": "NPFL095",
-        "name": "Modern Methods in Computational Linguistics",
-        "localizedName": "Moderní metody v počítačové lingvistice",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 3
-        },
-        "teacherNames": [
-          "Mgr. Martin Popel"
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL094": {
-        "id": "NPFL094",
-        "name": "Morphological and Syntactic Analysis I",
-        "localizedName": "Morfologická a syntaktická analýza",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 3
-        },
-        "teacherNames": [
-          "RNDr. Daniel Zeman, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL093": {
-        "id": "NPFL093",
-        "name": "NLP Applications",
-        "localizedName": "Aplikace NLP",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. RNDr. Vladislav Kuboň, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL092": {
-        "id": "NPFL092",
-        "name": "NLP Technology",
-        "localizedName": "Technologie pro NLP",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-          "Mgr. Rudolf Rosa"
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL070": {
-        "id": "NPFL070",
-        "name": "Language Data Resources",
-        "localizedName": "Zdroje lingvistických dat",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-          "Mgr. Martin Popel"
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSZZ025": {
-        "id": "NSZZ025",
-        "name": "Diploma Thesis III",
-        "localizedName": "Diplomová práce III",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 15
-        },
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSZZ023": {
-        "id": "NSZZ023",
-        "name": "Diploma Thesis I",
-        "localizedName": "Diplomová práce I",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL038": {
-        "id": "NPFL038",
-        "name": "Fundamentals of Speech Recognition and Generation",
-        "localizedName": "Základy rozpoznávání a generování mluvené řeči",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "Mgr. Nino Peterek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSZZ024": {
-        "id": "NSZZ024",
-        "name": "Diploma Thesis II",
-        "localizedName": "Diplomová práce II",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 9
-        },
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL079": {
-        "id": "NPFL079",
-        "name": "Algorithms in Speech Recognition",
-        "localizedName": "Algoritmy rozpoznávání mluvené řeči",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 6
-        },
-        "teacherNames": [
-          "Mgr. Nino Peterek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPFL099": {
-        "id": "NPFL099",
-        "name": "Statistical Dialogue Systems",
-        "localizedName": "Statistické dialogové systémy",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "Mgr. Ing. Filip Jurčíček, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      }
-    }
   }
 }

@@ -13,26 +13,19 @@ nepríjemným prekvapeniam na študíjnom oddelení!
 
 Typický workflow študenta v StudyGuide:
 
-1. Študent si do StudyGuide načíta nastavenie svojej školy, fakulty a odboru (rôzne úrovne podmienok potrebných na úspešné dokončenie štúdia)
-2. StudyGuide vie z rôznych datových zdrojov načítať zoznam predmetov, ktoré si študent následne rozvrhne do semestrov
-3. Študent môže predmety prehadzovat, postupne označovať ako splnené/nesplnené, ...
-4. StudyGuide vždy udržuje aktuálny a plánovaný stav splnenosti jednotlivých podmienok
-5. Študent jasne a prehľadne vidí, čo mu v pláne/realite chýba do splnenia študíjnych povinností -- a môže podľa toho konať
-6. Študent taktiež môže vytvárat rôzne scenária -- skúsiť si, čo sa stane, ak tú či onú povinnosť nesplní, ak si zapíše iné predmety, ...
+1. Študent si do StudyGuide načíta zoznam predmetov, ktoré si následne rozvrhne do semestrov
+2. Môže predmety prehadzovat, postupne označovať ako splnené/nesplnené, ...
+3. StudyGuide vždy udržuje aktuálny a plánovaný stav splnenosti jednotlivých podmienok
+4. Študent jasne a prehľadne vidí, čo mu v pláne/realite chýba do splnenia študíjnych povinností -- a môže podľa toho konať
+5. Študent taktiež môže vytvárat rôzne scenária -- skúsiť si, čo sa stane, ak tú či onú povinnosť nesplní, ak si zapíše iné predmety, ...
 
-Program bude určite obsahovať:
+== Funkcionalita
+
+Program bude obsahovať:
 
 * Aktuálne datové súbory pre všetky typy bakalárskeho (prípadne i magisterského) štúdia na MFF
-* Podporu rôznych univerzitných, fakultných a odborových kriterií na úspešnosť štúdia (s rôznymi prioritami)
-* Rýchle prepočítavanie štatistík a kontrol podľa aktuálne zvoleného študijneho plánu (zapísaných predmetov)
+* Podporu rôznych univerzitných, fakultných a odborových kriterií na úspešnosť štúdia
+* Rýchle prepočítavanie kontrol podľa aktuálne zvoleného študijneho plánu (zapísaných predmetov)
 * Možnosť ukladať/načítavať vytvorené študíjne plány, prípadne fiktívne scenáre
-* Jednoduché JavaFX grafické prostredie na editáciu aktuálneho študíjneho plánu a zobrazenie štatistík/výsledkov kontrol
-
-== Bonus
-
-* Lokalizácia (EN, DE, SK, CZ)
-* Dynamické generovanie vstupných nastavení/súborov z textových zdrojov (PDF, HTML, ...)
-* Dynamické generovanie vstupných nastavení/súborov z online databazových zdrojov (SIS, IS, ...)
-* Kontrola prekročenia doby štúdia, kontrola vzniknutých poplatkov
-* Odhad "náročnosti" aktuálneho plánu v každom semestri podľa európskych noriem (ECTS), prípadne iných kritérií
+* Jednoduché JavaFX grafické prostredie na editáciu aktuálneho študíjneho plánu a zobrazenie výsledkov kontrol
 

@@ -3,10 +3,7 @@ package com.oskopek.studyguide.model;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Course generator util class.
@@ -14,6 +11,7 @@ import java.util.Random;
 public final class CourseGenerator {
 
     private static final Random random = new Random();
+    private static final Set<String> usedNames = new HashSet<>();
 
     /**
      * Empty default constructor.
@@ -29,7 +27,11 @@ public final class CourseGenerator {
      */
     public static Course generateRandomCourse() {
         String id = generateRandomString(4);
-        String name = generateRandomString(8);
+        String name;
+        do {
+            name = generateRandomString(8);
+        } while (usedNames.contains(name));
+        usedNames.add(name);
         String localizedName = generateRandomString(10);
         Locale locale = Locale.forLanguageTag("cs");
         Credits credits = Credits.valueOf(random.nextInt(10));
@@ -48,7 +50,7 @@ public final class CourseGenerator {
     private static String generateRandomString(int length) {
         char[] chars = new char[length];
         for (int i = 0; i < chars.length; i++) {
-            chars[i] = (char) (random.nextInt('d' - 'a') + 'a');
+            chars[i] = (char) (random.nextInt('z' - 'a') + 'a');
         }
         return String.valueOf(chars);
     }

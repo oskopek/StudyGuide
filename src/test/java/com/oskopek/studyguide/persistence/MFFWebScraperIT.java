@@ -2,8 +2,8 @@ package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
-import static org.junit.Assert.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +13,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+
 /**
  * A simple and non stable integration test for {@link MFFHtmlScraper}.
  */
@@ -20,7 +24,7 @@ public class MFFWebScraperIT {
 
     private final String sisWebUrl = "https://is.cuni.cz/studium";
     private final String mffUrlBase = "http://www.mff.cuni.cz/studium/bcmgr/ok/";
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private MFFHtmlScraper scraper;
 
     @Before
@@ -46,7 +50,28 @@ public class MFFWebScraperIT {
         scrapeAllParallel(mffUrlBase, urlExt, refFileBase, refFiles);
     }
 
-    private void scrapeAll(String urlBase, String[] urlExt, String refFileBase, String[] refFiles) throws Exception {
+    @Test
+    @Ignore("Is not really a test, downloads all study plans and saves them")
+    public void scrapeAndSaveAllParallel() throws Exception {
+        String[] urlExt = {"ib3a21.htm", "ib3a22.htm", "ib3a23.htm", "i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm",
+                "i3b25.htm", "i3b26.htm", "i3b27.htm"};
+        String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
+        String[] refFiles = {"mff_bc_ioi_2015_2016.json", "mff_bc_ipss_2015_2016.json", "mff_bc_isdi_2015_2016.json",
+                "mff_mgr_idm_2015_2016.json", "mff_mgr_iti_2015_2016.json", "mff_mgr_isdim_2015_2016.json",
+                "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json", "mff_mgr_iui_2015_2016.json",
+                "mff_mgr_ipgvph_2015_2016.json"};
+        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        for (int i = 0; i < urlExt.length; i++) {
+            logger.debug("Scheduling scrape for plan {}...", refFiles[i]);
+            String url = mffUrlBase + urlExt[i];
+            String refFile = refFileBase + refFiles[i];
+            executorService.submit(() -> scrapeAndSave(url, refFile));
+        }
+        executorService.shutdown();
+        executorService.awaitTermination(10, TimeUnit.MINUTES);
+    }
+
+    private void scrapeAll(String urlBase, String[] urlExt, String refFileBase, String[] refFiles) {
         int shortenedLength = 1; // urlExt.length;
         for (int i = 0; i < shortenedLength; i++) {
             logger.debug("Scraping plan {}...", refFiles[i]);
@@ -112,7 +137,6 @@ public class MFFWebScraperIT {
         } catch (IOException e) {
             logger.error("An exception occurred while comparing to reference file {}: {}", referenceFile, e);
             fail();
-            return;
         }
     }
 

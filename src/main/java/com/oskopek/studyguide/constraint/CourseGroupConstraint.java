@@ -1,18 +1,20 @@
 package com.oskopek.studyguide.constraint;
 
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenCourseGroupConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Constraint on the level of individual {@link com.oskopek.studyguide.model.constraints.CourseGroup}s.
  */
 public abstract class CourseGroupConstraint extends DefaultConstraint {
 
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private CourseGroup courseGroup;
 
     /**
@@ -29,7 +31,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
      */
     public CourseGroupConstraint(CourseGroup courseGroup) {
         this.courseGroup = courseGroup;
-    }
+    } // TODO OPTIONAL remove these?
 
     /**
      * Get the checked course group.
@@ -41,23 +43,12 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
     }
 
     /**
-     * The method should verify if the given constraint was broken, and if so,
-     * call the {@link #fireBrokenEvent(String)} with the specific reason.
+     * Set the checked course group.
+     *
+     * @param courseGroup the group to set
      */
-    protected abstract void validate();
-
-    @Override
-    @Subscribe
-    public void validate(Course changed) {
-        if (courseGroup.courseListProperty().contains(changed)) {
-            validate();
-        }
-    }
-
-    @Override
-    @Subscribe
-    public void validate(CourseEnrollment changed) {
-        validate(changed.getCourse());
+    public void setCourseGroup(CourseGroup courseGroup) {
+        this.courseGroup = courseGroup;
     }
 
     @Override
@@ -76,7 +67,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
      * @param message the reason why the constraint is broken
      */
     public void fireBrokenEvent(String message) {
-        eventBus.post(new BrokenCourseGroupConstraintEvent(message, this, courseGroup));
+        eventBus.post(new BrokenCourseGroupConstraintEvent(messages, message, this, courseGroup));
     }
 
     @Override
@@ -98,6 +89,7 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
 
     @Override
     public String toString() {
-        return "CourseGroupConstraint[" + courseGroup.courseListProperty().size() + ']';
+        return "CourseGroupConstraint[" + (courseGroup == null ? "null" : courseGroup.courseListProperty().size())
+                + ']';
     }
 }

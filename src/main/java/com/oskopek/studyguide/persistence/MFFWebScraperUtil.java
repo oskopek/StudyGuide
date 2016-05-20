@@ -17,15 +17,17 @@ public final class MFFWebScraperUtil {
      *
      * @deprecated To be replaced with user-configurable parameter.
      */
+    @Deprecated
     public static final String sisWebUrl = "https://is.cuni.cz/studium";
     private static final String mffIoiInfoUrl = "http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm";
-    private static MFFHtmlScraper scraper = new MFFHtmlScraper(sisWebUrl);
+    private final MFFHtmlScraper scraper;
 
     /**
      * An empty default private constructor.
      */
     private MFFWebScraperUtil() {
-        // intentionally empty
+        // intentionally empty // TODO OPTIONAL add weld init
+        scraper = new MFFHtmlScraper(sisWebUrl);
     }
 
     /**
@@ -36,6 +38,17 @@ public final class MFFWebScraperUtil {
      * @throws IOException if an exception during loading the page or writing the converted json happens
      */
     public static void main(String[] args) throws IOException {
+        MFFWebScraperUtil mffWebScraperUtil = new MFFWebScraperUtil();
+        mffWebScraperUtil.run();
+    }
+
+    /**
+     * The actual "main" method that does all the work. Scrape the study plan from the given URL,
+     * prints the courses that were scraped and saves the plan to a file.
+     *
+     * @throws IOException if an error during scraping or persisting happened
+     */
+    private void run() throws IOException {
         StudyPlan studyPlan = scraper.scrapeStudyPlan(mffIoiInfoUrl);
         System.out.println(Arrays.toString(studyPlan.getCourseRegistry().courseMapValues().toArray()));
         Path outputFile = Paths.get("test-" + System.currentTimeMillis() + ".json");

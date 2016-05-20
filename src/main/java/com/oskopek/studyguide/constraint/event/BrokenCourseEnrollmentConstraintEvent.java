@@ -5,22 +5,26 @@ import com.oskopek.studyguide.model.CourseEnrollment;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.ResourceBundle;
+
 /**
  * The event used for reporting broken course group constraints.
  */
 public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
 
-    private CourseEnrollment enrollment;
+    private final CourseEnrollment enrollment;
 
     /**
      * Default constructor.
      *
+     * @param messages the resource bundle used for resolving messages to their localized versions
      * @param message the message to use as a reason why the constraint is broken
      * @param broken the constraint that was broken and generated this event
      * @param enrollment the course enrollment that the constraint broke on
      */
-    public BrokenCourseEnrollmentConstraintEvent(String message, Constraint broken, CourseEnrollment enrollment) {
-        super(message, broken);
+    public BrokenCourseEnrollmentConstraintEvent(ResourceBundle messages, String message, Constraint broken,
+            CourseEnrollment enrollment) {
+        super(messages, message, broken);
         this.enrollment = enrollment;
     }
 
@@ -35,7 +39,7 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
 
     @Override
     public String message() {
-        return messages.getString("constraint.courseEnrollmentInvalid") + getMessage();
+        return messages.getString("constraint.courseEnrollmentInvalid") + " " + getMessage();
     }
 
     @Override
@@ -54,10 +58,5 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
         BrokenCourseEnrollmentConstraintEvent that = (BrokenCourseEnrollmentConstraintEvent) o;
         return new EqualsBuilder().appendSuper(super.equals(o)).append(getEnrollment(), that.getEnrollment())
                 .isEquals();
-    }
-
-    @Override
-    public String toString() {
-        return "BrokenCEConstraintEvent[" + enrollment + ", " + getMessage() + "]";
     }
 }

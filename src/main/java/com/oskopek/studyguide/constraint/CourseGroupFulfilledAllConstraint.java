@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.constraint;
 
 import com.oskopek.studyguide.constraint.event.StringMessageEvent;
+import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 
@@ -34,13 +35,15 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
 
     @Override
     public void validate() {
-        Set<Course> fulfilledCompulsoryCourses =
-                semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled()).map(ce -> ce.getCourse())
-                        .collect(Collectors.toSet());
+        Set<Course> fulfilledCompulsoryCourses = semesterPlan.allCourseEnrollments().filter(
+                CourseEnrollment::isFulfilled)
+                .map(CourseEnrollment::getCourse).collect(Collectors.toSet());
         Set<Course> unfulfilledCompulsoryCourses = new HashSet<>(getCourseGroup().courseListProperty().get());
         unfulfilledCompulsoryCourses.removeAll(fulfilledCompulsoryCourses);
         if (unfulfilledCompulsoryCourses.size() > 0) {
             fireBrokenEvent(generateMessage(unfulfilledCompulsoryCourses));
+        } else {
+            fireFixedEvent(this);
         }
     }
 
@@ -53,6 +56,6 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
      */
     private String generateMessage(Collection<Course> unfulfilled) {
         return messages.getString(message) + String
-                .join(", ", unfulfilled.stream().map(c -> c.getId()).collect(Collectors.toList()));
+                .join(", ", unfulfilled.stream().map(Course::getId).collect(Collectors.toList()));
     }
 }

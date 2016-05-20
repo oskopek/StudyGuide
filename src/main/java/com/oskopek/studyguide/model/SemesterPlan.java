@@ -14,10 +14,9 @@ import java.util.stream.Stream;
 /**
  * Represents the {@link com.oskopek.studyguide.model.courses.Course} distribution in the {@link StudyPlan}.
  */
-
 public class SemesterPlan implements Iterable<Semester> {
 
-    private ListProperty<Semester> semesterList;
+    private final ListProperty<Semester> semesterList;
 
     /**
      * Create a new empty instance.
@@ -55,13 +54,19 @@ public class SemesterPlan implements Iterable<Semester> {
     }
 
     /**
-     * Add the {@link Semester} to the semester list.
+     * Add the {@link Semester} to the semester list. Checks for uniqueness of names.
      *
      * @param semester the semester to be added
+     * @return true iff adding the semester succeeded (if the name wasn't in conflict with another semester in the plan)
      * @see javafx.collections.ObservableList#add(Object)
      */
-    public void addSemester(Semester semester) {
-        semesterList.add(semester);
+    public boolean addSemester(Semester semester) {
+        if (findSemester(semester.getName()).isPresent()) {
+            return false;
+        } else {
+            semesterList.add(semester);
+            return true;
+        }
     }
 
     /**

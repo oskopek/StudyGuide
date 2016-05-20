@@ -1,7 +1,12 @@
 package com.oskopek.studyguide.model.courses;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ObservableValueBase;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -9,7 +14,9 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 /**
  * An abstraction of the ECTS credit value for a {@link Course}.
  */
-public final class Credits implements Comparable<Credits> {
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class)
+public final class Credits extends ObservableValueBase<Credits>
+        implements Comparable<Credits>, ObservableValue<Credits> {
 
     private final IntegerProperty creditValue;
 
@@ -17,7 +24,7 @@ public final class Credits implements Comparable<Credits> {
      * Empty JSON constructor.
      */
     private Credits() {
-        creditValue = new SimpleIntegerProperty();
+        this(0);
     }
 
     /**
@@ -28,6 +35,7 @@ public final class Credits implements Comparable<Credits> {
      */
     private Credits(int creditValue) {
         this.creditValue = new SimpleIntegerProperty(creditValue);
+        this.creditValue.addListener((x, y, z) -> fireValueChangedEvent());
     }
 
     /**
@@ -59,8 +67,8 @@ public final class Credits implements Comparable<Credits> {
      * @param creditValue greater than 0
      */
     public void setCreditValue(int creditValue) {
-        if (creditValue <= 0) {
-            throw new IllegalArgumentException("Credit value " + creditValue + " is less than 1.");
+        if (creditValue < 0) {
+            throw new IllegalArgumentException("Credit value " + creditValue + " is less than 0.");
         }
         this.creditValue.set(creditValue);
     }
@@ -72,6 +80,12 @@ public final class Credits implements Comparable<Credits> {
      */
     public IntegerProperty creditValueProperty() {
         return creditValue;
+    }
+
+    @Override
+    @JsonIgnore
+    public Credits getValue() {
+        return Credits.valueOf(getCreditValue());
     }
 
     @Override

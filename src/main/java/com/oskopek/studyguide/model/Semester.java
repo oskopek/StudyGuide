@@ -88,9 +88,10 @@ public class Semester {
      * Add the {@link CourseEnrollment} to this semester. Does not change the course enrollment's semester property.
      *
      * @param courseEnrollment the enrollment to add to this semester, non-null
+     * @return the course enrollment that was added to this semester
      * @throws IllegalArgumentException if the {@link Course} is already enrolled
      */
-    public void addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
+    public CourseEnrollment addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
         if (courseEnrollment == null) {
             throw new IllegalArgumentException("CourseEnrollment cannot be null.");
         }
@@ -100,6 +101,7 @@ public class Semester {
                             .getCourse() + ").");
         }
         courseEnrollmentList.add(courseEnrollment);
+        return courseEnrollment;
     }
 
     /**

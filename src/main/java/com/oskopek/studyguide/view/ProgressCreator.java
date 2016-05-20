@@ -1,6 +1,7 @@
 package com.oskopek.studyguide.view;
 
 import com.oskopek.studyguide.persistence.ProgressObservable;
+import javafx.event.Event;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -49,7 +50,7 @@ public final class ProgressCreator {
         Scene scene = new Scene(vBox);
         dialogStage.setScene(scene);
         dialogStage.toFront();
-        dialogStage.setOnCloseRequest(event -> event.consume()); // prevent closing of the dialog window
+        dialogStage.setOnCloseRequest(Event::consume); // prevent closing of the dialog window
         dialogStage.show();
         return dialogStage;
     }

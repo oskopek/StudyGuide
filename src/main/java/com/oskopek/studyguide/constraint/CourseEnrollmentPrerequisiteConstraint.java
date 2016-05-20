@@ -1,11 +1,14 @@
 package com.oskopek.studyguide.constraint;
 
-import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Checks if all the prerequisite courses for a {@link com.oskopek.studyguide.model.CourseEnrollment}
@@ -14,6 +17,8 @@ import java.util.List;
 public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentConstraint {
 
     private final String message = "constraint.unfulfilledPrerequisite";
+
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * Private default constructor, needed by CDI.
@@ -32,27 +37,25 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
     }
 
     @Override
-    @Subscribe
-    public void validate(CourseEnrollment courseEnrollment) {
-        List<Course> corequisites = new ArrayList<>(getCourseEnrollment().getCourse().getCorequisites());
+    public void validate() {
+        Set<Course> prerequisites = new HashSet<>(getCourseEnrollment().getCourse().getPrerequisites());
         int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
         if (semesterIndex < 0) {
-            if (!corequisites.isEmpty()) {
-                fireBrokenEvent(generateMessage(message, corequisites), courseEnrollment);
+            if (!prerequisites.isEmpty()) {
+                fireBrokenEvent(generateMessage(message, prerequisites), getCourseEnrollment());
             }
             return;
         }
 
-        List<CourseEnrollment> enrollmentsUntilNow =
-                takeUntilSemester(semesterPlan, semesterPlan.getSemesterList().get(semesterIndex));
-        for (CourseEnrollment enrollment : enrollmentsUntilNow) {
-            int found = corequisites.indexOf(enrollment.getCourse());
-            if (found >= 0 && enrollment.isFulfilled()) {
-                corequisites.remove(found);
-            }
-        }
-        if (!corequisites.isEmpty()) {
-            fireBrokenEvent(generateMessage(message, corequisites), courseEnrollment);
+        Stream<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
+                semesterPlan.getSemesterList().get(semesterIndex));
+        Set<Course> fulfilledPrerequisites = enrollmentsUntilNow.filter(CourseEnrollment::isFulfilled)
+                .map(CourseEnrollment::getCourse).filter(prerequisites::contains).collect(Collectors.toSet());
+        prerequisites.removeAll(fulfilledPrerequisites);
+        if (!prerequisites.isEmpty()) {
+            fireBrokenEvent(generateMessage(message, prerequisites), getCourseEnrollment());
+        } else {
+            fireFixedEvent(this);
         }
     }
 }
