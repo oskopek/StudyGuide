@@ -72,17 +72,6 @@ public class SemesterBoxController extends AbstractController {
                 (final TableColumn<CourseEnrollment, Boolean> param) -> new TableCell<CourseEnrollment, Boolean>() {
                     public final CheckBox fulfilledCheckBox;
 
-                    @Override
-                    public void updateItem(Boolean item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            fulfilledCheckBox.setSelected(item);
-                            setGraphic(fulfilledCheckBox);
-                        }
-                    }
-
                     {
                         fulfilledCheckBox = new CheckBox();
                         fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
@@ -94,11 +83,26 @@ public class SemesterBoxController extends AbstractController {
                         });
                     }
 
+                    @Override
+                    public void updateItem(Boolean item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            fulfilledCheckBox.setSelected(item);
+                            setGraphic(fulfilledCheckBox);
+                        }
+                    }
+
                 });
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
         removeColumn.setCellFactory(
                 (final TableColumn<CourseEnrollment, String> param) -> new TableCell<CourseEnrollment, String>() {
                     final Button removeButton = new Button(messages.getString("crossmark"));
+
+                    {
+                        removeButton.setPadding(new Insets(2));
+                    }
 
                     @Override
                     public void updateItem(String item, boolean empty) {
@@ -120,9 +124,6 @@ public class SemesterBoxController extends AbstractController {
                         }
                     }
 
-                    {
-                        removeButton.setPadding(new Insets(2));
-                    }
                 });
         semesterTable.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldEnrollment, newEnrollment) -> {

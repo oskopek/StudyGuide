@@ -32,5 +32,4 @@ public interface StudyPlan {
      */
     Constraints getConstraints();
 
-
 }

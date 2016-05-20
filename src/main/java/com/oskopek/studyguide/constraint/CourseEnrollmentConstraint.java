@@ -21,7 +21,6 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
 
     private CourseEnrollment courseEnrollment;
 
-
     /**
      * Private default constructor, needed by CDI.
      */

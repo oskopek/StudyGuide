@@ -1,11 +1,13 @@
 package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.nio.file.Paths;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * A simple and stable local integration test for {@link MFFHtmlScraper}.
