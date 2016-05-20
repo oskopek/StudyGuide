@@ -2764,6 +2764,65 @@
             "creditValue": 180
           }
         }
+      },
+      {
+        "GlobalCourseMaxFulfilledConstraint": {
+          "maxFulfilled": 1
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "a3b1e59a-26d3-4c79-b4f3-6b66d9ecdd07",
+            "creditValue": 30
+          },
+          "untilSemester": 1
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "b0a7d88f-9b48-489b-8e0b-0d6fc138ee0a",
+            "creditValue": 60
+          },
+          "untilSemester": 2
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "d790dee5-055e-4da3-ae5b-e352e96ece73",
+            "creditValue": 90
+          },
+          "untilSemester": 3
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "b8906234-4a6d-49de-86ad-592cd6c016a0",
+            "creditValue": 120
+          },
+          "untilSemester": 4
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "0537e428-0236-4298-a44a-be2dfa304c7a",
+            "creditValue": 150
+          },
+          "untilSemester": 5
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "3a15eda8-8d0a-4881-a423-661f9f675ab8",
+            "creditValue": 180
+          },
+          "untilSemester": 6
+        }
       }
     ],
     "courseEnrollmentConstraintList": [
