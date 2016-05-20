@@ -6,6 +6,8 @@ import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     private static final String message = "constraint.globalCourseRepeatedEnrollmentInvalid";
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private int maxRepeatedEnrollment;
 
     /**
@@ -37,6 +40,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     @Override
     public void validate() {
+        logger.trace("Validating {} (max: {})", this, maxRepeatedEnrollment);
         Map<Course, List<CourseEnrollment>> groupByCourse = semesterPlan.getSemesterList().stream()
                 .flatMap(s -> s.getCourseEnrollmentList().stream())
                 .collect(Collectors.groupingBy(CourseEnrollment::getCourse));
@@ -44,7 +48,8 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
             Course course = entry.getKey();
             List<CourseEnrollment> enrollments = entry.getValue();
             if (enrollments.size() > maxRepeatedEnrollment) {
-                fireBrokenEvent(generateMessage(enrollments.size(), maxRepeatedEnrollment, course));
+                logger.debug("Broken on {} (enrolled: {}, max {})", course, enrollments.size(), maxRepeatedEnrollment);
+                fireBrokenEvent(generateMessage(course, enrollments.size(), maxRepeatedEnrollment));
                 return;
             }
         }
@@ -55,13 +60,13 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
      * Generates a message from the given parameters (localized). Used for populating the message of
      * {@link StringMessageEvent}s (usually upon breaking a constraint).
      *
+     * @param course the course that was enrolled into too many times
      * @param enrolledTimes the number of times the student enrolled in the course
      * @param maxRepeatedEnrollment the maximum number of times one can enroll into a given course
-     * @param course the course that was enrolled into too many times
      * @return the String to use as a message, localized
      */
-    private String generateMessage(int enrolledTimes, int maxRepeatedEnrollment, Course course) {
-        return String.format(messages.getString(message), enrolledTimes, maxRepeatedEnrollment, course.getName());
+    private String generateMessage(Course course, int enrolledTimes, int maxRepeatedEnrollment) {
+        return String.format(messages.getString(message), course.getName(), enrolledTimes, maxRepeatedEnrollment);
     }
 
     /**
