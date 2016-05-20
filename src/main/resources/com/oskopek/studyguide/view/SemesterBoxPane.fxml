@@ -40,14 +40,15 @@
         <TableView fx:id="semesterTable" minHeight="270.0" minWidth="270.0" BorderPane.alignment="CENTER"
                    onDragDetected="#onDragDetected">
             <columns>
-                <TableColumn fx:id="warnColumn" editable="false" maxWidth="30.0" minWidth="30.0" prefWidth="30.0"/>
-                <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="60.0" prefWidth="70.0"
+                <TableColumn fx:id="warnColumn" editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"
+                             text="%warning"/>
+                <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0"
                              text="%course.id"/>
-                <TableColumn fx:id="nameColumn" editable="false" minWidth="90.0" prefWidth="120.0"
+                <TableColumn fx:id="nameColumn" editable="false" minWidth="90.0"
                              text="%course.name"/>
                 <TableColumn fx:id="creditsColumn" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="90.0"
                              text="%course.credits"/>
-                <TableColumn fx:id="fulfilledColumn" editable="true" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"
+                <TableColumn fx:id="fulfilledColumn" editable="true" maxWidth="25.0" minWidth="25.0" prefWidth="25.0"
                              text="%checkmark"/>
                 <TableColumn fx:id="removeColumn" editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"
                              text="%crossmark"/>

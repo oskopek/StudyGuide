@@ -113,6 +113,10 @@ public class SemesterBoxController extends AbstractController {
                 (final TableColumn<CourseEnrollment, String> param) -> new TableCell<CourseEnrollment, String>() {
                     final Button removeButton = new Button(messages.getString("crossmark"));
 
+                    {
+                        removeButton.setPadding(new Insets(2));
+                    }
+
                     @Override
                     public void updateItem(String item, boolean empty) {
                         super.updateItem(item, empty);
