@@ -16,6 +16,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -152,6 +154,19 @@ public class RootLayoutController extends AbstractController {
     @FXML
     private void handleQuit() {
         System.exit(0);
+    }
+
+    /**
+     * Menu item: Help->Help.
+     * Shows a how-to help dialog.
+     */
+    @FXML
+    private void handleHelp() {
+        Dialog<ButtonType> dialog = new Dialog<>(); // TODO format the dialog better
+        dialog.setTitle("StudyGuide - Help");
+        dialog.setGraphic(new TextFlow(new Text(messages.getString("manual"))));
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
+        dialog.showAndWait();
     }
 
     /**

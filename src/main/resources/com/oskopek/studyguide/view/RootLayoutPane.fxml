@@ -22,6 +22,8 @@
                       text="%root.quit"/>
         </Menu>
         <Menu mnemonicParsing="false" text="%root.help">
+            <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp"
+                      text="%root.help"/>
             <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAbout"
                       text="%root.about"/>
         </Menu>
