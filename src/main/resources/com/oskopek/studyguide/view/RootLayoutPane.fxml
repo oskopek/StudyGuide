@@ -5,46 +5,36 @@
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="800"
       minWidth="1000" xmlns="http://javafx.com/javafx/8"
       fx:controller="com.oskopek.studyguide.controller.RootLayoutController">
-    <children>
-        <MenuBar VBox.vgrow="NEVER">
-            <menus>
-                <Menu mnemonicParsing="false" text="%root.file">
-                    <items>
-                        <MenuItem fx:id="newMenuItem" mnemonicParsing="false" onAction="#handleNew" text="%root.new"/>
-                        <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#handleOpen"
-                                  text="%root.open"/>
-                        <MenuItem fx:id="scrapeFromItem" mnemonicParsing="false" onAction="#handleOpenFrom"
-                                  text="%root.openFrom"/>
-                        <SeparatorMenuItem mnemonicParsing="false"/>
-                        <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#handleSave"
-                                  text="%root.save"/>
-                        <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#handleSaveAs"
-                                  text="%root.saveAs"/>
-                        <SeparatorMenuItem mnemonicParsing="false"/>
-                        <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" onAction="#handleQuit"
-                                  text="%root.quit"/>
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="%root.help">
-                    <items>
-                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAbout"
-                                  text="%root.about"/>
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-            <children>
-                <BorderPane prefHeight="449.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0"
-                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <center>
-                        <fx:include source="SemesterPane.fxml"/>
-                    </center>
-                    <right>
-                        <fx:include source="StudyPane.fxml"/>
-                    </right>
-                </BorderPane>
-            </children>
-        </AnchorPane>
-    </children>
+    <MenuBar VBox.vgrow="NEVER">
+        <Menu mnemonicParsing="false" text="%root.file">
+            <MenuItem fx:id="newMenuItem" mnemonicParsing="false" onAction="#handleNew" text="%root.new"/>
+            <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#handleOpen"
+                      text="%root.open"/>
+            <MenuItem fx:id="scrapeFromItem" mnemonicParsing="false" onAction="#handleOpenFrom"
+                      text="%root.openFrom"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#handleSave"
+                      text="%root.save"/>
+            <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#handleSaveAs"
+                      text="%root.saveAs"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" onAction="#handleQuit"
+                      text="%root.quit"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="%root.help">
+            <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAbout"
+                      text="%root.about"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+        <BorderPane prefHeight="449.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <fx:include source="SemesterPane.fxml"/>
+            </center>
+            <right>
+                <fx:include source="StudyPane.fxml"/>
+            </right>
+        </BorderPane>
+    </AnchorPane>
 </VBox>

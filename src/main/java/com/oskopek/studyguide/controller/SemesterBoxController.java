@@ -76,7 +76,7 @@ public class SemesterBoxController extends AbstractController {
                         fulfilledCheckBox = new CheckBox();
                         fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
                             CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                            logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
+                            logger.trace("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
                                     newValue, enrollment, semester);
                             enrollment.setFulfilled(newValue);
                             fulfilledCheckBox.setSelected(newValue);
@@ -258,7 +258,7 @@ public class SemesterBoxController extends AbstractController {
 
     private class LabelBinding extends ObjectBinding<Label> {
 
-        private ObjectProperty<? extends StringMessageEvent> eventObjectProperty;
+        private final ObjectProperty<? extends StringMessageEvent> eventObjectProperty;
 
         LabelBinding(ObjectProperty<? extends StringMessageEvent> eventObjectProperty) {
             bind(eventObjectProperty);

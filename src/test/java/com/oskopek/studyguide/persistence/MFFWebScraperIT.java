@@ -24,7 +24,7 @@ public class MFFWebScraperIT {
 
     private final String sisWebUrl = "https://is.cuni.cz/studium";
     private final String mffUrlBase = "http://www.mff.cuni.cz/studium/bcmgr/ok/";
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private MFFHtmlScraper scraper;
 
     @Before
@@ -71,7 +71,7 @@ public class MFFWebScraperIT {
         executorService.awaitTermination(10, TimeUnit.MINUTES);
     }
 
-    private void scrapeAll(String urlBase, String[] urlExt, String refFileBase, String[] refFiles) throws Exception {
+    private void scrapeAll(String urlBase, String[] urlExt, String refFileBase, String[] refFiles) {
         int shortenedLength = 1; // urlExt.length;
         for (int i = 0; i < shortenedLength; i++) {
             logger.debug("Scraping plan {}...", refFiles[i]);
@@ -137,7 +137,6 @@ public class MFFWebScraperIT {
         } catch (IOException e) {
             logger.error("An exception occurred while comparing to reference file {}: {}", referenceFile, e);
             fail();
-            return;
         }
     }
 

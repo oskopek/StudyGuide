@@ -35,9 +35,7 @@ public final class AlertCreator {
      * @see Alert
      */
     public static void showAlert(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
-        Platform.runLater(() -> {
-            showAlertInternal(alertType, message, buttonTypes);
-        });
+        Platform.runLater(() -> showAlertInternal(alertType, message, buttonTypes));
     }
 
     /**
@@ -48,7 +46,7 @@ public final class AlertCreator {
      * @param buttonTypes the buttons to show
      * @see Alert
      */
-    public static void showAlertAndClose(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
+    public static void showAlertAndExit(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
         Platform.runLater(() -> {
             showAlertInternal(alertType, message, buttonTypes);
             System.exit(0);
@@ -66,7 +64,7 @@ public final class AlertCreator {
         Platform.runLater(() -> {
             throw new IllegalStateException(messages.getString("error.cannotLoadLayout"), e);
         });
-        AlertCreator.showAlertAndClose(Alert.AlertType.ERROR,
+        AlertCreator.showAlertAndExit(Alert.AlertType.ERROR,
                 messages.getString("error.cannotLoadLayout") + ":\n\n" + e.getLocalizedMessage(), ButtonType.CLOSE);
     }
 

@@ -3,7 +3,7 @@ package com.oskopek.studyguide.constraint;
 import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.eventbus.EventBus;
-import com.oskopek.studyguide.constraint.event.BrokenResetEvent;
+import com.oskopek.studyguide.constraint.event.FixedConstraintEvent;
 import com.oskopek.studyguide.model.SemesterPlan;
 
 import javax.inject.Inject;
@@ -27,7 +27,7 @@ public abstract class DefaultConstraint implements Constraint {
 
     @Override
     public void fireFixedEvent(Constraint original) {
-        eventBus.post(new BrokenResetEvent(original));
+        eventBus.post(new FixedConstraintEvent(original));
     }
 
     public SemesterPlan getSemesterPlan() {

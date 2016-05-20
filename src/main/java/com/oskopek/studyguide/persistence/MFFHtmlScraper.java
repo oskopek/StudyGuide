@@ -42,8 +42,8 @@ import java.util.stream.Collectors;
  */
 public class MFFHtmlScraper implements DataReader, ProgressObservable {
 
+    private final DoubleProperty progressProperty = new SimpleDoubleProperty();
     private SISHtmlScraper sisHtmlScraper;
-    private DoubleProperty progressProperty = new SimpleDoubleProperty();
 
     /**
      * Default constructor.
@@ -109,7 +109,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 CourseRegistry semiCompulsory = new CourseRegistry();
                 // semi-compulsory courses are NOT transitive, do not add their dependencies
                 List<String> courseIds = scrapeCoursesFromTable(table, semiCompulsory);
-                List<Course> courses = courseIds.stream().map(id -> semiCompulsory.getCourse(id))
+                List<Course> courses = courseIds.stream().map(semiCompulsory::getCourse)
                         .collect(Collectors.toList());
                 registry.putAllCourses(courses);
                 CourseGroup group = new CourseGroup(courses);
@@ -253,7 +253,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
             throw new IllegalArgumentException("Path " + path + " is null or not a regular file.");
         }
         InputStream is = Files.newInputStream(path);
-        StudyPlan studyPlan = scrapeStudyPlan(is, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
+        StudyPlan studyPlan = scrapeStudyPlan(is, "utf-8");
         is.close();
         return studyPlan;
     }
@@ -294,7 +294,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         if (inputStream == null) {
             throw new IllegalArgumentException("Input stream cannot be null.");
         }
-        return scrapeStudyPlan(inputStream, "utf-8"); // TODO OPTIONAL UTF-8 is wrong
+        return scrapeStudyPlan(inputStream, "utf-8");
     }
 
     @Override

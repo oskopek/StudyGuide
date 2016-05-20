@@ -16,7 +16,7 @@ import java.util.Map;
 public class CourseRegistry {
 
     @JsonProperty("courses")
-    private Map<String, Course> courseIdMap;
+    private final Map<String, Course> courseIdMap;
 
     /**
      * Create a new empty registry.

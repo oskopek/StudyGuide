@@ -382,7 +382,7 @@ public class Course implements Comparable<Course> {
      */
     private void registerChangeEventListeners() {
         id.addListener((x, y, z) -> fireValueChangedEvent());
-        credits.addListener((x, y, z) -> onCreditsChanged(x, y, z));
+        credits.addListener(this::onCreditsChanged);
         prerequisites.addListener((x, y, z) -> fireValueChangedEvent());
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
     }

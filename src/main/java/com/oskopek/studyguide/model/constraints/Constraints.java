@@ -23,9 +23,9 @@ import java.util.stream.Stream;
 public class Constraints {
 
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
-    private ListProperty<CourseGroupConstraint> courseGroupConstraintList;
-    private ListProperty<GlobalConstraint> globalConstraintList;
-    private ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
+    private final ListProperty<CourseGroupConstraint> courseGroupConstraintList;
+    private final ListProperty<GlobalConstraint> globalConstraintList;
+    private final ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;
 
     /**
      * Initialize an empty set of constraints.

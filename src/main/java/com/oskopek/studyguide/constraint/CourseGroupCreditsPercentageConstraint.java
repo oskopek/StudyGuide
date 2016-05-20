@@ -3,6 +3,7 @@ package com.oskopek.studyguide.constraint;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.oskopek.studyguide.constraint.event.StringMessageEvent;
+import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -20,7 +21,7 @@ import java.util.stream.Stream;
  */
 public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstraint {
 
-    private static DecimalFormat percentageFormat = new DecimalFormat("##0.00");
+    private static final DecimalFormat percentageFormat = new DecimalFormat("##0.00");
     private final String message = "constraint.courseGroupCreditsPercentageInvalid";
     private Fraction neededFraction;
 
@@ -87,8 +88,8 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
     @Override
     public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
-        Stream<Course> fulfilledGroupCourses = semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled())
-                .map(ce -> ce.getCourse()).filter(c -> groupCourses.contains(c));
+        Stream<Course> fulfilledGroupCourses = semesterPlan.allCourseEnrollments().filter(CourseEnrollment::isFulfilled)
+                .map(CourseEnrollment::getCourse).filter(groupCourses::contains);
         int creditSum = groupCourses.stream().map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         int fulfilledSum = fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum);
         Fraction gotFraction = Fraction.getFraction(fulfilledSum, creditSum);

@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
  */
 public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
 
-    private CourseEnrollment enrollment;
+    private final CourseEnrollment enrollment;
 
     /**
      * Default constructor.

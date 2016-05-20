@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  */
 public class SemesterPlan implements Iterable<Semester> {
 
-    private ListProperty<Semester> semesterList;
+    private final ListProperty<Semester> semesterList;
 
     /**
      * Create a new empty instance.

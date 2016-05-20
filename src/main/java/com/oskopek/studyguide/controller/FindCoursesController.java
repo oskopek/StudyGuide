@@ -28,12 +28,9 @@ import java.util.stream.Stream;
 public class FindCoursesController extends AbstractController implements FindCourses {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
-
+    private final List<FindCourses> findCoursesList;
     @FXML
     private TextField searchField;
-
-    private List<FindCourses> findCoursesList;
-
     @Inject
     private ChooseCourseDialogPaneCreator chooseCourseDialogPaneCreator;
 

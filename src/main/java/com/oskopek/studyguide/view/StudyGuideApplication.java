@@ -38,8 +38,8 @@ public class StudyGuideApplication extends Application {
     private final String logoResource = "logo_64x64.png";
     private final String logoResourceLarge = "logo_640x640.png";
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
+    private final ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
     private Stage primaryStage;
-    private ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
     private WeldContainer container;
     private Weld weld;
 

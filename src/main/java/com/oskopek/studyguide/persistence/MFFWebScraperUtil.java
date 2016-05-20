@@ -17,6 +17,7 @@ public final class MFFWebScraperUtil {
      *
      * @deprecated To be replaced with user-configurable parameter.
      */
+    @Deprecated
     public static final String sisWebUrl = "https://is.cuni.cz/studium";
     private static final String mffIoiInfoUrl = "http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm";
     private final MFFHtmlScraper scraper;
@@ -41,7 +42,7 @@ public final class MFFWebScraperUtil {
         mffWebScraperUtil.run();
     }
 
-    public void run() throws IOException {
+    private void run() throws IOException {
         StudyPlan studyPlan = scraper.scrapeStudyPlan(mffIoiInfoUrl);
         System.out.println(Arrays.toString(studyPlan.getCourseRegistry().courseMapValues().toArray()));
         Path outputFile = Paths.get("test-" + System.currentTimeMillis() + ".json");

@@ -12,10 +12,10 @@ import java.util.ResourceBundle;
  */
 public abstract class StringMessageEvent {
 
-    protected transient ResourceBundle messages;
+    protected final transient ResourceBundle messages;
 
-    private String message;
-    private Constraint brokenConstraint;
+    private final String message;
+    private final Constraint brokenConstraint;
 
     /**
      * Constructs a new message event with the given message.

@@ -16,17 +16,15 @@
             <right>
                 <HBox alignment="CENTER_RIGHT" minHeight="100.0" minWidth="200.0" spacing="5.0"
                       BorderPane.alignment="CENTER">
-                    <children>
-                        <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
-                                text=" - ">
-                            <font>
-                                <Font name="System Bold" size="13.0"/>
-                            </font>
-                        </Button>
-                    </children>
                     <padding>
                         <Insets left="5.0" right="5.0"/>
                     </padding>
+                    <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
+                            text=" - ">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Button>
                 </HBox>
             </right>
             <left>

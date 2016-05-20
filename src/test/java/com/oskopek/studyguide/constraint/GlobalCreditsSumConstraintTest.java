@@ -16,8 +16,8 @@ import static org.mockito.Mockito.*;
 
 public class GlobalCreditsSumConstraintTest {
 
-    GlobalCreditsSumConstraint globalCreditsSumConstraint;
-    Credits totalNeeded;
+    private GlobalCreditsSumConstraint globalCreditsSumConstraint;
+    private Credits totalNeeded;
 
     @Before
     public void setUp() throws Exception {

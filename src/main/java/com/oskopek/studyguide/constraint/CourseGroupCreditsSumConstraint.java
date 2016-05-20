@@ -2,6 +2,7 @@ package com.oskopek.studyguide.constraint;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.oskopek.studyguide.constraint.event.StringMessageEvent;
+import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.constraints.CourseGroup;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
@@ -42,8 +43,8 @@ public class CourseGroupCreditsSumConstraint extends CourseGroupConstraint {
     @Override
     public void validate() {
         List<Course> groupCourses = getCourseGroup().courseListProperty().get();
-        Stream<Course> fulfilledGroupCourses = semesterPlan.allCourseEnrollments().filter(ce -> ce.isFulfilled())
-                .map(ce -> ce.getCourse()).filter(c -> groupCourses.contains(c));
+        Stream<Course> fulfilledGroupCourses = semesterPlan.allCourseEnrollments().filter(CourseEnrollment::isFulfilled)
+                .map(CourseEnrollment::getCourse).filter(groupCourses::contains);
         Credits fulfilledSum = Credits
                 .valueOf(fulfilledGroupCourses.map(c -> c.getCredits().getCreditValue()).reduce(0, Integer::sum));
         if (fulfilledSum.compareTo(totalNeeded) < 0) {

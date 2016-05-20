@@ -4,13 +4,15 @@ import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.Constraint;
 import com.oskopek.studyguide.constraint.event.BrokenCourseGroupConstraintEvent;
 import com.oskopek.studyguide.constraint.event.BrokenGlobalConstraintEvent;
-import com.oskopek.studyguide.constraint.event.BrokenResetEvent;
+import com.oskopek.studyguide.constraint.event.FixedConstraintEvent;
 import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import org.slf4j.Logger;
 
+import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +20,9 @@ public class ConstraintsController extends AbstractController {
 
     @FXML
     private ListView<StringMessageEvent> listView;
+
+    @Inject
+    private transient Logger logger;
 
     private ObservableList<StringMessageEvent> brokenConstraintEventList;
 
@@ -45,13 +50,13 @@ public class ConstraintsController extends AbstractController {
 
     @Subscribe
     public void onBrokenConstraint(BrokenCourseGroupConstraintEvent event) {
-        logger.trace("CourseGroupConstraint {} broken.", event.getBrokenConstraint());
+        logger.debug("CourseGroupConstraint {} broken.", event.getBrokenConstraint());
         onBrokenConstraintInternal(event);
     }
 
     @Subscribe
     public void onBrokenConstraint(BrokenGlobalConstraintEvent event) {
-        logger.trace("GlobalConstraint {} broken.", event.getBrokenConstraint());
+        logger.debug("GlobalConstraint {} broken.", event.getBrokenConstraint());
         onBrokenConstraintInternal(event);
     }
 
@@ -66,7 +71,7 @@ public class ConstraintsController extends AbstractController {
      * @param event the observed event
      */
     @Subscribe
-    public void onFixedConstraint(BrokenResetEvent event) {
+    public void onFixedConstraint(FixedConstraintEvent event) {
         logger.debug("Constraint {} fixed.", event.getOriginallyBroken());
         if (constraintSet.contains(event.getOriginallyBroken())) {
             constraintSet.remove(event.getOriginallyBroken());

@@ -2,7 +2,7 @@ package com.oskopek.studyguide.controller;
 
 import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
-import com.oskopek.studyguide.constraint.event.BrokenResetEvent;
+import com.oskopek.studyguide.constraint.event.FixedConstraintEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
 import com.oskopek.studyguide.model.SemesterPlan;
@@ -25,6 +25,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import java.util.*;
@@ -48,6 +49,9 @@ public class SemesterController extends AbstractController {
 
     @Inject
     private EnterStringDialogPaneCreator enterStringDialogPaneCreator;
+
+    @Inject
+    private transient Logger logger;
 
     private ChangeListener<List<Semester>> listChangeListener;
 
@@ -120,7 +124,8 @@ public class SemesterController extends AbstractController {
             courseId++;
         }
         Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(),
-                Credits.valueOf(0), new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
+                Credits.valueOf(0), new ArrayList<>(Collections.singletonList("teacher")), new ArrayList<>(),
+                new ArrayList<>());
         studyPlan.getCourseRegistry().putCourse(course);
         courseDetailController.setCourse(course);
     }
@@ -208,14 +213,19 @@ public class SemesterController extends AbstractController {
     @Subscribe
     public void handleCourseChange(Course changed) {
         logger.trace("Course changed: {}", changed);
-        studyGuideApplication.getStudyPlan().getConstraints().recheckAll(changed);
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan != null) {
+            studyPlan.getConstraints().recheckAll(changed);
+        }
     }
 
     @Subscribe
     public void handleCourseEnrollmentChange(CourseEnrollment changed) {
         logger.trace("CourseEnrollment changed: {}", changed);
-        studyGuideApplication.getStudyPlan().getConstraints().recheckAll(changed);
-
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan != null) {
+            studyPlan.getConstraints().recheckAll(changed);
+        }
     }
 
     /**
@@ -235,7 +245,7 @@ public class SemesterController extends AbstractController {
      * @param event the observed event
      */
     @Subscribe
-    public void onFixedConstraint(BrokenResetEvent event) {
+    public void onFixedConstraint(FixedConstraintEvent event) {
         SemesterPlan semesterPlan = studyGuideApplication.getStudyPlan().getSemesterPlan();
         List<CourseEnrollment> courseEnrollmentFixedList = semesterPlan.allCourseEnrollments().filter(c -> {
             BrokenCourseEnrollmentConstraintEvent broken = c.brokenConstraintProperty().get();
@@ -249,7 +259,7 @@ public class SemesterController extends AbstractController {
             logger.warn("Multiple course enrollments fixed by single fix: {}", courseEnrollmentFixedList);
         }
         for (CourseEnrollment enrollment : courseEnrollmentFixedList) {
-            logger.debug("Constraint {} in {} fixed.", event.getOriginallyBroken(), enrollment);
+            logger.trace("Constraint {} in {} fixed.", event.getOriginallyBroken(), enrollment);
             enrollment.brokenConstraintProperty().setValue(null);
         }
     }

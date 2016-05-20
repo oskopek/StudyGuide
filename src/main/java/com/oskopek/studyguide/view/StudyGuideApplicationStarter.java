@@ -20,7 +20,7 @@ import java.io.InputStream;
 /**
  * A CDI-enabled version of {@link StudyGuideApplication} that initializes the root layout.
  */
-public class StudyGuideApplicationStarter {
+class StudyGuideApplicationStarter {
 
     @Inject
     @Named("fxmlloader")

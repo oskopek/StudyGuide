@@ -25,7 +25,7 @@ public class FindRegistryCoursesController implements FindCourses {
     private static final StringMetric metric = StringMetricBuilder.with(new CosineSimilarity<>())
             .simplify(Simplifiers.toLowerCase()).simplify(Simplifiers.removeDiacritics()).tokenize(Tokenizers.qGram(1))
             .build();
-    private CourseRegistry courseRegistry;
+    private final CourseRegistry courseRegistry;
 
     /**
      * Create a controller instance for a {@link CourseRegistry}.

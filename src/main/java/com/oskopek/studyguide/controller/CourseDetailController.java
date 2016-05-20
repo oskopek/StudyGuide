@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,6 +43,9 @@ public class CourseDetailController extends AbstractController {
 
     @FXML
     private TextField corequisitesField;
+
+    @Inject
+    private transient Logger logger;
 
     private CreditsStringProperty creditsValueProperty;
 
@@ -127,14 +131,12 @@ public class CourseDetailController extends AbstractController {
      */
     private static class CourseListStringProperty {
 
+        private final Logger logger = LoggerFactory.getLogger(getClass());
+        private final ChangeListener<List<Course>> listListener;
+        private final ChangeListener<String> stringListener;
         private CourseRegistry courseRegistry;
-
-        private Logger logger = LoggerFactory.getLogger(getClass());
-
         private ListProperty<Course> listProperty;
         private StringProperty stringProperty;
-        private ChangeListener<List<Course>> listListener;
-        private ChangeListener<String> stringListener;
 
         /**
          * Default constructor.
@@ -219,12 +221,11 @@ public class CourseDetailController extends AbstractController {
      */
     private static class CreditsStringProperty {
 
+        private final ChangeListener<Credits> creditsListener;
+        private final ChangeListener<String> stringListener;
+        private final Logger logger = LoggerFactory.getLogger(getClass());
         private ObjectProperty<Credits> creditsProperty;
         private StringProperty stringProperty;
-        private ChangeListener<Credits> creditsListener;
-        private ChangeListener<String> stringListener;
-
-        private Logger logger = LoggerFactory.getLogger(getClass());
 
         /**
          * Default constructor.
@@ -302,11 +303,10 @@ public class CourseDetailController extends AbstractController {
      */
     private static class StringListStringProperty {
 
+        private final ChangeListener<List<String>> listListener;
+        private final ChangeListener<String> stringListener;
         private ListProperty<String> listProperty;
         private StringProperty stringProperty;
-        private ChangeListener<List<String>> listListener;
-        private ChangeListener<String> stringListener;
-
         private Logger logger = LoggerFactory.getLogger(getClass());
 
         /**

@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
  */
 public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
 
-    private CourseGroup courseGroup;
+    private final CourseGroup courseGroup;
 
     /**
      * Default constructor.

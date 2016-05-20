@@ -12,9 +12,9 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  */
 public class DefaultStudyPlan implements StudyPlan {
 
-    private ObjectProperty<CourseRegistry> courseRegistry;
-    private ObjectProperty<SemesterPlan> semesterPlan;
-    private ObjectProperty<Constraints> constraints;
+    private final ObjectProperty<CourseRegistry> courseRegistry;
+    private final ObjectProperty<SemesterPlan> semesterPlan;
+    private final ObjectProperty<Constraints> constraints;
 
     /**
      * Create an empty instance of a study plan.

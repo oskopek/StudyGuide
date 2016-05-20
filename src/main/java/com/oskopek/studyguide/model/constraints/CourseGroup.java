@@ -58,7 +58,7 @@ public class CourseGroup {
     @JsonGetter
     private List<Course> getCourseList() {
         return courseList.get();
-    } // TODO OPTIONAL FIX THE GRAMMAR HERE
+    }
 
     /**
      * Private setter for Jackson persistence.

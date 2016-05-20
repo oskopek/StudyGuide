@@ -18,6 +18,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -32,7 +33,9 @@ import java.util.Optional;
 public class RootLayoutController extends AbstractController {
 
     private final DataWriter writer = new JsonDataReaderWriter();
+
     private File openedFile;
+
     @Inject
     private SemesterController semesterController;
 
@@ -41,6 +44,9 @@ public class RootLayoutController extends AbstractController {
 
     @Inject
     private EnterStringDialogPaneCreator enterStringDialogPaneCreator;
+
+    @Inject
+    private transient Logger logger;
 
     /**
      * Menu item: File->New.

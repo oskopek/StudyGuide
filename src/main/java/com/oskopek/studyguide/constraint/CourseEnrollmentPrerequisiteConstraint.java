@@ -5,8 +5,10 @@ import com.oskopek.studyguide.model.courses.Course;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Checks if all the prerequisite courses for a {@link com.oskopek.studyguide.model.CourseEnrollment}
@@ -36,7 +38,7 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
 
     @Override
     public void validate() {
-        List<Course> prerequisites = new ArrayList<>(getCourseEnrollment().getCourse().getPrerequisites());
+        Set<Course> prerequisites = new HashSet<>(getCourseEnrollment().getCourse().getPrerequisites());
         int semesterIndex = semesterPlan.getSemesterList().indexOf(getCourseEnrollment().getSemester()) - 1;
         if (semesterIndex < 0) {
             if (!prerequisites.isEmpty()) {
@@ -45,14 +47,11 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
             return;
         }
 
-        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
+        Stream<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
                 semesterPlan.getSemesterList().get(semesterIndex));
-        for (CourseEnrollment enrollment : enrollmentsUntilNow) {
-            int found = prerequisites.indexOf(enrollment.getCourse());
-            if (found >= 0 && enrollment.isFulfilled()) {
-                prerequisites.remove(found);
-            }
-        }
+        Set<Course> fulfilledPrerequisites = enrollmentsUntilNow.filter(CourseEnrollment::isFulfilled)
+                .map(CourseEnrollment::getCourse).filter(prerequisites::contains).collect(Collectors.toSet());
+        prerequisites.removeAll(fulfilledPrerequisites);
         if (!prerequisites.isEmpty()) {
             fireBrokenEvent(generateMessage(message, prerequisites), getCourseEnrollment());
         } else {
