@@ -11,13 +11,6 @@ import com.oskopek.studyguide.model.courses.CourseRegistry;
 public interface StudyPlan {
 
     /**
-     * The {@link com.oskopek.studyguide.constraint.Constraint}s placed on this plan.
-     *
-     * @return may be null
-     */
-    Constraints getConstraints();
-
-    /**
      * A registry of available {@link com.oskopek.studyguide.model.courses.Course}s.
      * Not necessarily the only source of courses.
      *
@@ -31,5 +24,13 @@ public interface StudyPlan {
      * @return a non-null semester plan instance
      */
     SemesterPlan getSemesterPlan();
+
+    /**
+     * The {@link com.oskopek.studyguide.constraint.Constraint}s placed on this plan.
+     *
+     * @return may be null
+     */
+    Constraints getConstraints();
+
 
 }

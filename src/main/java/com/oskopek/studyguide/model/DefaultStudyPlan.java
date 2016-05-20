@@ -12,31 +12,17 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  */
 public class DefaultStudyPlan implements StudyPlan {
 
+    private ObjectProperty<CourseRegistry> courseRegistry;
     private ObjectProperty<SemesterPlan> semesterPlan;
     private ObjectProperty<Constraints> constraints;
-    private ObjectProperty<CourseRegistry> courseRegistry;
 
     /**
      * Create an empty instance of a study plan.
      */
     public DefaultStudyPlan() {
-        this.constraints = new SimpleObjectProperty<>(new Constraints());
         this.courseRegistry = new SimpleObjectProperty<>(new CourseRegistry());
         this.semesterPlan = new SimpleObjectProperty<>(new SemesterPlan());
-    }
-
-    @Override
-    public Constraints getConstraints() {
-        return constraints.get();
-    }
-
-    /**
-     * Private setter for Jackson persistence.
-     *
-     * @param constraints the {@link Constraints} to set
-     */
-    private void setConstraints(Constraints constraints) {
-        this.constraints.set(constraints);
+        this.constraints = new SimpleObjectProperty<>(new Constraints());
     }
 
     @Override
@@ -65,6 +51,20 @@ public class DefaultStudyPlan implements StudyPlan {
      */
     private void setSemesterPlan(SemesterPlan semesterPlan) {
         this.semesterPlan.set(semesterPlan);
+    }
+
+    @Override
+    public Constraints getConstraints() {
+        return constraints.get();
+    }
+
+    /**
+     * Private setter for Jackson persistence.
+     *
+     * @param constraints the {@link Constraints} to set
+     */
+    private void setConstraints(Constraints constraints) {
+        this.constraints.set(constraints);
     }
 
     /**
