@@ -1,648 +1,14 @@
 {
-  "semesterPlan": {
-    "semesterList": []
-  },
-  "constraints": {
-    "courseGroupConstraintList": [
-      {
-        "CourseGroupFulfilledAllConstraint": {
-          "courseGroup": {
-            "courseList": [
-              {
-                "id": "NSWI150",
-                "name": "Virtualization and Cloud Computing",
-                "localizedName": "Virtualizace a cloud computing",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "RNDr. David Bednárek, Ph.D.",
-                  "RNDr. Jakub Yaghob, Ph.D."
-                ],
-                "prerequisites": [
-                  {
-                    "id": "NSWI120",
-                    "name": "Principles of Computers",
-                    "localizedName": "Principy počítačů",
-                    "locale": "cs",
-                    "credits": {
-                      "creditValue": 3
-                    },
-                    "teacherNames": [
-                      "Mgr. Pavel Ježek, Ph.D."
-                    ],
-                    "prerequisites": [],
-                    "corequisites": []
-                  }
-                ],
-                "corequisites": []
-              },
-              {
-                "id": "NMAI060",
-                "name": "Probabilistic Methods",
-                "localizedName": "Pravděpodobnostní metody",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "prof. RNDr. Jaromír Antoch, CSc."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NTIN066",
-                "name": "Data Structures I",
-                "localizedName": "Datové struktury I",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Mgr. Michal Koucký, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSZZ025",
-                "name": "Diploma Thesis III",
-                "localizedName": "Diplomová práce III",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 15
-                },
-                "teacherNames": [],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI004",
-                "name": "Operating Systems",
-                "localizedName": "Operační systémy",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Ing. Petr Tůma, Dr."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI126",
-                "name": "Advanced Tools for Software Development and Monitoring",
-                "localizedName": "Pokročilé nástroje pro vývoj a monitorování software",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "doc. RNDr. Petr Hnětynka, Ph.D.",
-                  "RNDr. Pavel Parízek, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSZZ023",
-                "name": "Diploma Thesis I",
-                "localizedName": "Diplomová práce I",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSZZ024",
-                "name": "Diploma Thesis II",
-                "localizedName": "Diplomová práce II",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 9
-                },
-                "teacherNames": [],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI120",
-                "name": "Principles of Computers",
-                "localizedName": "Principy počítačů",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "Mgr. Pavel Ježek, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG027",
-                "name": "Credit for Project",
-                "localizedName": "Zápočet k projektu",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "Informatika Mgr. - Softwarové systémy",
-                  "Informatika Mgr. - Matematická lingvistika"
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG059",
-                "name": "Advanced Programming Praxis",
-                "localizedName": "Praktikum z pokročilého objektového programování",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 2
-                },
-                "teacherNames": [
-                  "RNDr. Filip Zavoral, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG023",
-                "name": "Software Project",
-                "localizedName": "Softwarový projekt",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 9
-                },
-                "teacherNames": [
-                  "Informatika Mgr. - Softwarové systémy",
-                  "Informatika Mgr. - Matematická lingvistika"
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG043",
-                "name": "Recommended Programming Practices",
-                "localizedName": "Doporučené postupy v programování",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "Ing. Lubomír Bulej, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NTIN090",
-                "name": "Introduction to Complexity and Computability",
-                "localizedName": "Základy složitosti a vyčíslitelnosti",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. RNDr. Ondřej Čepek, Ph.D.",
-                  "RNDr. Petr Kučera, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              }
-            ]
-          }
-        }
-      },
-      {
-        "CourseGroupCreditsSumConstraint": {
-          "courseGroup": {
-            "courseList": [
-              {
-                "id": "NPRG042",
-                "name": "Programming in Parallel Environment",
-                "localizedName": "Programování v paralelním prostředí",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "RNDr. Jakub Yaghob, Ph.D."
-                ],
-                "prerequisites": [
-                  {
-                    "id": "NPRG041",
-                    "name": "Programming in C++",
-                    "localizedName": "Programování v C++",
-                    "locale": "cs",
-                    "credits": {
-                      "creditValue": 6
-                    },
-                    "teacherNames": [
-                      "RNDr. David Bednárek, Ph.D.",
-                      "RNDr. Filip Zavoral, Ph.D."
-                    ],
-                    "prerequisites": [
-                      {
-                        "id": "NPRM045",
-                        "name": "Programming II",
-                        "localizedName": "Programování II",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "RNDr. Rudolf Kryl",
-                          "RNDr. Martin Pergel, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": []
-                      },
-                      {
-                        "id": "NOFY056",
-                        "name": "Programming for Physicists",
-                        "localizedName": "Programování pro fyziky",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "RNDr. Ladislav Hanyk, Ph.D.",
-                          "Mgr. Tomáš Ledvinka, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": []
-                      },
-                      {
-                        "id": "NPRG031",
-                        "name": "Programming II",
-                        "localizedName": "Programování II",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "RNDr. Tomáš Holan, Ph.D.",
-                          "doc. RNDr. Pavel Töpfer, CSc.",
-                          "RNDr. Martin Pergel, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": []
-                      },
-                      {
-                        "id": "NMIN102",
-                        "name": "Programming 2",
-                        "localizedName": "Programování 2",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "doc. RNDr. Pavel Töpfer, CSc.",
-                          "RNDr. Martin Pergel, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": [
-                          {
-                            "id": "NMIN101",
-                            "name": "Programming 1",
-                            "localizedName": "Programování 1",
-                            "locale": "cs",
-                            "credits": {
-                              "creditValue": 5
-                            },
-                            "teacherNames": [
-                              "doc. RNDr. Pavel Töpfer, CSc.",
-                              "RNDr. Martin Pergel, Ph.D."
-                            ],
-                            "prerequisites": [],
-                            "corequisites": []
-                          }
-                        ]
-                      }
-                    ],
-                    "corequisites": []
-                  }
-                ],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG054",
-                "name": "High Performance Software Development",
-                "localizedName": "Vývoj vysoce výkonného software",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. David Bednárek, Ph.D."
-                ],
-                "prerequisites": [
-                  {
-                    "id": "NPRG041",
-                    "name": "Programming in C++",
-                    "localizedName": "Programování v C++",
-                    "locale": "cs",
-                    "credits": {
-                      "creditValue": 6
-                    },
-                    "teacherNames": [
-                      "RNDr. David Bednárek, Ph.D.",
-                      "RNDr. Filip Zavoral, Ph.D."
-                    ],
-                    "prerequisites": [
-                      {
-                        "id": "NPRM045",
-                        "name": "Programming II",
-                        "localizedName": "Programování II",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "RNDr. Rudolf Kryl",
-                          "RNDr. Martin Pergel, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": []
-                      },
-                      {
-                        "id": "NOFY056",
-                        "name": "Programming for Physicists",
-                        "localizedName": "Programování pro fyziky",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "RNDr. Ladislav Hanyk, Ph.D.",
-                          "Mgr. Tomáš Ledvinka, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": []
-                      },
-                      {
-                        "id": "NPRG031",
-                        "name": "Programming II",
-                        "localizedName": "Programování II",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "RNDr. Tomáš Holan, Ph.D.",
-                          "doc. RNDr. Pavel Töpfer, CSc.",
-                          "RNDr. Martin Pergel, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": []
-                      },
-                      {
-                        "id": "NMIN102",
-                        "name": "Programming 2",
-                        "localizedName": "Programování 2",
-                        "locale": "cs",
-                        "credits": {
-                          "creditValue": 5
-                        },
-                        "teacherNames": [
-                          "doc. RNDr. Pavel Töpfer, CSc.",
-                          "RNDr. Martin Pergel, Ph.D."
-                        ],
-                        "prerequisites": [],
-                        "corequisites": [
-                          {
-                            "id": "NMIN101",
-                            "name": "Programming 1",
-                            "localizedName": "Programování 1",
-                            "locale": "cs",
-                            "credits": {
-                              "creditValue": 5
-                            },
-                            "teacherNames": [
-                              "doc. RNDr. Pavel Töpfer, CSc.",
-                              "RNDr. Martin Pergel, Ph.D."
-                            ],
-                            "prerequisites": [],
-                            "corequisites": []
-                          }
-                        ]
-                      }
-                    ],
-                    "corequisites": []
-                  }
-                ],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG056",
-                "name": "Developing Applications for Mobile Devices",
-                "localizedName": "Vývoj aplikací pro mobilní zařízení",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "RNDr. Jan Kofroň, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWE001",
-                "name": "Embedded and Real Time Systems",
-                "localizedName": "Vestavěné systémy a systémy reálného času",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "doc. RNDr. Tomáš Bureš, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI035",
-                "name": "Principles of Distributed Systems",
-                "localizedName": "Principy distribuovaných systémů",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "RNDr. Filip Zavoral, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI041",
-                "name": "Introduction to Software Engineering",
-                "localizedName": "Úvod do softwarového inženýrství",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Mgr. Martin Nečaský, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI068",
-                "name": "Object and Component Systems",
-                "localizedName": "Objektové a komponentové systémy",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. RNDr. Tomáš Bureš, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI080",
-                "name": "Middleware",
-                "localizedName": "Middleware",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Ing. Petr Tůma, Dr."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI101",
-                "name": "System Behaviour Models and Verification",
-                "localizedName": "Modely a verifikace chování systémů",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "prof. Ing. František Plášil, DrSc.",
-                  "RNDr. Jan Kofroň, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI109",
-                "name": "Compiler Design",
-                "localizedName": "Konstrukce překladačů",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 4
-                },
-                "teacherNames": [
-                  "RNDr. David Bednárek, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI131",
-                "name": "Performance Evaluation of Computer Systems",
-                "localizedName": "Vyhodnocování výkonnosti počítačových systémů",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. Ing. Petr Tůma, Dr."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI132",
-                "name": "Program Analysis and Code Verification",
-                "localizedName": "Analýza programů a verifikace kódu",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 6
-                },
-                "teacherNames": [
-                  "RNDr. Pavel Parízek, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI029",
-                "name": "Modern Trends in Computer Science",
-                "localizedName": "Moderní trendy v informatice",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 2
-                },
-                "teacherNames": [
-                  "doc. RNDr. Petr Hnětynka, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NSWI054",
-                "name": "Software Engineering for Dependable Systems",
-                "localizedName": "Softwarové inženýrství pro spolehlivé systémy",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 3
-                },
-                "teacherNames": [
-                  "doc. RNDr. Tomáš Bureš, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              }
-            ]
-          },
-          "totalNeeded": {
-            "creditValue": 30
-          }
-        }
-      }
-    ],
-    "globalConstraintList": [
-      {
-        "GlobalCourseRepeatedEnrollmentConstraint": {
-          "maxRepeatedEnrollment": 2
-        }
-      },
-      {
-        "GlobalCreditsSumConstraint": {
-          "totalNeeded": {
-            "creditValue": 120
-          }
-        }
-      }
-    ],
-    "courseEnrollmentConstraintList": []
-  },
   "courseRegistry": {
     "courses": {
       "NSWI041": {
+        "@id": "d84f940a-536b-4b77-a86c-d15bca1e9b5a",
         "id": "NSWI041",
         "name": "Introduction to Software Engineering",
         "localizedName": "Úvod do softwarového inženýrství",
         "locale": "cs",
         "credits": {
+          "@id": "3adb44d7-d580-4ada-8d02-16c532a2a796",
           "creditValue": 5
         },
         "teacherNames": [
@@ -652,11 +18,13 @@
         "corequisites": []
       },
       "NTIN066": {
+        "@id": "f1fc27d6-7f62-4ab2-adb2-13ed70f83fc9",
         "id": "NTIN066",
         "name": "Data Structures I",
         "localizedName": "Datové struktury I",
         "locale": "cs",
         "credits": {
+          "@id": "131fcbeb-a599-45c8-8395-af89dbbc9f29",
           "creditValue": 5
         },
         "teacherNames": [
@@ -666,11 +34,13 @@
         "corequisites": []
       },
       "NPRM045": {
+        "@id": "95af23cc-5757-4282-982a-fb25febb3d7a",
         "id": "NPRM045",
         "name": "Programming II",
         "localizedName": "Programování II",
         "locale": "cs",
         "credits": {
+          "@id": "1197d927-90ed-47f7-8dba-432b0b07f173",
           "creditValue": 5
         },
         "teacherNames": [
@@ -681,11 +51,13 @@
         "corequisites": []
       },
       "NOFY056": {
+        "@id": "32cee815-0016-448c-841f-0a2c7b1cc99c",
         "id": "NOFY056",
         "name": "Programming for Physicists",
         "localizedName": "Programování pro fyziky",
         "locale": "cs",
         "credits": {
+          "@id": "e51e281a-6c2b-40fe-8c9a-238d2430b285",
           "creditValue": 5
         },
         "teacherNames": [
@@ -696,11 +68,13 @@
         "corequisites": []
       },
       "NSWI080": {
+        "@id": "31f6a22a-3fe6-4a08-86af-fe86fa95dc75",
         "id": "NSWI080",
         "name": "Middleware",
         "localizedName": "Middleware",
         "locale": "cs",
         "credits": {
+          "@id": "2501e5e8-b1af-4be8-ae1d-c7b415bb2e4d",
           "creditValue": 5
         },
         "teacherNames": [
@@ -710,11 +84,13 @@
         "corequisites": []
       },
       "NSWI004": {
+        "@id": "5901ea51-40e7-47ef-812c-d5a73093abae",
         "id": "NSWI004",
         "name": "Operating Systems",
         "localizedName": "Operační systémy",
         "locale": "cs",
         "credits": {
+          "@id": "2942ae3b-e23b-47cd-bd8a-4fc3bf3c918a",
           "creditValue": 5
         },
         "teacherNames": [
@@ -724,11 +100,13 @@
         "corequisites": []
       },
       "NSWI126": {
+        "@id": "a7c9962c-e728-4f20-9d4d-a802c1263c9e",
         "id": "NSWI126",
         "name": "Advanced Tools for Software Development and Monitoring",
         "localizedName": "Pokročilé nástroje pro vývoj a monitorování software",
         "locale": "cs",
         "credits": {
+          "@id": "62d7fd68-e3a0-4df1-a596-f7636ec28edd",
           "creditValue": 3
         },
         "teacherNames": [
@@ -739,11 +117,13 @@
         "corequisites": []
       },
       "NSWI120": {
+        "@id": "aab5c5d0-6aad-4ee6-85d2-a9aa078f5ae8",
         "id": "NSWI120",
         "name": "Principles of Computers",
         "localizedName": "Principy počítačů",
         "locale": "cs",
         "credits": {
+          "@id": "e89acef0-c6d4-4d2f-b144-b95c56d0d04f",
           "creditValue": 3
         },
         "teacherNames": [
@@ -753,11 +133,13 @@
         "corequisites": []
       },
       "NSWE001": {
+        "@id": "c483c0d6-5e99-4141-87f0-51dded3e539a",
         "id": "NSWE001",
         "name": "Embedded and Real Time Systems",
         "localizedName": "Vestavěné systémy a systémy reálného času",
         "locale": "cs",
         "credits": {
+          "@id": "bc15a652-cbd8-4a49-b190-10da45c7af2a",
           "creditValue": 6
         },
         "teacherNames": [
@@ -767,11 +149,13 @@
         "corequisites": []
       },
       "NSWI068": {
+        "@id": "cefddd8d-2232-4260-876c-158cf7ba740f",
         "id": "NSWI068",
         "name": "Object and Component Systems",
         "localizedName": "Objektové a komponentové systémy",
         "locale": "cs",
         "credits": {
+          "@id": "fe292cc5-6995-4e3a-a270-d7694e11463b",
           "creditValue": 5
         },
         "teacherNames": [
@@ -781,11 +165,13 @@
         "corequisites": []
       },
       "NSWI101": {
+        "@id": "cbdbade0-4835-4f29-9134-9de691a258f6",
         "id": "NSWI101",
         "name": "System Behaviour Models and Verification",
         "localizedName": "Modely a verifikace chování systémů",
         "locale": "cs",
         "credits": {
+          "@id": "9c704a8b-f4a2-40c6-a1e8-97f32e4eeedc",
           "creditValue": 6
         },
         "teacherNames": [
@@ -796,11 +182,13 @@
         "corequisites": []
       },
       "NPRG027": {
+        "@id": "cd4028b1-c91e-4c6e-8cb0-c9312b814d88",
         "id": "NPRG027",
         "name": "Credit for Project",
         "localizedName": "Zápočet k projektu",
         "locale": "cs",
         "credits": {
+          "@id": "c4c39332-f5b6-4f60-a9c5-b6fb97efd515",
           "creditValue": 6
         },
         "teacherNames": [
@@ -811,11 +199,13 @@
         "corequisites": []
       },
       "NPRG023": {
+        "@id": "def5e9c5-9abd-4bd4-9ede-9615a05106f2",
         "id": "NPRG023",
         "name": "Software Project",
         "localizedName": "Softwarový projekt",
         "locale": "cs",
         "credits": {
+          "@id": "130b45c0-ecde-4a8b-a96e-52879489e7ea",
           "creditValue": 9
         },
         "teacherNames": [
@@ -826,11 +216,13 @@
         "corequisites": []
       },
       "NPRG043": {
+        "@id": "61a71080-6eeb-4317-8aaa-715297330b52",
         "id": "NPRG043",
         "name": "Recommended Programming Practices",
         "localizedName": "Doporučené postupy v programování",
         "locale": "cs",
         "credits": {
+          "@id": "63291dd8-475e-4435-b2a0-681e1c1a9472",
           "creditValue": 6
         },
         "teacherNames": [
@@ -840,11 +232,13 @@
         "corequisites": []
       },
       "NPRG041": {
+        "@id": "bbd29b41-1b55-4121-bad0-d967c1d0a491",
         "id": "NPRG041",
         "name": "Programming in C++",
         "localizedName": "Programování v C++",
         "locale": "cs",
         "credits": {
+          "@id": "8387cbb3-326f-4380-803f-1d3faf0bb5fe",
           "creditValue": 6
         },
         "teacherNames": [
@@ -852,44 +246,18 @@
           "RNDr. Filip Zavoral, Ph.D."
         ],
         "prerequisites": [
+          "95af23cc-5757-4282-982a-fb25febb3d7a",
+          "32cee815-0016-448c-841f-0a2c7b1cc99c",
           {
-            "id": "NPRM045",
-            "name": "Programming II",
-            "localizedName": "Programování II",
-            "locale": "cs",
-            "credits": {
-              "creditValue": 5
-            },
-            "teacherNames": [
-              "RNDr. Rudolf Kryl",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          },
-          {
-            "id": "NOFY056",
-            "name": "Programming for Physicists",
-            "localizedName": "Programování pro fyziky",
-            "locale": "cs",
-            "credits": {
-              "creditValue": 5
-            },
-            "teacherNames": [
-              "RNDr. Ladislav Hanyk, Ph.D.",
-              "Mgr. Tomáš Ledvinka, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          },
-          {
+            "@id": "b6ad86a5-72e2-439e-a33c-6c523fdc2cc9",
             "id": "NPRG031",
             "name": "Programming II",
             "localizedName": "Programování II",
             "locale": "cs",
             "credits": {
+              "@id": "50e0dae2-813d-493a-9379-3935bd52b5e4",
               "creditValue": 5
-            },
+          },
             "teacherNames": [
               "RNDr. Tomáš Holan, Ph.D.",
               "doc. RNDr. Pavel Töpfer, CSc.",
@@ -899,13 +267,15 @@
             "corequisites": []
           },
           {
+            "@id": "677ac13a-1d24-42a6-ae62-9a37ae0cdbe2",
             "id": "NMIN102",
             "name": "Programming 2",
             "localizedName": "Programování 2",
             "locale": "cs",
             "credits": {
+              "@id": "ab67fbb0-3411-4aa6-9b8e-563111a1841d",
               "creditValue": 5
-            },
+          },
             "teacherNames": [
               "doc. RNDr. Pavel Töpfer, CSc.",
               "RNDr. Martin Pergel, Ph.D."
@@ -913,13 +283,15 @@
             "prerequisites": [],
             "corequisites": [
               {
+                "@id": "e7f721ea-4fbf-4a63-a02e-f61341c91e9a",
                 "id": "NMIN101",
                 "name": "Programming 1",
                 "localizedName": "Programování 1",
                 "locale": "cs",
                 "credits": {
+                  "@id": "47d08ecd-b345-4a7e-a944-aaabab122e7e",
                   "creditValue": 5
-                },
+            },
                 "teacherNames": [
                   "doc. RNDr. Pavel Töpfer, CSc.",
                   "RNDr. Martin Pergel, Ph.D."
@@ -933,119 +305,31 @@
         "corequisites": []
       },
       "NPRG042": {
+        "@id": "68ba5891-bfcb-42a4-b7b3-19ea32108e43",
         "id": "NPRG042",
         "name": "Programming in Parallel Environment",
         "localizedName": "Programování v paralelním prostředí",
         "locale": "cs",
         "credits": {
+          "@id": "73a41262-5686-4f6b-b69f-f8d40d28402e",
           "creditValue": 6
         },
         "teacherNames": [
           "RNDr. Jakub Yaghob, Ph.D."
         ],
         "prerequisites": [
-          {
-            "id": "NPRG041",
-            "name": "Programming in C++",
-            "localizedName": "Programování v C++",
-            "locale": "cs",
-            "credits": {
-              "creditValue": 6
-            },
-            "teacherNames": [
-              "RNDr. David Bednárek, Ph.D.",
-              "RNDr. Filip Zavoral, Ph.D."
-            ],
-            "prerequisites": [
-              {
-                "id": "NPRM045",
-                "name": "Programming II",
-                "localizedName": "Programování II",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. Rudolf Kryl",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NOFY056",
-                "name": "Programming for Physicists",
-                "localizedName": "Programování pro fyziky",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. Ladislav Hanyk, Ph.D.",
-                  "Mgr. Tomáš Ledvinka, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG031",
-                "name": "Programming II",
-                "localizedName": "Programování II",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. Tomáš Holan, Ph.D.",
-                  "doc. RNDr. Pavel Töpfer, CSc.",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NMIN102",
-                "name": "Programming 2",
-                "localizedName": "Programování 2",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. RNDr. Pavel Töpfer, CSc.",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": [
-                  {
-                    "id": "NMIN101",
-                    "name": "Programming 1",
-                    "localizedName": "Programování 1",
-                    "locale": "cs",
-                    "credits": {
-                      "creditValue": 5
-                    },
-                    "teacherNames": [
-                      "doc. RNDr. Pavel Töpfer, CSc.",
-                      "RNDr. Martin Pergel, Ph.D."
-                    ],
-                    "prerequisites": [],
-                    "corequisites": []
-                  }
-                ]
-              }
-            ],
-            "corequisites": []
-          }
+          "bbd29b41-1b55-4121-bad0-d967c1d0a491"
         ],
         "corequisites": []
       },
       "NTIN090": {
+        "@id": "05d6a283-07d2-4241-a637-c17df31599ea",
         "id": "NTIN090",
         "name": "Introduction to Complexity and Computability",
         "localizedName": "Základy složitosti a vyčíslitelnosti",
         "locale": "cs",
         "credits": {
+          "@id": "cca97338-aa80-43da-8e1a-37a7a4330073",
           "creditValue": 5
         },
         "teacherNames": [
@@ -1056,11 +340,13 @@
         "corequisites": []
       },
       "NSWI150": {
+        "@id": "51a3f2cf-79ee-4b71-824f-15a9090dcbbe",
         "id": "NSWI150",
         "name": "Virtualization and Cloud Computing",
         "localizedName": "Virtualizace a cloud computing",
         "locale": "cs",
         "credits": {
+          "@id": "a469aab6-36a9-4163-a80c-1ca2c20177b5",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1068,29 +354,18 @@
           "RNDr. Jakub Yaghob, Ph.D."
         ],
         "prerequisites": [
-          {
-            "id": "NSWI120",
-            "name": "Principles of Computers",
-            "localizedName": "Principy počítačů",
-            "locale": "cs",
-            "credits": {
-              "creditValue": 3
-            },
-            "teacherNames": [
-              "Mgr. Pavel Ježek, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
+          "aab5c5d0-6aad-4ee6-85d2-a9aa078f5ae8"
         ],
         "corequisites": []
       },
       "NMAI060": {
+        "@id": "74c29133-7ec3-4df3-bc0d-287ae58b3969",
         "id": "NMAI060",
         "name": "Probabilistic Methods",
         "localizedName": "Pravděpodobnostní metody",
         "locale": "cs",
         "credits": {
+          "@id": "e2ec351a-33cd-437a-92fc-b36126e55c68",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1100,11 +375,13 @@
         "corequisites": []
       },
       "NSZZ025": {
+        "@id": "d88f33b4-bb0c-4c70-b534-580038bd21f6",
         "id": "NSZZ025",
         "name": "Diploma Thesis III",
         "localizedName": "Diplomová práce III",
         "locale": "cs",
         "credits": {
+          "@id": "397681c5-4190-40da-b290-2fdd4a74cb60",
           "creditValue": 15
         },
         "teacherNames": [],
@@ -1112,11 +389,13 @@
         "corequisites": []
       },
       "NSZZ023": {
+        "@id": "71f66cf7-25d9-4cc6-a83d-f60799cdc9f8",
         "id": "NSZZ023",
         "name": "Diploma Thesis I",
         "localizedName": "Diplomová práce I",
         "locale": "cs",
         "credits": {
+          "@id": "cc46cff9-dbe2-4bcf-80ac-95546322751c",
           "creditValue": 6
         },
         "teacherNames": [],
@@ -1124,11 +403,13 @@
         "corequisites": []
       },
       "NSZZ024": {
+        "@id": "91d02dd7-9b22-41b0-8d56-84ed3a90dec1",
         "id": "NSZZ024",
         "name": "Diploma Thesis II",
         "localizedName": "Diplomová práce II",
         "locale": "cs",
         "credits": {
+          "@id": "0be1465a-dbaf-4b5c-bda9-cba3aa3ebc31",
           "creditValue": 9
         },
         "teacherNames": [],
@@ -1136,11 +417,13 @@
         "corequisites": []
       },
       "NSWI131": {
+        "@id": "fe6509fb-c880-4552-9957-edd6cc49ecd6",
         "id": "NSWI131",
         "name": "Performance Evaluation of Computer Systems",
         "localizedName": "Vyhodnocování výkonnosti počítačových systémů",
         "locale": "cs",
         "credits": {
+          "@id": "9b3834b4-4459-4a02-a748-27486a48b1e3",
           "creditValue": 5
         },
         "teacherNames": [
@@ -1150,11 +433,13 @@
         "corequisites": []
       },
       "NSWI054": {
+        "@id": "c533c1ce-8573-485d-bf3c-9ca1a1d89f4a",
         "id": "NSWI054",
         "name": "Software Engineering for Dependable Systems",
         "localizedName": "Softwarové inženýrství pro spolehlivé systémy",
         "locale": "cs",
         "credits": {
+          "@id": "129b1c4a-e7c5-4510-aa45-25a71af2a768",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1164,11 +449,13 @@
         "corequisites": []
       },
       "NSWI132": {
+        "@id": "0d5b28de-e3e2-4a36-98f2-68724243bfd9",
         "id": "NSWI132",
         "name": "Program Analysis and Code Verification",
         "localizedName": "Analýza programů a verifikace kódu",
         "locale": "cs",
         "credits": {
+          "@id": "0e669f99-f026-428f-8f19-4a073b144aa8",
           "creditValue": 6
         },
         "teacherNames": [
@@ -1178,11 +465,13 @@
         "corequisites": []
       },
       "NSWI035": {
+        "@id": "cca7470e-cc0d-47a9-b5b5-f107b0f463a9",
         "id": "NSWI035",
         "name": "Principles of Distributed Systems",
         "localizedName": "Principy distribuovaných systémů",
         "locale": "cs",
         "credits": {
+          "@id": "119456fe-f11f-4ff8-9db2-9709363a0128",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1192,11 +481,13 @@
         "corequisites": []
       },
       "NPRG059": {
+        "@id": "11227ce7-2256-41be-865d-71a8405a2583",
         "id": "NPRG059",
         "name": "Advanced Programming Praxis",
         "localizedName": "Praktikum z pokročilého objektového programování",
         "locale": "cs",
         "credits": {
+          "@id": "e1c118fd-3687-498e-b86f-833bd0efc315",
           "creditValue": 2
         },
         "teacherNames": [
@@ -1206,11 +497,13 @@
         "corequisites": []
       },
       "NPRG056": {
+        "@id": "e59321a6-470d-4079-915a-84515449773e",
         "id": "NPRG056",
         "name": "Developing Applications for Mobile Devices",
         "localizedName": "Vývoj aplikací pro mobilní zařízení",
         "locale": "cs",
         "credits": {
+          "@id": "30d12d35-e31b-40ab-8661-285ae35dc4c5",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1220,11 +513,13 @@
         "corequisites": []
       },
       "NSWI029": {
+        "@id": "7d6bad98-154c-4a47-9b15-056253f9d9b3",
         "id": "NSWI029",
         "name": "Modern Trends in Computer Science",
         "localizedName": "Moderní trendy v informatice",
         "locale": "cs",
         "credits": {
+          "@id": "a409cbab-7efe-4ac3-996b-d820c78e4f0a",
           "creditValue": 2
         },
         "teacherNames": [
@@ -1234,119 +529,31 @@
         "corequisites": []
       },
       "NPRG054": {
+        "@id": "7f808339-4b07-4c87-8059-f38f4ded8099",
         "id": "NPRG054",
         "name": "High Performance Software Development",
         "localizedName": "Vývoj vysoce výkonného software",
         "locale": "cs",
         "credits": {
+          "@id": "94e21b41-771f-44c1-ad78-6351a57bad28",
           "creditValue": 5
         },
         "teacherNames": [
           "RNDr. David Bednárek, Ph.D."
         ],
         "prerequisites": [
-          {
-            "id": "NPRG041",
-            "name": "Programming in C++",
-            "localizedName": "Programování v C++",
-            "locale": "cs",
-            "credits": {
-              "creditValue": 6
-            },
-            "teacherNames": [
-              "RNDr. David Bednárek, Ph.D.",
-              "RNDr. Filip Zavoral, Ph.D."
-            ],
-            "prerequisites": [
-              {
-                "id": "NPRM045",
-                "name": "Programming II",
-                "localizedName": "Programování II",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. Rudolf Kryl",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NOFY056",
-                "name": "Programming for Physicists",
-                "localizedName": "Programování pro fyziky",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. Ladislav Hanyk, Ph.D.",
-                  "Mgr. Tomáš Ledvinka, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NPRG031",
-                "name": "Programming II",
-                "localizedName": "Programování II",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "RNDr. Tomáš Holan, Ph.D.",
-                  "doc. RNDr. Pavel Töpfer, CSc.",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              {
-                "id": "NMIN102",
-                "name": "Programming 2",
-                "localizedName": "Programování 2",
-                "locale": "cs",
-                "credits": {
-                  "creditValue": 5
-                },
-                "teacherNames": [
-                  "doc. RNDr. Pavel Töpfer, CSc.",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": [
-                  {
-                    "id": "NMIN101",
-                    "name": "Programming 1",
-                    "localizedName": "Programování 1",
-                    "locale": "cs",
-                    "credits": {
-                      "creditValue": 5
-                    },
-                    "teacherNames": [
-                      "doc. RNDr. Pavel Töpfer, CSc.",
-                      "RNDr. Martin Pergel, Ph.D."
-                    ],
-                    "prerequisites": [],
-                    "corequisites": []
-                  }
-                ]
-              }
-            ],
-            "corequisites": []
-          }
+          "bbd29b41-1b55-4121-bad0-d967c1d0a491"
         ],
         "corequisites": []
       },
       "NSWI109": {
+        "@id": "695b8e88-b0e2-4fae-b289-036c51c1a772",
         "id": "NSWI109",
         "name": "Compiler Design",
         "localizedName": "Konstrukce překladačů",
         "locale": "cs",
         "credits": {
+          "@id": "f65af590-cb75-4fd3-85d9-6c45df009444",
           "creditValue": 4
         },
         "teacherNames": [
@@ -1355,68 +562,80 @@
         "prerequisites": [],
         "corequisites": []
       },
-      "NPRG031": {
-        "id": "NPRG031",
-        "name": "Programming II",
-        "localizedName": "Programování II",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "RNDr. Tomáš Holan, Ph.D.",
-          "doc. RNDr. Pavel Töpfer, CSc.",
-          "RNDr. Martin Pergel, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NMIN101": {
-        "id": "NMIN101",
-        "name": "Programming 1",
-        "localizedName": "Programování 1",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. RNDr. Pavel Töpfer, CSc.",
-          "RNDr. Martin Pergel, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NMIN102": {
-        "id": "NMIN102",
-        "name": "Programming 2",
-        "localizedName": "Programování 2",
-        "locale": "cs",
-        "credits": {
-          "creditValue": 5
-        },
-        "teacherNames": [
-          "doc. RNDr. Pavel Töpfer, CSc.",
-          "RNDr. Martin Pergel, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          {
-            "id": "NMIN101",
-            "name": "Programming 1",
-            "localizedName": "Programování 1",
-            "locale": "cs",
-            "credits": {
-              "creditValue": 5
-            },
-            "teacherNames": [
-              "doc. RNDr. Pavel Töpfer, CSc.",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ]
-      }
+      "NPRG031": "b6ad86a5-72e2-439e-a33c-6c523fdc2cc9",
+      "NMIN101": "e7f721ea-4fbf-4a63-a02e-f61341c91e9a",
+      "NMIN102": "677ac13a-1d24-42a6-ae62-9a37ae0cdbe2"
     }
+  },
+  "semesterPlan": {
+    "semesterList": []
+  },
+  "constraints": {
+    "courseGroupConstraintList": [
+      {
+        "CourseGroupFulfilledAllConstraint": {
+          "courseGroup": {
+            "courseList": [
+              "51a3f2cf-79ee-4b71-824f-15a9090dcbbe",
+              "74c29133-7ec3-4df3-bc0d-287ae58b3969",
+              "f1fc27d6-7f62-4ab2-adb2-13ed70f83fc9",
+              "d88f33b4-bb0c-4c70-b534-580038bd21f6",
+              "5901ea51-40e7-47ef-812c-d5a73093abae",
+              "a7c9962c-e728-4f20-9d4d-a802c1263c9e",
+              "71f66cf7-25d9-4cc6-a83d-f60799cdc9f8",
+              "91d02dd7-9b22-41b0-8d56-84ed3a90dec1",
+              "aab5c5d0-6aad-4ee6-85d2-a9aa078f5ae8",
+              "cd4028b1-c91e-4c6e-8cb0-c9312b814d88",
+              "11227ce7-2256-41be-865d-71a8405a2583",
+              "def5e9c5-9abd-4bd4-9ede-9615a05106f2",
+              "61a71080-6eeb-4317-8aaa-715297330b52",
+              "05d6a283-07d2-4241-a637-c17df31599ea"
+            ]
+          }
+        }
+      },
+      {
+        "CourseGroupCreditsSumConstraint": {
+          "courseGroup": {
+            "courseList": [
+              "68ba5891-bfcb-42a4-b7b3-19ea32108e43",
+              "7f808339-4b07-4c87-8059-f38f4ded8099",
+              "e59321a6-470d-4079-915a-84515449773e",
+              "c483c0d6-5e99-4141-87f0-51dded3e539a",
+              "cca7470e-cc0d-47a9-b5b5-f107b0f463a9",
+              "d84f940a-536b-4b77-a86c-d15bca1e9b5a",
+              "cefddd8d-2232-4260-876c-158cf7ba740f",
+              "31f6a22a-3fe6-4a08-86af-fe86fa95dc75",
+              "cbdbade0-4835-4f29-9134-9de691a258f6",
+              "695b8e88-b0e2-4fae-b289-036c51c1a772",
+              "fe6509fb-c880-4552-9957-edd6cc49ecd6",
+              "0d5b28de-e3e2-4a36-98f2-68724243bfd9",
+              "7d6bad98-154c-4a47-9b15-056253f9d9b3",
+              "c533c1ce-8573-485d-bf3c-9ca1a1d89f4a"
+            ]
+        },
+          "totalNeeded": {
+            "@id": "deeef204-6379-476e-9f86-4acc1e0ea428",
+            "creditValue": 30
+          }
+      }
+      }
+    ],
+    "globalConstraintList": [
+      {
+        "GlobalCourseRepeatedEnrollmentConstraint": {
+          "maxRepeatedEnrollment": 2
+        }
+      },
+      {
+        "GlobalCreditsSumConstraint": {
+          "totalNeeded": {
+            "@id": "9a7d9951-fb7e-485d-aab3-579e5e4c59a1",
+            "creditValue": 120
+          }
+        }
+      }
+    ],
+    "courseEnrollmentConstraintList": []
   }
 }
