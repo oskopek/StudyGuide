@@ -19,14 +19,17 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.io.*;
+import java.util.MissingResourceException;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -166,16 +169,37 @@ public class RootLayoutController extends AbstractController {
         WebView webView = new WebView();
         webView.setContextMenuEnabled(false);
         String manualHtml = readResourceToString(messages.getString("root.manualResource"));
+
+        Pattern messagePattern = Pattern.compile("%([a-z.A-Z]+)");
+        Matcher messageMatcher = messagePattern.matcher(manualHtml);
+        StringBuffer replaceHtmlBuffer = new StringBuffer();
+        while (messageMatcher.find()) {
+            String found = messageMatcher.group(1);
+            logger.trace("Replacing {} in manual", found);
+            String replacement = null;
+            try {
+                replacement = messages.getString(found);
+            } catch (MissingResourceException e) {
+                logger.warn("Couldn't find resource \"{}\" in messages.", found);
+            }
+            messageMatcher.appendReplacement(replaceHtmlBuffer, replacement == null ? found : replacement);
+        }
+        messageMatcher.appendTail(replaceHtmlBuffer);
+        manualHtml = replaceHtmlBuffer.toString();
+
         if (manualHtml == null) {
             AlertCreator
                     .showAlert(Alert.AlertType.WARNING, messages.getString("root.manualNotAvailableInYourLanguage"));
             return;
         }
         webView.getEngine().loadContent(manualHtml);
+
         Stage webViewDialogStage = new Stage();
-        webViewDialogStage.setScene(new Scene(webView));
+        webViewDialogStage.initStyle(StageStyle.DECORATED);
+        webViewDialogStage.setResizable(true);
         webViewDialogStage.setTitle("StudyGuide - " + messages.getString("root.help"));
-        webViewDialogStage.initModality(Modality.APPLICATION_MODAL);
+        //        webViewDialogStage.initModality(Modality.APPLICATION_MODAL);
+        webViewDialogStage.setScene(new Scene(webView));
         webViewDialogStage.toFront();
         webViewDialogStage.showAndWait();
     }
@@ -192,7 +216,7 @@ public class RootLayoutController extends AbstractController {
             logger.warn("Couldn't find resource \"{}\"", resource);
             return null;
         }
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is, "utf-8"))) {
             return bufferedReader.lines().collect(Collectors.joining("\n"));
         } catch (IOException e) {
             throw new IllegalStateException("Couldn't read resource to string: " + resource, e);
