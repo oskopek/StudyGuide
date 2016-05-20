@@ -9,6 +9,7 @@ import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
@@ -105,7 +106,8 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
         } else if (plan == null) {
             throw new IllegalArgumentException("Plan is null.");
         }
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream))) {
+        try (BufferedWriter writer = new BufferedWriter(
+                new OutputStreamWriter(outputStream, Charset.forName("utf-8")))) {
             writer.write(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(plan));
             writer.write('\n');
         } catch (IOException e) {
