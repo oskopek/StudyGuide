@@ -16,6 +16,10 @@ import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Controller for displaying broken {@link com.oskopek.studyguide.constraint.CourseGroupConstraint}s and {@link
+ * com.oskopek.studyguide.constraint.GlobalConstraint}s.
+ */
 public class ConstraintsController extends AbstractController {
 
     @FXML
@@ -39,6 +43,11 @@ public class ConstraintsController extends AbstractController {
         constraintSet = new HashSet<>();
     }
 
+    /**
+     * Internal handler that does all the checking and updating the view when a broken constraint event arrives.
+     *
+     * @param event the broken constraint event
+     */
     private void onBrokenConstraintInternal(StringMessageEvent event) {
         if (!constraintSet.contains(event.getBrokenConstraint())) {
             constraintSet.add(event.getBrokenConstraint());
@@ -48,25 +57,44 @@ public class ConstraintsController extends AbstractController {
         brokenConstraintEventList.add(event); // overwrite, use the newer one always
     }
 
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for {@link BrokenCourseGroupConstraintEvent}s.
+     *
+     * @param event the posted broken constraint event
+     */
     @Subscribe
     public void onBrokenConstraint(BrokenCourseGroupConstraintEvent event) {
         logger.debug("CourseGroupConstraint {} broken.", event.getBrokenConstraint());
         onBrokenConstraintInternal(event);
     }
 
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for {@link BrokenGlobalConstraintEvent}s.
+     *
+     * @param event the posted broken constraint event
+     */
     @Subscribe
     public void onBrokenConstraint(BrokenGlobalConstraintEvent event) {
         logger.debug("GlobalConstraint {} broken.", event.getBrokenConstraint());
         onBrokenConstraintInternal(event);
     }
 
+    /**
+     * Internal util method for removing all broken constraint events from the {@link #brokenConstraintEventList}
+     * which have a given constraint as their cause.
+     *
+     * @param constraint the originally broken constraint
+     */
     private void removeAllBrokenEventsFromList(Constraint constraint) {
         brokenConstraintEventList
                 .removeIf(stringMessageEvent -> stringMessageEvent.getBrokenConstraint().equals(constraint));
     }
 
     /**
-     * Handler for constraint fixed events.
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for {@link FixedConstraintEvent}s.
      *
      * @param event the observed event
      */

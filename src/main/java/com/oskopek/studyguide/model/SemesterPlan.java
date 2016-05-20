@@ -54,9 +54,10 @@ public class SemesterPlan implements Iterable<Semester> {
     }
 
     /**
-     * Add the {@link Semester} to the semester list.
+     * Add the {@link Semester} to the semester list. Checks for uniqueness of names.
      *
      * @param semester the semester to be added
+     * @return true iff adding the semester succeeded (if the name wasn't in conflict with another semester in the plan)
      * @see javafx.collections.ObservableList#add(Object)
      */
     public boolean addSemester(Semester semester) {

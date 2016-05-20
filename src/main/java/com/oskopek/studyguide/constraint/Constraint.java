@@ -46,5 +46,10 @@ public interface Constraint {
      */
     void fireBrokenEvent(String message, CourseEnrollment changed);
 
-    void fireFixedEvent(Constraint original);
+    /**
+     * Used for firing a fixed constraint event if the constraint is fixed.
+     *
+     * @param originallyBroken the originally broken (now fixed) constraint
+     */
+    void fireFixedEvent(Constraint originallyBroken);
 }

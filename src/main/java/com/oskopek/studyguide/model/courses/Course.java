@@ -118,6 +118,9 @@ public class Course implements Comparable<Course> {
         return new Course(id, name, localizedName, locale, credits, teacherNames, prerequisites, corequisites);
     }
 
+    /**
+     * Post an event on the {@link EventBus}, notifying everyone listening of a change in this course.
+     */
     private void fireValueChangedEvent() {
         logger.trace("Trying to fire course changed: {}", this);
         if (eventBus != null) {
@@ -387,12 +390,27 @@ public class Course implements Comparable<Course> {
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
     }
 
+    /**
+     * Register this course on the {@link EventBus}. Does not actually call {@link EventBus#register(Object)},
+     * since this class doesn't subscribe to any events, just sets the bus that it will use to communicate it's
+     * changes.
+     *
+     * @param eventBus the event bus to set
+     */
     public void registerEventBus(EventBus eventBus) {
         logger.trace("Registering event bus on course {}", this);
         this.eventBus = eventBus;
         fireValueChangedEvent(); // fire on a new bus
     }
 
+    /**
+     * A change listener method implementation, used for adding and removing a change listener on the credits
+     * instance of this course. Translates a credits change into a course change (transitively).
+     *
+     * @param observableValue the observable that changed, unused
+     * @param oldValue the old credit value
+     * @param newValue the new credit value
+     */
     private void onCreditsChanged(ObservableValue<? extends Credits> observableValue, Credits oldValue,
             Credits newValue) {
         if (oldValue != null) {
@@ -424,6 +442,11 @@ public class Course implements Comparable<Course> {
         return new CompareToBuilder().append(id, o.id).toComparison();
     }
 
+    /**
+     * Get a value representing this object. To be used in events and constraints.
+     *
+     * @return the course value
+     */
     @JsonIgnore
     public Course getValue() {
         return this; //Course.copy(this);

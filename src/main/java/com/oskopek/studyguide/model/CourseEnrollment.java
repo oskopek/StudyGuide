@@ -165,17 +165,32 @@ public class CourseEnrollment {
         return semester;
     }
 
+    /**
+     * Get a value representing this object. To be used in events and constraints.
+     *
+     * @return the course enrollment value
+     */
     @JsonIgnore
     public CourseEnrollment getValue() {
         return this; //;CourseEnrollment.copy(this);
     }
 
+    /**
+     * Register this enrollment on the {@link EventBus}. Does not actually call {@link EventBus#register(Object)},
+     * since this class doesn't subscribe to any events, just sets the bus that it will use to communicate it's
+     * changes.
+     *
+     * @param eventBus the event bus to set
+     */
     public void registerEventBus(EventBus eventBus) {
         logger.trace("Registering event bus on course enrollment {}", this);
         this.eventBus = eventBus;
         fireValueChangedEvent(); // fire on a new bus
     }
 
+    /**
+     * Post an event on the {@link EventBus}, notifying everyone listening of a change in this course enrollment.
+     */
     private void fireValueChangedEvent() {
         logger.trace("Trying to fire course enrollment changed: {}", this);
         if (eventBus != null) {

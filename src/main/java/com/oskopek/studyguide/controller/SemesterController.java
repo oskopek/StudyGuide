@@ -210,6 +210,12 @@ public class SemesterController extends AbstractController {
         enrollment.semesterProperty().set(to);
     }
 
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for changes in a {@link Course}.
+     *
+     * @param changed the changed course posted on the bus
+     */
     @Subscribe
     public void handleCourseChange(Course changed) {
         logger.trace("Course changed: {}", changed);
@@ -219,6 +225,12 @@ public class SemesterController extends AbstractController {
         }
     }
 
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for changes in a {@link CourseEnrollment}.
+     *
+     * @param changed the changed course enrollment posted on the bus
+     */
     @Subscribe
     public void handleCourseEnrollmentChange(CourseEnrollment changed) {
         logger.trace("CourseEnrollment changed: {}", changed);

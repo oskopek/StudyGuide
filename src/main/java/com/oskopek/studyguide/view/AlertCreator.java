@@ -20,6 +20,13 @@ public final class AlertCreator {
         // intentionally empty
     }
 
+    /**
+     * An internal method to display an {@link Alert} with the given parameters in the current thread.
+     *
+     * @param alertType the type of the alert
+     * @param message the message to display
+     * @param buttonTypes the buttons to show
+     */
     private static void showAlertInternal(Alert.AlertType alertType, String message, ButtonType... buttonTypes) {
         Alert alert = new Alert(alertType, "", buttonTypes);
         alert.getDialogPane().setContent(new Label(message));
@@ -27,7 +34,7 @@ public final class AlertCreator {
     }
 
     /**
-     * A util method to display an {@link Alert} with the given parameters.
+     * A util method to display an {@link Alert} with the given parameters in the UI thread.
      *
      * @param alertType the type of the alert
      * @param message the message to display
@@ -39,7 +46,8 @@ public final class AlertCreator {
     }
 
     /**
-     * A util method to display an {@link Alert} with the given parameters.
+     * A util method to display an {@link Alert} with the given parameters in the UI thread, exiting the process
+     * after the dialog is closed.
      *
      * @param alertType the type of the alert
      * @param message the message to display

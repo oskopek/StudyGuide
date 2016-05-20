@@ -42,6 +42,11 @@ public abstract class CourseGroupConstraint extends DefaultConstraint {
         return courseGroup;
     }
 
+    /**
+     * Set the checked course group.
+     *
+     * @param courseGroup the group to set
+     */
     public void setCourseGroup(CourseGroup courseGroup) {
         this.courseGroup = courseGroup;
     }

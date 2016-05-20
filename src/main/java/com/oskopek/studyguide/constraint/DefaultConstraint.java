@@ -26,14 +26,25 @@ public abstract class DefaultConstraint implements Constraint {
     protected transient EventBus eventBus;
 
     @Override
-    public void fireFixedEvent(Constraint original) {
-        eventBus.post(new FixedConstraintEvent(original));
+    public void fireFixedEvent(Constraint originallyBroken) {
+        eventBus.post(new FixedConstraintEvent(originallyBroken));
     }
 
+    /**
+     * Get the semester plan associated with this constraint. Should be the semester plan this constraint is in.
+     *
+     * @return the semester plan
+     */
     public SemesterPlan getSemesterPlan() {
         return semesterPlan;
     }
 
+    /**
+     * Get the semester plan associated with this constraint. Should be the semester plan this constraint is in,
+     * but is not enforced.
+     *
+     * @param semesterPlan the semester plan to set
+     */
     @JsonIgnore
     public void setSemesterPlan(SemesterPlan semesterPlan) {
         this.semesterPlan = semesterPlan;

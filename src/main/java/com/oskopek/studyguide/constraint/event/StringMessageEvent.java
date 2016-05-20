@@ -20,6 +20,7 @@ public abstract class StringMessageEvent {
     /**
      * Constructs a new message event with the given message.
      *
+     * @param messages the resource bundle used for resolving messages to their localized versions
      * @param message the message to broadcast
      * @param brokenConstraint the constraint that was broken and generated this event
      */

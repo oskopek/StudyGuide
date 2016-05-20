@@ -74,6 +74,11 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
         return maxRepeatedEnrollment;
     }
 
+    /**
+     * Set the max number of repeated enrollments of a specific course that still doesn't trigger this constraint.
+     *
+     * @param maxRepeatedEnrollment the max number of repeated enrollments to set
+     */
     public void setMaxRepeatedEnrollment(int maxRepeatedEnrollment) {
         this.maxRepeatedEnrollment = maxRepeatedEnrollment;
     }

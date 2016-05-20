@@ -24,10 +24,21 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
 
     private final EventBus injectableEventBus;
 
+    /**
+     * Create an instance of the reader/writer, with all injectable values set to null.
+     */
     public JsonDataReaderWriter() {
         this(null, null);
     }
 
+    /**
+     * Create an instance of the reader/writer, with the given parameters passed as injectable values to Jackson.
+     *
+     * @param messages the message resource bundle to inject
+     * @param eventBus the event bus to inject
+     * @see InjectableValues
+     * @see com.fasterxml.jackson.annotation.JacksonInject
+     */
     public JsonDataReaderWriter(ResourceBundle messages, EventBus eventBus) {
         this.injectableEventBus = eventBus;
         InjectableValues injectableValues = new InjectableValues.Std().addValue(ResourceBundle.class, messages)
@@ -35,6 +46,13 @@ public class JsonDataReaderWriter implements DataReader, DataWriter {
         objectMapper.setInjectableValues(injectableValues);
     }
 
+    /**
+     * Manually finish "injection" of the study plan itself into some of its objects (a final manual deserialization
+     * step).
+     *
+     * @param studyPlan the study plan to set
+     * @return the updated study plan
+     */
     private StudyPlan finalizeInjection(StudyPlan studyPlan) {
         studyPlan.getConstraints().allConstraintStream().forEach(c -> c.setSemesterPlan(studyPlan.getSemesterPlan()));
         studyPlan.getCourseRegistry().courseMapValues().stream().forEach(c -> c.registerEventBus(injectableEventBus));

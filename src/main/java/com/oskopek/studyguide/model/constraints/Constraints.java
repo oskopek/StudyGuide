@@ -127,7 +127,9 @@ public class Constraints {
     }
 
     /**
-     * Removes all {@link CourseEnrollmentConstraint}s that restrict the
+     * Removes all {@link CourseEnrollmentConstraint}s that restrict the given course enrollments.
+     *
+     * @param courseEnrollments the collection of course enrollments whose constraints to remove
      */
     public void removeAllCourseEnrollmentConstraints(Collection<CourseEnrollment> courseEnrollments) {
         Set<CourseEnrollment> courseEnrollmentSet = new HashSet<>(courseEnrollments);
@@ -143,6 +145,7 @@ public class Constraints {
      * Adds all applicable {@link CourseEnrollmentConstraint}s that should restrict the given course enrollment.
      *
      * @param courseEnrollment the course enrollment
+     * @param semesterPlan the semesterPlan to set into them
      */
     public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment, SemesterPlan semesterPlan) {
         CourseEnrollmentConstraint c1 = BeanManagerUtil.createBeanInstance(CourseEnrollmentCorequisiteConstraint.class);
@@ -155,22 +158,42 @@ public class Constraints {
         courseEnrollmentConstraintList.addAll(c1, c2);
     }
 
+    /**
+     * Constructs a stream of all the constraints (of all types) contained in this object.
+     *
+     * @return a stream of constraints
+     */
     public Stream<DefaultConstraint> allConstraintStream() {
         return Stream.concat(Stream
                         .concat(getCourseEnrollmentConstraintList().stream(), getCourseGroupConstraintList().stream()),
                 getGlobalConstraintList().stream());
     }
 
+    /**
+     * Recheck all constraints because a course enrollment changed in the model.
+     *
+     * @param enrollment the course enrollment that caused this recheck
+     * @see #recheckAll()
+     */
     public void recheckAll(CourseEnrollment enrollment) {
         logger.debug("Rechecking all because of an enrollment change: {}", enrollment);
         recheckAll();
     }
 
+    /**
+     * Recheck all constraints because a course changed in the model.
+     *
+     * @param course the course that caused this recheck
+     * @see #recheckAll()
+     */
     public void recheckAll(Course course) {
         logger.debug("Rechecking all because of a course change: {}", course);
         recheckAll();
     }
 
+    /**
+     * Recheck all constraints and fire appropriate events.
+     */
     public void recheckAll() {
         logger.debug("Rechecking constraints...");
         allConstraintStream().forEach(Constraint::validate);

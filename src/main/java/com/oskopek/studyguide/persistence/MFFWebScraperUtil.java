@@ -42,6 +42,12 @@ public final class MFFWebScraperUtil {
         mffWebScraperUtil.run();
     }
 
+    /**
+     * The actual "main" method that does all the work. Scrape the study plan from the given URL,
+     * prints the courses that were scraped and saves the plan to a file.
+     *
+     * @throws IOException if an error during scraping or persisting happened
+     */
     private void run() throws IOException {
         StudyPlan studyPlan = scraper.scrapeStudyPlan(mffIoiInfoUrl);
         System.out.println(Arrays.toString(studyPlan.getCourseRegistry().courseMapValues().toArray()));

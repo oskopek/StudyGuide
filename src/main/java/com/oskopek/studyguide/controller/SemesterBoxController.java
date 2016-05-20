@@ -256,10 +256,18 @@ public class SemesterBoxController extends AbstractController {
         event.consume();
     }
 
+    /**
+     * Custom label binding, used for showing constraint warnings for any broken constraint event.
+     */
     private class LabelBinding extends ObjectBinding<Label> {
 
         private final ObjectProperty<? extends StringMessageEvent> eventObjectProperty;
 
+        /**
+         * Construct a LabelBinding and bind to an event property.
+         *
+         * @param eventObjectProperty the property to bind to
+         */
         LabelBinding(ObjectProperty<? extends StringMessageEvent> eventObjectProperty) {
             bind(eventObjectProperty);
             this.eventObjectProperty = eventObjectProperty;
