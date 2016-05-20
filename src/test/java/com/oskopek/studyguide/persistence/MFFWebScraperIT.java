@@ -2,6 +2,7 @@ package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -12,10 +13,6 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 /**
  * A simple and non stable integration test for {@link MFFHtmlScraper}.
@@ -52,8 +49,7 @@ public class MFFWebScraperIT {
 
     @Test
     @Ignore("Is not really a test, downloads all study plans and saves them")
-    public void scrapeAndSaveAllParallel()
-            throws Exception {
+    public void scrapeAndSaveAllParallel() throws Exception {
         String[] urlExt = {"ib3a21.htm", "ib3a22.htm", "ib3a23.htm", "i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm",
                 "i3b25.htm", "i3b26.htm", "i3b27.htm"};
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";

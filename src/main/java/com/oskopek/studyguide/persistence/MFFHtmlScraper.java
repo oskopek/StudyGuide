@@ -97,8 +97,8 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 // compulsory courses are transitive (their dependencies have to be compulsory), we can add all
                 registry.putAllCourses(compulsory);
                 CourseGroup group = new CourseGroup(registry.courseMapValues());
-                CourseGroupFulfilledAllConstraint constraint
-                        = BeanManagerUtil.createBeanInstance(CourseGroupFulfilledAllConstraint.class);
+                CourseGroupFulfilledAllConstraint constraint = BeanManagerUtil
+                        .createBeanInstance(CourseGroupFulfilledAllConstraint.class);
                 constraint.setCourseGroup(group);
                 constraint.setSemesterPlan(semesterPlan);
                 constraints.getCourseGroupConstraintList().add(constraint);
@@ -109,12 +109,12 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 CourseRegistry semiCompulsory = new CourseRegistry();
                 // semi-compulsory courses are NOT transitive, do not add their dependencies
                 List<String> courseIds = scrapeCoursesFromTable(table, semiCompulsory);
-                List<Course> courses =
-                        courseIds.stream().map(id -> semiCompulsory.getCourse(id)).collect(Collectors.toList());
+                List<Course> courses = courseIds.stream().map(id -> semiCompulsory.getCourse(id))
+                        .collect(Collectors.toList());
                 registry.putAllCourses(courses);
                 CourseGroup group = new CourseGroup(courses);
-                CourseGroupCreditsSumConstraint constraint
-                        = BeanManagerUtil.createBeanInstance(CourseGroupCreditsSumConstraint.class);
+                CourseGroupCreditsSumConstraint constraint = BeanManagerUtil
+                        .createBeanInstance(CourseGroupCreditsSumConstraint.class);
                 constraint.setCourseGroup(group);
                 constraint.setSemesterPlan(semesterPlan);
                 constraint.setTotalNeeded(neededCreditSum);
@@ -134,15 +134,13 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         c1.setMaxRepeatedEnrollment(2);
         c1.setSemesterPlan(semesterPlan);
 
-        Optional<String> lastYear =
-                document.select("h4").stream().map(Element::text).filter(row -> row.contains("rok studia"))
-                        .sorted((x, y) -> -x.compareTo(y)).findFirst();
+        Optional<String> lastYear = document.select("h4").stream().map(Element::text)
+                .filter(row -> row.contains("rok studia")).sorted((x, y) -> -x.compareTo(y)).findFirst();
         int lastYearInt = 2; // default for Mgr
         if (lastYear.isPresent()) {
             lastYearInt = lastYear.get().charAt(0) - '0';
         }
-        GlobalCreditsSumConstraint c2 = BeanManagerUtil
-                .createBeanInstance(GlobalCreditsSumConstraint.class);
+        GlobalCreditsSumConstraint c2 = BeanManagerUtil.createBeanInstance(GlobalCreditsSumConstraint.class);
         c2.setTotalNeeded(Credits.valueOf(60 * lastYearInt));
         c2.setSemesterPlan(semesterPlan);
         constraints.getGlobalConstraintList().addAll(c1, c2);

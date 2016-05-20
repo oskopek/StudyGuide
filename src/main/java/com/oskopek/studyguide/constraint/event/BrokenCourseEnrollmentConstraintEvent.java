@@ -22,7 +22,7 @@ public class BrokenCourseEnrollmentConstraintEvent extends StringMessageEvent {
      * @param enrollment the course enrollment that the constraint broke on
      */
     public BrokenCourseEnrollmentConstraintEvent(ResourceBundle messages, String message, Constraint broken,
-                                                 CourseEnrollment enrollment) {
+            CourseEnrollment enrollment) {
         super(messages, message, broken);
         this.enrollment = enrollment;
     }

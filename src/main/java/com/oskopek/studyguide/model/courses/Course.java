@@ -394,7 +394,7 @@ public class Course implements Comparable<Course> {
     }
 
     private void onCreditsChanged(ObservableValue<? extends Credits> observableValue, Credits oldValue,
-                                  Credits newValue) {
+            Credits newValue) {
         if (oldValue != null) {
             oldValue.removeListener(creditsChangeListener);
         }

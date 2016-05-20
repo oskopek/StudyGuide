@@ -45,8 +45,8 @@ public class CourseEnrollmentPrerequisiteConstraint extends CourseEnrollmentCons
             return;
         }
 
-        List<CourseEnrollment> enrollmentsUntilNow =
-                takeUntilSemester(semesterPlan, semesterPlan.getSemesterList().get(semesterIndex));
+        List<CourseEnrollment> enrollmentsUntilNow = takeUntilSemester(semesterPlan,
+                semesterPlan.getSemesterList().get(semesterIndex));
         for (CourseEnrollment enrollment : enrollmentsUntilNow) {
             int found = prerequisites.indexOf(enrollment.getCourse());
             if (found >= 0 && enrollment.isFulfilled()) {

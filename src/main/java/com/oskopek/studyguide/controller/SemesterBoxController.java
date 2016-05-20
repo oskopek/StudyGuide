@@ -208,8 +208,8 @@ public class SemesterBoxController extends AbstractController {
             String semesterName = (String) dragboard.getContent(semesterFormat);
             int selectedIndex = (Integer) dragboard.getContent(enrollmentIndexFormat);
             logger.debug("Drag dropping payload: {} from {} to {}", selectedIndex, semesterName, semesterTo.getName());
-            Optional<Semester> semesterFrom =
-                    studyGuideApplication.getStudyPlan().getSemesterPlan().findSemester(semesterName);
+            Optional<Semester> semesterFrom = studyGuideApplication.getStudyPlan().getSemesterPlan()
+                    .findSemester(semesterName);
             if (!semesterFrom.isPresent()) {
                 throw new IllegalStateException("No such semester exists! Cannot drop the drag.");
             }

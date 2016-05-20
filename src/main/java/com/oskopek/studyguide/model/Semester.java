@@ -88,8 +88,8 @@ public class Semester {
      * Add the {@link CourseEnrollment} to this semester. Does not change the course enrollment's semester property.
      *
      * @param courseEnrollment the enrollment to add to this semester, non-null
-     * @throws IllegalArgumentException if the {@link Course} is already enrolled
      * @return the course enrollment that was added to this semester
+     * @throws IllegalArgumentException if the {@link Course} is already enrolled
      */
     public CourseEnrollment addCourseEnrollment(CourseEnrollment courseEnrollment) throws IllegalArgumentException {
         if (courseEnrollment == null) {

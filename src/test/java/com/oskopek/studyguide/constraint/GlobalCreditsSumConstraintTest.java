@@ -37,8 +37,8 @@ public class GlobalCreditsSumConstraintTest {
 
         plan.allCourseEnrollments().forEach(courseEnrollment -> courseEnrollment.setFulfilled(true));
 
-        totalNeeded = Credits.valueOf(plan.allCourseEnrollments()
-                .mapToInt(c -> c.getCourse().getCredits().getCreditValue()).sum());
+        totalNeeded = Credits
+                .valueOf(plan.allCourseEnrollments().mapToInt(c -> c.getCourse().getCredits().getCreditValue()).sum());
 
         globalCreditsSumConstraint.setTotalNeeded(totalNeeded);
         globalCreditsSumConstraint.semesterPlan = plan;

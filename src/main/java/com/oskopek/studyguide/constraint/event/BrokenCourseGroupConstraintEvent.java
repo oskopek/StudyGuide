@@ -22,7 +22,7 @@ public class BrokenCourseGroupConstraintEvent extends StringMessageEvent {
      * @param courseGroup the course group that the constraint broke on
      */
     public BrokenCourseGroupConstraintEvent(ResourceBundle messages, String message, Constraint broken,
-                                            CourseGroup courseGroup) {
+            CourseGroup courseGroup) {
         super(messages, message, broken);
         this.courseGroup = courseGroup;
     }

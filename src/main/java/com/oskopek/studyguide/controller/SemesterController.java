@@ -119,9 +119,8 @@ public class SemesterController extends AbstractController {
         while (studyPlan.getCourseRegistry().getCourse("Course" + courseId) != null) {
             courseId++;
         }
-        Course course =
-                new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(), Credits.valueOf(0),
-                        new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
+        Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(),
+                Credits.valueOf(0), new ArrayList<>(Arrays.asList("teacher")), new ArrayList<>(), new ArrayList<>());
         studyPlan.getCourseRegistry().putCourse(course);
         courseDetailController.setCourse(course);
     }
@@ -138,8 +137,8 @@ public class SemesterController extends AbstractController {
             AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("course.cannotAdd"));
             return;
         }
-        EnterStringController enterStringController =
-                enterStringDialogPaneCreator.create(messages.getString("semester.enterCourseId"));
+        EnterStringController enterStringController = enterStringDialogPaneCreator
+                .create(messages.getString("semester.enterCourseId"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedCourseId = enterStringController.getSubmittedString();

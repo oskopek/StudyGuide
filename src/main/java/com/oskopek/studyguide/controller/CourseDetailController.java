@@ -206,9 +206,8 @@ public class CourseDetailController extends AbstractController {
                 stringList = "";
             }
             logger.debug("Synchronizing from stringList {} using course registry {}", stringList, courseRegistry);
-            List<Course> list =
-                    Stream.of(stringList.split(",")).map(String::trim).map(id -> courseRegistry.getCourse(id))
-                            .filter(x -> x != null).collect(Collectors.toList());
+            List<Course> list = Stream.of(stringList.split(",")).map(String::trim)
+                    .map(id -> courseRegistry.getCourse(id)).filter(x -> x != null).collect(Collectors.toList());
             listProperty.setValue(FXCollections.observableArrayList(list));
             logger.debug("Synchronized to list {}", list);
         }

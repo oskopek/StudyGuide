@@ -56,9 +56,8 @@ public class ConstraintsController extends AbstractController {
     }
 
     private void removeAllBrokenEventsFromList(Constraint constraint) {
-        brokenConstraintEventList.removeIf(stringMessageEvent
-                -> stringMessageEvent.getBrokenConstraint()
-                .equals(constraint));
+        brokenConstraintEventList
+                .removeIf(stringMessageEvent -> stringMessageEvent.getBrokenConstraint().equals(constraint));
     }
 
     /**

@@ -3,12 +3,7 @@ package com.oskopek.studyguide.model;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Course generator util class.

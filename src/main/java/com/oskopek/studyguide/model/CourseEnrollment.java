@@ -28,8 +28,8 @@ public class CourseEnrollment {
     private final ObjectProperty<Semester> semester;
 
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
-    private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint =
-            new SimpleObjectProperty<>();
+    private transient ObjectProperty<BrokenCourseEnrollmentConstraintEvent> brokenConstraint
+            = new SimpleObjectProperty<>();
     @JsonIgnore
     private EventBus eventBus;
 

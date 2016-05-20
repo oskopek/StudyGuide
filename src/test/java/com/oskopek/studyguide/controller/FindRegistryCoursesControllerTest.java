@@ -37,8 +37,8 @@ public class FindRegistryCoursesControllerTest {
         String key = "aaaaaaa";
         List<Course> courses = findRegistryCoursesController.findCourses(key).collect(Collectors.toList());
 
-        List<Course> courseId =
-                findRegistryCoursesController.findCoursesById(key).limit(10).collect(Collectors.toList());
+        List<Course> courseId = findRegistryCoursesController.findCoursesById(key).limit(10)
+                .collect(Collectors.toList());
         List<Course> courseName = findRegistryCoursesController.findCoursesByName(key, Locale.getDefault()).limit(10)
                 .collect(Collectors.toList());
 
@@ -69,8 +69,8 @@ public class FindRegistryCoursesControllerTest {
     @Test
     public void testFindCoursesById() throws Exception {
         String key = "aaaaaaa";
-        List<Course> courses =
-                findRegistryCoursesController.findCoursesById(key).limit(10).collect(Collectors.toList());
+        List<Course> courses = findRegistryCoursesController.findCoursesById(key).limit(10)
+                .collect(Collectors.toList());
         assertNotNull(courses);
         assertEquals(10, courses.size());
         float lastVal = 1.0f;

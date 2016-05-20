@@ -76,8 +76,8 @@ public class RootLayoutController extends AbstractController {
      */
     @FXML
     private void handleOpenFrom() {
-        EnterStringController enterStringController =
-                enterStringDialogPaneCreator.create(messages.getString("root.enterUrl"));
+        EnterStringController enterStringController = enterStringDialogPaneCreator
+                .create(messages.getString("root.enterUrl"));
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedURL = enterStringController.getSubmittedString();

@@ -131,8 +131,8 @@ public class Constraints {
      */
     public void removeAllCourseEnrollmentConstraints(Collection<CourseEnrollment> courseEnrollments) {
         Set<CourseEnrollment> courseEnrollmentSet = new HashSet<>(courseEnrollments);
-        List<CourseEnrollmentConstraint> courseEnrollmentConstraintListCopy
-                = new ArrayList<>(courseEnrollmentConstraintList.size() - courseEnrollmentSet.size() * 2);
+        List<CourseEnrollmentConstraint> courseEnrollmentConstraintListCopy = new ArrayList<>(
+                courseEnrollmentConstraintList.size() - courseEnrollmentSet.size() * 2);
         courseEnrollmentConstraintList.stream().filter(cec -> !courseEnrollmentSet.contains(cec.getCourseEnrollment()))
                 .forEach(courseEnrollmentConstraintListCopy::add);
         setCourseEnrollmentConstraintList(courseEnrollmentConstraintListCopy);
@@ -145,8 +145,7 @@ public class Constraints {
      * @param courseEnrollment the course enrollment
      */
     public void addAllCourseEnrollmentConstraints(CourseEnrollment courseEnrollment, SemesterPlan semesterPlan) {
-        CourseEnrollmentConstraint c1 = BeanManagerUtil
-                .createBeanInstance(CourseEnrollmentCorequisiteConstraint.class);
+        CourseEnrollmentConstraint c1 = BeanManagerUtil.createBeanInstance(CourseEnrollmentCorequisiteConstraint.class);
         c1.setCourseEnrollment(courseEnrollment);
         c1.setSemesterPlan(semesterPlan);
         CourseEnrollmentConstraint c2 = BeanManagerUtil
@@ -157,8 +156,9 @@ public class Constraints {
     }
 
     public Stream<DefaultConstraint> allConstraintStream() {
-        return Stream.concat(Stream.concat(getCourseEnrollmentConstraintList().stream(),
-                getCourseGroupConstraintList().stream()), getGlobalConstraintList().stream());
+        return Stream.concat(Stream
+                        .concat(getCourseEnrollmentConstraintList().stream(), getCourseGroupConstraintList().stream()),
+                getGlobalConstraintList().stream());
     }
 
     public void recheckAll(CourseEnrollment enrollment) {
