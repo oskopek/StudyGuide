@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Singleton;
@@ -35,9 +37,11 @@ public class StudyGuideApplication extends Application {
 
     private final String logoResource = "logo_64x64.png";
     private final String logoResourceLarge = "logo_640x640.png";
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private Stage primaryStage;
     private ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
     private WeldContainer container;
+    private Weld weld;
 
     /**
      * Main method.
@@ -54,8 +58,13 @@ public class StudyGuideApplication extends Application {
         Task<ObservableValue<Stage>> mainStageTask = new Task<ObservableValue<Stage>>() {
             @Override
             protected ObservableValue<Stage> call() throws Exception {
-                container = new Weld().initialize(); // Initialize Weld CDI
+                weld = new Weld();
+                container = weld.initialize(); // Initialize Weld CDI
                 primaryStage.setTitle("StudyGuide");
+                primaryStage.setOnCloseRequest(event -> {
+                    logger.debug("Closing down Weld.");
+                    weld.shutdown();
+                });
                 primaryStage.getIcons().add(new Image(StudyGuideApplication.class.getResourceAsStream(logoResource)));
                 container.event().select(Stage.class, new AnnotationLiteral<StartupStage>() {
                 }).fire(primaryStage);
