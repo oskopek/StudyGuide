@@ -40,7 +40,7 @@ public class GlobalCourseRepeatedEnrollmentConstraint extends GlobalConstraint {
 
     @Override
     public void validate() {
-        logger.trace("Validating {} (max: {})", this, maxRepeatedEnrollment);
+        logger.trace("Validating... (max: {})", maxRepeatedEnrollment);
         Map<Course, List<CourseEnrollment>> groupByCourse = semesterPlan.getSemesterList().stream()
                 .flatMap(s -> s.getCourseEnrollmentList().stream())
                 .collect(Collectors.groupingBy(CourseEnrollment::getCourse));

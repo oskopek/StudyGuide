@@ -107,6 +107,7 @@ public class SemesterController extends AbstractController {
         while (!studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++))) {
             continue; // intentionally empty
         }
+        studyPlan.getConstraints().recheckAll();
     }
 
     /**
@@ -180,9 +181,9 @@ public class SemesterController extends AbstractController {
      * @param semester the semester to remove
      */
     public void removeSemester(Semester semester) {
+        studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
         studyGuideApplication.getStudyPlan().getConstraints()
                 .removeAllCourseEnrollmentConstraints(semester.getCourseEnrollmentList());
-        studyGuideApplication.getStudyPlan().getSemesterPlan().removeSemester(semester);
     }
 
     /**

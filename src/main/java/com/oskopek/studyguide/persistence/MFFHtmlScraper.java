@@ -1,9 +1,6 @@
 package com.oskopek.studyguide.persistence;
 
-import com.oskopek.studyguide.constraint.CourseGroupCreditsSumConstraint;
-import com.oskopek.studyguide.constraint.CourseGroupFulfilledAllConstraint;
-import com.oskopek.studyguide.constraint.GlobalCourseRepeatedEnrollmentConstraint;
-import com.oskopek.studyguide.constraint.GlobalCreditsSumConstraint;
+import com.oskopek.studyguide.constraint.*;
 import com.oskopek.studyguide.model.DefaultStudyPlan;
 import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.StudyPlan;
@@ -143,7 +140,22 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         GlobalCreditsSumConstraint c2 = BeanManagerUtil.createBeanInstance(GlobalCreditsSumConstraint.class);
         c2.setTotalNeeded(Credits.valueOf(60 * lastYearInt));
         c2.setSemesterPlan(semesterPlan);
-        constraints.getGlobalConstraintList().addAll(c1, c2);
+
+        GlobalCourseMaxFulfilledConstraint c3 = BeanManagerUtil
+                .createBeanInstance(GlobalCourseMaxFulfilledConstraint.class);
+        c3.setMaxFulfilled(1);
+        c3.setSemesterPlan(semesterPlan);
+
+        constraints.getGlobalConstraintList().addAll(c1, c2, c3);
+
+        for (int i = 1; i <= lastYearInt * 2; i++) {
+            GlobalCreditsSumUntilSemesterConstraint su = BeanManagerUtil
+                    .createBeanInstance(GlobalCreditsSumUntilSemesterConstraint.class);
+            su.setTotalNeeded(Credits.valueOf(30 * i));
+            su.setUntilSemester(i);
+            su.setSemesterPlan(semesterPlan);
+            constraints.getGlobalConstraintList().add(su);
+        }
 
         studyPlan.courseRegistryProperty().set(registry);
         studyPlan.constraintsProperty().set(constraints);

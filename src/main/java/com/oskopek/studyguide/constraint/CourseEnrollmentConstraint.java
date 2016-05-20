@@ -3,15 +3,12 @@ package com.oskopek.studyguide.constraint;
 import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
 import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
-import com.oskopek.studyguide.model.Semester;
-import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.Collection;
-import java.util.stream.Stream;
 
 /**
  * Constraint on the level of individual {@link com.oskopek.studyguide.model.CourseEnrollment}s.
@@ -35,25 +32,6 @@ public abstract class CourseEnrollmentConstraint extends DefaultConstraint {
      */
     public CourseEnrollmentConstraint(CourseEnrollment courseEnrollment) {
         this.courseEnrollment = courseEnrollment;
-    }
-
-    /**
-     * Utility method: takes semesters from the plan and while they are sooner in the plan than the given semester
-     * collects all their {@link CourseEnrollment}s in a stream. Simulates Haskell's takeWhile method.
-     *
-     * @param plan the plan from which to take semesters
-     * @param semester the semester to stop collecting at (still included in the stream)
-     * @return the collected course enrollment stream
-     */
-    protected static Stream<CourseEnrollment> takeUntilSemester(SemesterPlan plan, Semester semester) {
-        Stream<CourseEnrollment> enrollments = Stream.empty();
-        for (Semester pSemester : plan) {
-            enrollments = Stream.concat(enrollments, pSemester.getCourseEnrollmentList().stream());
-            if (semester.equals(pSemester)) {
-                break;
-            }
-        }
-        return enrollments;
     }
 
     /**

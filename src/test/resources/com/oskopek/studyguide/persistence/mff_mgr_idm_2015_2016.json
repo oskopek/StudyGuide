@@ -2,13 +2,13 @@
   "courseRegistry": {
     "courses": {
       "NAIL076": {
-        "@id": "7bd84d72-2ecb-4930-ad21-389285518058",
+        "@id": "a70868f2-8f07-4c05-92f5-061fc262bc64",
         "id": "NAIL076",
         "name": "Logic Programming I",
         "localizedName": "Logické programování I",
         "locale": "cs",
         "credits": {
-          "@id": "bc12bc04-1b77-4437-ad60-2c8fdded860c",
+          "@id": "9f3c87e2-b5ab-43df-ab33-815f4add7c34",
           "creditValue": 3
         },
         "teacherNames": [
@@ -18,13 +18,13 @@
         "corequisites": []
       },
       "NTIN067": {
-        "@id": "e8355856-c065-4647-8c81-13270f7e57f5",
+        "@id": "e84768b2-4a9f-437d-a426-6792e8318a72",
         "id": "NTIN067",
         "name": "Data Structures II",
         "localizedName": "Datové struktury II",
         "locale": "cs",
         "credits": {
-          "@id": "bedd6f53-d60e-4b1e-a075-2a4e939c7305",
+          "@id": "2e2c2d92-4fe5-4821-a499-96d1e69da776",
           "creditValue": 3
         },
         "teacherNames": [
@@ -33,13 +33,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "f986c9f4-2a49-4bc9-8446-a07f6552d734",
+            "@id": "13bb5b7b-b875-47db-99d9-2d85a504181c",
             "id": "NTIN066",
             "name": "Data Structures I",
             "localizedName": "Datové struktury I",
             "locale": "cs",
             "credits": {
-              "@id": "fdbad8b6-cb70-4925-9406-61286f392791",
+              "@id": "b592b0c5-e3dc-442f-8260-8e22de7c7a01",
               "creditValue": 5
             },
             "teacherNames": [
@@ -51,13 +51,13 @@
         ]
       },
       "NMMA931": {
-        "@id": "b7d49883-d359-4bda-a516-bc9bfe852f36",
+        "@id": "945f4e52-bfb4-4436-972d-d72cb9932721",
         "id": "NMMA931",
         "name": "Introduction to Functional Analysis (O)",
         "localizedName": "Úvod do funkcionální analýzy (O)",
         "locale": "cs",
         "credits": {
-          "@id": "77db5d71-1946-4edf-b900-2409fb93b69f",
+          "@id": "68b68b36-835e-47c3-8423-eae484587523",
           "creditValue": 8
         },
         "teacherNames": [
@@ -66,15 +66,15 @@
         "prerequisites": [],
         "corequisites": []
       },
-      "NTIN066": "f986c9f4-2a49-4bc9-8446-a07f6552d734",
+      "NTIN066": "13bb5b7b-b875-47db-99d9-2d85a504181c",
       "NTIN022": {
-        "@id": "7fa5d6a3-55c9-4ed9-9e0d-7b25e1f59472",
+        "@id": "ec3a38a3-0d61-4e39-a01f-eded7381834c",
         "id": "NTIN022",
         "name": "Probabilistic Techniques",
         "localizedName": "Pravděpodobnostní techniky",
         "locale": "cs",
         "credits": {
-          "@id": "9d82014b-ae48-4870-b4fd-de44541bcc4d",
+          "@id": "26be4833-8ad9-4a66-97e4-e3bd8aef361f",
           "creditValue": 6
         },
         "teacherNames": [
@@ -85,13 +85,13 @@
         "corequisites": []
       },
       "NTIN063": {
-        "@id": "d7ff0eee-b663-407c-8571-3f0801dfbfe8",
+        "@id": "cf3347e9-89f5-4b94-9845-c47bff46c32d",
         "id": "NTIN063",
         "name": "Complexity",
         "localizedName": "Složitost",
         "locale": "cs",
         "credits": {
-          "@id": "9018bc59-6ad6-4cd0-b314-7048e0b66aad",
+          "@id": "1a012b63-0670-4530-a1ff-e8e153f1a11f",
           "creditValue": 5
         },
         "teacherNames": [
@@ -101,13 +101,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "3719045d-d7db-41a9-9d65-7727f92c976f",
+            "@id": "1224f98a-1a41-4e41-baa5-a02200997df2",
             "id": "NTIN062",
             "name": "Complexity I",
             "localizedName": "Složitost I",
             "locale": "cs",
             "credits": {
-              "@id": "fac9ab9d-394a-4861-b625-6d206294b84c",
+              "@id": "0a9fde23-7bbe-4e92-bda7-d8540f381043",
               "creditValue": 5
             },
             "teacherNames": [
@@ -119,13 +119,13 @@
         ]
       },
       "NTIN064": {
-        "@id": "f5539f60-1d25-4844-9bfd-3542ba810049",
+        "@id": "e3669a48-909a-449c-b14f-f65514fd227e",
         "id": "NTIN064",
         "name": "Computability",
         "localizedName": "Vyčíslitelnost",
         "locale": "cs",
         "credits": {
-          "@id": "269fd144-f1a5-430b-9632-fc22ba630624",
+          "@id": "fe4d70bd-ba2e-4d40-8f68-e80987e09c6d",
           "creditValue": 3
         },
         "teacherNames": [
@@ -135,15 +135,15 @@
         "prerequisites": [],
         "corequisites": []
       },
-      "NTIN062": "3719045d-d7db-41a9-9d65-7727f92c976f",
+      "NTIN062": "1224f98a-1a41-4e41-baa5-a02200997df2",
       "NOPT042": {
-        "@id": "555b933b-04d4-44de-9127-4cfcdbbfbca1",
+        "@id": "ed1c1404-950d-4c90-929d-b02fe417a25a",
         "id": "NOPT042",
         "name": "Constraint Programming",
         "localizedName": "Programování s omezujícími podmínkami",
         "locale": "cs",
         "credits": {
-          "@id": "3cb22eb5-7259-4849-9c04-11021180bfcf",
+          "@id": "da17ffef-633d-4d11-8827-e1214f8afc03",
           "creditValue": 6
         },
         "teacherNames": [
@@ -153,13 +153,13 @@
         "corequisites": []
       },
       "NDMI037": {
-        "@id": "7609ae3e-2714-4a00-9c84-a826c5d2eddd",
+        "@id": "44ed1930-f044-45f7-b372-00b2d6959083",
         "id": "NDMI037",
         "name": "Geometric Representations of Graphs I",
         "localizedName": "Geometrické reprezentace grafů I",
         "locale": "cs",
         "credits": {
-          "@id": "e44872be-9caa-4fe9-85cb-6d3f7b2c0826",
+          "@id": "00ffb8d8-00a5-4491-9853-6a986335f45b",
           "creditValue": 3
         },
         "teacherNames": [
@@ -170,13 +170,13 @@
         "corequisites": []
       },
       "NDMI036": {
-        "@id": "9ac53308-2d20-4283-82b7-9f708efe10f2",
+        "@id": "e9d04989-ec81-4513-906e-e590f4b73f02",
         "id": "NDMI036",
         "name": "Combinatorial Structures",
         "localizedName": "Kombinatorické struktury",
         "locale": "cs",
         "credits": {
-          "@id": "5ddab30d-30d0-4516-a155-2f277766665d",
+          "@id": "2a6992a1-2096-4833-a09d-a96ec1ec2f54",
           "creditValue": 3
         },
         "teacherNames": [
@@ -186,13 +186,13 @@
         "corequisites": []
       },
       "NDMI088": {
-        "@id": "7aba1ba3-7579-480b-95ac-5b7b90bb45dc",
+        "@id": "b7afd1cc-1528-4e1a-ad6c-03282ab0d97c",
         "id": "NDMI088",
         "name": "Graph Algorithms II",
         "localizedName": "Grafové algoritmy II",
         "locale": "cs",
         "credits": {
-          "@id": "b7f1a737-b085-4ca4-9450-999f78039b88",
+          "@id": "15ca5767-7d0a-481b-9fc1-e2e2affe081e",
           "creditValue": 3
         },
         "teacherNames": [
@@ -202,13 +202,13 @@
         "corequisites": []
       },
       "NOPT008": {
-        "@id": "de9f2fd4-aadc-4a61-84f7-3e08b35e4a1a",
+        "@id": "e764367a-4dbf-41de-971f-10971d1cc56b",
         "id": "NOPT008",
         "name": "Nonlinear Optimisation Algorithms",
         "localizedName": "Algoritmy nelineární optimalizace",
         "locale": "cs",
         "credits": {
-          "@id": "35286320-95a4-4a41-93b8-6b130ce2b8be",
+          "@id": "d1804225-83a9-47e4-a070-8cee6f90a717",
           "creditValue": 6
         },
         "teacherNames": [
@@ -218,13 +218,13 @@
         "corequisites": []
       },
       "NDMI045": {
-        "@id": "4630761c-90db-4379-b580-f4f3c698b485",
+        "@id": "5bcf8225-2860-42a5-bb4d-a64a36811375",
         "id": "NDMI045",
         "name": "Analytic and Combinatorial Number Theory",
         "localizedName": "Analytická a kombinatorická teorie čísel",
         "locale": "cs",
         "credits": {
-          "@id": "811b5a65-ce3b-4dbb-bec9-5d9de83a9755",
+          "@id": "d820927a-bdfb-41bf-9485-30c749b0a016",
           "creditValue": 3
         },
         "teacherNames": [
@@ -234,13 +234,13 @@
         "corequisites": []
       },
       "NOPT051": {
-        "@id": "2fcd79b9-a98b-4ebb-9f5e-86a543c1f500",
+        "@id": "6e96af34-a6b3-4273-bc53-1673ccae82d0",
         "id": "NOPT051",
         "name": "Interval Methods",
         "localizedName": "Intervalové metody",
         "locale": "cs",
         "credits": {
-          "@id": "7cc17113-4b5f-4d46-aedd-75fa89483b5d",
+          "@id": "608991d4-a4fe-4143-9543-e519f8e19a6b",
           "creditValue": 6
         },
         "teacherNames": [
@@ -250,13 +250,13 @@
         "corequisites": []
       },
       "NMAI064": {
-        "@id": "cfbfd861-bd97-4534-809e-8b174e794c3a",
+        "@id": "0b8dbbc7-a3ad-4183-b967-9fa4878592ae",
         "id": "NMAI064",
         "name": "Mathematical Structures",
         "localizedName": "Matematické struktury",
         "locale": "cs",
         "credits": {
-          "@id": "d7f82b8c-33b3-49b2-909e-77963b30cccb",
+          "@id": "81e34f00-7f42-4757-81cc-51a9a9dd72cc",
           "creditValue": 6
         },
         "teacherNames": [
@@ -267,31 +267,31 @@
         "corequisites": []
       },
       "NMAI066": {
-        "@id": "3207a664-f91d-4cd4-834f-debb6c4a6e25",
+        "@id": "df921eee-60a0-4f33-b53a-7a4a62fbe685",
         "id": "NMAI066",
         "name": "Topological and Algebraic Methods",
         "localizedName": "Topologické a algebraické metody",
         "locale": "cs",
         "credits": {
-          "@id": "3206b7e5-80bf-4cc1-bb88-284bb0043633",
+          "@id": "b283a7e1-c39a-4e0c-ad11-e697455098f1",
           "creditValue": 3
         },
         "teacherNames": [
           "prof. RNDr. Aleš Pultr, DrSc."
         ],
         "prerequisites": [
-          "cfbfd861-bd97-4534-809e-8b174e794c3a"
+          "0b8dbbc7-a3ad-4183-b967-9fa4878592ae"
         ],
         "corequisites": []
       },
       "NDMI009": {
-        "@id": "b9a3520f-84ab-4bfb-9626-96cc1d319acf",
+        "@id": "5b011066-0d0f-49c5-9754-dcfc18adf0c0",
         "id": "NDMI009",
         "name": "Combinatorial and Computational Geometry I",
         "localizedName": "Kombinatorická a výpočetní geometrie I",
         "locale": "cs",
         "credits": {
-          "@id": "12383339-74ca-45cf-96d5-4abd102c64c0",
+          "@id": "a92a9df4-2208-46ea-88b4-13af9a4338da",
           "creditValue": 6
         },
         "teacherNames": [
@@ -303,31 +303,31 @@
         "corequisites": []
       },
       "NMAI065": {
-        "@id": "e90ecf92-3a9e-4a26-880b-8da0cdbb47bf",
+        "@id": "e65a7b36-cfb4-4dff-9b84-6e2d51125f56",
         "id": "NMAI065",
         "name": "Fundamentals of Category Theory for Computer Scientists",
         "localizedName": "Základy teorie kategorií pro informatiky",
         "locale": "cs",
         "credits": {
-          "@id": "0de54ecb-d47b-4bb9-ba99-bf812c79c182",
+          "@id": "2f5ca283-5ab2-45a8-b324-cfd20185beeb",
           "creditValue": 3
         },
         "teacherNames": [
           "prof. RNDr. Aleš Pultr, DrSc."
         ],
         "prerequisites": [
-          "cfbfd861-bd97-4534-809e-8b174e794c3a"
+          "0b8dbbc7-a3ad-4183-b967-9fa4878592ae"
         ],
         "corequisites": []
       },
       "NMAI067": {
-        "@id": "f7c52db7-c5d6-40aa-95b9-ca39d3160320",
+        "@id": "1154d5da-a7ee-4a4d-97b0-b113ae739955",
         "id": "NMAI067",
         "name": "Logic in Computer Science",
         "localizedName": "Logika v informatice",
         "locale": "cs",
         "credits": {
-          "@id": "fbf52f82-bd07-4709-9882-9440d4b84193",
+          "@id": "1f78a1e4-854d-464c-86a9-4f10eca155ee",
           "creditValue": 3
         },
         "teacherNames": [
@@ -337,13 +337,13 @@
         "corequisites": []
       },
       "NTIN017": {
-        "@id": "d1262ed9-f0c4-40f9-a26f-9448fdb4a8f0",
+        "@id": "6ca1e59b-0275-4819-b5e7-42289f352978",
         "id": "NTIN017",
         "name": "Parallel Algorithms",
         "localizedName": "Paralelní algoritmy",
         "locale": "cs",
         "credits": {
-          "@id": "fd16e5c5-339b-4fb5-b18f-2c0116e34770",
+          "@id": "6bfaa63a-faec-4be1-bcab-05f2737743fe",
           "creditValue": 3
         },
         "teacherNames": [
@@ -353,13 +353,13 @@
         "corequisites": []
       },
       "NDMI055": {
-        "@id": "28dac07e-71b4-4bdb-ae09-496bacec349b",
+        "@id": "8ca3e96c-a8ab-4dde-8fcd-4617031f0fa4",
         "id": "NDMI055",
         "name": "Selected Chapters on Combinatorics I",
         "localizedName": "Vybrané kapitoly z kombinatoriky I",
         "locale": "cs",
         "credits": {
-          "@id": "1eb23d42-63cc-43a6-b27c-31e94940359d",
+          "@id": "00d3f66c-a4e6-4f6e-9872-8dc9eceb2206",
           "creditValue": 3
         },
         "teacherNames": [
@@ -370,13 +370,13 @@
         "corequisites": []
       },
       "NDMI056": {
-        "@id": "725c4362-32a3-42ad-b852-c710bad541e5",
+        "@id": "3b06d41a-b7ab-406e-8ec8-7b40c4d97d88",
         "id": "NDMI056",
         "name": "Selected Chapters on Combinatorics II",
         "localizedName": "Vybrané kapitoly z kombinatoriky II",
         "locale": "cs",
         "credits": {
-          "@id": "eae41a48-b4c3-4ff5-b5f9-7aaec1b992f9",
+          "@id": "68809950-004a-4f76-b7d6-e3dc9722edf4",
           "creditValue": 3
         },
         "teacherNames": [
@@ -386,13 +386,13 @@
         "corequisites": []
       },
       "NOPT018": {
-        "@id": "f85a6865-627c-43b5-b938-813a71e891f5",
+        "@id": "45b0b26c-427a-4655-84ab-dc377aff80dd",
         "id": "NOPT018",
         "name": "Fundamentals of Nonlinear Optimization",
         "localizedName": "Základy nelineární optimalizace",
         "locale": "cs",
         "credits": {
-          "@id": "9289170b-3996-4aa5-a2ca-90a14764f537",
+          "@id": "329c69c3-3f40-42e3-b761-97dbb3217c56",
           "creditValue": 6
         },
         "teacherNames": [
@@ -403,13 +403,13 @@
         "corequisites": []
       },
       "NOPT017": {
-        "@id": "82d2ae60-ed21-40be-88c0-1e424e6bfd08",
+        "@id": "e55a46ca-1fc6-4518-b58c-a12f3ba86d76",
         "id": "NOPT017",
         "name": "Multiobjective Optimisation",
         "localizedName": "Vícekriteriální optimalizace",
         "locale": "cs",
         "credits": {
-          "@id": "42c5ee20-5fa8-43fb-bff4-2642d2a5e56c",
+          "@id": "0ea47d16-764c-4e16-b468-008104b0a4be",
           "creditValue": 3
         },
         "teacherNames": [
@@ -419,13 +419,13 @@
         "corequisites": []
       },
       "NDMI010": {
-        "@id": "1ac6bbda-4344-4f67-865f-e374d85cb2d3",
+        "@id": "a8f87489-4ac3-4b58-a428-c7e84eff532b",
         "id": "NDMI010",
         "name": "Graph Algorithms",
         "localizedName": "Grafové algoritmy",
         "locale": "cs",
         "credits": {
-          "@id": "cee37314-ee4d-4e62-bf72-da7de15c0150",
+          "@id": "a8aaf18d-eaf9-4883-b91b-fc492ed8a709",
           "creditValue": 3
         },
         "teacherNames": [
@@ -435,13 +435,13 @@
         "corequisites": []
       },
       "NOPT016": {
-        "@id": "5310d294-66f9-4f8b-92dc-ec4b3a82fbe1",
+        "@id": "ee851b5b-b035-4388-a351-4e92783922ec",
         "id": "NOPT016",
         "name": "Integer Programming",
         "localizedName": "Celočíselné programování",
         "locale": "cs",
         "credits": {
-          "@id": "407589d4-b70d-4187-8b05-b84d4820efdb",
+          "@id": "59081338-5d16-4abf-8c8e-422e9501e26e",
           "creditValue": 6
         },
         "teacherNames": [
@@ -451,13 +451,13 @@
         "corequisites": []
       },
       "NMAI071": {
-        "@id": "a73ac81f-d465-44e4-8570-e2112ef0e416",
+        "@id": "e4a9b28c-4d86-4ad2-bd40-abe10792c932",
         "id": "NMAI071",
         "name": "Math++",
         "localizedName": "Matematika++",
         "locale": "cs",
         "credits": {
-          "@id": "8232a0bf-f1fd-4b9c-8c49-199863cef8b0",
+          "@id": "869f7ccd-1399-4cc6-9263-6b70be916d94",
           "creditValue": 6
         },
         "teacherNames": [
@@ -468,13 +468,13 @@
         "corequisites": []
       },
       "NDMI018": {
-        "@id": "fae3debb-ab45-4c5f-a928-773e504dfbdb",
+        "@id": "36f4d4e6-b605-4d0b-a969-03ab04a10dff",
         "id": "NDMI018",
         "name": "Approximation and Online Algorithms",
         "localizedName": "Aproximační a online algoritmy",
         "locale": "cs",
         "credits": {
-          "@id": "03514637-a069-43da-a840-336dfb9f5103",
+          "@id": "a9373070-52bb-4c18-baec-7862cf708da2",
           "creditValue": 6
         },
         "teacherNames": [
@@ -485,13 +485,13 @@
         "corequisites": []
       },
       "NDMI015": {
-        "@id": "5d8c346b-374a-47b4-9632-d121107de599",
+        "@id": "d238a1d3-5f5f-480c-a35c-4d179b227bfe",
         "id": "NDMI015",
         "name": "Combinatorial Counting",
         "localizedName": "Kombinatorické počítání",
         "locale": "cs",
         "credits": {
-          "@id": "19b82ded-5d52-460a-87c8-45614ea81638",
+          "@id": "c720a70e-2e2f-4aca-925b-05c3343ed4f9",
           "creditValue": 3
         },
         "teacherNames": [
@@ -501,13 +501,13 @@
         "corequisites": []
       },
       "NDMI059": {
-        "@id": "5a5eab3a-532d-4189-adcd-8a621094b652",
+        "@id": "f1bc22ce-e197-41fb-b557-aede849efe0c",
         "id": "NDMI059",
         "name": "Graph Minors and Tree Decompositions",
         "localizedName": "Grafové minory a stromové rozklady",
         "locale": "cs",
         "credits": {
-          "@id": "833a03ce-75a3-4cf7-9c8f-6d7b177fba8c",
+          "@id": "8f636a0a-dcae-46f7-8271-b2767d4a846b",
           "creditValue": 3
         },
         "teacherNames": [
@@ -517,13 +517,13 @@
         "corequisites": []
       },
       "NDMI013": {
-        "@id": "b5054a5b-9078-4bb5-8105-c413d7734ffd",
+        "@id": "ad886575-defe-4a08-aef8-9a1a5bcb80f0",
         "id": "NDMI013",
         "name": "Combinatorial and Computational Geometry II",
         "localizedName": "Kombinatorická a výpočetní geometrie II",
         "locale": "cs",
         "credits": {
-          "@id": "ce9fd7ad-20a4-4e3a-a42d-74d4e37c3283",
+          "@id": "851ccdd8-8d92-4d05-902b-a363f5a7357e",
           "creditValue": 6
         },
         "teacherNames": [
@@ -534,13 +534,13 @@
         "corequisites": []
       },
       "NDMI066": {
-        "@id": "0070aa26-29c3-41a8-b830-a7337d4f1f8f",
+        "@id": "8ecd6c6f-f741-438e-b22f-76e33514e9ad",
         "id": "NDMI066",
         "name": "Algebraic Number Theory",
         "localizedName": "Algebraická teorie čísel",
         "locale": "cs",
         "credits": {
-          "@id": "297fdbe9-19ff-4ffb-93e9-f38f4a35aa61",
+          "@id": "953ebcd9-fe11-449f-bfb1-09bdb52a9fba",
           "creditValue": 3
         },
         "teacherNames": [
@@ -550,13 +550,13 @@
         "corequisites": []
       },
       "NDMI067": {
-        "@id": "c478a7d7-17a0-46ae-8854-f7c89abb1251",
+        "@id": "e5768360-969d-440c-81dc-02e1c08a867b",
         "id": "NDMI067",
         "name": "Flows, Paths and Cuts",
         "localizedName": "Toky, cesty a řezy",
         "locale": "cs",
         "credits": {
-          "@id": "18124107-63f2-4fbb-8a98-5d58d2323776",
+          "@id": "ac6cdfdd-2cca-4c10-b5d5-897c63760d19",
           "creditValue": 3
         },
         "teacherNames": [
@@ -566,13 +566,13 @@
         "corequisites": []
       },
       "NDMI064": {
-        "@id": "9236bf5e-0975-4552-9b9a-880538fcbe6a",
+        "@id": "5fd87bb0-9511-46bd-9fae-6df708d3536c",
         "id": "NDMI064",
         "name": "Applied Discrete Mathematics",
         "localizedName": "Aplikovaná diskrétní matematika",
         "locale": "cs",
         "credits": {
-          "@id": "2cf76dcb-1730-4d7c-950d-547a2240d0ad",
+          "@id": "46a5be98-39a7-470a-a588-1ea8b4820c16",
           "creditValue": 3
         },
         "teacherNames": [
@@ -582,13 +582,13 @@
         "corequisites": []
       },
       "NMAG337": {
-        "@id": "0cd63ea6-9818-46cc-8697-ca479fabd41e",
+        "@id": "ede2d8a8-e76f-4dd8-bcfa-9bf7d2f7cc7e",
         "id": "NMAG337",
         "name": "Introduction to Group Theory",
         "localizedName": "Úvod do teorie grup",
         "locale": "cs",
         "credits": {
-          "@id": "1a03cdea-73a9-42ab-a8f7-7e5ec6273632",
+          "@id": "0480d18f-7e37-4a48-afd5-6888a01c30e5",
           "creditValue": 5
         },
         "teacherNames": [
@@ -598,13 +598,13 @@
         "corequisites": []
       },
       "NDMI065": {
-        "@id": "19094290-aa76-4658-8b39-8e34cabf00c7",
+        "@id": "6f46b9d1-8042-465e-bb0d-1929ad41d374",
         "id": "NDMI065",
         "name": "Matroid Theory",
         "localizedName": "Teorie matroidů",
         "locale": "cs",
         "credits": {
-          "@id": "483a5670-cecf-4d67-bbb5-27a65e5c2b0d",
+          "@id": "7998b56d-27b4-4fdc-a099-3d381d641499",
           "creditValue": 6
         },
         "teacherNames": [
@@ -614,13 +614,13 @@
         "corequisites": []
       },
       "NDMI060": {
-        "@id": "abffc6f4-011f-44ce-b4a3-e022b505b7c7",
+        "@id": "e29051eb-ae79-421a-a90d-3263dfce13c5",
         "id": "NDMI060",
         "name": "Coloring of Graphs and Other Combinatorial Structures",
         "localizedName": "Barevnost grafů a kombinatorických struktur",
         "locale": "cs",
         "credits": {
-          "@id": "0d8aa3c4-edd7-4f93-ac85-9a242dda4d05",
+          "@id": "e584760a-1e0a-4a77-b783-9ffb056786ef",
           "creditValue": 3
         },
         "teacherNames": [
@@ -630,13 +630,13 @@
         "corequisites": []
       },
       "NTIN090": {
-        "@id": "94f131d3-8c84-416a-be10-6b6285c2d501",
+        "@id": "ba7a41b7-7649-494f-8386-71403810729c",
         "id": "NTIN090",
         "name": "Introduction to Complexity and Computability",
         "localizedName": "Základy složitosti a vyčíslitelnosti",
         "locale": "cs",
         "credits": {
-          "@id": "55a697c9-459f-49a9-ab42-f692a8bd98c0",
+          "@id": "a364fb45-4513-4160-8a65-ad8808bf4037",
           "creditValue": 5
         },
         "teacherNames": [
@@ -647,13 +647,13 @@
         "corequisites": []
       },
       "NMMA901": {
-        "@id": "33cd14f2-86e8-401d-816b-80aa3f935851",
+        "@id": "679284b0-66d5-49a0-bebf-c7c7eea3e981",
         "id": "NMMA901",
         "name": "Introduction to Complex Analysis (O)",
         "localizedName": "Úvod do komplexní analýzy (O)",
         "locale": "cs",
         "credits": {
-          "@id": "354ecfd0-5e41-45c0-bd5e-c97684c7e49a",
+          "@id": "bb64a5f1-b82e-4e8f-ba00-afab68e10b97",
           "creditValue": 5
         },
         "teacherNames": [
@@ -663,13 +663,13 @@
         "corequisites": []
       },
       "NMAI040": {
-        "@id": "f34e0caa-5fb5-45dd-b24d-82cef0d73114",
+        "@id": "29b734c4-56be-4360-87cc-6e8f5f9cd315",
         "id": "NMAI040",
         "name": "Introduction to Number Theory",
         "localizedName": "Úvod do teorie čísel",
         "locale": "cs",
         "credits": {
-          "@id": "1fa25121-9d67-4f8b-a521-5d1e54624b67",
+          "@id": "b1945a73-2918-44c7-8463-36449e5529d9",
           "creditValue": 3
         },
         "teacherNames": [
@@ -679,13 +679,13 @@
         "corequisites": []
       },
       "NSZZ025": {
-        "@id": "ec8f563f-0885-4210-ab91-8c67c5d269da",
+        "@id": "61667225-ea57-4701-88b7-bd61b90a08ea",
         "id": "NSZZ025",
         "name": "Diploma Thesis III",
         "localizedName": "Diplomová práce III",
         "locale": "cs",
         "credits": {
-          "@id": "842f7761-19a5-4a8a-a69e-e01ee670d499",
+          "@id": "24d219d5-39d6-469b-8ed9-da38c1ed37d8",
           "creditValue": 15
         },
         "teacherNames": [],
@@ -693,13 +693,13 @@
         "corequisites": []
       },
       "NSZZ023": {
-        "@id": "fd5b8979-5354-42c5-8d5d-c6c57a2ad79d",
+        "@id": "b57377ff-0199-41ac-bb63-5cb0cd1ffb90",
         "id": "NSZZ023",
         "name": "Diploma Thesis I",
         "localizedName": "Diplomová práce I",
         "locale": "cs",
         "credits": {
-          "@id": "096f5250-6a99-4e3b-bc23-ef937ddcd15d",
+          "@id": "1bcc06a9-8fb2-46e5-a528-6e54ef210129",
           "creditValue": 6
         },
         "teacherNames": [],
@@ -707,13 +707,13 @@
         "corequisites": []
       },
       "NDMI028": {
-        "@id": "8ef095a0-f1a8-485f-9a9f-552f58cd787e",
+        "@id": "a1275c40-27aa-4341-93eb-3813f491c0bc",
         "id": "NDMI028",
         "name": "Linear Algebra Applications in Combinatorics",
         "localizedName": "Aplikace lineární algebry v kombinatorice",
         "locale": "cs",
         "credits": {
-          "@id": "76a63d96-e376-4201-9808-1437d1ade2f7",
+          "@id": "e359c346-c1cd-4de6-8e74-eb72c755cde5",
           "creditValue": 6
         },
         "teacherNames": [
@@ -723,13 +723,13 @@
         "corequisites": []
       },
       "NSZZ024": {
-        "@id": "f8cc0212-bbfc-4f87-8103-4d94647039a0",
+        "@id": "a761ea71-8f7e-40a8-8ba1-167da50d24d0",
         "id": "NSZZ024",
         "name": "Diploma Thesis II",
         "localizedName": "Diplomová práce II",
         "locale": "cs",
         "credits": {
-          "@id": "0c7e8545-18a1-4608-bca3-0d08bbf93c37",
+          "@id": "cabfdcc0-cdc2-4cdb-8767-aeceb7ae46e8",
           "creditValue": 9
         },
         "teacherNames": [],
@@ -737,13 +737,13 @@
         "corequisites": []
       },
       "NDMI025": {
-        "@id": "9f85a75d-47c4-4518-a103-e2205491642a",
+        "@id": "e2fb7471-4057-4972-bc52-54f2ce155a4f",
         "id": "NDMI025",
         "name": "Randomized Algorithms",
         "localizedName": "Pravděpodobnostní algoritmy",
         "locale": "cs",
         "credits": {
-          "@id": "d5e1d11a-362a-458c-be84-7489714ff1b2",
+          "@id": "b1b73798-82e4-4696-9291-ca52846591a2",
           "creditValue": 6
         },
         "teacherNames": [
@@ -753,13 +753,13 @@
         "corequisites": []
       },
       "NMMA903": {
-        "@id": "07bac53d-f69a-48fc-a36e-b9acd752d9cf",
+        "@id": "4cc70858-08b1-4f12-a5c9-e29f552cc6fc",
         "id": "NMMA903",
         "name": "Measure and Integration Theory (O)",
         "localizedName": "Teorie míry a integrálu (O)",
         "locale": "cs",
         "credits": {
-          "@id": "158fa6fd-1c80-453b-8738-8ebe682aae3e",
+          "@id": "063e4537-3d1f-41b9-8a98-da907d03b4c7",
           "creditValue": 8
         },
         "teacherNames": [
@@ -769,13 +769,13 @@
         "corequisites": []
       },
       "NOPT034": {
-        "@id": "c03a851a-ae62-4c43-870f-ebc1dd412746",
+        "@id": "823cddd4-6005-4220-b1ec-f47d3c1b3a44",
         "id": "NOPT034",
         "name": "Mathematical Programming and Polyhedral Combinatorics",
         "localizedName": "Matematické programování a polyedrální kombinatorika",
         "locale": "cs",
         "credits": {
-          "@id": "23929b22-344d-46bb-9389-3286be0f8226",
+          "@id": "7a952d46-5509-41bf-99b9-81d1034debe5",
           "creditValue": 5
         },
         "teacherNames": [
@@ -786,13 +786,13 @@
         "corequisites": []
       },
       "NDMI073": {
-        "@id": "5c190ec8-0265-4b83-b2b4-7276eacc10f5",
+        "@id": "06100ada-2901-46bd-9bfd-5b68a16402b3",
         "id": "NDMI073",
         "name": "Combinatorics and Graph Theory III",
         "localizedName": "Kombinatorika a grafy III",
         "locale": "cs",
         "credits": {
-          "@id": "1793563b-c1ea-4f6a-b1f2-4557f2c6c30a",
+          "@id": "acdcb18d-7692-409d-a6ed-242dcb78e9e7",
           "creditValue": 6
         },
         "teacherNames": [
@@ -802,13 +802,13 @@
         "corequisites": []
       },
       "NDMI074": {
-        "@id": "78263cc0-c48f-4348-939d-5e695ffaa70c",
+        "@id": "ec3e0801-bb00-4321-84b0-5167be13b097",
         "id": "NDMI074",
         "name": "Algorithms and Their Implementation",
         "localizedName": "Algoritmy a jejich implementace",
         "locale": "cs",
         "credits": {
-          "@id": "bcfa5fdb-db1a-4f53-900f-57231f025550",
+          "@id": "c048eb6e-4e00-4d00-86c7-8b7d347afa06",
           "creditValue": 6
         },
         "teacherNames": [
@@ -829,13 +829,13 @@
           "courseGroup": {
             "courseList": [
               {
-                "@id": "e7c36712-c2bb-4301-a472-c3fcf0f0f60b",
+                "@id": "68c3b9a7-665d-4fea-b51f-e7dac9ed68f4",
                 "id": "NTIN066",
                 "name": "Data Structures I",
                 "localizedName": "Datové struktury I",
                 "locale": "cs",
                 "credits": {
-                  "@id": "e587fbf4-c019-4996-baf8-e9330c5227b8",
+                  "@id": "fe86121a-b385-422d-834e-7513e1699350",
                   "creditValue": 5
                 },
                 "teacherNames": [
@@ -845,13 +845,13 @@
                 "corequisites": []
               },
               {
-                "@id": "ac16ca16-1135-4efb-ae56-e2a0b33ce735",
+                "@id": "03a323b2-683d-4fc1-ac25-d86ddde2a397",
                 "id": "NMAI064",
                 "name": "Mathematical Structures",
                 "localizedName": "Matematické struktury",
                 "locale": "cs",
                 "credits": {
-                  "@id": "82ec27cf-dc0c-4224-81e0-d6b9c6f60090",
+                  "@id": "09d5ad9b-508b-4012-9b85-45b393f7bb4c",
                   "creditValue": 6
                 },
                 "teacherNames": [
@@ -861,45 +861,45 @@
                 "prerequisites": [],
                 "corequisites": []
               },
-              "ec8f563f-0885-4210-ab91-8c67c5d269da",
-              "94f131d3-8c84-416a-be10-6b6285c2d501",
-              "fd5b8979-5354-42c5-8d5d-c6c57a2ad79d",
-              "f8cc0212-bbfc-4f87-8103-4d94647039a0"
+              "61667225-ea57-4701-88b7-bd61b90a08ea",
+              "ba7a41b7-7649-494f-8386-71403810729c",
+              "b57377ff-0199-41ac-bb63-5cb0cd1ffb90",
+              "a761ea71-8f7e-40a8-8ba1-167da50d24d0"
             ]
-          }
+        }
         }
       },
       {
         "CourseGroupCreditsSumConstraint": {
           "courseGroup": {
             "courseList": [
-              "7bd84d72-2ecb-4930-ad21-389285518058",
-              "b9a3520f-84ab-4bfb-9626-96cc1d319acf",
-              "1ac6bbda-4344-4f67-865f-e374d85cb2d3",
-              "b5054a5b-9078-4bb5-8105-c413d7734ffd",
-              "5d8c346b-374a-47b4-9632-d121107de599",
-              "fae3debb-ab45-4c5f-a928-773e504dfbdb",
-              "9f85a75d-47c4-4518-a103-e2205491642a",
-              "8ef095a0-f1a8-485f-9a9f-552f58cd787e",
-              "9ac53308-2d20-4283-82b7-9f708efe10f2",
-              "7609ae3e-2714-4a00-9c84-a826c5d2eddd",
-              "4630761c-90db-4379-b580-f4f3c698b485",
-              "28dac07e-71b4-4bdb-ae09-496bacec349b",
-              "725c4362-32a3-42ad-b852-c710bad541e5",
-              "5a5eab3a-532d-4189-adcd-8a621094b652",
-              "abffc6f4-011f-44ce-b4a3-e022b505b7c7",
-              "9236bf5e-0975-4552-9b9a-880538fcbe6a",
-              "19094290-aa76-4658-8b39-8e34cabf00c7",
-              "0070aa26-29c3-41a8-b830-a7337d4f1f8f",
-              "c478a7d7-17a0-46ae-8854-f7c89abb1251",
+              "a70868f2-8f07-4c05-92f5-061fc262bc64",
+              "5b011066-0d0f-49c5-9754-dcfc18adf0c0",
+              "a8f87489-4ac3-4b58-a428-c7e84eff532b",
+              "ad886575-defe-4a08-aef8-9a1a5bcb80f0",
+              "d238a1d3-5f5f-480c-a35c-4d179b227bfe",
+              "36f4d4e6-b605-4d0b-a969-03ab04a10dff",
+              "e2fb7471-4057-4972-bc52-54f2ce155a4f",
+              "a1275c40-27aa-4341-93eb-3813f491c0bc",
+              "e9d04989-ec81-4513-906e-e590f4b73f02",
+              "44ed1930-f044-45f7-b372-00b2d6959083",
+              "5bcf8225-2860-42a5-bb4d-a64a36811375",
+              "8ca3e96c-a8ab-4dde-8fcd-4617031f0fa4",
+              "3b06d41a-b7ab-406e-8ec8-7b40c4d97d88",
+              "f1bc22ce-e197-41fb-b557-aede849efe0c",
+              "e29051eb-ae79-421a-a90d-3263dfce13c5",
+              "5fd87bb0-9511-46bd-9fae-6df708d3536c",
+              "6f46b9d1-8042-465e-bb0d-1929ad41d374",
+              "8ecd6c6f-f741-438e-b22f-76e33514e9ad",
+              "e5768360-969d-440c-81dc-02e1c08a867b",
               {
-                "@id": "f6a7bb5b-ec77-4032-b19a-5601e439e7b0",
+                "@id": "c28f0be8-45e8-464d-afe6-e2e76accac9e",
                 "id": "NDMI073",
                 "name": "Combinatorics and Graph Theory III",
                 "localizedName": "Kombinatorika a grafy III",
                 "locale": "cs",
                 "credits": {
-                  "@id": "5961ab8e-0cf5-4efc-af06-8b5e1886b55d",
+                  "@id": "10ebae5d-5f04-41d2-90bf-506f3ea30f51",
                   "creditValue": 6
                 },
                 "teacherNames": [
@@ -908,28 +908,28 @@
                 "prerequisites": [],
                 "corequisites": []
               },
-              "78263cc0-c48f-4348-939d-5e695ffaa70c",
-              "7aba1ba3-7579-480b-95ac-5b7b90bb45dc",
-              "0cd63ea6-9818-46cc-8697-ca479fabd41e",
-              "f34e0caa-5fb5-45dd-b24d-82cef0d73114",
-              "e90ecf92-3a9e-4a26-880b-8da0cdbb47bf",
-              "3207a664-f91d-4cd4-834f-debb6c4a6e25",
-              "f7c52db7-c5d6-40aa-95b9-ca39d3160320",
-              "a73ac81f-d465-44e4-8570-e2112ef0e416",
-              "33cd14f2-86e8-401d-816b-80aa3f935851",
-              "07bac53d-f69a-48fc-a36e-b9acd752d9cf",
-              "b7d49883-d359-4bda-a516-bc9bfe852f36",
-              "de9f2fd4-aadc-4a61-84f7-3e08b35e4a1a",
-              "5310d294-66f9-4f8b-92dc-ec4b3a82fbe1",
-              "82d2ae60-ed21-40be-88c0-1e424e6bfd08",
+              "ec3e0801-bb00-4321-84b0-5167be13b097",
+              "b7afd1cc-1528-4e1a-ad6c-03282ab0d97c",
+              "ede2d8a8-e76f-4dd8-bcfa-9bf7d2f7cc7e",
+              "29b734c4-56be-4360-87cc-6e8f5f9cd315",
+              "e65a7b36-cfb4-4dff-9b84-6e2d51125f56",
+              "df921eee-60a0-4f33-b53a-7a4a62fbe685",
+              "1154d5da-a7ee-4a4d-97b0-b113ae739955",
+              "e4a9b28c-4d86-4ad2-bd40-abe10792c932",
+              "679284b0-66d5-49a0-bebf-c7c7eea3e981",
+              "4cc70858-08b1-4f12-a5c9-e29f552cc6fc",
+              "945f4e52-bfb4-4436-972d-d72cb9932721",
+              "e764367a-4dbf-41de-971f-10971d1cc56b",
+              "ee851b5b-b035-4388-a351-4e92783922ec",
+              "e55a46ca-1fc6-4518-b58c-a12f3ba86d76",
               {
-                "@id": "77f24834-933c-432d-94f9-70c6b6d11e05",
+                "@id": "2a524181-7883-4300-84a4-eb75816f3053",
                 "id": "NOPT018",
                 "name": "Fundamentals of Nonlinear Optimization",
                 "localizedName": "Základy nelineární optimalizace",
                 "locale": "cs",
                 "credits": {
-                  "@id": "ab2207dd-c68a-4eb4-875f-7fdef285d0e6",
+                  "@id": "ec1a9f44-3462-4ea1-976b-4cbbd6a3f85e",
                   "creditValue": 6
                 },
                 "teacherNames": [
@@ -939,35 +939,35 @@
                 "prerequisites": [],
                 "corequisites": []
               },
-              "c03a851a-ae62-4c43-870f-ebc1dd412746",
-              "555b933b-04d4-44de-9127-4cfcdbbfbca1",
-              "2fcd79b9-a98b-4ebb-9f5e-86a543c1f500",
-              "d1262ed9-f0c4-40f9-a26f-9448fdb4a8f0",
-              "7fa5d6a3-55c9-4ed9-9e0d-7b25e1f59472",
-              "d7ff0eee-b663-407c-8571-3f0801dfbfe8",
-              "f5539f60-1d25-4844-9bfd-3542ba810049",
-              "e8355856-c065-4647-8c81-13270f7e57f5"
+              "823cddd4-6005-4220-b1ec-f47d3c1b3a44",
+              "ed1c1404-950d-4c90-929d-b02fe417a25a",
+              "6e96af34-a6b3-4273-bc53-1673ccae82d0",
+              "6ca1e59b-0275-4819-b5e7-42289f352978",
+              "ec3a38a3-0d61-4e39-a01f-eded7381834c",
+              "cf3347e9-89f5-4b94-9845-c47bff46c32d",
+              "e3669a48-909a-449c-b14f-f65514fd227e",
+              "e84768b2-4a9f-437d-a426-6792e8318a72"
             ]
           },
           "totalNeeded": {
-            "@id": "74fe2f4b-8719-4017-b3c9-b15c6afafd78",
+            "@id": "513e8c16-56c1-4fde-8b65-a7e1bb1db1f5",
             "creditValue": 45
-          }
+        }
         }
       },
       {
         "CourseGroupCreditsSumConstraint": {
           "courseGroup": {
             "courseList": [
-              "5c190ec8-0265-4b83-b2b4-7276eacc10f5",
-              "f85a6865-627c-43b5-b938-813a71e891f5"
+              "06100ada-2901-46bd-9bfd-5b68a16402b3",
+              "45b0b26c-427a-4655-84ab-dc377aff80dd"
             ]
           },
           "totalNeeded": {
-            "@id": "3e8ed0ae-2073-4c94-be59-6f64aa93bac1",
+            "@id": "2495f076-b749-4f71-bf02-0b2418cbb2f4",
             "creditValue": 6
-          }
         }
+      }
       }
     ],
     "globalConstraintList": [
@@ -979,9 +979,50 @@
       {
         "GlobalCreditsSumConstraint": {
           "totalNeeded": {
-            "@id": "a054606c-ca79-4a59-a758-5072e9b63ad0",
+            "@id": "6c5ccd67-4e6a-4b64-8eef-8e7a4448729c",
             "creditValue": 120
-          }
+        }
+      }
+      },
+      {
+        "GlobalCourseMaxFulfilledConstraint": {
+          "maxFulfilled": 1
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "27e9019a-883a-4b61-9b46-e4f222be232f",
+            "creditValue": 30
+          },
+          "untilSemester": 1
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "ff02429b-d16e-479d-9a0b-d062f7cfd9e5",
+            "creditValue": 60
+          },
+          "untilSemester": 2
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "82360432-277c-4bc6-b169-696d1c303437",
+            "creditValue": 90
+          },
+          "untilSemester": 3
+        }
+      },
+      {
+        "GlobalCreditsSumUntilSemesterConstraint": {
+          "totalNeeded": {
+            "@id": "d1e248ab-f276-4906-bbe6-dcd4eb465e8d",
+            "creditValue": 120
+          },
+          "untilSemester": 4
         }
       }
     ],

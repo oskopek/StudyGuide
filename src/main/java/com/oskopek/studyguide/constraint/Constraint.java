@@ -19,9 +19,14 @@ import com.oskopek.studyguide.model.courses.Course;
                 name = "CourseGroupCreditsSumConstraint"),
         @JsonSubTypes.Type(value = CourseGroupFulfilledAllConstraint.class,
                 name = "CourseGroupFulfilledAllConstraint"),
+        @JsonSubTypes.Type(value = GlobalCourseMaxFulfilledConstraint.class,
+                name = "GlobalCourseMaxFulfilledConstraint"),
         @JsonSubTypes.Type(value = GlobalCourseRepeatedEnrollmentConstraint.class,
                 name = "GlobalCourseRepeatedEnrollmentConstraint"),
-        @JsonSubTypes.Type(value = GlobalCreditsSumConstraint.class, name = "GlobalCreditsSumConstraint")})
+        @JsonSubTypes.Type(value = GlobalCreditsSumConstraint.class,
+                name = "GlobalCreditsSumConstraint"),
+        @JsonSubTypes.Type(value = GlobalCreditsSumUntilSemesterConstraint.class,
+                name = "GlobalCreditsSumUntilSemesterConstraint")})
 public interface Constraint {
 
     /**
