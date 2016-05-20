@@ -4,12 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.google.common.eventbus.EventBus;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -39,9 +34,9 @@ public class Course implements Comparable<Course> {
     private final ListProperty<String> teacherNames;
     private final ListProperty<Course> prerequisites;
     private final ListProperty<Course> corequisites;
-    private transient final Logger logger = LoggerFactory.getLogger(getClass());
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private transient EventBus eventBus;
-    private final ChangeListener<Credits> creditsChangeListener = (x, y, z) -> fireValueChangedEvent();
+    private final transient ChangeListener<Credits> creditsChangeListener = (x, y, z) -> fireValueChangedEvent();
 
     /**
      * Empty default constructor for JSON.

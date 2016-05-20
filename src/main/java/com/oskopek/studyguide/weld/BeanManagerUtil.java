@@ -18,8 +18,8 @@ public final class BeanManagerUtil {
                 Constructor<T> constructor = clazz.getDeclaredConstructor(); // get the bean constructor
                 constructor.setAccessible(true);
                 return constructor.newInstance();
-            } catch (InstantiationException | IllegalAccessException | NoSuchMethodException |
-                    InvocationTargetException e) {
+            } catch (InstantiationException | IllegalAccessException | NoSuchMethodException
+                    | InvocationTargetException e) {
                 throw new IllegalArgumentException("Failed to create non-CDI instance.", e);
             }
         }

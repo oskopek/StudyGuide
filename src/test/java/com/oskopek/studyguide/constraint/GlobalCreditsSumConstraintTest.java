@@ -7,18 +7,11 @@ import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.courses.Credits;
 import org.junit.Before;
 import org.junit.Test;
+import static org.mockito.Mockito.*;
 
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
-
-import static org.mockito.Mockito.anyObject;
-import static org.mockito.Mockito.anyString;
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
 
 public class GlobalCreditsSumConstraintTest {
 

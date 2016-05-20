@@ -22,7 +22,7 @@ import java.util.stream.Stream;
  */
 public class Constraints {
 
-    private transient final Logger logger = LoggerFactory.getLogger(getClass());
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private ListProperty<CourseGroupConstraint> courseGroupConstraintList;
     private ListProperty<GlobalConstraint> globalConstraintList;
     private ListProperty<CourseEnrollmentConstraint> courseEnrollmentConstraintList;

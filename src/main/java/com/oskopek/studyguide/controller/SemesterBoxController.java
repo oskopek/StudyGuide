@@ -10,21 +10,8 @@ import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DataFormat;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.control.*;
+import javafx.scene.input.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -85,17 +72,6 @@ public class SemesterBoxController extends AbstractController {
                 (final TableColumn<CourseEnrollment, Boolean> param) -> new TableCell<CourseEnrollment, Boolean>() {
                     public final CheckBox fulfilledCheckBox;
 
-                    {
-                        fulfilledCheckBox = new CheckBox();
-                        fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                            logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
-                                    newValue, enrollment, semester);
-                            enrollment.setFulfilled(newValue);
-                            fulfilledCheckBox.setSelected(newValue);
-                        });
-                    }
-
                     @Override
                     public void updateItem(Boolean item, boolean empty) {
                         super.updateItem(item, empty);
@@ -107,15 +83,22 @@ public class SemesterBoxController extends AbstractController {
                         }
                     }
 
+                    {
+                        fulfilledCheckBox = new CheckBox();
+                        fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
+                            logger.debug("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
+                                    newValue, enrollment, semester);
+                            enrollment.setFulfilled(newValue);
+                            fulfilledCheckBox.setSelected(newValue);
+                        });
+                    }
+
                 });
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
         removeColumn.setCellFactory(
                 (final TableColumn<CourseEnrollment, String> param) -> new TableCell<CourseEnrollment, String>() {
                     final Button removeButton = new Button(messages.getString("crossmark"));
-
-                    {
-                        removeButton.setPadding(new Insets(2));
-                    }
 
                     @Override
                     public void updateItem(String item, boolean empty) {
@@ -135,6 +118,10 @@ public class SemesterBoxController extends AbstractController {
                             });
                             setGraphic(removeButton);
                         }
+                    }
+
+                    {
+                        removeButton.setPadding(new Insets(2));
                     }
                 });
         semesterTable.getSelectionModel().selectedItemProperty()
@@ -272,7 +259,7 @@ public class SemesterBoxController extends AbstractController {
 
         private ObjectProperty<? extends StringMessageEvent> eventObjectProperty;
 
-        public LabelBinding(ObjectProperty<? extends StringMessageEvent> eventObjectProperty) {
+        LabelBinding(ObjectProperty<? extends StringMessageEvent> eventObjectProperty) {
             bind(eventObjectProperty);
             this.eventObjectProperty = eventObjectProperty;
         }

@@ -27,11 +27,7 @@ import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -105,7 +101,7 @@ public class SemesterController extends AbstractController {
         }
         int id = 0;
         while (!studyPlan.getSemesterPlan().addSemester(new Semester("Semester" + id++))) {
-            // intentionally empty
+            continue; // intentionally empty
         }
     }
 
