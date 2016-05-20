@@ -12,21 +12,22 @@ import com.oskopek.studyguide.view.ProgressCreator;
 import com.oskopek.studyguide.view.StudyGuideApplication;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
+import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Handles all action in the menu bar of the main app.
@@ -162,11 +163,40 @@ public class RootLayoutController extends AbstractController {
      */
     @FXML
     private void handleHelp() {
-        Dialog<ButtonType> dialog = new Dialog<>(); // TODO format the dialog better
-        dialog.setTitle("StudyGuide - Help");
-        dialog.setGraphic(new TextFlow(new Text(messages.getString("manual"))));
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
-        dialog.showAndWait();
+        WebView webView = new WebView();
+        webView.setContextMenuEnabled(false);
+        String manualHtml = readResourceToString(messages.getString("root.manualResource"));
+        if (manualHtml == null) {
+            AlertCreator
+                    .showAlert(Alert.AlertType.WARNING, messages.getString("root.manualNotAvailableInYourLanguage"));
+            return;
+        }
+        webView.getEngine().loadContent(manualHtml);
+        Stage webViewDialogStage = new Stage();
+        webViewDialogStage.setScene(new Scene(webView));
+        webViewDialogStage.setTitle("StudyGuide - " + messages.getString("root.help"));
+        webViewDialogStage.initModality(Modality.APPLICATION_MODAL);
+        webViewDialogStage.toFront();
+        webViewDialogStage.showAndWait();
+    }
+
+    /**
+     * Reads a String resource into a stream and returns it as String.
+     *
+     * @param resource the resource to load from classpath
+     * @return null iff the input stream was null (resource not found)
+     */
+    private String readResourceToString(String resource) {
+        InputStream is = getClass().getResourceAsStream(resource);
+        if (is == null) {
+            logger.warn("Couldn't find resource \"{}\"", resource);
+            return null;
+        }
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is))) {
+            return bufferedReader.lines().collect(Collectors.joining("\n"));
+        } catch (IOException e) {
+            throw new IllegalStateException("Couldn't read resource to string: " + resource, e);
+        }
     }
 
     /**
