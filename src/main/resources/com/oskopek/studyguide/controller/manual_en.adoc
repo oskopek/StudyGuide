@@ -2,54 +2,160 @@
 :sectnums:
 
 Welcome to StudyGuide's manual!
-StudyGuide is a planning and verifying tool for all the requirements of your studies (for European-style university school systems).
+StudyGuide is a planning and verifying tool for all the requirements of your studies
+(for European-style university school systems).
 
-== Typical workflow
+How StudyGuide works and what it can do:
 
-Typical workflow of a StudyGuide user/student:
+1. The student loads a study plan with courses, that he then enrolls in and distributes among semesters
+2. They can then edit the plan: (un)fulfill courses, move enrollments around between semesters, add new courses, ...
+3. StudyGuide always keeps them up-to-date on various broken constraints that are placed upon your study plan
+4. The student can always clearly see what's left for them to do until they can graduate -- or they can play
+around with the plan and create various "what-if" scenarios and explore their choices.
 
-1. Student loads a study plan with courses, that he then enrolls in and distributes among semesters
-2. Môže predmety prehadzovat, postupne označovať ako splnené/nesplnené, ...
-3. StudyGuide vždy udržuje aktuálny a plánovaný stav splnenosti jednotlivých podmienok
-4. Študent jasne a prehľadne vidí, čo mu v pláne/realite chýba do splnenia študíjnych povinností -- a môže podľa toho konať
-5. Študent taktiež môže vytvárat rôzne scenária -- skúsiť si, čo sa stane, ak tú či onú povinnosť nesplní, ak si zapíše iné predmety, ...
+Read the following sections if you want to learn to work with StudyGuide quickly and effectively.
+
+== Getting help
+
+If you can't find the answer to your question or request in this document
+(located in the menu, in "%root.help" -> "%root.help"),
+feel free to submit a pull request / issue in the GitHub repository of StudyGuide,
+post a question on StackOverflow,
+or email me personally. You can find all the needed information in the menu, in
+"%root.help" -> "%root.about".
+
+=== Changing the language (TODO version 1.0.0)
+
+TODO Localization
 
 == Load and save a study plan
 
+If you want to start from scratch, click on "%root.file" -> "%root.new" in the menu bar.
+This will create an empty study plan for you, with no courses and no semesters.
+To learn how to fill your study plan in, read through the section <<Edit your study plan>>.
+
+=== Loading a plan
+
+In the upper left corner, in the menu bar, click on "%root.file" -> "%root.open".
+A dialog window will open, letting you choose the file to open.
+StudyGuide study plans usually have a `.json` extension.
+
+After a short while, your study plan should open up in the application. If something goes wrong,
+an error dialog will display and notify you of what went wrong.
+
+=== Saving a plan
+
+After you are finished (or just want to save your progress), you need to save your plan, StudyGuide does *not* do
+this automatically for you. Just click on "%root.file" -> "%root.save" to save the plan into the file you
+read it from, or "%root.saveAs" to save it to a new file.
+
 === Demo plans
 
-MFF plans
+For your convenience, there are various pre-built study plans for you to try out.
+Most of them are from the Computer Science section of the Faculty of Mathematics and Physics at Charles University.
+You can find all of them in the folder `src/test/resources/com/oskopek/studyguide/persistence/`,
+located in the project directory.
+
+=== Scrape a study plan from a HTML document (TODO version 1.0.0)
+
+TODO "%root.file" -> "%root.openFrom"
 
 == Edit your study plan
 
+Using StudyGuide, you can do quite a lot of changes to your plan.
+Here is an overview of the currently available actions.
+
 === Adding/removing semesters
 
-Click on the "%semesterPane.addSemester" button.
+Click on the "%semesterPane.addSemester" button to append a new empty semester to the plan.
+To remove a semester and all it's associated course enrollments, click on the " - " button in the upper right
+corner of the given semester.
 
-=== Adding new courses
+You can also change the name of a semester -- just write a new one in the name field in
+the upper left corner of the semester.
+Do note that the name has to be unique with respect to all the other semester names in a plan.
+
+=== Creating new courses
+
+To create a new course to the plan, click on "%semesterPane.newCourse" in the upper left of the application.
+In the right side panel called "%studyPane.courseDetails" your new course will show, and you can edit its
+properties. It will now be available to enroll in.
+
+By "creating a course" we mean adding it to the list of courses that can be enrolled in, not directly enrolling
+and placing it into a semester. To enroll an already created course, see the section <<Enrolling in a course>>.
 
 === Add a course from SIS (TODO version 1.0.0)
 
+TODO The "%semesterPane.addCourseFrom" button.
+
 === Enrolling in a course
 
-And moving the enrollment
+Once you have at least one semester and a course in your plan, you can enroll into it.
+To do so, find a course (using it's ID or name) in the "%studyPane.addCourse" panel on the right and
+choose from the list of courses presented to you.
+The chosen course will be enrolled in into the last semester in the plan.
+
+After it has been added, you can drag and drop the enrollment around, moving it from semester to semester.
+To mark it as fulfilled (f.e. after the student passed the exam associated with it), click on the checkbox
+to the right of the course enrollment name and a "%checkmark" will appear.
+If you want to remove the enrollment altogether, click on the "%crossmark" on the far right.
 
 == Verifying constraints
 
-=== Fulfilling course enrollments
+Did you notice, that while marking courses as (un)fulfilled that the broken constraints in the lower-right corner changed?
+Constraints that are configured in the plan are automatically verified and if they're broken,
+the user is automatically notified.
+
+Currently, constraints and course group cannot be added/modified using the graphical user interface
+(you can do so only programmatically or by manually changing the input file).
+
+For the various types of constraints, information on where they are displayed and what they mean, read through
+the following sections.
 
 === Course enrollment constraints
 
-=== Global / course-group constraints
+These constraints are enrollment-specific -- they are therefore displayed inline, on the far left of the enrollment.
+If they're broken, a small red "%warning" sign appears. If the  hover your mouse over the "%warning" icon,
+a tooltip showing the reason the constraint was broken.
+
+Currently available course enrollment constraints:
+
+* CourseEnrollmentCorequisiteConstraint -- all courses listed as corequisites for this course enrollment
+have to be enrolled in at the latest in the semester this enrollment is in
+* CourseEnrollmentPrerequisiteConstraint -- all courses listed as prerequisites for this course
+were fulfilled at the latest in the semester preceding this enrollment
+
+=== Global constraints
+
+Global constraints are instantiated only once in a study plan. If they're broken, they will display a warning
+with a helpful message in the "%studyPane.brokenConstraints" panel in the lower right corner.
+
+Currently available global constraints:
+
+* GlobalCourseMaxFulfilledConstraint -- maximum number of times a course may be fulfilled
+(i.e. a student cannot pass a course more than N times)
+* GlobalCourseRepeatedEnrollmentConstraint -- maximum number of times a course may be enrolled in
+(i.e. a student cannot enroll in a course more than N times)
+* GlobalCreditsSumConstraint -- the minimum sum of credits from fulfilled courses a student needs in the whole plan
+* GlobalCreditsSumUntilSemesterConstraint -- the minimum sum of credits from fulfilled courses a student needs until a given semester is over
+
+=== Course group constraints
+
+Course groups are special lists of courses over which we can verify constraints.
+For example: the study plan may contain a list of compulsory courses, that all students have to pass.
+We can then put a "CourseGroupFulfilledAllConstraint" over that group, to check if all of them have been
+fulfilled sooner or later in the current plan.
+
+If they're broken, they will display a warning with a helpful message in the "%studyPane.brokenConstraints" panel in the lower right corner,
+along with the global constraints.
+
+Currently available course group constraints:
+
+* CourseGroupCreditsPercentageConstraint -- minimum percentage of credits from fulfilled courses from this group
+a student needs
+* CourseGroupCreditsSumConstraint -- minimum sum of credits from fulfilled courses from this group a student needs
+* CourseGroupFulfilledAllConstraint -- the student needs to fulfill all of the courses in this group
 
 === Semester statistics (TODO version 1.0.0)
 
-Fulfilled/Total, ECTS hours estimation
-
-== Changing StudyGuide's language (TODO version 1.0.0)
-
-Localization
-
-== Scrape a study plan from a URL (TODO version 1.0.0)
-
-
+TODO Fulfilled/Total, ECTS hours estimation
