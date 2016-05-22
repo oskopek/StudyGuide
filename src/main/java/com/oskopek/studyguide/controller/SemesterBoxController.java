@@ -72,17 +72,6 @@ public class SemesterBoxController extends AbstractController {
                 (final TableColumn<CourseEnrollment, Boolean> param) -> new TableCell<CourseEnrollment, Boolean>() {
                     public final CheckBox fulfilledCheckBox;
 
-                    {
-                        fulfilledCheckBox = new CheckBox();
-                        fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
-                            logger.trace("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
-                                    newValue, enrollment, semester);
-                            enrollment.setFulfilled(newValue);
-                            fulfilledCheckBox.setSelected(newValue);
-                        });
-                    }
-
                     @Override
                     public void updateItem(Boolean item, boolean empty) {
                         super.updateItem(item, empty);
@@ -94,15 +83,22 @@ public class SemesterBoxController extends AbstractController {
                         }
                     }
 
+                    {
+                        fulfilledCheckBox = new CheckBox();
+                        fulfilledCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+                            CourseEnrollment enrollment = getTableView().getItems().get(getIndex());
+                            logger.trace("Setting isFulfilled to {} for Course Enrollment ({}) from Semester ({}).",
+                                    newValue, enrollment, semester);
+                            enrollment.setFulfilled(newValue);
+                            fulfilledCheckBox.setSelected(newValue);
+                        });
+                    }
+
                 });
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
         removeColumn.setCellFactory(
                 (final TableColumn<CourseEnrollment, String> param) -> new TableCell<CourseEnrollment, String>() {
                     final Button removeButton = new Button(messages.getString("crossmark"));
-
-                    {
-                        removeButton.setPadding(new Insets(2));
-                    }
 
                     @Override
                     public void updateItem(String item, boolean empty) {
@@ -122,6 +118,10 @@ public class SemesterBoxController extends AbstractController {
                             });
                             setGraphic(removeButton);
                         }
+                    }
+
+                    {
+                        removeButton.setPadding(new Insets(2));
                     }
 
                 });

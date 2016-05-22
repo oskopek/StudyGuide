@@ -35,9 +35,8 @@ public class CourseGroupFulfilledAllConstraint extends CourseGroupConstraint {
 
     @Override
     public void validate() {
-        Set<Course> fulfilledCompulsoryCourses = semesterPlan.allCourseEnrollments().filter(
-                CourseEnrollment::isFulfilled)
-                .map(CourseEnrollment::getCourse).collect(Collectors.toSet());
+        Set<Course> fulfilledCompulsoryCourses = semesterPlan.allCourseEnrollments()
+                .filter(CourseEnrollment::isFulfilled).map(CourseEnrollment::getCourse).collect(Collectors.toSet());
         Set<Course> unfulfilledCompulsoryCourses = new HashSet<>(getCourseGroup().courseListProperty().get());
         unfulfilledCompulsoryCourses.removeAll(fulfilledCompulsoryCourses);
         if (unfulfilledCompulsoryCourses.size() > 0) {

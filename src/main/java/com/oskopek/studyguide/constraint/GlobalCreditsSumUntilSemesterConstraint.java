@@ -47,9 +47,8 @@ public class GlobalCreditsSumUntilSemesterConstraint extends GlobalConstraint {
         }
 
         Credits fulfilledCourseCreditSum = Credits.valueOf(
-                takeUntilSemester(semesterPlan, untilSemester)
-                        .filter(CourseEnrollment::isFulfilled).map(ce -> ce.getCourse().getCredits().getCreditValue())
-                        .reduce(0, Integer::sum));
+                takeUntilSemester(semesterPlan, untilSemester).filter(CourseEnrollment::isFulfilled)
+                        .map(ce -> ce.getCourse().getCredits().getCreditValue()).reduce(0, Integer::sum));
         if (fulfilledCourseCreditSum.compareTo(totalNeeded) < 0) {
             logger.debug("Broken sum >= {} until semester {}", totalNeeded, untilSemester);
             fireBrokenEvent(generateMessage(fulfilledCourseCreditSum, totalNeeded, untilSemester));

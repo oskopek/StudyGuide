@@ -3,6 +3,7 @@ package com.oskopek.studyguide.controller;
 import com.oskopek.studyguide.model.CourseGenerator;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.simmetrics.StringMetric;
@@ -11,8 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
-
-import static org.junit.Assert.*;
 
 /**
  * Unit test for {@link FindRegistryCoursesController}.

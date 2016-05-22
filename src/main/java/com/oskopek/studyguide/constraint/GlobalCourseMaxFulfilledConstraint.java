@@ -43,8 +43,7 @@ public class GlobalCourseMaxFulfilledConstraint extends GlobalConstraint {
     public void validate() {
         logger.trace("Validating... (max: {})", maxFulfilled);
         Map<Course, List<CourseEnrollment>> groupByCourse = semesterPlan.getSemesterList().stream()
-                .flatMap(s -> s.getCourseEnrollmentList().stream())
-                .filter(CourseEnrollment::isFulfilled)
+                .flatMap(s -> s.getCourseEnrollmentList().stream()).filter(CourseEnrollment::isFulfilled)
                 .collect(Collectors.groupingBy(CourseEnrollment::getCourse));
         for (Map.Entry<Course, List<CourseEnrollment>> entry : groupByCourse.entrySet()) {
             Course course = entry.getKey();

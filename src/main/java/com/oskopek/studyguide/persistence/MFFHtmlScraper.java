@@ -106,8 +106,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                 CourseRegistry semiCompulsory = new CourseRegistry();
                 // semi-compulsory courses are NOT transitive, do not add their dependencies
                 List<String> courseIds = scrapeCoursesFromTable(table, semiCompulsory);
-                List<Course> courses = courseIds.stream().map(semiCompulsory::getCourse)
-                        .collect(Collectors.toList());
+                List<Course> courses = courseIds.stream().map(semiCompulsory::getCourse).collect(Collectors.toList());
                 registry.putAllCourses(courses);
                 CourseGroup group = new CourseGroup(courses);
                 CourseGroupCreditsSumConstraint constraint = BeanManagerUtil

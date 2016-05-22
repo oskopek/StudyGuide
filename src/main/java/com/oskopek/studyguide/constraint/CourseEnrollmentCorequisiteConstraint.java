@@ -40,8 +40,8 @@ public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConst
     @Override
     public void validate() {
         Set<Course> corequisites = new HashSet<>(getCourseEnrollment().getCourse().getCorequisites());
-        Stream<Course> coursesUntilNow = takeUntilSemester(semesterPlan,
-                getCourseEnrollment().getSemester()).map(CourseEnrollment::getCourse);
+        Stream<Course> coursesUntilNow = takeUntilSemester(semesterPlan, getCourseEnrollment().getSemester())
+                .map(CourseEnrollment::getCourse);
         Set<Course> corequisitesUntilNow = coursesUntilNow.filter(corequisites::contains).collect(Collectors.toSet());
         corequisites.removeAll(corequisitesUntilNow);
         if (!corequisites.isEmpty()) {
