@@ -51,7 +51,7 @@ public class CourseGroupCreditsPercentageConstraint extends CourseGroupConstrain
      * @return the percentage representation in a String
      */
     private static String toPercent(Fraction fraction) {
-        // TODO OPTIONAL math3 fraction.percentageValue()
+        // TODO math3 fraction.percentageValue()
         return percentageFormat.format(fraction.doubleValue() * 100d) + "%";
     }
 

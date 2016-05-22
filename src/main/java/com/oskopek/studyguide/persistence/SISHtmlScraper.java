@@ -66,7 +66,7 @@ public class SISHtmlScraper implements ProgressObservable {
 
         InputStream is;
         String encoding;
-        if (urlString.startsWith("file://")) { // TODO OPTIONAL hack
+        if (urlString.startsWith("file://")) { // TODO hack
             urlString = urlString.substring(7);
             is = Files.newInputStream(Paths.get(urlString));
             encoding = "utf-8";
@@ -112,7 +112,7 @@ public class SISHtmlScraper implements ProgressObservable {
 
         CourseRegistry prereqs = new CourseRegistry();
         CourseRegistry coreqs = new CourseRegistry();
-        for (Element tableRow : table2) { // TODO OPTIONAL check for and fail on circular dependencies
+        for (Element tableRow : table2) { // TODO check for and fail on circular dependencies
             String headerText = tableRow.select("th").first().text().toLowerCase();
             CourseRegistry addTo;
             if (headerText.contains("korekvizity")) {

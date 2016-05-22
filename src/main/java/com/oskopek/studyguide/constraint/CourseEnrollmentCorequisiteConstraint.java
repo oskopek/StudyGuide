@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  */
 public class CourseEnrollmentCorequisiteConstraint extends CourseEnrollmentConstraint {
 
-    // TODO OPTIONAL merge this with Prereq constraint (more efficient)
+    // TODO merge this with Prereq constraint (more efficient)
     private final String message = "constraint.unfulfilledCorequisite";
 
     private final transient Logger logger = LoggerFactory.getLogger(getClass());

@@ -160,7 +160,7 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         studyPlan.constraintsProperty().set(constraints);
     }
 
-    // TODO OPTIONAL rewrite to be generic where the filters are provided externally as callbacks
+    // TODO rewrite to be generic where the filters are provided externally as callbacks
 
     /**
      * Check whether the given string is the header text of a compulsory {@link CourseGroup}.

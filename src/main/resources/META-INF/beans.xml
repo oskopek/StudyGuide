@@ -2,7 +2,7 @@
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
        bean-discovery-mode="all">
     <!--bean-discovery-mode="annotated">-->
-    <!-- TODO OPTIONAL rewrite this without the scan tag and with annotated on -->
+    <!-- TODO rewrite this without the scan tag and with annotated on -->
     <scan>
         <exclude name="org.jboss.weld.**"/>
         <exclude name="javax.**"/>

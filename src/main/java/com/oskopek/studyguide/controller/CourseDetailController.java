@@ -291,7 +291,7 @@ public class CourseDetailController extends AbstractController {
                 val = Integer.parseInt(string);
             } catch (NumberFormatException e) {
                 logger.info("Wrong number format ({}), ignoring the credit value.", string);
-                return; // TODO OPTIONAL do not ignore the wrong value
+                return; // TODO do not ignore the wrong value
             }
             creditsProperty.get().setCreditValue(val);
         }

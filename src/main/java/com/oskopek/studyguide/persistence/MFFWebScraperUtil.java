@@ -26,7 +26,7 @@ public final class MFFWebScraperUtil {
      * An empty default private constructor.
      */
     private MFFWebScraperUtil() {
-        // intentionally empty // TODO OPTIONAL add weld init
+        // intentionally empty // TODO add weld init
         scraper = new MFFHtmlScraper(sisWebUrl);
     }
 
