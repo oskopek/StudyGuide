@@ -61,5 +61,6 @@ class StudyGuideApplicationStarter {
                     .addListener((observable1, oldValue1, newValue1) -> newValue1.recheckAll()); // TODO OPTIONAL HACK
         });
         eventBus.register(deadEventListener);
+        studyGuideApplication.setPrimaryStage(primaryStage);
     }
 }
