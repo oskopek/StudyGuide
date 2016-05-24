@@ -40,8 +40,6 @@ public class StudyGuideApplication extends Application {
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private final ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
     private Stage primaryStage;
-    private WeldContainer container;
-    private Weld weld;
 
     /**
      * Main method.
@@ -54,12 +52,12 @@ public class StudyGuideApplication extends Application {
 
     @Override
     public void start(Stage initStage) throws Exception {
-        primaryStage = new Stage(StageStyle.DECORATED);
+        final Stage primaryStage = new Stage(StageStyle.DECORATED);
         Task<ObservableValue<Stage>> mainStageTask = new Task<ObservableValue<Stage>>() {
             @Override
             protected ObservableValue<Stage> call() throws Exception {
-                weld = new Weld();
-                container = weld.initialize(); // Initialize Weld CDI
+                Weld weld = new Weld();
+                WeldContainer container = weld.initialize(); // Initialize Weld CDI
                 primaryStage.setTitle("StudyGuide");
                 primaryStage.setOnCloseRequest(event -> {
                     logger.debug("Closing down Weld.");
@@ -118,6 +116,19 @@ public class StudyGuideApplication extends Application {
      */
     public Stage getPrimaryStage() {
         return primaryStage;
+    }
+
+    /**
+     * Set the main {@link javafx.stage.Window} element of the app.
+     *
+     * @param primaryStage non-null stage
+     * @throws IllegalArgumentException if the stage is null
+     */
+    public void setPrimaryStage(Stage primaryStage) throws IllegalArgumentException {
+        if (primaryStage == null) {
+            throw new IllegalArgumentException("Primary stage cannot be null.");
+        }
+        this.primaryStage = primaryStage;
     }
 
     /**

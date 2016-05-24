@@ -19,6 +19,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.slf4j.Logger;
@@ -194,11 +195,11 @@ public class RootLayoutController extends AbstractController {
         }
         webView.getEngine().loadContent(manualHtml);
 
-        Stage webViewDialogStage = new Stage();
-        webViewDialogStage.initStyle(StageStyle.DECORATED);
+        Stage webViewDialogStage = new Stage(StageStyle.DECORATED);
+        webViewDialogStage.initOwner(studyGuideApplication.getPrimaryStage());
         webViewDialogStage.setResizable(true);
         webViewDialogStage.setTitle("StudyGuide - " + messages.getString("root.help"));
-        //        webViewDialogStage.initModality(Modality.APPLICATION_MODAL);
+        webViewDialogStage.initModality(Modality.NONE);
         webViewDialogStage.setScene(new Scene(webView));
         webViewDialogStage.toFront();
         webViewDialogStage.showAndWait();
