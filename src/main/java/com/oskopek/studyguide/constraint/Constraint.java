@@ -11,6 +11,8 @@ import com.oskopek.studyguide.model.courses.Course;
 @JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.NAME)
 @JsonSubTypes({@JsonSubTypes.Type(value = CourseEnrollmentCorequisiteConstraint.class,
         name = "CourseEnrollmentCorequisiteConstraint"),
+        @JsonSubTypes.Type(value = CourseEnrollmentEnrolledInConstraint.class,
+                name = "CourseEnrollmentEnrolledInConstraint"),
         @JsonSubTypes.Type(value = CourseEnrollmentPrerequisiteConstraint.class,
                 name = "CourseEnrollmentPrerequisiteConstraint"),
         @JsonSubTypes.Type(value = CourseGroupCreditsPercentageConstraint.class,

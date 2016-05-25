@@ -158,10 +158,20 @@ public class Course implements Comparable<Course> {
         this.credits.set(credits);
     }
 
+    /**
+     * The type of semester this course is enrollable in.
+     *
+     * @return the enrollable in type
+     */
     public EnrollableIn getEnrollableIn() {
         return enrollableIn.get();
     }
 
+    /**
+     * Setter into {@link #enrollableInProperty()}.
+     *
+     * @param enrollableIn the enrollable in semester type
+     */
     public void setEnrollableIn(EnrollableIn enrollableIn) {
         this.enrollableIn.set(enrollableIn);
     }
@@ -368,6 +378,11 @@ public class Course implements Comparable<Course> {
         return credits;
     }
 
+    /**
+     * The JavaFX property for {@link #getEnrollableIn()}.
+     *
+     * @return the property of {@link #getEnrollableIn()}
+     */
     public ObjectProperty<EnrollableIn> enrollableInProperty() {
         return enrollableIn;
     }

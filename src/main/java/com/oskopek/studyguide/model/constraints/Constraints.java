@@ -151,11 +151,17 @@ public class Constraints {
         CourseEnrollmentConstraint c1 = BeanManagerUtil.createBeanInstance(CourseEnrollmentCorequisiteConstraint.class);
         c1.setCourseEnrollment(courseEnrollment);
         c1.setSemesterPlan(semesterPlan);
+
         CourseEnrollmentConstraint c2 = BeanManagerUtil
                 .createBeanInstance(CourseEnrollmentPrerequisiteConstraint.class);
         c2.setCourseEnrollment(courseEnrollment);
         c2.setSemesterPlan(semesterPlan);
-        courseEnrollmentConstraintList.addAll(c1, c2);
+
+        CourseEnrollmentConstraint c3 = BeanManagerUtil.createBeanInstance(CourseEnrollmentEnrolledInConstraint.class);
+        c3.setCourseEnrollment(courseEnrollment);
+        c3.setSemesterPlan(semesterPlan);
+
+        courseEnrollmentConstraintList.addAll(c1, c2, c3);
     }
 
     /**

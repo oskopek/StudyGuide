@@ -88,9 +88,9 @@ public class CourseDetailController extends AbstractController {
             }
 
             {
-                valueMap.put(EnrollableIn.BOTH, messages.getString("semester.bothLong"));
-                valueMap.put(EnrollableIn.SUMMER, messages.getString("semester.summerLong"));
-                valueMap.put(EnrollableIn.WINTER, messages.getString("semester.winterLong"));
+                valueMap.put(EnrollableIn.BOTH, EnrollableIn.BOTH.print(messages));
+                valueMap.put(EnrollableIn.SUMMER, EnrollableIn.SUMMER.print(messages));
+                valueMap.put(EnrollableIn.WINTER, EnrollableIn.WINTER.print(messages));
             }
         });
         teacherNamesProperty = new StringListStringProperty();
