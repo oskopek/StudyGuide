@@ -21,6 +21,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -105,9 +106,11 @@ public class SISHtmlScraper implements ProgressObservable {
 
         Elements table2 = tab2s.get(2).select("tr");
         List<String> teacherList = new ArrayList<>();
-        if (!table2.isEmpty()) {
-            teacherList = table2.get(0).select("td").first().select("a.link3").stream().map(Element::text)
-                    .collect(Collectors.toList());
+        Optional<Element> garantTableHeader = table2.get(0).select("th").stream()
+                .filter(element -> element.text().toLowerCase().contains("garant")).findFirst();
+        if (garantTableHeader.isPresent()) {
+            Element garantTableData = garantTableHeader.get().nextElementSibling();
+            teacherList = garantTableData.select("a.link3").stream().map(Element::text).collect(Collectors.toList());
         }
 
         CourseRegistry prereqs = new CourseRegistry();
@@ -122,23 +125,35 @@ public class SISHtmlScraper implements ProgressObservable {
             } else {
                 continue;
             }
-            for (Element link : tableRow.select("td").first().select("a.link3")) {
-                String id = link.text();
-                Course dependency;
-                try {
-                    dependency = scrapeCourse(registry, id);
-                } catch (IOException e) {
-                    throw new IllegalStateException("Failed to parse required course: " + id + " of course " + courseId,
-                            e);
-                }
-                addTo.putCourseSimple(dependency);
-            }
+            parseAllCoursesFromLinks(tableRow, addTo, registry, courseId);
         }
-
         Course course = new Course(courseId, name, localizedName, Locale.forLanguageTag("cs"), credits, teacherList,
                 new ArrayList<>(prereqs.courseMapValues()), new ArrayList<>(coreqs.courseMapValues()));
         registry.putCourse(course);
         return course;
+    }
+
+    /**
+     * Parse all courses from links in the given element and add the new courses into {@code addTo},
+     * checking {@code registry} for duplicates.
+     *
+     * @param tableRow the element whose links to parse into courses
+     * @param addTo add all new courses into this course registry
+     * @param registry check for duplicates against this course registry
+     * @param courseId used for error reporting
+     */
+    private void parseAllCoursesFromLinks(Element tableRow, CourseRegistry addTo, CourseRegistry registry,
+            String courseId) {
+        for (Element link : tableRow.select("td").first().select("a.link3")) {
+            String id = link.text();
+            Course dependency;
+            try {
+                dependency = scrapeCourse(registry, id);
+            } catch (IOException e) {
+                throw new IllegalStateException("Failed to parse required course: " + id + " of course " + courseId, e);
+            }
+            addTo.putCourseSimple(dependency);
+        }
     }
 
     @Override

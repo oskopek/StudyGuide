@@ -1,11 +1,13 @@
 package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.model.courses.CourseRegistry;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 /**
  * A simple and stable local integration test for {@link MFFHtmlScraper}.
@@ -35,6 +37,14 @@ public class MFFHtmlScraperTest {
         assertEquals(studyPlan.getSemesterPlan(), verifyStudyPlan.getSemesterPlan());
         assertEquals(studyPlan.getConstraints(), verifyStudyPlan.getConstraints());
         assertEquals(verifyStudyPlan, studyPlan);
+
+        CourseRegistry registry = studyPlan.getCourseRegistry();
+        assertEquals(0, registry.getCourse("NJAZ091").getTeacherNames().size());
+        assertEquals(2, registry.getCourse("NPRG041").getTeacherNames().size());
+        assertEquals(Arrays.asList("RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D."),
+                registry.getCourse("NPRG041").getTeacherNames().sorted());
+        // TODO fix the C++ prereqs parsing
+        // assertEquals(1, registry.getCourse("NPRG041").getPrerequisites().size());
     }
 
 }
