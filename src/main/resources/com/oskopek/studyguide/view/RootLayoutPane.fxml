@@ -2,8 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="800"
-      minWidth="1000" xmlns="http://javafx.com/javafx/8"
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
       fx:controller="com.oskopek.studyguide.controller.RootLayoutController">
     <MenuBar VBox.vgrow="NEVER">
         <Menu mnemonicParsing="false" text="%root.file">
@@ -29,7 +28,7 @@
         </Menu>
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-        <BorderPane prefHeight="449.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0"
+        <BorderPane prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0"
                     AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
                 <fx:include source="SemesterPane.fxml"/>
