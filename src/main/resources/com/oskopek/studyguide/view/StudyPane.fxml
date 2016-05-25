@@ -2,7 +2,7 @@
 
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" minHeight="451.0" prefWidth="211.0" BorderPane.alignment="CENTER"
+<VBox xmlns:fx="http://javafx.com/fxml/1" minHeight="451.0" minWidth="211.0" BorderPane.alignment="CENTER"
       xmlns="http://javafx.com/javafx/null">
     <fx:include source="FindCoursePane.fxml"/>
     <fx:include source="CourseDetailPane.fxml"/>

@@ -51,8 +51,8 @@ class StudyGuideApplicationStarter {
         }
         Scene scene = new Scene(rootLayout);
         Platform.runLater(() -> {
-            primaryStage.setMinHeight(700d);
-            primaryStage.setMinWidth(1200d);
+            primaryStage.setMinHeight(650d);
+            primaryStage.setMinWidth(650d);
             primaryStage.setScene(scene);
             primaryStage.show();
         });
