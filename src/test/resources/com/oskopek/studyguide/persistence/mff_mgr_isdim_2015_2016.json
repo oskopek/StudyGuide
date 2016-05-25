@@ -2,13 +2,13 @@
   "courseRegistry": {
     "courses": {
       "NTIN067": {
-        "@id": "d43f0dc2-e618-4628-93eb-a3cea4cea093",
+        "@id": "4bc69c36-e076-43eb-a1c0-20b117d7b248",
         "id": "NTIN067",
         "name": "Data Structures II",
         "localizedName": "Datové struktury II",
         "locale": "cs",
         "credits": {
-          "@id": "38eeac55-1c48-4789-9285-85bf98271968",
+          "@id": "62f3fe15-fe66-4c5f-bc1a-707d43152738",
           "creditValue": 3
         },
         "teacherNames": [
@@ -17,13 +17,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "8411ee3f-2978-4cbd-8210-5632c2f7c6f3",
+            "@id": "522dbc11-a556-42e3-b093-9f345b8df877",
             "id": "NTIN066",
             "name": "Data Structures I",
             "localizedName": "Datové struktury I",
             "locale": "cs",
             "credits": {
-              "@id": "ce2a762f-74b5-43b1-ac2e-1defd1284f8b",
+              "@id": "695e1aef-8e1b-44bd-a699-4748d4e6f9fd",
               "creditValue": 5
             },
             "teacherNames": [
@@ -34,15 +34,15 @@
           }
         ]
       },
-      "NTIN066": "8411ee3f-2978-4cbd-8210-5632c2f7c6f3",
+      "NTIN066": "522dbc11-a556-42e3-b093-9f345b8df877",
       "NSWI141": {
-        "@id": "a321591f-ea8b-4d0d-8adb-4e86065ea038",
+        "@id": "a54300a5-20d5-4602-88e9-92aa8ef4ed90",
         "id": "NSWI141",
         "name": "Introduction to networking",
         "localizedName": "Úvod do počítačových sítí",
         "locale": "cs",
         "credits": {
-          "@id": "2d7b56f3-4e1e-4602-a7d0-e137fa62ddb5",
+          "@id": "39978464-dcd7-4352-ba3d-77401d67182d",
           "creditValue": 2
         },
         "teacherNames": [
@@ -52,13 +52,13 @@
         "corequisites": []
       },
       "NOFY056": {
-        "@id": "7a65acf8-9150-4ffa-8268-df135278b094",
+        "@id": "8aded214-a599-4f26-bc91-68f50dd5d6a4",
         "id": "NOFY056",
         "name": "Programming for Physicists",
         "localizedName": "Programování pro fyziky",
         "locale": "cs",
         "credits": {
-          "@id": "9115989e-d355-4b25-9dac-43e444b66ea2",
+          "@id": "2abf73e5-fd8c-4edd-8b5a-4f723f06f03d",
           "creditValue": 5
         },
         "teacherNames": [
@@ -69,13 +69,13 @@
         "corequisites": []
       },
       "NDBI036": {
-        "@id": "09582dd5-c6c3-451d-b119-71d4109652a1",
+        "@id": "0cf864bc-4a60-42ff-aa06-f7d86e12d50b",
         "id": "NDBI036",
         "name": "A Practical Approach to Database Systems",
         "localizedName": "Databázové systémy pro praxi",
         "locale": "cs",
         "credits": {
-          "@id": "dfc197a2-8adf-473b-9e50-aecf89426fd4",
+          "@id": "438f5f77-6575-494c-a378-daf66100e8ca",
           "creditValue": 4
         },
         "teacherNames": [
@@ -83,15 +83,15 @@
         ],
         "prerequisites": [
           {
-            "@id": "fc7a3daf-e5c5-4edf-9959-f86683ff3c9c",
+            "@id": "59b30d93-9c67-45b3-99d2-5f74df896ad4",
             "id": "NDBI025",
             "name": "Database Systems",
             "localizedName": "Databázové systémy",
             "locale": "cs",
             "credits": {
-              "@id": "bf5bc9a7-cbfe-44ee-972f-4df46b8f6c9b",
+              "@id": "996219ab-e4d7-443c-913d-2778598f3b52",
               "creditValue": 6
-            },
+          },
             "teacherNames": [
               "doc. RNDr. Tomáš Skopal, Ph.D."
             ],
@@ -99,13 +99,13 @@
             "corequisites": []
           },
           {
-            "@id": "b2bfe9d9-7e65-430d-bb93-4e5c70a04e4a",
+            "@id": "bfd9a33c-56ae-4981-b9aa-bb36e6fd6c18",
             "id": "NDBI007",
             "name": "Data Organisation and Processing I",
             "localizedName": "Organizace a zpracování dat I",
             "locale": "cs",
             "credits": {
-              "@id": "114f3596-70ad-411f-8206-58e8de0b3ec8",
+              "@id": "ddc925a0-1183-4e0c-bd06-f8fa27c6107e",
               "creditValue": 4
             },
             "teacherNames": [
@@ -118,31 +118,31 @@
         "corequisites": []
       },
       "NDBI034": {
-        "@id": "d7f061ca-9bf6-49a0-9340-cc5583479e51",
+        "@id": "e874b05c-ddbd-4c45-9145-971c2107b277",
         "id": "NDBI034",
         "name": "Multimedia Retrieval",
         "localizedName": "Vyhledávání multimediálního obsahu na webu",
         "locale": "cs",
         "credits": {
-          "@id": "f8b1ffd9-592b-4227-b701-3bbf3dce443f",
+          "@id": "364fa436-4bc7-4d0b-a06e-2d96bde9be3b",
           "creditValue": 4
         },
         "teacherNames": [
           "doc. RNDr. Tomáš Skopal, Ph.D."
         ],
         "prerequisites": [
-          "fc7a3daf-e5c5-4edf-9959-f86683ff3c9c"
+          "59b30d93-9c67-45b3-99d2-5f74df896ad4"
         ],
         "corequisites": []
       },
       "NSWI149": {
-        "@id": "2677bbbc-2234-422b-8239-f97f9530e9b6",
+        "@id": "61c40161-f94b-4a00-85c3-d33bcf8c5594",
         "id": "NSWI149",
         "name": "Software Engineering in Practice",
         "localizedName": "Softwarové inženýrství v praxi",
         "locale": "cs",
         "credits": {
-          "@id": "86a7e84a-b6b3-4ce6-bdf5-15ef9a9258b1",
+          "@id": "764f580e-4598-4ba2-a5f2-afb67c87f112",
           "creditValue": 3
         },
         "teacherNames": [
@@ -152,13 +152,13 @@
         "corequisites": []
       },
       "NSWI021": {
-        "@id": "e8062805-ce35-40db-8020-7fbc9cd7d773",
+        "@id": "65c0e8d6-fa20-4d6d-b0a4-926847849f8c",
         "id": "NSWI021",
         "name": "Computer Networks II",
         "localizedName": "Počítačové sítě II",
         "locale": "cs",
         "credits": {
-          "@id": "f349f472-19e8-4fd9-9045-c384e660ed0e",
+          "@id": "58b2df4d-7113-4c12-a5ed-7fe9f81bf57a",
           "creditValue": 3
         },
         "teacherNames": [
@@ -168,13 +168,13 @@
         "corequisites": []
       },
       "NSWI142": {
-        "@id": "c62b980e-d835-4a19-bba9-81e835633b5a",
+        "@id": "fa08a5b4-2c39-43f0-985e-37f44cabd885",
         "id": "NSWI142",
         "name": "Web Applications",
         "localizedName": "Webové aplikace",
         "locale": "cs",
         "credits": {
-          "@id": "feb4370e-10f8-424c-aadd-edfa3994f6cb",
+          "@id": "f3974da0-7176-48d0-9dd1-3631e0d01340",
           "creditValue": 6
         },
         "teacherNames": [
@@ -182,18 +182,18 @@
           "RNDr. Martin Kruliš, Ph.D."
         ],
         "prerequisites": [
-          "a321591f-ea8b-4d0d-8adb-4e86065ea038"
+          "a54300a5-20d5-4602-88e9-92aa8ef4ed90"
         ],
         "corequisites": []
       },
       "NSWI144": {
-        "@id": "319e1653-4d19-443a-86cd-44bd627d7c4d",
+        "@id": "2a6ee67a-ff31-4dd8-a629-d62c006b7402",
         "id": "NSWI144",
         "name": "Data Integration and Quality",
         "localizedName": "Integrace a kvalita dat",
         "locale": "cs",
         "credits": {
-          "@id": "03633929-9d5b-4646-ba72-e052433fbf75",
+          "@id": "7b3368e3-366a-4467-b32a-551ebc11a3af",
           "creditValue": 4
         },
         "teacherNames": [
@@ -203,13 +203,13 @@
         "corequisites": []
       },
       "NSWI068": {
-        "@id": "02314ba5-ac0f-463e-80ec-e4643c187fa3",
+        "@id": "560de6c9-fb0b-4972-a435-af593f96577f",
         "id": "NSWI068",
         "name": "Object and Component Systems",
         "localizedName": "Objektové a komponentové systémy",
         "locale": "cs",
         "credits": {
-          "@id": "253ca094-bad7-4809-b734-ccb3211f159d",
+          "@id": "8b22ced2-2352-499e-bc09-12dff161645e",
           "creditValue": 5
         },
         "teacherNames": [
@@ -219,13 +219,13 @@
         "corequisites": []
       },
       "NSWI101": {
-        "@id": "ce1285ee-7c89-4da1-8773-a7feaff4b562",
+        "@id": "75a9e1e3-d7dc-48d6-958d-ef18a4777c8e",
         "id": "NSWI101",
         "name": "System Behaviour Models and Verification",
         "localizedName": "Modely a verifikace chování systémů",
         "locale": "cs",
         "credits": {
-          "@id": "8aaffec1-da9b-41a1-b870-757224e9c8cc",
+          "@id": "63356fc5-7b77-408e-ab51-a24e82c60701",
           "creditValue": 6
         },
         "teacherNames": [
@@ -236,13 +236,13 @@
         "corequisites": []
       },
       "NSWI145": {
-        "@id": "35cbd1be-abf3-4e5b-b2be-48093a41d36d",
+        "@id": "475d53fc-9043-4960-bcd6-013c0f197178",
         "id": "NSWI145",
         "name": "Web Services",
         "localizedName": "Webové služby",
         "locale": "cs",
         "credits": {
-          "@id": "e210b188-b84f-44bf-be89-9f1d0aa2a37c",
+          "@id": "3620d83e-0335-4919-ad51-8ef69326de0b",
           "creditValue": 5
         },
         "teacherNames": [
@@ -250,13 +250,13 @@
         ],
         "prerequisites": [
           {
-            "@id": "9d640807-a02f-494d-bfcb-673b208c2ae9",
+            "@id": "789f006e-1183-4960-b0a7-3048363444f0",
             "id": "NPRG036",
             "name": "XML Technologies",
             "localizedName": "Technologie XML",
             "locale": "cs",
             "credits": {
-              "@id": "f2338501-3127-45e1-a508-900fe87e0ada",
+              "@id": "7ffb9e89-ec9e-4050-b3a9-a8309d742b76",
               "creditValue": 6
             },
             "teacherNames": [
@@ -269,13 +269,13 @@
         "corequisites": []
       },
       "NPRG043": {
-        "@id": "b06df1cb-2888-48ce-acfa-af3f6eb05ad4",
+        "@id": "a906639e-b168-4c94-bc3c-3731ac46e27e",
         "id": "NPRG043",
         "name": "Recommended Programming Practices",
         "localizedName": "Doporučené postupy v programování",
         "locale": "cs",
         "credits": {
-          "@id": "f9c61ff8-cf7d-4891-88ed-667734dcb269",
+          "@id": "78b17e8e-a435-4f20-834b-6a323831d717",
           "creditValue": 6
         },
         "teacherNames": [
@@ -285,13 +285,13 @@
         "corequisites": []
       },
       "NPRG041": {
-        "@id": "98b9fbe7-fa73-4461-a05f-b72f308ab068",
+        "@id": "b3e21815-6bca-4556-93fc-71f5d22d3fa3",
         "id": "NPRG041",
         "name": "Programming in C++",
         "localizedName": "Programování v C++",
         "locale": "cs",
         "credits": {
-          "@id": "c7db3358-3f75-4868-8412-e4b17b71d569",
+          "@id": "222aac1c-3c05-41ed-b048-2990c46e13bb",
           "creditValue": 6
         },
         "teacherNames": [
@@ -300,15 +300,15 @@
         ],
         "prerequisites": [
           {
-            "@id": "ec785e13-af6f-4f01-b165-cde1edb3bddc",
+            "@id": "3f2f2ce6-acf1-40e6-b56c-2c3b748eadd5",
             "id": "NPRM045",
             "name": "Programming II",
             "localizedName": "Programování II",
             "locale": "cs",
             "credits": {
-              "@id": "f8aa9788-2de7-455a-9167-67cd24f03c83",
+              "@id": "e0913bca-c223-4f9f-b250-d88d8f34cc78",
               "creditValue": 5
-            },
+          },
             "teacherNames": [
               "RNDr. Rudolf Kryl",
               "RNDr. Martin Pergel, Ph.D."
@@ -316,17 +316,17 @@
             "prerequisites": [],
             "corequisites": []
           },
-          "7a65acf8-9150-4ffa-8268-df135278b094",
+          "8aded214-a599-4f26-bc91-68f50dd5d6a4",
           {
-            "@id": "6f48847a-3fca-4ad9-be12-5d056da76677",
+            "@id": "c70ecd65-0dc8-4574-83ca-093198c4333c",
             "id": "NPRG031",
             "name": "Programming II",
             "localizedName": "Programování II",
             "locale": "cs",
             "credits": {
-              "@id": "7b879319-404f-4b27-9a47-ae119deca17c",
+              "@id": "96595581-5c1d-4eca-b1eb-e89dbc737533",
               "creditValue": 5
-            },
+          },
             "teacherNames": [
               "RNDr. Tomáš Holan, Ph.D.",
               "doc. RNDr. Pavel Töpfer, CSc.",
@@ -336,13 +336,13 @@
             "corequisites": []
           },
           {
-            "@id": "99610550-e6f7-4eb3-b9a9-c2e8ae565b5b",
+            "@id": "dd28286a-c58b-4e80-a597-2527251bb9b9",
             "id": "NMIN102",
             "name": "Programming 2",
             "localizedName": "Programování 2",
             "locale": "cs",
             "credits": {
-              "@id": "c9d29a1f-49c7-4882-83a4-8aff32b3d55e",
+              "@id": "e952743c-c37b-4752-92a7-104bb5b19086",
               "creditValue": 5
             },
             "teacherNames": [
@@ -352,15 +352,15 @@
             "prerequisites": [],
             "corequisites": [
               {
-                "@id": "70a18f9b-51e8-4a32-9d02-f538b2073991",
+                "@id": "262fa9a8-c301-499a-9b0c-3f5a3375e23f",
                 "id": "NMIN101",
                 "name": "Programming 1",
                 "localizedName": "Programování 1",
                 "locale": "cs",
                 "credits": {
-                  "@id": "8d6b7323-55b2-40a3-99f2-3e26d30484d5",
+                  "@id": "f70afa25-1014-441a-bca1-be831b48cbff",
                   "creditValue": 5
-                },
+            },
                 "teacherNames": [
                   "doc. RNDr. Pavel Töpfer, CSc.",
                   "RNDr. Martin Pergel, Ph.D."
@@ -374,13 +374,13 @@
         "corequisites": []
       },
       "NAIL029": {
-        "@id": "2ae35c39-05c3-4af9-ae91-6c3856111e91",
+        "@id": "c780022f-9ca8-4de4-969f-734d468a3c61",
         "id": "NAIL029",
         "name": "Machine Learning",
         "localizedName": "Strojové učení",
         "locale": "cs",
         "credits": {
-          "@id": "2e70e3db-ed11-4a50-b218-50a0aae6bf1b",
+          "@id": "b076f791-b116-45bd-9b7c-e5c7ccf4b310",
           "creditValue": 3
         },
         "teacherNames": [
@@ -390,31 +390,31 @@
         "corequisites": []
       },
       "NPRG042": {
-        "@id": "e2a87ffc-be72-4978-aae4-046d06fb3767",
+        "@id": "6eba671d-b2e8-4210-9c4d-6af591632254",
         "id": "NPRG042",
         "name": "Programming in Parallel Environment",
         "localizedName": "Programování v paralelním prostředí",
         "locale": "cs",
         "credits": {
-          "@id": "15b1cfd2-098a-4e83-8f35-9380042ab678",
+          "@id": "cd585a9b-394e-4459-92bd-df7cea88b62b",
           "creditValue": 6
         },
         "teacherNames": [
           "RNDr. Jakub Yaghob, Ph.D."
         ],
         "prerequisites": [
-          "98b9fbe7-fa73-4461-a05f-b72f308ab068"
+          "b3e21815-6bca-4556-93fc-71f5d22d3fa3"
         ],
         "corequisites": []
       },
       "NSWI094": {
-        "@id": "50769ee7-d789-4466-92d4-39d408808027",
+        "@id": "8e9f1f35-c11a-4b36-8ea9-c9b305bfb3a3",
         "id": "NSWI094",
         "name": "Database Application Development",
         "localizedName": "Vedení databázových projektů",
         "locale": "cs",
         "credits": {
-          "@id": "e8a418b9-849f-4856-9abb-806aa60ecce9",
+          "@id": "2eefd68d-9a65-44c4-9dea-f0946d5193a2",
           "creditValue": 5
         },
         "teacherNames": [
@@ -424,13 +424,13 @@
         "corequisites": []
       },
       "NDBI021": {
-        "@id": "980321de-4962-4b39-8317-a9dc1aa59c3f",
+        "@id": "e6b8c2cf-f01b-4f62-af33-a1bc3ae1226d",
         "id": "NDBI021",
         "name": "Querying with Preferences",
         "localizedName": "Dotazování s preferencemi",
         "locale": "cs",
         "credits": {
-          "@id": "e3b1b2d3-7b5e-4578-9b15-66aa6bf3d0d3",
+          "@id": "fa663d25-3b06-4330-ab0c-0cfbb8623375",
           "creditValue": 5
         },
         "teacherNames": [
@@ -440,13 +440,13 @@
         "corequisites": []
       },
       "NMAI060": {
-        "@id": "8683838e-e51d-4444-b704-76928bf46ec7",
+        "@id": "87c98aa5-d22a-49c4-bb59-66b137b04226",
         "id": "NMAI060",
         "name": "Probabilistic Methods",
         "localizedName": "Pravděpodobnostní metody",
         "locale": "cs",
         "credits": {
-          "@id": "540091bb-589b-4fb4-b548-5498effd4762",
+          "@id": "20907e02-d080-43a8-8b17-daa150c247ce",
           "creditValue": 3
         },
         "teacherNames": [
@@ -456,13 +456,13 @@
         "corequisites": []
       },
       "NSWI130": {
-        "@id": "fe24b316-f887-4e1b-8bb1-fd2660119dc0",
+        "@id": "83582c32-2df6-4a83-8146-941ed4b4cfbe",
         "id": "NSWI130",
         "name": "Software System Architectures",
         "localizedName": "Architektury softwarových systémů",
         "locale": "cs",
         "credits": {
-          "@id": "0f54089b-d263-4020-b559-e152a683244e",
+          "@id": "5a63d8a0-130c-4f67-9acf-98c4d298a518",
           "creditValue": 5
         },
         "teacherNames": [
@@ -471,15 +471,15 @@
         "prerequisites": [],
         "corequisites": []
       },
-      "NDBI025": "fc7a3daf-e5c5-4edf-9959-f86683ff3c9c",
+      "NDBI025": "59b30d93-9c67-45b3-99d2-5f74df896ad4",
       "NDBI023": {
-        "@id": "835310b7-9c3f-481c-9974-cdbe1e6be42c",
+        "@id": "cbb69078-f5f5-487d-9865-11d7b066f568",
         "id": "NDBI023",
         "name": "Data Mining",
         "localizedName": "Dobývání znalostí",
         "locale": "cs",
         "credits": {
-          "@id": "746eef6f-e120-49fa-bccb-7d7842bf8602",
+          "@id": "fe7ac40d-aea1-478c-a1aa-34e9bf56c1fa",
           "creditValue": 9
         },
         "teacherNames": [
@@ -489,13 +489,13 @@
         "corequisites": []
       },
       "NSWI131": {
-        "@id": "8448ac42-2031-402a-9f35-42fc1df6495b",
+        "@id": "0d83001b-7c81-44a4-9446-9f566c03a713",
         "id": "NSWI131",
         "name": "Performance Evaluation of Computer Systems",
         "localizedName": "Vyhodnocování výkonnosti počítačových systémů",
         "locale": "cs",
         "credits": {
-          "@id": "d0d9b271-bd58-4544-96d1-138f7b03fd84",
+          "@id": "5d5c36fa-f3d7-4a95-9d0d-15a00c6f2d5f",
           "creditValue": 5
         },
         "teacherNames": [
@@ -505,13 +505,13 @@
         "corequisites": []
       },
       "NPRG014": {
-        "@id": "218f7eea-a34c-4376-8f94-8d6628964d89",
+        "@id": "c611605d-d5c0-4ce0-bbe0-3905beace347",
         "id": "NPRG014",
         "name": "Concepts of Modern Programming Languages",
         "localizedName": "Koncepty moderních programovacích jazyků",
         "locale": "cs",
         "credits": {
-          "@id": "61acaf68-19a5-4680-a2fe-6f1854ab8f52",
+          "@id": "e9b7d955-e421-4514-a4e1-a5f9fed1a235",
           "creditValue": 2
         },
         "teacherNames": [
@@ -522,13 +522,13 @@
         "corequisites": []
       },
       "NPRG059": {
-        "@id": "8fc7559c-98b8-4ec1-8967-135fcbc1623d",
+        "@id": "619df5c0-a100-4f58-8a96-8012d4e4e430",
         "id": "NPRG059",
         "name": "Advanced Programming Praxis",
         "localizedName": "Praktikum z pokročilého objektového programování",
         "locale": "cs",
         "credits": {
-          "@id": "5634b7d9-d958-418f-aaec-85f42da21933",
+          "@id": "2f588928-9e91-4309-b360-9d158e764e96",
           "creditValue": 2
         },
         "teacherNames": [
@@ -538,31 +538,31 @@
         "corequisites": []
       },
       "NPRG054": {
-        "@id": "d2127443-7ffc-4151-a5f2-ab8c59c61c1e",
+        "@id": "9faebae4-36ca-4e8c-a369-bf8685ca4f42",
         "id": "NPRG054",
         "name": "High Performance Software Development",
         "localizedName": "Vývoj vysoce výkonného software",
         "locale": "cs",
         "credits": {
-          "@id": "90b37c2a-f67d-47de-8c9b-f1d08c5727bf",
+          "@id": "41773f9f-a09b-4eeb-83d5-8df4ab6a8df6",
           "creditValue": 5
         },
         "teacherNames": [
           "RNDr. David Bednárek, Ph.D."
         ],
         "prerequisites": [
-          "98b9fbe7-fa73-4461-a05f-b72f308ab068"
+          "b3e21815-6bca-4556-93fc-71f5d22d3fa3"
         ],
         "corequisites": []
       },
       "NSWI041": {
-        "@id": "fe1fa859-e4e2-4d4d-ae01-2322e4d30c47",
+        "@id": "41b25409-104c-4989-b4c7-5f2f55be021e",
         "id": "NSWI041",
         "name": "Introduction to Software Engineering",
         "localizedName": "Úvod do softwarového inženýrství",
         "locale": "cs",
         "credits": {
-          "@id": "89339639-4ff7-4533-b522-d056ce8b92b0",
+          "@id": "b5101506-ea03-451b-a6a4-c131c8694ca0",
           "creditValue": 5
         },
         "teacherNames": [
@@ -572,13 +572,13 @@
         "corequisites": []
       },
       "NTIN043": {
-        "@id": "b5db48c9-28a1-4580-8c5e-1daec97898c1",
+        "@id": "5f7fc8cd-4468-4600-b58c-b2f7ec574744",
         "id": "NTIN043",
         "name": "Formal Foundations of Software Engineering",
         "localizedName": "Formální základy softwarového inženýrství",
         "locale": "cs",
         "credits": {
-          "@id": "2f7ce0c3-24a4-4f98-828d-c083dfd1331b",
+          "@id": "6111b6e7-cbf4-4477-9686-e8936c8c7758",
           "creditValue": 5
         },
         "teacherNames": [
@@ -586,19 +586,19 @@
           "RNDr. Pavel Parízek, Ph.D."
         ],
         "prerequisites": [
-          "fe1fa859-e4e2-4d4d-ae01-2322e4d30c47"
+          "41b25409-104c-4989-b4c7-5f2f55be021e"
         ],
         "corequisites": []
       },
-      "NPRM045": "ec785e13-af6f-4f01-b165-cde1edb3bddc",
+      "NPRM045": "3f2f2ce6-acf1-40e6-b56c-2c3b748eadd5",
       "NSWI080": {
-        "@id": "2f5d6db0-8042-46d7-82fe-4a3cfd72f4b6",
+        "@id": "d62c7f43-1e84-471b-80d2-d2076b415b90",
         "id": "NSWI080",
         "name": "Middleware",
         "localizedName": "Middleware",
         "locale": "cs",
         "credits": {
-          "@id": "fbf949b4-923a-41f3-8f37-f97e99b3c223",
+          "@id": "1c78ba68-038d-4a7e-90fd-3734ae610ce7",
           "creditValue": 5
         },
         "teacherNames": [
@@ -608,13 +608,13 @@
         "corequisites": []
       },
       "NDBI019": {
-        "@id": "37754d9c-616d-4e7c-ae8f-04d47d28b043",
+        "@id": "71659357-fda1-4b9a-a46a-c4862c5d777a",
         "id": "NDBI019",
         "name": "Stochastic Methods in Databases",
         "localizedName": "Stochastické metody v databázích",
         "locale": "cs",
         "credits": {
-          "@id": "f50667a1-8b45-42e8-a796-5b3118ae91d9",
+          "@id": "7d88d1ed-8e67-4227-827e-3ebcf40d90c4",
           "creditValue": 3
         },
         "teacherNames": [
@@ -624,13 +624,13 @@
         "corequisites": []
       },
       "NSWI004": {
-        "@id": "49100575-0dc7-4954-895a-cf7144f1f710",
+        "@id": "2d46870a-9f1f-42ac-a381-5ac29643719a",
         "id": "NSWI004",
         "name": "Operating Systems",
         "localizedName": "Operační systémy",
         "locale": "cs",
         "credits": {
-          "@id": "42ae831b-37c5-48d9-b428-c7f7bf9b9fc0",
+          "@id": "432901dd-bff0-478b-80c8-a90698cbe618",
           "creditValue": 5
         },
         "teacherNames": [
@@ -640,13 +640,13 @@
         "corequisites": []
       },
       "NSWI126": {
-        "@id": "f5c9ba12-f215-4616-a781-8720f9d86ba9",
+        "@id": "1b0e194b-3f13-479a-937e-14d8cba64a29",
         "id": "NSWI126",
         "name": "Advanced Tools for Software Development and Monitoring",
         "localizedName": "Pokročilé nástroje pro vývoj a monitorování software",
         "locale": "cs",
         "credits": {
-          "@id": "a481ca33-d017-48d0-a4e5-81622cb761c0",
+          "@id": "10f7bbb4-987d-4319-826f-fcf885ad9651",
           "creditValue": 3
         },
         "teacherNames": [
@@ -657,13 +657,13 @@
         "corequisites": []
       },
       "NDBI016": {
-        "@id": "5bfde0e7-39bd-432e-b718-a0592f15c0d7",
+        "@id": "69e57b9d-cfe8-4ea1-b2f5-78735e5cc364",
         "id": "NDBI016",
         "name": "Transactions",
         "localizedName": "Transakce",
         "locale": "cs",
         "credits": {
-          "@id": "f1859836-cedd-4ec7-a9dd-fae8e5856573",
+          "@id": "049b8871-86f6-4d68-ba24-9eb91f1803bd",
           "creditValue": 3
         },
         "teacherNames": [
@@ -673,13 +673,13 @@
         "corequisites": []
       },
       "NSWI120": {
-        "@id": "528fe5c8-e877-4fe0-92d2-a38610bb6049",
+        "@id": "86197ff5-93c6-468f-ba4c-a07533d2a81f",
         "id": "NSWI120",
         "name": "Principles of Computers",
         "localizedName": "Principy počítačů",
         "locale": "cs",
         "credits": {
-          "@id": "e8746a63-e693-4407-b806-ce518ae874df",
+          "@id": "efefe1eb-44bb-43b3-a438-42ce44e9585e",
           "creditValue": 3
         },
         "teacherNames": [
@@ -689,13 +689,13 @@
         "corequisites": []
       },
       "NSWI045": {
-        "@id": "b410ad40-0922-4c98-aab2-7d9a8580c867",
+        "@id": "ca31f0fa-be1b-4de8-a7d2-864c73dac9be",
         "id": "NSWI045",
         "name": "TCP/IP Protocol Suite",
         "localizedName": "Rodina protokolů TCP/IP",
         "locale": "cs",
         "credits": {
-          "@id": "a449681a-ee91-4054-83c1-129176409a87",
+          "@id": "18d7bd1a-ad16-4c03-971b-db0e7829e799",
           "creditValue": 3
         },
         "teacherNames": [
@@ -705,13 +705,13 @@
         "corequisites": []
       },
       "NPRG027": {
-        "@id": "5be12b0e-f5ec-491a-96c9-57daf4f5ec51",
+        "@id": "229b5ee3-1944-416d-8312-7f93e87e4373",
         "id": "NPRG027",
         "name": "Credit for Project",
         "localizedName": "Zápočet k projektu",
         "locale": "cs",
         "credits": {
-          "@id": "095134be-62d1-4023-84a0-7833adb20471",
+          "@id": "451e0689-a603-402c-b97d-627c53c013f2",
           "creditValue": 6
         },
         "teacherNames": [
@@ -722,13 +722,13 @@
         "corequisites": []
       },
       "NPRG023": {
-        "@id": "7795ec4d-037e-493e-8936-cb988dac4dd1",
+        "@id": "7ecfecbc-4259-4381-a0b7-ba3d4c4d282d",
         "id": "NPRG023",
         "name": "Software Project",
         "localizedName": "Softwarový projekt",
         "locale": "cs",
         "credits": {
-          "@id": "be13b036-3286-4792-b750-00825ff65f49",
+          "@id": "67e85088-35cd-4433-9c82-25850341ec67",
           "creditValue": 9
         },
         "teacherNames": [
@@ -739,13 +739,13 @@
         "corequisites": []
       },
       "NPRG024": {
-        "@id": "e22d1960-fec7-4691-bcc3-983dc92a5e70",
+        "@id": "89a545d2-aefa-482f-b05a-0bc1a20a243c",
         "id": "NPRG024",
         "name": "Design Patterns",
         "localizedName": "Návrhové vzory",
         "locale": "cs",
         "credits": {
-          "@id": "e19b825f-0ef9-4e64-8bc0-a2131c7d894f",
+          "@id": "a7415665-6072-4e87-b1d4-ea9065651de4",
           "creditValue": 3
         },
         "teacherNames": [
@@ -755,13 +755,13 @@
         "corequisites": []
       },
       "NTIN090": {
-        "@id": "6c33d5f3-614b-44a3-8176-59e56a1c7e52",
+        "@id": "fdbd243d-b1eb-4b00-bdca-3460efeed48e",
         "id": "NTIN090",
         "name": "Introduction to Complexity and Computability",
         "localizedName": "Základy složitosti a vyčíslitelnosti",
         "locale": "cs",
         "credits": {
-          "@id": "35c22ce2-50e1-44d1-b738-0ba0c0a90fb1",
+          "@id": "b5e186ff-d16f-4e88-a687-12565ba5cdd7",
           "creditValue": 5
         },
         "teacherNames": [
@@ -772,13 +772,13 @@
         "corequisites": []
       },
       "NPFL054": {
-        "@id": "a990a6bb-a5e2-4fdc-b70c-fc574ab39016",
+        "@id": "682951bd-3d8a-4b77-b685-47ea7f296984",
         "id": "NPFL054",
         "name": "Introduction to Machine Learning",
         "localizedName": "Úvod do strojového učení",
         "locale": "cs",
         "credits": {
-          "@id": "353a260c-0fbd-4c9e-ae75-310fab659df0",
+          "@id": "4aa9eae7-38ee-447e-a35c-86e7db5b5d51",
           "creditValue": 6
         },
         "teacherNames": [
@@ -789,13 +789,13 @@
         "corequisites": []
       },
       "NSWI072": {
-        "@id": "5632a55b-483a-4a70-96b5-1c042ad8d91c",
+        "@id": "fee6de22-e275-4ab1-854c-271256be3a0f",
         "id": "NSWI072",
         "name": "Data Compression Algorithms",
         "localizedName": "Algoritmy komprese dat",
         "locale": "cs",
         "credits": {
-          "@id": "7b811e34-ce55-4e43-8ff2-f7d7c938d758",
+          "@id": "3ec0b1d2-0797-421b-8221-16a3e62aee37",
           "creditValue": 3
         },
         "teacherNames": [
@@ -805,13 +805,13 @@
         "corequisites": []
       },
       "NDBI043": {
-        "@id": "7d3fb479-c2f3-4159-84b8-dd3d558b7e33",
+        "@id": "2ede1f2e-9209-423f-9cd2-4ae246e5b084",
         "id": "NDBI043",
         "name": "Text Search Techniques",
         "localizedName": "Techniky vyhledávání v textu",
         "locale": "cs",
         "credits": {
-          "@id": "ac113998-4c6e-44df-a887-61bebde2e6af",
+          "@id": "89dc5648-e711-4f18-81a6-28f2abfb8298",
           "creditValue": 3
         },
         "teacherNames": [
@@ -821,13 +821,13 @@
         "corequisites": []
       },
       "NSWI073": {
-        "@id": "491025fe-7751-499c-a7c6-c9a151018229",
+        "@id": "40405bd5-a71c-4569-bc5b-5e14fa3a3346",
         "id": "NSWI073",
         "name": "Modern Networking Solutions",
         "localizedName": "Moderní síťová řešení",
         "locale": "cs",
         "credits": {
-          "@id": "387fa5dd-5884-4490-a41a-b95636f3278e",
+          "@id": "59bef426-c386-45c9-a652-23b79818bfdb",
           "creditValue": 3
         },
         "teacherNames": [
@@ -835,18 +835,18 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "e8062805-ce35-40db-8020-7fbc9cd7d773",
-          "b410ad40-0922-4c98-aab2-7d9a8580c867"
+          "65c0e8d6-fa20-4d6d-b0a4-926847849f8c",
+          "ca31f0fa-be1b-4de8-a7d2-864c73dac9be"
         ]
       },
       "NSWI150": {
-        "@id": "be7fea23-7580-4985-ae29-d4ee0f26b8ca",
+        "@id": "24ee63fe-d582-4dc8-9f59-e5cccba49e78",
         "id": "NSWI150",
         "name": "Virtualization and Cloud Computing",
         "localizedName": "Virtualizace a cloud computing",
         "locale": "cs",
         "credits": {
-          "@id": "9668c723-6da2-4aed-b89e-1ddf30ddc690",
+          "@id": "82f81b50-1743-453e-a009-cdc161f58aab",
           "creditValue": 3
         },
         "teacherNames": [
@@ -854,18 +854,18 @@
           "RNDr. Jakub Yaghob, Ph.D."
         ],
         "prerequisites": [
-          "528fe5c8-e877-4fe0-92d2-a38610bb6049"
+          "86197ff5-93c6-468f-ba4c-a07533d2a81f"
         ],
         "corequisites": []
       },
       "NDBI042": {
-        "@id": "d658d50d-1340-466b-aea5-cd7f4092a4a7",
+        "@id": "06ed987f-46fd-4a49-a28d-b22bbd7b3747",
         "id": "NDBI042",
         "name": "Data Visualization Techniques",
         "localizedName": "Techniky vizualizace dat",
         "locale": "cs",
         "credits": {
-          "@id": "593b9d31-cb7b-4d07-b491-ab8a0396a3ba",
+          "@id": "c44eea76-3299-4b0b-81b2-fa7f141559b7",
           "creditValue": 3
         },
         "teacherNames": [
@@ -876,13 +876,13 @@
         "corequisites": []
       },
       "NSWI152": {
-        "@id": "1daea5bb-2bac-4984-97d5-7387c07db082",
+        "@id": "0b27afa4-f89e-47e1-adda-e49fa2368a8a",
         "id": "NSWI152",
         "name": "Cloud Application Development",
         "localizedName": "Vývoj cloudových aplikací",
         "locale": "cs",
         "credits": {
-          "@id": "819ec8d2-cb57-4ef0-93fa-28eafaba8036",
+          "@id": "269b51c7-70c7-41d5-ad9f-b8957980b0d6",
           "creditValue": 3
         },
         "teacherNames": [
@@ -892,13 +892,13 @@
         "corequisites": []
       },
       "NDBI001": {
-        "@id": "56c4a090-5213-4bf0-9b70-8d1288e7b1cc",
+        "@id": "90d0e649-94fc-43e5-a972-3381f228fc58",
         "id": "NDBI001",
         "name": "Query Languages I",
         "localizedName": "Dotazovací jazyky I",
         "locale": "cs",
         "credits": {
-          "@id": "0a1737bc-e56e-49ed-abd7-604412a8b6ee",
+          "@id": "a26e4e20-10e9-4b2d-9aea-ead52396d836",
           "creditValue": 5
         },
         "teacherNames": [
@@ -908,28 +908,28 @@
         "corequisites": []
       },
       "NSZZ025": {
-        "@id": "944a073e-31b5-4dac-a652-ce08d2f99ead",
+        "@id": "7a37d4cc-22f3-4fd9-9cda-6b1620bd31b8",
         "id": "NSZZ025",
         "name": "Diploma Thesis III",
         "localizedName": "Diplomová práce III",
         "locale": "cs",
         "credits": {
-          "@id": "d022d4f7-5ef0-41da-8a3d-3e90ea5d7cf5",
+          "@id": "f410e29d-d6ee-44cf-9ee7-6cd14d2e8c20",
           "creditValue": 15
         },
         "teacherNames": [],
         "prerequisites": [],
         "corequisites": []
       },
-      "NDBI007": "b2bfe9d9-7e65-430d-bb93-4e5c70a04e4a",
+      "NDBI007": "bfd9a33c-56ae-4981-b9aa-bb36e6fd6c18",
       "NSZZ023": {
-        "@id": "9019fc56-a936-422d-b858-715d0e55bfdc",
+        "@id": "d1a79d74-90da-45cd-a7a1-89163fbe5730",
         "id": "NSZZ023",
         "name": "Diploma Thesis I",
         "localizedName": "Diplomová práce I",
         "locale": "cs",
         "credits": {
-          "@id": "f1238653-8b4a-4db9-b5a8-bdc06c8914a4",
+          "@id": "5bcad76f-ccdf-4afc-8df3-b7026899b226",
           "creditValue": 6
         },
         "teacherNames": [],
@@ -937,13 +937,13 @@
         "corequisites": []
       },
       "NDBI006": {
-        "@id": "f1739bd8-3a8d-4a96-a33c-80b3ca16fab3",
+        "@id": "45715fb5-b186-41a0-9e9f-7e25206b6c0f",
         "id": "NDBI006",
         "name": "Query Languages II",
         "localizedName": "Dotazovací jazyky II",
         "locale": "cs",
         "credits": {
-          "@id": "535b729c-a5bb-4a15-b9dc-c9659db6dcc6",
+          "@id": "5775c2fc-321a-44ec-b900-f3051b5f15a6",
           "creditValue": 5
         },
         "teacherNames": [
@@ -952,17 +952,17 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "56c4a090-5213-4bf0-9b70-8d1288e7b1cc"
+          "90d0e649-94fc-43e5-a972-3381f228fc58"
         ]
       },
       "NSZZ024": {
-        "@id": "b3ae641f-4c0e-42a1-872d-0a2b64ecd1c7",
+        "@id": "558c353a-6a03-4f1a-893c-331b8cef5b20",
         "id": "NSZZ024",
         "name": "Diploma Thesis II",
         "localizedName": "Diplomová práce II",
         "locale": "cs",
         "credits": {
-          "@id": "688f6a55-c27e-4a67-8af6-d9f59b3b251b",
+          "@id": "44e9e346-9a63-4498-9818-67e75354d48a",
           "creditValue": 9
         },
         "teacherNames": [],
@@ -970,31 +970,31 @@
         "corequisites": []
       },
       "NSWI153": {
-        "@id": "a13a2a64-fdd1-4a08-b6c7-092f42d78f59",
+        "@id": "8dfbad28-ceb4-4429-b2c2-4d6e896f1be9",
         "id": "NSWI153",
         "name": "Advanced Technologies for Web Applications",
         "localizedName": "Pokročilé technologie webových aplikací",
         "locale": "cs",
         "credits": {
-          "@id": "cbe1d918-4593-4e42-9b10-657ae32ea34b",
+          "@id": "dd44fffb-64d2-4276-9f17-8a7902abfb54",
           "creditValue": 3
         },
         "teacherNames": [
           "RNDr. Martin Kruliš, Ph.D."
         ],
         "prerequisites": [
-          "c62b980e-d835-4a19-bba9-81e835633b5a"
+          "fa08a5b4-2c39-43f0-985e-37f44cabd885"
         ],
         "corequisites": []
       },
       "NSWI035": {
-        "@id": "e71bc344-46eb-4ec7-99b7-319f8b1e6a07",
+        "@id": "15c5de24-8f06-42b5-9229-7f23bb183255",
         "id": "NSWI035",
         "name": "Principles of Distributed Systems",
         "localizedName": "Principy distribuovaných systémů",
         "locale": "cs",
         "credits": {
-          "@id": "29f65b16-cd0d-40bc-affe-a2711905c629",
+          "@id": "c51156b2-b91c-4cd2-a6b9-2c8f00748d8d",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1004,33 +1004,33 @@
         "corequisites": []
       },
       "NPRG039": {
-        "@id": "d43b10c9-b7a3-4a51-bb77-bbbdfe37a0a4",
+        "@id": "3d2cf67d-1b72-4f9a-9581-f3e94739266c",
         "id": "NPRG039",
         "name": "Advanced aspects and new trends in XML",
         "localizedName": "Pokročilé aspekty a nové trendy v XML",
         "locale": "cs",
         "credits": {
-          "@id": "7739015f-31b3-4dfa-a13d-165566cfd0c0",
+          "@id": "de8fbe98-d2e9-4d83-bd8d-6e636d0ea285",
           "creditValue": 5
         },
         "teacherNames": [
           "doc. RNDr. Irena Holubová, Ph.D."
         ],
         "prerequisites": [
-          "9d640807-a02f-494d-bfcb-673b208c2ae9",
-          "fc7a3daf-e5c5-4edf-9959-f86683ff3c9c"
+          "789f006e-1183-4960-b0a7-3048363444f0",
+          "59b30d93-9c67-45b3-99d2-5f74df896ad4"
         ],
         "corequisites": []
       },
-      "NPRG036": "9d640807-a02f-494d-bfcb-673b208c2ae9",
+      "NPRG036": "789f006e-1183-4960-b0a7-3048363444f0",
       "NSWI108": {
-        "@id": "1f936179-3f18-4bf5-bad6-55b80b973dae",
+        "@id": "b95c4aec-9edb-4444-a273-ec840caabe33",
         "id": "NSWI108",
         "name": "Web Semantization",
         "localizedName": "Sémantizace webu",
         "locale": "cs",
         "credits": {
-          "@id": "c3017ac2-4df2-4adc-b8e2-3d3267dabfd4",
+          "@id": "033c07ad-0047-42f2-b41a-de1aab05f417",
           "creditValue": 5
         },
         "teacherNames": [
@@ -1039,24 +1039,24 @@
         "prerequisites": [],
         "corequisites": []
       },
-      "NPRG031": "6f48847a-3fca-4ad9-be12-5d056da76677",
-      "NMIN101": "70a18f9b-51e8-4a32-9d02-f538b2073991",
-      "NMIN102": "99610550-e6f7-4eb3-b9a9-c2e8ae565b5b",
+      "NPRG031": "c70ecd65-0dc8-4574-83ca-093198c4333c",
+      "NMIN101": "262fa9a8-c301-499a-9b0c-3f5a3375e23f",
+      "NMIN102": "dd28286a-c58b-4e80-a597-2527251bb9b9",
       "NDBI040": {
-        "@id": "1b392ed0-2105-4114-b9dc-e82bdeab6d03",
+        "@id": "cf5d24ab-124f-4682-983e-c26cefc88d02",
         "id": "NDBI040",
         "name": "Big Data Management and NoSQL Databases",
         "localizedName": "Big Data management a NoSQL databáze",
         "locale": "cs",
         "credits": {
-          "@id": "4677b044-cb62-4553-a417-53ab2976b070",
+          "@id": "26a8f73d-decc-4647-9ea2-1a2b730ccbfb",
           "creditValue": 4
         },
         "teacherNames": [
           "doc. RNDr. Irena Holubová, Ph.D."
         ],
         "prerequisites": [
-          "fc7a3daf-e5c5-4edf-9959-f86683ff3c9c"
+          "59b30d93-9c67-45b3-99d2-5f74df896ad4"
         ],
         "corequisites": []
       }
@@ -1071,15 +1071,15 @@
         "CourseGroupFulfilledAllConstraint": {
           "courseGroup": {
             "courseList": [
-              "5be12b0e-f5ec-491a-96c9-57daf4f5ec51",
+              "229b5ee3-1944-416d-8312-7f93e87e4373",
               {
-                "@id": "e70b38e9-acc6-4b2b-a309-f95dfa08bcde",
+                "@id": "c7b49baf-fd0c-40e5-b61b-4ac427560ca3",
                 "id": "NTIN066",
                 "name": "Data Structures I",
                 "localizedName": "Datové struktury I",
                 "locale": "cs",
                 "credits": {
-                  "@id": "2d1f82e2-aacb-432d-8731-d8a1507c0727",
+                  "@id": "b8490d90-a5a5-4b39-b36d-3735975364b7",
                   "creditValue": 5
                 },
                 "teacherNames": [
@@ -1088,67 +1088,67 @@
                 "prerequisites": [],
                 "corequisites": []
               },
-              "7795ec4d-037e-493e-8936-cb988dac4dd1",
-              "944a073e-31b5-4dac-a652-ce08d2f99ead",
-              "49100575-0dc7-4954-895a-cf7144f1f710",
-              "6c33d5f3-614b-44a3-8176-59e56a1c7e52",
-              "9019fc56-a936-422d-b858-715d0e55bfdc",
-              "b3ae641f-4c0e-42a1-872d-0a2b64ecd1c7"
+              "7ecfecbc-4259-4381-a0b7-ba3d4c4d282d",
+              "7a37d4cc-22f3-4fd9-9cda-6b1620bd31b8",
+              "2d46870a-9f1f-42ac-a381-5ac29643719a",
+              "fdbd243d-b1eb-4b00-bdca-3460efeed48e",
+              "d1a79d74-90da-45cd-a7a1-89163fbe5730",
+              "558c353a-6a03-4f1a-893c-331b8cef5b20"
             ]
-          }
+        }
         }
       },
       {
         "CourseGroupCreditsSumConstraint": {
           "courseGroup": {
             "courseList": [
-              "56c4a090-5213-4bf0-9b70-8d1288e7b1cc",
-              "f1739bd8-3a8d-4a96-a33c-80b3ca16fab3",
-              "5bfde0e7-39bd-432e-b718-a0592f15c0d7",
-              "37754d9c-616d-4e7c-ae8f-04d47d28b043",
-              "980321de-4962-4b39-8317-a9dc1aa59c3f",
-              "835310b7-9c3f-481c-9974-cdbe1e6be42c",
-              "d7f061ca-9bf6-49a0-9340-cc5583479e51",
-              "1b392ed0-2105-4114-b9dc-e82bdeab6d03",
-              "d658d50d-1340-466b-aea5-cd7f4092a4a7",
-              "7d3fb479-c2f3-4159-84b8-dd3d558b7e33",
-              "8683838e-e51d-4444-b704-76928bf46ec7",
-              "a990a6bb-a5e2-4fdc-b70c-fc574ab39016",
-              "218f7eea-a34c-4376-8f94-8d6628964d89",
-              "e22d1960-fec7-4691-bcc3-983dc92a5e70",
-              "d43b10c9-b7a3-4a51-bb77-bbbdfe37a0a4",
-              "e2a87ffc-be72-4978-aae4-046d06fb3767",
-              "b06df1cb-2888-48ce-acfa-af3f6eb05ad4",
-              "d2127443-7ffc-4151-a5f2-ab8c59c61c1e",
-              "8fc7559c-98b8-4ec1-8967-135fcbc1623d",
-              "e8062805-ce35-40db-8020-7fbc9cd7d773",
-              "e71bc344-46eb-4ec7-99b7-319f8b1e6a07",
-              "fe1fa859-e4e2-4d4d-ae01-2322e4d30c47",
-              "b410ad40-0922-4c98-aab2-7d9a8580c867",
-              "02314ba5-ac0f-463e-80ec-e4643c187fa3",
-              "5632a55b-483a-4a70-96b5-1c042ad8d91c",
-              "491025fe-7751-499c-a7c6-c9a151018229",
-              "2f5d6db0-8042-46d7-82fe-4a3cfd72f4b6",
-              "ce1285ee-7c89-4da1-8773-a7feaff4b562",
-              "1f936179-3f18-4bf5-bad6-55b80b973dae",
-              "f5c9ba12-f215-4616-a781-8720f9d86ba9",
-              "fe24b316-f887-4e1b-8bb1-fd2660119dc0",
-              "8448ac42-2031-402a-9f35-42fc1df6495b",
-              "319e1653-4d19-443a-86cd-44bd627d7c4d",
-              "35cbd1be-abf3-4e5b-b2be-48093a41d36d",
-              "2677bbbc-2234-422b-8239-f97f9530e9b6",
-              "be7fea23-7580-4985-ae29-d4ee0f26b8ca",
-              "1daea5bb-2bac-4984-97d5-7387c07db082",
-              "a13a2a64-fdd1-4a08-b6c7-092f42d78f59",
-              "b5db48c9-28a1-4580-8c5e-1daec97898c1",
-              "d43f0dc2-e618-4628-93eb-a3cea4cea093"
+              "90d0e649-94fc-43e5-a972-3381f228fc58",
+              "45715fb5-b186-41a0-9e9f-7e25206b6c0f",
+              "69e57b9d-cfe8-4ea1-b2f5-78735e5cc364",
+              "71659357-fda1-4b9a-a46a-c4862c5d777a",
+              "e6b8c2cf-f01b-4f62-af33-a1bc3ae1226d",
+              "cbb69078-f5f5-487d-9865-11d7b066f568",
+              "e874b05c-ddbd-4c45-9145-971c2107b277",
+              "cf5d24ab-124f-4682-983e-c26cefc88d02",
+              "06ed987f-46fd-4a49-a28d-b22bbd7b3747",
+              "2ede1f2e-9209-423f-9cd2-4ae246e5b084",
+              "87c98aa5-d22a-49c4-bb59-66b137b04226",
+              "682951bd-3d8a-4b77-b685-47ea7f296984",
+              "c611605d-d5c0-4ce0-bbe0-3905beace347",
+              "89a545d2-aefa-482f-b05a-0bc1a20a243c",
+              "3d2cf67d-1b72-4f9a-9581-f3e94739266c",
+              "6eba671d-b2e8-4210-9c4d-6af591632254",
+              "a906639e-b168-4c94-bc3c-3731ac46e27e",
+              "9faebae4-36ca-4e8c-a369-bf8685ca4f42",
+              "619df5c0-a100-4f58-8a96-8012d4e4e430",
+              "65c0e8d6-fa20-4d6d-b0a4-926847849f8c",
+              "15c5de24-8f06-42b5-9229-7f23bb183255",
+              "41b25409-104c-4989-b4c7-5f2f55be021e",
+              "ca31f0fa-be1b-4de8-a7d2-864c73dac9be",
+              "560de6c9-fb0b-4972-a435-af593f96577f",
+              "fee6de22-e275-4ab1-854c-271256be3a0f",
+              "40405bd5-a71c-4569-bc5b-5e14fa3a3346",
+              "d62c7f43-1e84-471b-80d2-d2076b415b90",
+              "75a9e1e3-d7dc-48d6-958d-ef18a4777c8e",
+              "b95c4aec-9edb-4444-a273-ec840caabe33",
+              "1b0e194b-3f13-479a-937e-14d8cba64a29",
+              "83582c32-2df6-4a83-8146-941ed4b4cfbe",
+              "0d83001b-7c81-44a4-9446-9f566c03a713",
+              "2a6ee67a-ff31-4dd8-a629-d62c006b7402",
+              "475d53fc-9043-4960-bcd6-013c0f197178",
+              "61c40161-f94b-4a00-85c3-d33bcf8c5594",
+              "24ee63fe-d582-4dc8-9f59-e5cccba49e78",
+              "0b27afa4-f89e-47e1-adda-e49fa2368a8a",
+              "8dfbad28-ceb4-4429-b2c2-4d6e896f1be9",
+              "5f7fc8cd-4468-4600-b58c-b2f7ec574744",
+              "4bc69c36-e076-43eb-a1c0-20b117d7b248"
             ]
           },
           "totalNeeded": {
-            "@id": "c74f5a0f-1458-4210-9ec8-f9c32caecde4",
+            "@id": "579a091e-6053-481d-86e5-06df3da0a1bc",
             "creditValue": 48
-          }
         }
+      }
       }
     ],
     "globalConstraintList": [
@@ -1160,10 +1160,10 @@
       {
         "GlobalCreditsSumConstraint": {
           "totalNeeded": {
-            "@id": "11707184-04c9-4748-a71f-a8c38a843229",
+            "@id": "f3e330fe-489e-4bfd-ba93-b42370d3b84c",
             "creditValue": 120
-          }
         }
+      }
       },
       {
         "GlobalCourseMaxFulfilledConstraint": {
@@ -1171,9 +1171,16 @@
         }
       },
       {
+        "GlobalLongStudyFeeConstraint": {
+          "feePerSemester": 22000,
+          "currency": "CZK",
+          "fromSemester": 7
+        }
+      },
+      {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "060d1016-2ca7-4482-8633-a3fee3e85aa5",
+            "@id": "8b52587a-dba0-4a58-ab5c-f0b892a9d9ef",
             "creditValue": 30
           },
           "untilSemester": 1
@@ -1182,7 +1189,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "9a15f7e8-4959-46c4-96c1-672f9c63816e",
+            "@id": "06e82c07-89ac-4bb3-97aa-427f2f8a5c0a",
             "creditValue": 60
           },
           "untilSemester": 2
@@ -1191,7 +1198,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "27ef8b70-e9d6-4bee-abba-1e618e9b07f0",
+            "@id": "b005fabc-1300-4a45-8c6e-bf4f93be1b67",
             "creditValue": 90
           },
           "untilSemester": 3
@@ -1200,7 +1207,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "aeda89ae-e002-4ef5-8bb7-ee7d52e11e20",
+            "@id": "5633865e-ec97-4543-8230-96834196e082",
             "creditValue": 120
           },
           "untilSemester": 4

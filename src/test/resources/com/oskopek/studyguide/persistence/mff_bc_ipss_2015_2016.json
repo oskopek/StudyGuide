@@ -2,13 +2,13 @@
   "courseRegistry": {
     "courses": {
       "NSWI141": {
-        "@id": "5d47966b-3509-4711-a250-a7ffb0eeb8b5",
+        "@id": "7e601d30-b4d4-4384-925e-00da84c0125b",
         "id": "NSWI141",
         "name": "Introduction to networking",
         "localizedName": "Úvod do počítačových sítí",
         "locale": "cs",
         "credits": {
-          "@id": "8395743a-e740-4526-8074-861352992fab",
+          "@id": "b4d6e4b8-13d5-4237-a26d-06824bcbaa7c",
           "creditValue": 2
         },
         "teacherNames": [
@@ -18,13 +18,13 @@
         "corequisites": []
       },
       "NOFY056": {
-        "@id": "52dd65ae-e722-4ce8-845f-ce5f23e84e83",
+        "@id": "ee653627-ba95-4dac-be01-4af2910a48e5",
         "id": "NOFY056",
         "name": "Programming for Physicists",
         "localizedName": "Programování pro fyziky",
         "locale": "cs",
         "credits": {
-          "@id": "e32d1aed-0b75-4582-807f-44b6f3fdbfd5",
+          "@id": "ccfda56d-2904-4a0a-9fb1-e1d1c75c3480",
           "creditValue": 5
         },
         "teacherNames": [
@@ -35,13 +35,13 @@
         "corequisites": []
       },
       "NTIN061": {
-        "@id": "c9f8e92c-57b3-4d48-9324-a4b87655370b",
+        "@id": "da3b3791-3249-495e-8005-3cfa78a010e6",
         "id": "NTIN061",
         "name": "Algorithms and Data Structures II",
         "localizedName": "Algoritmy a datové struktury II",
         "locale": "cs",
         "credits": {
-          "@id": "da3e69f3-9d68-4e5f-a2f9-8438f5f8f661",
+          "@id": "c933f9f3-888f-49b6-96c8-87a8681f2ac5",
           "creditValue": 6
         },
         "teacherNames": [
@@ -52,13 +52,13 @@
         "corequisites": []
       },
       "NMAI055": {
-        "@id": "cb52127d-0da8-42a1-8486-d15ce2070831",
+        "@id": "53e672ab-d41e-4fb9-940f-6cfb89280861",
         "id": "NMAI055",
         "name": "Mathematical Analysis II",
         "localizedName": "Matematická analýza II",
         "locale": "cs",
         "credits": {
-          "@id": "38cca888-2eff-46e1-8e60-d819c936475e",
+          "@id": "1687b487-59d5-45ba-b7f0-c496e5245ac9",
           "creditValue": 5
         },
         "teacherNames": [
@@ -69,13 +69,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "c711657c-fbdd-4010-ae08-6c0c54b0817c",
+            "@id": "4caf44a9-fb38-42bc-b5f7-bef1c6ca8ef3",
             "id": "NMAI054",
             "name": "Mathematical Analysis I",
             "localizedName": "Matematická analýza I",
             "locale": "cs",
             "credits": {
-              "@id": "31404530-eea7-475b-a472-d055bf08ab96",
+              "@id": "7a6e4e80-60e5-4632-b4cb-f7ee98bc089d",
               "creditValue": 5
             },
             "teacherNames": [
@@ -89,13 +89,13 @@
         ]
       },
       "NMAI054": {
-        "@id": "3bbeb40e-e7d0-4115-80d3-cb901869a3f9",
+        "@id": "fbc8b4ad-a030-4504-9ba9-21193c71bc22",
         "id": "NMAI054",
         "name": "Mathematical Analysis I",
         "localizedName": "Matematická analýza I",
         "locale": "cs",
         "credits": {
-          "@id": "de962b86-7dd9-43cc-b169-df698711380e",
+          "@id": "9a183492-cbd7-4e6b-8f7f-26895e2bd07d",
           "creditValue": 5
         },
         "teacherNames": [
@@ -107,13 +107,13 @@
         "corequisites": []
       },
       "NMAI057": {
-        "@id": "a755e952-bee8-496a-a8a5-3254f454f216",
+        "@id": "5cb1df2b-3360-4d79-a8d6-9f3343b2613b",
         "id": "NMAI057",
         "name": "Linear Algebra I",
         "localizedName": "Lineární algebra I",
         "locale": "cs",
         "credits": {
-          "@id": "30900a09-c761-40d6-ad01-b77b5aeda505",
+          "@id": "f52a21b8-2073-4ef1-baa7-91951e8768c2",
           "creditValue": 5
         },
         "teacherNames": [
@@ -125,13 +125,13 @@
         "corequisites": []
       },
       "NMAI056": {
-        "@id": "88f56de1-4dbd-48f2-b930-d838c598adb6",
+        "@id": "77397d97-da64-4765-82be-22a06828eb7b",
         "id": "NMAI056",
         "name": "Mathematical Analysis III",
         "localizedName": "Matematická analýza III",
         "locale": "cs",
         "credits": {
-          "@id": "127e71bc-98ba-4057-ac53-78e0dd9b3861",
+          "@id": "8d6e24dd-96d1-4eb1-8013-ce998f28784c",
           "creditValue": 6
         },
         "teacherNames": [
@@ -140,17 +140,17 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "3bbeb40e-e7d0-4115-80d3-cb901869a3f9"
+          "fbc8b4ad-a030-4504-9ba9-21193c71bc22"
         ]
       },
       "NMAI059": {
-        "@id": "c27be4ef-b59b-40d1-9ba0-52ae8e09dc74",
+        "@id": "17f784e8-36d7-4444-b675-bc131720a613",
         "id": "NMAI059",
         "name": "Probability and Statistics",
         "localizedName": "Pravděpodobnost a statistika",
         "locale": "cs",
         "credits": {
-          "@id": "9d436ee1-b3de-4e19-b4c2-be17806a2e93",
+          "@id": "e0ebafc2-a56e-4af1-9336-76b37848943f",
           "creditValue": 6
         },
         "teacherNames": [
@@ -161,13 +161,13 @@
         "corequisites": []
       },
       "NOPT048": {
-        "@id": "a60706d0-f8a2-494b-9d65-9d54e1697d79",
+        "@id": "b6dbd8b0-e113-49c5-a1a1-bd2d2e3df6f8",
         "id": "NOPT048",
         "name": "Optimization methods",
         "localizedName": "Optimalizační metody",
         "locale": "cs",
         "credits": {
-          "@id": "cf1cc883-ec75-432c-9a02-6ce0130b7899",
+          "@id": "efe5e646-8272-4fe5-bf28-56017a451a3f",
           "creditValue": 6
         },
         "teacherNames": [
@@ -177,13 +177,13 @@
         "corequisites": []
       },
       "NSWI021": {
-        "@id": "3b6ecfd2-dc21-4c6f-863b-29da412ff9ab",
+        "@id": "e37d5cb4-c59e-49a4-817b-94c3afe248e5",
         "id": "NSWI021",
         "name": "Computer Networks II",
         "localizedName": "Počítačové sítě II",
         "locale": "cs",
         "credits": {
-          "@id": "7d3522f9-e113-4b96-baca-29ec08be6169",
+          "@id": "63158554-0274-4a3f-9f53-13c0b3a2ea57",
           "creditValue": 3
         },
         "teacherNames": [
@@ -193,13 +193,13 @@
         "corequisites": []
       },
       "NMAI058": {
-        "@id": "41181714-026a-4bd6-97de-730db65d1e27",
+        "@id": "cc10dc8f-af78-41ab-bf4d-8ab49334f4c5",
         "id": "NMAI058",
         "name": "Linear Algebra II",
         "localizedName": "Lineární algebra II",
         "locale": "cs",
         "credits": {
-          "@id": "7083f6ff-471b-4a75-81b9-f45f48e6e8c1",
+          "@id": "160dc677-fbe6-421b-bb5e-4af9a64927d6",
           "creditValue": 5
         },
         "teacherNames": [
@@ -209,17 +209,17 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "a755e952-bee8-496a-a8a5-3254f454f216"
+          "5cb1df2b-3360-4d79-a8d6-9f3343b2613b"
         ]
       },
       "NSWI143": {
-        "@id": "9030165a-5e76-4705-bfe8-14805086f4b9",
+        "@id": "a46172d8-a027-4d07-9817-5d2cc835a9df",
         "id": "NSWI143",
         "name": "Computer Architecture",
         "localizedName": "Architektura počítačů",
         "locale": "cs",
         "credits": {
-          "@id": "e61d6363-bc2c-43d0-aee3-0e9077739200",
+          "@id": "e9e8f75c-b0c2-4fdd-8c3d-9cbd778c4e76",
           "creditValue": 3
         },
         "teacherNames": [
@@ -227,15 +227,15 @@
         ],
         "prerequisites": [
           {
-            "@id": "88f8eb17-7881-44b3-937f-1a3449d72cf5",
+            "@id": "65547e57-4f47-4747-a614-b00793c808a6",
             "id": "NPRG030",
             "name": "Programming I",
             "localizedName": "Programování I",
             "locale": "cs",
             "credits": {
-              "@id": "336758e7-7552-4918-bed4-4662075d56b7",
+              "@id": "bf3e897a-7e7b-42f3-99ac-037858399c7c",
               "creditValue": 6
-            },
+          },
             "teacherNames": [
               "RNDr. Tomáš Holan, Ph.D.",
               "doc. RNDr. Pavel Töpfer, CSc.",
@@ -245,15 +245,15 @@
             "corequisites": []
           },
           {
-            "@id": "c9a336ae-57a6-4330-8bb5-1712a4b3af44",
+            "@id": "c60f44a5-e7bc-4d8e-91a4-a7c09d408812",
             "id": "NPRG031",
             "name": "Programming II",
             "localizedName": "Programování II",
             "locale": "cs",
             "credits": {
-              "@id": "04de0651-4d90-47d2-8045-c51208202fa2",
+              "@id": "7ab8eeea-eb45-4333-a1ba-ac4463fe7f19",
               "creditValue": 5
-            },
+          },
             "teacherNames": [
               "RNDr. Tomáš Holan, Ph.D.",
               "doc. RNDr. Pavel Töpfer, CSc.",
@@ -263,13 +263,13 @@
             "corequisites": []
           },
           {
-            "@id": "ccace769-c024-467d-b3cf-28c3b4b9e855",
+            "@id": "77b3413d-927e-4939-a368-cf73f714f659",
             "id": "NSWI120",
             "name": "Principles of Computers",
             "localizedName": "Principy počítačů",
             "locale": "cs",
             "credits": {
-              "@id": "925a5501-c63f-487b-88b1-d282e19c171c",
+              "@id": "4d7da2f8-fb11-462e-b8dc-83bb3dd73c3e",
               "creditValue": 3
             },
             "teacherNames": [
@@ -282,13 +282,13 @@
         "corequisites": []
       },
       "NOPT046": {
-        "@id": "d86b638f-6631-48d0-be3d-df795241df7b",
+        "@id": "56cbe326-16ff-4f10-8491-8e25b6ab780b",
         "id": "NOPT046",
         "name": "Discrete and Continuous Optimization",
         "localizedName": "Diskrétní a spojitá optimalizace",
         "locale": "cs",
         "credits": {
-          "@id": "fc78c04f-7ace-44ef-85aa-6b7a4a21f89b",
+          "@id": "c709016b-9b32-4b2a-aba0-0a07bc7e31c9",
           "creditValue": 6
         },
         "teacherNames": [
@@ -299,13 +299,13 @@
         "corequisites": []
       },
       "NPRG005": {
-        "@id": "8280d782-497e-4239-ad57-534d8c1acfcf",
+        "@id": "2d2f5cab-aa4a-48e4-9a03-1a1df44828b7",
         "id": "NPRG005",
         "name": "Non-procedural Programming",
         "localizedName": "Neprocedurální programování",
         "locale": "cs",
         "credits": {
-          "@id": "2c853ecf-2817-4654-8c73-924d0d5b95de",
+          "@id": "2bdcfad4-1b0b-47cc-a619-8d5fcb212202",
           "creditValue": 6
         },
         "teacherNames": [
@@ -316,13 +316,13 @@
         "corequisites": []
       },
       "NPRG003": {
-        "@id": "ac98fdc3-2c15-4d97-aac4-c697d4f8f7b2",
+        "@id": "86d2e1f7-6df1-4252-92df-8605b54cec6b",
         "id": "NPRG003",
         "name": "Programming Methodology and Philosophy of Programming Languages",
         "localizedName": "Metodika programování a filozofie programovacích jazyků",
         "locale": "cs",
         "credits": {
-          "@id": "00181b69-bb50-46ff-b729-035b83490000",
+          "@id": "40b874ef-bb4f-40ce-b986-e7eed6182d1f",
           "creditValue": 3
         },
         "teacherNames": [
@@ -332,31 +332,31 @@
         "corequisites": []
       },
       "NPRG045": {
-        "@id": "c09dde8b-f441-415f-9720-c2c74b2f6cc1",
+        "@id": "f34fad50-c46a-489b-aae9-53c3ed4618ab",
         "id": "NPRG045",
         "name": "Individual Software Project",
         "localizedName": "Ročníkový projekt",
         "locale": "cs",
         "credits": {
-          "@id": "ba89f5d1-9929-40c6-be3b-1aa5cf43c14e",
+          "@id": "e74d2498-00f8-4c9f-a5ee-f13190356aff",
           "creditValue": 4
         },
         "teacherNames": [
           "RNDr. Filip Zavoral, Ph.D."
         ],
         "prerequisites": [
-          "c9a336ae-57a6-4330-8bb5-1712a4b3af44"
+          "c60f44a5-e7bc-4d8e-91a4-a7c09d408812"
         ],
         "corequisites": []
       },
       "NDMI084": {
-        "@id": "78126db8-862a-48be-8410-95c1951ef82d",
+        "@id": "d413d64e-39c1-4c69-9590-9c5e2b87a1c1",
         "id": "NDMI084",
         "name": "Introduction to approximation and randomized algorithms",
         "localizedName": "Úvod do aproximačních a pravděpodobnostních algoritmů",
         "locale": "cs",
         "credits": {
-          "@id": "96a7bc46-ef1c-40b3-b9c6-a0d6b4159d8f",
+          "@id": "7cbaae7a-211d-4c28-ad15-cc8f47feeca0",
           "creditValue": 5
         },
         "teacherNames": [
@@ -367,13 +367,13 @@
         "corequisites": []
       },
       "NPRG044": {
-        "@id": "ed7caf71-bbba-4012-aabf-1b37c59f9b03",
+        "@id": "99d32780-fe99-41bc-96e7-1a030dd4ecd2",
         "id": "NPRG044",
         "name": "Netbeans and Eclipse platforms",
         "localizedName": "Platformy NetBeans a Eclipse",
         "locale": "cs",
         "credits": {
-          "@id": "cd34b33f-7e57-41f7-99db-2d3f621662ca",
+          "@id": "83e09e8a-1717-446d-9479-6db48dbf50af",
           "creditValue": 3
         },
         "teacherNames": [
@@ -382,13 +382,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "b30621a5-41e1-4f18-8db4-ecf0f6b897e7",
+            "@id": "ecd3a550-e629-4c16-96ed-bcfb9ac1d827",
             "id": "NPRG013",
             "name": "Java",
             "localizedName": "Java",
             "locale": "cs",
             "credits": {
-              "@id": "01224c17-1b6d-408b-889c-ef4d9787778e",
+              "@id": "3d98e700-722d-4b98-a727-084853784f4f",
               "creditValue": 6
             },
             "teacherNames": [
@@ -397,15 +397,15 @@
             "prerequisites": [],
             "corequisites": [
               {
-                "@id": "1fd11a53-c129-4d37-99f6-a544342f6562",
+                "@id": "456568b4-485f-4a85-aadd-827b0cbc2c8d",
                 "id": "NPRG031",
                 "name": "Programming II",
                 "localizedName": "Programování II",
                 "locale": "cs",
                 "credits": {
-                  "@id": "37b3b993-f1d5-447d-a716-bc44f1bc43cb",
+                  "@id": "1de71ae6-5f8d-48f2-bfa7-bd4114cdf1de",
                   "creditValue": 5
-                },
+            },
                 "teacherNames": [
                   "RNDr. Tomáš Holan, Ph.D.",
                   "doc. RNDr. Pavel Töpfer, CSc.",
@@ -419,13 +419,13 @@
         ]
       },
       "NPRG041": {
-        "@id": "83cebf5b-eaeb-472a-90af-fae88207f787",
+        "@id": "a6d9a8e3-a1b8-4b86-944d-0cf0d4e9f9d6",
         "id": "NPRG041",
         "name": "Programming in C++",
         "localizedName": "Programování v C++",
         "locale": "cs",
         "credits": {
-          "@id": "960c0b9c-17ef-4bd3-9960-3b60c1df562d",
+          "@id": "70645d35-09e2-4294-9e1b-7d9447b4c68e",
           "creditValue": 6
         },
         "teacherNames": [
@@ -434,15 +434,15 @@
         ],
         "prerequisites": [
           {
-            "@id": "a8ddce3d-a13b-492c-b33c-cbf530088912",
+            "@id": "8e4fd6d1-8573-4066-8afc-7b71f096de00",
             "id": "NPRM045",
             "name": "Programming II",
             "localizedName": "Programování II",
             "locale": "cs",
             "credits": {
-              "@id": "3cf0bc36-ddec-4204-844a-8c91d4822ae4",
+              "@id": "5ff9297c-e450-4d19-832d-45265fe27274",
               "creditValue": 5
-            },
+          },
             "teacherNames": [
               "RNDr. Rudolf Kryl",
               "RNDr. Martin Pergel, Ph.D."
@@ -450,17 +450,17 @@
             "prerequisites": [],
             "corequisites": []
           },
-          "52dd65ae-e722-4ce8-845f-ce5f23e84e83",
+          "ee653627-ba95-4dac-be01-4af2910a48e5",
           {
-            "@id": "84f20f24-521c-4b7c-b455-ba2bf7650fe3",
+            "@id": "f66b3e6d-48d0-4762-82ad-57ad195bb6da",
             "id": "NPRG031",
             "name": "Programming II",
             "localizedName": "Programování II",
             "locale": "cs",
             "credits": {
-              "@id": "0026340f-f4ac-49c4-be59-6ca53a12fc55",
+              "@id": "321416b7-243e-4d71-a632-7c9ab9fe711a",
               "creditValue": 5
-            },
+          },
             "teacherNames": [
               "RNDr. Tomáš Holan, Ph.D.",
               "doc. RNDr. Pavel Töpfer, CSc.",
@@ -470,13 +470,13 @@
             "corequisites": []
           },
           {
-            "@id": "2755b5ef-19e5-46b2-933f-0b58e7449099",
+            "@id": "8d10a802-2312-4f8d-b42a-8c6dfa88c9b2",
             "id": "NMIN102",
             "name": "Programming 2",
             "localizedName": "Programování 2",
             "locale": "cs",
             "credits": {
-              "@id": "67dbace3-6c49-4d1d-9439-ff00c2f23a92",
+              "@id": "edc3841a-678e-46fb-b425-138c9718d595",
               "creditValue": 5
             },
             "teacherNames": [
@@ -486,15 +486,15 @@
             "prerequisites": [],
             "corequisites": [
               {
-                "@id": "313a9d45-8113-4a54-9caf-60e97020ce2b",
+                "@id": "dde6b0f0-a5ec-4d6d-afd3-cbb549ae4a7b",
                 "id": "NMIN101",
                 "name": "Programming 1",
                 "localizedName": "Programování 1",
                 "locale": "cs",
                 "credits": {
-                  "@id": "2fdf9776-0146-4b4c-b0d3-e9af72cda4b9",
+                  "@id": "b8fcf22d-c57d-48ff-b20c-aed90b34791f",
                   "creditValue": 5
-                },
+            },
                 "teacherNames": [
                   "doc. RNDr. Pavel Töpfer, CSc.",
                   "RNDr. Martin Pergel, Ph.D."
@@ -508,13 +508,13 @@
         "corequisites": []
       },
       "NJAZ090": {
-        "@id": "d5b955b6-02fa-43f7-9988-e96871538681",
+        "@id": "718219d1-8570-48ac-879f-7b76974c7ed3",
         "id": "NJAZ090",
         "name": "English for Upper-Intermediate and Advanced Students IV",
         "localizedName": "Anglický jazyk pro středně pokročilé a pokročilé IV",
         "locale": "cs",
         "credits": {
-          "@id": "8a177fc4-5526-4da0-aaa1-bb27aacb7ff2",
+          "@id": "9fa05a1f-69d5-4cc0-869d-6d5c5a2730a9",
           "creditValue": 1
         },
         "teacherNames": [
@@ -532,13 +532,13 @@
         "corequisites": []
       },
       "NTIN071": {
-        "@id": "e220b9c8-62c7-4d62-817d-757c4011be60",
+        "@id": "cf901b89-3a85-44b1-b319-b9fe1d9f2190",
         "id": "NTIN071",
         "name": "Automata and Grammars",
         "localizedName": "Automaty a gramatiky",
         "locale": "cs",
         "credits": {
-          "@id": "6408f1ee-e33d-427a-9e22-768cba73190d",
+          "@id": "35a7359a-6e67-4f8b-bb94-37b78bc41757",
           "creditValue": 6
         },
         "teacherNames": [
@@ -549,13 +549,13 @@
         "corequisites": []
       },
       "NJAZ091": {
-        "@id": "76bf5ae6-bb91-4853-b931-13f051473c62",
+        "@id": "ca50e8d2-b072-43db-9c9b-91b80fd0f382",
         "id": "NJAZ091",
         "name": "English Language",
         "localizedName": "Anglický jazyk",
         "locale": "cs",
         "credits": {
-          "@id": "42f48921-02dc-4431-99cd-4e075998907a",
+          "@id": "85e71cee-2799-4457-a538-c3fdb62d5995",
           "creditValue": 1
         },
         "teacherNames": [
@@ -573,13 +573,13 @@
         "corequisites": []
       },
       "NPGR020": {
-        "@id": "a0a4c2d7-b94c-4f65-8bc8-b02726c29a0f",
+        "@id": "d6b4d4da-7f39-4b3d-af3d-835369fb4c64",
         "id": "NPGR020",
         "name": "Geometry for Computer Graphics",
         "localizedName": "Geometrie pro počítačovou grafiku",
         "locale": "cs",
         "credits": {
-          "@id": "7b14e7b2-d1aa-427a-89de-71dbf942d5d5",
+          "@id": "222b04d5-2fac-4863-9af1-78dd731a3c5d",
           "creditValue": 3
         },
         "teacherNames": [
@@ -589,13 +589,13 @@
         "corequisites": []
       },
       "NPGR025": {
-        "@id": "0646bde3-e326-477a-8860-a80224dd9205",
+        "@id": "ae057021-2343-4606-8187-6ef0f6c236d5",
         "id": "NPGR025",
         "name": "Introduction to Colour Science",
         "localizedName": "Introduction to Colour Science",
         "locale": "cs",
         "credits": {
-          "@id": "4aefb988-1335-4d10-9a56-0532bc3599f3",
+          "@id": "610ffe66-c456-4362-995d-7a080a3a1492",
           "creditValue": 3
         },
         "teacherNames": [
@@ -605,13 +605,13 @@
         "corequisites": []
       },
       "NSWI095": {
-        "@id": "7a114c3c-0253-4256-94b6-fd3014e27a43",
+        "@id": "5a0d077e-c36f-499b-94ff-9149378391f0",
         "id": "NSWI095",
         "name": "Introduction to UNIX",
         "localizedName": "Úvod do UNIXu",
         "locale": "cs",
         "credits": {
-          "@id": "7e8546ba-6eb1-4745-b417-4f6168ec5093",
+          "@id": "f63dace2-e4bf-42e1-bf16-a2d98680fd76",
           "creditValue": 5
         },
         "teacherNames": [
@@ -621,13 +621,13 @@
         "corequisites": []
       },
       "NSWI090": {
-        "@id": "823ea0a8-271d-4841-bfbe-dcb160177a4a",
+        "@id": "f21d0f95-5637-415a-a184-8460f60b0a91",
         "id": "NSWI090",
         "name": "Computer Networks I",
         "localizedName": "Počítačové sítě I",
         "locale": "cs",
         "credits": {
-          "@id": "19dab5d6-a10f-462a-998c-24475f393fe6",
+          "@id": "68be562b-308b-4421-ab4d-07cfbbf2a5f4",
           "creditValue": 3
         },
         "teacherNames": [
@@ -637,13 +637,13 @@
         "corequisites": []
       },
       "NMAI062": {
-        "@id": "792b4e58-bb84-4529-85f2-0229b1f52e8f",
+        "@id": "185e4443-55a2-4624-b230-4db15f738d0c",
         "id": "NMAI062",
         "name": "Algebra I",
         "localizedName": "Algebra I",
         "locale": "cs",
         "credits": {
-          "@id": "73ee5702-07de-4944-b2a3-c2104fcb5e46",
+          "@id": "c0dba324-bf4c-47c5-bcd2-30512dd201a6",
           "creditValue": 6
         },
         "teacherNames": [
@@ -653,13 +653,13 @@
         "corequisites": []
       },
       "NDBI025": {
-        "@id": "8c707016-acbe-4062-ba51-1695f902026c",
+        "@id": "f65f170e-757d-4a5f-b002-95acf64cc11e",
         "id": "NDBI025",
         "name": "Database Systems",
         "localizedName": "Databázové systémy",
         "locale": "cs",
         "credits": {
-          "@id": "12dce9ce-ff8e-4ce0-9613-815c0aa7ba39",
+          "@id": "694f50ef-5644-4863-b9fd-4bd1f7e1a710",
           "creditValue": 6
         },
         "teacherNames": [
@@ -669,13 +669,13 @@
         "corequisites": []
       },
       "NDMI009": {
-        "@id": "3505e426-0c9a-476a-9f8c-83eb828c3c3f",
+        "@id": "c5a8b74c-8629-41ca-af3c-9958af2f689f",
         "id": "NDMI009",
         "name": "Combinatorial and Computational Geometry I",
         "localizedName": "Kombinatorická a výpočetní geometrie I",
         "locale": "cs",
         "credits": {
-          "@id": "61daf6f7-b55b-4c18-aafa-bd06a2bfb938",
+          "@id": "fbadfa03-a1ab-4582-8952-285246254964",
           "creditValue": 6
         },
         "teacherNames": [
@@ -687,31 +687,31 @@
         "corequisites": []
       },
       "NSWI015": {
-        "@id": "cd6f8ebc-2aca-4d89-95a0-7a6f4f9d5af4",
+        "@id": "47c05763-ab52-4c9e-80ea-4a423f7f4247",
         "id": "NSWI015",
         "name": "Programming in Unix",
         "localizedName": "Programování v Unixu",
         "locale": "cs",
         "credits": {
-          "@id": "87535db8-b078-4f8f-be5f-3d081797282d",
+          "@id": "a4f1e1ca-13b7-4f92-b69d-36ae8928f010",
           "creditValue": 5
         },
         "teacherNames": [
           "Mgr. Vladimír Kotal"
         ],
         "prerequisites": [
-          "7a114c3c-0253-4256-94b6-fd3014e27a43"
+          "5a0d077e-c36f-499b-94ff-9149378391f0"
         ],
         "corequisites": []
       },
       "NSWI098": {
-        "@id": "72255c1c-fb72-4863-a8da-58b69f86cc8b",
+        "@id": "8ef1fc5d-189c-4ca7-aa74-9db62ecab72f",
         "id": "NSWI098",
         "name": "Compiler Principles",
         "localizedName": "Principy překladačů",
         "locale": "cs",
         "credits": {
-          "@id": "cb906bc2-1dfb-424d-b8ab-ae22c28f2783",
+          "@id": "3c034c62-9a2c-4c59-ae15-0f30fd3d80e7",
           "creditValue": 6
         },
         "teacherNames": [
@@ -721,13 +721,13 @@
         "corequisites": []
       },
       "NMAI069": {
-        "@id": "fd05678f-d084-4236-850f-e0c0021beb49",
+        "@id": "8db25a9a-8658-4d86-bebb-38de59738799",
         "id": "NMAI069",
         "name": "Mathematical skills",
         "localizedName": "Matematické dovednosti",
         "locale": "cs",
         "credits": {
-          "@id": "d5bc3536-f68a-4dbe-8915-5401a053a227",
+          "@id": "42e4f3ec-9fff-440b-8046-8799a882882a",
           "creditValue": 2
         },
         "teacherNames": [
@@ -738,13 +738,13 @@
         "corequisites": []
       },
       "NDMI002": {
-        "@id": "76e1a2c9-e375-4b26-bc16-9c86726d8cc1",
+        "@id": "c613a3c5-58ec-489e-9115-38cb97329562",
         "id": "NDMI002",
         "name": "Discrete Mathematics",
         "localizedName": "Diskrétní matematika",
         "locale": "cs",
         "credits": {
-          "@id": "020697b5-482a-401f-91ef-458ad2d02623",
+          "@id": "378f8a1f-fae2-4891-89de-5ca7a88895a7",
           "creditValue": 5
         },
         "teacherNames": [
@@ -756,13 +756,13 @@
         "corequisites": []
       },
       "NAIL063": {
-        "@id": "7b2947f8-58f6-44c1-954b-f90eaf699056",
+        "@id": "238c2e44-a38c-411f-9e48-4677558f6511",
         "id": "NAIL063",
         "name": "Set Theory",
         "localizedName": "Teorie množin",
         "locale": "cs",
         "credits": {
-          "@id": "cc4f62d1-ccbd-4732-8a06-4043eb7b93de",
+          "@id": "a399ba6a-0d27-4873-8e75-bbc6f65b4891",
           "creditValue": 3
         },
         "teacherNames": [
@@ -772,13 +772,13 @@
         "corequisites": []
       },
       "NAIL062": {
-        "@id": "45632a84-8e63-4a75-8014-cbb76bec7024",
+        "@id": "401ba75e-0bcb-4c03-9297-4dec540942cb",
         "id": "NAIL062",
         "name": "Propositional and Predicate Logic",
         "localizedName": "Výroková a predikátová logika",
         "locale": "cs",
         "credits": {
-          "@id": "ea3d1a91-34a1-4470-82ef-a7ebd205e5fd",
+          "@id": "f9f6c246-b728-49b2-8a99-0944ec86bb3a",
           "creditValue": 6
         },
         "teacherNames": [
@@ -788,13 +788,13 @@
         "corequisites": []
       },
       "NDMI011": {
-        "@id": "47b85c49-a640-4151-a067-14450782e73c",
+        "@id": "3826020e-e024-4b51-b3ab-c5fa2c4255f2",
         "id": "NDMI011",
         "name": "Combinatorics and Graph Theory I",
         "localizedName": "Kombinatorika a grafy I",
         "locale": "cs",
         "credits": {
-          "@id": "6696cec6-cd5b-4577-9581-acdf73c98347",
+          "@id": "e96bcbae-ec6d-44a4-b64d-2da0f02f2d8c",
           "creditValue": 5
         },
         "teacherNames": [
@@ -806,13 +806,13 @@
         "corequisites": []
       },
       "NDMI012": {
-        "@id": "5a53378b-4105-40e6-a80f-0f59fc6c5f47",
+        "@id": "903074f3-853f-4241-b9f7-b2af3c712453",
         "id": "NDMI012",
         "name": "Combinatorics and Graph Theory II",
         "localizedName": "Kombinatorika a grafy II",
         "locale": "cs",
         "credits": {
-          "@id": "1849f424-3045-4090-b213-45650c06836b",
+          "@id": "d60e6206-f0dc-4033-b02a-29f42e69af99",
           "creditValue": 6
         },
         "teacherNames": [
@@ -822,13 +822,13 @@
         "corequisites": []
       },
       "NPGR019": {
-        "@id": "6433dc32-bba8-42e8-a63b-1fd051b224fc",
+        "@id": "e4069202-bd74-448f-8fe1-29f80c728941",
         "id": "NPGR019",
         "name": "Hardware for Computer Graphics",
         "localizedName": "Hardware pro počítačovou grafiku",
         "locale": "cs",
         "credits": {
-          "@id": "86e9b987-cc02-4096-a6e7-3a7398ed8b18",
+          "@id": "7de81a45-5d9c-4b1a-b446-34f2309a188f",
           "creditValue": 5
         },
         "teacherNames": [
@@ -837,13 +837,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "2771b5e7-ce08-43a1-93d0-626e7426964a",
+            "@id": "25ede41e-fe19-44a9-9a19-f34ffdb199d7",
             "id": "NPGR003",
             "name": "Computer Graphics I",
             "localizedName": "Počítačová grafika I",
             "locale": "cs",
             "credits": {
-              "@id": "fc912c43-bfc4-49c7-93ac-7f4f60f19820",
+              "@id": "869504e1-4f11-4221-a2cb-d1f81d02eb3a",
               "creditValue": 6
             },
             "teacherNames": [
@@ -854,15 +854,15 @@
           }
         ]
       },
-      "NPRG013": "b30621a5-41e1-4f18-8db4-ecf0f6b897e7",
+      "NPRG013": "ecd3a550-e629-4c16-96ed-bcfb9ac1d827",
       "NTIN060": {
-        "@id": "04436656-7caf-45a6-a503-d8ab663c2b31",
+        "@id": "e6513884-135e-48dd-94ba-08fc974df8c2",
         "id": "NTIN060",
         "name": "Algorithms and Data Structures I",
         "localizedName": "Algoritmy a datové struktury I",
         "locale": "cs",
         "credits": {
-          "@id": "c9845641-06b1-4a89-9707-5e58717a9930",
+          "@id": "38fcd375-56cc-41e1-8ec1-354a280b0de0",
           "creditValue": 5
         },
         "teacherNames": [
@@ -873,13 +873,13 @@
         "corequisites": []
       },
       "NPRG051": {
-        "@id": "b7054449-c963-429c-a4d8-958cdb590b64",
+        "@id": "ef5df8c4-8254-4300-ae50-8318a5918acb",
         "id": "NPRG051",
         "name": "C++ Advanced Programming",
         "localizedName": "Pokročilé programování v C++",
         "locale": "cs",
         "credits": {
-          "@id": "f49b71dd-1159-4dd9-b29c-ad9caeb0769c",
+          "@id": "45078771-bf21-4f8f-b911-73daced7ba79",
           "creditValue": 6
         },
         "teacherNames": [
@@ -889,18 +889,18 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "83cebf5b-eaeb-472a-90af-fae88207f787"
+          "a6d9a8e3-a1b8-4b86-944d-0cf0d4e9f9d6"
         ]
       },
-      "NPRM045": "a8ddce3d-a13b-492c-b33c-cbf530088912",
+      "NPRM045": "8e4fd6d1-8573-4066-8afc-7b71f096de00",
       "NTVY014": {
-        "@id": "22f92166-d580-4382-b8cf-c1b9005c563d",
+        "@id": "bad10d11-d464-4478-b59a-6235f127eaac",
         "id": "NTVY014",
         "name": "Physical Education I",
         "localizedName": "Tělesná výchova I",
         "locale": "cs",
         "credits": {
-          "@id": "28d767cc-a9da-4b75-b71d-7bf1f9f5d8bb",
+          "@id": "bf9464d2-8283-4720-a690-d15fceeab4c4",
           "creditValue": 1
         },
         "teacherNames": [
@@ -911,13 +911,13 @@
         "corequisites": []
       },
       "NTVY015": {
-        "@id": "678bfe9b-ccef-4a5c-b484-df1a9a048574",
+        "@id": "04695c14-f3db-4654-bbd8-157803a55042",
         "id": "NTVY015",
         "name": "Physical Education II",
         "localizedName": "Tělesná výchova II",
         "locale": "cs",
         "credits": {
-          "@id": "7b5dd62b-53c2-43a6-9d68-c388e37f7333",
+          "@id": "91c96866-afb1-4c75-8c5e-26468b70915e",
           "creditValue": 1
         },
         "teacherNames": [
@@ -928,13 +928,13 @@
         "corequisites": []
       },
       "NSWI126": {
-        "@id": "5877213e-f753-4556-8706-80de4726fcfa",
+        "@id": "2ae4de1b-6e74-4121-99d5-690915bada68",
         "id": "NSWI126",
         "name": "Advanced Tools for Software Development and Monitoring",
         "localizedName": "Pokročilé nástroje pro vývoj a monitorování software",
         "locale": "cs",
         "credits": {
-          "@id": "43964af6-ef93-4a70-9b39-cbee60a0fc4d",
+          "@id": "6139e772-86e2-49d8-b3af-ba784bf32849",
           "creditValue": 3
         },
         "teacherNames": [
@@ -944,15 +944,15 @@
         "prerequisites": [],
         "corequisites": []
       },
-      "NSWI120": "ccace769-c024-467d-b3cf-28c3b4b9e855",
+      "NSWI120": "77b3413d-927e-4939-a368-cf73f714f659",
       "NSWE002": {
-        "@id": "1485df2b-1f42-4a4c-ac59-4efbe03086af",
+        "@id": "a08e4de1-e071-474e-86e4-aba916fb5d09",
         "id": "NSWE002",
         "name": "Introduction to dependable systems",
         "localizedName": "Úvod do spolehlivých systémů",
         "locale": "cs",
         "credits": {
-          "@id": "5fc50cae-b7eb-4509-b06b-dc0eaef27110",
+          "@id": "1b1a83ff-7889-4ad7-8751-47a79dad409a",
           "creditValue": 1
         },
         "teacherNames": [
@@ -962,13 +962,13 @@
         "corequisites": []
       },
       "NTVY016": {
-        "@id": "8ab4e051-d4bf-4410-b70f-d093123f999c",
+        "@id": "f1f615af-7bf2-4bd7-b9a7-5eabb349dbd2",
         "id": "NTVY016",
         "name": "Physical Education III",
         "localizedName": "Tělesná výchova III",
         "locale": "cs",
         "credits": {
-          "@id": "b06ad62d-9009-4626-815c-1d22a4aab3b5",
+          "@id": "329ced43-4c13-4c99-bfd1-0b527f525fda",
           "creditValue": 1
         },
         "teacherNames": [
@@ -979,13 +979,13 @@
         "corequisites": []
       },
       "NSWI089": {
-        "@id": "b8036a17-adfc-4a62-bcc5-5957a3e9ed8c",
+        "@id": "868ccd25-d1e7-46ad-9e3a-f22b00705f7d",
         "id": "NSWI089",
         "name": "Information Security I",
         "localizedName": "Ochrana informací I",
         "locale": "cs",
         "credits": {
-          "@id": "45d9819e-0a8b-4624-96e7-d3031a18f85c",
+          "@id": "d79e700b-1f36-4a90-a39a-1271f6e241ea",
           "creditValue": 3
         },
         "teacherNames": [
@@ -995,13 +995,13 @@
         "corequisites": []
       },
       "NSWI045": {
-        "@id": "65b1e058-5adf-4911-a819-1066f035d9f9",
+        "@id": "f4aefd3b-ef70-4162-bc10-8b38ef6ade2a",
         "id": "NSWI045",
         "name": "TCP/IP Protocol Suite",
         "localizedName": "Rodina protokolů TCP/IP",
         "locale": "cs",
         "credits": {
-          "@id": "e485b119-7a57-4839-9c3f-dc1a9a5990e5",
+          "@id": "bad2aa0f-4def-4928-bbbb-3e1d465a6479",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1011,13 +1011,13 @@
         "corequisites": []
       },
       "NSZZ031": {
-        "@id": "79b591d6-0ea9-45e3-be8e-b97f0aee6544",
+        "@id": "ef290f0c-ac07-495a-a115-5b767f4ad613",
         "id": "NSZZ031",
         "name": "Bachelor Thesis",
         "localizedName": "Vypracování a konzultace bakalářské práce",
         "locale": "cs",
         "credits": {
-          "@id": "d04102ae-d160-47aa-8ed4-707e612ea934",
+          "@id": "a5af2daf-ebe1-48aa-bd58-ce04e789eb11",
           "creditValue": 6
         },
         "teacherNames": [
@@ -1030,13 +1030,13 @@
         "corequisites": []
       },
       "NTVY017": {
-        "@id": "d6cc4fcb-6030-45e7-8c69-a158a41a809a",
+        "@id": "2ef5f553-6750-42e4-8535-c41bd9044068",
         "id": "NTVY017",
         "name": "Physical Education IV",
         "localizedName": "Tělesná výchova IV",
         "locale": "cs",
         "credits": {
-          "@id": "4ee6233b-8a68-4f1c-a41e-5648eec159e3",
+          "@id": "a2d28527-2dfd-4988-b015-181b9a4c2323",
           "creditValue": 1
         },
         "teacherNames": [
@@ -1047,13 +1047,13 @@
         "corequisites": []
       },
       "NJAZ074": {
-        "@id": "51f303b0-c780-4dcd-9c6e-83d1fda2fb15",
+        "@id": "7ddc1a93-e19b-4101-8a28-ab2d22498c93",
         "id": "NJAZ074",
         "name": "English for Upper-Intermediate and Advanced Students III",
         "localizedName": "Anglický jazyk pro středně pokročilé a pokročilé III",
         "locale": "cs",
         "credits": {
-          "@id": "9b0ec333-769a-4c8c-8aea-7d5d025b27da",
+          "@id": "94dffd7c-5735-4845-8350-e0bf08de9814",
           "creditValue": 1
         },
         "teacherNames": [
@@ -1071,13 +1071,13 @@
         "corequisites": []
       },
       "NPRG024": {
-        "@id": "bed486af-edb3-45ef-b01b-322394ec7ab5",
+        "@id": "432addf8-7ce6-4cbb-ba78-4ae185f7bc19",
         "id": "NPRG024",
         "name": "Design Patterns",
         "localizedName": "Návrhové vzory",
         "locale": "cs",
         "credits": {
-          "@id": "78c2a6f6-a6f6-4118-9947-2722c1640142",
+          "@id": "4ce5301a-efaf-47ca-a97b-49129cdb7087",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1087,13 +1087,13 @@
         "corequisites": []
       },
       "NPRG021": {
-        "@id": "531f57f0-965b-4cef-bfa8-f6b6112eda56",
+        "@id": "abb7fb9b-6bc5-47af-9ba7-bc06974b92a7",
         "id": "NPRG021",
         "name": "Advanced programming for Java platform",
         "localizedName": "Pokročilé programování na platformě Java",
         "locale": "cs",
         "credits": {
-          "@id": "b8cc07be-4d06-43ad-b701-456acf12a68f",
+          "@id": "ef51713e-57da-41ff-a7d3-b1ab9a1516f4",
           "creditValue": 5
         },
         "teacherNames": [
@@ -1102,13 +1102,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "94d79151-bee7-44a4-9f72-9826900fac77",
+            "@id": "9ce61d27-029f-4501-97a6-0caec8404ca3",
             "id": "NPRG013",
             "name": "Java",
             "localizedName": "Java",
             "locale": "cs",
             "credits": {
-              "@id": "ec2b0f57-353d-418d-b2ff-f6c9a27b338d",
+              "@id": "d1384eda-93e2-41d1-b1ce-19019f440d9a",
               "creditValue": 6
             },
             "teacherNames": [
@@ -1116,19 +1116,19 @@
             ],
             "prerequisites": [],
             "corequisites": [
-              "84f20f24-521c-4b7c-b455-ba2bf7650fe3"
+              "f66b3e6d-48d0-4762-82ad-57ad195bb6da"
             ]
           }
         ]
       },
       "NJAZ072": {
-        "@id": "875ac3d0-3525-4303-8eed-8bd5320c4265",
+        "@id": "c64089e1-6764-45fc-8e49-395827af8747",
         "id": "NJAZ072",
         "name": "English for Upper-Intermediate and Advanced Students II",
         "localizedName": "Anglický jazyk pro středně pokročilé a pokročilé II",
         "locale": "cs",
         "credits": {
-          "@id": "ebc99d0a-b39b-4d3c-a2c1-a43fe91f938e",
+          "@id": "fef061a2-39c4-4a28-a3a1-4957fa0da1d8",
           "creditValue": 1
         },
         "teacherNames": [
@@ -1146,13 +1146,13 @@
         "corequisites": []
       },
       "NPGR002": {
-        "@id": "4d50ee07-5b58-43c8-a37c-d6c5a25646ef",
+        "@id": "e3893e27-dfdb-422a-ba89-871505015777",
         "id": "NPGR002",
         "name": "Digital Image Processing",
         "localizedName": "Digitální zpracování obrazu",
         "locale": "cs",
         "credits": {
-          "@id": "def98776-a909-49df-831e-fb364f9d0a62",
+          "@id": "160f98e8-a578-450f-8eab-88a11db32b11",
           "creditValue": 5
         },
         "teacherNames": [
@@ -1161,15 +1161,15 @@
         "prerequisites": [],
         "corequisites": []
       },
-      "NPGR003": "2771b5e7-ce08-43a1-93d0-626e7426964a",
+      "NPGR003": "25ede41e-fe19-44a9-9a19-f34ffdb199d7",
       "NJAZ070": {
-        "@id": "76c7b701-7513-47fe-95bb-d2fcf30eafc5",
+        "@id": "846c5ac7-2b5f-4b5c-8ab7-8adb45f63281",
         "id": "NJAZ070",
         "name": "English for Upper-Intermediate and Advanced Students I",
         "localizedName": "Anglický jazyk pro středně pokročilé a pokročilé I",
         "locale": "cs",
         "credits": {
-          "@id": "8e5da319-0496-46ba-9ab4-409d9f9786d8",
+          "@id": "4f95fbe7-7ddd-4582-a1ad-c8bbc04daf00",
           "creditValue": 1
         },
         "teacherNames": [
@@ -1187,13 +1187,13 @@
         "corequisites": []
       },
       "NPGR004": {
-        "@id": "3085261b-afee-4f68-a347-39dfaf972967",
+        "@id": "e819e6ae-ed20-451e-8c7c-819623eea4e4",
         "id": "NPGR004",
         "name": "Computer Graphics II",
         "localizedName": "Počítačová grafika II",
         "locale": "cs",
         "credits": {
-          "@id": "2e0f3edc-f89d-4444-9db2-0b23d78f6c36",
+          "@id": "558a4901-88c4-4fb4-b708-37a8a0c9241b",
           "creditValue": 5
         },
         "teacherNames": [
@@ -1201,17 +1201,17 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "2771b5e7-ce08-43a1-93d0-626e7426964a"
+          "25ede41e-fe19-44a9-9a19-f34ffdb199d7"
         ]
       },
       "NMAI042": {
-        "@id": "bf59f5ad-a466-4686-9949-29ad25dbcccd",
+        "@id": "e8ec0b88-de54-4066-a635-2bd24a574c5e",
         "id": "NMAI042",
         "name": "Numerical Mathematics",
         "localizedName": "Numerická matematika",
         "locale": "cs",
         "credits": {
-          "@id": "ba8fae46-2010-4753-b48b-02fc1a5d9698",
+          "@id": "aecc45bf-2ff6-4354-9592-f5e5b9d3c41a",
           "creditValue": 6
         },
         "teacherNames": [
@@ -1221,13 +1221,13 @@
         "corequisites": []
       },
       "NSWI036": {
-        "@id": "d3e3916c-1187-4dbf-ac36-a0571845ad17",
+        "@id": "394a9077-569f-40d0-9fe0-35c78593957d",
         "id": "NSWI036",
         "name": "Programming for Windows - I",
         "localizedName": "Programování pro Windows I",
         "locale": "cs",
         "credits": {
-          "@id": "b5209185-b3e3-4416-b10b-f258018f4e1e",
+          "@id": "c8c0a723-38b4-4c02-8786-7eeee12b1356",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1237,13 +1237,13 @@
         "corequisites": []
       },
       "NSWI037": {
-        "@id": "8a191779-fee9-4dd8-82c2-be18e5867319",
+        "@id": "02adfa79-cc2d-463b-bbdf-60d758451b36",
         "id": "NSWI037",
         "name": "Programming for Windows - II",
         "localizedName": "Programování pro Windows II",
         "locale": "cs",
         "credits": {
-          "@id": "05f676e1-6104-4bf2-8e99-a0683045bd0d",
+          "@id": "bb9e47cc-fa19-41c1-ad99-09d6bedf73f4",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1251,17 +1251,17 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "d3e3916c-1187-4dbf-ac36-a0571845ad17"
+          "394a9077-569f-40d0-9fe0-35c78593957d"
         ]
       },
       "NSWI154": {
-        "@id": "93138f25-d2c0-4475-9dcb-4af66792b945",
+        "@id": "e3a1aced-83f0-4369-8424-ec1a0ab83316",
         "id": "NSWI154",
         "name": "Software Development Tools",
         "localizedName": "Nástroje pro vývoj software",
         "locale": "cs",
         "credits": {
-          "@id": "fd99f1e1-a073-4171-88a1-24a218071b00",
+          "@id": "6274e82d-b69d-4f77-bf9e-6f6283c3eb63",
           "creditValue": 2
         },
         "teacherNames": [
@@ -1272,13 +1272,13 @@
         "corequisites": []
       },
       "NPFL012": {
-        "@id": "833bddda-a398-4d5c-bf89-de6670b541ad",
+        "@id": "2c31f72a-bafd-447d-aa69-5a2dad3eb875",
         "id": "NPFL012",
         "name": "Introduction to Computer Linguistics",
         "localizedName": "Úvod do počítačové lingvistiky",
         "locale": "cs",
         "credits": {
-          "@id": "ecce26d4-5e6a-4051-8182-2a6b1ca9e8ce",
+          "@id": "74ca3f43-a5e6-4498-81a2-07aa52f6772a",
           "creditValue": 3
         },
         "teacherNames": [
@@ -1288,13 +1288,13 @@
         "corequisites": []
       },
       "NPRG038": {
-        "@id": "67f6c8c4-a733-46b7-b172-0c59e07774fc",
+        "@id": "7ecc2069-7dd3-4da6-ad86-553f76c8d7dc",
         "id": "NPRG038",
         "name": "Advanced .NET Programming I",
         "localizedName": "Pokročilé programování pro .NET I",
         "locale": "cs",
         "credits": {
-          "@id": "fa279e3c-43e5-470a-ab88-59ef9176b0c1",
+          "@id": "197fff12-8920-45a5-adf1-3cd375e93dbd",
           "creditValue": 6
         },
         "teacherNames": [
@@ -1303,13 +1303,13 @@
         "prerequisites": [],
         "corequisites": [
           {
-            "@id": "e645689d-15a9-4d81-8e98-803b2687f837",
+            "@id": "89380200-7700-4222-a234-21e65107a6fb",
             "id": "NPRG035",
             "name": "C# Language and .NET Framework",
             "localizedName": "Jazyk C# a platforma .NET",
             "locale": "cs",
             "credits": {
-              "@id": "0175d0da-3b38-4d43-9181-09d7d3b86844",
+              "@id": "713c5df8-7ca5-4347-90c4-7bb894fc54fd",
               "creditValue": 6
             },
             "teacherNames": [
@@ -1317,19 +1317,19 @@
             ],
             "prerequisites": [],
             "corequisites": [
-              "84f20f24-521c-4b7c-b455-ba2bf7650fe3"
+              "f66b3e6d-48d0-4762-82ad-57ad195bb6da"
             ]
           }
         ]
       },
       "NPRG036": {
-        "@id": "09672878-f59f-4003-bd67-6a81dd79088f",
+        "@id": "a54534dd-c067-496d-a96c-481a908e97a2",
         "id": "NPRG036",
         "name": "XML Technologies",
         "localizedName": "Technologie XML",
         "locale": "cs",
         "credits": {
-          "@id": "dee81a13-648d-4c32-b4b4-a552f5c0e07e",
+          "@id": "65937239-7f8d-446c-b0cd-77317c429da5",
           "creditValue": 6
         },
         "teacherNames": [
@@ -1339,13 +1339,13 @@
         "corequisites": []
       },
       "NSWI106": {
-        "@id": "c539185d-a4b6-44f2-896d-40ef9c7443cc",
+        "@id": "9a92e143-995a-46f1-b656-e90863141c8c",
         "id": "NSWI106",
         "name": "Unix Administration",
         "localizedName": "Administrace Unixu",
         "locale": "cs",
         "credits": {
-          "@id": "fb986cc3-ceff-40d4-89f5-867dd2bae365",
+          "@id": "4d1160ff-c067-4045-8719-0eb1deead2da",
           "creditValue": 6
         },
         "teacherNames": [
@@ -1353,14 +1353,14 @@
         ],
         "prerequisites": [],
         "corequisites": [
-          "cd6f8ebc-2aca-4d89-95a0-7a6f4f9d5af4"
+          "47c05763-ab52-4c9e-80ea-4a423f7f4247"
         ]
       },
-      "NPRG035": "e645689d-15a9-4d81-8e98-803b2687f837",
-      "NPRG030": "88f8eb17-7881-44b3-937f-1a3449d72cf5",
-      "NPRG031": "1fd11a53-c129-4d37-99f6-a544342f6562",
-      "NMIN101": "313a9d45-8113-4a54-9caf-60e97020ce2b",
-      "NMIN102": "2755b5ef-19e5-46b2-933f-0b58e7449099"
+      "NPRG035": "89380200-7700-4222-a234-21e65107a6fb",
+      "NPRG030": "65547e57-4f47-4747-a614-b00793c808a6",
+      "NPRG031": "456568b4-485f-4a85-aadd-827b0cbc2c8d",
+      "NMIN101": "dde6b0f0-a5ec-4d6d-afd3-cbb549ae4a7b",
+      "NMIN102": "8d10a802-2312-4f8d-b42a-8c6dfa88c9b2"
     }
   },
   "semesterPlan": {
@@ -1372,32 +1372,32 @@
         "CourseGroupFulfilledAllConstraint": {
           "courseGroup": {
             "courseList": [
-              "5d47966b-3509-4711-a250-a7ffb0eeb8b5",
-              "c9f8e92c-57b3-4d48-9324-a4b87655370b",
-              "cb52127d-0da8-42a1-8486-d15ce2070831",
-              "22f92166-d580-4382-b8cf-c1b9005c563d",
-              "c711657c-fbdd-4010-ae08-6c0c54b0817c",
-              "678bfe9b-ccef-4a5c-b484-df1a9a048574",
-              "a755e952-bee8-496a-a8a5-3254f454f216",
-              "c27be4ef-b59b-40d1-9ba0-52ae8e09dc74",
-              "ccace769-c024-467d-b3cf-28c3b4b9e855",
-              "41181714-026a-4bd6-97de-730db65d1e27",
-              "9030165a-5e76-4705-bfe8-14805086f4b9",
-              "8ab4e051-d4bf-4410-b70f-d093123f999c",
-              "79b591d6-0ea9-45e3-be8e-b97f0aee6544",
-              "d6cc4fcb-6030-45e7-8c69-a158a41a809a",
-              "8280d782-497e-4239-ad57-534d8c1acfcf",
-              "c09dde8b-f441-415f-9720-c2c74b2f6cc1",
-              "e220b9c8-62c7-4d62-817d-757c4011be60",
-              "76bf5ae6-bb91-4853-b931-13f051473c62",
+              "7e601d30-b4d4-4384-925e-00da84c0125b",
+              "da3b3791-3249-495e-8005-3cfa78a010e6",
+              "53e672ab-d41e-4fb9-940f-6cfb89280861",
+              "bad10d11-d464-4478-b59a-6235f127eaac",
+              "4caf44a9-fb38-42bc-b5f7-bef1c6ca8ef3",
+              "04695c14-f3db-4654-bbd8-157803a55042",
+              "5cb1df2b-3360-4d79-a8d6-9f3343b2613b",
+              "17f784e8-36d7-4444-b675-bc131720a613",
+              "77b3413d-927e-4939-a368-cf73f714f659",
+              "cc10dc8f-af78-41ab-bf4d-8ab49334f4c5",
+              "a46172d8-a027-4d07-9817-5d2cc835a9df",
+              "f1f615af-7bf2-4bd7-b9a7-5eabb349dbd2",
+              "ef290f0c-ac07-495a-a115-5b767f4ad613",
+              "2ef5f553-6750-42e4-8535-c41bd9044068",
+              "2d2f5cab-aa4a-48e4-9a03-1a1df44828b7",
+              "f34fad50-c46a-489b-aae9-53c3ed4618ab",
+              "cf901b89-3a85-44b1-b319-b9fe1d9f2190",
+              "ca50e8d2-b072-43db-9c9b-91b80fd0f382",
               {
-                "@id": "8218f783-9b7a-4573-82e8-f9468233c1fc",
+                "@id": "af70d6cf-604d-4554-9c64-83fc90bfa6a3",
                 "id": "NSWI095",
                 "name": "Introduction to UNIX",
                 "localizedName": "Úvod do UNIXu",
                 "locale": "cs",
                 "credits": {
-                  "@id": "e924043f-09db-4ee5-bac8-c1c90cb3f8ab",
+                  "@id": "a94a86c1-1b9c-457a-a78f-faffb278d7c8",
                   "creditValue": 5
                 },
                 "teacherNames": [
@@ -1406,90 +1406,90 @@
                 "prerequisites": [],
                 "corequisites": []
               },
-              "823ea0a8-271d-4841-bfbe-dcb160177a4a",
-              "8c707016-acbe-4062-ba51-1695f902026c",
-              "72255c1c-fb72-4863-a8da-58b69f86cc8b",
-              "76e1a2c9-e375-4b26-bc16-9c86726d8cc1",
-              "45632a84-8e63-4a75-8014-cbb76bec7024",
-              "47b85c49-a640-4151-a067-14450782e73c",
-              "88f8eb17-7881-44b3-937f-1a3449d72cf5",
-              "c9a336ae-57a6-4330-8bb5-1712a4b3af44",
-              "04436656-7caf-45a6-a503-d8ab663c2b31"
+              "f21d0f95-5637-415a-a184-8460f60b0a91",
+              "f65f170e-757d-4a5f-b002-95acf64cc11e",
+              "8ef1fc5d-189c-4ca7-aa74-9db62ecab72f",
+              "c613a3c5-58ec-489e-9115-38cb97329562",
+              "401ba75e-0bcb-4c03-9297-4dec540942cb",
+              "3826020e-e024-4b51-b3ab-c5fa2c4255f2",
+              "65547e57-4f47-4747-a614-b00793c808a6",
+              "c60f44a5-e7bc-4d8e-91a4-a7c09d408812",
+              "e6513884-135e-48dd-94ba-08fc974df8c2"
             ]
-          }
+        }
         }
       },
       {
         "CourseGroupCreditsSumConstraint": {
           "courseGroup": {
             "courseList": [
-              "83cebf5b-eaeb-472a-90af-fae88207f787",
-              "94d79151-bee7-44a4-9f72-9826900fac77",
-              "e645689d-15a9-4d81-8e98-803b2687f837",
-              "b7054449-c963-429c-a4d8-958cdb590b64",
-              "531f57f0-965b-4cef-bfa8-f6b6112eda56",
-              "67f6c8c4-a733-46b7-b172-0c59e07774fc"
+              "a6d9a8e3-a1b8-4b86-944d-0cf0d4e9f9d6",
+              "9ce61d27-029f-4501-97a6-0caec8404ca3",
+              "89380200-7700-4222-a234-21e65107a6fb",
+              "ef5df8c4-8254-4300-ae50-8318a5918acb",
+              "abb7fb9b-6bc5-47af-9ba7-bc06974b92a7",
+              "7ecc2069-7dd3-4da6-ad86-553f76c8d7dc"
             ]
           },
           "totalNeeded": {
-            "@id": "fbd43730-285e-4693-924c-739a6396933c",
+            "@id": "7aa725f3-0424-4855-a277-0e7a3253c4cb",
             "creditValue": 15
-          }
+        }
         }
       },
       {
         "CourseGroupCreditsSumConstraint": {
           "courseGroup": {
             "courseList": [
-              "88f56de1-4dbd-48f2-b930-d838c598adb6",
-              "5a53378b-4105-40e6-a80f-0f59fc6c5f47",
-              "792b4e58-bb84-4529-85f2-0229b1f52e8f",
-              "3505e426-0c9a-476a-9f8c-83eb828c3c3f",
-              "a60706d0-f8a2-494b-9d65-9d54e1697d79",
-              "78126db8-862a-48be-8410-95c1951ef82d",
-              "d86b638f-6631-48d0-be3d-df795241df7b",
-              "bf59f5ad-a466-4686-9949-29ad25dbcccd",
-              "7b2947f8-58f6-44c1-954b-f90eaf699056"
+              "77397d97-da64-4765-82be-22a06828eb7b",
+              "903074f3-853f-4241-b9f7-b2af3c712453",
+              "185e4443-55a2-4624-b230-4db15f738d0c",
+              "c5a8b74c-8629-41ca-af3c-9958af2f689f",
+              "b6dbd8b0-e113-49c5-a1a1-bd2d2e3df6f8",
+              "d413d64e-39c1-4c69-9590-9c5e2b87a1c1",
+              "56cbe326-16ff-4f10-8491-8e25b6ab780b",
+              "e8ec0b88-de54-4066-a635-2bd24a574c5e",
+              "238c2e44-a38c-411f-9e48-4677558f6511"
             ]
           },
           "totalNeeded": {
-            "@id": "d7ef14ce-1225-4918-b240-a31baa421689",
+            "@id": "71039ec1-9792-437c-a7ca-34f6b1ca5df9",
             "creditValue": 5
-          }
+        }
         }
       },
       {
         "CourseGroupCreditsSumConstraint": {
           "courseGroup": {
             "courseList": [
-              "2771b5e7-ce08-43a1-93d0-626e7426964a",
-              "3085261b-afee-4f68-a347-39dfaf972967",
-              "6433dc32-bba8-42e8-a63b-1fd051b224fc",
-              "0646bde3-e326-477a-8860-a80224dd9205",
-              "a0a4c2d7-b94c-4f65-8bc8-b02726c29a0f",
-              "4d50ee07-5b58-43c8-a37c-d6c5a25646ef",
-              "09672878-f59f-4003-bd67-6a81dd79088f",
-              "b8036a17-adfc-4a62-bcc5-5957a3e9ed8c",
-              "cd6f8ebc-2aca-4d89-95a0-7a6f4f9d5af4",
-              "d3e3916c-1187-4dbf-ac36-a0571845ad17",
-              "8a191779-fee9-4dd8-82c2-be18e5867319",
-              "c539185d-a4b6-44f2-896d-40ef9c7443cc",
-              "65b1e058-5adf-4911-a819-1066f035d9f9",
-              "3b6ecfd2-dc21-4c6f-863b-29da412ff9ab",
-              "5877213e-f753-4556-8706-80de4726fcfa",
-              "bed486af-edb3-45ef-b01b-322394ec7ab5",
-              "1485df2b-1f42-4a4c-ac59-4efbe03086af",
-              "ed7caf71-bbba-4012-aabf-1b37c59f9b03",
-              "ac98fdc3-2c15-4d97-aac4-c697d4f8f7b2",
-              "833bddda-a398-4d5c-bf89-de6670b541ad",
-              "93138f25-d2c0-4475-9dcb-4af66792b945"
+              "25ede41e-fe19-44a9-9a19-f34ffdb199d7",
+              "e819e6ae-ed20-451e-8c7c-819623eea4e4",
+              "e4069202-bd74-448f-8fe1-29f80c728941",
+              "ae057021-2343-4606-8187-6ef0f6c236d5",
+              "d6b4d4da-7f39-4b3d-af3d-835369fb4c64",
+              "e3893e27-dfdb-422a-ba89-871505015777",
+              "a54534dd-c067-496d-a96c-481a908e97a2",
+              "868ccd25-d1e7-46ad-9e3a-f22b00705f7d",
+              "47c05763-ab52-4c9e-80ea-4a423f7f4247",
+              "394a9077-569f-40d0-9fe0-35c78593957d",
+              "02adfa79-cc2d-463b-bbdf-60d758451b36",
+              "9a92e143-995a-46f1-b656-e90863141c8c",
+              "f4aefd3b-ef70-4162-bc10-8b38ef6ade2a",
+              "e37d5cb4-c59e-49a4-817b-94c3afe248e5",
+              "2ae4de1b-6e74-4121-99d5-690915bada68",
+              "432addf8-7ce6-4cbb-ba78-4ae185f7bc19",
+              "a08e4de1-e071-474e-86e4-aba916fb5d09",
+              "99d32780-fe99-41bc-96e7-1a030dd4ecd2",
+              "86d2e1f7-6df1-4252-92df-8605b54cec6b",
+              "2c31f72a-bafd-447d-aa69-5a2dad3eb875",
+              "e3a1aced-83f0-4369-8424-ec1a0ab83316"
             ]
           },
           "totalNeeded": {
-            "@id": "c0e0ab09-1b97-47be-97f6-2154e638cc87",
+            "@id": "2339f7f8-f254-46b4-bfb0-be4f83b04c57",
             "creditValue": 25
-          }
         }
+      }
       }
     ],
     "globalConstraintList": [
@@ -1501,10 +1501,10 @@
       {
         "GlobalCreditsSumConstraint": {
           "totalNeeded": {
-            "@id": "a5e36468-860e-4e9e-950f-cbb851cecf8d",
+            "@id": "27de36c8-aa67-4e2b-9549-836e013ba07f",
             "creditValue": 180
-          }
         }
+      }
       },
       {
         "GlobalCourseMaxFulfilledConstraint": {
@@ -1512,9 +1512,16 @@
         }
       },
       {
+        "GlobalLongStudyFeeConstraint": {
+          "feePerSemester": 22000,
+          "currency": "CZK",
+          "fromSemester": 9
+        }
+      },
+      {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "254a6166-8b21-437f-9500-720840bd72e7",
+            "@id": "fe3cdccc-8e93-4596-87a4-f4dfb1b1de1e",
             "creditValue": 30
           },
           "untilSemester": 1
@@ -1523,7 +1530,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "e0b4f96e-e884-4168-a5f7-7bd0822b669c",
+            "@id": "18707e7d-ab73-4e47-ad7d-b6ff717f149a",
             "creditValue": 60
           },
           "untilSemester": 2
@@ -1532,7 +1539,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "f3281f6c-187c-4549-8a7f-bc119e95cb7f",
+            "@id": "d3259bb6-f73f-4397-b86d-e2ddb9edd498",
             "creditValue": 90
           },
           "untilSemester": 3
@@ -1541,7 +1548,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "7260698f-0cdc-4117-959c-3764191b693f",
+            "@id": "c19cd032-bfce-4a20-a29b-e9a0830c90b7",
             "creditValue": 120
           },
           "untilSemester": 4
@@ -1550,7 +1557,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "682ca8bd-581f-425c-84ea-c456028288b3",
+            "@id": "25b7ac05-4ac0-471e-8f17-1d6aa4c1465e",
             "creditValue": 150
           },
           "untilSemester": 5
@@ -1559,7 +1566,7 @@
       {
         "GlobalCreditsSumUntilSemesterConstraint": {
           "totalNeeded": {
-            "@id": "1d7ee241-3217-4380-8955-c9523dfceee9",
+            "@id": "e5b7de92-ea72-47bd-90e0-150e16b37bcb",
             "creditValue": 180
           },
           "untilSemester": 6
