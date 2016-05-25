@@ -1,8 +1,11 @@
 package com.oskopek.studyguide.controller;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.EnumHashBiMap;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.model.courses.EnrollableIn;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -10,7 +13,9 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.util.StringConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,6 +39,9 @@ public class CourseDetailController extends AbstractController {
 
     @FXML
     private TextField creditsField;
+
+    @FXML
+    private ComboBox<EnrollableIn> enrollableInComboBox;
 
     @FXML
     private TextField teacherNamesField;
@@ -64,6 +72,27 @@ public class CourseDetailController extends AbstractController {
     private void initialize() {
         course = new SimpleObjectProperty<>();
         creditsValueProperty = new CreditsStringProperty();
+        enrollableInComboBox.getItems().addAll(EnrollableIn.values());
+        enrollableInComboBox.setConverter(new StringConverter<EnrollableIn>() {
+
+            private final BiMap<EnrollableIn, String> valueMap = EnumHashBiMap.create(EnrollableIn.class);
+
+            @Override
+            public String toString(EnrollableIn object) {
+                return valueMap.get(object);
+            }
+
+            @Override
+            public EnrollableIn fromString(String string) {
+                return valueMap.inverse().get(string);
+            }
+
+            {
+                valueMap.put(EnrollableIn.BOTH, messages.getString("semester.bothLong"));
+                valueMap.put(EnrollableIn.SUMMER, messages.getString("semester.summerLong"));
+                valueMap.put(EnrollableIn.WINTER, messages.getString("semester.winterLong"));
+            }
+        });
         teacherNamesProperty = new StringListStringProperty();
         prerequisitesProperty = new CourseListStringProperty();
         corequisitesProperty = new CourseListStringProperty();
@@ -88,6 +117,7 @@ public class CourseDetailController extends AbstractController {
             idField.textProperty().unbindBidirectional(course.get().idProperty());
             nameField.textProperty().unbindBidirectional(course.get().nameOrLocalizedNameProperty());
             creditsValueProperty.unbindBidirectional();
+            course.get().enrollableInProperty().unbind();
             teacherNamesProperty.unbindBidirectional();
             corequisitesProperty.unbindBidirectional();
             prerequisitesProperty.unbindBidirectional();
@@ -100,6 +130,8 @@ public class CourseDetailController extends AbstractController {
             nameField.setDisable(true);
             creditsField.setText("");
             creditsField.setDisable(true);
+            enrollableInComboBox.setValue(EnrollableIn.BOTH);
+            enrollableInComboBox.setDisable(true);
             teacherNamesField.setText("");
             teacherNamesField.setDisable(true);
             prerequisitesField.setText("");
@@ -109,6 +141,9 @@ public class CourseDetailController extends AbstractController {
         } else {
             nameField.setDisable(false);
             creditsField.setDisable(false);
+            enrollableInComboBox.setValue(course.getValue().getEnrollableIn());
+            course.get().enrollableInProperty().bind(enrollableInComboBox.getSelectionModel().selectedItemProperty());
+            enrollableInComboBox.setDisable(false);
             teacherNamesField.setDisable(false);
             prerequisitesField.setDisable(false);
             corequisitesField.setDisable(false);
