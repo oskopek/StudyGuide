@@ -34,7 +34,7 @@ public class MFFWebScraperIT {
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
         String[] refFiles = {"mff_bc_ioi_2015_2016.json", "mff_bc_ipss_2015_2016.json", "mff_bc_isdi_2015_2016.json"};
         String[] urlExt = {"ib3a21.htm", "ib3a22.htm", "ib3a23.htm"};
-        scrapeAllParallel(mffUrlBase, urlExt, refFileBase, refFiles);
+        scrapeAll(mffUrlBase, urlExt, refFileBase, refFiles);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class MFFWebScraperIT {
                 "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json", "mff_mgr_iui_2015_2016.json",
                 "mff_mgr_ipgvph_2015_2016.json"};
         String[] urlExt = {"i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm", "i3b25.htm", "i3b26.htm", "i3b27.htm"};
-        scrapeAllParallel(mffUrlBase, urlExt, refFileBase, refFiles);
+        scrapeAll(mffUrlBase, urlExt, refFileBase, refFiles);
     }
 
     @Test
@@ -76,20 +76,6 @@ public class MFFWebScraperIT {
             String refFile = refFileBase + refFiles[i];
             scrapeAndVerify(url, refFile);
         }
-    }
-
-    private void scrapeAllParallel(String urlBase, String[] urlExt, String refFileBase, String[] refFiles)
-            throws Exception {
-        int shortenedLength = 1; // urlExt.length;
-        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-        for (int i = 0; i < shortenedLength; i++) {
-            logger.debug("Scheduling scrape for plan {}...", refFiles[i]);
-            String url = urlBase + urlExt[i];
-            String refFile = refFileBase + refFiles[i];
-            executorService.submit(() -> scrapeAndVerify(url, refFile));
-        }
-        executorService.shutdown();
-        executorService.awaitTermination(10, TimeUnit.MINUTES);
     }
 
     private void scrapeAndVerify(String url, String referenceFile) {

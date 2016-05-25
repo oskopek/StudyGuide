@@ -126,11 +126,14 @@ public class SISHtmlScraper implements ProgressObservable {
 
         Elements table2 = tab2s.get(2).select("tr");
         List<String> teacherList = new ArrayList<>();
-        Optional<Element> garantTableHeader = table2.get(0).select("th").stream()
-                .filter(element -> element.text().toLowerCase().contains("garant")).findFirst();
-        if (garantTableHeader.isPresent()) {
-            Element garantTableData = garantTableHeader.get().nextElementSibling();
-            teacherList = garantTableData.select("a.link3").stream().map(Element::text).collect(Collectors.toList());
+        if (!table2.isEmpty()) {
+            Optional<Element> garantTableHeader = table2.get(0).select("th").stream()
+                    .filter(element -> element.text().toLowerCase().contains("garant")).findFirst();
+            if (garantTableHeader.isPresent()) {
+                Element garantTableData = garantTableHeader.get().nextElementSibling();
+                teacherList = garantTableData.select("a.link3").stream().map(Element::text)
+                        .collect(Collectors.toList());
+            }
         }
 
         CourseRegistry prereqs = new CourseRegistry();
