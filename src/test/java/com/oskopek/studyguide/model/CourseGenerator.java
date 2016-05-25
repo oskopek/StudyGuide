@@ -2,6 +2,7 @@ package com.oskopek.studyguide.model;
 
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.model.courses.EnrollableIn;
 
 import java.util.*;
 
@@ -38,7 +39,8 @@ public final class CourseGenerator {
         List<String> teachers = new ArrayList<>();
         List<Course> prereqCourses = new ArrayList<>();
         List<Course> coreqCourses = new ArrayList<>();
-        return new Course(id, name, localizedName, locale, credits, teachers, prereqCourses, coreqCourses);
+        return new Course(id, name, localizedName, locale, credits, EnrollableIn.BOTH, teachers, prereqCourses,
+                coreqCourses);
     }
 
     /**

@@ -2,6 +2,7 @@ package com.oskopek.studyguide.persistence;
 
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
+import com.oskopek.studyguide.model.courses.EnrollableIn;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,6 +41,9 @@ public class MFFHtmlScraperTest {
 
         CourseRegistry registry = studyPlan.getCourseRegistry();
         assertEquals(0, registry.getCourse("NJAZ091").getTeacherNames().size());
+        assertEquals(EnrollableIn.BOTH, registry.getCourse("NJAZ091").getEnrollableIn());
+        assertEquals(EnrollableIn.WINTER, registry.getCourse("NPRG041").getEnrollableIn());
+        assertEquals(EnrollableIn.SUMMER, registry.getCourse("NPRG021").getEnrollableIn());
         assertEquals(2, registry.getCourse("NPRG041").getTeacherNames().size());
         assertEquals(Arrays.asList("RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D."),
                 registry.getCourse("NPRG041").getTeacherNames().sorted());

@@ -31,9 +31,11 @@ public class Course implements Comparable<Course> {
     private final StringProperty localizedName;
     private final ObjectProperty<Locale> locale;
     private final ObjectProperty<Credits> credits;
+    private final ObjectProperty<EnrollableIn> enrollableIn;
     private final ListProperty<String> teacherNames;
     private final ListProperty<Course> prerequisites;
     private final ListProperty<Course> corequisites;
+
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private transient EventBus eventBus;
     private final transient ChangeListener<Credits> creditsChangeListener = (x, y, z) -> fireValueChangedEvent();
@@ -47,6 +49,7 @@ public class Course implements Comparable<Course> {
         this.localizedName = new SimpleStringProperty();
         this.locale = new SimpleObjectProperty<>(Locale.getDefault());
         this.credits = new SimpleObjectProperty<>();
+        this.enrollableIn = new SimpleObjectProperty<>();
         this.teacherNames = new SimpleListProperty<>(FXCollections.observableArrayList());
         this.prerequisites = new SimpleListProperty<>(FXCollections.observableArrayList());
         this.corequisites = new SimpleListProperty<>(FXCollections.observableArrayList());
@@ -61,6 +64,7 @@ public class Course implements Comparable<Course> {
      * @param localizedName course name in a local language
      * @param locale the locale of the localized course name, non-null if {@code localizedName} is non-null
      * @param credits the credits awarded after fulfilling this course, non-null
+     * @param enrollableIn when the course enrollable is
      * @param teacherNames teachers of this course
      * @param prerequisites courses to be fulfilled before enrolling in this course
      * @param corequisites courses to be enrolled in before (or at the same time) enrolling in this course
@@ -68,6 +72,7 @@ public class Course implements Comparable<Course> {
      * or if the locale is null when localizedName is non-null
      */
     public Course(String id, String name, String localizedName, Locale locale, Credits credits,
+            EnrollableIn enrollableIn,
             List<String> teacherNames, List<Course> prerequisites, List<Course> corequisites)
             throws IllegalArgumentException {
         if (id == null || name == null || credits == null) {
@@ -81,6 +86,7 @@ public class Course implements Comparable<Course> {
             throw new IllegalArgumentException("Locale cannot be null when localized name isn't null.");
         }
         this.credits = new SimpleObjectProperty<>(credits);
+        this.enrollableIn = new SimpleObjectProperty<>(enrollableIn);
         if (teacherNames == null) {
             this.teacherNames = new SimpleListProperty<>();
         } else {
@@ -112,10 +118,12 @@ public class Course implements Comparable<Course> {
         String localizedName = original.getLocalizedName();
         Locale locale = original.getLocale();
         Credits credits = original.getCredits();
+        EnrollableIn enrollableIn = original.getEnrollableIn();
         List<String> teacherNames = new ArrayList<>(original.getTeacherNames());
         List<Course> prerequisites = new ArrayList<>(original.getPrerequisites());
         List<Course> corequisites = new ArrayList<>(original.getCorequisites());
-        return new Course(id, name, localizedName, locale, credits, teacherNames, prerequisites, corequisites);
+        return new Course(id, name, localizedName, locale, credits, enrollableIn, teacherNames, prerequisites,
+                corequisites);
     }
 
     /**
@@ -148,6 +156,14 @@ public class Course implements Comparable<Course> {
             throw new IllegalArgumentException("Credits cannot be null.");
         }
         this.credits.set(credits);
+    }
+
+    public EnrollableIn getEnrollableIn() {
+        return enrollableIn.get();
+    }
+
+    public void setEnrollableIn(EnrollableIn enrollableIn) {
+        this.enrollableIn.set(enrollableIn);
     }
 
     /**
@@ -352,6 +368,10 @@ public class Course implements Comparable<Course> {
         return credits;
     }
 
+    public ObjectProperty<EnrollableIn> enrollableInProperty() {
+        return enrollableIn;
+    }
+
     /**
      * The JavaFX property for {@link #getTeacherNames()}.
      *
@@ -386,6 +406,7 @@ public class Course implements Comparable<Course> {
     private void registerChangeEventListeners() {
         id.addListener((x, y, z) -> fireValueChangedEvent());
         credits.addListener(this::onCreditsChanged);
+        enrollableIn.addListener((x, y, z) -> fireValueChangedEvent());
         prerequisites.addListener((x, y, z) -> fireValueChangedEvent());
         corequisites.addListener((x, y, z) -> fireValueChangedEvent());
     }

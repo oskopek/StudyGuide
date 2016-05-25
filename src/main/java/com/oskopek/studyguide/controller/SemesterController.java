@@ -9,6 +9,7 @@ import com.oskopek.studyguide.model.SemesterPlan;
 import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.model.courses.EnrollableIn;
 import com.oskopek.studyguide.persistence.MFFWebScraperUtil;
 import com.oskopek.studyguide.persistence.SISHtmlScraper;
 import com.oskopek.studyguide.view.AlertCreator;
@@ -116,8 +117,8 @@ public class SemesterController extends AbstractController {
             courseId++;
         }
         Course course = new Course("Course" + courseId, "Name", "LocalizedName", Locale.getDefault(),
-                Credits.valueOf(0), new ArrayList<>(Collections.singletonList("teacher")), new ArrayList<>(),
-                new ArrayList<>());
+                Credits.valueOf(0), EnrollableIn.BOTH, new ArrayList<>(Collections.singletonList("teacher")),
+                new ArrayList<>(), new ArrayList<>());
         studyPlan.getCourseRegistry().putCourse(course);
         courseDetailController.setCourse(course);
     }

@@ -3,6 +3,7 @@ package com.oskopek.studyguide.persistence;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import com.oskopek.studyguide.model.courses.Credits;
+import com.oskopek.studyguide.model.courses.EnrollableIn;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import org.jsoup.Jsoup;
@@ -102,6 +103,25 @@ public class SISHtmlScraper implements ProgressObservable {
         // skip table 0
         Elements table1 = tab2s.get(1).select("tr");
         String name = table1.get(0).select("td").first().text();
+        String enrollableInString = table1.stream()
+                .filter(element -> element.child(0).text().toLowerCase().startsWith("semestr")).findFirst().get()
+                .child(1).text();
+        EnrollableIn enrollableIn;
+        switch (enrollableInString.toLowerCase()) {
+            case "zimní":
+                enrollableIn = EnrollableIn.WINTER;
+                break;
+            case "letní":
+                enrollableIn = EnrollableIn.SUMMER;
+                break;
+            case "oba":
+                enrollableIn = EnrollableIn.BOTH;
+                break;
+            default:
+                enrollableIn = EnrollableIn.BOTH;
+                logger.warn("Unknown enrollable string: {}", enrollableInString);
+                break;
+        }
         Credits credits = Credits.valueOf(Integer.parseInt(table1.get(5).select("td").first().text()));
 
         Elements table2 = tab2s.get(2).select("tr");
@@ -127,8 +147,8 @@ public class SISHtmlScraper implements ProgressObservable {
             }
             parseAllCoursesFromLinks(tableRow, addTo, registry, courseId);
         }
-        Course course = new Course(courseId, name, localizedName, Locale.forLanguageTag("cs"), credits, teacherList,
-                new ArrayList<>(prereqs.courseMapValues()), new ArrayList<>(coreqs.courseMapValues()));
+        Course course = new Course(courseId, name, localizedName, Locale.forLanguageTag("cs"), credits, enrollableIn,
+                teacherList, new ArrayList<>(prereqs.courseMapValues()), new ArrayList<>(coreqs.courseMapValues()));
         registry.putCourse(course);
         return course;
     }
