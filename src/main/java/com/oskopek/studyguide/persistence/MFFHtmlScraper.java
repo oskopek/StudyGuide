@@ -20,6 +20,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
@@ -27,6 +28,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -145,7 +147,14 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
         c3.setMaxFulfilled(1);
         c3.setSemesterPlan(semesterPlan);
 
-        constraints.getGlobalConstraintList().addAll(c1, c2, c3);
+        GlobalLongStudyFeeConstraint c4 = BeanManagerUtil.createBeanInstance(GlobalLongStudyFeeConstraint.class);
+        c4.setCurrency(Currency.getInstance("CZK"));
+        c4.setFromSemester((lastYearInt + 1) * 2 + 1); // one more year + convert to semesters (counted from 1)
+        c4.setFeePerSemester(BigDecimal.valueOf(
+                22000L)); // http://www.cuni.cz/UK-917-version1-vyse_poplatku_na_uk_2016_2017.pdf MFF informatika
+        c4.setSemesterPlan(semesterPlan);
+
+        constraints.getGlobalConstraintList().addAll(c1, c2, c3, c4);
 
         for (int i = 1; i <= lastYearInt * 2; i++) {
             GlobalCreditsSumUntilSemesterConstraint su = BeanManagerUtil

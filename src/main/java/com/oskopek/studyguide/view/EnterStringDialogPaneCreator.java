@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
+import javafx.stage.Modality;
 
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
@@ -40,6 +41,7 @@ public class EnterStringDialogPaneCreator {
         dialogPane.setHeaderText(prompt);
         EnterStringController enterStringController = fxmlLoader.getController();
         Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.setDialogPane(dialogPane);
         enterStringController.setDialog(dialog);
         dialog.setTitle("StudyGuide");
