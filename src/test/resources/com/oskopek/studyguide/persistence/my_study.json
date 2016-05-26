@@ -2,13 +2,13 @@
   "courseRegistry" : {
     "courses" : {
       "NSWI141" : {
-        "@id" : "5de51e33-6b2d-4a68-ad58-65f338541f80",
+        "@id": "afdb300a-13f2-40be-8d0a-75b0ff70b31e",
         "id" : "NSWI141",
         "name" : "Introduction to networking",
         "localizedName" : "Úvod do počítačových sítí",
         "locale" : "cs",
         "credits" : {
-          "@id" : "30482f0b-bc9c-430a-aac7-09872433b1b6",
+          "@id": "9676d17f-d270-429e-acb1-981111e13f8b",
           "creditValue" : 2
         },
         "enrollableIn" : "WINTER",
@@ -17,13 +17,13 @@
         "corequisites" : [ ]
       },
       "NOFY056" : {
-        "@id" : "68b95af4-754c-485b-9a2a-38104842a5ff",
+        "@id": "06152b21-2585-4949-922d-5e4a02f3c810",
         "id" : "NOFY056",
         "name" : "Programming for Physicists",
         "localizedName" : "Programování pro fyziky",
         "locale" : "cs",
         "credits" : {
-          "@id" : "311294da-a55d-4f65-a08f-1a553e7ba5f4",
+          "@id": "7d2998e1-7dd3-464d-92eb-be52225cbed4",
           "creditValue" : 5
         },
         "enrollableIn" : "WINTER",
@@ -32,13 +32,13 @@
         "corequisites" : [ ]
       },
       "NTIN061" : {
-        "@id" : "3a24106c-6648-48ad-a4d7-5287ea0ba914",
+        "@id": "c5376a21-76f2-4852-982f-e0ef6941e74a",
         "id" : "NTIN061",
         "name" : "Algorithms and Data Structures II",
         "localizedName" : "Algoritmy a datové struktury II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "512a87db-7cf7-423c-873a-7a5b8732c68f",
+          "@id": "eea15fe2-9ebf-404f-a574-e8645d83cb5a",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
@@ -47,26 +47,26 @@
         "corequisites" : [ ]
       },
       "NMAI055" : {
-        "@id" : "51aa7fe0-f4da-471f-8f52-ddd8e0d9fd25",
+        "@id": "35bdf6bd-910b-4fef-8cf1-bbd5940441dc",
         "id" : "NMAI055",
         "name" : "Mathematical Analysis II",
         "localizedName" : "Matematická analýza II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "1df191cd-5bcb-451d-a672-e6b5879abdd9",
+          "@id": "bf53c719-fd0c-4c79-ade3-361581ff25c8",
           "creditValue" : 5
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "doc. Mgr. Robert Šámal, Ph.D.", "Hans Raj Tiwary, M.Sc., Ph.D.", "prof. RNDr. Jan Rataj, CSc." ],
         "prerequisites" : [ ],
         "corequisites" : [ {
-          "@id" : "88cbc901-1106-4e2e-8fb3-49f74c79a7a1",
+          "@id": "e776e682-ee6c-4f41-a203-ac7f4d66db57",
           "id" : "NMAI054",
           "name" : "Mathematical Analysis I",
           "localizedName" : "Matematická analýza I",
           "locale" : "cs",
           "credits" : {
-            "@id" : "0f6a4047-5829-492a-b421-c4c516f9f92d",
+            "@id": "584e1eb3-cc1d-4d9b-a3f1-be6cd5bdb317",
             "creditValue" : 5
           },
           "enrollableIn" : "WINTER",
@@ -75,15 +75,15 @@
           "corequisites" : [ ]
         } ]
       },
-      "NMAI054" : "88cbc901-1106-4e2e-8fb3-49f74c79a7a1",
+      "NMAI054": "e776e682-ee6c-4f41-a203-ac7f4d66db57",
       "NMAI057" : {
-        "@id" : "ca2c40a3-2b59-4378-8fb5-5f1f49765f93",
+        "@id": "7526892c-b193-4408-a1e3-0e905eb3e13e",
         "id" : "NMAI057",
         "name" : "Linear Algebra I",
         "localizedName" : "Lineární algebra I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "d7d95475-6d22-4288-a4c4-0da09db53c4d",
+          "@id": "78eb4bc7-bee2-4058-8079-f745eaabb5f9",
           "creditValue" : 5
         },
         "enrollableIn" : "WINTER",
@@ -92,85 +92,97 @@
         "corequisites" : [ ]
       },
       "NMAI056" : {
-        "@id" : "7444ca6e-f207-49ac-a1bc-316f6132ce12",
+        "@id": "051e8f2c-3770-4f6a-8a02-dfc046e6f5a1",
         "id" : "NMAI056",
         "name" : "Mathematical Analysis III",
         "localizedName" : "Matematická analýza III",
         "locale" : "cs",
         "credits" : {
-          "@id" : "aebcb567-a0fb-4c02-81fb-f18c728b1cc8",
+          "@id": "8268757d-314f-42ca-b4a8-1f4a1eec1313",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
         "teacherNames" : [ "doc. RNDr. Martin Klazar", "Dr.", "prof. RNDr. Aleš Pultr", "DrSc." ],
         "prerequisites" : [ ],
-        "corequisites" : [ "88cbc901-1106-4e2e-8fb3-49f74c79a7a1" ]
+        "corequisites": [
+          "e776e682-ee6c-4f41-a203-ac7f4d66db57"
+        ]
       },
       "NOPT048" : {
-        "@id" : "67ea3c09-6796-460b-9036-04538efb4214",
+        "@id": "012e4440-2e35-4500-be60-ab9a844e9d15",
         "id" : "NOPT048",
         "name" : "Optimization methods",
         "localizedName" : "Optimalizační metody",
         "locale" : "cs",
         "credits" : {
-          "@id" : "07bc7891-0d29-4c3c-ab0b-2c50db043895",
+          "@id": "6cd7e754-5e49-4a0d-a9d3-357b90806d2e",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
-        "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc." ],
+        "teacherNames": [
+          "prof. RNDr. Jiří Sgall",
+          "DrSc."
+        ],
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
       "NMAI059" : {
-        "@id" : "09c25690-2ac1-4745-9d05-15b9c34f112c",
+        "@id": "30a917f0-5d07-4370-857e-2821e055bfab",
         "id" : "NMAI059",
         "name" : "Probability and Statistics",
         "localizedName" : "Pravděpodobnost a statistika",
         "locale" : "cs",
         "credits" : {
-          "@id" : "7330f30e-a2fa-4e7f-9f65-bdf1d7440b1e",
+          "@id": "d68deeaa-5bd1-479e-8b19-755f0a897a19",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
-        "teacherNames" : [ "prof. RNDr. Jaromír Antoch, CSc.", "doc. RNDr. Daniel Hlubinka, Ph.D." ],
+        "teacherNames": [
+          "prof. RNDr. Jaromír Antoch",
+          "CSc.",
+          "doc. RNDr. Daniel Hlubinka",
+          "Ph.D."
+        ],
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
       "NMAI058" : {
-        "@id" : "98914991-8f77-4d69-af69-004db02e38f9",
+        "@id": "bbf59172-1a97-4af5-891e-8f9cf144a1da",
         "id" : "NMAI058",
         "name" : "Linear Algebra II",
         "localizedName" : "Lineární algebra II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "0d83e669-5671-4371-80e8-0406d876d82a",
+          "@id": "a1fc4902-4a17-4e03-a71f-9ce40a8b782d",
           "creditValue" : 5
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "prof. RNDr. Luděk Kučera", "DrSc.", "RNDr. Ondřej Pangrác", "Ph.D.", "doc. Mgr. Zdeněk Dvořák", "Ph.D." ],
         "prerequisites" : [ ],
-        "corequisites" : [ "ca2c40a3-2b59-4378-8fb5-5f1f49765f93" ]
+        "corequisites": [
+          "7526892c-b193-4408-a1e3-0e905eb3e13e"
+        ]
       },
       "NSWI143" : {
-        "@id" : "09acc495-ae52-4a60-8438-297593a18fe6",
+        "@id": "e5d5d5ba-19ca-4a7b-b650-5d1d59810ef3",
         "id" : "NSWI143",
         "name" : "Computer Architecture",
         "localizedName" : "Architektura počítačů",
         "locale" : "cs",
         "credits" : {
-          "@id" : "68b934db-1761-42c0-9f80-3b7814daafb8",
+          "@id": "5e3eb769-d2b0-4046-b1c0-823440fce9c2",
           "creditValue" : 3
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "Ing. Lubomír Bulej, Ph.D." ],
         "prerequisites" : [ {
-          "@id" : "4f78dabd-092b-456a-9fd3-e464d7f97a70",
+          "@id": "12a78e6b-f13b-4d58-aec1-8b7454d8892a",
           "id" : "NPRG030",
           "name" : "Programming I",
           "localizedName" : "Programování I",
           "locale" : "cs",
           "credits" : {
-            "@id" : "478ac45c-d645-4cf6-8bfa-59cf0cf004e9",
+            "@id": "e6ab80a2-be09-4254-92e9-00195746ce08",
             "creditValue" : 6
           },
           "enrollableIn" : "WINTER",
@@ -178,13 +190,13 @@
           "prerequisites" : [ ],
           "corequisites" : [ ]
         }, {
-          "@id" : "15a5911c-6fd6-4d2c-b5be-2ab2e936ee80",
+          "@id": "f3050121-cc90-44e9-aa86-35dab5d2673b",
           "id" : "NPRG031",
           "name" : "Programming II",
           "localizedName" : "Programování II",
           "locale" : "cs",
           "credits" : {
-            "@id" : "b715957a-c3c0-40d2-87c5-b9b52c4abe2d",
+            "@id": "064726b5-e2fa-4775-9d4e-421a1c350038",
             "creditValue" : 5
           },
           "enrollableIn" : "SUMMER",
@@ -192,13 +204,13 @@
           "prerequisites" : [ ],
           "corequisites" : [ ]
         }, {
-          "@id" : "6a369fa8-ce98-4a04-b3d3-78ae3cd05aa6",
+          "@id": "0940f1bb-e020-4af9-8e46-7a9deff4ed5a",
           "id" : "NSWI120",
           "name" : "Principles of Computers",
           "localizedName" : "Principy počítačů",
           "locale" : "cs",
           "credits" : {
-            "@id" : "9bcaf3ef-aff4-46b7-badf-ab3679fad9aa",
+            "@id": "f837d658-8824-400b-ac42-43aa17db0750",
             "creditValue" : 3
           },
           "enrollableIn" : "WINTER",
@@ -209,13 +221,13 @@
         "corequisites" : [ ]
       },
       "NOPT046" : {
-        "@id" : "f001f3e6-e428-4972-ade7-4ed0c58d90e5",
+        "@id": "bf4ed482-8e87-4979-b96d-fd6cb17e59e6",
         "id" : "NOPT046",
         "name" : "Discrete and Continuous Optimization",
         "localizedName" : "Diskrétní a spojitá optimalizace",
         "locale" : "cs",
         "credits" : {
-          "@id" : "19e92d0f-43c7-4d3b-830f-1883112f65c2",
+          "@id": "e2e409b8-a39c-4452-9ed3-2fc165d36dac",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
@@ -224,28 +236,32 @@
         "corequisites" : [ ]
       },
       "NPRG005" : {
-        "@id" : "483926ca-caf5-44b4-bac6-c193a9ec6f3d",
+        "@id": "db7e885c-1bf6-4192-a936-d5f123c77397",
         "id" : "NPRG005",
         "name" : "Non-procedural Programming",
         "localizedName" : "Neprocedurální programování",
         "locale" : "cs",
         "credits" : {
-          "@id" : "ed561365-dfcb-4c60-bff7-5365cbe31cb6",
+          "@id": "1869a308-b7d7-4377-85d0-6933c0cdf318",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
-        "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc.", "RNDr. Jan Hric" ],
+        "teacherNames": [
+          "doc. RNDr. Tomáš Dvořák",
+          "CSc.",
+          "RNDr. Jan Hric"
+        ],
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
       "NPRG003" : {
-        "@id" : "ab8ffd15-66b8-4c01-bd6c-a1d9f7de4bbe",
+        "@id": "29b81f3b-1a65-4158-9928-eebb401c6541",
         "id" : "NPRG003",
         "name" : "Programming Methodology and Philosophy of Programming Languages",
         "localizedName" : "Metodika programování a filozofie programovacích jazyků",
         "locale" : "cs",
         "credits" : {
-          "@id" : "2857ac42-9d1c-4ff1-b5bf-f02943312bc7",
+          "@id": "5ae907a0-2bb6-46ba-9ad8-2280f7a699a5",
           "creditValue" : 3
         },
         "enrollableIn" : "SUMMER",
@@ -254,42 +270,33 @@
         "corequisites" : [ ]
       },
       "NPRG045" : {
-        "@id" : "88a10b0d-560b-4833-87f3-03c9e382cf15",
+        "@id": "d4273151-1155-4fdc-b9d7-c9c4a8133828",
         "id" : "NPRG045",
         "name" : "Individual Software Project",
         "localizedName" : "Ročníkový projekt",
         "locale" : "cs",
         "credits" : {
-          "@id" : "73bb5f63-d711-4ff6-9e77-b9c7ae9a397f",
+          "@id": "89bbe4e6-7d00-492d-b167-813e0484941b",
           "creditValue" : 4
         },
         "enrollableIn" : "BOTH",
-        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
-        "prerequisites" : [ {
-          "@id" : "0a0720e0-904b-4e62-8f0a-aa8b6b7a275c",
-          "id" : "NPRG031",
-          "name" : "Programming II",
-          "localizedName" : "Programování II",
-          "locale" : "cs",
-          "credits" : {
-            "@id" : "9a525621-8ec0-4a50-9174-5eb2bf495ea6",
-            "creditValue" : 5
-          },
-          "enrollableIn" : "SUMMER",
-          "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
-          "prerequisites" : [ ],
-          "corequisites" : [ ]
-        } ],
+        "teacherNames": [
+          "RNDr. Filip Zavoral",
+          "Ph.D."
+        ],
+        "prerequisites": [
+          "f3050121-cc90-44e9-aa86-35dab5d2673b"
+        ],
         "corequisites" : [ ]
       },
       "NDMI084" : {
-        "@id" : "532e8193-65ce-4e99-b088-db4842e1edee",
+        "@id": "26572974-a482-495d-a40f-d00953b3c7f6",
         "id" : "NDMI084",
         "name" : "Introduction to approximation and randomized algorithms",
         "localizedName" : "Úvod do aproximačních a pravděpodobnostních algoritmů",
         "locale" : "cs",
         "credits" : {
-          "@id" : "5881ef70-776e-47bc-b4d6-4df2117d180c",
+          "@id": "0134a1aa-424e-4ef2-94cb-21413a60385d",
           "creditValue" : 5
         },
         "enrollableIn" : "WINTER",
@@ -298,52 +305,55 @@
         "corequisites" : [ ]
       },
       "NPRG041" : {
-        "@id" : "7a1f3f6a-43a4-4b58-ae9f-e5478e6d3d5d",
+        "@id": "a93433af-7528-4eec-bc38-6185d14da012",
         "id" : "NPRG041",
         "name" : "Programming in C++",
         "localizedName" : "Programování v C++",
         "locale" : "cs",
         "credits" : {
-          "@id" : "e0e68dc6-ff6c-428a-ab6e-ea1f4a61dae1",
+          "@id": "bb555f04-fc38-4dbb-b955-956d03b76f2b",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
         "teacherNames" : [ "RNDr. David Bednárek", "Ph.D.", "RNDr. Filip Zavoral", "Ph.D." ],
         "prerequisites" : [ {
-          "@id" : "8aca0860-1daa-4980-a5c9-efb43ebbd8af",
+          "@id": "6444d7fc-7bdb-4aa3-8dd5-617a954c9e89",
           "id" : "NPRM045",
           "name" : "Programming II",
           "localizedName" : "Programování II",
           "locale" : "cs",
           "credits" : {
-            "@id" : "305ca853-36c9-466c-8436-396c168c1f02",
+            "@id": "ebeeeffb-b90c-4e94-bc25-f4f78bd74755",
             "creditValue" : 5
           },
           "enrollableIn" : "SUMMER",
           "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
           "prerequisites" : [ ],
           "corequisites" : [ ]
-        }, "68b95af4-754c-485b-9a2a-38104842a5ff", "15a5911c-6fd6-4d2c-b5be-2ab2e936ee80", {
-          "@id" : "de9b6ff9-75df-4ed2-a876-5461cba6edcd",
+        },
+          "06152b21-2585-4949-922d-5e4a02f3c810",
+          "f3050121-cc90-44e9-aa86-35dab5d2673b",
+          {
+            "@id": "7661f2f9-85e4-4456-b5e4-82f0e6784eec",
           "id" : "NMIN102",
           "name" : "Programming 2",
           "localizedName" : "Programování 2",
           "locale" : "cs",
           "credits" : {
-            "@id" : "1725f091-98e9-42c6-9743-dbefacb5f4ea",
+            "@id": "d50cb86c-a8a0-415f-9a54-147919c2e1e2",
             "creditValue" : 5
           },
           "enrollableIn" : "SUMMER",
           "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
           "prerequisites" : [ ],
           "corequisites" : [ {
-            "@id" : "3216bfe4-e63f-47ce-9f48-96503e3f3a06",
+            "@id": "ddc034d9-3ae1-4b4e-a229-3125b41ada4c",
             "id" : "NMIN101",
             "name" : "Programming 1",
             "localizedName" : "Programování 1",
             "locale" : "cs",
             "credits" : {
-              "@id" : "9696b29c-c03b-42b1-9fad-f469f247812f",
+              "@id": "4b09e9e9-f0f9-4a89-931b-6b63bff2123b",
               "creditValue" : 5
             },
             "enrollableIn" : "WINTER",
@@ -355,13 +365,13 @@
         "corequisites" : [ ]
       },
       "NJAZ090" : {
-        "@id" : "0cea7d6d-47b2-4905-b765-febab1ebec0e",
+        "@id": "debcc907-b70d-4578-b89b-583570a80dba",
         "id" : "NJAZ090",
         "name" : "English for Upper-Intermediate and Advanced Students IV",
         "localizedName" : "Anglický jazyk pro středně pokročilé a pokročilé IV",
         "locale" : "cs",
         "credits" : {
-          "@id" : "73aae59c-753c-4d9b-8aaf-bb581f987179",
+          "@id": "f15fa4a8-d260-49c7-91aa-5982a35f77e9",
           "creditValue" : 1
         },
         "enrollableIn" : "SUMMER",
@@ -370,13 +380,13 @@
         "corequisites" : [ ]
       },
       "NTIN071" : {
-        "@id" : "c449edb8-9e9b-4be0-a01e-fc878a2b64e1",
+        "@id": "244bd8d0-6a67-4f81-8283-0124a673ce74",
         "id" : "NTIN071",
         "name" : "Automata and Grammars",
         "localizedName" : "Automaty a gramatiky",
         "locale" : "cs",
         "credits" : {
-          "@id" : "e65ecc18-404f-416b-815b-47b45e3623ed",
+          "@id": "01ddf281-4b7b-4645-b658-48deeb65c521",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
@@ -385,13 +395,13 @@
         "corequisites" : [ ]
       },
       "NJAZ091" : {
-        "@id" : "67fb93f5-5414-47c1-a648-a4e004e083cd",
+        "@id": "2583e615-ec47-42b2-96d0-b84002b0c8bf",
         "id" : "NJAZ091",
         "name" : "English Language",
         "localizedName" : "Anglický jazyk",
         "locale" : "cs",
         "credits" : {
-          "@id" : "15002adf-759b-41ed-a90b-8b609bd9883a",
+          "@id": "0f9870cb-e209-4c4e-9d6d-e56c38d954b3",
           "creditValue" : 1
         },
         "enrollableIn" : "BOTH",
@@ -400,13 +410,13 @@
         "corequisites" : [ ]
       },
       "NPGR020" : {
-        "@id" : "d7315196-44b1-4a80-abb8-cbd20a6e1a07",
+        "@id": "3c975665-586c-425f-8d8b-5f884ef5bd4b",
         "id" : "NPGR020",
         "name" : "Geometry for Computer Graphics",
         "localizedName" : "Geometrie pro počítačovou grafiku",
         "locale" : "cs",
         "credits" : {
-          "@id" : "0675b11e-5ef7-4f0a-a1f9-86ea5becd91e",
+          "@id": "c07131a5-4fd1-485f-989c-a032b8e38e36",
           "creditValue" : 3
         },
         "enrollableIn" : "WINTER",
@@ -415,13 +425,13 @@
         "corequisites" : [ ]
       },
       "NSWI095" : {
-        "@id" : "1c3ddef4-b5fd-4d73-b717-26570aebdebb",
+        "@id": "f06d82ee-aedd-413c-a2b6-78d129ec9ad3",
         "id" : "NSWI095",
         "name" : "Introduction to UNIX",
         "localizedName" : "Úvod do UNIXu",
         "locale" : "cs",
         "credits" : {
-          "@id" : "9fc0fd9e-263c-44e3-9b67-56a06187b145",
+          "@id": "a950045c-8b59-4493-aaf9-2489ccbd9160",
           "creditValue" : 5
         },
         "enrollableIn" : "SUMMER",
@@ -430,13 +440,13 @@
         "corequisites" : [ ]
       },
       "NMAI062" : {
-        "@id" : "279d401b-1aaf-49d6-a453-242d12f8b3b3",
+        "@id": "ccba652c-5b2f-4f14-a923-f40f30188704",
         "id" : "NMAI062",
         "name" : "Algebra I",
         "localizedName" : "Algebra I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "d5a66f3b-b132-474a-ae76-695fb78b6cec",
+          "@id": "e61bf958-97c8-4387-86db-7b6845b93f84",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
@@ -445,13 +455,13 @@
         "corequisites" : [ ]
       },
       "NSWI090" : {
-        "@id" : "aa3bbd4b-e076-44ba-817b-64f469a8ac4c",
+        "@id": "243f69c5-b303-4e54-8d47-64079bf2b53a",
         "id" : "NSWI090",
         "name" : "Computer Networks I",
         "localizedName" : "Počítačové sítě I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "bd90604e-3679-4900-bd7d-04b7095dfd3b",
+          "@id": "62748e7c-b035-4d28-a863-b8388bfea242",
           "creditValue" : 3
         },
         "enrollableIn" : "WINTER",
@@ -460,25 +470,25 @@
         "corequisites" : [ ]
       },
       "NDBI026" : {
-        "@id" : "10dfc904-079d-4e19-9ecb-192895efccc4",
+        "@id": "8efd2e3d-c420-488a-aaba-35626b078df3",
         "id" : "NDBI026",
         "name" : "Database Applications",
         "localizedName" : "Databázové aplikace",
         "locale" : "cs",
         "credits" : {
-          "@id" : "92d253f8-68e5-49b1-9d1c-3df9dc6d3375",
+          "@id": "c9fc21e0-43e7-4623-a582-bfe343851340",
           "creditValue" : 4
         },
         "enrollableIn" : "WINTER",
         "teacherNames" : [ "RNDr. Michal Kopecký, Ph.D." ],
         "prerequisites" : [ {
-          "@id" : "b2f05118-4a05-4e25-be54-d48a6c473d64",
+          "@id": "de15ddea-4660-4eb4-b928-a046ccf2fd69",
           "id" : "NDBI025",
           "name" : "Database Systems",
           "localizedName" : "Databázové systémy",
           "locale" : "cs",
           "credits" : {
-            "@id" : "3de4785c-8ea1-4726-9ea3-245c46df584e",
+            "@id": "1c0d2504-e6d4-47a8-b497-7ecc87fa1690",
             "creditValue" : 6
           },
           "enrollableIn" : "SUMMER",
@@ -488,30 +498,32 @@
         } ],
         "corequisites" : [ ]
       },
-      "NDBI025" : "b2f05118-4a05-4e25-be54-d48a6c473d64",
+      "NDBI025": "de15ddea-4660-4eb4-b928-a046ccf2fd69",
       "NMAI063" : {
-        "@id" : "40b8219c-d452-4299-b633-5a7d86959551",
+        "@id": "0418484f-3bd0-463f-aae1-2b90e5c07e34",
         "id" : "NMAI063",
         "name" : "Algebra II",
         "localizedName" : "Algebra II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "070ae7c2-fedf-414d-a74f-a99e5d5268bd",
+          "@id": "f2a7ae9b-9c70-4ac8-ad1c-09f1ba3e640f",
           "creditValue" : 3
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "Mgr. et Mgr. Jan Žemlička", "Ph.D." ],
         "prerequisites" : [ ],
-        "corequisites" : [ "279d401b-1aaf-49d6-a453-242d12f8b3b3" ]
+        "corequisites": [
+          "ccba652c-5b2f-4f14-a923-f40f30188704"
+        ]
       },
       "NDMI009" : {
-        "@id" : "c77b3adf-fef4-441e-96fc-2ef22b05131a",
+        "@id": "7c0281c2-4008-4058-845c-ff550714be2c",
         "id" : "NDMI009",
         "name" : "Combinatorial and Computational Geometry I",
         "localizedName" : "Kombinatorická a výpočetní geometrie I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "eb8d392c-57de-42ea-9ff5-8553d285543a",
+          "@id": "81c370ef-6f94-4c7e-851e-e6785543c785",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
@@ -520,43 +532,48 @@
         "corequisites" : [ ]
       },
       "NSWI015" : {
-        "@id" : "527a03f7-98a0-4dc8-bf8d-d38df7e7fb04",
+        "@id": "ee8f41e9-7f12-46bc-820d-34178760f1fd",
         "id" : "NSWI015",
         "name" : "Programming in Unix",
         "localizedName" : "Programování v Unixu",
         "locale" : "cs",
         "credits" : {
-          "@id" : "5108685b-d1a0-4f89-ab3a-0d4b80c840f0",
+          "@id": "c15b0797-3949-4a75-bad6-1a040fc11fed",
           "creditValue" : 5
         },
         "enrollableIn" : "WINTER",
         "teacherNames" : [ "Mgr. Vladimír Kotal" ],
-        "prerequisites" : [ "1c3ddef4-b5fd-4d73-b717-26570aebdebb" ],
+        "prerequisites": [
+          "f06d82ee-aedd-413c-a2b6-78d129ec9ad3"
+        ],
         "corequisites" : [ ]
       },
       "NSWI098" : {
-        "@id" : "f2173357-45aa-470b-92b8-f790da0aec3e",
+        "@id": "8ddede99-e6c9-450e-943c-09181c65e030",
         "id" : "NSWI098",
         "name" : "Compiler Principles",
         "localizedName" : "Principy překladačů",
         "locale" : "cs",
         "credits" : {
-          "@id" : "e3033c1c-a11a-4f5a-ab93-9b7e29480838",
+          "@id": "c5cdf2ba-f74d-4df8-980a-e45072769a84",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
-        "teacherNames" : [ "RNDr. Jakub Yaghob, Ph.D." ],
+        "teacherNames": [
+          "RNDr. Jakub Yaghob",
+          "Ph.D."
+        ],
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
       "NMAI069" : {
-        "@id" : "43cccdc4-eaf9-45c7-9282-acded27dae78",
+        "@id": "ef401187-1827-4ac5-b629-0eea742756d7",
         "id" : "NMAI069",
         "name" : "Mathematical skills",
         "localizedName" : "Matematické dovednosti",
         "locale" : "cs",
         "credits" : {
-          "@id" : "07f2c6f9-fcda-4f1f-be7e-eaccc6de3fab",
+          "@id": "75c8d769-2cdf-4c36-ab70-e80e9d2f81ea",
           "creditValue" : 2
         },
         "enrollableIn" : "WINTER",
@@ -565,13 +582,13 @@
         "corequisites" : [ ]
       },
       "NDMI002" : {
-        "@id" : "10aaa3f4-a071-4b48-83e0-65a6042e8e1a",
+        "@id": "1cd80906-e960-49f3-bbd9-0fd6c03857e0",
         "id" : "NDMI002",
         "name" : "Discrete Mathematics",
         "localizedName" : "Diskrétní matematika",
         "locale" : "cs",
         "credits" : {
-          "@id" : "3bac4189-7f5a-4ca9-8e30-672cf1c935a2",
+          "@id": "eb857c2e-fc1d-4889-aa52-b9bb3b30b0f7",
           "creditValue" : 5
         },
         "enrollableIn" : "WINTER",
@@ -580,13 +597,13 @@
         "corequisites" : [ ]
       },
       "NAIL063" : {
-        "@id" : "83ac590b-2c0b-40b7-bcf8-601fbef3253f",
+        "@id": "eb681fa9-3943-4a84-9378-b6af48a703b3",
         "id" : "NAIL063",
         "name" : "Set Theory",
         "localizedName" : "Teorie množin",
         "locale" : "cs",
         "credits" : {
-          "@id" : "b5d88ada-32cd-469a-b0ad-3712e86130c6",
+          "@id": "7bb84057-b081-4b85-a030-c3836db7a992",
           "creditValue" : 3
         },
         "enrollableIn" : "SUMMER",
@@ -595,28 +612,31 @@
         "corequisites" : [ ]
       },
       "NAIL062" : {
-        "@id" : "b8dc9ad3-ea87-4481-b0f9-8421ed3710fe",
+        "@id": "7b5108d7-5092-439f-9970-86d598a1a514",
         "id" : "NAIL062",
         "name" : "Propositional and Predicate Logic",
         "localizedName" : "Výroková a predikátová logika",
         "locale" : "cs",
         "credits" : {
-          "@id" : "d014c9ff-4482-4c4e-be10-00b561d96065",
+          "@id": "2012e2ac-d96d-4264-b505-da5b8109a39f",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
-        "teacherNames" : [ "Mgr. Petr Gregor, Ph.D." ],
+        "teacherNames": [
+          "Mgr. Petr Gregor",
+          "Ph.D."
+        ],
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
       "NDMI011" : {
-        "@id" : "afc96d71-c195-4801-8c36-181540484b43",
+        "@id": "7aa109da-093d-4494-aad8-4397d4752e0a",
         "id" : "NDMI011",
         "name" : "Combinatorics and Graph Theory I",
         "localizedName" : "Kombinatorika a grafy I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "82e8cf9b-47eb-4b0a-b689-e3e20a85802d",
+          "@id": "efabfb4c-163d-4d61-a7ca-fab8e2f2396f",
           "creditValue" : 5
         },
         "enrollableIn" : "SUMMER",
@@ -625,13 +645,13 @@
         "corequisites" : [ ]
       },
       "NDMI012" : {
-        "@id" : "554fa493-eebd-48c6-a194-63dd7807eebd",
+        "@id": "ae9b2f86-64b9-4e19-b279-868e8c129f07",
         "id" : "NDMI012",
         "name" : "Combinatorics and Graph Theory II",
         "localizedName" : "Kombinatorika a grafy II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "c660f1bd-089e-4c0e-aa9e-70a2b28ddcd6",
+          "@id": "1edb6f45-6423-4e11-b813-e23cc5b5aed9",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
@@ -640,28 +660,30 @@
         "corequisites" : [ ]
       },
       "NPRG013" : {
-        "@id" : "ff054fdc-865b-4300-9154-a8cc437d18c1",
+        "@id": "bfdf7f77-a701-4df6-8060-776cb641f7fe",
         "id" : "NPRG013",
         "name" : "Java",
         "localizedName" : "Java",
         "locale" : "cs",
         "credits" : {
-          "@id" : "db27be66-2196-44ce-aa0a-9e83a9fcd5d1",
+          "@id": "5d27153e-8f7f-499d-afc5-746ddc7c1aeb",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
         "teacherNames" : [ "doc. RNDr. Petr Hnětynka", "Ph.D." ],
         "prerequisites" : [ ],
-        "corequisites" : [ "15a5911c-6fd6-4d2c-b5be-2ab2e936ee80" ]
+        "corequisites": [
+          "f3050121-cc90-44e9-aa86-35dab5d2673b"
+        ]
       },
       "NTIN060" : {
-        "@id" : "5d62fb45-086b-4cf6-b814-6f3fa233fc67",
+        "@id": "8526de6c-8b4d-4f2c-99f1-4ad603c587f5",
         "id" : "NTIN060",
         "name" : "Algorithms and Data Structures I",
         "localizedName" : "Algoritmy a datové struktury I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "6575dd18-fe97-42f0-9c8e-e260256dc72e",
+          "@id": "439fd4a2-827c-4ade-a58a-e77b92f4a35a",
           "creditValue" : 5
         },
         "enrollableIn" : "SUMMER",
@@ -670,28 +692,30 @@
         "corequisites" : [ ]
       },
       "NPRG051" : {
-        "@id" : "0423ee7c-9efa-4d03-89e4-ee3a342bc233",
+        "@id": "2fe92d5d-c66f-4ff2-bbec-a794250af44f",
         "id" : "NPRG051",
         "name" : "C++ Advanced Programming",
         "localizedName" : "Pokročilé programování v C++",
         "locale" : "cs",
         "credits" : {
-          "@id" : "8f5b56b2-c76f-4bf6-9917-edd583ebe61b",
+          "@id": "6b30eb17-ed98-458c-8ea4-9253126b846d",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Jakub Yaghob, Ph.D.", "RNDr. Filip Zavoral, Ph.D." ],
         "prerequisites" : [ ],
-        "corequisites" : [ "7a1f3f6a-43a4-4b58-ae9f-e5478e6d3d5d" ]
+        "corequisites": [
+          "a93433af-7528-4eec-bc38-6185d14da012"
+        ]
       },
       "NPFL063" : {
-        "@id" : "9ebe5f2b-0e96-441c-8dc2-fe35abaf21f7",
+        "@id": "5cc3e72f-ed57-4930-8fb5-bc70fbf691d8",
         "id" : "NPFL063",
         "name" : "Introduction to General Linguistics",
         "localizedName" : "Úvod do obecné lingvistiky",
         "locale" : "cs",
         "credits" : {
-          "@id" : "9a210986-af89-4517-9001-bd60c1f39581",
+          "@id": "09641a50-db6c-4e04-a750-b9b48746136a",
           "creditValue" : 5
         },
         "enrollableIn" : "WINTER",
@@ -699,15 +723,15 @@
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
-      "NPRM045" : "8aca0860-1daa-4980-a5c9-efb43ebbd8af",
+      "NPRM045": "6444d7fc-7bdb-4aa3-8dd5-617a954c9e89",
       "NTVY014" : {
-        "@id" : "45e2c7e4-5f34-4540-a692-bd6d4110fe97",
+        "@id": "e3f593af-1e42-4934-b196-942bd7bed477",
         "id" : "NTVY014",
         "name" : "Physical Education I",
         "localizedName" : "Tělesná výchova I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "b70db11d-4a99-4aff-ab1e-a55f7ff76659",
+          "@id": "f37c117b-6e5d-4647-b325-f930631e38e5",
           "creditValue" : 1
         },
         "enrollableIn" : "WINTER",
@@ -716,13 +740,13 @@
         "corequisites" : [ ]
       },
       "NTVY015" : {
-        "@id" : "5adb197f-4d5e-474b-ba1f-37bb6fd9ef2e",
+        "@id": "301ebf23-5bd8-4833-ad27-9eb189c39804",
         "id" : "NTVY015",
         "name" : "Physical Education II",
         "localizedName" : "Tělesná výchova II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "c0c2b1e3-ad79-408f-a3a2-4db28a001bae",
+          "@id": "3778cb2f-48c7-443a-90f2-811ce7f7a282",
           "creditValue" : 1
         },
         "enrollableIn" : "SUMMER",
@@ -730,15 +754,15 @@
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
-      "NSWI120" : "6a369fa8-ce98-4a04-b3d3-78ae3cd05aa6",
+      "NSWI120": "0940f1bb-e020-4af9-8e46-7a9deff4ed5a",
       "NSWE002" : {
-        "@id" : "2db25892-f77f-4b8f-bbcc-65899ec9570c",
+        "@id": "af409644-05c5-4ef8-85d4-ecb2622a5cf0",
         "id" : "NSWE002",
         "name" : "Introduction to dependable systems",
         "localizedName" : "Úvod do spolehlivých systémů",
         "locale" : "cs",
         "credits" : {
-          "@id" : "f403d4e0-7603-46f8-a83e-895c47972779",
+          "@id": "620a785c-8b7a-480d-a9ff-1355cb51efe3",
           "creditValue" : 1
         },
         "enrollableIn" : "WINTER",
@@ -747,13 +771,13 @@
         "corequisites" : [ ]
       },
       "NTVY016" : {
-        "@id" : "12e2905c-3a13-4899-8751-c7b5409565c0",
+        "@id": "0881cd1b-95da-4cd5-ae1d-2649125a32d5",
         "id" : "NTVY016",
         "name" : "Physical Education III",
         "localizedName" : "Tělesná výchova III",
         "locale" : "cs",
         "credits" : {
-          "@id" : "7c0e7d25-9bf7-4d18-b597-000c4d04e0ad",
+          "@id": "4574414d-8ea5-4195-b47b-d7e4f0b5db38",
           "creditValue" : 1
         },
         "enrollableIn" : "WINTER",
@@ -762,13 +786,13 @@
         "corequisites" : [ ]
       },
       "NSWI089" : {
-        "@id" : "40b79e25-84d3-465b-b7b2-dd11f675f6ca",
+        "@id": "2d909fbf-f684-47b9-bc60-1492722bacf1",
         "id" : "NSWI089",
         "name" : "Information Security I",
         "localizedName" : "Ochrana informací I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "4b182082-08a9-48c4-a289-2d8310d87670",
+          "@id": "bbe44e82-e3f0-4998-bc24-d7d18f25e5cd",
           "creditValue" : 3
         },
         "enrollableIn" : "WINTER",
@@ -777,13 +801,13 @@
         "corequisites" : [ ]
       },
       "NSWI045" : {
-        "@id" : "2f390646-812e-4ae2-b791-ab8de4fedfb6",
+        "@id": "9bb3223e-1bd6-4ad8-aa07-f5382feca708",
         "id" : "NSWI045",
         "name" : "TCP/IP Protocol Suite",
         "localizedName" : "Rodina protokolů TCP/IP",
         "locale" : "cs",
         "credits" : {
-          "@id" : "e82915f8-122b-468a-8a84-ca5b29729be7",
+          "@id": "d94ee852-6075-48cb-b46b-1b12a6225eb9",
           "creditValue" : 3
         },
         "enrollableIn" : "SUMMER",
@@ -792,13 +816,13 @@
         "corequisites" : [ ]
       },
       "NSZZ031" : {
-        "@id" : "212293f9-9300-49eb-845b-82ca56629112",
+        "@id": "2a77c1cc-bd81-45ba-8821-492da165acc9",
         "id" : "NSZZ031",
         "name" : "Bachelor Thesis",
         "localizedName" : "Vypracování a konzultace bakalářské práce",
         "locale" : "cs",
         "credits" : {
-          "@id" : "d5fc01c8-4f97-4e67-ac08-4b738fa83331",
+          "@id": "5d638ce5-0202-4d14-a084-21b34e6d8118",
           "creditValue" : 6
         },
         "enrollableIn" : "BOTH",
@@ -807,13 +831,13 @@
         "corequisites" : [ ]
       },
       "NTVY017" : {
-        "@id" : "5c2746b4-7547-4f37-9387-f094cc3eaf9f",
+        "@id": "0007b87e-167f-43ca-a8b4-7cce17a93d57",
         "id" : "NTVY017",
         "name" : "Physical Education IV",
         "localizedName" : "Tělesná výchova IV",
         "locale" : "cs",
         "credits" : {
-          "@id" : "9a3382ac-1f40-4e9b-9c74-c52ac6aaea9f",
+          "@id": "2101dce5-b84a-4bc0-b186-7bcd03b6ffcb",
           "creditValue" : 1
         },
         "enrollableIn" : "BOTH",
@@ -822,13 +846,13 @@
         "corequisites" : [ ]
       },
       "NJAZ074" : {
-        "@id" : "a1308b02-a1b2-4f5b-93e0-82df3436048f",
+        "@id": "f3869fe2-af80-4a05-aa3c-ba968a44233c",
         "id" : "NJAZ074",
         "name" : "English for Upper-Intermediate and Advanced Students III",
         "localizedName" : "Anglický jazyk pro středně pokročilé a pokročilé III",
         "locale" : "cs",
         "credits" : {
-          "@id" : "d63f382f-f198-4906-9a7d-adccc5c28bbe",
+          "@id": "16de32bc-81e0-4b03-8eaa-61b3eddf510d",
           "creditValue" : 1
         },
         "enrollableIn" : "WINTER",
@@ -837,28 +861,30 @@
         "corequisites" : [ ]
       },
       "NPRG021" : {
-        "@id" : "cd6e226d-32fd-46de-8ba8-7028debcd2d7",
+        "@id": "e59d0b89-e8de-4df4-bd75-fd7c22b3d0f3",
         "id" : "NPRG021",
         "name" : "Advanced programming for Java platform",
         "localizedName" : "Pokročilé programování na platformě Java",
         "locale" : "cs",
         "credits" : {
-          "@id" : "12e2b63a-de93-4df9-8d57-f30baaa54392",
+          "@id": "32759b85-73c9-4612-83b6-af2d33ae0bb9",
           "creditValue" : 5
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "doc. RNDr. Petr Hnětynka", "Ph.D." ],
         "prerequisites" : [ ],
-        "corequisites" : [ "ff054fdc-865b-4300-9154-a8cc437d18c1" ]
+        "corequisites": [
+          "bfdf7f77-a701-4df6-8060-776cb641f7fe"
+        ]
       },
       "NJAZ072" : {
-        "@id" : "dde3c165-211c-45fd-a08d-85f2302c4c43",
+        "@id": "6c4f3ca8-dd79-41bb-b6bd-bd64881223d5",
         "id" : "NJAZ072",
         "name" : "English for Upper-Intermediate and Advanced Students II",
         "localizedName" : "Anglický jazyk pro středně pokročilé a pokročilé II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "f834f110-579c-45d0-8f52-fa5a1b688e37",
+          "@id": "7e4e7bbb-cc97-461b-9537-e3de2ff3f343",
           "creditValue" : 1
         },
         "enrollableIn" : "SUMMER",
@@ -867,13 +893,13 @@
         "corequisites" : [ ]
       },
       "NPGR002" : {
-        "@id" : "7bcccac9-7fee-4e2e-bbf4-8c4367a39652",
+        "@id": "b128eae0-9dcb-4174-af9f-d88db139c96c",
         "id" : "NPGR002",
         "name" : "Digital Image Processing",
         "localizedName" : "Digitální zpracování obrazu",
         "locale" : "cs",
         "credits" : {
-          "@id" : "d6547937-c465-4067-ab72-7a934640adff",
+          "@id": "fd753674-6a9a-4e6d-b797-c816d760a2bc",
           "creditValue" : 5
         },
         "enrollableIn" : "WINTER",
@@ -882,13 +908,13 @@
         "corequisites" : [ ]
       },
       "NPGR003" : {
-        "@id" : "85879e95-c87d-46e2-a3eb-8420c5ef4083",
+        "@id": "adc69edf-ebe0-4453-9252-5dc16bf3ce75",
         "id" : "NPGR003",
         "name" : "Computer Graphics I",
         "localizedName" : "Počítačová grafika I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "6006c7b5-0417-43ba-b28a-bcd5d6f0f46b",
+          "@id": "92cc63fa-5870-48b8-8168-8c6cd0b8a296",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
@@ -897,13 +923,13 @@
         "corequisites" : [ ]
       },
       "NJAZ070" : {
-        "@id" : "7f1c0df3-e621-487f-9144-39f240be969f",
+        "@id": "c62138f2-6bf0-4eb6-8267-b841ace6925f",
         "id" : "NJAZ070",
         "name" : "English for Upper-Intermediate and Advanced Students I",
         "localizedName" : "Anglický jazyk pro středně pokročilé a pokročilé I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "0617bf6b-3050-4fed-a4d1-998cb2ce0e2b",
+          "@id": "3a90986e-f4ff-4a71-95f6-76ee2a4e28f6",
           "creditValue" : 1
         },
         "enrollableIn" : "WINTER",
@@ -912,28 +938,30 @@
         "corequisites" : [ ]
       },
       "NPGR004" : {
-        "@id" : "1c27a185-b30f-4ba8-b396-753a1830be65",
+        "@id": "bd45b207-97de-454b-9185-9b1524a9e8cf",
         "id" : "NPGR004",
         "name" : "Computer Graphics II",
         "localizedName" : "Počítačová grafika II",
         "locale" : "cs",
         "credits" : {
-          "@id" : "30a86ffa-86d8-4a32-9540-a39819144971",
+          "@id": "595f60d1-d3cc-435a-9b08-532d3acbc899",
           "creditValue" : 5
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "RNDr. Josef Pelikán" ],
         "prerequisites" : [ ],
-        "corequisites" : [ "85879e95-c87d-46e2-a3eb-8420c5ef4083" ]
+        "corequisites": [
+          "adc69edf-ebe0-4453-9252-5dc16bf3ce75"
+        ]
       },
       "NPFL054" : {
-        "@id" : "140c61dc-5c30-4a0e-b7e5-b7f28ab05b89",
+        "@id": "cd0629c5-c93e-48e8-9a17-8fd6b91d9e58",
         "id" : "NPFL054",
         "name" : "Introduction to Machine Learning",
         "localizedName" : "Úvod do strojového učení",
         "locale" : "cs",
         "credits" : {
-          "@id" : "4592b52b-e7d8-4031-a501-ff4803be77e4",
+          "@id": "5b2cf4f6-9ab1-4569-beb7-d7737e645e38",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
@@ -942,28 +970,31 @@
         "corequisites" : [ ]
       },
       "NMAI042" : {
-        "@id" : "46cef8bd-00e2-468f-8b36-e6daa72e6bdc",
+        "@id": "45efa01f-49c6-48a6-b88d-9892836f3c10",
         "id" : "NMAI042",
         "name" : "Numerical Mathematics",
         "localizedName" : "Numerická matematika",
         "locale" : "cs",
         "credits" : {
-          "@id" : "4d334261-f53e-41bc-a402-bff5a405929d",
+          "@id": "93f3b197-3371-487a-a1df-b76984be379c",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
-        "teacherNames" : [ "doc. RNDr. Jiří Felcman, CSc." ],
+        "teacherNames": [
+          "doc. RNDr. Jiří Felcman",
+          "CSc."
+        ],
         "prerequisites" : [ ],
         "corequisites" : [ ]
       },
       "NSWI036" : {
-        "@id" : "13de63a9-6ec2-4a85-a298-060c7566d40f",
+        "@id": "4f56c96d-3c5b-49bb-9a94-e99762966d2d",
         "id" : "NSWI036",
         "name" : "Programming for Windows - I",
         "localizedName" : "Programování pro Windows I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "08648c74-7da9-4f11-af91-207b36adc819",
+          "@id": "73c74854-b730-4300-8c51-1f9b47112095",
           "creditValue" : 3
         },
         "enrollableIn" : "WINTER",
@@ -972,13 +1003,13 @@
         "corequisites" : [ ]
       },
       "NDBI007" : {
-        "@id" : "022f7374-03fa-4b84-b059-ad8eca2a2beb",
+        "@id": "fbc07579-25c3-4572-b025-6ef0a4caa626",
         "id" : "NDBI007",
         "name" : "Data Organisation and Processing I",
         "localizedName" : "Organizace a zpracování dat I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "5d1a8dc0-36ec-4073-b861-acc08d233626",
+          "@id": "9297388c-66d1-445b-ac51-22e79a9280b3",
           "creditValue" : 4
         },
         "enrollableIn" : "WINTER",
@@ -987,13 +1018,13 @@
         "corequisites" : [ ]
       },
       "NPFL012" : {
-        "@id" : "e2d14e18-df0c-441d-ae5d-59d48bf3f52e",
+        "@id": "82e9d4bb-327d-4802-b92f-16ef287dbf4e",
         "id" : "NPFL012",
         "name" : "Introduction to Computer Linguistics",
         "localizedName" : "Úvod do počítačové lingvistiky",
         "locale" : "cs",
         "credits" : {
-          "@id" : "e893f42d-5455-4123-8006-d5a430460f63",
+          "@id": "5aec1fcf-8618-459e-a88c-3b52777ec327",
           "creditValue" : 3
         },
         "enrollableIn" : "WINTER",
@@ -1002,42 +1033,44 @@
         "corequisites" : [ ]
       },
       "NPRG038" : {
-        "@id" : "3a588b8e-2f27-4b3a-92e8-9939024273a1",
+        "@id": "5f5b4d2a-9277-4ef8-88ab-0e5200cba2cd",
         "id" : "NPRG038",
         "name" : "Advanced .NET Programming I",
         "localizedName" : "Pokročilé programování pro .NET I",
         "locale" : "cs",
         "credits" : {
-          "@id" : "61e1364e-7518-4fc2-85c6-b4261a584e1c",
+          "@id": "c035bbde-169f-4cc4-bb5e-f53e134d8fa0",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
         "teacherNames" : [ "Mgr. Pavel Ježek", "Ph.D." ],
         "prerequisites" : [ ],
         "corequisites" : [ {
-          "@id" : "c949f5b3-925c-4391-b6a9-0e0c063a8e47",
+          "@id": "a0ce0adf-ab39-4ad2-9440-c2c553f82633",
           "id" : "NPRG035",
           "name" : "C# Language and .NET Framework",
           "localizedName" : "Jazyk C# a platforma .NET",
           "locale" : "cs",
           "credits" : {
-            "@id" : "7ab8dc0a-8b03-4cec-be3f-2c06a6df5542",
+            "@id": "ce40ed6f-6902-4e4b-8635-d65186cea7f0",
             "creditValue" : 6
           },
           "enrollableIn" : "WINTER",
           "teacherNames" : [ "Mgr. Pavel Ježek", "Ph.D." ],
           "prerequisites" : [ ],
-          "corequisites" : [ "15a5911c-6fd6-4d2c-b5be-2ab2e936ee80" ]
+          "corequisites": [
+            "f3050121-cc90-44e9-aa86-35dab5d2673b"
+          ]
         } ]
       },
       "NPRG036" : {
-        "@id" : "c1c579a2-16f9-4d24-82c2-d01fe5695a5e",
+        "@id": "3c3ac0bc-b1a2-4dd0-9c6b-eea7dd1a0f01",
         "id" : "NPRG036",
         "name" : "XML Technologies",
         "localizedName" : "Technologie XML",
         "locale" : "cs",
         "credits" : {
-          "@id" : "dba10ac7-23ab-4755-bf89-663e68dec324",
+          "@id": "60196662-0eeb-46fe-8131-605c19a605b9",
           "creditValue" : 6
         },
         "enrollableIn" : "SUMMER",
@@ -1046,181 +1079,316 @@
         "corequisites" : [ ]
       },
       "NSWI106" : {
-        "@id" : "c55a66fb-6c07-424e-ae43-27e87a6d70d4",
+        "@id": "8debdb54-ca45-4f9a-940e-ffd26555581e",
         "id" : "NSWI106",
         "name" : "Unix Administration",
         "localizedName" : "Administrace Unixu",
         "locale" : "cs",
         "credits" : {
-          "@id" : "3e5f6977-ae31-40ff-b577-2f888682ef20",
+          "@id": "9a8eb22b-29eb-489f-b0a9-dd6cd16304bd",
           "creditValue" : 6
         },
         "enrollableIn" : "WINTER",
         "teacherNames" : [ "RNDr. Leo Galamboš, Ph.D." ],
         "prerequisites" : [ ],
-        "corequisites" : [ "527a03f7-98a0-4dc8-bf8d-d38df7e7fb04" ]
+        "corequisites": [
+          "ee8f41e9-7f12-46bc-820d-34178760f1fd"
+        ]
       },
-      "NPRG035" : "c949f5b3-925c-4391-b6a9-0e0c063a8e47",
-      "NPRG030" : "4f78dabd-092b-456a-9fd3-e464d7f97a70",
-      "NPRG031" : "15a5911c-6fd6-4d2c-b5be-2ab2e936ee80",
-      "NMIN101" : "3216bfe4-e63f-47ce-9f48-96503e3f3a06",
-      "NMIN102" : "de9b6ff9-75df-4ed2-a876-5461cba6edcd"
+      "NPRG035": "a0ce0adf-ab39-4ad2-9440-c2c553f82633",
+      "NPRG030": "12a78e6b-f13b-4d58-aec1-8b7454d8892a",
+      "NPRG031": "f3050121-cc90-44e9-aa86-35dab5d2673b",
+      "NMIN101": "ddc034d9-3ae1-4b4e-a229-3125b41ada4c",
+      "NMIN102": "7661f2f9-85e4-4456-b5e4-82f0e6784eec",
+      "NSWI154": {
+        "@id": "c275b357-3b18-4951-a1b0-fea7f1482288",
+        "id": "NSWI154",
+        "name": "Software Development Tools",
+        "localizedName": "Nástroje pro vývoj software",
+        "locale": "cs",
+        "credits": {
+          "@id": "e928c5e3-ee88-45c0-8f01-8c1bcc7fc0ce",
+          "creditValue": 2
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "doc. Ing. Petr Tůma",
+          "Dr.",
+          "RNDr. Pavel Parízek",
+          "Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NMAI072": {
+        "@id": "d473f5f6-e458-452a-848f-fff0cacaf2df",
+        "id": "NMAI072",
+        "name": "Linear algebra III",
+        "localizedName": "Lineární algebra III",
+        "locale": "cs",
+        "credits": {
+          "@id": "28caf781-245d-4262-a7b5-5229bcd68554",
+          "creditValue": 3
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "doc. Mgr. Milan Hladík",
+          "Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NDMI051": {
+        "@id": "28a6db7b-1bdc-4100-98e7-ce2c2b071b77",
+        "id": "NDMI051",
+        "name": "Introduction to Problem Solving in Combinatorics, Mathematics and Other Fields (IPS) II",
+        "localizedName": "Úvod do řešení problémů kombinatorických, mat. i jiných (IPS) II",
+        "locale": "cs",
+        "credits": {
+          "@id": "7237a2df-7c8c-4e0d-95fc-336d401dd411",
+          "creditValue": 3
+        },
+        "enrollableIn": "SUMMER",
+        "teacherNames": [
+          "prof. RNDr. Jaroslav Nešetřil",
+          "DrSc.",
+          "doc. Mgr. Robert Šámal",
+          "Ph.D.",
+          "Mgr. Martin Mareš",
+          "Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "NSWI133": {
+        "@id": "97b8a2db-a628-40d9-a19d-8fe145bb00bd",
+        "id": "NSWI133",
+        "name": "Commercial Workshops",
+        "localizedName": "Firemní semináře",
+        "locale": "cs",
+        "credits": {
+          "@id": "508ae76b-607c-4609-8396-02606fc8b04e",
+          "creditValue": 2
+        },
+        "enrollableIn": "BOTH",
+        "teacherNames": [
+          "Mgr. Martin Děcký",
+          "Ph.D."
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      }
     }
   },
   "semesterPlan" : {
     "semesterList" : [ {
       "name" : "ZS2014",
       "courseEnrollmentList" : [ {
-        "@id" : "dbb57a07-1de7-4dab-8528-97735e818254",
-        "course" : "10aaa3f4-a071-4b48-83e0-65a6042e8e1a",
+        "@id": "8b880831-cf18-4b0e-8391-f79017c650b9",
+        "course": "1cd80906-e960-49f3-bbd9-0fd6c03857e0",
         "fulfilled" : true
       }, {
-        "@id" : "13c25e3a-8763-4729-b852-e174a2f1aae8",
-        "course" : "7f1c0df3-e621-487f-9144-39f240be969f",
+        "@id": "0a7d3302-bc5a-47a9-a6a9-62d60818f194",
+        "course": "c62138f2-6bf0-4eb6-8267-b841ace6925f",
         "fulfilled" : true
       }, {
-        "@id" : "0eee1739-c0a5-4560-a2c0-154c401bf6ff",
-        "course" : "88cbc901-1106-4e2e-8fb3-49f74c79a7a1",
+        "@id": "21aa5dcf-b7de-448e-81c1-0f568de693f9",
+        "course": "e776e682-ee6c-4f41-a203-ac7f4d66db57",
         "fulfilled" : true
       }, {
-        "@id" : "dba4d564-09d8-4ebe-a010-5eed317b27d8",
-        "course" : "43cccdc4-eaf9-45c7-9282-acded27dae78",
+        "@id": "6fda8660-b5d2-493c-863f-6936de754d1e",
+        "course": "ef401187-1827-4ac5-b629-0eea742756d7",
         "fulfilled" : true
       }, {
-        "@id" : "d992c4a6-67d4-44a1-968a-2c9dc705b535",
-        "course" : "ca2c40a3-2b59-4378-8fb5-5f1f49765f93",
+        "@id": "9bbb32eb-6028-450c-8a24-891352ad6f0f",
+        "course": "7526892c-b193-4408-a1e3-0e905eb3e13e",
         "fulfilled" : true
       }, {
-        "@id" : "12e2c77c-5ecf-45d6-a0ab-0b3fe995e9fe",
-        "course" : "6a369fa8-ce98-4a04-b3d3-78ae3cd05aa6",
+        "@id": "ee9dd259-fe39-48aa-b78e-bf330a37435d",
+        "course": "0940f1bb-e020-4af9-8e46-7a9deff4ed5a",
         "fulfilled" : true
       }, {
-        "@id" : "814fc06d-d1aa-4c11-8ccf-fc3f687f82fe",
-        "course" : "5de51e33-6b2d-4a68-ad58-65f338541f80",
+        "@id": "02dd14a9-4d2d-4d44-a951-ec5a54db6af4",
+        "course": "afdb300a-13f2-40be-8d0a-75b0ff70b31e",
         "fulfilled" : true
       }, {
-        "@id" : "6235325c-a52b-4ba4-a6e3-e3564541d350",
-        "course" : "45e2c7e4-5f34-4540-a692-bd6d4110fe97",
+        "@id": "a04fbb23-3423-44d9-855c-1383a4c67936",
+        "course": "e3f593af-1e42-4934-b196-942bd7bed477",
         "fulfilled" : true
       }, {
-        "@id" : "4ede2654-91bc-4e8f-bf4b-9a4f19616faf",
-        "course" : "4f78dabd-092b-456a-9fd3-e464d7f97a70",
+        "@id": "52a1b81c-59c1-4626-921c-4788d868f4c9",
+        "course": "12a78e6b-f13b-4d58-aec1-8b7454d8892a",
         "fulfilled" : true
       } ]
     }, {
       "name" : "LS2015",
       "courseEnrollmentList" : [ {
-        "@id" : "af21f3f3-4750-461e-9cd7-58de5fc4d7d0",
-        "course" : "51aa7fe0-f4da-471f-8f52-ddd8e0d9fd25",
+        "@id": "c88908b1-da66-4a16-b3ea-fae8595ee3d2",
+        "course": "35bdf6bd-910b-4fef-8cf1-bbd5940441dc",
         "fulfilled" : true
       }, {
-        "@id" : "fc065c1a-60f9-46e5-85f3-a71fb182716a",
-        "course" : "98914991-8f77-4d69-af69-004db02e38f9",
+        "@id": "5dfed170-d549-46f3-a00e-36a0a33adbf5",
+        "course": "bbf59172-1a97-4af5-891e-8f9cf144a1da",
         "fulfilled" : true
       }, {
-        "@id" : "b2a2d33f-c2f6-4f72-8929-ff26b856db09",
-        "course" : "83ac590b-2c0b-40b7-bcf8-601fbef3253f",
+        "@id": "3ff4bcf2-eec7-4efd-b8cd-22521d5c5cc3",
+        "course": "eb681fa9-3943-4a84-9378-b6af48a703b3",
         "fulfilled" : false
       }, {
-        "@id" : "541b337b-0c23-4a22-a3ec-541df4814b06",
-        "course" : "1c3ddef4-b5fd-4d73-b717-26570aebdebb",
+        "@id": "411737ed-9e1e-408a-9659-51095795dc0f",
+        "course": "f06d82ee-aedd-413c-a2b6-78d129ec9ad3",
         "fulfilled" : true
       }, {
-        "@id" : "efb6acde-d2e9-4be5-b86a-5004d3fe0f49",
-        "course" : "5adb197f-4d5e-474b-ba1f-37bb6fd9ef2e",
+        "@id": "d030d00e-c15d-4c85-abef-f95fb28d662d",
+        "course": "301ebf23-5bd8-4833-ad27-9eb189c39804",
         "fulfilled" : true
       }, {
-        "@id" : "06526bf6-9421-4e72-b6b8-e49938c2f877",
-        "course" : "15a5911c-6fd6-4d2c-b5be-2ab2e936ee80",
+        "@id": "2b88ab89-54d6-4a3d-a05c-26e915daf0e0",
+        "course": "f3050121-cc90-44e9-aa86-35dab5d2673b",
         "fulfilled" : true
       }, {
-        "@id" : "3a111bb2-368a-40fb-8a07-804187fb49d4",
-        "course" : "afc96d71-c195-4801-8c36-181540484b43",
+        "@id": "b21b253f-2b2b-4bf5-8911-e3eca8786326",
+        "course": "7aa109da-093d-4494-aad8-4397d4752e0a",
         "fulfilled" : true
       }, {
-        "@id" : "8f9cd04f-7a72-426c-b2d6-d67dbaf3dc42",
-        "course" : "5d62fb45-086b-4cf6-b814-6f3fa233fc67",
+        "@id": "e7255ea6-53d2-4154-97c7-1f815bb68399",
+        "course": "8526de6c-8b4d-4f2c-99f1-4ad603c587f5",
         "fulfilled" : true
+      },
+        {
+          "@id": "64ef394c-0d2a-4e9f-b00e-e367d44d5a5a",
+          "course": "28a6db7b-1bdc-4100-98e7-ce2c2b071b77",
+          "fulfilled": true
       } ]
     }, {
       "name" : "ZS2015",
       "courseEnrollmentList" : [ {
-        "@id" : "4198f408-6143-4fa9-be8d-4063aec6a346",
-        "course" : "7444ca6e-f207-49ac-a1bc-316f6132ce12",
+        "@id": "fe0f2174-a723-4327-bdef-6b60269c29a4",
+        "course": "051e8f2c-3770-4f6a-8a02-dfc046e6f5a1",
         "fulfilled" : true
       }, {
-        "@id" : "a71b0f5c-f3a6-4209-bfe6-717ff5758665",
-        "course" : "ff054fdc-865b-4300-9154-a8cc437d18c1",
+        "@id": "e07045d9-d06c-4bbb-8028-d4980b8a93ed",
+        "course": "bfdf7f77-a701-4df6-8060-776cb641f7fe",
         "fulfilled" : true
       }, {
-        "@id" : "211c4a0f-09e3-44cd-9bfd-36e8a3ce12ed",
-        "course" : "c949f5b3-925c-4391-b6a9-0e0c063a8e47",
+        "@id": "a9c88057-adb6-4900-8a4a-1923f5e6d3b9",
+        "course": "a0ce0adf-ab39-4ad2-9440-c2c553f82633",
         "fulfilled" : false
       }, {
-        "@id" : "0d045cc1-be69-4127-9046-e7ea1c3ec5d4",
-        "course" : "12e2905c-3a13-4899-8751-c7b5409565c0",
+        "@id": "9bf92f73-65da-4be0-80bd-847740189a9d",
+        "course": "0881cd1b-95da-4cd5-ae1d-2649125a32d5",
         "fulfilled" : true
       }, {
-        "@id" : "a4c8d27e-f38d-4ac4-9205-2af4061f551f",
-        "course" : "5c2746b4-7547-4f37-9387-f094cc3eaf9f",
+        "@id": "bb61dc9a-29ad-44b9-980f-0cca6017dcdf",
+        "course": "0007b87e-167f-43ca-a8b4-7cce17a93d57",
         "fulfilled" : true
       }, {
-        "@id" : "ec0b7f52-89e8-42e7-a1c8-ebfe9e15db99",
-        "course" : "3a24106c-6648-48ad-a4d7-5287ea0ba914",
+        "@id": "1d509d59-3ff6-49a7-8641-098fe84c6dac",
+        "course": "c5376a21-76f2-4852-982f-e0ef6941e74a",
         "fulfilled" : true
+      },
+        {
+          "@id": "767e5c1f-e57e-492a-b9cb-8ac97e8eaf33",
+          "course": "c275b357-3b18-4951-a1b0-fea7f1482288",
+          "fulfilled": true
+        },
+        {
+          "@id": "dc8dd9c8-a1ef-4c3e-a0a2-bc140bbd2e0a",
+          "course": "30a917f0-5d07-4370-857e-2821e055bfab",
+          "fulfilled": true
+        },
+        {
+          "@id": "fd0011f2-5b95-45b8-8e71-6e659a215833",
+          "course": "d473f5f6-e458-452a-848f-fff0cacaf2df",
+          "fulfilled": true
+        },
+        {
+          "@id": "9123eaa5-d948-4e26-ae06-aa11cdc1a50a",
+          "course": "7b5108d7-5092-439f-9970-86d598a1a514",
+          "fulfilled": true
       } ]
     }, {
       "name" : "LS2016",
       "courseEnrollmentList" : [ {
-        "@id" : "ea7ec6d0-a82c-466a-ad8e-58f956750848",
-        "course" : "c449edb8-9e9b-4be0-a01e-fc878a2b64e1",
+        "@id": "34e59500-ded4-48dc-bf51-18a1fd97ec5c",
+        "course": "244bd8d0-6a67-4f81-8283-0124a673ce74",
         "fulfilled" : false
       }, {
-        "@id" : "9c1c2b1a-2b50-49ad-8c9c-650670acaf6e",
-        "course" : "b2f05118-4a05-4e25-be54-d48a6c473d64",
+        "@id": "24f196f2-b061-4129-8893-c4b81f2f0d9b",
+        "course": "de15ddea-4660-4eb4-b928-a046ccf2fd69",
         "fulfilled" : true
       }, {
-        "@id" : "f32d22fa-94a6-4de5-a0c0-98e9a1998a52",
-        "course" : "67fb93f5-5414-47c1-a648-a4e004e083cd",
+        "@id": "8a0de79c-bc0a-4439-8ccf-eecb538dcd84",
+        "course": "2583e615-ec47-42b2-96d0-b84002b0c8bf",
         "fulfilled" : true
       }, {
-        "@id" : "46a5b9bb-15e6-470b-a394-dc3d090b69d5",
-        "course" : "cd6e226d-32fd-46de-8ba8-7028debcd2d7",
+        "@id": "75881a8a-aba5-4610-8370-81f93ceb6206",
+        "course": "e59d0b89-e8de-4df4-bd75-fd7c22b3d0f3",
         "fulfilled" : false
       }, {
-        "@id" : "7c62bc04-f9b7-4b4f-8ea3-4298c033a39b",
-        "course" : "3a588b8e-2f27-4b3a-92e8-9939024273a1",
+        "@id": "6d54ea3f-94f8-43e2-8bc4-792c2ec99fd2",
+        "course": "5f5b4d2a-9277-4ef8-88ab-0e5200cba2cd",
         "fulfilled" : false
+      },
+        {
+          "@id": "54751a11-d2af-473c-8421-d41a5ce976c2",
+          "course": "db7e885c-1bf6-4192-a936-d5f123c77397",
+          "fulfilled": false
+        },
+        {
+          "@id": "5ef5e02f-b225-4c9a-a427-110be25bb65d",
+          "course": "012e4440-2e35-4500-be60-ab9a844e9d15",
+          "fulfilled": false
+        },
+        {
+          "@id": "120209b1-987f-42d0-92b5-154265cb40d3",
+          "course": "d4273151-1155-4fdc-b9d7-c9c4a8133828",
+          "fulfilled": false
       } ]
     }, {
       "name" : "ZS2016",
       "courseEnrollmentList" : [ {
-        "@id" : "4bdefd00-41db-405c-8576-ef6046b6700b",
-        "course" : "279d401b-1aaf-49d6-a453-242d12f8b3b3",
+        "@id": "3d758dfa-dc46-40ed-89d4-9f50cc4bb6ce",
+        "course": "ccba652c-5b2f-4f14-a923-f40f30188704",
         "fulfilled" : false
       }, {
-        "@id" : "36e1856e-c7f8-44ef-8e0e-d75a22c6d6a1",
-        "course" : "7a1f3f6a-43a4-4b58-ae9f-e5478e6d3d5d",
+        "@id": "f8513584-42f4-4792-928c-3d06bc18acf8",
+        "course": "a93433af-7528-4eec-bc38-6185d14da012",
         "fulfilled" : false
       }, {
-        "@id" : "6de3c365-6141-41fc-bb24-76049d48f3d3",
-        "course" : "140c61dc-5c30-4a0e-b7e5-b7f28ab05b89",
+        "@id": "fee1849f-682b-40aa-8b35-fb7bb3fb58f1",
+        "course": "cd0629c5-c93e-48e8-9a17-8fd6b91d9e58",
         "fulfilled" : false
       }, {
-        "@id" : "91e6a20c-e8a6-46fd-9156-004295a05a16",
-        "course" : "e2d14e18-df0c-441d-ae5d-59d48bf3f52e",
+        "@id": "49b75225-9f02-404b-83ca-f9591afb4e16",
+        "course": "82e9d4bb-327d-4802-b92f-16ef287dbf4e",
         "fulfilled" : false
+      },
+        {
+          "@id": "e4efe392-1e7e-4dea-9897-8ccec9446bb3",
+          "course": "8ddede99-e6c9-450e-943c-09181c65e030",
+          "fulfilled": false
       } ]
     }, {
       "name" : "LS2017",
       "courseEnrollmentList" : [ {
-        "@id" : "10de2baa-1baa-4f60-9952-06a3aeb5c149",
-        "course" : "40b8219c-d452-4299-b633-5a7d86959551",
+        "@id": "5b77ed40-28c2-4b93-aa90-ff240c061d04",
+        "course": "0418484f-3bd0-463f-aae1-2b90e5c07e34",
         "fulfilled" : false
       }, {
-        "@id" : "96e88240-11c8-452b-b55e-d4e43f7452ba",
-        "course" : "212293f9-9300-49eb-845b-82ca56629112",
+        "@id": "06c8733a-5396-4b3c-ba06-dd2569bf9487",
+        "course": "2a77c1cc-bd81-45ba-8821-492da165acc9",
         "fulfilled" : false
+      },
+        {
+          "@id": "aa2cd74e-8e34-414e-b2b6-c71fac5c8609",
+          "course": "97b8a2db-a628-40d9-a19d-8fe145bb00bd",
+          "fulfilled": false
+        },
+        {
+          "@id": "6cf8b39a-272e-47b3-9274-96c25eb9c49e",
+          "course": "45efa01f-49c6-48a6-b88d-9892836f3c10",
+          "fulfilled": false
       } ]
     } ]
   },
@@ -1228,42 +1396,61 @@
     "courseGroupConstraintList" : [ {
       "CourseGroupFulfilledAllConstraint" : {
         "courseGroup" : {
-          "courseList" : [ "5de51e33-6b2d-4a68-ad58-65f338541f80", "3a24106c-6648-48ad-a4d7-5287ea0ba914", "51aa7fe0-f4da-471f-8f52-ddd8e0d9fd25", "45e2c7e4-5f34-4540-a692-bd6d4110fe97", {
-            "@id" : "f14ae027-0888-4fd5-903a-d9570c5b2373",
+          "courseList": [
+            "afdb300a-13f2-40be-8d0a-75b0ff70b31e",
+            "c5376a21-76f2-4852-982f-e0ef6941e74a",
+            "35bdf6bd-910b-4fef-8cf1-bbd5940441dc",
+            "e3f593af-1e42-4934-b196-942bd7bed477",
+            {
+              "@id": "5df219d9-720f-4798-b6e7-1c6de8444128",
             "id" : "NMAI054",
             "name" : "Mathematical Analysis I",
             "localizedName" : "Matematická analýza I",
             "locale" : "cs",
             "credits" : {
-              "@id" : "0116a4dd-1bd7-40a3-8e10-0cab8b3129d3",
+              "@id": "faac7be5-204e-4b82-a4c9-4659080c2696",
               "creditValue" : 5
             },
             "enrollableIn" : "WINTER",
             "teacherNames" : [ "doc. Mgr. Robert Šámal, Ph.D.", "Hans Raj Tiwary, M.Sc., Ph.D.", "prof. RNDr. Jan Rataj, CSc." ],
             "prerequisites" : [ ],
             "corequisites" : [ ]
-          }, "5adb197f-4d5e-474b-ba1f-37bb6fd9ef2e", "ca2c40a3-2b59-4378-8fb5-5f1f49765f93", "67ea3c09-6796-460b-9036-04538efb4214", "09c25690-2ac1-4745-9d05-15b9c34f112c", {
-            "@id" : "3f36552a-86aa-4d29-8925-4abcf9c86fb0",
+            },
+            "301ebf23-5bd8-4833-ad27-9eb189c39804",
+            "7526892c-b193-4408-a1e3-0e905eb3e13e",
+            "012e4440-2e35-4500-be60-ab9a844e9d15",
+            "30a917f0-5d07-4370-857e-2821e055bfab",
+            {
+              "@id": "0fb52a6a-e80a-4f51-a8bc-7400faafbe4c",
             "id" : "NSWI120",
             "name" : "Principles of Computers",
             "localizedName" : "Principy počítačů",
             "locale" : "cs",
             "credits" : {
-              "@id" : "80f3da73-acbb-4f97-9cd3-e99de9c8f547",
+              "@id": "3ddfed7c-ee8d-4d4c-95d0-4756226e6d46",
               "creditValue" : 3
             },
             "enrollableIn" : "WINTER",
             "teacherNames" : [ "Mgr. Pavel Ježek, Ph.D." ],
             "prerequisites" : [ ],
             "corequisites" : [ ]
-          }, "98914991-8f77-4d69-af69-004db02e38f9", "12e2905c-3a13-4899-8751-c7b5409565c0", "212293f9-9300-49eb-845b-82ca56629112", "5c2746b4-7547-4f37-9387-f094cc3eaf9f", "483926ca-caf5-44b4-bac6-c193a9ec6f3d", "88a10b0d-560b-4833-87f3-03c9e382cf15", "c449edb8-9e9b-4be0-a01e-fc878a2b64e1", "67fb93f5-5414-47c1-a648-a4e004e083cd", {
-            "@id" : "edea9f95-4b4e-453b-8202-8ab3223157c3",
+            },
+            "bbf59172-1a97-4af5-891e-8f9cf144a1da",
+            "0881cd1b-95da-4cd5-ae1d-2649125a32d5",
+            "2a77c1cc-bd81-45ba-8821-492da165acc9",
+            "0007b87e-167f-43ca-a8b4-7cce17a93d57",
+            "db7e885c-1bf6-4192-a936-d5f123c77397",
+            "d4273151-1155-4fdc-b9d7-c9c4a8133828",
+            "244bd8d0-6a67-4f81-8283-0124a673ce74",
+            "2583e615-ec47-42b2-96d0-b84002b0c8bf",
+            {
+              "@id": "216cb79f-1448-4f0b-ab26-9a5848fb0e4e",
             "id" : "NSWI095",
             "name" : "Introduction to UNIX",
             "localizedName" : "Úvod do UNIXu",
             "locale" : "cs",
             "credits" : {
-              "@id" : "098befaf-343c-4a43-af7a-d604777ccafe",
+              "@id": "fb6bde9f-2932-4466-b543-9ec071b587c2",
               "creditValue" : 5
             },
             "enrollableIn" : "SUMMER",
@@ -1271,13 +1458,13 @@
             "prerequisites" : [ ],
             "corequisites" : [ ]
           }, {
-            "@id" : "eb12c869-e928-4868-80e9-be7d510dd06f",
+              "@id": "489553f3-bd2f-4bbe-81c6-0b557698457a",
             "id" : "NMAI062",
             "name" : "Algebra I",
             "localizedName" : "Algebra I",
             "locale" : "cs",
             "credits" : {
-              "@id" : "861a448b-16a0-496a-a4f5-0f6922065a15",
+              "@id": "65609366-36c9-49fb-9cd2-e60e7e6150ca",
               "creditValue" : 6
             },
             "enrollableIn" : "WINTER",
@@ -1285,59 +1472,84 @@
             "prerequisites" : [ ],
             "corequisites" : [ ]
           }, {
-            "@id" : "243f88f4-2c99-499f-b4b8-62ee40bfba3d",
+              "@id": "315bf47d-321a-480e-bd35-970615f27253",
             "id" : "NDBI025",
             "name" : "Database Systems",
             "localizedName" : "Databázové systémy",
             "locale" : "cs",
             "credits" : {
-              "@id" : "5db2f9e4-5f10-4584-b976-5fb84e148761",
+              "@id": "35a087ec-09c4-4023-936d-b0136edcbcde",
               "creditValue" : 6
             },
             "enrollableIn" : "SUMMER",
             "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
             "prerequisites" : [ ],
             "corequisites" : [ ]
-          }, "10aaa3f4-a071-4b48-83e0-65a6042e8e1a", "b8dc9ad3-ea87-4481-b0f9-8421ed3710fe", "afc96d71-c195-4801-8c36-181540484b43", {
-            "@id" : "a737022e-0d4f-4d6b-826a-94c0c971fca6",
+            },
+            "1cd80906-e960-49f3-bbd9-0fd6c03857e0",
+            "7b5108d7-5092-439f-9970-86d598a1a514",
+            "7aa109da-093d-4494-aad8-4397d4752e0a",
+            {
+              "@id": "fc9a6a71-a4ca-4713-a177-7761d06de3fb",
             "id" : "NPRG030",
             "name" : "Programming I",
             "localizedName" : "Programování I",
             "locale" : "cs",
             "credits" : {
-              "@id" : "af3fe2ec-0715-4c9a-9cb0-933203d15281",
+              "@id": "666d7742-c5c3-4803-bfd7-dcae60285403",
               "creditValue" : 6
             },
             "enrollableIn" : "WINTER",
             "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
             "prerequisites" : [ ],
             "corequisites" : [ ]
-          }, "0a0720e0-904b-4e62-8f0a-aa8b6b7a275c", "5d62fb45-086b-4cf6-b814-6f3fa233fc67" ]
+            },
+            {
+              "@id": "44a198ff-7f81-4524-acb6-c51975b3e487",
+              "id": "NPRG031",
+              "name": "Programming II",
+              "localizedName": "Programování II",
+              "locale": "cs",
+              "credits": {
+                "@id": "54d313b2-5f27-4307-8243-3b35a2a9b8d1",
+                "creditValue": 5
+              },
+              "enrollableIn": "SUMMER",
+              "teacherNames": [
+                "RNDr. Tomáš Holan, Ph.D.",
+                "doc. RNDr. Pavel Töpfer, CSc.",
+                "RNDr. Martin Pergel, Ph.D."
+              ],
+              "prerequisites": [],
+              "corequisites": []
+            },
+            "8526de6c-8b4d-4f2c-99f1-4ad603c587f5"
+          ]
         }
       }
     }, {
       "CourseGroupCreditsSumConstraint" : {
         "courseGroup" : {
           "courseList" : [ {
-            "@id" : "c6541f43-b7a2-44c2-9ef1-0f1e25153869",
+            "@id": "8b6107a2-128c-4fd6-b885-e260be593ae2",
             "id" : "NPRG041",
             "name" : "Programming in C++",
             "localizedName" : "Programování v C++",
             "locale" : "cs",
             "credits" : {
-              "@id" : "fe8d9f05-58e3-4356-9a5b-e5d37c0af26a",
+              "@id": "64ee3cb0-a7a6-4801-ad91-7248943fe6b2",
               "creditValue" : 6
             },
             "enrollableIn" : "WINTER",
             "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D." ],
             "prerequisites" : [ {
-              "@id" : "f45fd7bf-4fa5-415c-ad57-361aed40825a",
+              "@id": "6af4bc6d-4da6-4bf9-8e2f-288081117762",
               "id" : "NPRM045",
               "name" : "Programming II",
               "localizedName" : "Programování II",
               "locale" : "cs",
               "credits" : {
-                "@id" : "668d14ec-3798-49ab-9987-3d88d4629682",
+                "@id": "69818f4a-bd2c-40cd-872e-83462b470377",
                 "creditValue" : 5
               },
               "enrollableIn" : "SUMMER",
@@ -1345,13 +1557,13 @@
               "prerequisites" : [ ],
               "corequisites" : [ ]
             }, {
-              "@id" : "047666ed-c71b-4b33-8695-b4de417883a3",
+              "@id": "48b16a56-68b2-4bd5-b0e3-1646d199f8d7",
               "id" : "NOFY056",
               "name" : "Programming for Physicists",
               "localizedName" : "Programování pro fyziky",
               "locale" : "cs",
               "credits" : {
-                "@id" : "87e286b2-fa21-4ad4-bd86-11c2e6fdf6ce",
+                "@id": "101f981b-9440-4f3c-aed3-fd31c16a5ac0",
                 "creditValue" : 5
               },
               "enrollableIn" : "WINTER",
@@ -1359,13 +1571,13 @@
               "prerequisites" : [ ],
               "corequisites" : [ ]
             }, {
-              "@id" : "e2f9e450-2f2b-431f-b13c-677c968fea0f",
+              "@id": "6e605857-4426-44da-a6ba-514bc3bda7bd",
               "id" : "NPRG031",
               "name" : "Programming II",
               "localizedName" : "Programování II",
               "locale" : "cs",
               "credits" : {
-                "@id" : "be124d0e-f04c-4055-a8c6-a9c8ac892c15",
+                "@id": "23a4425e-893f-43fc-b27f-9eb43515d0c5",
                 "creditValue" : 5
               },
               "enrollableIn" : "SUMMER",
@@ -1373,26 +1585,26 @@
               "prerequisites" : [ ],
               "corequisites" : [ ]
             }, {
-              "@id" : "52d2ad79-9a07-4ff8-be45-4c8444637b64",
+              "@id": "d14ea08a-d224-43f9-9276-1e46f0ed215d",
               "id" : "NMIN102",
               "name" : "Programming 2",
               "localizedName" : "Programování 2",
               "locale" : "cs",
               "credits" : {
-                "@id" : "0b1f385b-d9f7-498e-9ec4-7546e7105dbd",
+                "@id": "85cbad43-7377-4fab-a99d-99a0c57e4fa8",
                 "creditValue" : 5
               },
               "enrollableIn" : "SUMMER",
               "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
               "prerequisites" : [ ],
               "corequisites" : [ {
-                "@id" : "02992918-df70-41bc-9f4f-ec97ce29798f",
+                "@id": "41555881-5ed6-4b9f-b321-35ffe200ebbc",
                 "id" : "NMIN101",
                 "name" : "Programming 1",
                 "localizedName" : "Programování 1",
                 "locale" : "cs",
                 "credits" : {
-                  "@id" : "90b084a0-a2a8-4799-857a-9446748b0af6",
+                  "@id": "f8bcf15b-5449-4227-8504-9d783c9f159f",
                   "creditValue" : 5
                 },
                 "enrollableIn" : "WINTER",
@@ -1403,47 +1615,83 @@
             } ],
             "corequisites" : [ ]
           }, {
-            "@id" : "4cd0e518-f969-4c67-a21c-8080573b2b7e",
+            "@id": "4e9a1c4c-3475-4579-a8d1-032fcc2bfd9a",
             "id" : "NPRG013",
             "name" : "Java",
             "localizedName" : "Java",
             "locale" : "cs",
             "credits" : {
-              "@id" : "67c72582-02a3-4a15-a7f9-29898240a749",
+              "@id": "1c92e573-ab56-41a5-a2aa-0062afaa6fe5",
               "creditValue" : 6
             },
             "enrollableIn" : "WINTER",
             "teacherNames" : [ "doc. RNDr. Petr Hnětynka, Ph.D." ],
             "prerequisites" : [ ],
-            "corequisites" : [ "e2f9e450-2f2b-431f-b13c-677c968fea0f" ]
+            "corequisites": [
+              "6e605857-4426-44da-a6ba-514bc3bda7bd"
+            ]
           }, {
-            "@id" : "2bbaeaae-3c45-43a5-b86d-8aa7bdf03401",
+            "@id": "d871bbf6-c70d-40fd-9f2f-169b05863a9e",
             "id" : "NPRG035",
             "name" : "C# Language and .NET Framework",
             "localizedName" : "Jazyk C# a platforma .NET",
             "locale" : "cs",
             "credits" : {
-              "@id" : "eead52d8-d35b-4d2d-b178-47d0fbe6ad71",
+              "@id": "b37219b4-a248-4c46-bb6a-53f49c52770e",
               "creditValue" : 6
             },
             "enrollableIn" : "WINTER",
             "teacherNames" : [ "Mgr. Pavel Ježek, Ph.D." ],
             "prerequisites" : [ ],
-            "corequisites" : [ "e2f9e450-2f2b-431f-b13c-677c968fea0f" ]
+            "corequisites": [
+              "6e605857-4426-44da-a6ba-514bc3bda7bd"
+            ]
           } ]
         },
         "totalNeeded" : {
-          "@id" : "73c23432-15bf-49db-98f2-cff4bf0bdf7d",
+          "@id": "e1e52130-b261-4b73-9818-af13921c4075",
           "creditValue" : 6
         }
       }
     }, {
       "CourseGroupCreditsSumConstraint" : {
         "courseGroup" : {
-          "courseList" : [ "7444ca6e-f207-49ac-a1bc-316f6132ce12", "554fa493-eebd-48c6-a194-63dd7807eebd", "40b8219c-d452-4299-b633-5a7d86959551", "c77b3adf-fef4-441e-96fc-2ef22b05131a", "532e8193-65ce-4e99-b088-db4842e1edee", "f001f3e6-e428-4972-ade7-4ed0c58d90e5", "46cef8bd-00e2-468f-8b36-e6daa72e6bdc", "83ac590b-2c0b-40b7-bcf8-601fbef3253f", "140c61dc-5c30-4a0e-b7e5-b7f28ab05b89", "e2d14e18-df0c-441d-ae5d-59d48bf3f52e", "9ebe5f2b-0e96-441c-8dc2-fe35abaf21f7", "0423ee7c-9efa-4d03-89e4-ee3a342bc233", "cd6e226d-32fd-46de-8ba8-7028debcd2d7", "3a588b8e-2f27-4b3a-92e8-9939024273a1", "aa3bbd4b-e076-44ba-817b-64f469a8ac4c", "09acc495-ae52-4a60-8438-297593a18fe6", "022f7374-03fa-4b84-b059-ad8eca2a2beb", "10dfc904-079d-4e19-9ecb-192895efccc4", "f2173357-45aa-470b-92b8-f790da0aec3e", "85879e95-c87d-46e2-a3eb-8420c5ef4083", "1c27a185-b30f-4ba8-b396-753a1830be65", "d7315196-44b1-4a80-abb8-cbd20a6e1a07", "7bcccac9-7fee-4e2e-bbf4-8c4367a39652", "c1c579a2-16f9-4d24-82c2-d01fe5695a5e", "40b79e25-84d3-465b-b7b2-dd11f675f6ca", "527a03f7-98a0-4dc8-bf8d-d38df7e7fb04", "13de63a9-6ec2-4a85-a298-060c7566d40f", "c55a66fb-6c07-424e-ae43-27e87a6d70d4", "2f390646-812e-4ae2-b791-ab8de4fedfb6", "2db25892-f77f-4b8f-bbcc-65899ec9570c", "ab8ffd15-66b8-4c01-bd6c-a1d9f7de4bbe" ]
+          "courseList": [
+            "051e8f2c-3770-4f6a-8a02-dfc046e6f5a1",
+            "ae9b2f86-64b9-4e19-b279-868e8c129f07",
+            "0418484f-3bd0-463f-aae1-2b90e5c07e34",
+            "7c0281c2-4008-4058-845c-ff550714be2c",
+            "26572974-a482-495d-a40f-d00953b3c7f6",
+            "bf4ed482-8e87-4979-b96d-fd6cb17e59e6",
+            "45efa01f-49c6-48a6-b88d-9892836f3c10",
+            "eb681fa9-3943-4a84-9378-b6af48a703b3",
+            "cd0629c5-c93e-48e8-9a17-8fd6b91d9e58",
+            "82e9d4bb-327d-4802-b92f-16ef287dbf4e",
+            "5cc3e72f-ed57-4930-8fb5-bc70fbf691d8",
+            "2fe92d5d-c66f-4ff2-bbec-a794250af44f",
+            "e59d0b89-e8de-4df4-bd75-fd7c22b3d0f3",
+            "5f5b4d2a-9277-4ef8-88ab-0e5200cba2cd",
+            "243f69c5-b303-4e54-8d47-64079bf2b53a",
+            "e5d5d5ba-19ca-4a7b-b650-5d1d59810ef3",
+            "fbc07579-25c3-4572-b025-6ef0a4caa626",
+            "8efd2e3d-c420-488a-aaba-35626b078df3",
+            "8ddede99-e6c9-450e-943c-09181c65e030",
+            "adc69edf-ebe0-4453-9252-5dc16bf3ce75",
+            "bd45b207-97de-454b-9185-9b1524a9e8cf",
+            "3c975665-586c-425f-8d8b-5f884ef5bd4b",
+            "b128eae0-9dcb-4174-af9f-d88db139c96c",
+            "3c3ac0bc-b1a2-4dd0-9c6b-eea7dd1a0f01",
+            "2d909fbf-f684-47b9-bc60-1492722bacf1",
+            "ee8f41e9-7f12-46bc-820d-34178760f1fd",
+            "4f56c96d-3c5b-49bb-9a94-e99762966d2d",
+            "8debdb54-ca45-4f9a-940e-ffd26555581e",
+            "9bb3223e-1bd6-4ad8-aa07-f5382feca708",
+            "af409644-05c5-4ef8-85d4-ecb2622a5cf0",
+            "29b81f3b-1a65-4158-9928-eebb401c6541"
+          ]
         },
         "totalNeeded" : {
-          "@id" : "0889fbe5-27dd-4a1e-8460-181f0f1a08c0",
+          "@id": "af1fd771-e04b-44d1-8c9c-023c30e941e2",
           "creditValue" : 34
         }
       }
@@ -1455,7 +1703,7 @@
     }, {
       "GlobalCreditsSumConstraint" : {
         "totalNeeded" : {
-          "@id" : "fadd8ccc-c631-4824-a274-3c1665c67299",
+          "@id": "ce6d44db-97b2-4ee6-8ae8-1cb867ebd5a4",
           "creditValue" : 180
         }
       }
@@ -1472,7 +1720,7 @@
     }, {
       "GlobalCreditsSumUntilSemesterConstraint" : {
         "totalNeeded" : {
-          "@id" : "4cea7194-1405-4537-8160-2b69615b7ffb",
+          "@id": "a28ca997-e59e-4394-b0c7-5c51d7a3b5e5",
           "creditValue" : 30
         },
         "untilSemester" : 1
@@ -1480,7 +1728,7 @@
     }, {
       "GlobalCreditsSumUntilSemesterConstraint" : {
         "totalNeeded" : {
-          "@id" : "34f32137-c73b-4a87-ba52-7b509d591fba",
+          "@id": "b1c84758-e549-461f-b985-e74b8f7b9977",
           "creditValue" : 60
         },
         "untilSemester" : 2
@@ -1488,7 +1736,7 @@
     }, {
       "GlobalCreditsSumUntilSemesterConstraint" : {
         "totalNeeded" : {
-          "@id" : "afa2a37c-1bb7-4571-90d7-a4fd0524cf55",
+          "@id": "42042cb9-b84d-467b-b9b8-9e43858d24c7",
           "creditValue" : 90
         },
         "untilSemester" : 3
@@ -1496,7 +1744,7 @@
     }, {
       "GlobalCreditsSumUntilSemesterConstraint" : {
         "totalNeeded" : {
-          "@id" : "6e1b2342-d1ea-4df1-a78e-d7af71597b2a",
+          "@id": "57ab2a6c-a43f-4996-ab7f-d1d45b4ad19e",
           "creditValue" : 120
         },
         "untilSemester" : 4
@@ -1504,7 +1752,7 @@
     }, {
       "GlobalCreditsSumUntilSemesterConstraint" : {
         "totalNeeded" : {
-          "@id" : "a788eef3-fcef-4bfd-8225-45a0436f25ae",
+          "@id": "e1a64ab5-f3ea-4f9c-ba86-a29a9f2fc834",
           "creditValue" : 150
         },
         "untilSemester" : 5
@@ -1512,7 +1760,7 @@
     }, {
       "GlobalCreditsSumUntilSemesterConstraint" : {
         "totalNeeded" : {
-          "@id" : "74036754-f53c-4eaa-9aa2-dabe64662ca3",
+          "@id": "0c970d4d-91ca-403a-9a9c-7f3b4456d5ef",
           "creditValue" : 180
         },
         "untilSemester" : 6
@@ -1520,411 +1768,576 @@
     } ],
     "courseEnrollmentConstraintList" : [ {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "dbb57a07-1de7-4dab-8528-97735e818254"
+        "courseEnrollment": "8b880831-cf18-4b0e-8391-f79017c650b9"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "dbb57a07-1de7-4dab-8528-97735e818254"
+        "courseEnrollment": "8b880831-cf18-4b0e-8391-f79017c650b9"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "dbb57a07-1de7-4dab-8528-97735e818254"
+        "courseEnrollment": "8b880831-cf18-4b0e-8391-f79017c650b9"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "13c25e3a-8763-4729-b852-e174a2f1aae8"
+        "courseEnrollment": "0a7d3302-bc5a-47a9-a6a9-62d60818f194"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "13c25e3a-8763-4729-b852-e174a2f1aae8"
+        "courseEnrollment": "0a7d3302-bc5a-47a9-a6a9-62d60818f194"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "13c25e3a-8763-4729-b852-e174a2f1aae8"
+        "courseEnrollment": "0a7d3302-bc5a-47a9-a6a9-62d60818f194"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "0eee1739-c0a5-4560-a2c0-154c401bf6ff"
+        "courseEnrollment": "21aa5dcf-b7de-448e-81c1-0f568de693f9"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "0eee1739-c0a5-4560-a2c0-154c401bf6ff"
+        "courseEnrollment": "21aa5dcf-b7de-448e-81c1-0f568de693f9"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "0eee1739-c0a5-4560-a2c0-154c401bf6ff"
+        "courseEnrollment": "21aa5dcf-b7de-448e-81c1-0f568de693f9"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "af21f3f3-4750-461e-9cd7-58de5fc4d7d0"
+        "courseEnrollment": "c88908b1-da66-4a16-b3ea-fae8595ee3d2"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "af21f3f3-4750-461e-9cd7-58de5fc4d7d0"
+        "courseEnrollment": "c88908b1-da66-4a16-b3ea-fae8595ee3d2"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "af21f3f3-4750-461e-9cd7-58de5fc4d7d0"
+        "courseEnrollment": "c88908b1-da66-4a16-b3ea-fae8595ee3d2"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "4198f408-6143-4fa9-be8d-4063aec6a346"
+        "courseEnrollment": "fe0f2174-a723-4327-bdef-6b60269c29a4"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "4198f408-6143-4fa9-be8d-4063aec6a346"
+        "courseEnrollment": "fe0f2174-a723-4327-bdef-6b60269c29a4"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "4198f408-6143-4fa9-be8d-4063aec6a346"
+        "courseEnrollment": "fe0f2174-a723-4327-bdef-6b60269c29a4"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "9c1c2b1a-2b50-49ad-8c9c-650670acaf6e"
+        "courseEnrollment": "24f196f2-b061-4129-8893-c4b81f2f0d9b"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "9c1c2b1a-2b50-49ad-8c9c-650670acaf6e"
+        "courseEnrollment": "24f196f2-b061-4129-8893-c4b81f2f0d9b"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "9c1c2b1a-2b50-49ad-8c9c-650670acaf6e"
+        "courseEnrollment": "24f196f2-b061-4129-8893-c4b81f2f0d9b"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "ea7ec6d0-a82c-466a-ad8e-58f956750848"
+        "courseEnrollment": "34e59500-ded4-48dc-bf51-18a1fd97ec5c"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "ea7ec6d0-a82c-466a-ad8e-58f956750848"
+        "courseEnrollment": "34e59500-ded4-48dc-bf51-18a1fd97ec5c"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "ea7ec6d0-a82c-466a-ad8e-58f956750848"
+        "courseEnrollment": "34e59500-ded4-48dc-bf51-18a1fd97ec5c"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "dba4d564-09d8-4ebe-a010-5eed317b27d8"
+        "courseEnrollment": "6fda8660-b5d2-493c-863f-6936de754d1e"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "dba4d564-09d8-4ebe-a010-5eed317b27d8"
+        "courseEnrollment": "6fda8660-b5d2-493c-863f-6936de754d1e"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "dba4d564-09d8-4ebe-a010-5eed317b27d8"
+        "courseEnrollment": "6fda8660-b5d2-493c-863f-6936de754d1e"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "a71b0f5c-f3a6-4209-bfe6-717ff5758665"
+        "courseEnrollment": "e07045d9-d06c-4bbb-8028-d4980b8a93ed"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "a71b0f5c-f3a6-4209-bfe6-717ff5758665"
+        "courseEnrollment": "e07045d9-d06c-4bbb-8028-d4980b8a93ed"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "a71b0f5c-f3a6-4209-bfe6-717ff5758665"
+        "courseEnrollment": "e07045d9-d06c-4bbb-8028-d4980b8a93ed"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "f32d22fa-94a6-4de5-a0c0-98e9a1998a52"
+        "courseEnrollment": "8a0de79c-bc0a-4439-8ccf-eecb538dcd84"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "f32d22fa-94a6-4de5-a0c0-98e9a1998a52"
+        "courseEnrollment": "8a0de79c-bc0a-4439-8ccf-eecb538dcd84"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "f32d22fa-94a6-4de5-a0c0-98e9a1998a52"
+        "courseEnrollment": "8a0de79c-bc0a-4439-8ccf-eecb538dcd84"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "46a5b9bb-15e6-470b-a394-dc3d090b69d5"
+        "courseEnrollment": "75881a8a-aba5-4610-8370-81f93ceb6206"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "46a5b9bb-15e6-470b-a394-dc3d090b69d5"
+        "courseEnrollment": "75881a8a-aba5-4610-8370-81f93ceb6206"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "46a5b9bb-15e6-470b-a394-dc3d090b69d5"
+        "courseEnrollment": "75881a8a-aba5-4610-8370-81f93ceb6206"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "4bdefd00-41db-405c-8576-ef6046b6700b"
+        "courseEnrollment": "3d758dfa-dc46-40ed-89d4-9f50cc4bb6ce"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "4bdefd00-41db-405c-8576-ef6046b6700b"
+        "courseEnrollment": "3d758dfa-dc46-40ed-89d4-9f50cc4bb6ce"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "4bdefd00-41db-405c-8576-ef6046b6700b"
+        "courseEnrollment": "3d758dfa-dc46-40ed-89d4-9f50cc4bb6ce"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "10de2baa-1baa-4f60-9952-06a3aeb5c149"
+        "courseEnrollment": "5b77ed40-28c2-4b93-aa90-ff240c061d04"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "10de2baa-1baa-4f60-9952-06a3aeb5c149"
+        "courseEnrollment": "5b77ed40-28c2-4b93-aa90-ff240c061d04"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "10de2baa-1baa-4f60-9952-06a3aeb5c149"
+        "courseEnrollment": "5b77ed40-28c2-4b93-aa90-ff240c061d04"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "d992c4a6-67d4-44a1-968a-2c9dc705b535"
+        "courseEnrollment": "9bbb32eb-6028-450c-8a24-891352ad6f0f"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "d992c4a6-67d4-44a1-968a-2c9dc705b535"
+        "courseEnrollment": "9bbb32eb-6028-450c-8a24-891352ad6f0f"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "d992c4a6-67d4-44a1-968a-2c9dc705b535"
+        "courseEnrollment": "9bbb32eb-6028-450c-8a24-891352ad6f0f"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "fc065c1a-60f9-46e5-85f3-a71fb182716a"
+        "courseEnrollment": "5dfed170-d549-46f3-a00e-36a0a33adbf5"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "fc065c1a-60f9-46e5-85f3-a71fb182716a"
+        "courseEnrollment": "5dfed170-d549-46f3-a00e-36a0a33adbf5"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "fc065c1a-60f9-46e5-85f3-a71fb182716a"
+        "courseEnrollment": "5dfed170-d549-46f3-a00e-36a0a33adbf5"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "211c4a0f-09e3-44cd-9bfd-36e8a3ce12ed"
+        "courseEnrollment": "a9c88057-adb6-4900-8a4a-1923f5e6d3b9"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "211c4a0f-09e3-44cd-9bfd-36e8a3ce12ed"
+        "courseEnrollment": "a9c88057-adb6-4900-8a4a-1923f5e6d3b9"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "211c4a0f-09e3-44cd-9bfd-36e8a3ce12ed"
+        "courseEnrollment": "a9c88057-adb6-4900-8a4a-1923f5e6d3b9"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "7c62bc04-f9b7-4b4f-8ea3-4298c033a39b"
+        "courseEnrollment": "6d54ea3f-94f8-43e2-8bc4-792c2ec99fd2"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "7c62bc04-f9b7-4b4f-8ea3-4298c033a39b"
+        "courseEnrollment": "6d54ea3f-94f8-43e2-8bc4-792c2ec99fd2"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "7c62bc04-f9b7-4b4f-8ea3-4298c033a39b"
+        "courseEnrollment": "6d54ea3f-94f8-43e2-8bc4-792c2ec99fd2"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "96e88240-11c8-452b-b55e-d4e43f7452ba"
+        "courseEnrollment": "06c8733a-5396-4b3c-ba06-dd2569bf9487"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "96e88240-11c8-452b-b55e-d4e43f7452ba"
+        "courseEnrollment": "06c8733a-5396-4b3c-ba06-dd2569bf9487"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "96e88240-11c8-452b-b55e-d4e43f7452ba"
+        "courseEnrollment": "06c8733a-5396-4b3c-ba06-dd2569bf9487"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "36e1856e-c7f8-44ef-8e0e-d75a22c6d6a1"
+        "courseEnrollment": "f8513584-42f4-4792-928c-3d06bc18acf8"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "36e1856e-c7f8-44ef-8e0e-d75a22c6d6a1"
+        "courseEnrollment": "f8513584-42f4-4792-928c-3d06bc18acf8"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "36e1856e-c7f8-44ef-8e0e-d75a22c6d6a1"
+        "courseEnrollment": "f8513584-42f4-4792-928c-3d06bc18acf8"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "12e2c77c-5ecf-45d6-a0ab-0b3fe995e9fe"
+        "courseEnrollment": "ee9dd259-fe39-48aa-b78e-bf330a37435d"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "12e2c77c-5ecf-45d6-a0ab-0b3fe995e9fe"
+        "courseEnrollment": "ee9dd259-fe39-48aa-b78e-bf330a37435d"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "12e2c77c-5ecf-45d6-a0ab-0b3fe995e9fe"
+        "courseEnrollment": "ee9dd259-fe39-48aa-b78e-bf330a37435d"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "b2a2d33f-c2f6-4f72-8929-ff26b856db09"
+        "courseEnrollment": "3ff4bcf2-eec7-4efd-b8cd-22521d5c5cc3"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "b2a2d33f-c2f6-4f72-8929-ff26b856db09"
+        "courseEnrollment": "3ff4bcf2-eec7-4efd-b8cd-22521d5c5cc3"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "b2a2d33f-c2f6-4f72-8929-ff26b856db09"
+        "courseEnrollment": "3ff4bcf2-eec7-4efd-b8cd-22521d5c5cc3"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "541b337b-0c23-4a22-a3ec-541df4814b06"
+        "courseEnrollment": "411737ed-9e1e-408a-9659-51095795dc0f"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "541b337b-0c23-4a22-a3ec-541df4814b06"
+        "courseEnrollment": "411737ed-9e1e-408a-9659-51095795dc0f"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "541b337b-0c23-4a22-a3ec-541df4814b06"
+        "courseEnrollment": "411737ed-9e1e-408a-9659-51095795dc0f"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "814fc06d-d1aa-4c11-8ccf-fc3f687f82fe"
+        "courseEnrollment": "02dd14a9-4d2d-4d44-a951-ec5a54db6af4"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "814fc06d-d1aa-4c11-8ccf-fc3f687f82fe"
+        "courseEnrollment": "02dd14a9-4d2d-4d44-a951-ec5a54db6af4"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "814fc06d-d1aa-4c11-8ccf-fc3f687f82fe"
+        "courseEnrollment": "02dd14a9-4d2d-4d44-a951-ec5a54db6af4"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "6235325c-a52b-4ba4-a6e3-e3564541d350"
+        "courseEnrollment": "a04fbb23-3423-44d9-855c-1383a4c67936"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "6235325c-a52b-4ba4-a6e3-e3564541d350"
+        "courseEnrollment": "a04fbb23-3423-44d9-855c-1383a4c67936"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "6235325c-a52b-4ba4-a6e3-e3564541d350"
+        "courseEnrollment": "a04fbb23-3423-44d9-855c-1383a4c67936"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "a4c8d27e-f38d-4ac4-9205-2af4061f551f"
+        "courseEnrollment": "bb61dc9a-29ad-44b9-980f-0cca6017dcdf"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "a4c8d27e-f38d-4ac4-9205-2af4061f551f"
+        "courseEnrollment": "bb61dc9a-29ad-44b9-980f-0cca6017dcdf"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "a4c8d27e-f38d-4ac4-9205-2af4061f551f"
+        "courseEnrollment": "bb61dc9a-29ad-44b9-980f-0cca6017dcdf"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "0d045cc1-be69-4127-9046-e7ea1c3ec5d4"
+        "courseEnrollment": "9bf92f73-65da-4be0-80bd-847740189a9d"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "0d045cc1-be69-4127-9046-e7ea1c3ec5d4"
+        "courseEnrollment": "9bf92f73-65da-4be0-80bd-847740189a9d"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "0d045cc1-be69-4127-9046-e7ea1c3ec5d4"
+        "courseEnrollment": "9bf92f73-65da-4be0-80bd-847740189a9d"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "efb6acde-d2e9-4be5-b86a-5004d3fe0f49"
+        "courseEnrollment": "d030d00e-c15d-4c85-abef-f95fb28d662d"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "efb6acde-d2e9-4be5-b86a-5004d3fe0f49"
+        "courseEnrollment": "d030d00e-c15d-4c85-abef-f95fb28d662d"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "efb6acde-d2e9-4be5-b86a-5004d3fe0f49"
+        "courseEnrollment": "d030d00e-c15d-4c85-abef-f95fb28d662d"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "4ede2654-91bc-4e8f-bf4b-9a4f19616faf"
+        "courseEnrollment": "52a1b81c-59c1-4626-921c-4788d868f4c9"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "4ede2654-91bc-4e8f-bf4b-9a4f19616faf"
+        "courseEnrollment": "52a1b81c-59c1-4626-921c-4788d868f4c9"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "4ede2654-91bc-4e8f-bf4b-9a4f19616faf"
+        "courseEnrollment": "52a1b81c-59c1-4626-921c-4788d868f4c9"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "06526bf6-9421-4e72-b6b8-e49938c2f877"
+        "courseEnrollment": "2b88ab89-54d6-4a3d-a05c-26e915daf0e0"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "06526bf6-9421-4e72-b6b8-e49938c2f877"
+        "courseEnrollment": "2b88ab89-54d6-4a3d-a05c-26e915daf0e0"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "06526bf6-9421-4e72-b6b8-e49938c2f877"
+        "courseEnrollment": "2b88ab89-54d6-4a3d-a05c-26e915daf0e0"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "6de3c365-6141-41fc-bb24-76049d48f3d3"
+        "courseEnrollment": "fee1849f-682b-40aa-8b35-fb7bb3fb58f1"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "6de3c365-6141-41fc-bb24-76049d48f3d3"
+        "courseEnrollment": "fee1849f-682b-40aa-8b35-fb7bb3fb58f1"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "6de3c365-6141-41fc-bb24-76049d48f3d3"
+        "courseEnrollment": "fee1849f-682b-40aa-8b35-fb7bb3fb58f1"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "91e6a20c-e8a6-46fd-9156-004295a05a16"
+        "courseEnrollment": "49b75225-9f02-404b-83ca-f9591afb4e16"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "91e6a20c-e8a6-46fd-9156-004295a05a16"
+        "courseEnrollment": "49b75225-9f02-404b-83ca-f9591afb4e16"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "91e6a20c-e8a6-46fd-9156-004295a05a16"
+        "courseEnrollment": "49b75225-9f02-404b-83ca-f9591afb4e16"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "3a111bb2-368a-40fb-8a07-804187fb49d4"
+        "courseEnrollment": "b21b253f-2b2b-4bf5-8911-e3eca8786326"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "3a111bb2-368a-40fb-8a07-804187fb49d4"
+        "courseEnrollment": "b21b253f-2b2b-4bf5-8911-e3eca8786326"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "3a111bb2-368a-40fb-8a07-804187fb49d4"
+        "courseEnrollment": "b21b253f-2b2b-4bf5-8911-e3eca8786326"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "8f9cd04f-7a72-426c-b2d6-d67dbaf3dc42"
+        "courseEnrollment": "e7255ea6-53d2-4154-97c7-1f815bb68399"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "8f9cd04f-7a72-426c-b2d6-d67dbaf3dc42"
+        "courseEnrollment": "e7255ea6-53d2-4154-97c7-1f815bb68399"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "8f9cd04f-7a72-426c-b2d6-d67dbaf3dc42"
+        "courseEnrollment": "e7255ea6-53d2-4154-97c7-1f815bb68399"
       }
     }, {
       "CourseEnrollmentCorequisiteConstraint" : {
-        "courseEnrollment" : "ec0b7f52-89e8-42e7-a1c8-ebfe9e15db99"
+        "courseEnrollment": "1d509d59-3ff6-49a7-8641-098fe84c6dac"
       }
     }, {
       "CourseEnrollmentPrerequisiteConstraint" : {
-        "courseEnrollment" : "ec0b7f52-89e8-42e7-a1c8-ebfe9e15db99"
+        "courseEnrollment": "1d509d59-3ff6-49a7-8641-098fe84c6dac"
       }
     }, {
       "CourseEnrollmentEnrolledInConstraint" : {
-        "courseEnrollment" : "ec0b7f52-89e8-42e7-a1c8-ebfe9e15db99"
+        "courseEnrollment": "1d509d59-3ff6-49a7-8641-098fe84c6dac"
+      }
+    },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "54751a11-d2af-473c-8421-d41a5ce976c2"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "54751a11-d2af-473c-8421-d41a5ce976c2"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "54751a11-d2af-473c-8421-d41a5ce976c2"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "5ef5e02f-b225-4c9a-a427-110be25bb65d"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "5ef5e02f-b225-4c9a-a427-110be25bb65d"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "5ef5e02f-b225-4c9a-a427-110be25bb65d"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "767e5c1f-e57e-492a-b9cb-8ac97e8eaf33"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "767e5c1f-e57e-492a-b9cb-8ac97e8eaf33"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "767e5c1f-e57e-492a-b9cb-8ac97e8eaf33"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "dc8dd9c8-a1ef-4c3e-a0a2-bc140bbd2e0a"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "dc8dd9c8-a1ef-4c3e-a0a2-bc140bbd2e0a"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "dc8dd9c8-a1ef-4c3e-a0a2-bc140bbd2e0a"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "fd0011f2-5b95-45b8-8e71-6e659a215833"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "fd0011f2-5b95-45b8-8e71-6e659a215833"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "fd0011f2-5b95-45b8-8e71-6e659a215833"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "120209b1-987f-42d0-92b5-154265cb40d3"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "120209b1-987f-42d0-92b5-154265cb40d3"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "120209b1-987f-42d0-92b5-154265cb40d3"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "9123eaa5-d948-4e26-ae06-aa11cdc1a50a"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "9123eaa5-d948-4e26-ae06-aa11cdc1a50a"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "9123eaa5-d948-4e26-ae06-aa11cdc1a50a"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "64ef394c-0d2a-4e9f-b00e-e367d44d5a5a"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "64ef394c-0d2a-4e9f-b00e-e367d44d5a5a"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "64ef394c-0d2a-4e9f-b00e-e367d44d5a5a"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "aa2cd74e-8e34-414e-b2b6-c71fac5c8609"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "aa2cd74e-8e34-414e-b2b6-c71fac5c8609"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "aa2cd74e-8e34-414e-b2b6-c71fac5c8609"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "6cf8b39a-272e-47b3-9274-96c25eb9c49e"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "6cf8b39a-272e-47b3-9274-96c25eb9c49e"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "6cf8b39a-272e-47b3-9274-96c25eb9c49e"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "e4efe392-1e7e-4dea-9897-8ccec9446bb3"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "e4efe392-1e7e-4dea-9897-8ccec9446bb3"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "e4efe392-1e7e-4dea-9897-8ccec9446bb3"
       }
     } ]
   }
