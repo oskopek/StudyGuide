@@ -5,7 +5,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="semesterPane" maxHeight="Infinity" maxWidth="Infinity"
-            minHeight="300.0" minWidth="400.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8"
+            minHeight="300.0"
+            minWidth="400.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8"
             fx:controller="com.oskopek.studyguide.controller.SemesterController">
     <top>
         <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="5.0"
@@ -21,15 +22,18 @@
                 <Button fx:id="addCourseFromButton" mnemonicParsing="false" onAction="#handleAddCourseFrom"
                         text="%semesterPane.addCourseFrom"/>
             </children>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
         </HBox>
     </top>
     <center>
-        <ScrollPane minHeight="200" minWidth="425" BorderPane.alignment="CENTER" fitToWidth="true">
+        <ScrollPane fitToWidth="true" minHeight="200" minWidth="425" BorderPane.alignment="CENTER">
             <content>
-                <GridPane fx:id="semesterBoxes" alignment="TOP_LEFT">
+                <GridPane fx:id="semesterBoxes" alignment="TOP_LEFT" hgap="5.0" vgap="5.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
-                        <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
+                        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
                     </columnConstraints>
                 </GridPane>
             </content>

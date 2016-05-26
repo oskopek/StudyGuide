@@ -4,27 +4,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" minHeight="300.0" minWidth="400.0"
-            xmlns="http://javafx.com/javafx/null"
-            fx:controller="com.oskopek.studyguide.controller.SemesterBoxController"
-            onDragDropped="#onDragDropped" onDragOver="#onDragOver">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" minHeight="300.0" minWidth="410.0" onDragDropped="#onDragDropped"
+            onDragOver="#onDragOver" xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.oskopek.studyguide.controller.SemesterBoxController">
     <top>
-        <BorderPane maxHeight="30.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" BorderPane.alignment="CENTER">
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
+        <BorderPane maxHeight="30.0" minHeight="30.0" minWidth="210.0" prefHeight="30.0" BorderPane.alignment="CENTER">
             <right>
                 <HBox alignment="CENTER_RIGHT" minHeight="100.0" minWidth="200.0" spacing="5.0"
                       BorderPane.alignment="CENTER">
-                    <padding>
-                        <Insets left="5.0" right="5.0"/>
-                    </padding>
-                    <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
-                            text=" - ">
-                        <font>
-                            <Font name="System Bold" size="13.0"/>
-                        </font>
-                    </Button>
+                    <children>
+                        <Label text="%course.fulfilled"/>
+                        <Label text="15/30"/>
+                        <Separator maxHeight="30.0" orientation="VERTICAL"/>
+                        <Label text="(1.0)"/>
+                        <Separator maxHeight="30.0" orientation="VERTICAL"/>
+                        <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
+                                text=" - ">
+                            <font>
+                                <Font name="System Bold" size="13.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </BorderPane.margin>
                 </HBox>
             </right>
             <left>
@@ -34,15 +37,14 @@
         </BorderPane>
     </top>
     <center>
-        <TableView fx:id="semesterTable" minHeight="270.0" minWidth="270.0" BorderPane.alignment="CENTER"
-                   onDragDetected="#onDragDetected">
+        <TableView fx:id="semesterTable" minHeight="270.0" minWidth="270.0" onDragDetected="#onDragDetected"
+                   BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="warnColumn" editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"
                              text="%warning"/>
                 <TableColumn fx:id="idColumn" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0"
                              text="%course.id"/>
-                <TableColumn fx:id="nameColumn" editable="false" minWidth="90.0"
-                             text="%course.name"/>
+                <TableColumn fx:id="nameColumn" editable="false" minWidth="90.0" text="%course.name"/>
                 <TableColumn fx:id="creditsColumn" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="90.0"
                              text="%course.credits"/>
                 <TableColumn fx:id="fulfilledColumn" editable="true" maxWidth="25.0" minWidth="25.0" prefWidth="25.0"
