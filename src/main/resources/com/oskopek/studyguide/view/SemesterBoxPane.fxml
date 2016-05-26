@@ -24,6 +24,9 @@
                         <Separator maxHeight="30.0" orientation="VERTICAL"/>
                         <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
                                 text=" - ">
+                            <tooltip>
+                                <Tooltip text="%semesterPane.removeSemester"/>
+                            </tooltip>
                             <font>
                                 <Font name="System Bold" size="13.0"/>
                             </font>

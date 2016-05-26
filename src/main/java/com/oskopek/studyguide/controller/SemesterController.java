@@ -148,20 +148,16 @@ public class SemesterController extends AbstractController {
                     return scraper.scrapeCourse(studyPlan.getCourseRegistry(), submittedCourseId);
                 }
             };
-            courseTask.exceptionProperty().addListener((observable, oldValue, newValue) -> {
-                progressDialog.close();
-                AlertCreator.showAlert(Alert.AlertType.ERROR,
-                        messages.getString("semesterPane.addCourseFromFailed") + ":\n\n" + newValue
-                                .getLocalizedMessage());
-                throw new IllegalStateException("Scrape courses from failed.", newValue);
-            });
             courseTask.setOnSucceeded(event -> {
                 progressDialog.close();
                 studyPlan.getCourseRegistry().putCourse(courseTask.getValue());
             });
             courseTask.setOnFailed(event -> {
                 progressDialog.close();
-                AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("semesterPane.addCourseFromFailed"));
+                AlertCreator.showAlert(Alert.AlertType.ERROR,
+                        messages.getString("semesterPane.addCourseFromFailed") + ":\n\n"
+                                + event.getSource().getException().getLocalizedMessage());
+                throw new IllegalStateException("Adding course from SIS failed.", event.getSource().getException());
             });
             new Thread(courseTask).start();
         }
