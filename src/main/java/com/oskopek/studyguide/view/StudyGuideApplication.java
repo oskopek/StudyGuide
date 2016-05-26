@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.apache.commons.validator.routines.UrlValidator;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 import org.slf4j.Logger;
@@ -37,8 +38,10 @@ public class StudyGuideApplication extends Application {
     private final String logoResourceLarge = "logo_640x640.png";
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private final ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
-    private Stage primaryStage;
-    private StringProperty sisUrl = new SimpleStringProperty("https://is.cuni.cz/studium");
+    private final transient StringProperty sisUrl = new SimpleStringProperty("https://is.cuni.cz/studium");
+    private final transient UrlValidator urlValidator = new UrlValidator(new String[] {"http", "https", "ftp", "file"},
+            UrlValidator.ALLOW_LOCAL_URLS);
+    private transient Stage primaryStage;
 
     /**
      * Main method.
@@ -130,16 +133,30 @@ public class StudyGuideApplication extends Application {
         this.primaryStage = primaryStage;
     }
 
+    /**
+     * Get the SIS URL we scrape courses from.
+     *
+     * @return non-null
+     */
     public String getSisUrl() {
         return sisUrl.get();
     }
 
-    public void setSisUrl(String sisUrl) {
-        this.sisUrl.set(sisUrl);
-    }
-
-    public StringProperty sisUrlProperty() {
-        return sisUrl;
+    /**
+     * Set a valid SIS URL base. May not be null, have trailing slashes, must be a valid {@link java.net.URL}
+     * and be a SIS base (f.e. {@code https://student.vscht.cz/} or {@code https://is.cuni.cz/studium/})
+     *
+     * @param sisUrl non-null, no trailing slashes
+     * @throws IllegalArgumentException if the argument is invalid (see the comment of this method)
+     */
+    public void setSisUrl(String sisUrl) throws IllegalArgumentException {
+        if (sisUrl == null || sisUrl.endsWith("/")) {
+            throw new IllegalArgumentException("Invalid SIS URL (null or trailing slash): " + sisUrl);
+        } else if (!urlValidator.isValid(sisUrl)) {
+            throw new IllegalArgumentException("Invalid SIS URL (invalid URL format): " + sisUrl);
+        } else {
+            this.sisUrl.set(sisUrl);
+        }
     }
 
     /**

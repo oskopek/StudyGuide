@@ -172,9 +172,15 @@ public class RootLayoutController extends AbstractController {
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String newSisUrl = enterStringController.getSubmittedString().trim();
-            newSisUrl = newSisUrl.charAt(newSisUrl.length() - 1) == '/' ? newSisUrl.substring(0, newSisUrl.length() - 1)
-                    : newSisUrl;
-            studyGuideApplication.setSisUrl(newSisUrl);
+            while (newSisUrl.endsWith("/")) {
+                newSisUrl = newSisUrl.substring(0, newSisUrl.length() - 1);
+            }
+            try {
+                studyGuideApplication.setSisUrl(newSisUrl);
+            } catch (IllegalArgumentException e) {
+                AlertCreator.showAlert(Alert.AlertType.ERROR,
+                        String.format(messages.getString("root.urlInvalid"), e.getLocalizedMessage()));
+            }
         }
     }
 
