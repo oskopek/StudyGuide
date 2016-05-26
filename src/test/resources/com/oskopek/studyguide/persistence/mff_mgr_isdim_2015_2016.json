@@ -1,1277 +1,1042 @@
 {
-  "courseRegistry": {
-    "courses": {
-      "NTIN067": {
-        "@id": "17ee8a6d-41d3-4588-9e15-9bb086393a2d",
-        "id": "NTIN067",
-        "name": "Data Structures II",
-        "localizedName": "Datové struktury II",
-        "locale": "cs",
-        "credits": {
-          "@id": "7cd95849-90f2-4313-8bbd-bbcc84608420",
-          "creditValue": 3
+  "courseRegistry" : {
+    "courses" : {
+      "NTIN067" : {
+        "@id" : "1d47ead4-3db8-43f8-8b6d-a06207d85f1f",
+        "id" : "NTIN067",
+        "name" : "Data Structures II",
+        "localizedName" : "Datové struktury II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "10fb232e-a1d9-40e0-84e7-b108f2075715",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Mgr. Michal Koucký, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          {
-            "@id": "356cc64f-cfbf-4361-9792-3f7b382ef9b1",
-            "id": "NTIN066",
-            "name": "Data Structures I",
-            "localizedName": "Datové struktury I",
-            "locale": "cs",
-            "credits": {
-              "@id": "55425b84-2d0b-437d-8511-c70a6c56ce05",
-              "creditValue": 5
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ {
+          "@id" : "ea21c50d-05f7-4b0c-816f-52aa633e2b8a",
+          "id" : "NTIN066",
+          "name" : "Data Structures I",
+          "localizedName" : "Datové struktury I",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "4fdf0952-69a5-4a13-b529-be5fd7bf2c6c",
+            "creditValue" : 5
+          },
+          "enrollableIn" : "WINTER",
+          "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ]
+      },
+      "NTIN066" : "ea21c50d-05f7-4b0c-816f-52aa633e2b8a",
+      "NSWI141" : {
+        "@id" : "20d70a98-8537-4249-b41c-c166c40c37f0",
+        "id" : "NSWI141",
+        "name" : "Introduction to networking",
+        "localizedName" : "Úvod do počítačových sítí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "57c21d6a-4459-4e87-9862-92ed87940781",
+          "creditValue" : 2
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Libor Forst" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NOFY056" : {
+        "@id" : "5e926cef-89ad-4ab5-bc42-c73d2316eea4",
+        "id" : "NOFY056",
+        "name" : "Programming for Physicists",
+        "localizedName" : "Programování pro fyziky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ff5e21f2-5b0b-4670-a657-590cf9c69839",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDBI036" : {
+        "@id" : "5e0e0bd9-f290-455a-a1de-0cfa13dac0b0",
+        "id" : "NDBI036",
+        "name" : "A Practical Approach to Database Systems",
+        "localizedName" : "Databázové systémy pro praxi",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3b4352ad-a7cb-4d41-aa34-ab4e25843f9a",
+          "creditValue" : 4
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Ondřej Zýka" ],
+        "prerequisites" : [ {
+          "@id" : "a795adb5-f821-4017-a6b6-043773c0f73c",
+          "id" : "NDBI025",
+          "name" : "Database Systems",
+          "localizedName" : "Databázové systémy",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "e1bf0929-f27b-44de-b0ad-615e360634a2",
+            "creditValue" : 6
+          },
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        }, {
+          "@id" : "383dffb4-1b68-4d3d-a68d-ff59cdfab2e7",
+          "id" : "NDBI007",
+          "name" : "Data Organisation and Processing I",
+          "localizedName" : "Organizace a zpracování dat I",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "44f31bb6-93f0-46ab-bdff-09d12db94dd6",
+            "creditValue" : 4
+          },
+          "enrollableIn" : "WINTER",
+          "teacherNames" : [ "RNDr. David Hoksza, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
+      },
+      "NDBI034" : {
+        "@id" : "421863e6-3001-4d69-82ba-0d242ac2b6b4",
+        "id" : "NDBI034",
+        "name" : "Multimedia Retrieval",
+        "localizedName" : "Vyhledávání multimediálního obsahu na webu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "cfcbf2d4-ab86-4aa0-9cc7-77edb6d84265",
+          "creditValue" : 4
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
+        "prerequisites" : [ "a795adb5-f821-4017-a6b6-043773c0f73c" ],
+        "corequisites" : [ ]
+      },
+      "NSWI149" : {
+        "@id" : "5f8e4294-545b-4faf-ad29-76f3e6a8675b",
+        "id" : "NSWI149",
+        "name" : "Software Engineering in Practice",
+        "localizedName" : "Softwarové inženýrství v praxi",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "710f1e61-5e04-40b2-9cb6-d6f24048e88e",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI021" : {
+        "@id" : "65520491-1ad8-4755-82bc-0450491da677",
+        "id" : "NSWI021",
+        "name" : "Computer Networks II",
+        "localizedName" : "Počítačové sítě II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "a1a90bf3-530f-4f8e-af5d-45bd5e42937c",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI142" : {
+        "@id" : "37c94277-9058-454d-b92e-3e38b5a59aaa",
+        "id" : "NSWI142",
+        "name" : "Web Applications",
+        "localizedName" : "Webové aplikace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ac9ea0fa-afe2-4bf8-b271-a4be14027cee",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D.", "RNDr. Martin Kruliš, Ph.D." ],
+        "prerequisites" : [ "20d70a98-8537-4249-b41c-c166c40c37f0" ],
+        "corequisites" : [ ]
+      },
+      "NSWI144" : {
+        "@id" : "82449f46-c29b-4327-9f44-cad63700cee9",
+        "id" : "NSWI144",
+        "name" : "Data Integration and Quality",
+        "localizedName" : "Integrace a kvalita dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "35a6e9d6-c0e9-4790-bd33-b83b73035ac7",
+          "creditValue" : 4
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Tomáš Knap, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI068" : {
+        "@id" : "3f40715c-6f7d-4ec8-a13d-e66d33053a44",
+        "id" : "NSWI068",
+        "name" : "Object and Component Systems",
+        "localizedName" : "Objektové a komponentové systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ba020f5d-31b3-4088-8443-1141f13a10ed",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Bureš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI101" : {
+        "@id" : "bf6c260c-8549-426d-a366-57552ac27aba",
+        "id" : "NSWI101",
+        "name" : "System Behaviour Models and Verification",
+        "localizedName" : "Modely a verifikace chování systémů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "29ec9a38-f9a2-4303-9540-c12288eb1030",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. Ing. František Plášil, DrSc.", "RNDr. Jan Kofroň, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI145" : {
+        "@id" : "eb1cfc6e-2a2d-4fb0-bb68-8da6e597a2ab",
+        "id" : "NSWI145",
+        "name" : "Web Services",
+        "localizedName" : "Webové služby",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "5e6e8db8-a789-4156-89b3-81f7d3d7808d",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Tomáš Knap, Ph.D." ],
+        "prerequisites" : [ {
+          "@id" : "a8fc22e9-1b7e-484f-ab09-6709c39ecf86",
+          "id" : "NPRG036",
+          "name" : "XML Technologies",
+          "localizedName" : "Technologie XML",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "2b600f99-058e-410a-a724-2227ca67b22a",
+            "creditValue" : 6
+          },
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
+      },
+      "NPRG043" : {
+        "@id" : "00fe1aa0-6b85-433b-8d91-ec8df40953d6",
+        "id" : "NPRG043",
+        "name" : "Recommended Programming Practices",
+        "localizedName" : "Doporučené postupy v programování",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f698d83d-ea97-495e-a44b-34df3897ec76",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Ing. Lubomír Bulej, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPRG041" : {
+        "@id" : "1087ad00-3d2f-463d-8445-c46f6f5c40ce",
+        "id" : "NPRG041",
+        "name" : "Programming in C++",
+        "localizedName" : "Programování v C++",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "a18e4c8d-bd08-4784-b2b8-ed4dc215ce97",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ {
+          "@id" : "bc91d92c-f6da-47c9-819d-a2754972ad51",
+          "id" : "NPRM045",
+          "name" : "Programming II",
+          "localizedName" : "Programování II",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "d5f92988-1463-419e-95d5-023e044d5cd8",
+            "creditValue" : 5
+          },
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        }, "5e926cef-89ad-4ab5-bc42-c73d2316eea4", {
+          "@id" : "44562824-8600-4b67-875e-d34b424d2873",
+          "id" : "NPRG031",
+          "name" : "Programming II",
+          "localizedName" : "Programování II",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "8677bfa6-3d1d-43f9-a6e1-e4e186ec713d",
+            "creditValue" : 5
+          },
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        }, {
+          "@id" : "80fe558e-84fc-40c9-b1aa-2e2c5eebd32b",
+          "id" : "NMIN102",
+          "name" : "Programming 2",
+          "localizedName" : "Programování 2",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "31196b1b-f407-473b-9ad1-2bc0ebd9568f",
+            "creditValue" : 5
+          },
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ {
+            "@id" : "0467fafe-2ec6-4b5a-a5d6-ad7da81d505a",
+            "id" : "NMIN101",
+            "name" : "Programming 1",
+            "localizedName" : "Programování 1",
+            "locale" : "cs",
+            "credits" : {
+              "@id" : "afb8ac20-6a20-4ac3-8f8c-5dc2ba861740",
+              "creditValue" : 5
             },
-            "enrollableIn": "WINTER",
-            "teacherNames": [
-              "doc. Mgr. Michal Koucký, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ]
+            "enrollableIn" : "WINTER",
+            "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          } ]
+        } ],
+        "corequisites" : [ ]
       },
-      "NTIN066": "356cc64f-cfbf-4361-9792-3f7b382ef9b1",
-      "NSWI141": {
-        "@id": "1db0de25-afa5-4981-ad16-772ee395a04b",
-        "id": "NSWI141",
-        "name": "Introduction to networking",
-        "localizedName": "Úvod do počítačových sítí",
-        "locale": "cs",
-        "credits": {
-          "@id": "f70eed73-2200-4ed2-937a-2b06440e8a11",
-          "creditValue": 2
+      "NAIL029" : {
+        "@id" : "5c35ca8d-8098-47ea-9718-b971d1d4e1a6",
+        "id" : "NAIL029",
+        "name" : "Machine Learning",
+        "localizedName" : "Strojové učení",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "70c54c64-1c3c-4120-944a-2f7292a77ecf",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Libor Forst"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Marta Vomlelová, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NOFY056": {
-        "@id": "3904372b-1bff-43fe-9e8d-50b8031e1e79",
-        "id": "NOFY056",
-        "name": "Programming for Physicists",
-        "localizedName": "Programování pro fyziky",
-        "locale": "cs",
-        "credits": {
-          "@id": "3cf4df3e-59d1-42dd-8a07-200832bf6168",
-          "creditValue": 5
+      "NPRG042" : {
+        "@id" : "b75cbfa1-71c0-4049-b79c-a6424a2a9549",
+        "id" : "NPRG042",
+        "name" : "Programming in Parallel Environment",
+        "localizedName" : "Programování v paralelním prostředí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "025d5652-6a7a-4e22-be07-946f6d0aa39e",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Ladislav Hanyk, Ph.D.",
-          "Mgr. Tomáš Ledvinka, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Jakub Yaghob, Ph.D." ],
+        "prerequisites" : [ "1087ad00-3d2f-463d-8445-c46f6f5c40ce" ],
+        "corequisites" : [ ]
       },
-      "NDBI036": {
-        "@id": "526cd909-3014-4bcc-8462-e0b46784beee",
-        "id": "NDBI036",
-        "name": "A Practical Approach to Database Systems",
-        "localizedName": "Databázové systémy pro praxi",
-        "locale": "cs",
-        "credits": {
-          "@id": "fafc2cbe-6853-48a3-a969-88daa4f2ce4f",
-          "creditValue": 4
+      "NSWI094" : {
+        "@id" : "31aa1d92-3cb4-4534-87fc-a499b7da206f",
+        "id" : "NSWI094",
+        "name" : "Database Application Development",
+        "localizedName" : "Vedení databázových projektů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "d849f021-ef88-4473-adb7-77c4b652b600",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Ondřej Zýka"
-        ],
-        "prerequisites": [
-          {
-            "@id": "51b7bc45-9bf7-49bb-9f29-8565dd5aa27c",
-            "id": "NDBI025",
-            "name": "Database Systems",
-            "localizedName": "Databázové systémy",
-            "locale": "cs",
-            "credits": {
-              "@id": "9ff584d3-3b8b-4882-b940-cf0099d21408",
-              "creditValue": 6
-          },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "doc. RNDr. Tomáš Skopal, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          },
-          {
-            "@id": "dee5c6b8-f910-418a-acc0-51678133765d",
-            "id": "NDBI007",
-            "name": "Data Organisation and Processing I",
-            "localizedName": "Organizace a zpracování dat I",
-            "locale": "cs",
-            "credits": {
-              "@id": "06fed161-1b92-4ffe-af92-46bc660ec3c9",
-              "creditValue": 4
-          },
-            "enrollableIn": "WINTER",
-            "teacherNames": [
-              "RNDr. David Hoksza, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Tomáš Rubač" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NDBI034": {
-        "@id": "14f05ac9-506d-49d1-bfbb-3e22bb6446ed",
-        "id": "NDBI034",
-        "name": "Multimedia Retrieval",
-        "localizedName": "Vyhledávání multimediálního obsahu na webu",
-        "locale": "cs",
-        "credits": {
-          "@id": "2ad091ec-8976-445f-aa73-b23c05931fc8",
-          "creditValue": 4
+      "NDBI021" : {
+        "@id" : "c04ec058-0cb5-4f44-b2be-3b851a3223bc",
+        "id" : "NDBI021",
+        "name" : "Querying with Preferences",
+        "localizedName" : "Dotazování s preferencemi",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "2113d691-eb53-4cef-b1f3-329df6db0213",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Tomáš Skopal, Ph.D."
-        ],
-        "prerequisites": [
-          "51b7bc45-9bf7-49bb-9f29-8565dd5aa27c"
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Peter Vojtáš, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI149": {
-        "@id": "9fdc8286-e0f7-4652-a0fb-102f03114769",
-        "id": "NSWI149",
-        "name": "Software Engineering in Practice",
-        "localizedName": "Softwarové inženýrství v praxi",
-        "locale": "cs",
-        "credits": {
-          "@id": "43bf7269-4e27-419b-8d7a-e8747a1199cc",
-          "creditValue": 3
+      "NMAI060" : {
+        "@id" : "7d655ff1-c2ce-46dd-8fb0-cea92673dfa6",
+        "id" : "NMAI060",
+        "name" : "Probabilistic Methods",
+        "localizedName" : "Pravděpodobnostní metody",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f801b42a-0559-425a-b5cf-6584cddfa281",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Jaromír Antoch, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI021": {
-        "@id": "92dab5a3-b6ee-48dc-816b-0b94fc233f29",
-        "id": "NSWI021",
-        "name": "Computer Networks II",
-        "localizedName": "Počítačové sítě II",
-        "locale": "cs",
-        "credits": {
-          "@id": "640cc1bb-1efd-49bc-a87a-de3bd0852c66",
-          "creditValue": 3
+      "NSWI130" : {
+        "@id" : "8389fc6d-3dbd-40d5-854c-ce48f4a0b797",
+        "id" : "NSWI130",
+        "name" : "Software System Architectures",
+        "localizedName" : "Architektury softwarových systémů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b79ace53-27fd-465d-b7e4-9dc3a9c51ac6",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Ing. Jiří Peterka"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI142": {
-        "@id": "d792d9ba-918b-4c07-8685-e74e1c6485d0",
-        "id": "NSWI142",
-        "name": "Web Applications",
-        "localizedName": "Webové aplikace",
-        "locale": "cs",
-        "credits": {
-          "@id": "fa02f82d-577d-4332-8990-5c684aa5790d",
-          "creditValue": 6
+      "NDBI025" : "a795adb5-f821-4017-a6b6-043773c0f73c",
+      "NDBI023" : {
+        "@id" : "7a4ffe45-84ff-449f-b581-873f6ec6d5ec",
+        "id" : "NDBI023",
+        "name" : "Data Mining",
+        "localizedName" : "Dobývání znalostí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b7cabe96-f419-40e8-8448-e42289842fa3",
+          "creditValue" : 9
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D.",
-          "RNDr. Martin Kruliš, Ph.D."
-        ],
-        "prerequisites": [
-          "1db0de25-afa5-4981-ad16-772ee395a04b"
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI144": {
-        "@id": "ca2d8137-63a3-43cf-bc0c-1d3a4b93d9ce",
-        "id": "NSWI144",
-        "name": "Data Integration and Quality",
-        "localizedName": "Integrace a kvalita dat",
-        "locale": "cs",
-        "credits": {
-          "@id": "e188dcc3-8a82-4631-a18d-fdbb8ed65267",
-          "creditValue": 4
+      "NSWI131" : {
+        "@id" : "f4eb1904-8b9f-4244-b445-7f5238a99112",
+        "id" : "NSWI131",
+        "name" : "Performance Evaluation of Computer Systems",
+        "localizedName" : "Vyhodnocování výkonnosti počítačových systémů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "36df7930-fbcc-4dd1-841f-e6e5c1dbb39f",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Tomáš Knap, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI068": {
-        "@id": "5c3dbbcf-64df-4740-b7ba-3b921d8e75fb",
-        "id": "NSWI068",
-        "name": "Object and Component Systems",
-        "localizedName": "Objektové a komponentové systémy",
-        "locale": "cs",
-        "credits": {
-          "@id": "547c3bb1-6e63-416b-b892-f6e7dccc1b33",
-          "creditValue": 5
+      "NPRG014" : {
+        "@id" : "6fdda73a-182e-4403-811d-bfa8f8507c0f",
+        "id" : "NPRG014",
+        "name" : "Concepts of Modern Programming Languages",
+        "localizedName" : "Koncepty moderních programovacích jazyků",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c1c2cf52-1a57-415f-a12d-70cbd5bb6fea",
+          "creditValue" : 2
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Tomáš Bureš, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Ing. Petr Tůma, Dr.", "doc. RNDr. Tomáš Bureš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI101": {
-        "@id": "3c2c9c33-75b6-4cfb-8a81-e809dd04cac0",
-        "id": "NSWI101",
-        "name": "System Behaviour Models and Verification",
-        "localizedName": "Modely a verifikace chování systémů",
-        "locale": "cs",
-        "credits": {
-          "@id": "42b77e15-5b66-4d0b-9621-caa3ee5589fa",
-          "creditValue": 6
+      "NPRG059" : {
+        "@id" : "daa8ec4d-faa4-4623-86f3-e9b1cecc39e2",
+        "id" : "NPRG059",
+        "name" : "Advanced Programming Praxis",
+        "localizedName" : "Praktikum z pokročilého objektového programování",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "19ead1fe-31af-4815-a28a-c80778d44cc2",
+          "creditValue" : 2
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. Ing. František Plášil, DrSc.",
-          "RNDr. Jan Kofroň, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI145": {
-        "@id": "b0bd4c66-ce59-4ad7-b8ac-314f3ef7757a",
-        "id": "NSWI145",
-        "name": "Web Services",
-        "localizedName": "Webové služby",
-        "locale": "cs",
-        "credits": {
-          "@id": "d2525073-d3f2-4b8d-86bd-7167ba8f5854",
-          "creditValue": 5
+      "NPRG054" : {
+        "@id" : "7563ba67-f3da-4f87-9df9-133c13db940f",
+        "id" : "NPRG054",
+        "name" : "High Performance Software Development",
+        "localizedName" : "Vývoj vysoce výkonného software",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "45a18087-dd5a-44a6-a236-1448610ef8b0",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Tomáš Knap, Ph.D."
-        ],
-        "prerequisites": [
-          {
-            "@id": "4b96174c-577d-4053-b6e2-45a2ecde5523",
-            "id": "NPRG036",
-            "name": "XML Technologies",
-            "localizedName": "Technologie XML",
-            "locale": "cs",
-            "credits": {
-              "@id": "94355c52-84f4-47da-9157-82c811e5a435",
-              "creditValue": 6
-            },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "doc. RNDr. Irena Holubová, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. David Bednárek, Ph.D." ],
+        "prerequisites" : [ "1087ad00-3d2f-463d-8445-c46f6f5c40ce" ],
+        "corequisites" : [ ]
       },
-      "NPRG043": {
-        "@id": "4ed25294-f36b-4e2e-8da5-aa04032cd017",
-        "id": "NPRG043",
-        "name": "Recommended Programming Practices",
-        "localizedName": "Doporučené postupy v programování",
-        "locale": "cs",
-        "credits": {
-          "@id": "4a7ca008-7f27-4d47-b3cc-482534fdf820",
-          "creditValue": 6
+      "NSWI041" : {
+        "@id" : "57185d85-289d-4ffe-a7ca-2cfcbfa2df2e",
+        "id" : "NSWI041",
+        "name" : "Introduction to Software Engineering",
+        "localizedName" : "Úvod do softwarového inženýrství",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4f22c7d9-fdbb-4811-a2e0-3c748b117d9c",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Ing. Lubomír Bulej, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG041": {
-        "@id": "a807435e-d232-465c-a24e-62974ea7146c",
-        "id": "NPRG041",
-        "name": "Programming in C++",
-        "localizedName": "Programování v C++",
-        "locale": "cs",
-        "credits": {
-          "@id": "d6dd00bd-73c5-405f-ad26-d5ac1c0b7cb4",
-          "creditValue": 6
+      "NTIN043" : {
+        "@id" : "67a3755e-b507-4173-8f50-548975086f79",
+        "id" : "NTIN043",
+        "name" : "Formal Foundations of Software Engineering",
+        "localizedName" : "Formální základy softwarového inženýrství",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4371b057-ec79-4fa9-baca-bc7b5b6283fd",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. David Bednárek, Ph.D.",
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [
-          {
-            "@id": "a5e24fdf-3ba7-4985-b593-76ce679ed1e1",
-            "id": "NPRM045",
-            "name": "Programming II",
-            "localizedName": "Programování II",
-            "locale": "cs",
-            "credits": {
-              "@id": "a18ad715-25ba-4f6b-804d-d89527f97189",
-              "creditValue": 5
-          },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "RNDr. Rudolf Kryl",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          },
-          "3904372b-1bff-43fe-9e8d-50b8031e1e79",
-          {
-            "@id": "473f489d-1b4d-42d5-8506-dd84b04d0287",
-            "id": "NPRG031",
-            "name": "Programming II",
-            "localizedName": "Programování II",
-            "locale": "cs",
-            "credits": {
-              "@id": "a08c705f-fb3c-41ba-a18f-01eec3648dff",
-              "creditValue": 5
-          },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "RNDr. Tomáš Holan, Ph.D.",
-              "doc. RNDr. Pavel Töpfer, CSc.",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          },
-          {
-            "@id": "4a6e5ecf-7578-4301-aad0-35d60e388339",
-            "id": "NMIN102",
-            "name": "Programming 2",
-            "localizedName": "Programování 2",
-            "locale": "cs",
-            "credits": {
-              "@id": "92aa07ef-6307-4689-947f-2577ee46b59f",
-              "creditValue": 5
-          },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "doc. RNDr. Pavel Töpfer, CSc.",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": [
-              {
-                "@id": "181d8802-55ba-4611-9860-9194b3368dfd",
-                "id": "NMIN101",
-                "name": "Programming 1",
-                "localizedName": "Programování 1",
-                "locale": "cs",
-                "credits": {
-                  "@id": "48b89420-5969-48bb-9bbd-3b2a54bf81d8",
-                  "creditValue": 5
-            },
-                "enrollableIn": "WINTER",
-                "teacherNames": [
-                  "doc. RNDr. Pavel Töpfer, CSc.",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              }
-            ]
-          }
-        ],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D.", "RNDr. Pavel Parízek, Ph.D." ],
+        "prerequisites" : [ "57185d85-289d-4ffe-a7ca-2cfcbfa2df2e" ],
+        "corequisites" : [ ]
       },
-      "NAIL029": {
-        "@id": "73384a2f-ea11-4807-817f-7d381bf91b8d",
-        "id": "NAIL029",
-        "name": "Machine Learning",
-        "localizedName": "Strojové učení",
-        "locale": "cs",
-        "credits": {
-          "@id": "f0f6f770-b792-4306-9e5a-d89ea9e450a8",
-          "creditValue": 3
+      "NPRM045" : "bc91d92c-f6da-47c9-819d-a2754972ad51",
+      "NSWI080" : {
+        "@id" : "8e1445cb-8942-4dd4-83c0-a816c50dbe23",
+        "id" : "NSWI080",
+        "name" : "Middleware",
+        "localizedName" : "Middleware",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "dd6f5ed8-f1d1-4ee2-b77c-4ebf4d495ac1",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Mgr. Marta Vomlelová, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG042": {
-        "@id": "174ffe7e-35a2-40bd-8307-42983fd06ca1",
-        "id": "NPRG042",
-        "name": "Programming in Parallel Environment",
-        "localizedName": "Programování v paralelním prostředí",
-        "locale": "cs",
-        "credits": {
-          "@id": "73ff2dfb-ef8d-49df-97f8-040c4579ad63",
-          "creditValue": 6
+      "NDBI019" : {
+        "@id" : "5a9188a0-b402-48b8-8a22-9b956adc901f",
+        "id" : "NDBI019",
+        "name" : "Stochastic Methods in Databases",
+        "localizedName" : "Stochastické metody v databázích",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b5dbe1f6-8dce-4c6a-8ade-f5f1ed6be104",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Jakub Yaghob, Ph.D."
-        ],
-        "prerequisites": [
-          "a807435e-d232-465c-a24e-62974ea7146c"
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI094": {
-        "@id": "a8d6b2be-f32a-4161-be9f-ab401fc6f008",
-        "id": "NSWI094",
-        "name": "Database Application Development",
-        "localizedName": "Vedení databázových projektů",
-        "locale": "cs",
-        "credits": {
-          "@id": "8c940216-d74a-469e-8490-4de52f9d011c",
-          "creditValue": 5
+      "NSWI004" : {
+        "@id" : "7e1352d6-4368-4a16-ab4d-08228e193a30",
+        "id" : "NSWI004",
+        "name" : "Operating Systems",
+        "localizedName" : "Operační systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "42a92d4b-c07c-4803-9cc4-9f05bbfe9895",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Tomáš Rubač"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NDBI021": {
-        "@id": "f3ffef1e-51ce-41c5-a336-3a894ab34910",
-        "id": "NDBI021",
-        "name": "Querying with Preferences",
-        "localizedName": "Dotazování s preferencemi",
-        "locale": "cs",
-        "credits": {
-          "@id": "da2832fd-236a-44a3-95bb-b8dc2db5c829",
-          "creditValue": 5
+      "NSWI126" : {
+        "@id" : "6014fca9-48ab-4ff4-89a7-4625d612a31e",
+        "id" : "NSWI126",
+        "name" : "Advanced Tools for Software Development and Monitoring",
+        "localizedName" : "Pokročilé nástroje pro vývoj a monitorování software",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "83cd2642-6c24-4f8c-b9e6-383422f39911",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. RNDr. Peter Vojtáš, DrSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Petr Hnětynka, Ph.D.", "RNDr. Pavel Parízek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NMAI060": {
-        "@id": "91adea8d-5239-4bbf-999a-398304cb1d9b",
-        "id": "NMAI060",
-        "name": "Probabilistic Methods",
-        "localizedName": "Pravděpodobnostní metody",
-        "locale": "cs",
-        "credits": {
-          "@id": "1375610d-7879-4c6e-add3-aa53e7a1a984",
-          "creditValue": 3
+      "NDBI016" : {
+        "@id" : "73d7de13-2a5e-4763-b9f3-af0a5cfd131a",
+        "id" : "NDBI016",
+        "name" : "Transactions",
+        "localizedName" : "Transakce",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "cfa5cc79-1594-4640-acb8-ae62d0210c8f",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. RNDr. Jaromír Antoch, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Jakub Lokoč, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI130": {
-        "@id": "dbf1fed4-7cb0-4db8-864a-0727df0f8783",
-        "id": "NSWI130",
-        "name": "Software System Architectures",
-        "localizedName": "Architektury softwarových systémů",
-        "locale": "cs",
-        "credits": {
-          "@id": "78727c46-432f-47a3-b86d-b6df1d26683b",
-          "creditValue": 5
+      "NSWI120" : {
+        "@id" : "ddf4d2af-08be-49fa-b77b-52e33e667337",
+        "id" : "NSWI120",
+        "name" : "Principles of Computers",
+        "localizedName" : "Principy počítačů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4b6850a0-e83c-468a-86c2-ab41e77f9b11",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Pavel Ježek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NDBI025": "51b7bc45-9bf7-49bb-9f29-8565dd5aa27c",
-      "NDBI023": {
-        "@id": "ef244448-3ad2-46bf-8806-a53d6d26c6ce",
-        "id": "NDBI023",
-        "name": "Data Mining",
-        "localizedName": "Dobývání znalostí",
-        "locale": "cs",
-        "credits": {
-          "@id": "31b0adc5-f31d-443d-ae0c-aa7ac8b181a6",
-          "creditValue": 9
+      "NSWI045" : {
+        "@id" : "90b0d0e0-7f56-4649-86b3-9b85d6bfb436",
+        "id" : "NSWI045",
+        "name" : "TCP/IP Protocol Suite",
+        "localizedName" : "Rodina protokolů TCP/IP",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "63106292-a5ae-4da4-a1b0-b2b77c33d0d5",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. RNDr. Iveta Mrázová, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI131": {
-        "@id": "b94a6504-779e-4570-a405-36eb0c142c30",
-        "id": "NSWI131",
-        "name": "Performance Evaluation of Computer Systems",
-        "localizedName": "Vyhodnocování výkonnosti počítačových systémů",
-        "locale": "cs",
-        "credits": {
-          "@id": "31749a21-62d7-46b7-b15d-742214ece92b",
-          "creditValue": 5
+      "NPRG027" : {
+        "@id" : "509c0f6e-e3b8-459a-8ee4-15d711c94472",
+        "id" : "NPRG027",
+        "name" : "Credit for Project",
+        "localizedName" : "Zápočet k projektu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "7605a9e5-7413-4c74-a149-890ca9a17d25",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Ing. Petr Tůma, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG014": {
-        "@id": "2dcec36e-aba0-4eeb-bfc1-d8ae9644c2aa",
-        "id": "NPRG014",
-        "name": "Concepts of Modern Programming Languages",
-        "localizedName": "Koncepty moderních programovacích jazyků",
-        "locale": "cs",
-        "credits": {
-          "@id": "0ec63d26-d263-44c0-a472-9ed01f86fd93",
-          "creditValue": 2
+      "NPRG023" : {
+        "@id" : "15412e8c-ccdb-4bca-8ed3-0f4fa6a0f26f",
+        "id" : "NPRG023",
+        "name" : "Software Project",
+        "localizedName" : "Softwarový projekt",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b612ebbd-7a5d-4802-b727-aef24d55ab2a",
+          "creditValue" : 9
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Ing. Petr Tůma, Dr.",
-          "doc. RNDr. Tomáš Bureš, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG059": {
-        "@id": "3624a8a0-21a7-4a63-8470-e52f2255f4f9",
-        "id": "NPRG059",
-        "name": "Advanced Programming Praxis",
-        "localizedName": "Praktikum z pokročilého objektového programování",
-        "locale": "cs",
-        "credits": {
-          "@id": "79b4f96c-2f8f-44b2-9fba-b43683ef5fc6",
-          "creditValue": 2
+      "NPRG024" : {
+        "@id" : "56cc457a-2c0d-4c32-a596-baca588cada6",
+        "id" : "NPRG024",
+        "name" : "Design Patterns",
+        "localizedName" : "Návrhové vzory",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "a20c41e2-8517-4b38-9ab7-758c2adbe2f7",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG054": {
-        "@id": "2a3806da-8c0e-48ed-b4d0-31b03291c25d",
-        "id": "NPRG054",
-        "name": "High Performance Software Development",
-        "localizedName": "Vývoj vysoce výkonného software",
-        "locale": "cs",
-        "credits": {
-          "@id": "c60ce330-9c2a-4f03-ac84-bc84ab8e4714",
-          "creditValue": 5
+      "NTIN090" : {
+        "@id" : "8461dc74-a63d-4af7-8f14-7fd9f5e5d00e",
+        "id" : "NTIN090",
+        "name" : "Introduction to Complexity and Computability",
+        "localizedName" : "Základy složitosti a vyčíslitelnosti",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ff8eccb5-4ea0-480a-9853-d324a37d5c92",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. David Bednárek, Ph.D."
-        ],
-        "prerequisites": [
-          "a807435e-d232-465c-a24e-62974ea7146c"
-        ],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI041": {
-        "@id": "327d8f5c-9c58-48ed-a9c2-6e8067a823b1",
-        "id": "NSWI041",
-        "name": "Introduction to Software Engineering",
-        "localizedName": "Úvod do softwarového inženýrství",
-        "locale": "cs",
-        "credits": {
-          "@id": "56f89255-61e5-4fc7-9f06-ae040ba55512",
-          "creditValue": 5
+      "NPFL054" : {
+        "@id" : "384c9f24-782a-4220-b817-5cdc044a3dae",
+        "id" : "NPFL054",
+        "name" : "Introduction to Machine Learning",
+        "localizedName" : "Úvod do strojového učení",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "e011fea6-eb7d-4cd6-9394-e4627c953c77",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Barbora Vidová Hladká, Ph.D.", "RNDr. Martin Holub, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NTIN043": {
-        "@id": "2bacc878-3f4e-46eb-a58a-fb35446c40e7",
-        "id": "NTIN043",
-        "name": "Formal Foundations of Software Engineering",
-        "localizedName": "Formální základy softwarového inženýrství",
-        "locale": "cs",
-        "credits": {
-          "@id": "932c5cf2-60cb-4721-8131-4454e7e07b96",
-          "creditValue": 5
+      "NSWI072" : {
+        "@id" : "49f1280e-9bdb-43a5-b404-e27d2903d89c",
+        "id" : "NSWI072",
+        "name" : "Data Compression Algorithms",
+        "localizedName" : "Algoritmy komprese dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "74de23f6-fda4-4f4e-b6dd-9791576267a9",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D.",
-          "RNDr. Pavel Parízek, Ph.D."
-        ],
-        "prerequisites": [
-          "327d8f5c-9c58-48ed-a9c2-6e8067a823b1"
-        ],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRM045": "a5e24fdf-3ba7-4985-b593-76ce679ed1e1",
-      "NSWI080": {
-        "@id": "7d3bd31f-99ae-4d3c-9903-4adfd0ccde12",
-        "id": "NSWI080",
-        "name": "Middleware",
-        "localizedName": "Middleware",
-        "locale": "cs",
-        "credits": {
-          "@id": "704567de-3c8e-4ea7-a541-2926839b45df",
-          "creditValue": 5
+      "NDBI043" : {
+        "@id" : "6011597f-65ae-4c13-a6bd-eae4bcf8563d",
+        "id" : "NDBI043",
+        "name" : "Text Search Techniques",
+        "localizedName" : "Techniky vyhledávání v textu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "9458ef94-8be7-4ce2-b4c0-1d4db1ec6718",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Ing. Petr Tůma, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NDBI019": {
-        "@id": "bb9c44b7-84b6-4d96-9211-a39d83bd6dc6",
-        "id": "NDBI019",
-        "name": "Stochastic Methods in Databases",
-        "localizedName": "Stochastické metody v databázích",
-        "locale": "cs",
-        "credits": {
-          "@id": "1171f44a-2127-4775-8107-f2ab5d6cf5e0",
-          "creditValue": 3
+      "NSWI073" : {
+        "@id" : "6e2930dc-701a-4a6f-9b57-88b93b0507b4",
+        "id" : "NSWI073",
+        "name" : "Modern Networking Solutions",
+        "localizedName" : "Moderní síťová řešení",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6611b16a-b83e-476e-9c02-084c522c5766",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Alena Koubková, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Ing. Jiří Peterka" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ "65520491-1ad8-4755-82bc-0450491da677", "90b0d0e0-7f56-4649-86b3-9b85d6bfb436" ]
       },
-      "NSWI004": {
-        "@id": "9d1fe175-1c0d-4aa8-92a7-eb7b8639670d",
-        "id": "NSWI004",
-        "name": "Operating Systems",
-        "localizedName": "Operační systémy",
-        "locale": "cs",
-        "credits": {
-          "@id": "7a4a67c8-9b42-450d-9f0e-3f9c48955f98",
-          "creditValue": 5
+      "NSWI150" : {
+        "@id" : "7da40395-e5c0-4e9b-bb38-ce34ed435bed",
+        "id" : "NSWI150",
+        "name" : "Virtualization and Cloud Computing",
+        "localizedName" : "Virtualizace a cloud computing",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "512e1777-8981-45a1-86ad-d85cb9e144c8",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Ing. Petr Tůma, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Jakub Yaghob, Ph.D." ],
+        "prerequisites" : [ "ddf4d2af-08be-49fa-b77b-52e33e667337" ],
+        "corequisites" : [ ]
       },
-      "NSWI126": {
-        "@id": "adc06f90-cd08-4161-8aea-9e034b143626",
-        "id": "NSWI126",
-        "name": "Advanced Tools for Software Development and Monitoring",
-        "localizedName": "Pokročilé nástroje pro vývoj a monitorování software",
-        "locale": "cs",
-        "credits": {
-          "@id": "5d65dd5f-2919-49a0-89c6-724b32d1ecc3",
-          "creditValue": 3
+      "NDBI042" : {
+        "@id" : "0f7a25cc-0d3e-45a6-aa7a-24e70c59a512",
+        "id" : "NDBI042",
+        "name" : "Data Visualization Techniques",
+        "localizedName" : "Techniky vizualizace dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "00056484-ac8b-4761-83a0-aaec3e399541",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. RNDr. Petr Hnětynka, Ph.D.",
-          "RNDr. Pavel Parízek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. David Hoksza, Ph.D.", "doc. RNDr. Tomáš Skopal, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NDBI016": {
-        "@id": "4254f301-9c52-4fe7-81db-d79ba83422e0",
-        "id": "NDBI016",
-        "name": "Transactions",
-        "localizedName": "Transakce",
-        "locale": "cs",
-        "credits": {
-          "@id": "e06a7c41-f701-46c1-84a1-7a610dd0cc19",
-          "creditValue": 3
+      "NSWI152" : {
+        "@id" : "aa8124ff-3b3b-4cb5-ad79-2c73b78902f3",
+        "id" : "NSWI152",
+        "name" : "Cloud Application Development",
+        "localizedName" : "Vývoj cloudových aplikací",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "93fa1b9c-46cd-468e-8df9-6d64c4976710",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Jakub Lokoč, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI120": {
-        "@id": "2bdc0f37-b507-4b3c-ad42-1db219906d69",
-        "id": "NSWI120",
-        "name": "Principles of Computers",
-        "localizedName": "Principy počítačů",
-        "locale": "cs",
-        "credits": {
-          "@id": "abca9975-1d1d-4864-a7cd-7f718e209628",
-          "creditValue": 3
+      "NDBI001" : {
+        "@id" : "63733bc8-7c59-42bd-ab68-b53e458466f2",
+        "id" : "NDBI001",
+        "name" : "Query Languages I",
+        "localizedName" : "Dotazovací jazyky I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "96941f5c-c35d-47ad-853a-5d64c9a8d51d",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Pavel Ježek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Jaroslav Pokorný, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI045": {
-        "@id": "a8680165-26c5-4afe-8752-db39ca0ebc30",
-        "id": "NSWI045",
-        "name": "TCP/IP Protocol Suite",
-        "localizedName": "Rodina protokolů TCP/IP",
-        "locale": "cs",
-        "credits": {
-          "@id": "6406a660-0d35-4993-8a80-6b437d8e6fd4",
-          "creditValue": 3
+      "NSZZ025" : {
+        "@id" : "a2895481-d432-4cad-86c1-e7e5b25e300c",
+        "id" : "NSZZ025",
+        "name" : "Diploma Thesis III",
+        "localizedName" : "Diplomová práce III",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3637c445-8789-4de1-b341-b60671caf9e6",
+          "creditValue" : 15
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Ing. Jiří Peterka"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG027": {
-        "@id": "31731611-e5be-411b-b496-9141a732429a",
-        "id": "NPRG027",
-        "name": "Credit for Project",
-        "localizedName": "Zápočet k projektu",
-        "locale": "cs",
-        "credits": {
-          "@id": "e4a8c1e1-7dc4-4e8f-b054-f22a68337eee",
-          "creditValue": 6
+      "NDBI007" : "383dffb4-1b68-4d3d-a68d-ff59cdfab2e7",
+      "NSZZ023" : {
+        "@id" : "56db352c-2c95-44d4-b859-48db5e43599d",
+        "id" : "NSZZ023",
+        "name" : "Diploma Thesis I",
+        "localizedName" : "Diplomová práce I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c22e4f8e-3125-46bf-b885-dcb8610e27d3",
+          "creditValue" : 6
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG023": {
-        "@id": "f6ea2a3a-4422-4f67-861f-a1958502d720",
-        "id": "NPRG023",
-        "name": "Software Project",
-        "localizedName": "Softwarový projekt",
-        "locale": "cs",
-        "credits": {
-          "@id": "12989443-44af-484c-aff1-efe0a32ec074",
-          "creditValue": 9
+      "NDBI006" : {
+        "@id" : "fc807d86-8093-40a2-97d9-0f4d2c9337c8",
+        "id" : "NDBI006",
+        "name" : "Query Languages II",
+        "localizedName" : "Dotazovací jazyky II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "bd89895f-c21d-4b09-99d0-7aa4e0c30f0f",
+          "creditValue" : 5
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Jaroslav Pokorný, CSc.", "prof. RNDr. Peter Vojtáš, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ "63733bc8-7c59-42bd-ab68-b53e458466f2" ]
       },
-      "NPRG024": {
-        "@id": "4d0c854f-00af-4023-ad19-3287a0a7a9b3",
-        "id": "NPRG024",
-        "name": "Design Patterns",
-        "localizedName": "Návrhové vzory",
-        "locale": "cs",
-        "credits": {
-          "@id": "53a790be-9c94-41c9-be77-f26a4e404be4",
-          "creditValue": 3
+      "NSZZ024" : {
+        "@id" : "337c3a79-6edb-47ef-97d5-cb0529b4345e",
+        "id" : "NSZZ024",
+        "name" : "Diploma Thesis II",
+        "localizedName" : "Diplomová práce II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "258bad5d-e6fa-46bf-bc34-0f2997680529",
+          "creditValue" : 9
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NTIN090": {
-        "@id": "0b1ca136-b82a-47d2-8d06-dd63220f60f3",
-        "id": "NTIN090",
-        "name": "Introduction to Complexity and Computability",
-        "localizedName": "Základy složitosti a vyčíslitelnosti",
-        "locale": "cs",
-        "credits": {
-          "@id": "39475609-a7b9-4f3d-aeaa-4d43d25c4ebe",
-          "creditValue": 5
+      "NSWI153" : {
+        "@id" : "a0729605-3358-453e-985f-d5e5d969c259",
+        "id" : "NSWI153",
+        "name" : "Advanced Technologies for Web Applications",
+        "localizedName" : "Pokročilé technologie webových aplikací",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b112e80f-c140-4d0b-9dd1-7606368548d7",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Ondřej Čepek, Ph.D.",
-          "RNDr. Petr Kučera, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Martin Kruliš, Ph.D." ],
+        "prerequisites" : [ "37c94277-9058-454d-b92e-3e38b5a59aaa" ],
+        "corequisites" : [ ]
       },
-      "NPFL054": {
-        "@id": "def1978c-d639-4fbd-a0fd-131c503864fe",
-        "id": "NPFL054",
-        "name": "Introduction to Machine Learning",
-        "localizedName": "Úvod do strojového učení",
-        "locale": "cs",
-        "credits": {
-          "@id": "83c6e8e0-bdf9-48dc-ba7d-9f73614ab81d",
-          "creditValue": 6
+      "NSWI035" : {
+        "@id" : "5902292d-85ce-4c59-96a4-16cd020a1ad4",
+        "id" : "NSWI035",
+        "name" : "Principles of Distributed Systems",
+        "localizedName" : "Principy distribuovaných systémů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f13c6e95-6066-477c-8a82-c1d13f60cab2",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Barbora Vidová Hladká, Ph.D.",
-          "RNDr. Martin Holub, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI072": {
-        "@id": "b44c1377-1163-4c90-ae8a-136dd60cfd6a",
-        "id": "NSWI072",
-        "name": "Data Compression Algorithms",
-        "localizedName": "Algoritmy komprese dat",
-        "locale": "cs",
-        "credits": {
-          "@id": "beea00db-84ef-4a6c-a164-57bf2ea9e214",
-          "creditValue": 3
+      "NPRG039" : {
+        "@id" : "d3954902-f76c-4ff5-ae42-659414710d56",
+        "id" : "NPRG039",
+        "name" : "Advanced aspects and new trends in XML",
+        "localizedName" : "Pokročilé aspekty a nové trendy v XML",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "90b88b05-716b-47fc-afac-a7df7740a01a",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Tomáš Dvořák, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
+        "prerequisites" : [ "a8fc22e9-1b7e-484f-ab09-6709c39ecf86", "a795adb5-f821-4017-a6b6-043773c0f73c" ],
+        "corequisites" : [ ]
       },
-      "NDBI043": {
-        "@id": "77440414-8398-42b1-a6fb-f4eedc8698c5",
-        "id": "NDBI043",
-        "name": "Text Search Techniques",
-        "localizedName": "Techniky vyhledávání v textu",
-        "locale": "cs",
-        "credits": {
-          "@id": "11d63738-28e0-4fe4-82fc-5b2181b9dc0e",
-          "creditValue": 3
+      "NPRG036" : "a8fc22e9-1b7e-484f-ab09-6709c39ecf86",
+      "NSWI108" : {
+        "@id" : "ca3c9f9e-5532-44a8-912a-256c88586374",
+        "id" : "NSWI108",
+        "name" : "Web Semantization",
+        "localizedName" : "Sémantizace webu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "0f64648f-4d71-43f3-a0d6-fc7f6ab55dce",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. RNDr. Tomáš Skopal, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Peter Vojtáš, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI073": {
-        "@id": "71dd6f4d-8ad4-4a3a-b8f9-187e73b73c38",
-        "id": "NSWI073",
-        "name": "Modern Networking Solutions",
-        "localizedName": "Moderní síťová řešení",
-        "locale": "cs",
-        "credits": {
-          "@id": "33b446a8-d0ad-432d-a094-84a0dcc59175",
-          "creditValue": 3
+      "NPRG031" : "44562824-8600-4b67-875e-d34b424d2873",
+      "NMIN101" : "0467fafe-2ec6-4b5a-a5d6-ad7da81d505a",
+      "NMIN102" : "80fe558e-84fc-40c9-b1aa-2e2c5eebd32b",
+      "NDBI040" : {
+        "@id" : "77e2b1a2-2683-4e2a-b561-57a1290cd585",
+        "id" : "NDBI040",
+        "name" : "Big Data Management and NoSQL Databases",
+        "localizedName" : "Big Data management a NoSQL databáze",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "e84f8977-944a-448c-8772-b2e750d250a1",
+          "creditValue" : 4
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Ing. Jiří Peterka"
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          "92dab5a3-b6ee-48dc-816b-0b94fc233f29",
-          "a8680165-26c5-4afe-8752-db39ca0ebc30"
-        ]
-      },
-      "NSWI150": {
-        "@id": "f72da39b-dd4b-4119-b1c7-0ff76fe64965",
-        "id": "NSWI150",
-        "name": "Virtualization and Cloud Computing",
-        "localizedName": "Virtualizace a cloud computing",
-        "locale": "cs",
-        "credits": {
-          "@id": "0cfa67dd-b129-4917-a854-ad65bd0cb1a6",
-          "creditValue": 3
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. David Bednárek, Ph.D.",
-          "RNDr. Jakub Yaghob, Ph.D."
-        ],
-        "prerequisites": [
-          "2bdc0f37-b507-4b3c-ad42-1db219906d69"
-        ],
-        "corequisites": []
-      },
-      "NDBI042": {
-        "@id": "94e1d544-1fe0-4e28-9522-8cf39f9884eb",
-        "id": "NDBI042",
-        "name": "Data Visualization Techniques",
-        "localizedName": "Techniky vizualizace dat",
-        "locale": "cs",
-        "credits": {
-          "@id": "548a5bb1-c023-410d-b37f-9c1cee157aea",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. David Hoksza, Ph.D.",
-          "doc. RNDr. Tomáš Skopal, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSWI152": {
-        "@id": "5ae6ad28-7df8-4ee0-974a-6d65ffc9c6d2",
-        "id": "NSWI152",
-        "name": "Cloud Application Development",
-        "localizedName": "Vývoj cloudových aplikací",
-        "locale": "cs",
-        "credits": {
-          "@id": "c2fc2fdf-07a0-42eb-ad7e-00fca9a4241e",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NDBI001": {
-        "@id": "51adba65-fab3-4907-962c-f7fd471af2a6",
-        "id": "NDBI001",
-        "name": "Query Languages I",
-        "localizedName": "Dotazovací jazyky I",
-        "locale": "cs",
-        "credits": {
-          "@id": "7b73ef6a-1130-4c31-81fa-0073d4b06844",
-          "creditValue": 5
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. RNDr. Jaroslav Pokorný, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSZZ025": {
-        "@id": "90fffa10-c3c9-49d2-84ce-efcb2f01ff10",
-        "id": "NSZZ025",
-        "name": "Diploma Thesis III",
-        "localizedName": "Diplomová práce III",
-        "locale": "cs",
-        "credits": {
-          "@id": "fb1e99bb-4df2-46db-b9f7-ecac5c27182f",
-          "creditValue": 15
-        },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NDBI007": "dee5c6b8-f910-418a-acc0-51678133765d",
-      "NSZZ023": {
-        "@id": "210ada96-1526-4175-87ec-4a92f08f9b23",
-        "id": "NSZZ023",
-        "name": "Diploma Thesis I",
-        "localizedName": "Diplomová práce I",
-        "locale": "cs",
-        "credits": {
-          "@id": "8a76e2a3-a822-4dac-b0cf-4a5df7b2c24d",
-          "creditValue": 6
-        },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NDBI006": {
-        "@id": "3cd61606-186f-43d0-b4ea-de52c692e77e",
-        "id": "NDBI006",
-        "name": "Query Languages II",
-        "localizedName": "Dotazovací jazyky II",
-        "locale": "cs",
-        "credits": {
-          "@id": "a5362a41-9d07-4807-a13c-a577b66d539d",
-          "creditValue": 5
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. RNDr. Jaroslav Pokorný, CSc.",
-          "prof. RNDr. Peter Vojtáš, DrSc."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          "51adba65-fab3-4907-962c-f7fd471af2a6"
-        ]
-      },
-      "NSZZ024": {
-        "@id": "121b572d-e347-41b7-8a88-37cc6a3e9d27",
-        "id": "NSZZ024",
-        "name": "Diploma Thesis II",
-        "localizedName": "Diplomová práce II",
-        "locale": "cs",
-        "credits": {
-          "@id": "6b7013f6-a694-4fb8-a079-f63c73b2d3bf",
-          "creditValue": 9
-        },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSWI153": {
-        "@id": "50dc139e-24f1-40b3-925a-c1d26de4cc05",
-        "id": "NSWI153",
-        "name": "Advanced Technologies for Web Applications",
-        "localizedName": "Pokročilé technologie webových aplikací",
-        "locale": "cs",
-        "credits": {
-          "@id": "a59568a2-2007-4979-8855-def51143f695",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Martin Kruliš, Ph.D."
-        ],
-        "prerequisites": [
-          "d792d9ba-918b-4c07-8685-e74e1c6485d0"
-        ],
-        "corequisites": []
-      },
-      "NSWI035": {
-        "@id": "f5d20a4c-907a-453b-a844-5c88d68f4916",
-        "id": "NSWI035",
-        "name": "Principles of Distributed Systems",
-        "localizedName": "Principy distribuovaných systémů",
-        "locale": "cs",
-        "credits": {
-          "@id": "5ebce5c2-9018-4ef5-8df6-cda27d697aac",
-          "creditValue": 3
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPRG039": {
-        "@id": "3a3a4b1e-31bd-41b5-9c10-579a6a913772",
-        "id": "NPRG039",
-        "name": "Advanced aspects and new trends in XML",
-        "localizedName": "Pokročilé aspekty a nové trendy v XML",
-        "locale": "cs",
-        "credits": {
-          "@id": "8dc6414e-2535-413e-9429-128b47c9995a",
-          "creditValue": 5
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Irena Holubová, Ph.D."
-        ],
-        "prerequisites": [
-          "4b96174c-577d-4053-b6e2-45a2ecde5523",
-          "51b7bc45-9bf7-49bb-9f29-8565dd5aa27c"
-        ],
-        "corequisites": []
-      },
-      "NPRG036": "4b96174c-577d-4053-b6e2-45a2ecde5523",
-      "NSWI108": {
-        "@id": "70f7735d-89ec-4a0a-97cd-9dfdeb34fc19",
-        "id": "NSWI108",
-        "name": "Web Semantization",
-        "localizedName": "Sémantizace webu",
-        "locale": "cs",
-        "credits": {
-          "@id": "963d3564-6ec1-48b5-ba16-f7bb5f69a73d",
-          "creditValue": 5
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. RNDr. Peter Vojtáš, DrSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPRG031": "473f489d-1b4d-42d5-8506-dd84b04d0287",
-      "NMIN101": "181d8802-55ba-4611-9860-9194b3368dfd",
-      "NMIN102": "4a6e5ecf-7578-4301-aad0-35d60e388339",
-      "NDBI040": {
-        "@id": "242c3746-5f5e-4845-9639-c3f240c5c791",
-        "id": "NDBI040",
-        "name": "Big Data Management and NoSQL Databases",
-        "localizedName": "Big Data management a NoSQL databáze",
-        "locale": "cs",
-        "credits": {
-          "@id": "c36a26e7-3f07-4935-ab39-05fb29ed42fe",
-          "creditValue": 4
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Irena Holubová, Ph.D."
-        ],
-        "prerequisites": [
-          "51b7bc45-9bf7-49bb-9f29-8565dd5aa27c"
-        ],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
+        "prerequisites" : [ "a795adb5-f821-4017-a6b6-043773c0f73c" ],
+        "corequisites" : [ ]
       }
     }
   },
-  "semesterPlan": {
-    "semesterList": []
+  "semesterPlan" : {
+    "semesterList" : [ ]
   },
-  "constraints": {
-    "courseGroupConstraintList": [
-      {
-        "CourseGroupFulfilledAllConstraint": {
-          "courseGroup": {
-            "courseList": [
-              "31731611-e5be-411b-b496-9141a732429a",
-              {
-                "@id": "c75931a7-81f9-44f5-bea8-143998de806f",
-                "id": "NTIN066",
-                "name": "Data Structures I",
-                "localizedName": "Datové struktury I",
-                "locale": "cs",
-                "credits": {
-                  "@id": "54417d78-f1fa-4e74-998a-56f164a9dbfd",
-                  "creditValue": 5
-                },
-                "enrollableIn": "WINTER",
-                "teacherNames": [
-                  "doc. Mgr. Michal Koucký, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              },
-              "f6ea2a3a-4422-4f67-861f-a1958502d720",
-              "90fffa10-c3c9-49d2-84ce-efcb2f01ff10",
-              "9d1fe175-1c0d-4aa8-92a7-eb7b8639670d",
-              "0b1ca136-b82a-47d2-8d06-dd63220f60f3",
-              "210ada96-1526-4175-87ec-4a92f08f9b23",
-              "121b572d-e347-41b7-8a88-37cc6a3e9d27"
-            ]
-        }
-        }
-      },
-      {
-        "CourseGroupCreditsSumConstraint": {
-          "courseGroup": {
-            "courseList": [
-              "51adba65-fab3-4907-962c-f7fd471af2a6",
-              "3cd61606-186f-43d0-b4ea-de52c692e77e",
-              "4254f301-9c52-4fe7-81db-d79ba83422e0",
-              "bb9c44b7-84b6-4d96-9211-a39d83bd6dc6",
-              "f3ffef1e-51ce-41c5-a336-3a894ab34910",
-              "ef244448-3ad2-46bf-8806-a53d6d26c6ce",
-              "14f05ac9-506d-49d1-bfbb-3e22bb6446ed",
-              "242c3746-5f5e-4845-9639-c3f240c5c791",
-              "94e1d544-1fe0-4e28-9522-8cf39f9884eb",
-              "77440414-8398-42b1-a6fb-f4eedc8698c5",
-              "91adea8d-5239-4bbf-999a-398304cb1d9b",
-              "def1978c-d639-4fbd-a0fd-131c503864fe",
-              "2dcec36e-aba0-4eeb-bfc1-d8ae9644c2aa",
-              "4d0c854f-00af-4023-ad19-3287a0a7a9b3",
-              "3a3a4b1e-31bd-41b5-9c10-579a6a913772",
-              "174ffe7e-35a2-40bd-8307-42983fd06ca1",
-              "4ed25294-f36b-4e2e-8da5-aa04032cd017",
-              "2a3806da-8c0e-48ed-b4d0-31b03291c25d",
-              "3624a8a0-21a7-4a63-8470-e52f2255f4f9",
-              "92dab5a3-b6ee-48dc-816b-0b94fc233f29",
-              "f5d20a4c-907a-453b-a844-5c88d68f4916",
-              "327d8f5c-9c58-48ed-a9c2-6e8067a823b1",
-              "a8680165-26c5-4afe-8752-db39ca0ebc30",
-              "5c3dbbcf-64df-4740-b7ba-3b921d8e75fb",
-              "b44c1377-1163-4c90-ae8a-136dd60cfd6a",
-              "71dd6f4d-8ad4-4a3a-b8f9-187e73b73c38",
-              "7d3bd31f-99ae-4d3c-9903-4adfd0ccde12",
-              "3c2c9c33-75b6-4cfb-8a81-e809dd04cac0",
-              "70f7735d-89ec-4a0a-97cd-9dfdeb34fc19",
-              "adc06f90-cd08-4161-8aea-9e034b143626",
-              "dbf1fed4-7cb0-4db8-864a-0727df0f8783",
-              "b94a6504-779e-4570-a405-36eb0c142c30",
-              "ca2d8137-63a3-43cf-bc0c-1d3a4b93d9ce",
-              "b0bd4c66-ce59-4ad7-b8ac-314f3ef7757a",
-              "9fdc8286-e0f7-4652-a0fb-102f03114769",
-              "f72da39b-dd4b-4119-b1c7-0ff76fe64965",
-              "5ae6ad28-7df8-4ee0-974a-6d65ffc9c6d2",
-              "50dc139e-24f1-40b3-925a-c1d26de4cc05",
-              "2bacc878-3f4e-46eb-a58a-fb35446c40e7",
-              "17ee8a6d-41d3-4588-9e15-9bb086393a2d"
-            ]
-          },
-          "totalNeeded": {
-            "@id": "269e7020-1bc3-4651-a741-0464dc588be5",
-            "creditValue": 48
+  "constraints" : {
+    "courseGroupConstraintList" : [ {
+      "CourseGroupFulfilledAllConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "509c0f6e-e3b8-459a-8ee4-15d711c94472", {
+            "@id" : "6c0bb90e-015d-4a55-9f51-903b6ce62ac2",
+            "id" : "NTIN066",
+            "name" : "Data Structures I",
+            "localizedName" : "Datové struktury I",
+            "locale" : "cs",
+            "credits" : {
+              "@id" : "5a4c939c-25cd-47ea-a87f-0c2da3db8041",
+              "creditValue" : 5
+            },
+            "enrollableIn" : "WINTER",
+            "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          }, "15412e8c-ccdb-4bca-8ed3-0f4fa6a0f26f", "a2895481-d432-4cad-86c1-e7e5b25e300c", "7e1352d6-4368-4a16-ab4d-08228e193a30", "8461dc74-a63d-4af7-8f14-7fd9f5e5d00e", "56db352c-2c95-44d4-b859-48db5e43599d", "337c3a79-6edb-47ef-97d5-cb0529b4345e" ]
         }
       }
-      }
-    ],
-    "globalConstraintList": [
-      {
-        "GlobalCourseRepeatedEnrollmentConstraint": {
-          "maxRepeatedEnrollment": 2
-      }
-      },
-      {
-        "GlobalCreditsSumConstraint": {
-          "totalNeeded": {
-            "@id": "bb21bccc-29be-4983-9d00-6a3d447e76d0",
-            "creditValue": 120
+    }, {
+      "CourseGroupCreditsSumConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "63733bc8-7c59-42bd-ab68-b53e458466f2", "fc807d86-8093-40a2-97d9-0f4d2c9337c8", "73d7de13-2a5e-4763-b9f3-af0a5cfd131a", "5a9188a0-b402-48b8-8a22-9b956adc901f", "c04ec058-0cb5-4f44-b2be-3b851a3223bc", "7a4ffe45-84ff-449f-b581-873f6ec6d5ec", "421863e6-3001-4d69-82ba-0d242ac2b6b4", "77e2b1a2-2683-4e2a-b561-57a1290cd585", "0f7a25cc-0d3e-45a6-aa7a-24e70c59a512", "6011597f-65ae-4c13-a6bd-eae4bcf8563d", "7d655ff1-c2ce-46dd-8fb0-cea92673dfa6", "384c9f24-782a-4220-b817-5cdc044a3dae", "6fdda73a-182e-4403-811d-bfa8f8507c0f", "56cc457a-2c0d-4c32-a596-baca588cada6", "d3954902-f76c-4ff5-ae42-659414710d56", "b75cbfa1-71c0-4049-b79c-a6424a2a9549", "00fe1aa0-6b85-433b-8d91-ec8df40953d6", "7563ba67-f3da-4f87-9df9-133c13db940f", "daa8ec4d-faa4-4623-86f3-e9b1cecc39e2", "65520491-1ad8-4755-82bc-0450491da677", "5902292d-85ce-4c59-96a4-16cd020a1ad4", "57185d85-289d-4ffe-a7ca-2cfcbfa2df2e", "90b0d0e0-7f56-4649-86b3-9b85d6bfb436", "3f40715c-6f7d-4ec8-a13d-e66d33053a44", "49f1280e-9bdb-43a5-b404-e27d2903d89c", "6e2930dc-701a-4a6f-9b57-88b93b0507b4", "8e1445cb-8942-4dd4-83c0-a816c50dbe23", "bf6c260c-8549-426d-a366-57552ac27aba", "ca3c9f9e-5532-44a8-912a-256c88586374", "6014fca9-48ab-4ff4-89a7-4625d612a31e", "8389fc6d-3dbd-40d5-854c-ce48f4a0b797", "f4eb1904-8b9f-4244-b445-7f5238a99112", "82449f46-c29b-4327-9f44-cad63700cee9", "eb1cfc6e-2a2d-4fb0-bb68-8da6e597a2ab", "5f8e4294-545b-4faf-ad29-76f3e6a8675b", "7da40395-e5c0-4e9b-bb38-ce34ed435bed", "aa8124ff-3b3b-4cb5-ad79-2c73b78902f3", "a0729605-3358-453e-985f-d5e5d969c259", "67a3755e-b507-4173-8f50-548975086f79", "1d47ead4-3db8-43f8-8b6d-a06207d85f1f" ]
+        },
+        "totalNeeded" : {
+          "@id" : "74c14624-ed33-4dbf-a3e0-c3a35b2eb68e",
+          "creditValue" : 48
         }
       }
-      },
-      {
-        "GlobalCourseMaxFulfilledConstraint": {
-          "maxFulfilled": 1
+    } ],
+    "globalConstraintList" : [ {
+      "GlobalCourseRepeatedEnrollmentConstraint" : {
+        "maxRepeatedEnrollment" : 2
       }
-      },
-      {
-        "GlobalLongStudyFeeConstraint": {
-          "feePerSemester": 22000,
-          "currency": "CZK",
-          "fromSemester": 7
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "993db52d-86a7-4595-b171-c054cf1cea2e",
-            "creditValue": 30
-          },
-          "untilSemester": 1
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "a98fb2f4-e6c7-49fb-bd64-726dc9fb10af",
-            "creditValue": 60
-          },
-          "untilSemester": 2
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "e28b204a-5818-4106-8a50-228a6fc894f2",
-            "creditValue": 90
-          },
-          "untilSemester": 3
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "943c11c4-4a4a-4219-9a42-90dd6e98b3a7",
-            "creditValue": 120
-          },
-          "untilSemester": 4
+    }, {
+      "GlobalCreditsSumConstraint" : {
+        "totalNeeded" : {
+          "@id" : "d5e679cd-c17b-401e-8fdc-48d000e8b54c",
+          "creditValue" : 120
         }
       }
-    ],
-    "courseEnrollmentConstraintList": []
+    }, {
+      "GlobalCourseMaxFulfilledConstraint" : {
+        "maxFulfilled" : 1
+      }
+    }, {
+      "GlobalLongStudyFeeConstraint" : {
+        "feePerSemester" : 22000,
+        "currency" : "CZK",
+        "fromSemester" : 7
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "4d61b7ed-0859-43fa-b013-7674fb19f8f2",
+          "creditValue" : 30
+        },
+        "untilSemester" : 1
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "d6253504-f277-4752-a8c2-bb637e28df0e",
+          "creditValue" : 60
+        },
+        "untilSemester" : 2
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "63a708b8-b33c-4f22-b102-45b64146db18",
+          "creditValue" : 90
+        },
+        "untilSemester" : 3
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "69b4fc06-b071-4be3-b6e1-8aea27459d1c",
+          "creditValue" : 120
+        },
+        "untilSemester" : 4
+      }
+    } ],
+    "courseEnrollmentConstraintList" : [ ]
   }
 }

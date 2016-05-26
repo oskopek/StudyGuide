@@ -1,1470 +1,1223 @@
 {
-  "courseRegistry": {
-    "courses": {
-      "NTIN066": {
-        "@id": "798e477e-2930-4e77-81e2-4c77d0c8dce6",
-        "id": "NTIN066",
-        "name": "Data Structures I",
-        "localizedName": "Datové struktury I",
-        "locale": "cs",
-        "credits": {
-          "@id": "aba47727-812b-4a4e-ad64-1a922f3a2ef0",
-          "creditValue": 5
+  "courseRegistry" : {
+    "courses" : {
+      "NTIN066" : {
+        "@id" : "e9db8b77-2fde-4f1e-93e5-035fec298c60",
+        "id" : "NTIN066",
+        "name" : "Data Structures I",
+        "localizedName" : "Datové struktury I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "5d15c299-8d1c-44f6-a1e9-0cf8e2598b5d",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Michal Koucký, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI141": {
-        "@id": "019f4287-adc1-4723-82e2-0f1cec5dbbee",
-        "id": "NSWI141",
-        "name": "Introduction to networking",
-        "localizedName": "Úvod do počítačových sítí",
-        "locale": "cs",
-        "credits": {
-          "@id": "1af038e7-85fd-46bf-9b4f-85e9a05c9674",
-          "creditValue": 2
+      "NSWI141" : {
+        "@id" : "47304ae3-54d0-474e-b71e-c5ae7fd21c3e",
+        "id" : "NSWI141",
+        "name" : "Introduction to networking",
+        "localizedName" : "Úvod do počítačových sítí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "9953ddca-af00-4cd9-b02d-75a08f171768",
+          "creditValue" : 2
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Libor Forst"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Libor Forst" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NOFY056": {
-        "@id": "e9596da5-4b92-4908-aedc-0795a4b8b00a",
-        "id": "NOFY056",
-        "name": "Programming for Physicists",
-        "localizedName": "Programování pro fyziky",
-        "locale": "cs",
-        "credits": {
-          "@id": "d30effa8-22f9-45b3-93f7-7e44155de96d",
-          "creditValue": 5
+      "NOFY056" : {
+        "@id" : "80f8fd21-fda2-433b-81c3-f5b9fd68fbf1",
+        "id" : "NOFY056",
+        "name" : "Programming for Physicists",
+        "localizedName" : "Programování pro fyziky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "018bd5e4-a3a7-4276-b287-23caefd76ea1",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Ladislav Hanyk, Ph.D.",
-          "Mgr. Tomáš Ledvinka, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Ladislav Hanyk, Ph.D.", "Mgr. Tomáš Ledvinka, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NDBI034": {
-        "@id": "6cc893e9-3ea6-4e40-93b8-fdcad950834a",
-        "id": "NDBI034",
-        "name": "Multimedia Retrieval",
-        "localizedName": "Vyhledávání multimediálního obsahu na webu",
-        "locale": "cs",
-        "credits": {
-          "@id": "0d5ed45e-7734-462e-b356-6786f5021e04",
-          "creditValue": 4
+      "NDBI034" : {
+        "@id" : "0084b396-cf3e-44f8-a492-0dc889e4e204",
+        "id" : "NDBI034",
+        "name" : "Multimedia Retrieval",
+        "localizedName" : "Vyhledávání multimediálního obsahu na webu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "932b2402-3ae6-4bcb-8f81-1c764d3abcfb",
+          "creditValue" : 4
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Tomáš Skopal, Ph.D."
-        ],
-        "prerequisites": [
-          {
-            "@id": "31cbd14a-c105-44f9-b0fc-0f1f5ec9e47a",
-            "id": "NDBI025",
-            "name": "Database Systems",
-            "localizedName": "Databázové systémy",
-            "locale": "cs",
-            "credits": {
-              "@id": "c04e5e99-f15f-46e9-be26-7016b9d27f64",
-              "creditValue": 6
-            },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "doc. RNDr. Tomáš Skopal, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ],
-        "corequisites": []
-      },
-      "NAIL070": {
-        "@id": "f228d687-edd3-41ab-8602-ad550c50935b",
-        "id": "NAIL070",
-        "name": "Artificial Intelligence II",
-        "localizedName": "Umělá inteligence II",
-        "locale": "cs",
-        "credits": {
-          "@id": "bf880583-6414-4b7f-91f4-b92677b82d0c",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. RNDr. Roman Barták, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSWI149": {
-        "@id": "fae32759-849c-4258-a40e-7531066bd559",
-        "id": "NSWI149",
-        "name": "Software Engineering in Practice",
-        "localizedName": "Softwarové inženýrství v praxi",
-        "locale": "cs",
-        "credits": {
-          "@id": "28d9b1f2-8000-4d51-b891-cdd359e2dc83",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSWI142": {
-        "@id": "67a3c509-d40e-4862-bcf5-1cffe30e872b",
-        "id": "NSWI142",
-        "name": "Web Applications",
-        "localizedName": "Webové aplikace",
-        "locale": "cs",
-        "credits": {
-          "@id": "66ce6eca-e016-461c-81c7-88ae505f9254",
-          "creditValue": 6
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D.",
-          "RNDr. Martin Kruliš, Ph.D."
-        ],
-        "prerequisites": [
-          "019f4287-adc1-4723-82e2-0f1cec5dbbee"
-        ],
-        "corequisites": []
-      },
-      "NAIL071": {
-        "@id": "204b05bb-bac3-4b1f-8619-0102d2bdc074",
-        "id": "NAIL071",
-        "name": "Planning and Scheduling",
-        "localizedName": "Plánování a rozvrhování",
-        "locale": "cs",
-        "credits": {
-          "@id": "3d9e2515-9150-4453-b27b-c2b197e60464",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. RNDr. Roman Barták, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSWI068": {
-        "@id": "e3253a46-6c54-40d2-be9d-4be4e2564097",
-        "id": "NSWI068",
-        "name": "Object and Component Systems",
-        "localizedName": "Objektové a komponentové systémy",
-        "locale": "cs",
-        "credits": {
-          "@id": "4fb5a763-8146-460e-86af-0099e83d373d",
-          "creditValue": 5
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Tomáš Bureš, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NSWI145": {
-        "@id": "067d7e72-f536-4d6c-a2d3-fe58e5c7d1d8",
-        "id": "NSWI145",
-        "name": "Web Services",
-        "localizedName": "Webové služby",
-        "locale": "cs",
-        "credits": {
-          "@id": "b36e6714-3c47-4d7f-a04a-4dddfa0bed1c",
-          "creditValue": 5
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Tomáš Knap, Ph.D."
-        ],
-        "prerequisites": [
-          {
-            "@id": "14d86edc-c9ed-495c-ac87-0073e6ecd248",
-            "id": "NPRG036",
-            "name": "XML Technologies",
-            "localizedName": "Technologie XML",
-            "locale": "cs",
-            "credits": {
-              "@id": "e60bea05-daee-453c-a88a-be1380438020",
-              "creditValue": 6
-            },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "doc. RNDr. Irena Holubová, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ],
-        "corequisites": []
-      },
-      "NPGR027": {
-        "@id": "e6f17af5-018e-4fb0-a497-fcdfbb60304f",
-        "id": "NPGR027",
-        "name": "Shading Languages",
-        "localizedName": "Shading Languages",
-        "locale": "cs",
-        "credits": {
-          "@id": "ff50fed8-5dee-41a4-9796-2bb54d383172",
-          "creditValue": 5
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Alexander Wilkie, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPGR028": {
-        "@id": "34ce02e8-f574-43f9-9754-1f525ae756f5",
-        "id": "NPGR028",
-        "name": "High Performance Ray Tracing",
-        "localizedName": "High Performance Ray Tracing",
-        "locale": "cs",
-        "credits": {
-          "@id": "5e9eddc6-8de7-45c1-9e81-d80119100e4a",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Alexander Wilkie, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPGR029": {
-        "@id": "48a6ce67-ba6e-4dec-85d8-6000457ad879",
-        "id": "NPGR029",
-        "name": "Variational methods in image processing",
-        "localizedName": "Variační metody ve zpracování obrazu",
-        "locale": "cs",
-        "credits": {
-          "@id": "5cd29fac-ec64-4b77-8d50-1eb9c8574adc",
-          "creditValue": 3
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Ing. Filip Šroubek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          {
-            "@id": "03b47359-15c0-421d-b836-8146f850ec3a",
-            "id": "NPGR002",
-            "name": "Digital Image Processing",
-            "localizedName": "Digitální zpracování obrazu",
-            "locale": "cs",
-            "credits": {
-              "@id": "ff3235b7-f6e4-4253-990c-6c26c3aa54f6",
-              "creditValue": 5
-            },
-            "enrollableIn": "WINTER",
-            "teacherNames": [
-              "prof. Ing. Jan Flusser, DrSc."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ]
-      },
-      "NPRG043": {
-        "@id": "86cfdcd6-ee7a-4ff2-aaec-206a45e3a88d",
-        "id": "NPRG043",
-        "name": "Recommended Programming Practices",
-        "localizedName": "Doporučené postupy v programování",
-        "locale": "cs",
-        "credits": {
-          "@id": "d0991e8f-66bd-4d0b-af4e-242b11273284",
-          "creditValue": 6
-        },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Ing. Lubomír Bulej, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
-      },
-      "NPRG041": {
-        "@id": "766cb9ec-7938-4dd7-b166-46df1be90da8",
-        "id": "NPRG041",
-        "name": "Programming in C++",
-        "localizedName": "Programování v C++",
-        "locale": "cs",
-        "credits": {
-          "@id": "a7af7bdd-979c-4269-87b9-ccf38a4e5bb0",
-          "creditValue": 6
-        },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. David Bednárek, Ph.D.",
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [
-          {
-            "@id": "a537a1cb-b8dd-4b0a-8806-4eebd401cdc9",
-            "id": "NPRM045",
-            "name": "Programming II",
-            "localizedName": "Programování II",
-            "locale": "cs",
-            "credits": {
-              "@id": "218c749d-d5f7-44f6-833d-e00b2e0d175f",
-              "creditValue": 5
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
+        "prerequisites" : [ {
+          "@id" : "685a86f2-8004-4d8d-8553-55d357ed437e",
+          "id" : "NDBI025",
+          "name" : "Database Systems",
+          "localizedName" : "Databázové systémy",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "7014c7a9-1d7e-4d7b-baa9-318d2bce6a7b",
+            "creditValue" : 6
           },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "RNDr. Rudolf Kryl",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "doc. RNDr. Tomáš Skopal, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
+      },
+      "NAIL070" : {
+        "@id" : "f2373af1-53b6-42e0-9779-174228223978",
+        "id" : "NAIL070",
+        "name" : "Artificial Intelligence II",
+        "localizedName" : "Umělá inteligence II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6d556060-368b-4cb0-bf96-40f2b21a196b",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI149" : {
+        "@id" : "17ff58e5-012a-46c1-8a09-61a274145594",
+        "id" : "NSWI149",
+        "name" : "Software Engineering in Practice",
+        "localizedName" : "Softwarové inženýrství v praxi",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "81032adb-211c-408f-9ada-4cfe4c1cfa5a",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI142" : {
+        "@id" : "a1d62cff-8698-43af-b8f6-cde268db1435",
+        "id" : "NSWI142",
+        "name" : "Web Applications",
+        "localizedName" : "Webové aplikace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b1930ff5-f3b9-4e3d-ae81-4099da498f21",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D.", "RNDr. Martin Kruliš, Ph.D." ],
+        "prerequisites" : [ "47304ae3-54d0-474e-b71e-c5ae7fd21c3e" ],
+        "corequisites" : [ ]
+      },
+      "NAIL071" : {
+        "@id" : "d0e34043-b70a-4796-833d-695703dce755",
+        "id" : "NAIL071",
+        "name" : "Planning and Scheduling",
+        "localizedName" : "Plánování a rozvrhování",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4511f31c-1c1b-4b2b-99a0-b44383422101",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI068" : {
+        "@id" : "f1b02201-ab1a-4725-945a-187027309f8b",
+        "id" : "NSWI068",
+        "name" : "Object and Component Systems",
+        "localizedName" : "Objektové a komponentové systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "36f64e2f-e9a1-430f-8998-38e7ed0100ce",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Bureš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI145" : {
+        "@id" : "51e4b76f-8c94-4979-bc2d-484a1198f460",
+        "id" : "NSWI145",
+        "name" : "Web Services",
+        "localizedName" : "Webové služby",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "aceaf0a1-c16b-43b7-99e6-03a8376ecf0c",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Tomáš Knap, Ph.D." ],
+        "prerequisites" : [ {
+          "@id" : "689b53ea-c786-41c9-a643-ba077bdd01d1",
+          "id" : "NPRG036",
+          "name" : "XML Technologies",
+          "localizedName" : "Technologie XML",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "64ee6436-c63f-4e05-b5a5-191f6d82e448",
+            "creditValue" : 6
           },
-          "e9596da5-4b92-4908-aedc-0795a4b8b00a",
-          {
-            "@id": "d18bd93e-72cd-49d5-bc84-35025ce721b2",
-            "id": "NPRG031",
-            "name": "Programming II",
-            "localizedName": "Programování II",
-            "locale": "cs",
-            "credits": {
-              "@id": "55efb674-18f0-49e2-a786-7f7d7d1a344a",
-              "creditValue": 5
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "doc. RNDr. Irena Holubová, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ],
+        "corequisites" : [ ]
+      },
+      "NPGR027" : {
+        "@id" : "77239adb-7005-4834-b711-47e60864c49a",
+        "id" : "NPGR027",
+        "name" : "Shading Languages",
+        "localizedName" : "Shading Languages",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "5a76cf53-64d9-4019-94f5-24be9117b9b2",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Alexander Wilkie, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPGR028" : {
+        "@id" : "47026f45-7407-4e80-b2e4-b5ede6477486",
+        "id" : "NPGR028",
+        "name" : "High Performance Ray Tracing",
+        "localizedName" : "High Performance Ray Tracing",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "fe47143e-8d59-4bb8-84f8-c199a8d0c808",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Alexander Wilkie, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPGR029" : {
+        "@id" : "0f0eceb2-0d18-4b30-ae14-675c1d2bfb72",
+        "id" : "NPGR029",
+        "name" : "Variational methods in image processing",
+        "localizedName" : "Variační metody ve zpracování obrazu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f0ef3b6e-d595-4338-b950-27c673942c36",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Ing. Filip Šroubek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ {
+          "@id" : "81cb99aa-94b5-4dcd-ad70-52247b7fc4e6",
+          "id" : "NPGR002",
+          "name" : "Digital Image Processing",
+          "localizedName" : "Digitální zpracování obrazu",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "8e1134ca-fd47-4be0-ae99-d2da638d0e6e",
+            "creditValue" : 5
           },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "RNDr. Tomáš Holan, Ph.D.",
-              "doc. RNDr. Pavel Töpfer, CSc.",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": []
+          "enrollableIn" : "WINTER",
+          "teacherNames" : [ "prof. Ing. Jan Flusser, DrSc." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ]
+      },
+      "NPRG043" : {
+        "@id" : "87d81d98-235e-491e-a579-063b7bbe477f",
+        "id" : "NPRG043",
+        "name" : "Recommended Programming Practices",
+        "localizedName" : "Doporučené postupy v programování",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ab098914-ca59-448c-926e-12875bc16773",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Ing. Lubomír Bulej, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPRG041" : {
+        "@id" : "bfc694b6-a834-4465-ac6e-6485d9f552d7",
+        "id" : "NPRG041",
+        "name" : "Programming in C++",
+        "localizedName" : "Programování v C++",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "69b1954f-2af9-4b2d-b81d-c588ed08f07a",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. David Bednárek, Ph.D.", "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ {
+          "@id" : "f2f7f9e4-1cbf-4e59-87a5-6322a4ff6437",
+          "id" : "NPRM045",
+          "name" : "Programming II",
+          "localizedName" : "Programování II",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "5950e9a6-1655-4db8-944d-5695ed8cb817",
+            "creditValue" : 5
           },
-          {
-            "@id": "8b216cf0-5433-4cd5-bee5-eb521b28b4a7",
-            "id": "NMIN102",
-            "name": "Programming 2",
-            "localizedName": "Programování 2",
-            "locale": "cs",
-            "credits": {
-              "@id": "58f3a72b-5d6b-4971-9c44-1424502255c4",
-              "creditValue": 5
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "RNDr. Rudolf Kryl", "RNDr. Martin Pergel, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        }, "80f8fd21-fda2-433b-81c3-f5b9fd68fbf1", {
+          "@id" : "5a09d20f-773a-4935-9a97-dfb8e364ce6e",
+          "id" : "NPRG031",
+          "name" : "Programming II",
+          "localizedName" : "Programování II",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "57480323-a769-41b4-869d-8eca1a5c7787",
+            "creditValue" : 5
           },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "doc. RNDr. Pavel Töpfer, CSc.",
-              "RNDr. Martin Pergel, Ph.D."
-            ],
-            "prerequisites": [],
-            "corequisites": [
-              {
-                "@id": "4893a8d3-ba83-4bd5-8cb6-f6c552e7096d",
-                "id": "NMIN101",
-                "name": "Programming 1",
-                "localizedName": "Programování 1",
-                "locale": "cs",
-                "credits": {
-                  "@id": "c3f753b4-8587-4914-aefe-357f17f4b537",
-                  "creditValue": 5
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        }, {
+          "@id" : "830522c7-6e5c-45e0-b7b1-f830874afdb6",
+          "id" : "NMIN102",
+          "name" : "Programming 2",
+          "localizedName" : "Programování 2",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "2c1e4dfe-8d01-430a-be66-5f6f9e037543",
+            "creditValue" : 5
+          },
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ {
+            "@id" : "aef2e9db-0bda-48a4-91e2-ad212f0a15e5",
+            "id" : "NMIN101",
+            "name" : "Programming 1",
+            "localizedName" : "Programování 1",
+            "locale" : "cs",
+            "credits" : {
+              "@id" : "aeba6067-c772-4da7-853d-97e33ca68fbd",
+              "creditValue" : 5
             },
-                "enrollableIn": "WINTER",
-                "teacherNames": [
-                  "doc. RNDr. Pavel Töpfer, CSc.",
-                  "RNDr. Martin Pergel, Ph.D."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              }
-            ]
-          }
-        ],
-        "corequisites": []
+            "enrollableIn" : "WINTER",
+            "teacherNames" : [ "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          } ]
+        } ],
+        "corequisites" : [ ]
       },
-      "NAIL106": {
-        "@id": "b35cde26-92c0-4a5b-8b02-65e5d83061dd",
-        "id": "NAIL106",
-        "name": "Multiagent Systems",
-        "localizedName": "Multiagentní systémy",
-        "locale": "cs",
-        "credits": {
-          "@id": "5715305c-5783-4c46-81ba-5cd07b1d2ee5",
-          "creditValue": 6
+      "NAIL106" : {
+        "@id" : "3820b9a6-9467-4d1f-8aaa-bb83a36355a9",
+        "id" : "NAIL106",
+        "name" : "Multiagent Systems",
+        "localizedName" : "Multiagentní systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "d54c0e22-c389-4dcf-a707-1c4864a290e0",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Mgr. Roman Neruda, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG042": {
-        "@id": "2867151c-62e7-487e-870d-14dd371b6fd0",
-        "id": "NPRG042",
-        "name": "Programming in Parallel Environment",
-        "localizedName": "Programování v paralelním prostředí",
-        "locale": "cs",
-        "credits": {
-          "@id": "afacb0a1-b006-4688-beb3-3bf74a8bd17c",
-          "creditValue": 6
+      "NPRG042" : {
+        "@id" : "ad49d5bd-1a05-492c-81e0-a72b2a43727b",
+        "id" : "NPRG042",
+        "name" : "Programming in Parallel Environment",
+        "localizedName" : "Programování v paralelním prostředí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "d1ace569-8526-445e-af01-4093cfda7a33",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Jakub Yaghob, Ph.D."
-        ],
-        "prerequisites": [
-          "766cb9ec-7938-4dd7-b166-46df1be90da8"
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Jakub Yaghob, Ph.D." ],
+        "prerequisites" : [ "bfc694b6-a834-4465-ac6e-6485d9f552d7" ],
+        "corequisites" : [ ]
       },
-      "NAIL028": {
-        "@id": "a5a0af5c-158f-49a3-84de-b4ced2f69fba",
-        "id": "NAIL028",
-        "name": "Introduction to Robotics",
-        "localizedName": "Úvod do robotiky",
-        "locale": "cs",
-        "credits": {
-          "@id": "60ea4e09-c3ed-470f-b2e2-52f93114da2a",
-          "creditValue": 6
+      "NAIL028" : {
+        "@id" : "11b313b1-733b-4ae6-80e3-31d9ba22a757",
+        "id" : "NAIL028",
+        "name" : "Introduction to Robotics",
+        "localizedName" : "Úvod do robotiky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "093b63c5-7894-4917-9c31-801aa26d6a3a",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. David Obdržálek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR021": {
-        "@id": "d49bdb28-3e6d-47a4-862f-5ddaddaef974",
-        "id": "NPGR021",
-        "name": "Geometric Modelling",
-        "localizedName": "Geometrické modelování",
-        "locale": "cs",
-        "credits": {
-          "@id": "c0382989-cf66-4427-ae7e-fd7326434bb6",
-          "creditValue": 6
+      "NPGR021" : {
+        "@id" : "88edd549-2c33-4fb4-91ff-d89ca90e4c0d",
+        "id" : "NPGR021",
+        "name" : "Geometric Modelling",
+        "localizedName" : "Geometrické modelování",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "65f6619a-e1cb-48ab-a9b4-2eef65f64a75",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. RNDr. Zbyněk Šír, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Zbyněk Šír, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NAIL108": {
-        "@id": "38766e94-8477-4028-8a50-1ea02e8a2d70",
-        "id": "NAIL108",
-        "name": "Mobile Robotics",
-        "localizedName": "Mobilní robotika",
-        "locale": "cs",
-        "credits": {
-          "@id": "d21f1e1a-f56d-4483-8dbb-96a52f3c5e44",
-          "creditValue": 3
+      "NAIL108" : {
+        "@id" : "22c2baf4-78a1-4c8c-8fd5-e91a370236ac",
+        "id" : "NAIL108",
+        "name" : "Mobile Robotics",
+        "localizedName" : "Mobilní robotika",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "1f6a81ae-ee37-49f3-9f93-49afbb5a201e",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. David Obdržálek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. David Obdržálek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR022": {
-        "@id": "f2dc0149-1bce-4c63-b7a8-250495da0b1b",
-        "id": "NPGR022",
-        "name": "Advanced Seminar On Image Processing",
-        "localizedName": "Speciální seminář ze zpracování obrazu",
-        "locale": "cs",
-        "credits": {
-          "@id": "8c321ba9-205c-4072-81dd-78e65c77edcb",
-          "creditValue": 2
+      "NPGR022" : {
+        "@id" : "4f95ee8e-f397-40fb-a112-de48e3c5de14",
+        "id" : "NPGR022",
+        "name" : "Advanced Seminar On Image Processing",
+        "localizedName" : "Speciální seminář ze zpracování obrazu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f0df574c-79c2-4633-9af9-3cb888490ea7",
+          "creditValue" : 2
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [
-          "RNDr. Barbara Zitová, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ "RNDr. Barbara Zitová, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR023": {
-        "@id": "a354f133-2d97-4657-81e7-1d4e6b5b447d",
-        "id": "NPGR023",
-        "name": "Visualization",
-        "localizedName": "Visualizace",
-        "locale": "cs",
-        "credits": {
-          "@id": "2ff9cc0e-6cc9-4c29-89d8-c81f356e82a6",
-          "creditValue": 5
+      "NPGR023" : {
+        "@id" : "2739a39b-0d03-4fed-99e9-3033138251f9",
+        "id" : "NPGR023",
+        "name" : "Visualization",
+        "localizedName" : "Visualizace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "48b626bd-dd3b-41e7-a8a8-cb189d2a3bcb",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Josef Pelikán"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Josef Pelikán" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR024": {
-        "@id": "dd24e07c-91eb-4129-aae6-96b0c500f013",
-        "id": "NPGR024",
-        "name": "Seminar on Scientific Soft Skills",
-        "localizedName": "Seminář z vědecké práce",
-        "locale": "cs",
-        "credits": {
-          "@id": "1792029d-edeb-4334-8f1e-2a41dc17cab9",
-          "creditValue": 3
+      "NPGR024" : {
+        "@id" : "72a4a0dc-963b-421d-a954-60d6697c6ca8",
+        "id" : "NPGR024",
+        "name" : "Seminar on Scientific Soft Skills",
+        "localizedName" : "Seminář z vědecké práce",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ba4f44ec-4e5e-454e-87f7-d092b6d78efe",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Ing. Jaroslav Křivánek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Jaroslav Křivánek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR026": {
-        "@id": "128060a6-d475-45c0-9c98-85d662aedcba",
-        "id": "NPGR026",
-        "name": "Predictive Image Synthesis Technologies",
-        "localizedName": "Predictive Image Synthesis Technologies",
-        "locale": "cs",
-        "credits": {
-          "@id": "dd99093e-733b-4025-8c55-fb0f59f7303f",
-          "creditValue": 6
+      "NPGR026" : {
+        "@id" : "80839a19-75ca-48b1-a7e1-4b0e7ca31c1f",
+        "id" : "NPGR026",
+        "name" : "Predictive Image Synthesis Technologies",
+        "localizedName" : "Predictive Image Synthesis Technologies",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "25a526fc-1126-43a6-b02e-d858052d7af2",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Alexander Wilkie, Dr.",
-          "doc. Ing. Jaroslav Křivánek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Alexander Wilkie, Dr.", "doc. Ing. Jaroslav Křivánek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI094": {
-        "@id": "e4458768-fc96-4941-9e6b-99b602658944",
-        "id": "NSWI094",
-        "name": "Database Application Development",
-        "localizedName": "Vedení databázových projektů",
-        "locale": "cs",
-        "credits": {
-          "@id": "b2ccbf9e-ab8a-47a0-a498-ea0220195ea9",
-          "creditValue": 5
+      "NSWI094" : {
+        "@id" : "d33b88c7-0775-48df-bdca-24b9088ef55a",
+        "id" : "NSWI094",
+        "name" : "Database Application Development",
+        "localizedName" : "Vedení databázových projektů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3467025a-6e03-42a7-8f03-dbc47a3332c9",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Tomáš Rubač"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Tomáš Rubač" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NMAI060": {
-        "@id": "7773bf7a-74b0-4d7f-9ac4-127cda45937c",
-        "id": "NMAI060",
-        "name": "Probabilistic Methods",
-        "localizedName": "Pravděpodobnostní metody",
-        "locale": "cs",
-        "credits": {
-          "@id": "4c7aedb5-95d7-45bd-85a7-9cd433d96318",
-          "creditValue": 3
+      "NMAI060" : {
+        "@id" : "f529846f-285e-41e7-9764-833722a3fbfc",
+        "id" : "NMAI060",
+        "name" : "Probabilistic Methods",
+        "localizedName" : "Pravděpodobnostní metody",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "07359b40-c1a6-48fb-8b52-f00e4b86b2eb",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. RNDr. Jaromír Antoch, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Jaromír Antoch, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI130": {
-        "@id": "f802f8b4-635c-4a78-927e-fb253cfae222",
-        "id": "NSWI130",
-        "name": "Software System Architectures",
-        "localizedName": "Architektury softwarových systémů",
-        "locale": "cs",
-        "credits": {
-          "@id": "e6360fbb-75fb-4dbd-a842-11841b9c168d",
-          "creditValue": 5
+      "NSWI130" : {
+        "@id" : "306122ae-a536-4282-b810-33d42487118e",
+        "id" : "NSWI130",
+        "name" : "Software System Architectures",
+        "localizedName" : "Architektury softwarových systémů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "69956bbc-3b15-4886-a615-5e1b324d65c4",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NAIL069": {
-        "@id": "84a035f0-5a61-4de9-820b-501d88d304c5",
-        "id": "NAIL069",
-        "name": "Artificial Intelligence I",
-        "localizedName": "Umělá inteligence I",
-        "locale": "cs",
-        "credits": {
-          "@id": "14f754d4-c8f9-4c7b-9d91-a9e33fa7b4f1",
-          "creditValue": 5
+      "NAIL069" : {
+        "@id" : "5fce284c-e24c-49c7-82b1-111c738abe06",
+        "id" : "NAIL069",
+        "name" : "Artificial Intelligence I",
+        "localizedName" : "Umělá inteligence I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "50fe4b9f-3d6d-437c-893f-f2685a052723",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. RNDr. Roman Barták, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NAIL025": {
-        "@id": "dad40280-74e3-4354-b1bf-40b8b94d3d25",
-        "id": "NAIL025",
-        "name": "Evolutionary Algorithms I",
-        "localizedName": "Evoluční algoritmy I",
-        "locale": "cs",
-        "credits": {
-          "@id": "8e55f47f-2b0b-4210-9ef1-d4736af278ca",
-          "creditValue": 6
+      "NAIL025" : {
+        "@id" : "4594909c-fd5f-4a08-a829-effb0b5da966",
+        "id" : "NAIL025",
+        "name" : "Evolutionary Algorithms I",
+        "localizedName" : "Evoluční algoritmy I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "df7486ae-9ecf-46d1-9095-54a6bb59e652",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Roman Neruda, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NAIL068": {
-        "@id": "f612f9ea-c06a-47ef-af0e-45e16b13f65c",
-        "id": "NAIL068",
-        "name": "Human-like Artificial Agents",
-        "localizedName": "Umělé bytosti",
-        "locale": "cs",
-        "credits": {
-          "@id": "d4199b50-cb22-46b2-9332-10eeb8df2d16",
-          "creditValue": 6
+      "NAIL068" : {
+        "@id" : "4d910f42-ce19-44af-aa44-59912143a3f5",
+        "id" : "NAIL068",
+        "name" : "Human-like Artificial Agents",
+        "localizedName" : "Umělé bytosti",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "cd7240d1-e621-43af-91c3-2f6beaf30ea4",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Mgr. Cyril Brom, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Cyril Brom, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NMAI061": {
-        "@id": "e4f07151-2fbc-4f1d-8b5a-a2b1c53215a5",
-        "id": "NMAI061",
-        "name": "Methods of Mathematical Statistics",
-        "localizedName": "Metody matematické statistiky",
-        "locale": "cs",
-        "credits": {
-          "@id": "5a274703-9122-443a-92d5-31778c174ab9",
-          "creditValue": 5
+      "NMAI061" : {
+        "@id" : "902a8eaf-cc1c-4cea-adfd-8755459c9fba",
+        "id" : "NMAI061",
+        "name" : "Methods of Mathematical Statistics",
+        "localizedName" : "Metody matematické statistiky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "49191c65-1624-4b7a-b1e7-b319e5638022",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. RNDr. Zdeněk Hlávka, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Zdeněk Hlávka, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPOZ017": {
-        "@id": "33862ea3-0449-4733-85e1-2a90b2b89451",
-        "id": "NPOZ017",
-        "name": "Video Games as a Socio-cultural Phenomenon",
-        "localizedName": "Počítačové hry jako kulturní a společenský fenomén",
-        "locale": "cs",
-        "credits": {
-          "@id": "84975afd-3c10-461d-a082-925af53be65c",
-          "creditValue": 3
+      "NPOZ017" : {
+        "@id" : "878da464-1d7e-47e3-ae11-6e7004e65da1",
+        "id" : "NPOZ017",
+        "name" : "Video Games as a Socio-cultural Phenomenon",
+        "localizedName" : "Počítačové hry jako kulturní a společenský fenomén",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "072ed95e-864d-4aeb-b764-9c538328f752",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Vít Šisler, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Vít Šisler, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NDBI025": "31cbd14a-c105-44f9-b0fc-0f1f5ec9e47a",
-      "NSWI131": {
-        "@id": "e5c18c3c-264a-41c8-a7aa-0c6f84ebcc7c",
-        "id": "NSWI131",
-        "name": "Performance Evaluation of Computer Systems",
-        "localizedName": "Vyhodnocování výkonnosti počítačových systémů",
-        "locale": "cs",
-        "credits": {
-          "@id": "663e270e-1a9a-4026-b77c-44f8e924d69c",
-          "creditValue": 5
+      "NDBI025" : "685a86f2-8004-4d8d-8553-55d357ed437e",
+      "NSWI131" : {
+        "@id" : "3b071151-436a-4c32-b620-e4547d7c25bd",
+        "id" : "NSWI131",
+        "name" : "Performance Evaluation of Computer Systems",
+        "localizedName" : "Vyhodnocování výkonnosti počítačových systémů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c2259bf0-9ff8-4108-b333-508c8336f81c",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Ing. Petr Tůma, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR016": {
-        "@id": "dcda0835-2600-4a11-8a15-24b655ec1e18",
-        "id": "NPGR016",
-        "name": "Applied Computational Geometry",
-        "localizedName": "Aplikovaná výpočetní geometrie",
-        "locale": "cs",
-        "credits": {
-          "@id": "ba694a47-d2e9-492f-af88-e2e1da07bdf0",
-          "creditValue": 5
+      "NPGR016" : {
+        "@id" : "87c70c0e-6587-4bf9-b8f0-b5d08cb0c210",
+        "id" : "NPGR016",
+        "name" : "Applied Computational Geometry",
+        "localizedName" : "Aplikovaná výpočetní geometrie",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "5cbe3720-dabc-494e-9b5d-df78547ea29a",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. RNDr. Ing. Ivana Kolingerová, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Ing. Ivana Kolingerová, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG014": {
-        "@id": "19819e92-5c1b-4b7a-878c-34414d9e8bd3",
-        "id": "NPRG014",
-        "name": "Concepts of Modern Programming Languages",
-        "localizedName": "Koncepty moderních programovacích jazyků",
-        "locale": "cs",
-        "credits": {
-          "@id": "3135a347-f4c0-463b-9240-6cf970d8aed4",
-          "creditValue": 2
+      "NPRG014" : {
+        "@id" : "c0e57f38-d208-41b9-af16-2eea46033369",
+        "id" : "NPRG014",
+        "name" : "Concepts of Modern Programming Languages",
+        "localizedName" : "Koncepty moderních programovacích jazyků",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4f37ad04-fa6b-4ac2-9754-15adf6b2b0e8",
+          "creditValue" : 2
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Ing. Petr Tůma, Dr.",
-          "doc. RNDr. Tomáš Bureš, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Ing. Petr Tůma, Dr.", "doc. RNDr. Tomáš Bureš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG058": {
-        "@id": "1c4da22e-dce5-47ce-96c3-43c24e78aa11",
-        "id": "NPRG058",
-        "name": "Advanced Programming in Parallel Environment",
-        "localizedName": "Pokročilé programování v paralelním prostředí",
-        "locale": "cs",
-        "credits": {
-          "@id": "da6b4e3d-d1d9-4990-9b46-7fab82cef2c8",
-          "creditValue": 3
+      "NPRG058" : {
+        "@id" : "3eba00c2-8542-4929-b960-7b43510d0fc7",
+        "id" : "NPRG058",
+        "name" : "Advanced Programming in Parallel Environment",
+        "localizedName" : "Pokročilé programování v paralelním prostředí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "695cc49e-ff12-47bb-8939-d7cca995fa41",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Martin Kruliš, Ph.D."
-        ],
-        "prerequisites": [
-          "2867151c-62e7-487e-870d-14dd371b6fd0"
-        ],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Martin Kruliš, Ph.D." ],
+        "prerequisites" : [ "ad49d5bd-1a05-492c-81e0-a72b2a43727b" ],
+        "corequisites" : [ ]
       },
-      "NPRG059": {
-        "@id": "6e1eb9c1-e293-47f5-b819-e22ea97a98cd",
-        "id": "NPRG059",
-        "name": "Advanced Programming Praxis",
-        "localizedName": "Praktikum z pokročilého objektového programování",
-        "locale": "cs",
-        "credits": {
-          "@id": "d0fe75ee-2f57-4e11-8178-d1ac5323e266",
-          "creditValue": 2
+      "NPRG059" : {
+        "@id" : "c1e8ba5a-2012-4d81-b4b0-2cf86e79c26c",
+        "id" : "NPRG059",
+        "name" : "Advanced Programming Praxis",
+        "localizedName" : "Praktikum z pokročilého objektového programování",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "603eb0c8-4b9c-4490-8d6b-10f3bef4c029",
+          "creditValue" : 2
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR019": {
-        "@id": "4019c599-ef46-4f1c-9f95-8a24ac43655d",
-        "id": "NPGR019",
-        "name": "Hardware for Computer Graphics",
-        "localizedName": "Hardware pro počítačovou grafiku",
-        "locale": "cs",
-        "credits": {
-          "@id": "33740cff-3302-413c-a831-ec5bf008bb4a",
-          "creditValue": 5
+      "NPGR019" : {
+        "@id" : "c3de35d9-3769-4c0b-8abe-76b2f3beb449",
+        "id" : "NPGR019",
+        "name" : "Hardware for Computer Graphics",
+        "localizedName" : "Hardware pro počítačovou grafiku",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "5ad7cca0-f386-4f44-a2d9-26232f01dd75",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Josef Pelikán"
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          {
-            "@id": "d885a23d-a34e-42d1-b097-8c57f0f23a50",
-            "id": "NPGR003",
-            "name": "Computer Graphics I",
-            "localizedName": "Počítačová grafika I",
-            "locale": "cs",
-            "credits": {
-              "@id": "39664df8-9690-4906-938f-c49e815a4d45",
-              "creditValue": 6
-            },
-            "enrollableIn": "WINTER",
-            "teacherNames": [
-              "RNDr. Josef Pelikán"
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ]
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Josef Pelikán" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ {
+          "@id" : "db63de26-fd51-45b0-b5bc-cad6ee1d1a07",
+          "id" : "NPGR003",
+          "name" : "Computer Graphics I",
+          "localizedName" : "Počítačová grafika I",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "19cd6a53-9401-42a1-b357-5a66649897f0",
+            "creditValue" : 6
+          },
+          "enrollableIn" : "WINTER",
+          "teacherNames" : [ "RNDr. Josef Pelikán" ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ]
       },
-      "NPRG056": {
-        "@id": "e5ea999c-2179-4531-9c37-5087169e4acc",
-        "id": "NPRG056",
-        "name": "Developing Applications for Mobile Devices",
-        "localizedName": "Vývoj aplikací pro mobilní zařízení",
-        "locale": "cs",
-        "credits": {
-          "@id": "6550166c-d0e0-4376-a8b5-f2337fb5a943",
-          "creditValue": 3
+      "NPRG056" : {
+        "@id" : "adcdb44e-4a31-4884-b7ac-927e0cd5b232",
+        "id" : "NPRG056",
+        "name" : "Developing Applications for Mobile Devices",
+        "localizedName" : "Vývoj aplikací pro mobilní zařízení",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c31d1da3-7ef5-4f1c-b10b-19a5a3e0e994",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Jan Kofroň, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Jan Kofroň, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG054": {
-        "@id": "85a550e0-cb1e-4690-8bed-7d0e6b8a4e78",
-        "id": "NPRG054",
-        "name": "High Performance Software Development",
-        "localizedName": "Vývoj vysoce výkonného software",
-        "locale": "cs",
-        "credits": {
-          "@id": "c16b78a8-76a4-44dc-83ef-b90b22bd4069",
-          "creditValue": 5
+      "NPRG054" : {
+        "@id" : "ed4a7b66-f75b-475e-a343-14604439ee14",
+        "id" : "NPRG054",
+        "name" : "High Performance Software Development",
+        "localizedName" : "Vývoj vysoce výkonného software",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "752b0851-c5ed-4b6c-92a4-55d041f6a257",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. David Bednárek, Ph.D."
-        ],
-        "prerequisites": [
-          "766cb9ec-7938-4dd7-b166-46df1be90da8"
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. David Bednárek, Ph.D." ],
+        "prerequisites" : [ "bfc694b6-a834-4465-ac6e-6485d9f552d7" ],
+        "corequisites" : [ ]
       },
-      "NPGR010": {
-        "@id": "2dd41d31-d11c-4013-aea2-f88b9cb7b537",
-        "id": "NPGR010",
-        "name": "Computer Graphics III",
-        "localizedName": "Počítačová grafika III",
-        "locale": "cs",
-        "credits": {
-          "@id": "11cf7177-e15d-46a1-bd60-66a90a61e3f2",
-          "creditValue": 6
+      "NPGR010" : {
+        "@id" : "ec65c7e5-d676-44f4-a308-4abbda5afe36",
+        "id" : "NPGR010",
+        "name" : "Computer Graphics III",
+        "localizedName" : "Počítačová grafika III",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4d9bd297-abf7-46b2-ac8f-eb6f034f3111",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Ing. Jaroslav Křivánek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Ing. Jaroslav Křivánek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR012": {
-        "@id": "abf26c6a-d8c8-4bc3-8c7a-c4cd8ff60448",
-        "id": "NPGR012",
-        "name": "Virtual Reality",
-        "localizedName": "Virtuální realita",
-        "locale": "cs",
-        "credits": {
-          "@id": "4d1664bd-5d95-42c8-ba66-973efce2bb44",
-          "creditValue": 6
+      "NPGR012" : {
+        "@id" : "a0a82911-8222-4f35-8d8a-b80778526297",
+        "id" : "NPGR012",
+        "name" : "Virtual Reality",
+        "localizedName" : "Virtuální realita",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4f5390e8-f9e7-4767-a6db-c212aabee917",
+          "creditValue" : 6
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [
-          "prof. Ing. Jiří Žára, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ "prof. Ing. Jiří Žára, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR013": {
-        "@id": "b66993a0-0e52-4899-b6eb-9d018cc6015a",
-        "id": "NPGR013",
-        "name": "Special Functions and Transformations in Image Processing",
-        "localizedName": "Speciální funkce a transformace ve zpracování obrazu",
-        "locale": "cs",
-        "credits": {
-          "@id": "09f36bc5-700f-4caa-86aa-b4125a7b5958",
-          "creditValue": 3
+      "NPGR013" : {
+        "@id" : "f2970cb8-ac61-48ff-8c5b-0d1f4ae0262c",
+        "id" : "NPGR013",
+        "name" : "Special Functions and Transformations in Image Processing",
+        "localizedName" : "Speciální funkce a transformace ve zpracování obrazu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "7b481023-a118-47be-acb7-5f54d7fec4d3",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. Ing. Jan Flusser, DrSc.",
-          "RNDr. Barbara Zitová, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          "03b47359-15c0-421d-b836-8146f850ec3a"
-        ]
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. Ing. Jan Flusser, DrSc.", "RNDr. Barbara Zitová, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ "81cb99aa-94b5-4dcd-ad70-52247b7fc4e6" ]
       },
-      "NAIL054": {
-        "@id": "0b584659-bfeb-41f4-8309-592950ef577a",
-        "id": "NAIL054",
-        "name": "Adaptive Agents",
-        "localizedName": "Adaptivní agenti",
-        "locale": "cs",
-        "credits": {
-          "@id": "29b423b9-227e-4965-929d-10336160b17a",
-          "creditValue": 3
+      "NAIL054" : {
+        "@id" : "58538dd0-934e-47d4-8c66-d263f1c09ea9",
+        "id" : "NAIL054",
+        "name" : "Adaptive Agents",
+        "localizedName" : "Adaptivní agenti",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6f289c6b-b823-4489-8863-aba4eb7b6ac2",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Mgr. Roman Neruda, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Roman Neruda, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI041": {
-        "@id": "4f2a488c-2002-4319-9a86-a9d5bfa0bbcd",
-        "id": "NSWI041",
-        "name": "Introduction to Software Engineering",
-        "localizedName": "Úvod do softwarového inženýrství",
-        "locale": "cs",
-        "credits": {
-          "@id": "0a7b1f60-bc3d-4849-903f-8e12126d3062",
-          "creditValue": 5
+      "NSWI041" : {
+        "@id" : "71d192b7-1cdf-4cce-9a9b-7526dc1e3696",
+        "id" : "NSWI041",
+        "name" : "Introduction to Software Engineering",
+        "localizedName" : "Úvod do softwarového inženýrství",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b8f7d58b-6310-4a71-98fe-e19e9c64af76",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NTIN043": {
-        "@id": "d4e6fc5f-2170-4fed-a0a7-0a8d15bf8c60",
-        "id": "NTIN043",
-        "name": "Formal Foundations of Software Engineering",
-        "localizedName": "Formální základy softwarového inženýrství",
-        "locale": "cs",
-        "credits": {
-          "@id": "32445a06-667c-4f45-9643-b884ccc6df07",
-          "creditValue": 5
+      "NTIN043" : {
+        "@id" : "562ecc88-3950-4f77-a241-bc06dcadc524",
+        "id" : "NTIN043",
+        "name" : "Formal Foundations of Software Engineering",
+        "localizedName" : "Formální základy softwarového inženýrství",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "00ae6781-458c-4833-9355-954a5902d63b",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Martin Nečaský, Ph.D.",
-          "RNDr. Pavel Parízek, Ph.D."
-        ],
-        "prerequisites": [
-          "4f2a488c-2002-4319-9a86-a9d5bfa0bbcd"
-        ],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Martin Nečaský, Ph.D.", "RNDr. Pavel Parízek, Ph.D." ],
+        "prerequisites" : [ "71d192b7-1cdf-4cce-9a9b-7526dc1e3696" ],
+        "corequisites" : [ ]
       },
-      "NPRM045": "a537a1cb-b8dd-4b0a-8806-4eebd401cdc9",
-      "NSWI004": {
-        "@id": "e5f3a795-1551-413d-ac45-b3f34b85a6ec",
-        "id": "NSWI004",
-        "name": "Operating Systems",
-        "localizedName": "Operační systémy",
-        "locale": "cs",
-        "credits": {
-          "@id": "881469e0-ab31-46b4-8824-9abea3776392",
-          "creditValue": 5
+      "NPRM045" : "f2f7f9e4-1cbf-4e59-87a5-6322a4ff6437",
+      "NSWI004" : {
+        "@id" : "83fdd233-db02-420c-a630-6e928e842d61",
+        "id" : "NSWI004",
+        "name" : "Operating Systems",
+        "localizedName" : "Operační systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "099a6d5d-fc65-4894-adf6-6446c40021b5",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Ing. Petr Tůma, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Ing. Petr Tůma, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NAIL096": {
-        "@id": "e76539c9-08c8-47c3-83f3-5a9334216bab",
-        "id": "NAIL096",
-        "name": "Multi-agent systems",
-        "localizedName": "Multi-agentní systémy",
-        "locale": "cs",
-        "credits": {
-          "@id": "d6c09189-ae3f-4338-a83b-cffc80c1c32c",
-          "creditValue": 6
+      "NAIL096" : {
+        "@id" : "6a25a574-44b2-45b3-8223-9a5432580246",
+        "id" : "NAIL096",
+        "name" : "Multi-agent systems",
+        "localizedName" : "Multi-agentní systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ef590dd8-19a8-47de-b612-55d0a26ee530",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Michal Jakob",
-          "prof. Dr. Ing. Michal Pěchouček, M.Sc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Michal Jakob", "prof. Dr. Ing. Michal Pěchouček, M.Sc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG027": {
-        "@id": "b92b2f9a-e57d-4d78-9ce7-f6425af71e1f",
-        "id": "NPRG027",
-        "name": "Credit for Project",
-        "localizedName": "Zápočet k projektu",
-        "locale": "cs",
-        "credits": {
-          "@id": "42fba8dc-c891-442d-9404-8cba0ac4da36",
-          "creditValue": 6
+      "NPRG027" : {
+        "@id" : "a0aa2d04-6eaa-4e25-a935-472125d6de22",
+        "id" : "NPRG027",
+        "name" : "Credit for Project",
+        "localizedName" : "Zápočet k projektu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "2363b4ee-3954-4f05-98aa-cabaaf4aeee1",
+          "creditValue" : 6
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR005": {
-        "@id": "7838a93d-e159-4a05-867f-5b9d214f6aeb",
-        "id": "NPGR005",
-        "name": "Special Seminar for Computer Graphics",
-        "localizedName": "Speciální seminář z počítačové grafiky",
-        "locale": "cs",
-        "credits": {
-          "@id": "ab494ba9-5fb8-4088-ba0d-3838ee417d90",
-          "creditValue": 2
+      "NPGR005" : {
+        "@id" : "f6894ab5-9abd-43b5-8ec6-ed8a6934a9e4",
+        "id" : "NPGR005",
+        "name" : "Special Seminar for Computer Graphics",
+        "localizedName" : "Speciální seminář z počítačové grafiky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "2964ebbb-fc79-4033-b425-7d2c17ddc0f5",
+          "creditValue" : 2
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [
-          "doc. Ing. Jaroslav Křivánek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          "d885a23d-a34e-42d1-b097-8c57f0f23a50",
-          {
-            "@id": "dfcf7eb5-7e51-42d3-b287-b03743b8e6db",
-            "id": "NPGR004",
-            "name": "Computer Graphics II",
-            "localizedName": "Počítačová grafika II",
-            "locale": "cs",
-            "credits": {
-              "@id": "f0c4b474-2677-4a21-b082-f549832ff617",
-              "creditValue": 5
-            },
-            "enrollableIn": "SUMMER",
-            "teacherNames": [
-              "RNDr. Josef Pelikán"
-            ],
-            "prerequisites": [],
-            "corequisites": [
-              "d885a23d-a34e-42d1-b097-8c57f0f23a50"
-            ]
-          }
-        ]
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ "doc. Ing. Jaroslav Křivánek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ "db63de26-fd51-45b0-b5bc-cad6ee1d1a07", {
+          "@id" : "f4c5c9db-3475-44d3-8d46-06d641d54b29",
+          "id" : "NPGR004",
+          "name" : "Computer Graphics II",
+          "localizedName" : "Počítačová grafika II",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "c1f95745-1ec1-4736-8f9b-4a6d47d8be46",
+            "creditValue" : 5
+          },
+          "enrollableIn" : "SUMMER",
+          "teacherNames" : [ "RNDr. Josef Pelikán" ],
+          "prerequisites" : [ ],
+          "corequisites" : [ "db63de26-fd51-45b0-b5bc-cad6ee1d1a07" ]
+        } ]
       },
-      "NPGR007": {
-        "@id": "573bb699-717a-4632-918a-ea0bba8f499d",
-        "id": "NPGR007",
-        "name": "Advanced 2D Computer Graphics",
-        "localizedName": "Pokročilá 2D počítačová grafika",
-        "locale": "cs",
-        "credits": {
-          "@id": "8360a7c0-31fa-4878-92ff-3cbd53ef2078",
-          "creditValue": 5
+      "NPGR007" : {
+        "@id" : "f703753b-92d1-45b9-9ea9-9c2e8040b719",
+        "id" : "NPGR007",
+        "name" : "Advanced 2D Computer Graphics",
+        "localizedName" : "Pokročilá 2D počítačová grafika",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3d9f4033-4736-4d22-ada8-5312837e283c",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Josef Pelikán"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Josef Pelikán" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG023": {
-        "@id": "a63c0967-cda4-4496-b72c-6b0b4bcc1e73",
-        "id": "NPRG023",
-        "name": "Software Project",
-        "localizedName": "Softwarový projekt",
-        "locale": "cs",
-        "credits": {
-          "@id": "ea91e8df-c9ff-4f9f-80ad-c8a9b8ff1af2",
-          "creditValue": 9
+      "NPRG023" : {
+        "@id" : "af26a30c-2abd-432d-8215-33dc28fcf098",
+        "id" : "NPRG023",
+        "name" : "Software Project",
+        "localizedName" : "Softwarový projekt",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "73cf036b-4ef9-4703-aacb-6afbd4c7fdf7",
+          "creditValue" : 9
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG024": {
-        "@id": "dc406521-6158-4ac2-a4b3-6a5f40abf783",
-        "id": "NPRG024",
-        "name": "Design Patterns",
-        "localizedName": "Návrhové vzory",
-        "locale": "cs",
-        "credits": {
-          "@id": "f37f17dc-f700-4935-8dc9-b826fd57968e",
-          "creditValue": 3
+      "NPRG024" : {
+        "@id" : "3c311852-8ad3-4052-a5f6-97db147faf7b",
+        "id" : "NPRG024",
+        "name" : "Design Patterns",
+        "localizedName" : "Návrhové vzory",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "a860eaa8-6284-4237-89d1-fcc0b64c3ac7",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NTIN090": {
-        "@id": "5155c6f2-d53b-4eba-918b-c45b0f068f46",
-        "id": "NTIN090",
-        "name": "Introduction to Complexity and Computability",
-        "localizedName": "Základy složitosti a vyčíslitelnosti",
-        "locale": "cs",
-        "credits": {
-          "@id": "db8c625a-69ef-4a14-af1c-7dc3b193ada7",
-          "creditValue": 5
+      "NTIN090" : {
+        "@id" : "3128827a-67f2-4567-8786-87d1916d277f",
+        "id" : "NTIN090",
+        "name" : "Introduction to Complexity and Computability",
+        "localizedName" : "Základy složitosti a vyčíslitelnosti",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ae8f59f2-81e0-46db-8983-8cc490627353",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Ondřej Čepek, Ph.D.",
-          "RNDr. Petr Kučera, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR001": {
-        "@id": "b54a186a-63a7-404c-ab5e-633c56b13f11",
-        "id": "NPGR001",
-        "name": "Computer vision and intelligent robotics",
-        "localizedName": "Počítačové vidění a inteligentní robotika",
-        "locale": "cs",
-        "credits": {
-          "@id": "6c084cfe-b1d3-4e73-8fee-719d436fc2ac",
-          "creditValue": 3
+      "NPGR001" : {
+        "@id" : "74f535c4-f6da-4e27-a294-4f5da3a74627",
+        "id" : "NPGR001",
+        "name" : "Computer vision and intelligent robotics",
+        "localizedName" : "Počítačové vidění a inteligentní robotika",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "85a8e50b-b19d-448a-a648-75debcf60053",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. Ing. Václav Hlaváč, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. Ing. Václav Hlaváč, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR002": "03b47359-15c0-421d-b836-8146f850ec3a",
-      "NPGR003": "d885a23d-a34e-42d1-b097-8c57f0f23a50",
-      "NPGR004": "dfcf7eb5-7e51-42d3-b287-b03743b8e6db",
-      "NSWI072": {
-        "@id": "72be4bdf-1bf9-432f-9a6b-95805adc6e9e",
-        "id": "NSWI072",
-        "name": "Data Compression Algorithms",
-        "localizedName": "Algoritmy komprese dat",
-        "locale": "cs",
-        "credits": {
-          "@id": "1686d6cf-75ed-44d3-b41e-f37138f8f08e",
-          "creditValue": 3
+      "NPGR002" : "81cb99aa-94b5-4dcd-ad70-52247b7fc4e6",
+      "NPGR003" : "db63de26-fd51-45b0-b5bc-cad6ee1d1a07",
+      "NPGR004" : "f4c5c9db-3475-44d3-8d46-06d641d54b29",
+      "NSWI072" : {
+        "@id" : "f7b07b6c-8051-4963-a8ea-7d5267ee4bc7",
+        "id" : "NSWI072",
+        "name" : "Data Compression Algorithms",
+        "localizedName" : "Algoritmy komprese dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "542b3f88-45f0-4fcb-b6b9-f49a2c737c5d",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Tomáš Dvořák, CSc."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NAIL087": {
-        "@id": "601d4d24-8961-44cb-b159-c365b01f6f84",
-        "id": "NAIL087",
-        "name": "Computers and Cognitive Sciences I",
-        "localizedName": "Informatika a kognitivní vědy I",
-        "locale": "cs",
-        "credits": {
-          "@id": "0f39e358-d32b-422a-81f9-386b360e4d23",
-          "creditValue": 6
+      "NAIL087" : {
+        "@id" : "6765c0d5-a76f-479a-a057-49f6084b55ce",
+        "id" : "NAIL087",
+        "name" : "Computers and Cognitive Sciences I",
+        "localizedName" : "Informatika a kognitivní vědy I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "eb9ae1f4-0f71-449b-a571-3d8ba21f16ed",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Cyril Brom, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Cyril Brom, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSZZ025": {
-        "@id": "020b3716-9186-43a5-b7c2-1ed61a351fe0",
-        "id": "NSZZ025",
-        "name": "Diploma Thesis III",
-        "localizedName": "Diplomová práce III",
-        "locale": "cs",
-        "credits": {
-          "@id": "3fa7062a-2c2d-4c8b-bd81-ec847700ed5b",
-          "creditValue": 15
+      "NSZZ025" : {
+        "@id" : "0d88cdec-1864-4a82-935b-0dcbacf54ce0",
+        "id" : "NSZZ025",
+        "name" : "Diploma Thesis III",
+        "localizedName" : "Diplomová práce III",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b6755a1e-e717-405f-b9b4-bf39226ef2ea",
+          "creditValue" : 15
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSZZ023": {
-        "@id": "8c549da9-3d57-49ed-b125-6761ad96db60",
-        "id": "NSZZ023",
-        "name": "Diploma Thesis I",
-        "localizedName": "Diplomová práce I",
-        "locale": "cs",
-        "credits": {
-          "@id": "0e0298a3-a0bd-4b2b-ba98-6403f6b64b9b",
-          "creditValue": 6
+      "NSZZ023" : {
+        "@id" : "bf38a890-7db7-4b19-bfd2-3d157d90778d",
+        "id" : "NSZZ023",
+        "name" : "Diploma Thesis I",
+        "localizedName" : "Diplomová práce I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "9eca6df6-ff96-46ff-9f99-88029ef3673a",
+          "creditValue" : 6
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI115": {
-        "@id": "6ef138ec-909b-4bf3-8425-3180152b679e",
-        "id": "NSWI115",
-        "name": "Computer Games Development",
-        "localizedName": "Vývoj počítačových her",
-        "locale": "cs",
-        "credits": {
-          "@id": "7a54b42c-1738-4430-b683-29e0253b79ab",
-          "creditValue": 6
+      "NSWI115" : {
+        "@id" : "2cbf6b7f-f078-42ee-8153-3e992aa26322",
+        "id" : "NSWI115",
+        "name" : "Computer Games Development",
+        "localizedName" : "Vývoj počítačových her",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "225e91cc-c57f-4f45-a26c-08d5207b8fae",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Bc. Otakar Nieder",
-          "Mgr. Cyril Brom, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Bc. Otakar Nieder", "Mgr. Cyril Brom, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSZZ024": {
-        "@id": "e5a52b6a-f2ab-4c7f-b4b6-7eefef4eb98d",
-        "id": "NSZZ024",
-        "name": "Diploma Thesis II",
-        "localizedName": "Diplomová práce II",
-        "locale": "cs",
-        "credits": {
-          "@id": "0e8a9f85-facd-47ab-803a-2011bf01bd7e",
-          "creditValue": 9
+      "NSZZ024" : {
+        "@id" : "ff016ced-d768-4c13-95c2-d95b9a9c9c63",
+        "id" : "NSZZ024",
+        "name" : "Diploma Thesis II",
+        "localizedName" : "Diplomová práce II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "e2c17583-7b6f-4f26-95e9-9bd4fe4d2c3a",
+          "creditValue" : 9
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI153": {
-        "@id": "c4f16831-0e12-4d16-a868-8eaf7c6c538e",
-        "id": "NSWI153",
-        "name": "Advanced Technologies for Web Applications",
-        "localizedName": "Pokročilé technologie webových aplikací",
-        "locale": "cs",
-        "credits": {
-          "@id": "6446d131-3717-42c4-90ab-d204e532b0d0",
-          "creditValue": 3
+      "NSWI153" : {
+        "@id" : "ea7c6795-f47d-4301-a834-4f0e11d3312b",
+        "id" : "NSWI153",
+        "name" : "Advanced Technologies for Web Applications",
+        "localizedName" : "Pokročilé technologie webových aplikací",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6b4b170e-a9a7-4071-9ea4-d861626f182b",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Martin Kruliš, Ph.D."
-        ],
-        "prerequisites": [
-          "67a3c509-d40e-4862-bcf5-1cffe30e872b"
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Martin Kruliš, Ph.D." ],
+        "prerequisites" : [ "a1d62cff-8698-43af-b8f6-cde268db1435" ],
+        "corequisites" : [ ]
       },
-      "NAIL082": {
-        "@id": "24f31a46-e661-4d5b-8160-75717b96068f",
-        "id": "NAIL082",
-        "name": "Seminar on Humanlike Artificial Agents",
-        "localizedName": "Seminář z umělých bytostí",
-        "locale": "cs",
-        "credits": {
-          "@id": "54278bdf-ada3-4eb7-aa46-5e7622e7a140",
-          "creditValue": 3
+      "NAIL082" : {
+        "@id" : "af2f711e-d990-4565-bd65-2aeb91dfcd4c",
+        "id" : "NAIL082",
+        "name" : "Seminar on Humanlike Artificial Agents",
+        "localizedName" : "Seminář z umělých bytostí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "2f08a79c-3710-4122-8127-8ec7357e1974",
+          "creditValue" : 3
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [
-          "Mgr. Cyril Brom, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ "Mgr. Cyril Brom, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSWI035": {
-        "@id": "2ff3b95e-20bf-4638-abd5-8e1af572ecb5",
-        "id": "NSWI035",
-        "name": "Principles of Distributed Systems",
-        "localizedName": "Principy distribuovaných systémů",
-        "locale": "cs",
-        "credits": {
-          "@id": "33b2405f-96ff-40e4-affc-492eac5db0ac",
-          "creditValue": 3
+      "NSWI035" : {
+        "@id" : "1a42a6f7-8ff7-49cb-a660-9d8fbc35d4b3",
+        "id" : "NSWI035",
+        "name" : "Principles of Distributed Systems",
+        "localizedName" : "Principy distribuovaných systémů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "49287e98-f1a4-4700-947e-9c949637d6f4",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Filip Zavoral, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Filip Zavoral, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG036": "14d86edc-c9ed-495c-ac87-0073e6ecd248",
-      "NPRG030": {
-        "@id": "ab4d4549-beda-408a-9470-840009b6d1bf",
-        "id": "NPRG030",
-        "name": "Programming I",
-        "localizedName": "Programování I",
-        "locale": "cs",
-        "credits": {
-          "@id": "24b45b7a-fbc5-4e5d-b8ff-c59d3b7c1b94",
-          "creditValue": 6
+      "NPRG036" : "689b53ea-c786-41c9-a643-ba077bdd01d1",
+      "NPRG030" : {
+        "@id" : "e0c00a23-e45e-4f20-93a0-f058b52ae9ef",
+        "id" : "NPRG030",
+        "name" : "Programming I",
+        "localizedName" : "Programování I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "7f10a9a2-eb04-4b83-8b9b-60ef4421a9f0",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Tomáš Holan, Ph.D.",
-          "doc. RNDr. Pavel Töpfer, CSc.",
-          "RNDr. Martin Pergel, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Tomáš Holan, Ph.D.", "doc. RNDr. Pavel Töpfer, CSc.", "RNDr. Martin Pergel, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPGR030": {
-        "@id": "293bbbf6-73d1-4c67-9776-1ca71a60b815",
-        "id": "NPGR030",
-        "name": "Optics for computer graphics",
-        "localizedName": "Optika pro počítačovou grafiku",
-        "locale": "cs",
-        "credits": {
-          "@id": "f13b83c1-383b-4fe4-ad37-6e4ded9a78de",
-          "creditValue": 3
+      "NPGR030" : {
+        "@id" : "3920afc8-79c6-4924-8fe4-3bd15f3ba01d",
+        "id" : "NPGR030",
+        "name" : "Optics for computer graphics",
+        "localizedName" : "Optika pro počítačovou grafiku",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "a01673f8-40f8-4e36-bf56-bcd2ae7d2552",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "prof. RNDr. Jaromír Plášek, CSc.",
-          "doc. RNDr. Marek Procházka, Ph.D.",
-          "RNDr. Roman Antoš, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Jaromír Plášek, CSc.", "doc. RNDr. Marek Procházka, Ph.D.", "RNDr. Roman Antoš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG031": "d18bd93e-72cd-49d5-bc84-35025ce721b2",
-      "NMIN101": "4893a8d3-ba83-4bd5-8cb6-f6c552e7096d",
-      "NPGR033": {
-        "@id": "31ca1fa4-2db5-4fb9-b080-68719fef48a5",
-        "id": "NPGR033",
-        "name": "Computer Graphics for Game Development",
-        "localizedName": "Grafika pro počítačové hry",
-        "locale": "cs",
-        "credits": {
-          "@id": "6b6a0fdd-2dbf-4ded-a94d-6bbe5c91fbfb",
-          "creditValue": 6
+      "NPRG031" : "5a09d20f-773a-4935-9a97-dfb8e364ce6e",
+      "NMIN101" : "aef2e9db-0bda-48a4-91e2-ad212f0a15e5",
+      "NPGR033" : {
+        "@id" : "8e5a2b98-801a-4d86-bb87-5fe3f6c12245",
+        "id" : "NPGR033",
+        "name" : "Computer Graphics for Game Development",
+        "localizedName" : "Grafika pro počítačové hry",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "cf329a1d-a637-4128-878f-65533d2e38d6",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Ing. Jaroslav Křivánek, Ph.D.",
-          "Mgr. Jakub Gemrot"
-        ],
-        "prerequisites": [
-          "ab4d4549-beda-408a-9470-840009b6d1bf",
-          "d18bd93e-72cd-49d5-bc84-35025ce721b2"
-        ],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Jaroslav Křivánek, Ph.D.", "Mgr. Jakub Gemrot" ],
+        "prerequisites" : [ "e0c00a23-e45e-4f20-93a0-f058b52ae9ef", "5a09d20f-773a-4935-9a97-dfb8e364ce6e" ],
+        "corequisites" : [ ]
       },
-      "NMIN102": "8b216cf0-5433-4cd5-bee5-eb521b28b4a7"
+      "NMIN102" : "830522c7-6e5c-45e0-b7b1-f830874afdb6"
     }
   },
-  "semesterPlan": {
-    "semesterList": []
+  "semesterPlan" : {
+    "semesterList" : [ ]
   },
-  "constraints": {
-    "courseGroupConstraintList": [
-      {
-        "CourseGroupFulfilledAllConstraint": {
-          "courseGroup": {
-            "courseList": [
-              "b92b2f9a-e57d-4d78-9ce7-f6425af71e1f",
-              "7773bf7a-74b0-4d7f-9ac4-127cda45937c",
-              "798e477e-2930-4e77-81e2-4c77d0c8dce6",
-              "a63c0967-cda4-4496-b72c-6b0b4bcc1e73",
-              "020b3716-9186-43a5-b7c2-1ed61a351fe0",
-              "5155c6f2-d53b-4eba-918b-c45b0f068f46",
-              "8c549da9-3d57-49ed-b125-6761ad96db60",
-              "e5a52b6a-f2ab-4c7f-b4b6-7eefef4eb98d"
-            ]
-        }
-        }
-      },
-      {
-        "CourseGroupCreditsSumConstraint": {
-          "courseGroup": {
-            "courseList": [
-              "573bb699-717a-4632-918a-ea0bba8f499d",
-              "2dd41d31-d11c-4013-aea2-f88b9cb7b537",
-              "b54a186a-63a7-404c-ab5e-633c56b13f11",
-              "d49bdb28-3e6d-47a4-862f-5ddaddaef974",
-              "128060a6-d475-45c0-9c98-85d662aedcba",
-              "e6f17af5-018e-4fb0-a497-fcdfbb60304f",
-              "34ce02e8-f574-43f9-9754-1f525ae756f5",
-              "31ca1fa4-2db5-4fb9-b080-68719fef48a5",
-              "dd24e07c-91eb-4129-aae6-96b0c500f013",
-              "48a6ce67-ba6e-4dec-85d8-6000457ad879",
-              "6ef138ec-909b-4bf3-8425-3180152b679e",
-              "e5ea999c-2179-4531-9c37-5087169e4acc",
-              "2ff3b95e-20bf-4638-abd5-8e1af572ecb5",
-              "85a550e0-cb1e-4690-8bed-7d0e6b8a4e78",
-              "2867151c-62e7-487e-870d-14dd371b6fd0",
-              "84a035f0-5a61-4de9-820b-501d88d304c5",
-              "f228d687-edd3-41ab-8602-ad550c50935b",
-              "6e1eb9c1-e293-47f5-b819-e22ea97a98cd",
-              "4f2a488c-2002-4319-9a86-a9d5bfa0bbcd",
-              "f612f9ea-c06a-47ef-af0e-45e16b13f65c",
-              "204b05bb-bac3-4b1f-8619-0102d2bdc074",
-              "86cfdcd6-ee7a-4ff2-aaec-206a45e3a88d",
-              "e4f07151-2fbc-4f1d-8b5a-a2b1c53215a5",
-              "b35cde26-92c0-4a5b-8b02-65e5d83061dd",
-              "dcda0835-2600-4a11-8a15-24b655ec1e18",
-              "19819e92-5c1b-4b7a-878c-34414d9e8bd3"
-            ]
-          },
-          "totalNeeded": {
-            "@id": "c35d2154-a3b3-4a36-ae95-e353dcaf45f9",
-            "creditValue": 47
+  "constraints" : {
+    "courseGroupConstraintList" : [ {
+      "CourseGroupFulfilledAllConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "a0aa2d04-6eaa-4e25-a935-472125d6de22", "f529846f-285e-41e7-9764-833722a3fbfc", "e9db8b77-2fde-4f1e-93e5-035fec298c60", "af26a30c-2abd-432d-8215-33dc28fcf098", "0d88cdec-1864-4a82-935b-0dcbacf54ce0", "3128827a-67f2-4567-8786-87d1916d277f", "bf38a890-7db7-4b19-bfd2-3d157d90778d", "ff016ced-d768-4c13-95c2-d95b9a9c9c63" ]
         }
       }
-      }
-    ],
-    "globalConstraintList": [
-      {
-        "GlobalCourseRepeatedEnrollmentConstraint": {
-          "maxRepeatedEnrollment": 2
-      }
-      },
-      {
-        "GlobalCreditsSumConstraint": {
-          "totalNeeded": {
-            "@id": "7f6b72a2-cc15-4ebe-9e90-dac2da4153ed",
-            "creditValue": 120
+    }, {
+      "CourseGroupCreditsSumConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "f703753b-92d1-45b9-9ea9-9c2e8040b719", "ec65c7e5-d676-44f4-a308-4abbda5afe36", "74f535c4-f6da-4e27-a294-4f5da3a74627", "88edd549-2c33-4fb4-91ff-d89ca90e4c0d", "80839a19-75ca-48b1-a7e1-4b0e7ca31c1f", "77239adb-7005-4834-b711-47e60864c49a", "47026f45-7407-4e80-b2e4-b5ede6477486", "8e5a2b98-801a-4d86-bb87-5fe3f6c12245", "72a4a0dc-963b-421d-a954-60d6697c6ca8", "0f0eceb2-0d18-4b30-ae14-675c1d2bfb72", "2cbf6b7f-f078-42ee-8153-3e992aa26322", "adcdb44e-4a31-4884-b7ac-927e0cd5b232", "1a42a6f7-8ff7-49cb-a660-9d8fbc35d4b3", "ed4a7b66-f75b-475e-a343-14604439ee14", "ad49d5bd-1a05-492c-81e0-a72b2a43727b", "5fce284c-e24c-49c7-82b1-111c738abe06", "f2373af1-53b6-42e0-9779-174228223978", "c1e8ba5a-2012-4d81-b4b0-2cf86e79c26c", "71d192b7-1cdf-4cce-9a9b-7526dc1e3696", "4d910f42-ce19-44af-aa44-59912143a3f5", "d0e34043-b70a-4796-833d-695703dce755", "87d81d98-235e-491e-a579-063b7bbe477f", "902a8eaf-cc1c-4cea-adfd-8755459c9fba", "3820b9a6-9467-4d1f-8aaa-bb83a36355a9", "87c70c0e-6587-4bf9-b8f0-b5d08cb0c210", "c0e57f38-d208-41b9-af16-2eea46033369" ]
+        },
+        "totalNeeded" : {
+          "@id" : "f7a90cd5-ac1c-4a0a-85ea-c8f07b670cfd",
+          "creditValue" : 47
         }
       }
-      },
-      {
-        "GlobalCourseMaxFulfilledConstraint": {
-          "maxFulfilled": 1
+    } ],
+    "globalConstraintList" : [ {
+      "GlobalCourseRepeatedEnrollmentConstraint" : {
+        "maxRepeatedEnrollment" : 2
       }
-      },
-      {
-        "GlobalLongStudyFeeConstraint": {
-          "feePerSemester": 22000,
-          "currency": "CZK",
-          "fromSemester": 7
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "bd03e921-4d56-4faa-8091-a5b722c9a3f8",
-            "creditValue": 30
-          },
-          "untilSemester": 1
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "2258f135-a1cd-42ce-9614-76814ebe438c",
-            "creditValue": 60
-          },
-          "untilSemester": 2
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "303a2268-066d-44d1-818c-a7241fb1c93f",
-            "creditValue": 90
-          },
-          "untilSemester": 3
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "cfba2ee2-50f9-4447-9262-786765f479c5",
-            "creditValue": 120
-          },
-          "untilSemester": 4
+    }, {
+      "GlobalCreditsSumConstraint" : {
+        "totalNeeded" : {
+          "@id" : "f258e8c5-afad-45cf-a3d9-9eadb2832e79",
+          "creditValue" : 120
         }
       }
-    ],
-    "courseEnrollmentConstraintList": []
+    }, {
+      "GlobalCourseMaxFulfilledConstraint" : {
+        "maxFulfilled" : 1
+      }
+    }, {
+      "GlobalLongStudyFeeConstraint" : {
+        "feePerSemester" : 22000,
+        "currency" : "CZK",
+        "fromSemester" : 7
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "7b1777c8-1f62-4efb-bb68-9f1e221310bd",
+          "creditValue" : 30
+        },
+        "untilSemester" : 1
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "ab189727-72ac-41b7-9c65-3a506616ad12",
+          "creditValue" : 60
+        },
+        "untilSemester" : 2
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "2ed13e00-b7c3-48dd-b2c8-cf088a872131",
+          "creditValue" : 90
+        },
+        "untilSemester" : 3
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "06b0f3dc-8540-4f4f-a1d0-2b65f8700ceb",
+          "creditValue" : 120
+        },
+        "untilSemester" : 4
+      }
+    } ],
+    "courseEnrollmentConstraintList" : [ ]
   }
 }

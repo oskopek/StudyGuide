@@ -1,598 +1,502 @@
 {
-  "courseRegistry": {
-    "courses": {
-      "NPFL087": {
-        "@id": "e8ed838b-d147-4ad9-88d0-aa37dad21bef",
-        "id": "NPFL087",
-        "name": "Statistical Machine Translation",
-        "localizedName": "Statistický strojový překlad",
-        "locale": "cs",
-        "credits": {
-          "@id": "c0476608-171d-486e-8fc0-e736f9a92e84",
-          "creditValue": 6
+  "courseRegistry" : {
+    "courses" : {
+      "NPFL087" : {
+        "@id" : "cc0a81a0-2859-43bb-b84b-2b7ee95b5b48",
+        "id" : "NPFL087",
+        "name" : "Statistical Machine Translation",
+        "localizedName" : "Statistický strojový překlad",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "14a1421e-3003-433e-b898-ee5194d1d85c",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Ondřej Bojar, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Ondřej Bojar, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPOZ009": {
-        "@id": "92851424-6e6b-44e7-998c-e709129bf97b",
-        "id": "NPOZ009",
-        "name": "Professional Language and Style",
-        "localizedName": "Odborné vyjadřování a styl",
-        "locale": "cs",
-        "credits": {
-          "@id": "22bc30b8-2e97-4067-9e7b-5e846ed3e424",
-          "creditValue": 3
+      "NPOZ009" : {
+        "@id" : "156d25fa-9226-44a9-8ada-6af203231793",
+        "id" : "NPOZ009",
+        "name" : "Professional Language and Style",
+        "localizedName" : "Odborné vyjadřování a styl",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6ff4442a-8489-48dc-a41d-fdaac9515de6",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Mgr. Veronika Kolářová, Ph.D.",
-          "Mgr. Magda Ševčíková, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Veronika Kolářová, Ph.D.", "Mgr. Magda Ševčíková, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL063": {
-        "@id": "fe50bf60-b0ed-48bc-a224-6992bb49d277",
-        "id": "NPFL063",
-        "name": "Introduction to General Linguistics",
-        "localizedName": "Úvod do obecné lingvistiky",
-        "locale": "cs",
-        "credits": {
-          "@id": "c0deae99-6168-40a9-8500-d2110c7fcc87",
-          "creditValue": 5
+      "NPFL063" : {
+        "@id" : "eda54b22-46a8-4720-afdf-7cfbb7cbafcf",
+        "id" : "NPFL063",
+        "name" : "Introduction to General Linguistics",
+        "localizedName" : "Úvod do obecné lingvistiky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "63bf44b5-dc5c-46fc-943e-25c060c3fc31",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Jiří Hana, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Jiří Hana, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NTIN066": {
-        "@id": "57b26fea-19b4-48ef-b1aa-08890354a0eb",
-        "id": "NTIN066",
-        "name": "Data Structures I",
-        "localizedName": "Datové struktury I",
-        "locale": "cs",
-        "credits": {
-          "@id": "ade41106-9911-49d1-8c92-3f1ca2906176",
-          "creditValue": 5
+      "NTIN066" : {
+        "@id" : "fa18d0c1-8ea0-4cea-ac28-1e1c194d7842",
+        "id" : "NTIN066",
+        "name" : "Data Structures I",
+        "localizedName" : "Datové struktury I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c06d23b9-57ef-441c-a75f-dce8fc2f0d77",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Mgr. Michal Koucký, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL083": {
-        "@id": "8854b0a9-c480-4f56-a460-40d7f2c52f60",
-        "id": "NPFL083",
-        "name": "Linguistic Theory and Grammar Formalisms",
-        "localizedName": "Lingvistická teorie a gramatické formalismy",
-        "locale": "cs",
-        "credits": {
-          "@id": "fb588be8-0210-42b2-bb1e-dec239ed7da8",
-          "creditValue": 6
+      "NPFL083" : {
+        "@id" : "24576032-0b5b-4f53-96bc-c02bfea10b28",
+        "id" : "NPFL083",
+        "name" : "Linguistic Theory and Grammar Formalisms",
+        "localizedName" : "Lingvistická teorie a gramatické formalismy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "42670cb0-0036-4249-a99b-bfaffd6c2013",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Ing. Alexandr Rosen, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Ing. Alexandr Rosen, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL082": {
-        "@id": "0fe41b97-2915-461a-91fc-ddf7413069f4",
-        "id": "NPFL082",
-        "name": "Information Structure of Sentences and Discourse Structure",
-        "localizedName": "Informační struktura věty a výstavba diskurzu",
-        "locale": "cs",
-        "credits": {
-          "@id": "e349e783-6dad-48e1-9c54-0e41726f59f2",
-          "creditValue": 3
+      "NPFL082" : {
+        "@id" : "6b496090-3dbc-4234-b905-34bd0ff653fb",
+        "id" : "NPFL082",
+        "name" : "Information Structure of Sentences and Discourse Structure",
+        "localizedName" : "Informační struktura věty a výstavba diskurzu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b6300078-5713-4bac-a31b-c081122459e9",
+          "creditValue" : 3
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. PhDr. Eva Hajičová, DrSc.",
-          "PhDr. Šárka Zikánová, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. PhDr. Eva Hajičová, DrSc.", "PhDr. Šárka Zikánová, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL006": {
-        "@id": "48fdb3eb-0a55-4b85-b124-8c720200bc7f",
-        "id": "NPFL006",
-        "name": "Introduction to Formal Linguistics",
-        "localizedName": "Úvod do formální lingvistiky",
-        "locale": "cs",
-        "credits": {
-          "@id": "aff34abd-78a1-4b14-8c46-dd894f9bdcf4",
-          "creditValue": 3
+      "NPFL006" : {
+        "@id" : "79a016e2-4f62-4928-837f-1f5eedc3869c",
+        "id" : "NPFL006",
+        "name" : "Introduction to Formal Linguistics",
+        "localizedName" : "Úvod do formální lingvistiky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "cb1edb06-ee47-49f6-b694-68610e4b0b70",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Magda Ševčíková, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Magda Ševčíková, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL104": {
-        "@id": "08826b98-c417-4fb5-81a8-de62daa519f3",
-        "id": "NPFL104",
-        "name": "Machine Learning Methods",
-        "localizedName": "Metody strojového učení",
-        "locale": "cs",
-        "credits": {
-          "@id": "ca53c4b4-39e5-4945-a8f3-2dc83427a3f8",
-          "creditValue": 5
+      "NPFL104" : {
+        "@id" : "c35d7ff0-5482-4832-90bf-75e4fb55708a",
+        "id" : "NPFL104",
+        "name" : "Machine Learning Methods",
+        "localizedName" : "Metody strojového učení",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "84422500-666f-474d-8618-9496f54b528a",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-          "RNDr. Ondřej Bojar, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D.", "RNDr. Ondřej Bojar, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL103": {
-        "@id": "ff54c0f9-7543-462c-bb75-4f5dd849b1b2",
-        "id": "NPFL103",
-        "name": "Information Retrieval",
-        "localizedName": "Vyhledávání informací",
-        "locale": "cs",
-        "credits": {
-          "@id": "db5303de-ce33-41aa-a4ca-e457594e6857",
-          "creditValue": 6
+      "NPFL103" : {
+        "@id" : "6d5785fc-7ef7-4209-8baf-f4d2ecf2c82c",
+        "id" : "NPFL103",
+        "name" : "Information Retrieval",
+        "localizedName" : "Vyhledávání informací",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "fbf61f8c-697a-4b80-ad02-7c66d0dcd93c",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Pavel Pecina, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Pavel Pecina, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL068": {
-        "@id": "0c91f54e-9e31-473c-bc91-f12c1aa0d962",
-        "id": "NPFL068",
-        "name": "Statistical Methods in Natural Language Processing II",
-        "localizedName": "Statistické metody zpracování přirozených jazyků II",
-        "locale": "cs",
-        "credits": {
-          "@id": "d6e4765c-da78-4cca-9ee0-f7176384d766",
-          "creditValue": 6
+      "NPFL068" : {
+        "@id" : "0c1f9a5e-ef89-407b-931f-8d2c015cb73b",
+        "id" : "NPFL068",
+        "name" : "Statistical Methods in Natural Language Processing II",
+        "localizedName" : "Statistické metody zpracování přirozených jazyků II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "e8818649-0465-4c0b-b0d9-44ac4835f242",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "prof. RNDr. Jan Hajič, Dr."
-        ],
-        "prerequisites": [],
-        "corequisites": [
-          {
-            "@id": "f63b6754-4055-414d-972b-9096d620c891",
-            "id": "NPFL067",
-            "name": "Statistical Methods in Natural Language Processing I",
-            "localizedName": "Statistické metody zpracování přirozených jazyků I",
-            "locale": "cs",
-            "credits": {
-              "@id": "1c45f606-5c4b-4b02-84f0-95804c333e7e",
-              "creditValue": 6
-            },
-            "enrollableIn": "WINTER",
-            "teacherNames": [
-              "prof. RNDr. Jan Hajič, Dr."
-            ],
-            "prerequisites": [],
-            "corequisites": []
-          }
-        ]
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ {
+          "@id" : "7c35e54c-72d0-4ca3-88fe-d6b55ff1a333",
+          "id" : "NPFL067",
+          "name" : "Statistical Methods in Natural Language Processing I",
+          "localizedName" : "Statistické metody zpracování přirozených jazyků I",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "e0cf11e1-e85d-46fb-a894-741f665258de",
+            "creditValue" : 6
+          },
+          "enrollableIn" : "WINTER",
+          "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ]
       },
-      "NPFL067": "f63b6754-4055-414d-972b-9096d620c891",
-      "NPRG027": {
-        "@id": "51fb1cd5-cab0-49d5-89bd-2be6a272ade9",
-        "id": "NPRG027",
-        "name": "Credit for Project",
-        "localizedName": "Zápočet k projektu",
-        "locale": "cs",
-        "credits": {
-          "@id": "2a2c1528-9078-432d-af22-ec0581ac623b",
-          "creditValue": 6
+      "NPFL067" : "7c35e54c-72d0-4ca3-88fe-d6b55ff1a333",
+      "NPRG027" : {
+        "@id" : "016d3dc4-fc59-46d2-bad3-1b6982edf368",
+        "id" : "NPRG027",
+        "name" : "Credit for Project",
+        "localizedName" : "Zápočet k projektu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "05377f65-5850-49bd-b51d-f67ca635c00f",
+          "creditValue" : 6
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPRG023": {
-        "@id": "a2ce9e12-bbaa-46e5-926c-867df5fa6705",
-        "id": "NPRG023",
-        "name": "Software Project",
-        "localizedName": "Softwarový projekt",
-        "locale": "cs",
-        "credits": {
-          "@id": "6b6de550-bb96-4bf1-b9a1-df16b6ed6753",
-          "creditValue": 9
+      "NPRG023" : {
+        "@id" : "e39e0bde-f178-46b5-b7ce-1dceed5067b3",
+        "id" : "NPRG023",
+        "name" : "Software Project",
+        "localizedName" : "Softwarový projekt",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "8a0d0ab4-8095-45de-a2d3-62ecaba7e4b2",
+          "creditValue" : 9
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NTIN090": {
-        "@id": "b4525f1b-01ba-4cb6-b2c3-5621eec7a6c4",
-        "id": "NTIN090",
-        "name": "Introduction to Complexity and Computability",
-        "localizedName": "Základy složitosti a vyčíslitelnosti",
-        "locale": "cs",
-        "credits": {
-          "@id": "8b416de7-0868-440c-949d-efd53e53e5eb",
-          "creditValue": 5
+      "NTIN090" : {
+        "@id" : "22e9826a-2389-4ea6-8018-7ab4ef22da60",
+        "id" : "NTIN090",
+        "name" : "Introduction to Complexity and Computability",
+        "localizedName" : "Základy složitosti a vyčíslitelnosti",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "fbcf65f6-4b1e-4c1a-968e-a8f06b97efcb",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. RNDr. Ondřej Čepek, Ph.D.",
-          "RNDr. Petr Kučera, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL075": {
-        "@id": "a573e2bd-923b-40ab-aab1-7114fe763b32",
-        "id": "NPFL075",
-        "name": "Prague Dependency Treebank",
-        "localizedName": "Pražský závislostní korpus",
-        "locale": "cs",
-        "credits": {
-          "@id": "98204b80-e850-4985-9ea8-90bb0228a13a",
-          "creditValue": 6
+      "NPFL075" : {
+        "@id" : "5850e34e-33f6-4916-b629-6888d9e12448",
+        "id" : "NPFL075",
+        "name" : "Prague Dependency Treebank",
+        "localizedName" : "Pražský závislostní korpus",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "fcdb9b29-041a-4c15-bbde-d0ad6dc6f06b",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. RNDr. Markéta Lopatková, Ph.D.",
-          "RNDr. Jiří Mírovský, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Markéta Lopatková, Ph.D.", "RNDr. Jiří Mírovský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL096": {
-        "@id": "4aa4b568-5b68-49fb-9289-32273835d7c2",
-        "id": "NPFL096",
-        "name": "Computational Morphology",
-        "localizedName": "Komputační morfologie",
-        "locale": "cs",
-        "credits": {
-          "@id": "b094f7ca-dfbe-4bfe-a0be-f768fa2d7225",
-          "creditValue": 4
+      "NPFL096" : {
+        "@id" : "ba5f6131-16e9-492a-8943-2d8610979c61",
+        "id" : "NPFL096",
+        "name" : "Computational Morphology",
+        "localizedName" : "Komputační morfologie",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "8b4528d4-cf9b-48d6-b4af-a046f5514f30",
+          "creditValue" : 4
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "RNDr. Jiří Hana, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Jiří Hana, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL095": {
-        "@id": "cbe0548b-1025-4d18-b25a-434f12d30c43",
-        "id": "NPFL095",
-        "name": "Modern Methods in Computational Linguistics",
-        "localizedName": "Moderní metody v počítačové lingvistice",
-        "locale": "cs",
-        "credits": {
-          "@id": "a70e0c19-92bd-4fd1-9f05-9072ced994cd",
-          "creditValue": 3
+      "NPFL095" : {
+        "@id" : "4eac1848-ca55-42ca-b32a-3b6c44d68d3a",
+        "id" : "NPFL095",
+        "name" : "Modern Methods in Computational Linguistics",
+        "localizedName" : "Moderní metody v počítačové lingvistice",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ca128f42-28f2-46f5-ad23-af4bfc4a2e87",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Martin Popel"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Martin Popel" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL094": {
-        "@id": "b2e73f94-c881-45bc-9036-12a4db95e9ba",
-        "id": "NPFL094",
-        "name": "Morphological and Syntactic Analysis I",
-        "localizedName": "Morfologická a syntaktická analýza",
-        "locale": "cs",
-        "credits": {
-          "@id": "435254d8-f881-48e5-8f10-4822e27daa9b",
-          "creditValue": 3
+      "NPFL094" : {
+        "@id" : "6642bf5c-3260-4bff-9af9-e3f29f86f419",
+        "id" : "NPFL094",
+        "name" : "Morphological and Syntactic Analysis I",
+        "localizedName" : "Morfologická a syntaktická analýza",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "aadcc7ba-d5ea-4a4b-810a-16c8207d293b",
+          "creditValue" : 3
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "RNDr. Daniel Zeman, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Daniel Zeman, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL093": {
-        "@id": "94e9a28f-887b-4353-85b0-9aeb89c83b48",
-        "id": "NPFL093",
-        "name": "NLP Applications",
-        "localizedName": "Aplikace NLP",
-        "locale": "cs",
-        "credits": {
-          "@id": "bdb3b5b2-05a8-47a3-b424-171408cfec2b",
-          "creditValue": 5
+      "NPFL093" : {
+        "@id" : "1f38b3ed-537b-4617-9ce9-28aa34c7c19e",
+        "id" : "NPFL093",
+        "name" : "NLP Applications",
+        "localizedName" : "Aplikace NLP",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3c249e40-818a-49c7-baa5-72fda4ffc5f6",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. RNDr. Vladislav Kuboň, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Vladislav Kuboň, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL092": {
-        "@id": "21ba8e25-5e44-403a-b7a5-9a9049ac978c",
-        "id": "NPFL092",
-        "name": "NLP Technology",
-        "localizedName": "Technologie pro NLP",
-        "locale": "cs",
-        "credits": {
-          "@id": "faf1eb2b-43b4-49d6-a5ee-b34e19622c5a",
-          "creditValue": 5
+      "NPFL092" : {
+        "@id" : "eaf9c463-63d6-4d3a-a16e-c1d5449bdd29",
+        "id" : "NPFL092",
+        "name" : "NLP Technology",
+        "localizedName" : "Technologie pro NLP",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "963af54f-7906-46fa-a415-ab48782ff626",
+          "creditValue" : 5
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-          "Mgr. Rudolf Rosa"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D.", "Mgr. Rudolf Rosa" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL070": {
-        "@id": "7f53ef47-b3b4-425e-a7e0-30aaf521924a",
-        "id": "NPFL070",
-        "name": "Language Data Resources",
-        "localizedName": "Zdroje lingvistických dat",
-        "locale": "cs",
-        "credits": {
-          "@id": "a647a5ac-a9e6-4469-b6e0-3cf6f67395f2",
-          "creditValue": 5
+      "NPFL070" : {
+        "@id" : "a1458eb4-b971-4188-a334-52dd56ffe395",
+        "id" : "NPFL070",
+        "name" : "Language Data Resources",
+        "localizedName" : "Zdroje lingvistických dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "765963b5-1572-469d-9b98-cbfbc135f3e7",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "doc. Ing. Zdeněk Žabokrtský, Ph.D.",
-          "Mgr. Martin Popel"
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D.", "Mgr. Martin Popel" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSZZ025": {
-        "@id": "121d5b57-579d-4bae-bbb6-1270cf486d05",
-        "id": "NSZZ025",
-        "name": "Diploma Thesis III",
-        "localizedName": "Diplomová práce III",
-        "locale": "cs",
-        "credits": {
-          "@id": "4b8ce8e8-fc6c-4322-a44b-93461bae0e27",
-          "creditValue": 15
+      "NSZZ025" : {
+        "@id" : "0305c410-0d9c-48f6-a8d5-571ca6146c0d",
+        "id" : "NSZZ025",
+        "name" : "Diploma Thesis III",
+        "localizedName" : "Diplomová práce III",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "e55ba909-3ee8-44c3-bc10-b97315100416",
+          "creditValue" : 15
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSZZ023": {
-        "@id": "4fa00f39-d370-4c93-a113-e597605fa643",
-        "id": "NSZZ023",
-        "name": "Diploma Thesis I",
-        "localizedName": "Diplomová práce I",
-        "locale": "cs",
-        "credits": {
-          "@id": "0d99d44d-ebd9-4bec-ba03-e46f5038df95",
-          "creditValue": 6
+      "NSZZ023" : {
+        "@id" : "b533b2ee-dc83-4c15-bfd5-6585e6c8fba4",
+        "id" : "NSZZ023",
+        "name" : "Diploma Thesis I",
+        "localizedName" : "Diplomová práce I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "21b5635a-4f7a-4f84-ae2d-26065365be25",
+          "creditValue" : 6
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL038": {
-        "@id": "71615a5f-fe06-4523-a174-70963628ac77",
-        "id": "NPFL038",
-        "name": "Fundamentals of Speech Recognition and Generation",
-        "localizedName": "Základy rozpoznávání a generování mluvené řeči",
-        "locale": "cs",
-        "credits": {
-          "@id": "7d9c711e-4b0d-44c5-8350-1f66f34eeb1e",
-          "creditValue": 6
+      "NPFL038" : {
+        "@id" : "a08c3626-bbb2-4616-928a-4331a1dd5db6",
+        "id" : "NPFL038",
+        "name" : "Fundamentals of Speech Recognition and Generation",
+        "localizedName" : "Základy rozpoznávání a generování mluvené řeči",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "0e289267-80af-4298-b4f7-03c56f3020b9",
+          "creditValue" : 6
         },
-        "enrollableIn": "WINTER",
-        "teacherNames": [
-          "Mgr. Nino Peterek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Nino Peterek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NSZZ024": {
-        "@id": "dd5e615d-feb4-473f-a2fc-db20a96c5a20",
-        "id": "NSZZ024",
-        "name": "Diploma Thesis II",
-        "localizedName": "Diplomová práce II",
-        "locale": "cs",
-        "credits": {
-          "@id": "18ed246f-f91d-49d4-995a-5115c29b6aa9",
-          "creditValue": 9
+      "NSZZ024" : {
+        "@id" : "bb816e96-6f60-4e0f-8ca7-73a36684424b",
+        "id" : "NSZZ024",
+        "name" : "Diploma Thesis II",
+        "localizedName" : "Diplomová práce II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "db01e794-9c8a-4376-a09e-3e1d63e5bbf0",
+          "creditValue" : 9
         },
-        "enrollableIn": "BOTH",
-        "teacherNames": [],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL079": {
-        "@id": "c3e7168a-487d-4bed-ade3-6de63c65947e",
-        "id": "NPFL079",
-        "name": "Algorithms in Speech Recognition",
-        "localizedName": "Algoritmy rozpoznávání mluvené řeči",
-        "locale": "cs",
-        "credits": {
-          "@id": "315a33a4-b288-4261-afe9-28c1e569eea0",
-          "creditValue": 6
+      "NPFL079" : {
+        "@id" : "33b60424-79ce-4dfc-ac0b-b7eaaef8f095",
+        "id" : "NPFL079",
+        "name" : "Algorithms in Speech Recognition",
+        "localizedName" : "Algoritmy rozpoznávání mluvené řeči",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "a0a5f8a8-1068-49fc-8e62-f36536dd4213",
+          "creditValue" : 6
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Mgr. Nino Peterek, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Nino Peterek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       },
-      "NPFL099": {
-        "@id": "02b778be-e5dc-4d0d-a125-ccdfe1043e58",
-        "id": "NPFL099",
-        "name": "Statistical Dialogue Systems",
-        "localizedName": "Statistické dialogové systémy",
-        "locale": "cs",
-        "credits": {
-          "@id": "d2b495af-a7ca-467c-9124-f9a0caf3926b",
-          "creditValue": 5
+      "NPFL099" : {
+        "@id" : "575b857c-6ceb-4631-8ccd-bd289541f9ac",
+        "id" : "NPFL099",
+        "name" : "Statistical Dialogue Systems",
+        "localizedName" : "Statistické dialogové systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6e6ad1b7-2cdf-4bab-a7f5-7a72c897c428",
+          "creditValue" : 5
         },
-        "enrollableIn": "SUMMER",
-        "teacherNames": [
-          "Mgr. Ing. Filip Jurčíček, Ph.D."
-        ],
-        "prerequisites": [],
-        "corequisites": []
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Ing. Filip Jurčíček, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
       }
     }
   },
-  "semesterPlan": {
-    "semesterList": []
+  "semesterPlan" : {
+    "semesterList" : [ ]
   },
-  "constraints": {
-    "courseGroupConstraintList": [
-      {
-        "CourseGroupFulfilledAllConstraint": {
-          "courseGroup": {
-            "courseList": [
-              "fe50bf60-b0ed-48bc-a224-6992bb49d277",
-              "57b26fea-19b4-48ef-b1aa-08890354a0eb",
-              "21ba8e25-5e44-403a-b7a5-9a9049ac978c",
-              "121d5b57-579d-4bae-bbb6-1270cf486d05",
-              "b4525f1b-01ba-4cb6-b2c3-5621eec7a6c4",
-              "4fa00f39-d370-4c93-a113-e597605fa643",
-              "dd5e615d-feb4-473f-a2fc-db20a96c5a20",
-              {
-                "@id": "95c0f197-397c-4486-9a35-4ae91f7f6552",
-                "id": "NPFL067",
-                "name": "Statistical Methods in Natural Language Processing I",
-                "localizedName": "Statistické metody zpracování přirozených jazyků I",
-                "locale": "cs",
-                "credits": {
-                  "@id": "597f4341-3f47-40e6-ac00-b0c827848812",
-                  "creditValue": 6
-                },
-                "enrollableIn": "WINTER",
-                "teacherNames": [
-                  "prof. RNDr. Jan Hajič, Dr."
-                ],
-                "prerequisites": [],
-                "corequisites": []
-              }
-            ]
-        }
-        }
-      },
-      {
-        "CourseGroupCreditsSumConstraint": {
-          "courseGroup": {
-            "courseList": [
-              "48fdb3eb-0a55-4b85-b124-8c720200bc7f",
-              "71615a5f-fe06-4523-a174-70963628ac77",
-              "0c91f54e-9e31-473c-bc91-f12c1aa0d962",
-              "7f53ef47-b3b4-425e-a7e0-30aaf521924a",
-              "a573e2bd-923b-40ab-aab1-7114fe763b32",
-              "c3e7168a-487d-4bed-ade3-6de63c65947e",
-              "0fe41b97-2915-461a-91fc-ddf7413069f4",
-              "8854b0a9-c480-4f56-a460-40d7f2c52f60",
-              "e8ed838b-d147-4ad9-88d0-aa37dad21bef",
-              "94e9a28f-887b-4353-85b0-9aeb89c83b48",
-              "b2e73f94-c881-45bc-9036-12a4db95e9ba",
-              "cbe0548b-1025-4d18-b25a-434f12d30c43",
-              "4aa4b568-5b68-49fb-9289-32273835d7c2",
-              "02b778be-e5dc-4d0d-a125-ccdfe1043e58",
-              "ff54c0f9-7543-462c-bb75-4f5dd849b1b2",
-              "08826b98-c417-4fb5-81a8-de62daa519f3",
-              "92851424-6e6b-44e7-998c-e709129bf97b",
-              "51fb1cd5-cab0-49d5-89bd-2be6a272ade9",
-              "a2ce9e12-bbaa-46e5-926c-867df5fa6705"
-            ]
-          },
-          "totalNeeded": {
-            "@id": "a581ad9d-7f6d-4393-a843-422bcc217fa1",
-            "creditValue": 42
+  "constraints" : {
+    "courseGroupConstraintList" : [ {
+      "CourseGroupFulfilledAllConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "eda54b22-46a8-4720-afdf-7cfbb7cbafcf", "fa18d0c1-8ea0-4cea-ac28-1e1c194d7842", "eaf9c463-63d6-4d3a-a16e-c1d5449bdd29", "0305c410-0d9c-48f6-a8d5-571ca6146c0d", "22e9826a-2389-4ea6-8018-7ab4ef22da60", "b533b2ee-dc83-4c15-bfd5-6585e6c8fba4", "bb816e96-6f60-4e0f-8ca7-73a36684424b", {
+            "@id" : "6fe73d90-2b17-4096-b034-a22ab2efa623",
+            "id" : "NPFL067",
+            "name" : "Statistical Methods in Natural Language Processing I",
+            "localizedName" : "Statistické metody zpracování přirozených jazyků I",
+            "locale" : "cs",
+            "credits" : {
+              "@id" : "d80ccc0b-9be9-4aa7-9c0e-75d2721f093b",
+              "creditValue" : 6
+            },
+            "enrollableIn" : "WINTER",
+            "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          } ]
         }
       }
-      }
-    ],
-    "globalConstraintList": [
-      {
-        "GlobalCourseRepeatedEnrollmentConstraint": {
-          "maxRepeatedEnrollment": 2
-      }
-      },
-      {
-        "GlobalCreditsSumConstraint": {
-          "totalNeeded": {
-            "@id": "d1a8c6c3-94d9-449c-82c9-674b806d39be",
-            "creditValue": 120
+    }, {
+      "CourseGroupCreditsSumConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "79a016e2-4f62-4928-837f-1f5eedc3869c", "a08c3626-bbb2-4616-928a-4331a1dd5db6", "0c1f9a5e-ef89-407b-931f-8d2c015cb73b", "a1458eb4-b971-4188-a334-52dd56ffe395", "5850e34e-33f6-4916-b629-6888d9e12448", "33b60424-79ce-4dfc-ac0b-b7eaaef8f095", "6b496090-3dbc-4234-b905-34bd0ff653fb", "24576032-0b5b-4f53-96bc-c02bfea10b28", "cc0a81a0-2859-43bb-b84b-2b7ee95b5b48", "1f38b3ed-537b-4617-9ce9-28aa34c7c19e", "6642bf5c-3260-4bff-9af9-e3f29f86f419", "4eac1848-ca55-42ca-b32a-3b6c44d68d3a", "ba5f6131-16e9-492a-8943-2d8610979c61", "575b857c-6ceb-4631-8ccd-bd289541f9ac", "6d5785fc-7ef7-4209-8baf-f4d2ecf2c82c", "c35d7ff0-5482-4832-90bf-75e4fb55708a", "156d25fa-9226-44a9-8ada-6af203231793", "016d3dc4-fc59-46d2-bad3-1b6982edf368", "e39e0bde-f178-46b5-b7ce-1dceed5067b3" ]
+        },
+        "totalNeeded" : {
+          "@id" : "43b31836-61bc-48a3-9237-4abb89c18dea",
+          "creditValue" : 42
         }
       }
-      },
-      {
-        "GlobalCourseMaxFulfilledConstraint": {
-          "maxFulfilled": 1
+    } ],
+    "globalConstraintList" : [ {
+      "GlobalCourseRepeatedEnrollmentConstraint" : {
+        "maxRepeatedEnrollment" : 2
       }
-      },
-      {
-        "GlobalLongStudyFeeConstraint": {
-          "feePerSemester": 22000,
-          "currency": "CZK",
-          "fromSemester": 7
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "f516f643-ecfd-413f-9311-a08ac637891e",
-            "creditValue": 30
-          },
-          "untilSemester": 1
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "8ecfb833-c912-42b2-a6f4-65aa62c5ed24",
-            "creditValue": 60
-          },
-          "untilSemester": 2
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "4d300edd-d969-47ab-af93-8dc7b6da66a1",
-            "creditValue": 90
-          },
-          "untilSemester": 3
-        }
-      },
-      {
-        "GlobalCreditsSumUntilSemesterConstraint": {
-          "totalNeeded": {
-            "@id": "a6572c79-244e-4d5b-a11c-b19b339aba7a",
-            "creditValue": 120
-          },
-          "untilSemester": 4
+    }, {
+      "GlobalCreditsSumConstraint" : {
+        "totalNeeded" : {
+          "@id" : "4ab01cdb-b165-4844-8b75-d7ac80fe85b0",
+          "creditValue" : 120
         }
       }
-    ],
-    "courseEnrollmentConstraintList": []
+    }, {
+      "GlobalCourseMaxFulfilledConstraint" : {
+        "maxFulfilled" : 1
+      }
+    }, {
+      "GlobalLongStudyFeeConstraint" : {
+        "feePerSemester" : 22000,
+        "currency" : "CZK",
+        "fromSemester" : 7
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "6b6e07a2-abe7-43be-8257-a0066475354d",
+          "creditValue" : 30
+        },
+        "untilSemester" : 1
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "029cd171-6b7c-4979-bfd2-f3be04f09ff8",
+          "creditValue" : 60
+        },
+        "untilSemester" : 2
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "192e0150-3e06-4f08-b71b-0e08a81cce3c",
+          "creditValue" : 90
+        },
+        "untilSemester" : 3
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "a9062bf1-0f50-46e9-83db-9f56d80d0eac",
+          "creditValue" : 120
+        },
+        "untilSemester" : 4
+      }
+    } ],
+    "courseEnrollmentConstraintList" : [ ]
   }
 }
