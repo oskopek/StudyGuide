@@ -5,7 +5,6 @@ import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.persistence.DataWriter;
 import com.oskopek.studyguide.persistence.JsonDataReaderWriter;
 import com.oskopek.studyguide.persistence.MFFHtmlScraper;
-import com.oskopek.studyguide.persistence.MFFWebScraperUtil;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
 import com.oskopek.studyguide.view.ProgressCreator;
@@ -94,7 +93,7 @@ public class RootLayoutController extends AbstractController {
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedURL = enterStringController.getSubmittedString();
-            MFFHtmlScraper scraper = new MFFHtmlScraper(MFFWebScraperUtil.sisWebUrl);
+            MFFHtmlScraper scraper = new MFFHtmlScraper(studyGuideApplication.getSisUrl());
             Stage progressDialog = ProgressCreator.showProgress(scraper, messages.getString("progress.pleaseWait"));
             Task<StudyPlan> studyPlanTask = new Task<StudyPlan>() {
                 @Override
@@ -159,6 +158,24 @@ public class RootLayoutController extends AbstractController {
     @FXML
     private void handleQuit() {
         System.exit(0);
+    }
+
+    /**
+     * Menu item: SIS->Set SIS URL
+     * Sets the SIS's URL to be used for course scraping.
+     */
+    @FXML
+    private void handleSetSisUrl() {
+        EnterStringController enterStringController = enterStringDialogPaneCreator
+                .create(messages.getString("root.enterUrl"));
+        enterStringController.getTextField().setText(studyGuideApplication.getSisUrl());
+        Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.APPLY) {
+            String newSisUrl = enterStringController.getSubmittedString().trim();
+            newSisUrl = newSisUrl.charAt(newSisUrl.length() - 1) == '/' ? newSisUrl.substring(0, newSisUrl.length() - 1)
+                    : newSisUrl;
+            studyGuideApplication.setSisUrl(newSisUrl);
+        }
     }
 
     /**

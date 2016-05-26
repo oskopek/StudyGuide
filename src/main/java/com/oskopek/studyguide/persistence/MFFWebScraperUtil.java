@@ -12,13 +12,7 @@ import java.util.Arrays;
  */
 public final class MFFWebScraperUtil {
 
-    /**
-     * The base url for a SIS instance.
-     *
-     * @deprecated To be replaced with user-configurable parameter.
-     */
-    @Deprecated
-    public static final String sisWebUrl = "https://is.cuni.cz/studium";
+    private static final String sisWebUrl = "https://is.cuni.cz/studium";
     private static final String mffIoiInfoUrl = "http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm";
     private final MFFHtmlScraper scraper;
 

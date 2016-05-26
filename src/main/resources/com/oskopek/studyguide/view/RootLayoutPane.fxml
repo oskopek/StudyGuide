@@ -20,6 +20,10 @@
             <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" onAction="#handleQuit"
                       text="%root.quit"/>
         </Menu>
+        <Menu mnemonicParsing="false" text="%root.SIS">
+            <MenuItem fx:id="setSisUrlItem" mnemonicParsing="false" onAction="#handleSetSisUrl"
+                      text="%root.setSisUrl"/>
+        </Menu>
         <Menu mnemonicParsing="false" text="%root.help">
             <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp"
                       text="%root.help"/>

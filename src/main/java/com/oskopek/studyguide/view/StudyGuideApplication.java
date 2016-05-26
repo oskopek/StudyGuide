@@ -5,9 +5,7 @@ import com.oskopek.studyguide.weld.StartupStage;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.concurrent.Worker;
@@ -40,6 +38,7 @@ public class StudyGuideApplication extends Application {
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private final ObjectProperty<StudyPlan> studyPlan = new SimpleObjectProperty<>();
     private Stage primaryStage;
+    private StringProperty sisUrl = new SimpleStringProperty("https://is.cuni.cz/studium");
 
     /**
      * Main method.
@@ -129,6 +128,18 @@ public class StudyGuideApplication extends Application {
             throw new IllegalArgumentException("Primary stage cannot be null.");
         }
         this.primaryStage = primaryStage;
+    }
+
+    public String getSisUrl() {
+        return sisUrl.get();
+    }
+
+    public void setSisUrl(String sisUrl) {
+        this.sisUrl.set(sisUrl);
+    }
+
+    public StringProperty sisUrlProperty() {
+        return sisUrl;
     }
 
     /**

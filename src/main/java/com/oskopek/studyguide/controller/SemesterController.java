@@ -10,7 +10,6 @@ import com.oskopek.studyguide.model.StudyPlan;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
 import com.oskopek.studyguide.model.courses.EnrollableIn;
-import com.oskopek.studyguide.persistence.MFFWebScraperUtil;
 import com.oskopek.studyguide.persistence.SISHtmlScraper;
 import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
@@ -140,7 +139,7 @@ public class SemesterController extends AbstractController {
         Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
             String submittedCourseId = enterStringController.getSubmittedString();
-            SISHtmlScraper scraper = new SISHtmlScraper(MFFWebScraperUtil.sisWebUrl);
+            SISHtmlScraper scraper = new SISHtmlScraper(studyGuideApplication.getSisUrl());
             Stage progressDialog = ProgressCreator.showProgress(scraper, messages.getString("progress.pleaseWait"));
             Task<Course> courseTask = new Task<Course>() {
                 @Override
