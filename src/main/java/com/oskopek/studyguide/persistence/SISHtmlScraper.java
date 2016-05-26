@@ -122,7 +122,10 @@ public class SISHtmlScraper implements ProgressObservable {
                 logger.warn("Unknown enrollable string: {}", enrollableInString);
                 break;
         }
-        Credits credits = Credits.valueOf(Integer.parseInt(table1.get(5).select("td").first().text()));
+        String creditsString = table1.stream().filter(e -> e.child(0).text().toLowerCase().contains("kredit"))
+                .findFirst().get().select("td").first().text();
+        String creditsNum = creditsString.replaceAll("[^0-9]*", "");
+        Credits credits = Credits.valueOf(Integer.parseInt(creditsNum));
 
         Elements table2 = tab2s.get(2).select("tr");
         List<String> teacherList = new ArrayList<>();
