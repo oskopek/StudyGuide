@@ -45,6 +45,7 @@ public class EnterStringDialogPaneCreator {
         dialog.setDialogPane(dialogPane);
         enterStringController.setDialog(dialog);
         dialog.setTitle("StudyGuide");
+        dialog.setOnShown(event -> enterStringController.getTextField().requestFocus());
         return enterStringController;
     }
 }

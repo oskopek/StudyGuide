@@ -7,7 +7,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 
 /**
  * Controller for choosing a course out of several choices.
@@ -17,19 +16,7 @@ public class EnterStringController extends AbstractController {
     private Dialog<ButtonType> dialog;
 
     @FXML
-    private TextField urlField;
-
-    /**
-     * Handles submitting the dialog in case the user double clicks into the found course table.
-     *
-     * @param event the generated event
-     */
-    @FXML
-    private void handleOnMouseClicked(MouseEvent event) {
-        if (event.getClickCount() == 2) {
-            applyDialog();
-        }
-    }
+    private TextField textField;
 
     /**
      * Handles submitting the dialog in case the presses enter into the found course table.
@@ -49,6 +36,15 @@ public class EnterStringController extends AbstractController {
     private void applyDialog() {
         dialog.resultProperty().setValue(ButtonType.APPLY);
         dialog.close();
+    }
+
+    /**
+     * Get the input text field.
+     *
+     * @return the text field, may be null
+     */
+    public TextField getTextField() {
+        return textField;
     }
 
     /**
@@ -75,6 +71,6 @@ public class EnterStringController extends AbstractController {
      * @return the submitted string
      */
     public String getSubmittedString() {
-        return urlField.getText();
+        return textField.getText();
     }
 }
