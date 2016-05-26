@@ -83,7 +83,7 @@ public class JsonDataReaderWriterTest {
         assertNotNull(plan.getCourseRegistry());
         assertNotNull(plan.getCourseRegistry().courseMapValues());
         assertNotNull(plan.getConstraints().getGlobalConstraintList());
-        assertEquals(9, plan.getConstraints().getGlobalConstraintList().size());
+        assertEquals(10, plan.getConstraints().getGlobalConstraintList().size());
 
         GlobalConstraint constraint = plan.getConstraints().getGlobalConstraintList().get(0);
         assertNotNull(constraint);

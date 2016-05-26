@@ -67,6 +67,9 @@ public class SemesterController extends AbstractController {
             newValue.getSemesterPlan().semesterListProperty().addListener(listChangeListener);
             reinitializeSemesterBoxes();
         }));
+        // Add a invalidation listener to listen for "no changes" (but indeed changes, for example loading the same
+        // dataset from disk but with different fulfilled properties of enrollments
+        studyGuideApplication.studyPlanProperty().addListener(observable -> reinitializeSemesterBoxes());
     }
 
     /**
@@ -77,7 +80,9 @@ public class SemesterController extends AbstractController {
         int i = 0;
         for (Semester semester : studyGuideApplication.getStudyPlan().getSemesterPlan()) {
             SemesterBoxController semesterBoxController = semesterBoxPaneCreator.create(semester);
-            logger.debug("Creating semester box controller {}", semesterBoxController);
+            if (logger.isDebugEnabled()) {
+                logger.debug("Creating semester box controller {}", semesterBoxController);
+            }
             BorderPane semesterBox = semesterBoxController.getPane();
             semesterBoxes.add(semesterBox, i % 2, i / 2);
             i++;

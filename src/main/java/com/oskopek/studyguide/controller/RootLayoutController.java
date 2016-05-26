@@ -9,6 +9,7 @@ import com.oskopek.studyguide.view.AlertCreator;
 import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
 import com.oskopek.studyguide.view.ProgressCreator;
 import com.oskopek.studyguide.view.StudyGuideApplication;
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -277,8 +278,9 @@ public class RootLayoutController extends AbstractController {
         try {
             writer.writeTo(studyGuideApplication.getStudyPlan(), file.getAbsolutePath());
         } catch (IOException e) {
-            AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to save study plan: " + e);
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("root.openFailed") + ": " + e);
             e.printStackTrace();
+            return;
         }
         openedFile = file;
     }
@@ -292,20 +294,34 @@ public class RootLayoutController extends AbstractController {
      */
     private void openFromFile(File file) {
         if (file == null) {
-            logger.debug("Cannot open from null file.");
+            logger.error("Cannot open from null file.");
             return;
         }
-        try {
-            JsonDataReaderWriter reader = new JsonDataReaderWriter(messages, eventBus);
-            StudyPlan studyPlan = reader.readFrom(file.getAbsolutePath());
-            studyGuideApplication.setStudyPlan(studyPlan);
-            studyPlan.getConstraints().recheckAll();
-        } catch (IOException e) {
-            AlertCreator.showAlert(Alert.AlertType.ERROR, "Failed to open study plan: " + e);
+        StudyPlan oldPlan = studyGuideApplication.getStudyPlan();
+        // notify the user something will happen (erase semester boxes)
+        studyGuideApplication.setStudyPlan(new DefaultStudyPlan());
+        Task<StudyPlan> loadFromFileTask = new Task<StudyPlan>() {
+            @Override
+            protected StudyPlan call() throws Exception {
+                JsonDataReaderWriter reader = new JsonDataReaderWriter(messages, eventBus);
+                StudyPlan studyPlan = reader.readFrom(file.getAbsolutePath());
+                return studyPlan;
+            }
+        };
+        loadFromFileTask.setOnFailed(event -> {
+            Throwable e = event.getSource().getException();
+            Platform.runLater(() -> studyGuideApplication.setStudyPlan(oldPlan));
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("root.openFailed") + ": " + e);
             e.printStackTrace();
-        }
-        if (studyGuideApplication.getStudyPlan() != null) {
+        });
+        loadFromFileTask.setOnSucceeded(event -> {
+            StudyPlan newPlan = loadFromFileTask.getValue();
+            Platform.runLater(() -> {
+                studyGuideApplication.setStudyPlan(newPlan);
+                newPlan.getConstraints().recheckAll();
+            });
             openedFile = file;
-        }
+        });
+        new Thread(loadFromFileTask).start();
     }
 }
