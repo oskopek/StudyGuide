@@ -57,8 +57,10 @@ class StudyGuideApplicationStarter {
             primaryStage.show();
         });
         studyGuideApplication.studyPlanProperty().addListener((observable, oldValue, newValue) -> {
-            ((DefaultStudyPlan) newValue).constraintsProperty()
-                    .addListener((observable1, oldValue1, newValue1) -> newValue1.recheckAll()); // TODO HACK
+            if (newValue != null) {
+                ((DefaultStudyPlan) newValue).constraintsProperty()
+                        .addListener((observable1, oldValue1, newValue1) -> newValue1.recheckAll()); // TODO HACK
+            }
         });
         eventBus.register(deadEventListener);
         studyGuideApplication.setPrimaryStage(primaryStage);

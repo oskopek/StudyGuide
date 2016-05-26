@@ -61,8 +61,8 @@ public class FindCoursesController extends AbstractController implements FindCou
         logger.debug("Courses found for input \"{}\": {}", input, Arrays.toString(courses.toArray()));
 
         if (courses.isEmpty()) {
-            AlertCreator
-                    .showAlert(Alert.AlertType.INFORMATION, "No courses found for search string: \"" + input + "\"");
+            AlertCreator.showAlert(Alert.AlertType.INFORMATION,
+                    String.format(messages.getString("studyPane.cannotFindCourse"), input));
             return;
         }
 

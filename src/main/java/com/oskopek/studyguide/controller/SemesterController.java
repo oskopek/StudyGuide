@@ -159,8 +159,8 @@ public class SemesterController extends AbstractController {
             courseTask.setOnFailed(event -> {
                 progressDialog.close();
                 AlertCreator.showAlert(Alert.AlertType.ERROR,
-                        messages.getString("semesterPane.addCourseFromFailed") + ":\n\n"
-                                + event.getSource().getException().getLocalizedMessage());
+                        messages.getString("semesterPane.addCourseFromFailed") + ":\n\n" + event.getSource()
+                                .getException());
                 throw new IllegalStateException("Adding course from SIS failed.", event.getSource().getException());
             });
             new Thread(courseTask).start();

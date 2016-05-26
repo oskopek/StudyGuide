@@ -26,7 +26,7 @@
         </Menu>
         <Menu mnemonicParsing="false" text="%root.help">
             <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp"
-                      text="%root.help"/>
+                      text="%root.manual"/>
             <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAbout"
                       text="%root.about"/>
         </Menu>

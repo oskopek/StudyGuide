@@ -102,12 +102,6 @@ public class RootLayoutController extends AbstractController {
                     return scraper.scrapeStudyPlan(submittedURL);
                 }
             };
-            studyPlanTask.exceptionProperty().addListener((observable, oldValue, newValue) -> {
-                progressDialog.close();
-                AlertCreator.showAlert(Alert.AlertType.ERROR,
-                        messages.getString("root.openFromFailed") + ":\n\n" + newValue.getLocalizedMessage());
-                throw new IllegalStateException("Open from failed.", newValue);
-            });
             studyPlanTask.setOnSucceeded(event -> {
                 progressDialog.close();
                 studyGuideApplication.setStudyPlan(studyPlanTask.getValue());
@@ -115,7 +109,8 @@ public class RootLayoutController extends AbstractController {
             });
             studyPlanTask.setOnFailed(event -> {
                 progressDialog.close();
-                AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("root.openFromFailed"));
+                AlertCreator.showAlert(Alert.AlertType.ERROR,
+                        messages.getString("root.openFromFailed") + ":\n\n" + event.getSource().getException());
             });
 
             new Thread(studyPlanTask).start();
@@ -311,7 +306,7 @@ public class RootLayoutController extends AbstractController {
         loadFromFileTask.setOnFailed(event -> {
             Throwable e = event.getSource().getException();
             Platform.runLater(() -> studyGuideApplication.setStudyPlan(oldPlan));
-            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("root.openFailed") + ": " + e);
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("root.openFailed") + ":\n\n" + e);
             e.printStackTrace();
         });
         loadFromFileTask.setOnSucceeded(event -> {
