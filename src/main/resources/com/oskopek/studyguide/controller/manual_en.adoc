@@ -24,9 +24,15 @@ post a question on StackOverflow,
 or email me personally. You can find all the needed information in the menu, in
 "%root.help" -> "%root.about".
 
-=== Changing the language (TODO version 1.0.0)
+=== Changing the language
 
-TODO Localization
+If you want to run a translated version of StudyGuide, set your system locale accordingly and restart StudyGuide.
+
+If you want to try out a translated version (on Linux) without changing your system locale permanently,
+try running: `LC_ALL="LOCALE" java -jar StudyGuide.jar`, where `LOCALE` is any locale available on your system
+(run `locale -a` to view all available).
+
+StudyGuide currently does not support changing the language on the fly.
 
 == Load and save a study plan
 
@@ -56,9 +62,16 @@ Most of them are from the Computer Science section of the Faculty of Mathematics
 You can find all of them in the folder `src/test/resources/com/oskopek/studyguide/persistence/`,
 located in the project directory.
 
-=== Scrape a study plan from a HTML document (TODO version 1.0.0)
+=== Download a study plan from a HTML document
 
-TODO "%root.file" -> "%root.openFrom"
+StudyGuide supports downloading and importing study plans from any HTML file of a valid format (even local files).
+Currently, the only valid format supported is the one the Computer Science section of link:http://www.mff.cuni.cz/[MFF]
+uses on link:http://www.mff.cuni.cz/studium/bcmgr/ok/itoc.htm[its pages],
+for example this one: link:http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm[].
+No other formats are supported at this time.
+
+To try it out, click on "%root.file" -> "%root.openFrom" and paste a URL of a validly formatted study plan HTML file.
+The plan will import itself and you can then add semesters and enroll in courses as shown in section <<Edit your study plan>>.
 
 == Edit your study plan
 
@@ -84,9 +97,16 @@ properties. It will now be available to enroll in.
 By "creating a course" we mean adding it to the list of courses that can be enrolled in, not directly enrolling
 and placing it into a semester. To enroll an already created course, see the section <<Enrolling in a course>>.
 
-=== Add a course from SIS (TODO version 1.0.0)
+=== Add a course from SIS
 
-TODO The "%semesterPane.addCourseFrom" button.
+To be able to add a course from an online resource
+(link:https://www.cuni.cz/UK-4428.html[SIS -- Student Information System])
+you must first configure a valid SIS URL base (f.e. VSCHT `https://student.vscht.cz/` or CUNI `https://is.cuni.cz/studium/`),
+using the dialog in "%root.SIS" -> "%root.setSisUrl".
+
+Once you have a SIS URL configured, click on the "%semesterPane.addCourseFrom" button in the upper left corner
+and enter a course ID. The course will be imported into your study plan and you can now find it using
+"%studyPane.addCourse" on the upper right.
 
 === Enrolling in a course
 
@@ -99,6 +119,16 @@ After it has been added, you can drag and drop the enrollment around, moving it 
 To mark it as fulfilled (f.e. after the student passed the exam associated with it), click on the checkbox
 to the right of the course enrollment name and a "%checkmark" will appear.
 If you want to remove the enrollment altogether, click on the "%crossmark" on the far right.
+
+=== Semester statistics
+
+At the top of each semester, between the semester name and remove button, semester statistics are displayed.
+Currently, StudyGuide shows these:
+
+* Fulfilled/Total -- the fulfilled credit sum / the total credit sum of courses enrolled in the given semester
+* ECTS workload estimation -- a non-negative number determining the difficulty of the planned semester in terms of
+course workload. The text color tries to warn users the semester will be too easy (green)
+or too hard (red). Typical workload values are at around 30, denoted by the yellow color.
 
 == Verifying constraints
 
@@ -122,6 +152,7 @@ Currently available course enrollment constraints:
 
 * CourseEnrollmentCorequisiteConstraint -- all courses listed as corequisites for this course enrollment
 have to be enrolled in at the latest in the semester this enrollment is in
+* CourseEnrollmentEnrolledInConstraint -- checks whether the course is enrolled in a semester the course is taught (summer, winter or both)
 * CourseEnrollmentPrerequisiteConstraint -- all courses listed as prerequisites for this course
 were fulfilled at the latest in the semester preceding this enrollment
 
@@ -138,6 +169,7 @@ Currently available global constraints:
 (i.e. a student cannot enroll in a course more than N times)
 * GlobalCreditsSumConstraint -- the minimum sum of credits from fulfilled courses a student needs in the whole plan
 * GlobalCreditsSumUntilSemesterConstraint -- the minimum sum of credits from fulfilled courses a student needs until a given semester is over
+* GlobalLongStudyFeeConstraint -- notifies the user of the fee sum he will pay with the currently set up plan (if he has a non-empty semester at index N or later)
 
 === Course group constraints
 
@@ -155,7 +187,3 @@ Currently available course group constraints:
 a student needs
 * CourseGroupCreditsSumConstraint -- minimum sum of credits from fulfilled courses from this group a student needs
 * CourseGroupFulfilledAllConstraint -- the student needs to fulfill all of the courses in this group
-
-=== Semester statistics (TODO version 1.0.0)
-
-TODO Fulfilled/Total, ECTS hours estimation

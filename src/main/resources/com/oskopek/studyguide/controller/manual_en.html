@@ -5,12 +5,12 @@
         <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="generator" content="Asciidoctor 1.5.2">
+        <meta name="generator" content="Asciidoctor 1.5.4">
         <title>StudyGuide Manual (EN)</title>
         <style>
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
-            /* Remove the comments around the @import statement below when using this as a custom stylesheet */
-            /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400";*/
+            /* Remove comment around @import statement below when using as a custom stylesheet */
+            /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
             article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
                 display: block
             }
@@ -231,10 +231,6 @@
                 -ms-interpolation-mode: bicubic
             }
 
-            #map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object {
-                max-width: none !important
-            }
-
             .left {
                 float: left !important
             }
@@ -263,11 +259,11 @@
                 display: none
             }
 
-            .antialiased, body {
+            body {
                 -webkit-font-smoothing: antialiased
             }
 
-            img {
+            img, object, svg {
                 display: inline-block;
                 vertical-align: middle
             }
@@ -278,6 +274,15 @@
             }
 
             select {
+                width: 100%
+            }
+
+            .center {
+                margin-left: auto;
+                margin-right: auto
+            }
+
+            .spread {
                 width: 100%
             }
 
@@ -539,6 +544,10 @@
                 line-height: 1.6
             }
 
+            body {
+                tab-size: 4
+            }
+
             h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 {
                 line-height: 1.2;
                 word-spacing: -.05em
@@ -583,19 +592,22 @@
             }
 
             kbd {
+                font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
                 display: inline-block;
                 color: rgba(0, 0, 0, .8);
-                font-size: .75em;
-                line-height: 1.4;
+                font-size: .65em;
+                line-height: 1.45;
                 background-color: #f7f7f7;
                 border: 1px solid #ccc;
                 -webkit-border-radius: 3px;
                 border-radius: 3px;
                 -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 0 0 .1em white inset;
                 box-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 0 0 .1em #fff inset;
-                margin: -.15em .15em 0 .15em;
-                padding: .2em .6em .2em .5em;
+                margin: 0 .15em;
+                padding: .2em .5em;
                 vertical-align: middle;
+                position: relative;
+                top: -.1em;
                 white-space: nowrap
             }
 
@@ -756,6 +768,11 @@
                 list-style-type: none
             }
 
+            #toc li {
+                line-height: 1.3334;
+                margin-top: .3334em
+            }
+
             #toc a {
                 text-decoration: none
             }
@@ -797,6 +814,7 @@
 
                 #toc.toc2 #toctitle {
                     margin-top: 0;
+                    margin-bottom: .8rem;
                     font-size: 1.2em
                 }
 
@@ -1133,7 +1151,8 @@
             table.pyhltable td {
                 vertical-align: top;
                 padding-top: 0;
-                padding-bottom: 0
+                padding-bottom: 0;
+                line-height: 1.45
             }
 
             table.pyhltable td.code {
@@ -1253,7 +1272,7 @@
 
             .quoteblock .attribution cite, .verseblock .attribution cite {
                 display: block;
-                letter-spacing: -.05em;
+                letter-spacing: -.025em;
                 color: rgba(0, 0, 0, .6)
             }
 
@@ -1278,10 +1297,6 @@
 
             table.tableblock td > .paragraph:last-child p > p:last-child, table.tableblock th > p:last-child, table.tableblock td > p:last-child {
                 margin-bottom: 0
-            }
-
-            table.spread {
-                width: 100%
             }
 
             table.tableblock, th.tableblock, td.tableblock {
@@ -1481,13 +1496,14 @@
                 background: none
             }
 
-            td.hdlist1 {
-                padding-right: .75em;
-                font-weight: bold
+            td.hdlist1, td.hdlist2 {
+                vertical-align: top;
+                padding: 0 .625em
             }
 
-            td.hdlist1, td.hdlist2 {
-                vertical-align: top
+            td.hdlist1 {
+                font-weight: bold;
+                padding-bottom: 1.25em
             }
 
             .literalblock + .colist, .listingblock + .colist {
@@ -1547,19 +1563,25 @@
             }
 
             a.image {
+                text-decoration: none;
+                display: inline-block
+            }
+
+            a.image object {
+                pointer-events: none
+            }
+
+            sup.footnote, sup.footnoteref {
+                font-size: .875em;
+                position: static;
+                vertical-align: super
+            }
+
+            sup.footnote a, sup.footnoteref a {
                 text-decoration: none
             }
 
-            span.footnote, span.footnoteref {
-                vertical-align: super;
-                font-size: .875em
-            }
-
-            span.footnote a, span.footnoteref a {
-                text-decoration: none
-            }
-
-            span.footnote a:active, span.footnoteref a:active {
+            sup.footnote a:active, sup.footnoteref a:active {
                 text-decoration: underline
             }
 
@@ -1577,11 +1599,11 @@
             }
 
             #footnotes .footnote {
-                padding: 0 .375em;
-                line-height: 1.3;
+                padding: 0 .375em 0 .225em;
+                line-height: 1.3334;
                 font-size: .875em;
                 margin-left: 1.2em;
-                text-indent: -1.2em;
+                text-indent: -1.05em;
                 margin-bottom: .2em
             }
 
@@ -1840,23 +1862,19 @@
                 display: none
             }
 
-            h1, h2 {
-                letter-spacing: -.01em
-            }
-
-            dt, th.tableblock, td.content {
+            dt, th.tableblock, td.content, div.footnote {
                 text-rendering: optimizeLegibility
             }
 
-            p, td.content {
+            h1, h2, p, td.content, span.alt {
                 letter-spacing: -.01em
             }
 
-            p strong, td.content strong {
+            p strong, td.content strong, div.footnote strong {
                 letter-spacing: -.005em
             }
 
-            p, blockquote, dt, td.content {
+            p, blockquote, dt, td.content, span.alt {
                 font-size: 1.0625rem
             }
 
@@ -1910,7 +1928,7 @@
                     content: " (" attr(title) ")"
                 }
 
-                pre, blockquote, tr, img {
+                pre, blockquote, tr, img, object, svg {
                     page-break-inside: avoid
                 }
 
@@ -1918,8 +1936,8 @@
                     display: table-header-group
                 }
 
-                img {
-                    max-width: 100% !important
+                svg {
+                    max-width: 100%
                 }
 
                 p, blockquote, dt, td.content {
@@ -2078,10 +2096,20 @@
                             "%root.help" &#8594; "%root.about".</p>
                     </div>
                     <div class="sect2">
-                        <h3 id="_changing_the_language_todo_version_1_0_0">1.1. Changing the language (TODO version
-                            1.0.0)</h3>
+                        <h3 id="_changing_the_language">1.1. Changing the language</h3>
                         <div class="paragraph">
-                            <p>TODO Localization</p>
+                            <p>If you want to run a translated version of StudyGuide, set your system locale accordingly
+                                and restart StudyGuide.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>If you want to try out a translated version (on Linux) without changing your system
+                                locale permanently,
+                                try running: <code>LC_ALL="LOCALE" java -jar StudyGuide.jar</code>, where
+                                <code>LOCALE</code> is any locale available on your system
+                                (run <code>locale -a</code> to view all available).</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>StudyGuide currently does not support changing the language on the fly.</p>
                         </div>
                     </div>
                 </div>
@@ -2129,10 +2157,23 @@
                         </div>
                     </div>
                     <div class="sect2">
-                        <h3 id="_scrape_a_study_plan_from_a_html_document_todo_version_1_0_0">2.4. Scrape a study plan
-                            from a HTML document (TODO version 1.0.0)</h3>
+                        <h3 id="_download_a_study_plan_from_a_html_document">2.4. Download a study plan from a HTML
+                            document</h3>
                         <div class="paragraph">
-                            <p>TODO "%root.file" &#8594; "%root.openFrom"</p>
+                            <p>StudyGuide supports downloading and importing study plans from any HTML file of a valid
+                                format (even local files).
+                                Currently, the only valid format supported is the one the Computer Science section of <a
+                                        href="http://www.mff.cuni.cz/">MFF</a>
+                                uses on <a href="http://www.mff.cuni.cz/studium/bcmgr/ok/itoc.htm">its pages</a>,
+                                for example this one: <a href="http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm"
+                                                         class="bare">http://www.mff.cuni.cz/studium/bcmgr/ok/ib3a21.htm</a>.
+                                No other formats are supported at this time.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>To try it out, click on "%root.file" &#8594; "%root.openFrom" and paste a URL of a
+                                validly formatted study plan HTML file.
+                                The plan will import itself and you can then add semesters and enroll in courses as
+                                shown in section <a href="#_edit_your_study_plan">Edit your study plan</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -2178,10 +2219,23 @@
                         </div>
                     </div>
                     <div class="sect2">
-                        <h3 id="_add_a_course_from_sis_todo_version_1_0_0">3.3. Add a course from SIS (TODO version
-                            1.0.0)</h3>
+                        <h3 id="_add_a_course_from_sis">3.3. Add a course from SIS</h3>
                         <div class="paragraph">
-                            <p>TODO The "%semesterPane.addCourseFrom" button.</p>
+                            <p>To be able to add a course from an online resource
+                                (<a href="https://www.cuni.cz/UK-4428.html">SIS&#8201;&#8212;&#8201;Student Information
+                                    System</a>)
+                                you must first configure a valid SIS URL base (f.e. VSCHT <code><a
+                                        href="https://student.vscht.cz/"
+                                        class="bare">https://student.vscht.cz/</a></code> or CUNI <code><a
+                                        href="https://is.cuni.cz/studium/" class="bare">https://is.cuni.cz/studium/</a></code>),
+                                using the dialog in "%root.SIS" &#8594; "%root.setSisUrl".</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Once you have a SIS URL configured, click on the "%semesterPane.addCourseFrom" button in
+                                the upper left corner
+                                and enter a course ID. The course will be imported into your study plan and you can now
+                                find it using
+                                "%studyPane.addCourse" on the upper right.</p>
                         </div>
                     </div>
                     <div class="sect2">
@@ -2201,6 +2255,30 @@
                                 to the right of the course enrollment name and a "%checkmark" will appear.
                                 If you want to remove the enrollment altogether, click on the "%crossmark" on the far
                                 right.</p>
+                        </div>
+                    </div>
+                    <div class="sect2">
+                        <h3 id="_semester_statistics">3.5. Semester statistics</h3>
+                        <div class="paragraph">
+                            <p>At the top of each semester, between the semester name and remove button, semester
+                                statistics are displayed.
+                                Currently, StudyGuide shows these:</p>
+                        </div>
+                        <div class="ulist">
+                            <ul>
+                                <li>
+                                    <p>Fulfilled/Total&#8201;&#8212;&#8201;the fulfilled credit sum / the total credit
+                                        sum of courses enrolled in the given semester</p>
+                                </li>
+                                <li>
+                                    <p>ECTS workload estimation&#8201;&#8212;&#8201;a non-negative number determining
+                                        the difficulty of the planned semester in terms of
+                                        course workload. The text color tries to warn users the semester will be too
+                                        easy (green)
+                                        or too hard (red). Typical workload values are at around 30, denoted by the
+                                        yellow color.</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -2245,6 +2323,11 @@
                                         have to be enrolled in at the latest in the semester this enrollment is in</p>
                                 </li>
                                 <li>
+                                    <p>CourseEnrollmentEnrolledInConstraint&#8201;&#8212;&#8201;checks whether the
+                                        course is enrolled in a semester the course is taught (summer, winter or
+                                        both)</p>
+                                </li>
+                                <li>
                                     <p>CourseEnrollmentPrerequisiteConstraint&#8201;&#8212;&#8201;all courses listed as
                                         prerequisites for this course
                                         were fulfilled at the latest in the semester preceding this enrollment</p>
@@ -2283,6 +2366,11 @@
                                     <p>GlobalCreditsSumUntilSemesterConstraint&#8201;&#8212;&#8201;the minimum sum of
                                         credits from fulfilled courses a student needs until a given semester is
                                         over</p>
+                                </li>
+                                <li>
+                                    <p>GlobalLongStudyFeeConstraint&#8201;&#8212;&#8201;notifies the user of the fee sum
+                                        he will pay with the currently set up plan (if he has a non-empty semester at
+                                        index N or later)</p>
                                 </li>
                             </ul>
                         </div>
@@ -2323,19 +2411,12 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="sect2">
-                        <h3 id="_semester_statistics_todo_version_1_0_0">4.4. Semester statistics (TODO version
-                            1.0.0)</h3>
-                        <div class="paragraph">
-                            <p>TODO Fulfilled/Total, ECTS hours estimation</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
         <div id="footer">
             <div id="footer-text">
-                Last updated 2016-05-22 02:17:38 CEST
+                Last updated 2016-05-26 16:26:25 CEST
             </div>
         </div>
     </body>
