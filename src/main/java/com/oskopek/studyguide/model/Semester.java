@@ -11,12 +11,13 @@ import javafx.collections.ObservableList;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Single semester in a {@link StudyPlan}.
  */
-public class Semester {
+public class Semester implements Iterable<CourseEnrollment> {
 
     private final StringProperty name;
     private final ListProperty<CourseEnrollment> courseEnrollmentList;
@@ -143,6 +144,11 @@ public class Semester {
      */
     public ListProperty<CourseEnrollment> courseEnrollmentListProperty() {
         return courseEnrollmentList;
+    }
+
+    @Override
+    public Iterator<CourseEnrollment> iterator() {
+        return courseEnrollmentList.iterator();
     }
 
     @Override

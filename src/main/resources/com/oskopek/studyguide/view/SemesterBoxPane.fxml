@@ -14,9 +14,13 @@
                       BorderPane.alignment="CENTER">
                     <children>
                         <Label text="%course.fulfilled"/>
-                        <Label text="15/30"/>
+                        <Label fx:id="fulfilledTotalCreditLabel" text="0/0"/>
                         <Separator maxHeight="30.0" orientation="VERTICAL"/>
-                        <Label text="(1.0)"/>
+                        <Label fx:id="semesterDifficultyLabel" text="(0.0)">
+                            <tooltip>
+                                <Tooltip text="%semesterBox.semesterDifficultyTooltip"/>
+                            </tooltip>
+                        </Label>
                         <Separator maxHeight="30.0" orientation="VERTICAL"/>
                         <Button fx:id="removeSemesterButton" mnemonicParsing="false" onAction="#onRemoveSemester"
                                 text=" - ">

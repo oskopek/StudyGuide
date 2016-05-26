@@ -1,5 +1,6 @@
 package com.oskopek.studyguide.controller;
 
+import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.StringMessageEvent;
 import com.oskopek.studyguide.model.CourseEnrollment;
 import com.oskopek.studyguide.model.Semester;
@@ -7,6 +8,8 @@ import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.view.AlertCreator;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -21,7 +24,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Controller for SemesterBoxPane.
@@ -31,9 +38,14 @@ public class SemesterBoxController extends AbstractController {
 
     private static final DataFormat semesterFormat = new DataFormat("semester");
     private static final DataFormat enrollmentIndexFormat = new DataFormat("enrollment");
+    private static final DecimalFormat coefficientFormatter = new DecimalFormat("#0.0");
     private final Logger logger = LoggerFactory.getLogger(getClass());
     @FXML
     private TextField semesterNameArea;
+    @FXML
+    private Label fulfilledTotalCreditLabel;
+    @FXML
+    private Label semesterDifficultyLabel;
     @FXML
     private TableView<CourseEnrollment> semesterTable;
     @FXML
@@ -53,6 +65,8 @@ public class SemesterBoxController extends AbstractController {
     @Inject
     private CourseDetailController courseDetailController;
     private Semester semester;
+    private StringProperty fulfilledTotalCreditProperty;
+    private StringProperty semesterDifficultyProperty;
     private BorderPane pane;
 
     /**
@@ -62,8 +76,14 @@ public class SemesterBoxController extends AbstractController {
      */
     @FXML
     private void initialize() {
+        eventBus.register(this);
+        coefficientFormatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.US)); // use a dot "."
+        fulfilledTotalCreditProperty = new SimpleStringProperty("0/0");
+        semesterDifficultyProperty = new SimpleStringProperty("(0.0)");
         semesterNameArea.textProperty().addListener((observable) -> onSemesterNameChange());
-        warnColumn.setCellValueFactory(param -> new LabelBinding(param.getValue().brokenConstraintProperty()));
+        fulfilledTotalCreditLabel.textProperty().bind(fulfilledTotalCreditProperty);
+        semesterDifficultyLabel.textProperty().bind(semesterDifficultyProperty);
+        warnColumn.setCellValueFactory(param -> new WarningLabelBinding(param.getValue().brokenConstraintProperty()));
         idColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().idProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().getCourse().nameOrLocalizedNameProperty());
         creditsColumn
@@ -71,17 +91,6 @@ public class SemesterBoxController extends AbstractController {
         fulfilledColumn.setCellFactory(
                 (final TableColumn<CourseEnrollment, Boolean> param) -> new TableCell<CourseEnrollment, Boolean>() {
                     public final CheckBox fulfilledCheckBox;
-
-                    @Override
-                    public void updateItem(Boolean item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            fulfilledCheckBox.setSelected(item);
-                            setGraphic(fulfilledCheckBox);
-                        }
-                    }
 
                     {
                         fulfilledCheckBox = new CheckBox();
@@ -94,11 +103,26 @@ public class SemesterBoxController extends AbstractController {
                         });
                     }
 
+                    @Override
+                    public void updateItem(Boolean item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            fulfilledCheckBox.setSelected(item);
+                            setGraphic(fulfilledCheckBox);
+                        }
+                    }
+
                 });
         fulfilledColumn.setCellValueFactory(cellData -> cellData.getValue().fulfilledProperty());
         removeColumn.setCellFactory(
                 (final TableColumn<CourseEnrollment, String> param) -> new TableCell<CourseEnrollment, String>() {
                     final Button removeButton = new Button(messages.getString("crossmark"));
+
+                    {
+                        removeButton.setPadding(new Insets(2));
+                    }
 
                     @Override
                     public void updateItem(String item, boolean empty) {
@@ -120,9 +144,7 @@ public class SemesterBoxController extends AbstractController {
                         }
                     }
 
-                    {
-                        removeButton.setPadding(new Insets(2));
-                    }
+
 
                 });
         semesterTable.getSelectionModel().selectedItemProperty()
@@ -134,6 +156,7 @@ public class SemesterBoxController extends AbstractController {
                     }
                     courseDetailController.setCourse(toSet);
                 });
+        updateSummaryLabels();
     }
 
     /**
@@ -148,6 +171,7 @@ public class SemesterBoxController extends AbstractController {
         this.semester = semester;
         semesterNameArea.setText(semester.getName());
         semesterTable.itemsProperty().bindBidirectional(semester.courseEnrollmentListProperty());
+        updateSummaryLabels();
     }
 
     /**
@@ -193,6 +217,53 @@ public class SemesterBoxController extends AbstractController {
      */
     public void setPane(BorderPane pane) {
         this.pane = pane;
+    }
+
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for changes in a {@link Course}.
+     *
+     * @param changed the changed course posted on the bus
+     */
+    @Subscribe
+    public void handleCourseChange(Course changed) {
+        logger.trace("Course changed: {}", changed);
+        updateSummaryLabels();
+    }
+
+    /**
+     * An {@link com.google.common.eventbus.EventBus} subscriber,
+     * listening for changes in a {@link CourseEnrollment}.
+     *
+     * @param changed the changed course enrollment posted on the bus
+     */
+    @Subscribe
+    public void handleCourseEnrollmentChange(CourseEnrollment changed) {
+        logger.trace("CourseEnrollment changed: {}", changed);
+        if (semester.equals(changed.getSemester())) {
+            updateSummaryLabels();
+        }
+    }
+
+    /**
+     * Updates the {@link #fulfilledTotalCreditLabel} and {@link #semesterDifficultyLabel}.
+     */
+    private void updateSummaryLabels() {
+        if (semester == null) {
+            fulfilledTotalCreditProperty.setValue("0/0");
+            semesterDifficultyLabel.setTextFill(Color.BLACK);
+            semesterDifficultyProperty.setValue("(0.0)");
+            return;
+        }
+        int fulfilledSum = semester.getCourseEnrollmentList().stream().filter(CourseEnrollment::isFulfilled).collect(
+                Collectors.summingInt(value -> value.getCourse().getCredits().getCreditValue()));
+        int totalSum = semester.getCourseEnrollmentList().stream().collect(
+                Collectors.summingInt(value -> value.getCourse().getCredits().getCreditValue()));
+
+        fulfilledTotalCreditProperty.setValue(fulfilledSum + "/" + totalSum);
+        double workloadCoefficient = ECTSWorkloadCalculator.calculateWorkloadCoefficient(semester);
+        semesterDifficultyProperty.setValue("(" + coefficientFormatter.format(workloadCoefficient) + ")");
+        semesterDifficultyLabel.setTextFill(ECTSWorkloadCalculator.calculateWorkloadColor(workloadCoefficient));
     }
 
     /**
@@ -257,18 +328,65 @@ public class SemesterBoxController extends AbstractController {
     }
 
     /**
+     * Utility class to calculate a workload coefficient for a given semester based on ECTS credit hour workload
+     * estimates. Uses default for the Czech Republic. More info:
+     * <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">https://en.wikipedia
+     * .org/wiki/European_Credit_Transfer_and_Accumulation_System</a>
+     */
+    private static class ECTSWorkloadCalculator {
+
+        //
+        private static final int HOURS_PER_CREDIT = 26;
+        private static final int SEMESTER_LENGTH = 14; // estimate
+
+        /**
+         * Calculates the workload coefficient: {@code (credit_sum * hoursSpentPerCredit) / semesterWeekCount / 7
+         * (weekdays) / 24 (hours a day) * 100}.
+         *
+         * @param semester the semester whose coefficient to calculate
+         * @return the calculated coefficient
+         */
+        public static double calculateWorkloadCoefficient(Semester semester) {
+            int creditSum = semester.getCourseEnrollmentList().stream()
+                    .collect(Collectors.summingInt(c -> c.getCourse().getCredits().getCreditValue()));
+            return (creditSum * HOURS_PER_CREDIT) / (double) SEMESTER_LENGTH / 7d / 24d * 100d;
+        }
+
+        /**
+         * Calculates a color (used for the label's text fill) representing the difficulty of the given semester.
+         * Gradually increases from light green to dark red as the semester gets harder.
+         *
+         * @param workloadCoefficient the coefficient whose color to compute (should be in the range 0-60)
+         * @return the calculated color
+         */
+        public static Color calculateWorkloadColor(double workloadCoefficient) {
+            if (workloadCoefficient >= 60) { // set a max value
+                workloadCoefficient = 60;
+            }
+            if (workloadCoefficient < 0) { // set a min value
+                workloadCoefficient = 0;
+            }
+            // http://stackoverflow.com/questions/340209/generate-colors-between-red-and-green-for-a-power-meter
+            int R = (int) Math.round((255 * workloadCoefficient) / 60d);
+            int G = (int) Math.round((255 * (60 - workloadCoefficient)) / 60d);
+            int B = 0;
+            return Color.rgb(R, G, B).brighter();
+        }
+    }
+
+    /**
      * Custom label binding, used for showing constraint warnings for any broken constraint event.
      */
-    private class LabelBinding extends ObjectBinding<Label> {
+    private class WarningLabelBinding extends ObjectBinding<Label> {
 
         private final ObjectProperty<? extends StringMessageEvent> eventObjectProperty;
 
         /**
-         * Construct a LabelBinding and bind to an event property.
+         * Construct a WarningLabelBinding and bind to an event property.
          *
          * @param eventObjectProperty the property to bind to
          */
-        LabelBinding(ObjectProperty<? extends StringMessageEvent> eventObjectProperty) {
+        WarningLabelBinding(ObjectProperty<? extends StringMessageEvent> eventObjectProperty) {
             bind(eventObjectProperty);
             this.eventObjectProperty = eventObjectProperty;
         }
