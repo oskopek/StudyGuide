@@ -17,6 +17,12 @@ in the upper menu bar item *Help -> Help*.
 Post any development questions or comments you may have on Stack Overflow and/or don't hesitate to
 https://github.com/oskopek/StudyGuide/issues[open an issue].
 
+=== Running StudyGuide releases
+
+* Download a release from https://github.com/oskopek/StudyGuide/releases[]
+* To directly run StudyGuide, download the *executable JAR file*: `StudyGuide-VERSION-jar-with-dependencies.jar`
+* If you want to run a release, just try: `java -jar StudyGuide-VERSION-jar-with-dependencies.jar`
+
 === Building & running StudyGuide
 
 * See the section (further down) on How-to setup your *build environment* first.
@@ -25,7 +31,6 @@ https://github.com/oskopek/StudyGuide/issues[open an issue].
 * To run *integration tests*: `mvn clean install -Pit`
 * To *clean*, run: `mvn clean`
 * *Run StudyGuide*:
-** If you want to run a release, just try: `java -jar StudyGuide.jar`
 ** If you followed the build environment setup and want to run your version of StudyGuide,
 run `mvn exec:java` from the main project directory.
 ** If you want to run a translated version of StudyGuide, set your system locale accordingly and restart StudyGuide.
