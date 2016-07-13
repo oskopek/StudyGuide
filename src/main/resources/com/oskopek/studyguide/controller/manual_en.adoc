@@ -97,6 +97,11 @@ properties. It will now be available to enroll in.
 By "creating a course" we mean adding it to the list of courses that can be enrolled in, not directly enrolling
 and placing it into a semester. To enroll an already created course, see the section <<Enrolling in a course>>.
 
+=== Removing courses
+
+To remove a course from the plan and all its associated course enrollments,
+click on "%semesterPane.removeCourse", enter the course name or id, select the correct course and confirm.
+
 === Add a course from SIS
 
 To be able to add a course from an online resource

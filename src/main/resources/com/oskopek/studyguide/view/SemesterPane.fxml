@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="semesterPane" maxHeight="Infinity" maxWidth="Infinity"
             minHeight="300.0"
@@ -21,6 +20,8 @@
                         text="%semesterPane.newCourse"/>
                 <Button fx:id="addCourseFromButton" mnemonicParsing="false" onAction="#handleAddCourseFrom"
                         text="%semesterPane.addCourseFrom"/>
+                <Button fx:id="removeCourseButton" mnemonicParsing="false" onAction="#handleRemoveCourse"
+                        text="%semesterPane.removeCourse"/>
             </children>
             <BorderPane.margin>
                 <Insets/>

@@ -1,11 +1,15 @@
 package com.oskopek.studyguide.model;
 
 import com.oskopek.studyguide.model.constraints.Constraints;
+import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.CourseRegistry;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Default implementation of a {@link StudyPlan}.
@@ -92,6 +96,27 @@ public class DefaultStudyPlan implements StudyPlan {
      */
     public ObjectProperty<CourseRegistry> courseRegistryProperty() {
         return courseRegistry;
+    }
+
+    /**
+     * Remove a course from the course registry. Remove all associated course enrollment constraints and
+     * remove the course from all course groups in course group constraints. Does <strong>not</strong> remove
+     * the course from global constraints!
+     *
+     * @param toRemove the course to remove
+     */
+    public void removeCourse(Course toRemove) {
+        getCourseRegistry().removeCourse(toRemove);
+        List<CourseEnrollment> enrollmentList = getSemesterPlan().allCourseEnrollments()
+                .filter(ce -> ce.getCourse().equals(toRemove)).collect(Collectors.toList());
+        for (CourseEnrollment enrollment : enrollmentList) {
+            enrollment.getSemester().removeCourseEnrollment(enrollment);
+        }
+        getConstraints().getCourseGroupConstraintList().stream().map(cgc -> cgc.getCourseGroup().courseListProperty())
+                .forEach(cl -> cl.remove(toRemove));
+        getConstraints().removeAllCourseEnrollmentConstraints(enrollmentList);
+        getConstraints().recheckAll();
+
     }
 
     @Override

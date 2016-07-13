@@ -52,47 +52,59 @@ public class FindCoursesController extends AbstractController implements FindCou
     }
 
     /**
-     * Handles the user action of searching for a course.
+     * Handles search, displaying the found courses for user choice and selecting one of them.
+     *
+     * @param input the input string (id or name part)
+     * @return null if the course wasn't found or the user didn't choose anything
      */
-    @FXML
-    public void handleSearch() {
-        String input = searchField.getText();
+    public Course searchAndChooseCourse(String input) {
         List<Course> courses = findCourses(input).collect(Collectors.toList());
         logger.debug("Courses found for input \"{}\": {}", input, Arrays.toString(courses.toArray()));
 
         if (courses.isEmpty()) {
             AlertCreator.showAlert(Alert.AlertType.INFORMATION,
                     String.format(messages.getString("studyPane.cannotFindCourse"), input));
-            return;
+            return null;
         }
 
         ChooseCourseController controller = chooseCourseDialogPaneCreator.create(courses);
         Dialog<ButtonType> chooseCourseDialog = controller.getDialog();
         Optional<ButtonType> result = chooseCourseDialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
-            Course chosen = controller.getChosenCourse();
-            if (chosen != null) {
-                logger.debug("Chosen course: {}", chosen);
+            return controller.getChosenCourse();
+        } else {
+            return null;
+        }
+    }
 
-                Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
-                if (addTo == null) { // no semester in plan
-                    AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("findCourses.noSemester"));
+    /**
+     * Handles the user action of searching for a course.
+     */
+    @FXML
+    public void handleSearch() {
+        String input = searchField.getText();
+        Course chosen = searchAndChooseCourse(input);
+        if (chosen != null) {
+            logger.debug("Chosen course: {}", chosen);
+            Semester addTo = studyGuideApplication.getStudyPlan().getSemesterPlan().lastSemester();
+            if (addTo == null) { // no semester in plan
+                AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("findCourses.noSemester"));
+                return;
+            } else {
+                CourseEnrollment enrollment;
+                try {
+                    enrollment = addTo.addCourseEnrollment(chosen);
+                } catch (IllegalArgumentException e) {
+                    logger.debug("Added wrong course ({}), showing error box.", chosen);
+                    AlertCreator
+                            .showAlert(Alert.AlertType.ERROR, messages.getString("findCourses.courseAlreadyEnrolled"));
                     return;
-                } else {
-                    CourseEnrollment enrollment;
-                    try {
-                        enrollment = addTo.addCourseEnrollment(chosen);
-                    } catch (IllegalArgumentException e) {
-                        logger.debug("Added wrong course ({}), showing error box.", chosen);
-                        AlertCreator.showAlert(Alert.AlertType.ERROR,
-                                messages.getString("findCourses.courseAlreadyEnrolled"));
-                        return;
-                    }
-                    studyGuideApplication.getStudyPlan().getConstraints().addAllCourseEnrollmentConstraints(enrollment,
-                            studyGuideApplication.getStudyPlan().getSemesterPlan());
-                    enrollment.registerEventBus(eventBus);
                 }
+                studyGuideApplication.getStudyPlan().getConstraints().addAllCourseEnrollmentConstraints(enrollment,
+                        studyGuideApplication.getStudyPlan().getSemesterPlan());
+                enrollment.registerEventBus(eventBus);
             }
+
         }
     }
 

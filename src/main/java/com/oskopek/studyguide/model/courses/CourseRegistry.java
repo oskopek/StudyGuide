@@ -76,6 +76,20 @@ public class CourseRegistry {
     }
 
     /**
+     * Remove a course from the registry and return it. If there is no such course, null is returned happens.
+     *
+     * @param toRemove course to remove
+     * @return null if no course was removed
+     */
+    public Course removeCourse(Course toRemove) {
+        courseMapValues().forEach(c -> {
+            c.getCorequisites().remove(toRemove);
+            c.getPrerequisites().remove(toRemove);
+        });
+        return courseIdMap.remove(toRemove.getId());
+    }
+
+    /**
      * Get a course from the registry.
      *
      * @param id non-null

@@ -72,8 +72,7 @@ public class Course implements Comparable<Course> {
      * or if the locale is null when localizedName is non-null
      */
     public Course(String id, String name, String localizedName, Locale locale, Credits credits,
-            EnrollableIn enrollableIn,
-            List<String> teacherNames, List<Course> prerequisites, List<Course> corequisites)
+            EnrollableIn enrollableIn, List<String> teacherNames, List<Course> prerequisites, List<Course> corequisites)
             throws IllegalArgumentException {
         if (id == null || name == null || credits == null) {
             throw new IllegalArgumentException("Id, name and credits cannot be null.");

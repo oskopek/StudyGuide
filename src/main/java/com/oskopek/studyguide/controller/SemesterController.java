@@ -3,18 +3,12 @@ package com.oskopek.studyguide.controller;
 import com.google.common.eventbus.Subscribe;
 import com.oskopek.studyguide.constraint.event.BrokenCourseEnrollmentConstraintEvent;
 import com.oskopek.studyguide.constraint.event.FixedConstraintEvent;
-import com.oskopek.studyguide.model.CourseEnrollment;
-import com.oskopek.studyguide.model.Semester;
-import com.oskopek.studyguide.model.SemesterPlan;
-import com.oskopek.studyguide.model.StudyPlan;
+import com.oskopek.studyguide.model.*;
 import com.oskopek.studyguide.model.courses.Course;
 import com.oskopek.studyguide.model.courses.Credits;
 import com.oskopek.studyguide.model.courses.EnrollableIn;
 import com.oskopek.studyguide.persistence.SISHtmlScraper;
-import com.oskopek.studyguide.view.AlertCreator;
-import com.oskopek.studyguide.view.EnterStringDialogPaneCreator;
-import com.oskopek.studyguide.view.ProgressCreator;
-import com.oskopek.studyguide.view.SemesterBoxPaneCreator;
+import com.oskopek.studyguide.view.*;
 import javafx.beans.value.ChangeListener;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -27,6 +21,7 @@ import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -46,7 +41,13 @@ public class SemesterController extends AbstractController {
     private CourseDetailController courseDetailController;
 
     @Inject
+    private FindCoursesController findCoursesController;
+
+    @Inject
     private EnterStringDialogPaneCreator enterStringDialogPaneCreator;
+
+    @Inject
+    private ChooseCourseDialogPaneCreator chooseCourseDialogPaneCreator;
 
     @Inject
     private transient Logger logger;
@@ -125,6 +126,42 @@ public class SemesterController extends AbstractController {
                 new ArrayList<>(), new ArrayList<>());
         studyPlan.getCourseRegistry().putCourse(course);
         courseDetailController.setCourse(course);
+    }
+
+    /**
+     * Handles removing an existing course and all corresponding enrollments.
+     */
+    @FXML
+    private void handleRemoveCourse() {
+        StudyPlan studyPlan = studyGuideApplication.getStudyPlan();
+        if (studyPlan == null) {
+            AlertCreator.showAlert(Alert.AlertType.ERROR, messages.getString("course.cannotRemove"));
+            return;
+        }
+
+        EnterStringController enterStringController = enterStringDialogPaneCreator
+                .create(messages.getString("course.choose"));
+        Optional<ButtonType> result = enterStringController.getDialog().showAndWait();
+        if (!result.isPresent() || result.get() != ButtonType.APPLY) {
+            return;
+        }
+
+        String searchString = enterStringController.getSubmittedString();
+        Course chosen = findCoursesController.searchAndChooseCourse(searchString);
+        if (chosen == null) {
+            return;
+        }
+
+        CompletableFuture<Boolean> confirmResultFuture = AlertCreator
+                .showAlert(Alert.AlertType.CONFIRMATION, messages.getString("course.removeAreYouSure"));
+        confirmResultFuture.thenAccept(confirmResult -> {
+            if (confirmResult != null && confirmResult) {
+                ((DefaultStudyPlan) studyPlan).removeCourse(chosen);
+                if (chosen.equals(courseDetailController.getCourse())) {
+                    courseDetailController.setCourse(null);
+                }
+            }
+        });
     }
 
     /**
