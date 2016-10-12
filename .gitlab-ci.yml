@@ -1,0 +1,8 @@
+image: maven:3-jdk-8
+  
+build:
+ before_script:
+  - apt-get update
+  - apt-get install -y openjfx
+ script:
+  -"mvn clean install -B -Pit"
