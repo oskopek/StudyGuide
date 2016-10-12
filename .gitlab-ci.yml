@@ -5,4 +5,4 @@ build:
   - apt-get update
   - apt-get install -y openjfx
  script:
-  -"mvn clean install -B -Pit"
+  - mvn clean install -B -Pit
