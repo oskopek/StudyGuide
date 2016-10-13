@@ -22,7 +22,7 @@ stages:
 build-job:
   stage: build
   script:
-    - mvn clean compile $MAVEN_CLI_OPTS
+    - "mvn clean compile $MAVEN_CLI_OPTS"
   artifacts:
     paths:
       - target/
@@ -51,11 +51,6 @@ integrationtest-job:
 
 deploy-job:
   stage: deploy
-  script:
-    - ls -l .
-    - ls -l /cache
-    - tree /cache
-    - ls -l /builds
   artifacts:
     paths:
       - "target/*.jar"
