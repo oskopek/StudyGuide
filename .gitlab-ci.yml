@@ -1,18 +1,13 @@
 image: maven:3-jdk-8
 
 variables:
-  # This will supress any download for dependencies and plugins or upload messages which would clutter the console log.
-  # `showDateTime` will show the passed time in milliseconds. You need to specify `--batch-mode` to make this work.
-  MAVEN_OPTS: "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true -Dmaven.repo.local=./.m2/repository"
-  # As of Maven 3.3.0 instead of this you may define these options in `.mvn/maven.config` so the same config is used
-  # when running from the command line.
+  MAVEN_OPTS: "-Djava.awt.headless=true -Dmaven.repo.local=./.m2/repository"
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -Pit"
 
 cache:
   paths:
-    - target/
     - ./.m2/repository
-  # keep cache accross stages
+  # keep cache across branch
   key: "$CI_PIPELINE_ID"
 
 before_script:
@@ -28,15 +23,31 @@ build-job:
   stage: build
   script:
     - mvn clean compile $MAVEN_CLI_OPTS
+  cache:
+    paths:
+      - target/
+    # keep cache across pipeline
+    key: "$CI_PIPELINE_ID"
 
 unittest-job:
   stage: test
   script:
     - "mvn package $MAVEN_CLI_OPTS"
     - echo "TotalUnitTestInstructionCoverage:" `cat target/site/jacoco/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`
+  cache:
+    paths:
+      - target/
+    # keep cache across pipeline
+    key: "$CI_PIPELINE_ID"
 
 integrationtest-job:
   stage: test
   script:
     - "mvn verify $MAVEN_CLI_OPTS"
     - echo "TotalIntegrationTestInstructionCoverage:" `cat target/site/jacoco-it/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`
+  cache:
+    paths:
+      - target/
+    # keep cache across pipeline
+    key: "$CI_PIPELINE_ID"
+
