@@ -3,7 +3,7 @@ image: maven:3-jdk-8
 before_script:
   - export MAVEN_REPO=/cache/.m2
   - apt-get update
-  - apt-get install -y openjfx
+  - apt-get install -y openjfx bc
   
 build:
  script:
