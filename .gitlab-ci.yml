@@ -51,6 +51,11 @@ integrationtest-job:
 
 deploy-job:
   stage: deploy
+  script:
+    - ls -l .
+    - echo "cache"
+    - ls -l /cache
+    - ls -l /builds
   artifacts:
     paths:
       - "target/*.jar"
