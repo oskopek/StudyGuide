@@ -1,11 +1,15 @@
 image: maven:3-jdk-8
 
+cache:
+  paths:
+    - /cache/m2
+
 before_script:
-  - export MAVEN_REPO=/cache/.m2
+  - export MAVEN_REPO=/cache/m2
   - apt-get update
   - apt-get install -y openjfx bc
   
 build:
- script:
-  - mvn clean install -B -Pit -Dmaven.repo.local=$MAVEN_REPO
-  - echo "TotalUnitTestInstructionCoverage:" `cat target/site/jacoco/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`
+  script:
+    - mvn clean install -B -Pit -Dmaven.repo.local=$MAVEN_REPO
+    - echo "TotalUnitTestInstructionCoverage:" `cat target/site/jacoco/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`
