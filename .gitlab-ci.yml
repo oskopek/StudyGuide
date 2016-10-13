@@ -1,8 +1,10 @@
 image: maven:3-jdk-8
-  
-build:
- before_script:
+
+before_script:
+  - export MAVEN_REPO=/cache/.m2
   - apt-get update
   - apt-get install -y openjfx
+  
+build:
  script:
-  - mvn clean install -B -Pit
+  - mvn clean install -B -Pit -Dmaven.repo.local=$MAVEN_REPO
