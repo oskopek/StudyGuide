@@ -2,18 +2,18 @@ image: maven:3-jdk-8
 
 cache:
   paths:
-    - /build/m2
+    - /builds/m2
 
 before_script:
-  - export MAVEN_REPO=/build/m2
+  - export MAVEN_REPO=/builds/m2
   - apt-get update
   - apt-get install -y openjfx bc
-  
+
 stages:
   - build
   - test
 #  - deploy
-  
+
 build-job:
   stage: build
   script:
@@ -22,11 +22,11 @@ build-job:
 unittest-job:
   stage: test
   script:
-    - mvn test -B -Dmaven.repo.local=$MAVEN_REPO
+    - mvn package -B -Dmaven.repo.local=$MAVEN_REPO
     - echo "TotalUnitTestInstructionCoverage:" `cat target/site/jacoco/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`
-    
+
 integrationtest-job:
   stage: test
   script:
     - mvn verify -B -Pit -Dmaven.repo.local=$MAVEN_REPO
-    - echo "TotalIntegrationTestInstructionCoverage:" `cat target/site/jacoco-it/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`    
+    - echo "TotalIntegrationTestInstructionCoverage:" `cat target/site/jacoco-it/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`
