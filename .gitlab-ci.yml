@@ -22,11 +22,11 @@ build-job:
 unittest-job:
   stage: test
   script:
-    - mvn clean test -B -Pit -Dmaven.repo.local=$MAVEN_REPO
+    - mvn test -B -Dmaven.repo.local=$MAVEN_REPO
     - echo "TotalUnitTestInstructionCoverage:" `cat target/site/jacoco/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`
     
 integrationtest-job:
   stage: test
   script:
-    - mvn clean verify -B -Pit -Dmaven.repo.local=$MAVEN_REPO
+    - mvn verify -B -Pit -Dmaven.repo.local=$MAVEN_REPO
     - echo "TotalIntegrationTestInstructionCoverage:" `cat target/site/jacoco-it/jacoco.xml | grep -E '<counter type="INSTRUCTION"[^>]*/>' -o | tail -n 1 | sed -E 's@<counter type="INSTRUCTION"[ ]+missed="([0-9]+)"[ ]+covered="([0-9]+)"[ ]*/>@scale=2;100*(\2)/(\1+\2)@' | bc`    
