@@ -1,0 +1,925 @@
+{
+  "courseRegistry" : {
+    "courses" : {
+      "NPFL087" : {
+        "@id" : "8153634f-5851-43d9-919e-7e89cd1a698c",
+        "id" : "NPFL087",
+        "name" : "Statistical Machine Translation",
+        "localizedName" : "Statistický strojový překlad",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6ce6e6e9-c719-4ae1-b9d3-476f0bb2a9ca",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Ondřej Bojar", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPOZ009" : {
+        "@id" : "6943bdbf-fb80-45e3-9fff-0b2aea449019",
+        "id" : "NPOZ009",
+        "name" : "Professional Language and Style",
+        "localizedName" : "Odborné vyjadřování a styl",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "98d63c13-8138-4dc0-8765-e56bcc9af05f",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Veronika Kolářová, Ph.D.", "Mgr. Magda Ševčíková, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL063" : {
+        "@id" : "2f9d71ea-bb88-46d8-bcbb-74e5b99b579e",
+        "id" : "NPFL063",
+        "name" : "Introduction to General Linguistics",
+        "localizedName" : "Úvod do obecné lingvistiky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "d9b4e9b8-8d60-4f5c-8823-6fd21526e7a4",
+          "creditValue" : 0
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Jiří Hana", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDBI031" : {
+        "@id" : "ebc5d38f-1bed-4775-bab0-8faca397bb1b",
+        "id" : "NDBI031",
+        "name" : "Statistical Methods in Data Mining Systems",
+        "localizedName" : "Statistické metody v systémech pro dobývání znalostí z dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "8cb7499a-493e-4fb7-a7ad-7112dc1bd0a0",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Ing. Martin Holeňa", "CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN066" : {
+        "@id" : "27228709-fc8e-4529-a265-ba7d7e2909f4",
+        "id" : "NTIN066",
+        "name" : "Data Structures I",
+        "localizedName" : "Datové struktury I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ef6ddd6d-7f79-477e-be92-3ba4cc9075ca",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Jiří Fink", "Ph.D.", "doc. Mgr. Michal Koucký", "Ph.D.", "Mgr. Martin Mareš", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL083" : {
+        "@id" : "582908cf-828b-4a31-89dd-2eadb9c1c513",
+        "id" : "NPFL083",
+        "name" : "Linguistic Theory and Grammar Formalisms",
+        "localizedName" : "Lingvistická teorie a gramatické formalismy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "08849280-2e05-43fe-860b-89cbdffbcade",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Ing. Alexandr Rosen, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL082" : {
+        "@id" : "1ed922f6-5bb7-4af6-af0f-46955b43da13",
+        "id" : "NPFL082",
+        "name" : "Information Structure of Sentences and Discourse Structure",
+        "localizedName" : "Informační struktura věty a výstavba diskurzu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "d63e0777-9d10-4d34-b1e0-7abfe0788d56",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. PhDr. Eva Hajičová, DrSc.", "PhDr. Šárka Zikánová, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL006" : {
+        "@id" : "866372f0-e54e-43a4-8ab5-630e102d5787",
+        "id" : "NPFL006",
+        "name" : "Introduction to Formal Linguistics",
+        "localizedName" : "Úvod do formální lingvistiky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "9ff673cd-9826-42c9-ad53-0361a497b78c",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Magda Ševčíková", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL104" : {
+        "@id" : "71f88336-cd9a-4be6-a7df-50dc982230b9",
+        "id" : "NPFL104",
+        "name" : "Machine Learning Methods",
+        "localizedName" : "Metody strojového učení",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "767d3fc9-85c4-40bf-9615-b9b10e6df991",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský", "Ph.D.", "RNDr. Ondřej Bojar", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL103" : {
+        "@id" : "b097e181-f77e-4143-9219-ae2d0a727317",
+        "id" : "NPFL103",
+        "name" : "Information Retrieval",
+        "localizedName" : "Vyhledávání informací",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "2518fe5c-aa15-4cf5-9a0c-e9902b68eaad",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Pavel Pecina", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL068" : {
+        "@id" : "536c96e7-6ec8-43aa-b613-3464180ffe35",
+        "id" : "NPFL068",
+        "name" : "Statistical Methods in Natural Language Processing II",
+        "localizedName" : "Statistické metody zpracování přirozených jazyků II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "df54b69b-a2bc-4747-b821-8447c0494efc",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Jan Hajič", "Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ {
+          "@id" : "736242f8-4e88-492a-b7f6-7be1918194d7",
+          "id" : "NPFL067",
+          "name" : "Statistical Methods in Natural Language Processing I",
+          "localizedName" : "Statistické metody zpracování přirozených jazyků I",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "4fffbb49-ecf2-45a1-9931-abc4916c19e2",
+            "creditValue" : 6
+          },
+          "enrollableIn" : "WINTER",
+          "teacherNames" : [ "prof. RNDr. Jan Hajič", "Dr." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ]
+      },
+      "NPFL067" : "736242f8-4e88-492a-b7f6-7be1918194d7",
+      "NPRG027" : {
+        "@id" : "18fdb1b8-6317-44ed-9cf7-3f12f9ce5ec7",
+        "id" : "NPRG027",
+        "name" : "Credit for Project",
+        "localizedName" : "Zápočet k projektu",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "97ce9b1c-d505-4e17-a109-7f302ad24901",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPRG023" : {
+        "@id" : "bc0b8bee-ffd5-40a1-91d6-aa79e7c346b6",
+        "id" : "NPRG023",
+        "name" : "Software Project",
+        "localizedName" : "Softwarový projekt",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "dd09b2ff-8e14-4933-a4b7-d43e8b88fc72",
+          "creditValue" : 9
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NAIL029" : {
+        "@id" : "a9f5068d-9360-4f97-ae0e-8cecdbd54cf0",
+        "id" : "NAIL029",
+        "name" : "Machine Learning",
+        "localizedName" : "Strojové učení",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "bfd2cd4b-d034-42ff-8d81-e277b944a816",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Marta Vomlelová", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN090" : {
+        "@id" : "4c1d41b0-3269-4896-a3f3-d1fc59189fc3",
+        "id" : "NTIN090",
+        "name" : "Introduction to Complexity and Computability",
+        "localizedName" : "Základy složitosti a vyčíslitelnosti",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "a66ac9d4-eca7-4766-be65-e74dae7ef93b",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek", "Ph.D.", "RNDr. Petr Kučera", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL075" : {
+        "@id" : "45b1c668-1865-4db8-8b95-9e7ebbe103ea",
+        "id" : "NPFL075",
+        "name" : "Prague Dependency Treebank",
+        "localizedName" : "Pražský závislostní korpus",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f84bec0a-7c22-4ba4-9f9e-571af41752a8",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Markéta Lopatková, Ph.D.", "RNDr. Jiří Mírovský, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL096" : {
+        "@id" : "ec4fadc3-9f9c-4efb-944c-67dcbac54797",
+        "id" : "NPFL096",
+        "name" : "Computational Morphology",
+        "localizedName" : "Komputační morfologie",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c3d70e62-0cf1-4195-86f2-0cdac9ae96c0",
+          "creditValue" : 4
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Jiří Hana, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL095" : {
+        "@id" : "6aee69b4-a74b-4c57-bd22-2d8e5f0e38a1",
+        "id" : "NPFL095",
+        "name" : "Modern Methods in Computational Linguistics",
+        "localizedName" : "Moderní metody v počítačové lingvistice",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c43c7e97-31e5-400b-87a1-1021475df585",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Martin Popel" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL094" : {
+        "@id" : "8c6929b4-698c-425f-8402-2c3b7b80bc16",
+        "id" : "NPFL094",
+        "name" : "Morphological and Syntactic Analysis I",
+        "localizedName" : "Morfologická a syntaktická analýza",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "18291c2a-861f-40b1-aa6b-7bd7917399dd",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Daniel Zeman", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NAIL069" : {
+        "@id" : "09117ae9-013c-4471-a5d7-4fdf4e3d1b2b",
+        "id" : "NAIL069",
+        "name" : "Artificial Intelligence I",
+        "localizedName" : "Umělá inteligence I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b0cd91fa-7345-4fdc-959e-b90340dc35fc",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Roman Barták", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL093" : {
+        "@id" : "4083374a-bfbe-4d14-9cae-f6f314acc10d",
+        "id" : "NPFL093",
+        "name" : "NLP Applications",
+        "localizedName" : "Aplikace NLP",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "cb65dea0-822e-498c-b7b2-574137914945",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Vladislav Kuboň", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NAIL002" : {
+        "@id" : "33ef594b-554e-4d35-8b23-9f02056ec48b",
+        "id" : "NAIL002",
+        "name" : "Neural Networks",
+        "localizedName" : "Neuronové sítě",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "80b0f49e-9103-402d-832e-579ae1c86873",
+          "creditValue" : 9
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Iveta Mrázová", "CSc.", "RNDr. František Mráz", "CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL092" : {
+        "@id" : "e17aabea-12c6-48c3-818c-69921da9bc21",
+        "id" : "NPFL092",
+        "name" : "NLP Technology",
+        "localizedName" : "Technologie pro NLP",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "0e6f3146-9a8e-427a-bc71-fa469b6d113c",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský", "Ph.D.", "Mgr. Rudolf Rosa" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL070" : {
+        "@id" : "4349de5e-7f4d-47ce-931f-0be5afcb3fba",
+        "id" : "NPFL070",
+        "name" : "Language Data Resources",
+        "localizedName" : "Zdroje lingvistických dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "e82aae5c-8727-463e-bd40-5b125193f06c",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Ing. Zdeněk Žabokrtský, Ph.D.", "Mgr. Martin Popel" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDBI023" : {
+        "@id" : "266333f9-a62b-4c29-b47d-f7f543903584",
+        "id" : "NDBI023",
+        "name" : "Data Mining",
+        "localizedName" : "Dobývání znalostí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "1e52adb8-bd36-4622-80b3-734b8cc39200",
+          "creditValue" : 9
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Iveta Mrázová, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSZZ025" : {
+        "@id" : "3d78c909-253f-4045-95ad-3b1fdb67ce6c",
+        "id" : "NSZZ025",
+        "name" : "Diploma Thesis III",
+        "localizedName" : "Diplomová práce III",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b07308b4-4a21-4971-b4c3-22c8f1f8d263",
+          "creditValue" : 15
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ "" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSZZ023" : {
+        "@id" : "8969a124-94cd-43f8-9f9f-c40904adb117",
+        "id" : "NSZZ023",
+        "name" : "Diploma Thesis I",
+        "localizedName" : "Diplomová práce I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "aa359199-0a61-4cd5-acdb-26d0a3e6bff7",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ "" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL038" : {
+        "@id" : "80aff982-1567-420e-97f9-a18a4ebceebb",
+        "id" : "NPFL038",
+        "name" : "Fundamentals of Speech Recognition and Generation",
+        "localizedName" : "Základy rozpoznávání a generování mluvené řeči",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "9426142c-e310-449b-9765-ec897a569ec7",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Nino Peterek", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSZZ024" : {
+        "@id" : "5383deb7-b9fc-4255-9e79-b60b8d46e153",
+        "id" : "NSZZ024",
+        "name" : "Diploma Thesis II",
+        "localizedName" : "Diplomová práce II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "199816ae-9abd-4d3d-9997-c8bc7a65881a",
+          "creditValue" : 9
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ "" ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL079" : {
+        "@id" : "a569664d-5bf7-450c-b17b-ca9b03aa55e9",
+        "id" : "NPFL079",
+        "name" : "Algorithms in Speech Recognition",
+        "localizedName" : "Algoritmy rozpoznávání mluvené řeči",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "0dda54b5-6197-4a87-a400-12e0c7cbdded",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Nino Peterek", "Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NPFL099" : {
+        "@id" : "33663138-c7e4-40bb-b77e-97ce719c4696",
+        "id" : "NPFL099",
+        "name" : "Statistical Dialogue Systems",
+        "localizedName" : "Statistické dialogové systémy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6386505b-5cc8-4d88-8fd5-280ba905d9e7",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Ing. Filip Jurčíček, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      }
+    }
+  },
+  "semesterPlan" : {
+    "semesterList" : [ {
+      "name" : "Y1-WS",
+      "courseEnrollmentList" : [ {
+        "@id" : "f38bb62a-2409-4cd1-8c72-a1d1948ae4e9",
+        "course" : "4c1d41b0-3269-4896-a3f3-d1fc59189fc3",
+        "fulfilled" : true
+      }, {
+        "@id" : "f33cb9c7-6a8b-4afd-8d8a-d93eb9f03da4",
+        "course" : "27228709-fc8e-4529-a265-ba7d7e2909f4",
+        "fulfilled" : true
+      }, {
+        "@id" : "a14c820f-7ab1-4afc-b1fb-143469f34745",
+        "course" : "736242f8-4e88-492a-b7f6-7be1918194d7",
+        "fulfilled" : true
+      }, {
+        "@id" : "b0807e8b-8e26-4cf9-ab7d-56001e44fdfc",
+        "course" : "e17aabea-12c6-48c3-818c-69921da9bc21",
+        "fulfilled" : true
+      }, {
+        "@id" : "5d76808c-c38c-482d-9ed2-560643f8eaab",
+        "course" : "80aff982-1567-420e-97f9-a18a4ebceebb",
+        "fulfilled" : true
+      }, {
+        "@id" : "96c2b258-20ac-4cc6-a324-4ad2f336f92d",
+        "course" : "866372f0-e54e-43a4-8ab5-630e102d5787",
+        "fulfilled" : true
+      }, {
+        "@id" : "c5f5c14b-ed45-403f-9643-6f98d7f09255",
+        "course" : "ebc5d38f-1bed-4775-bab0-8faca397bb1b",
+        "fulfilled" : true
+      } ]
+    }, {
+      "name" : "Y1-SS",
+      "courseEnrollmentList" : [ {
+        "@id" : "89eb3220-6c01-4005-a5a5-8c20155f0762",
+        "course" : "8969a124-94cd-43f8-9f9f-c40904adb117",
+        "fulfilled" : true
+      }, {
+        "@id" : "c92119d4-b920-4954-a4cd-504a835afcd1",
+        "course" : "71f88336-cd9a-4be6-a7df-50dc982230b9",
+        "fulfilled" : true
+      }, {
+        "@id" : "5e4cfe2f-0b69-4d0c-bc2b-7fccb4c2d105",
+        "course" : "a569664d-5bf7-450c-b17b-ca9b03aa55e9",
+        "fulfilled" : true
+      }, {
+        "@id" : "8c390bad-2c76-4631-9b91-a67c747a36b9",
+        "course" : "4083374a-bfbe-4d14-9cae-f6f314acc10d",
+        "fulfilled" : true
+      }, {
+        "@id" : "20952180-e3f6-4668-8acb-495c7869fd85",
+        "course" : "a9f5068d-9360-4f97-ae0e-8cecdbd54cf0",
+        "fulfilled" : true
+      }, {
+        "@id" : "a986d260-1351-48bc-8f9c-5d3062e91ca5",
+        "course" : "536c96e7-6ec8-43aa-b613-3464180ffe35",
+        "fulfilled" : true
+      } ]
+    }, {
+      "name" : "Y2-WS",
+      "courseEnrollmentList" : [ {
+        "@id" : "e194bf62-f87d-40b2-9943-46fa6acecdd4",
+        "course" : "5383deb7-b9fc-4255-9e79-b60b8d46e153",
+        "fulfilled" : true
+      }, {
+        "@id" : "48045976-4858-47d1-899c-affe7bdfd6db",
+        "course" : "b097e181-f77e-4143-9219-ae2d0a727317",
+        "fulfilled" : true
+      }, {
+        "@id" : "04477f60-3b30-40e9-8365-b1ade334de61",
+        "course" : "33ef594b-554e-4d35-8b23-9f02056ec48b",
+        "fulfilled" : true
+      }, {
+        "@id" : "f61c10e8-5074-4154-920c-064600954f51",
+        "course" : "09117ae9-013c-4471-a5d7-4fdf4e3d1b2b",
+        "fulfilled" : true
+      }, {
+        "@id" : "6b8afb16-cbe6-4bd6-8ab9-b74ad3b2f496",
+        "course" : "2f9d71ea-bb88-46d8-bcbb-74e5b99b579e",
+        "fulfilled" : true
+      } ]
+    }, {
+      "name" : "Y2-SS",
+      "courseEnrollmentList" : [ {
+        "@id" : "d433084b-8ff1-4c18-8e51-0c4d229cfcf7",
+        "course" : "3d78c909-253f-4045-95ad-3b1fdb67ce6c",
+        "fulfilled" : true
+      }, {
+        "@id" : "da673c32-4a1d-4d30-92be-85029d5713bb",
+        "course" : "8153634f-5851-43d9-919e-7e89cd1a698c",
+        "fulfilled" : true
+      }, {
+        "@id" : "8e1b5b1a-9662-4224-b8ce-c68f92834740",
+        "course" : "266333f9-a62b-4c29-b47d-f7f543903584",
+        "fulfilled" : true
+      } ]
+    } ]
+  },
+  "constraints" : {
+    "courseGroupConstraintList" : [ {
+      "CourseGroupFulfilledAllConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "2f9d71ea-bb88-46d8-bcbb-74e5b99b579e", "27228709-fc8e-4529-a265-ba7d7e2909f4", "e17aabea-12c6-48c3-818c-69921da9bc21", "3d78c909-253f-4045-95ad-3b1fdb67ce6c", "4c1d41b0-3269-4896-a3f3-d1fc59189fc3", "8969a124-94cd-43f8-9f9f-c40904adb117", "5383deb7-b9fc-4255-9e79-b60b8d46e153", {
+            "@id" : "1723db04-6796-4f8d-903a-3e587337dab1",
+            "id" : "NPFL067",
+            "name" : "Statistical Methods in Natural Language Processing I",
+            "localizedName" : "Statistické metody zpracování přirozených jazyků I",
+            "locale" : "cs",
+            "credits" : {
+              "@id" : "65bc6e91-301c-4c31-b0d7-12f09c626c4a",
+              "creditValue" : 6
+            },
+            "enrollableIn" : "WINTER",
+            "teacherNames" : [ "prof. RNDr. Jan Hajič, Dr." ],
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          } ]
+        }
+      }
+    }, {
+      "CourseGroupCreditsSumConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "866372f0-e54e-43a4-8ab5-630e102d5787", "80aff982-1567-420e-97f9-a18a4ebceebb", "536c96e7-6ec8-43aa-b613-3464180ffe35", "4349de5e-7f4d-47ce-931f-0be5afcb3fba", "45b1c668-1865-4db8-8b95-9e7ebbe103ea", "a569664d-5bf7-450c-b17b-ca9b03aa55e9", "1ed922f6-5bb7-4af6-af0f-46955b43da13", "582908cf-828b-4a31-89dd-2eadb9c1c513", "8153634f-5851-43d9-919e-7e89cd1a698c", "4083374a-bfbe-4d14-9cae-f6f314acc10d", "8c6929b4-698c-425f-8402-2c3b7b80bc16", "6aee69b4-a74b-4c57-bd22-2d8e5f0e38a1", "ec4fadc3-9f9c-4efb-944c-67dcbac54797", "33663138-c7e4-40bb-b77e-97ce719c4696", "b097e181-f77e-4143-9219-ae2d0a727317", "71f88336-cd9a-4be6-a7df-50dc982230b9", "6943bdbf-fb80-45e3-9fff-0b2aea449019", "18fdb1b8-6317-44ed-9cf7-3f12f9ce5ec7", "bc0b8bee-ffd5-40a1-91d6-aa79e7c346b6" ]
+        },
+        "totalNeeded" : {
+          "@id" : "66bebc0c-81b0-4202-b4a5-16046de8e2b7",
+          "creditValue" : 42
+        }
+      }
+    } ],
+    "globalConstraintList" : [ {
+      "GlobalCourseRepeatedEnrollmentConstraint" : {
+        "maxRepeatedEnrollment" : 2
+      }
+    }, {
+      "GlobalCreditsSumConstraint" : {
+        "totalNeeded" : {
+          "@id" : "04794d40-d620-48c5-9a8e-385998b9651d",
+          "creditValue" : 120
+        }
+      }
+    }, {
+      "GlobalCourseMaxFulfilledConstraint" : {
+        "maxFulfilled" : 1
+      }
+    }, {
+      "GlobalLongStudyFeeConstraint" : {
+        "feePerSemester" : 22000,
+        "currency" : "CZK",
+        "fromSemester" : 7
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "adaa7dd5-0409-415a-be19-cc8827e65b0a",
+          "creditValue" : 30
+        },
+        "untilSemester" : 1
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "a3650e5d-14dc-45f4-80ff-3b3c622c6fa0",
+          "creditValue" : 60
+        },
+        "untilSemester" : 2
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "1fcbe717-4c27-4c9f-aa2f-efec44177a16",
+          "creditValue" : 90
+        },
+        "untilSemester" : 3
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "1ab57d6e-03f1-47e0-8ea3-1d10dadaaa77",
+          "creditValue" : 120
+        },
+        "untilSemester" : 4
+      }
+    } ],
+    "courseEnrollmentConstraintList" : [ {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "89eb3220-6c01-4005-a5a5-8c20155f0762"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "89eb3220-6c01-4005-a5a5-8c20155f0762"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "89eb3220-6c01-4005-a5a5-8c20155f0762"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "e194bf62-f87d-40b2-9943-46fa6acecdd4"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "e194bf62-f87d-40b2-9943-46fa6acecdd4"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "e194bf62-f87d-40b2-9943-46fa6acecdd4"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "d433084b-8ff1-4c18-8e51-0c4d229cfcf7"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "d433084b-8ff1-4c18-8e51-0c4d229cfcf7"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "d433084b-8ff1-4c18-8e51-0c4d229cfcf7"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "f38bb62a-2409-4cd1-8c72-a1d1948ae4e9"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "f38bb62a-2409-4cd1-8c72-a1d1948ae4e9"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "f38bb62a-2409-4cd1-8c72-a1d1948ae4e9"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "f33cb9c7-6a8b-4afd-8d8a-d93eb9f03da4"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "f33cb9c7-6a8b-4afd-8d8a-d93eb9f03da4"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "f33cb9c7-6a8b-4afd-8d8a-d93eb9f03da4"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "a14c820f-7ab1-4afc-b1fb-143469f34745"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "a14c820f-7ab1-4afc-b1fb-143469f34745"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "a14c820f-7ab1-4afc-b1fb-143469f34745"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "a986d260-1351-48bc-8f9c-5d3062e91ca5"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "a986d260-1351-48bc-8f9c-5d3062e91ca5"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "a986d260-1351-48bc-8f9c-5d3062e91ca5"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "b0807e8b-8e26-4cf9-ab7d-56001e44fdfc"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "b0807e8b-8e26-4cf9-ab7d-56001e44fdfc"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "b0807e8b-8e26-4cf9-ab7d-56001e44fdfc"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "c92119d4-b920-4954-a4cd-504a835afcd1"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "c92119d4-b920-4954-a4cd-504a835afcd1"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "c92119d4-b920-4954-a4cd-504a835afcd1"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "da673c32-4a1d-4d30-92be-85029d5713bb"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "da673c32-4a1d-4d30-92be-85029d5713bb"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "da673c32-4a1d-4d30-92be-85029d5713bb"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "5d76808c-c38c-482d-9ed2-560643f8eaab"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "5d76808c-c38c-482d-9ed2-560643f8eaab"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "5d76808c-c38c-482d-9ed2-560643f8eaab"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "48045976-4858-47d1-899c-affe7bdfd6db"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "48045976-4858-47d1-899c-affe7bdfd6db"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "48045976-4858-47d1-899c-affe7bdfd6db"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "5e4cfe2f-0b69-4d0c-bc2b-7fccb4c2d105"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "5e4cfe2f-0b69-4d0c-bc2b-7fccb4c2d105"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "5e4cfe2f-0b69-4d0c-bc2b-7fccb4c2d105"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "6b8afb16-cbe6-4bd6-8ab9-b74ad3b2f496"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "6b8afb16-cbe6-4bd6-8ab9-b74ad3b2f496"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "6b8afb16-cbe6-4bd6-8ab9-b74ad3b2f496"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "8c390bad-2c76-4631-9b91-a67c747a36b9"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "8c390bad-2c76-4631-9b91-a67c747a36b9"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "8c390bad-2c76-4631-9b91-a67c747a36b9"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "96c2b258-20ac-4cc6-a324-4ad2f336f92d"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "96c2b258-20ac-4cc6-a324-4ad2f336f92d"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "96c2b258-20ac-4cc6-a324-4ad2f336f92d"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "04477f60-3b30-40e9-8365-b1ade334de61"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "04477f60-3b30-40e9-8365-b1ade334de61"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "04477f60-3b30-40e9-8365-b1ade334de61"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "20952180-e3f6-4668-8acb-495c7869fd85"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "20952180-e3f6-4668-8acb-495c7869fd85"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "20952180-e3f6-4668-8acb-495c7869fd85"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "f61c10e8-5074-4154-920c-064600954f51"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "f61c10e8-5074-4154-920c-064600954f51"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "f61c10e8-5074-4154-920c-064600954f51"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "c5f5c14b-ed45-403f-9643-6f98d7f09255"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "c5f5c14b-ed45-403f-9643-6f98d7f09255"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "c5f5c14b-ed45-403f-9643-6f98d7f09255"
+      }
+    }, {
+      "CourseEnrollmentCorequisiteConstraint" : {
+        "courseEnrollment" : "8e1b5b1a-9662-4224-b8ce-c68f92834740"
+      }
+    }, {
+      "CourseEnrollmentPrerequisiteConstraint" : {
+        "courseEnrollment" : "8e1b5b1a-9662-4224-b8ce-c68f92834740"
+      }
+    }, {
+      "CourseEnrollmentEnrolledInConstraint" : {
+        "courseEnrollment" : "8e1b5b1a-9662-4224-b8ce-c68f92834740"
+      }
+    } ]
+  }
+}

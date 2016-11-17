@@ -1,0 +1,628 @@
+{
+  "courseRegistry": {
+    "courses": {
+      "Course0": {
+        "@id": "c9f55be7-1ddb-41fd-b0f4-364d0303ce20",
+        "id": "Course0",
+        "name": "Name",
+        "localizedName": "Master thesis",
+        "locale": "en_US",
+        "credits": {
+          "@id": "4084abe7-2572-47ad-b6c9-6279de16f489",
+          "creditValue": 30
+        },
+        "enrollableIn": "SUMMER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course2": {
+        "@id": "d9cad9d2-45f2-4b4b-a25a-b09c53cadd90",
+        "id": "Course2",
+        "name": "Name",
+        "localizedName": "Advanced Topics of Software Engineering",
+        "locale": "en_US",
+        "credits": {
+          "@id": "781b994d-fee3-4d35-8ac5-d05a73cf6fa8",
+          "creditValue": 8
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course1": {
+        "@id": "04461859-3693-4f39-a2cc-4ca350516511",
+        "id": "Course1",
+        "name": "Name",
+        "localizedName": "Master's practicum",
+        "locale": "en_US",
+        "credits": {
+          "@id": "3a7376fa-ccd1-46b3-8296-f538186017c5",
+          "creditValue": 10
+        },
+        "enrollableIn": "SUMMER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course4": {
+        "@id": "91dd01ab-1949-45ae-889c-0b4a0d2c4005",
+        "id": "Course4",
+        "name": "Name",
+        "localizedName": "Principles of Computer Vision",
+        "locale": "en_US",
+        "credits": {
+          "@id": "87acf326-07c8-4b92-a1c1-07abdea5b50f",
+          "creditValue": 4
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course3": {
+        "@id": "7c4764bb-62fe-4f46-b0f7-a1627cb24f09",
+        "id": "Course3",
+        "name": "Name",
+        "localizedName": "Protein Prediction I for Computer Scientists",
+        "locale": "en_US",
+        "credits": {
+          "@id": "099cb83b-fb30-40bf-bb83-021501791421",
+          "creditValue": 8
+        },
+        "enrollableIn": "SUMMER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course6": {
+        "@id": "d647d815-71c5-485d-a547-58b6e61b764f",
+        "id": "Course6",
+        "name": "Name",
+        "localizedName": "Mining Massive Datasets",
+        "locale": "en_US",
+        "credits": {
+          "@id": "88cb1b5f-1344-4265-ba7e-bcf766fafeb7",
+          "creditValue": 5
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course5": {
+        "@id": "3efc4764-51a2-49d1-8452-f3fe88683071",
+        "id": "Course5",
+        "name": "Name",
+        "localizedName": "Techniques in Artificial Intelligence",
+        "locale": "en_US",
+        "credits": {
+          "@id": "c05553af-3032-427f-9f72-ef2c7f8f0458",
+          "creditValue": 5
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course8": {
+        "@id": "588de056-3d03-4025-b9f3-a01b9e127f7f",
+        "id": "Course8",
+        "name": "Name",
+        "localizedName": "Cognitive Systems",
+        "locale": "en_US",
+        "credits": {
+          "@id": "a200f024-abf2-464e-9642-62ab2901fcd6",
+          "creditValue": 5
+        },
+        "enrollableIn": "SUMMER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course7": {
+        "@id": "8cfc995a-ff20-48fd-8d30-c51094c0a03b",
+        "id": "Course7",
+        "name": "Name",
+        "localizedName": "Machine Learning",
+        "locale": "en_US",
+        "credits": {
+          "@id": "55b8a0d2-9a7a-466c-b225-99cf67c3d3be",
+          "creditValue": 8
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course9": {
+        "@id": "e8793b98-f0e4-42e0-aefa-bee13fe8bb81",
+        "id": "Course9",
+        "name": "Name",
+        "localizedName": "Introduction to digital signal processing",
+        "locale": "en_US",
+        "credits": {
+          "@id": "a7bec795-17be-469c-b550-1ea422e5ea46",
+          "creditValue": 7
+        },
+        "enrollableIn": "SUMMER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course13": {
+        "@id": "817d3ab0-7fe1-42cc-9086-e276e99cc503",
+        "id": "Course13",
+        "name": "Name",
+        "localizedName": "Distributed Systems",
+        "locale": "en_US",
+        "credits": {
+          "@id": "83d7fdac-437a-421a-a8dd-d3636bf9e193",
+          "creditValue": 5
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course12": {
+        "@id": "b98966db-6bb7-403a-88fa-a5c3c20bf1bb",
+        "id": "Course12",
+        "name": "Name",
+        "localizedName": "Information and Knowledge Management",
+        "locale": "en_US",
+        "credits": {
+          "@id": "4aafc3e2-1d0f-4d09-9b68-021651bf61d8",
+          "creditValue": 5
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course15": {
+        "@id": "95c2678c-bb82-4057-be20-1ae6a5c3e2f6",
+        "id": "Course15",
+        "name": "Name",
+        "localizedName": "Data Analysis and Visualization in R",
+        "locale": "en_US",
+        "credits": {
+          "@id": "82392ca7-5585-4e0b-a290-c5f6a15e747e",
+          "creditValue": 6
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course14": {
+        "@id": "968636d7-0c55-485f-9c3a-31b75a347d8c",
+        "id": "Course14",
+        "name": "Name",
+        "localizedName": "Secure Coding",
+        "locale": "en_US",
+        "credits": {
+          "@id": "abe818ff-875e-433a-a579-5f70654b2b87",
+          "creditValue": 6
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course11": {
+        "@id": "27d27390-361a-47f5-b5a5-aa3697589988",
+        "id": "Course11",
+        "name": "Name",
+        "localizedName": "Scientific Visualization",
+        "locale": "en_US",
+        "credits": {
+          "@id": "a1494ee4-a7f4-4177-9325-35b3e6e5d018",
+          "creditValue": 5
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      },
+      "Course10": {
+        "@id": "0c772e38-4050-4b02-89fc-abeed1aeba38",
+        "id": "Course10",
+        "name": "Name",
+        "localizedName": "Data Mining und Knowledge Discovery",
+        "locale": "en_US",
+        "credits": {
+          "@id": "b4ecec25-834d-4e21-9cf6-d706dbc09117",
+          "creditValue": 3
+        },
+        "enrollableIn": "WINTER",
+        "teacherNames": [
+          "teacher"
+        ],
+        "prerequisites": [],
+        "corequisites": []
+      }
+    }
+  },
+  "semesterPlan": {
+    "semesterList": [
+      {
+        "name": "Y1-WS",
+        "courseEnrollmentList": [
+          {
+            "@id": "5c997b1b-ad43-4827-971f-8280ad8b5b77",
+            "course": "91dd01ab-1949-45ae-889c-0b4a0d2c4005",
+            "fulfilled": false
+          },
+          {
+            "@id": "accf8276-d464-4da1-b572-be246a735b2d",
+            "course": "3efc4764-51a2-49d1-8452-f3fe88683071",
+            "fulfilled": false
+          },
+          {
+            "@id": "bf8d1390-044a-4293-8d6b-8213326d40bb",
+            "course": "d647d815-71c5-485d-a547-58b6e61b764f",
+            "fulfilled": false
+          },
+          {
+            "@id": "58130cc3-c995-46e4-988a-e48b45f8baf6",
+            "course": "8cfc995a-ff20-48fd-8d30-c51094c0a03b",
+            "fulfilled": false
+          },
+          {
+            "@id": "88f1c689-2cd8-4743-a57f-c6203df8aff2",
+            "course": "0c772e38-4050-4b02-89fc-abeed1aeba38",
+            "fulfilled": false
+          },
+          {
+            "@id": "95a4ff35-4e4f-4967-94b7-89150bf51a7e",
+            "course": "27d27390-361a-47f5-b5a5-aa3697589988",
+            "fulfilled": false
+          }
+        ]
+      },
+      {
+        "name": "Y1-SS",
+        "courseEnrollmentList": [
+          {
+            "@id": "b508097e-15a4-4f25-88b4-d8d222cc1222",
+            "course": "04461859-3693-4f39-a2cc-4ca350516511",
+            "fulfilled": false
+          },
+          {
+            "@id": "26196ab5-5e75-4aa7-a3f2-cf7c978a944d",
+            "course": "7c4764bb-62fe-4f46-b0f7-a1627cb24f09",
+            "fulfilled": false
+          },
+          {
+            "@id": "24c5e7dc-d418-42bf-88dc-6163e37f4e9f",
+            "course": "588de056-3d03-4025-b9f3-a01b9e127f7f",
+            "fulfilled": false
+          },
+          {
+            "@id": "dd0cf12c-0c4b-4059-b0e6-450aa10c7953",
+            "course": "e8793b98-f0e4-42e0-aefa-bee13fe8bb81",
+            "fulfilled": false
+          }
+        ]
+      },
+      {
+        "name": "Y2-WS",
+        "courseEnrollmentList": [
+          {
+            "@id": "881ca02c-7d9f-4b40-a17a-82017fa7e690",
+            "course": "b98966db-6bb7-403a-88fa-a5c3c20bf1bb",
+            "fulfilled": false
+          },
+          {
+            "@id": "84b05d12-4b3f-49ff-a0b4-3114c5ce2c34",
+            "course": "817d3ab0-7fe1-42cc-9086-e276e99cc503",
+            "fulfilled": false
+          },
+          {
+            "@id": "83fa8a0f-c237-46bb-8b6b-ba9a9b24e608",
+            "course": "968636d7-0c55-485f-9c3a-31b75a347d8c",
+            "fulfilled": false
+          },
+          {
+            "@id": "8ecce7c2-d647-4dd6-9878-c92b9eb4e226",
+            "course": "95c2678c-bb82-4057-be20-1ae6a5c3e2f6",
+            "fulfilled": false
+          },
+          {
+            "@id": "b6cdbb1c-a9b2-4caf-9a29-426956104795",
+            "course": "d9cad9d2-45f2-4b4b-a25a-b09c53cadd90",
+            "fulfilled": false
+          }
+        ]
+      },
+      {
+        "name": "Y2-SS",
+        "courseEnrollmentList": [
+          {
+            "@id": "0195da79-ac33-42cb-8500-0b7f78c386bd",
+            "course": "c9f55be7-1ddb-41fd-b0f4-364d0303ce20",
+            "fulfilled": false
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "courseGroupConstraintList": [],
+    "globalConstraintList": [],
+    "courseEnrollmentConstraintList": [
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "0195da79-ac33-42cb-8500-0b7f78c386bd"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "0195da79-ac33-42cb-8500-0b7f78c386bd"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "0195da79-ac33-42cb-8500-0b7f78c386bd"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "b508097e-15a4-4f25-88b4-d8d222cc1222"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "b508097e-15a4-4f25-88b4-d8d222cc1222"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "b508097e-15a4-4f25-88b4-d8d222cc1222"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "26196ab5-5e75-4aa7-a3f2-cf7c978a944d"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "26196ab5-5e75-4aa7-a3f2-cf7c978a944d"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "26196ab5-5e75-4aa7-a3f2-cf7c978a944d"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "5c997b1b-ad43-4827-971f-8280ad8b5b77"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "5c997b1b-ad43-4827-971f-8280ad8b5b77"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "5c997b1b-ad43-4827-971f-8280ad8b5b77"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "accf8276-d464-4da1-b572-be246a735b2d"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "accf8276-d464-4da1-b572-be246a735b2d"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "accf8276-d464-4da1-b572-be246a735b2d"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "bf8d1390-044a-4293-8d6b-8213326d40bb"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "bf8d1390-044a-4293-8d6b-8213326d40bb"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "bf8d1390-044a-4293-8d6b-8213326d40bb"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "58130cc3-c995-46e4-988a-e48b45f8baf6"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "58130cc3-c995-46e4-988a-e48b45f8baf6"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "58130cc3-c995-46e4-988a-e48b45f8baf6"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "24c5e7dc-d418-42bf-88dc-6163e37f4e9f"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "24c5e7dc-d418-42bf-88dc-6163e37f4e9f"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "24c5e7dc-d418-42bf-88dc-6163e37f4e9f"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "dd0cf12c-0c4b-4059-b0e6-450aa10c7953"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "dd0cf12c-0c4b-4059-b0e6-450aa10c7953"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "dd0cf12c-0c4b-4059-b0e6-450aa10c7953"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "88f1c689-2cd8-4743-a57f-c6203df8aff2"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "88f1c689-2cd8-4743-a57f-c6203df8aff2"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "88f1c689-2cd8-4743-a57f-c6203df8aff2"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "95a4ff35-4e4f-4967-94b7-89150bf51a7e"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "95a4ff35-4e4f-4967-94b7-89150bf51a7e"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "95a4ff35-4e4f-4967-94b7-89150bf51a7e"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "881ca02c-7d9f-4b40-a17a-82017fa7e690"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "881ca02c-7d9f-4b40-a17a-82017fa7e690"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "881ca02c-7d9f-4b40-a17a-82017fa7e690"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "84b05d12-4b3f-49ff-a0b4-3114c5ce2c34"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "84b05d12-4b3f-49ff-a0b4-3114c5ce2c34"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "84b05d12-4b3f-49ff-a0b4-3114c5ce2c34"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "83fa8a0f-c237-46bb-8b6b-ba9a9b24e608"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "83fa8a0f-c237-46bb-8b6b-ba9a9b24e608"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "83fa8a0f-c237-46bb-8b6b-ba9a9b24e608"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "8ecce7c2-d647-4dd6-9878-c92b9eb4e226"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "8ecce7c2-d647-4dd6-9878-c92b9eb4e226"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "8ecce7c2-d647-4dd6-9878-c92b9eb4e226"
+        }
+      },
+      {
+        "CourseEnrollmentCorequisiteConstraint": {
+          "courseEnrollment": "b6cdbb1c-a9b2-4caf-9a29-426956104795"
+        }
+      },
+      {
+        "CourseEnrollmentPrerequisiteConstraint": {
+          "courseEnrollment": "b6cdbb1c-a9b2-4caf-9a29-426956104795"
+        }
+      },
+      {
+        "CourseEnrollmentEnrolledInConstraint": {
+          "courseEnrollment": "b6cdbb1c-a9b2-4caf-9a29-426956104795"
+        }
+      }
+    ]
+  }
+}
