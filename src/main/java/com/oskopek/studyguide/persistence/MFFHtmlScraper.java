@@ -308,6 +308,8 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
                         next = new URL(base, location);  // deal with relative URLs
                         url = next.toExternalForm();
                         continue;
+                    default:
+                        break;
                 }
                 break;
             }
