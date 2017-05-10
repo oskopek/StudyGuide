@@ -21,8 +21,8 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -290,8 +290,28 @@ public class MFFHtmlScraper implements DataReader, ProgressObservable {
             throw new IllegalArgumentException("Url to scrape cannot be null.");
         }
         try {
-            URL urlObj = new URL(url);
-            URLConnection connection = urlObj.openConnection();
+            URL urlObj, base, next;
+            HttpURLConnection connection;
+            String location;
+
+            while (true) { // handle redirects: http://stackoverflow.com/a/26046079/2713162
+                urlObj = new URL(url);
+                connection = (HttpURLConnection) urlObj.openConnection();
+                connection.setConnectTimeout(15000);
+                connection.setReadTimeout(15000);
+                connection.setInstanceFollowRedirects(false);
+                switch (connection.getResponseCode()) {
+                    case HttpURLConnection.HTTP_MOVED_PERM:
+                    case HttpURLConnection.HTTP_MOVED_TEMP:
+                        location = connection.getHeaderField("Location");
+                        base = new URL(url);
+                        next = new URL(base, location);  // deal with relative URLs
+                        url = next.toExternalForm();
+                        continue;
+                }
+                break;
+            }
+
             InputStream is = connection.getInputStream();
             StudyPlan studyPlan = scrapeStudyPlan(is, connection.getContentEncoding());
             is.close();
