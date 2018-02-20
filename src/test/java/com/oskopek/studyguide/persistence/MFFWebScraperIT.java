@@ -21,6 +21,7 @@ public class MFFWebScraperIT {
 
     private final String sisWebUrl = "https://is.cuni.cz/studium";
     private final String mffUrlBase = "http://www.mff.cuni.cz/studium/bcmgr/ok/";
+    private final String year = "2017_2018";
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
     private MFFHtmlScraper scraper;
 
@@ -32,7 +33,8 @@ public class MFFWebScraperIT {
     @Test
     public void testScrapeCoursesBc() throws Exception {
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
-        String[] refFiles = {"mff_bc_ioi_2015_2016.json", "mff_bc_ipss_2015_2016.json", "mff_bc_isdi_2015_2016.json"};
+        String[] refFiles = {"mff_bc_ioi_" + year + ".json", "mff_bc_ipss_" + year + ".json",
+                "mff_bc_isdi_" + year + ".json"};
         String[] urlExt = {"ib3a21.htm", "ib3a22.htm", "ib3a23.htm"};
         scrapeAll(mffUrlBase, urlExt, refFileBase, refFiles);
     }
@@ -40,9 +42,9 @@ public class MFFWebScraperIT {
     @Test
     public void testScrapeCoursesMgr() throws Exception {
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
-        String[] refFiles = {"mff_mgr_idm_2015_2016.json", "mff_mgr_iti_2015_2016.json", "mff_mgr_isdim_2015_2016.json",
-                "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json", "mff_mgr_iui_2015_2016.json",
-                "mff_mgr_ipgvph_2015_2016.json"};
+        String[] refFiles = {"mff_mgr_idm_" + year + ".json", "mff_mgr_iti_" + year + ".json",
+                "mff_mgr_isdim_" + year + ".json", "mff_mgr_iss_" + year + ".json", "mff_mgr_iml_" + year + ".json",
+                "mff_mgr_iui_" + year + ".json", "mff_mgr_ipgvph_" + year + ".json"};
         String[] urlExt = {"i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm", "i3b25.htm", "i3b26.htm", "i3b27.htm"};
         scrapeAll(mffUrlBase, urlExt, refFileBase, refFiles);
     }
@@ -53,10 +55,10 @@ public class MFFWebScraperIT {
         String[] urlExt = {"ib3a21.htm", "ib3a22.htm", "ib3a23.htm", "i3b21.htm", "i3b22.htm", "i3b23.htm", "i3b24.htm",
                 "i3b25.htm", "i3b26.htm", "i3b27.htm"};
         String refFileBase = "src/test/resources/com/oskopek/studyguide/persistence/";
-        String[] refFiles = {"mff_bc_ioi_2015_2016.json", "mff_bc_ipss_2015_2016.json", "mff_bc_isdi_2015_2016.json",
-                "mff_mgr_idm_2015_2016.json", "mff_mgr_iti_2015_2016.json", "mff_mgr_isdim_2015_2016.json",
-                "mff_mgr_iss_2015_2016.json", "mff_mgr_iml_2015_2016.json", "mff_mgr_iui_2015_2016.json",
-                "mff_mgr_ipgvph_2015_2016.json"};
+        String[] refFiles = {"mff_bc_ioi_" + year + ".json", "mff_bc_ipss_" + year + ".json",
+                "mff_bc_isdi_" + year + ".json", "mff_mgr_idm_" + year + ".json", "mff_mgr_iti_" + year + ".json",
+                "mff_mgr_isdim_" + year + ".json", "mff_mgr_iss_" + year + ".json", "mff_mgr_iml_" + year + ".json",
+                "mff_mgr_iui_" + year + ".json", "mff_mgr_ipgvph_" + year + ".json"};
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         for (int i = 0; i < urlExt.length; i++) {
             logger.debug("Scheduling scrape for plan {}...", refFiles[i]);

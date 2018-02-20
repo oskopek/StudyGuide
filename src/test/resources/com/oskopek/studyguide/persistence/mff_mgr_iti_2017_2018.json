@@ -1,0 +1,801 @@
+{
+  "courseRegistry" : {
+    "courses" : {
+      "NTIN100" : {
+        "@id" : "e01eba47-9d87-4726-80ec-8e674bf76d2e",
+        "id" : "NTIN100",
+        "name" : "Introduction to Information Transmission and Processing",
+        "localizedName" : "Základy přenosu a zpracování informace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f9514a4d-de9c-4bd1-9657-f8d70b8ed164",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN067" : {
+        "@id" : "11e83e8c-c875-4191-a84f-5ccb717938a1",
+        "id" : "NTIN067",
+        "name" : "Data Structures II",
+        "localizedName" : "Datové struktury II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "330aadd1-ac26-4dbc-9b4e-e7d30b4d50e5",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Jiří Fink, Ph.D.", "Mgr. Martin Mareš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ {
+          "@id" : "be0ae106-ea28-455f-99e5-8eaf59ba183a",
+          "id" : "NTIN066",
+          "name" : "Data Structures I",
+          "localizedName" : "Datové struktury I",
+          "locale" : "cs",
+          "credits" : {
+            "@id" : "95b85d99-81d3-49f3-bda8-295fc387ef23",
+            "creditValue" : 5
+          },
+          "enrollableIn" : "WINTER",
+          "teacherNames" : [ "RNDr. Jiří Fink, Ph.D.", "Mgr. Martin Mareš, Ph.D." ],
+          "prerequisites" : [ ],
+          "corequisites" : [ ]
+        } ]
+      },
+      "NTIN023" : {
+        "@id" : "da761a77-3915-4757-86d5-c17404f08c1e",
+        "id" : "NTIN023",
+        "name" : "Dynamic Graph Data Structures",
+        "localizedName" : "Dynamické grafové datové struktury",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "2dae599d-9ee9-4b6e-ac93-17f984aa4a85",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Vladan Majerech, Dr." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NAIL031" : {
+        "@id" : "5149f567-a00f-4593-a91d-7fb82b4503e1",
+        "id" : "NAIL031",
+        "name" : "Representations of Boolean Functions",
+        "localizedName" : "Reprezentace booleovských funkcí",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "0fe21c84-1829-4b78-a9b4-c3be9be11067",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Petr Savický, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN087" : {
+        "@id" : "3451126b-11ce-475b-88e2-54711b209eb8",
+        "id" : "NTIN087",
+        "name" : "String Algorithms",
+        "localizedName" : "Textové algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6e678d9c-ce70-4ca1-bd27-88d50914b883",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN066" : "be0ae106-ea28-455f-99e5-8eaf59ba183a",
+      "NTIN022" : {
+        "@id" : "83886a5f-7afb-4227-8da6-ad98fdb4b00b",
+        "id" : "NTIN022",
+        "name" : "Probabilistic Techniques",
+        "localizedName" : "Pravděpodobnostní techniky",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "cf8967ac-d04c-4180-9917-80ac591e8c96",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Robert Šámal, Ph.D.", "RNDr. Martin Tancer, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN088" : {
+        "@id" : "55a91c80-8a24-41cd-be9c-793c056e568e",
+        "id" : "NTIN088",
+        "name" : "Algorithmic Randomness",
+        "localizedName" : "Algoritmická náhodnost",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "0b238fb4-8507-4ab8-82fc-d7b14db4fad3",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN063" : {
+        "@id" : "dfeefc63-d29f-415c-83c6-00a5d5794296",
+        "id" : "NTIN063",
+        "name" : "Complexity",
+        "localizedName" : "Složitost",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "fb901f4e-e518-42e2-a27b-206ba9a7cb9b",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN085" : {
+        "@id" : "ef176d03-ba6b-4ce7-b61f-733e714b1180",
+        "id" : "NTIN085",
+        "name" : "Selected Topics in Computational Complexity I",
+        "localizedName" : "Vybrané kapitoly z výpočetní složitosti I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3e57dc9d-1395-4365-8d34-9139cf23fcf1",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN064" : {
+        "@id" : "5c6bf203-690b-4003-8d49-28e33abfccc3",
+        "id" : "NTIN064",
+        "name" : "Computability",
+        "localizedName" : "Vyčíslitelnost",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3629e144-6a23-4c15-85b2-2836a345308d",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc.", "RNDr. Petr Kučera, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN086" : {
+        "@id" : "154d80d6-2b85-4efe-bc86-f6f244aa4b5d",
+        "id" : "NTIN086",
+        "name" : "Selected Topics in Computational Complexity II",
+        "localizedName" : "Vybrané kapitoly z výpočetní složitosti II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b3fb229d-f694-42fd-8d81-335f8b7b2703",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN084" : {
+        "@id" : "7ad53597-f4da-44be-af49-cfd739734bb6",
+        "id" : "NTIN084",
+        "name" : "Bioinformatics Algorithms",
+        "localizedName" : "Bioinformatické algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "409e7b91-5be9-4e46-aa28-22209500b067",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NOPT042" : {
+        "@id" : "52c6008e-5080-402b-aec6-f9d5de2fac73",
+        "id" : "NOPT042",
+        "name" : "Constraint Programming",
+        "localizedName" : "Programování s omezujícími podmínkami",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "b6f15724-92d7-499b-aa7c-069500e3ce19",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI018" : {
+        "@id" : "960f7800-0fca-4768-87f5-238be1b15ac3",
+        "id" : "NDMI018",
+        "name" : "Approximation and Online Algorithms",
+        "localizedName" : "Aproximační a online algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "52ea519a-fe6f-4f2c-9d7f-15fef07aa3e2",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NAIL094" : {
+        "@id" : "dcfa6441-b41e-4129-a6e2-8c49ce04e925",
+        "id" : "NAIL094",
+        "name" : "Decision Procedures and Verification",
+        "localizedName" : "Rozhodovací procedury a verifikace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "2123137c-de12-4d87-a30a-3deb622bfc62",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Roman Barták, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN104" : {
+        "@id" : "7d3bab98-0d8a-45c2-8a5f-31e8147b9817",
+        "id" : "NTIN104",
+        "name" : "Foundations of theoretical cryptography",
+        "localizedName" : "Foundations of theoretical cryptography",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "362137b8-8243-49b4-9750-4e919eaa47e1",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Pavel Hubáček, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI013" : {
+        "@id" : "f3bdc19d-d6e6-4798-9c64-0ae198f5ac24",
+        "id" : "NDMI013",
+        "name" : "Combinatorial and Computational Geometry II",
+        "localizedName" : "Kombinatorická a výpočetní geometrie II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6420cc20-ebff-4903-be10-017ff0c63ff5",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Martin Tancer, Ph.D.", "Mgr. Jan Kynčl, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI088" : {
+        "@id" : "f2097663-0bb1-4bed-bb74-f7b279c35140",
+        "id" : "NDMI088",
+        "name" : "Graph Algorithms II",
+        "localizedName" : "Grafové algoritmy II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "fea22418-4a75-4302-917f-adcc12f7e7de",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI067" : {
+        "@id" : "38897342-f88a-4645-b458-ea27f0f33b9c",
+        "id" : "NDMI067",
+        "name" : "Flows, Paths and Cuts",
+        "localizedName" : "Toky, cesty a řezy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "591555c0-6b04-4460-be7f-f8f42cea0334",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Petr Kolman, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NMAG536" : {
+        "@id" : "1f3395e3-882c-42d0-b30b-72161ca8ff42",
+        "id" : "NMAG536",
+        "name" : "Proof Complexity and the P vs. NP Problem",
+        "localizedName" : "Důkazová složitost a P vs. NP problém",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "3489b0e4-d1ca-4d02-861a-27282b0084d3",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Jan Krajíček, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN090" : {
+        "@id" : "c55dffb6-1482-4b09-832a-96f85828672a",
+        "id" : "NTIN090",
+        "name" : "Introduction to Complexity and Computability",
+        "localizedName" : "Základy složitosti a vyčíslitelnosti",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "aaf98f91-6fd1-4fb8-ad5b-50acb972fa4b",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NAIL021" : {
+        "@id" : "32f86b65-4843-475e-a258-b0214db399d5",
+        "id" : "NAIL021",
+        "name" : "Boolean Functions and Their Applications",
+        "localizedName" : "Booleovské funkce a jejich aplikace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "84e6ff9d-0e39-434d-a01e-b2240e5f4ade",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSWI072" : {
+        "@id" : "4eb09b9c-b1ee-4681-b53b-b01717c56951",
+        "id" : "NSWI072",
+        "name" : "Data Compression Algorithms",
+        "localizedName" : "Algoritmy komprese dat",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "7f20e0d7-3f54-47fc-9c71-999e9ddb9cda",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Tomáš Dvořák, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN098" : {
+        "@id" : "5efbe44c-efb5-4503-9e5a-d1d074a65de5",
+        "id" : "NTIN098",
+        "name" : "Advanced Data Structures",
+        "localizedName" : "Pokročilé datové struktury",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "db782908-68e9-4dd3-8c2e-78d4eb0f7e76",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Jan Bulánek, Ph.D.", "Mgr. Vladimír Čunát", "prof. RNDr. Václav Koubek, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN033" : {
+        "@id" : "1bad3830-847a-464f-86d6-35185ded25b6",
+        "id" : "NTIN033",
+        "name" : "Experimental Analysis of Algorithms",
+        "localizedName" : "Experimentální analýza algoritmů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c36ba990-cb65-496e-8cbf-9676149f9aeb",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN099" : {
+        "@id" : "1e5b2cd6-146d-4c57-be21-a277ea88a6f5",
+        "id" : "NTIN099",
+        "name" : "Algorithmic Aspects of Boolean Functions and Parameterized Complexity",
+        "localizedName" : "Algoritmické aspekty booleovských funkcí a parametrizovaná složitost",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "4b0a410c-dba4-44c3-8ea3-546bdf2f5f95",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. Petr Kučera, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN096" : {
+        "@id" : "827a90a5-5e5d-4bef-b72b-331f91a38199",
+        "id" : "NTIN096",
+        "name" : "Pseudo-Boolean Optimization",
+        "localizedName" : "Pseudo-Booleovská optimalizace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "00dcf24b-79fb-41c2-94ae-759225401be0",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN097" : {
+        "@id" : "f75f5a7b-6351-4eba-a5ce-154d00087c97",
+        "id" : "NTIN097",
+        "name" : "Hypercube Problems",
+        "localizedName" : "Problémy na hyperkrychlích",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "d8b4c9e7-8eb2-4b66-911e-33e2e9dc1713",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Petr Gregor, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN073" : {
+        "@id" : "337e7ba0-546a-430e-94f2-78847fd28dfc",
+        "id" : "NTIN073",
+        "name" : "Recursion",
+        "localizedName" : "Rekurze",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "6e74a067-7ef7-47b0-b532-a00633c4e444",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. RNDr. Antonín Kučera, CSc." ],
+        "prerequisites" : [ "5c6bf203-690b-4003-8d49-28e33abfccc3" ],
+        "corequisites" : [ ]
+      },
+      "NSZZ025" : {
+        "@id" : "323f2fde-61dc-4eca-b794-ebcb6ecfdc45",
+        "id" : "NSZZ025",
+        "name" : "Diploma Thesis III",
+        "localizedName" : "Diplomová práce III",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "60c8fe7a-1b29-4277-8d58-be029f893b62",
+          "creditValue" : 15
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSZZ023" : {
+        "@id" : "84b674a7-72a2-49db-905d-0e1f7efed8b7",
+        "id" : "NSZZ023",
+        "name" : "Diploma Thesis I",
+        "localizedName" : "Diplomová práce I",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "fe6a3d78-24e5-4112-9eb7-5dd9391f1e16",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN018" : {
+        "@id" : "eef345c6-8df9-4196-9c10-52e737d77ddb",
+        "id" : "NTIN018",
+        "name" : "Probabilistic Analysis of Algorithms",
+        "localizedName" : "Pravděpodobnostní analýza algoritmů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "65b123ff-eef4-41b6-ac42-9b76be85ccec",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "RNDr. Alena Koubková, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NSZZ024" : {
+        "@id" : "71225574-3ef3-422c-8a3e-9722bdfcc3fe",
+        "id" : "NSZZ024",
+        "name" : "Diploma Thesis II",
+        "localizedName" : "Diplomová práce II",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "18e8d509-f46b-4565-84ab-6a5834d4eed1",
+          "creditValue" : 9
+        },
+        "enrollableIn" : "BOTH",
+        "teacherNames" : [ ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NMAI067" : {
+        "@id" : "741b2fd7-176c-4128-98a2-72cf69a09364",
+        "id" : "NMAI067",
+        "name" : "Logic in Computer Science",
+        "localizedName" : "Logika v informatice",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ca576063-1275-4da7-8b4f-edea67c7591f",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Pavel Pudlák, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NMAG563" : {
+        "@id" : "5987566e-911a-4efe-851f-417ec19cefc7",
+        "id" : "NMAG563",
+        "name" : "Introduction to complexity of CSP",
+        "localizedName" : "Úvod do složitosti CSP",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c1befa8c-21de-49a2-a3fc-5a5beaf8cb82",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "doc. Mgr. Libor Barto, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN017" : {
+        "@id" : "d7429b4c-4bea-4c94-9d7a-89df5d438bbe",
+        "id" : "NTIN017",
+        "name" : "Parallel Algorithms",
+        "localizedName" : "Paralelní algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "dcf479fd-ee9b-4344-9874-6f456db4dd75",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "RNDr. František Mráz, CSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI025" : {
+        "@id" : "42a3d060-2fbe-49e0-8f6f-642a0bc95705",
+        "id" : "NDMI025",
+        "name" : "Randomized Algorithms",
+        "localizedName" : "Pravděpodobnostní algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "c57d21a4-954e-4a10-9faa-7a4645c0a332",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "prof. RNDr. Jiří Sgall, DrSc." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NOPT034" : {
+        "@id" : "e09448a7-692e-4031-87be-306699a1645f",
+        "id" : "NOPT034",
+        "name" : "Mathematical Programming and Polyhedral Combinatorics",
+        "localizedName" : "Matematické programování a polyedrální kombinatorika",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "dbcea584-5264-4a97-8183-d566bcf75543",
+          "creditValue" : 5
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "prof. RNDr. Martin Loebl, CSc.", "doc. Mgr. Petr Kolman, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI077" : {
+        "@id" : "642ad2ac-ab1e-46d2-b168-b269ad63ae94",
+        "id" : "NDMI077",
+        "name" : "Algorithms for Specific Graph Classes",
+        "localizedName" : "Algoritmy pro specifické třídy grafů",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "63a0aa2d-8464-4dda-9be6-99c709349274",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. RNDr. Jiří Fiala, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NMAG446" : {
+        "@id" : "7ba69c14-1269-4b3b-a008-d27c9dca05fa",
+        "id" : "NMAG446",
+        "name" : "Logic and Complexity",
+        "localizedName" : "Logika a složitost",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "985d212d-eb6d-46f9-9583-9302731bd26b",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Michael Pinsker, dipl. ing." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI010" : {
+        "@id" : "52ccffbc-c9f0-47e2-85cb-c6edd16e1c6c",
+        "id" : "NDMI010",
+        "name" : "Graph Algorithms",
+        "localizedName" : "Grafové algoritmy",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "f7da1f2a-09a6-4b61-960d-1a41e128112c",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "WINTER",
+        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NOPT016" : {
+        "@id" : "8029beb9-6786-43da-9439-536085bfe58c",
+        "id" : "NOPT016",
+        "name" : "Integer Programming",
+        "localizedName" : "Celočíselné programování",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "5d342c22-e5df-4154-940a-7a7445e8494b",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Milan Hladík, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NDMI074" : {
+        "@id" : "f4d02c6c-7d27-4183-9479-924395436501",
+        "id" : "NDMI074",
+        "name" : "Algorithms and Their Implementation",
+        "localizedName" : "Algoritmy a jejich implementace",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "7e8a20b3-b9ba-481c-92e7-0bed46498e04",
+          "creditValue" : 6
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "Mgr. Martin Mareš, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      },
+      "NTIN081" : {
+        "@id" : "069b3b00-73d6-4003-96e9-37eaf0c1616b",
+        "id" : "NTIN081",
+        "name" : "Structural Complexity",
+        "localizedName" : "Strukturální složitost",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "8484254f-cac6-49cb-9539-e11e46eaa307",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ "dfeefc63-d29f-415c-83c6-00a5d5794296" ]
+      },
+      "NTIN082" : {
+        "@id" : "f6cf5c32-c183-48fb-8ae2-b69b2e878c08",
+        "id" : "NTIN082",
+        "name" : "Computational Complexity",
+        "localizedName" : "Výpočetní složitost",
+        "locale" : "cs",
+        "credits" : {
+          "@id" : "ac8e4aa2-5580-4f0a-b62b-90159cc77597",
+          "creditValue" : 3
+        },
+        "enrollableIn" : "SUMMER",
+        "teacherNames" : [ "doc. Mgr. Michal Koucký, Ph.D." ],
+        "prerequisites" : [ ],
+        "corequisites" : [ ]
+      }
+    }
+  },
+  "semesterPlan" : {
+    "semesterList" : [ ]
+  },
+  "constraints" : {
+    "courseGroupConstraintList" : [ {
+      "CourseGroupFulfilledAllConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "e01eba47-9d87-4726-80ec-8e674bf76d2e", {
+            "@id" : "fbdcb6a5-8960-43d2-a870-7ee3e66086d2",
+            "id" : "NTIN066",
+            "name" : "Data Structures I",
+            "localizedName" : "Datové struktury I",
+            "locale" : "cs",
+            "credits" : {
+              "@id" : "fa208d7b-30dd-486b-928b-c3ac4248fc3f",
+              "creditValue" : 5
+            },
+            "enrollableIn" : "WINTER",
+            "teacherNames" : [ "RNDr. Jiří Fink, Ph.D.", "Mgr. Martin Mareš, Ph.D." ],
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          }, "83886a5f-7afb-4227-8da6-ad98fdb4b00b", {
+            "@id" : "ec8d1a70-85fa-4f33-8631-540136c716bd",
+            "id" : "NTIN063",
+            "name" : "Complexity",
+            "localizedName" : "Složitost",
+            "locale" : "cs",
+            "credits" : {
+              "@id" : "97cc9e8e-7ae8-4a79-87e2-44be89a9af85",
+              "creditValue" : 5
+            },
+            "enrollableIn" : "SUMMER",
+            "teacherNames" : [ "doc. RNDr. Ondřej Čepek, Ph.D.", "RNDr. Petr Kučera, Ph.D." ],
+            "prerequisites" : [ ],
+            "corequisites" : [ ]
+          }, "323f2fde-61dc-4eca-b794-ebcb6ecfdc45", "c55dffb6-1482-4b09-832a-96f85828672a", "84b674a7-72a2-49db-905d-0e1f7efed8b7", "71225574-3ef3-422c-8a3e-9722bdfcc3fe" ]
+        }
+      }
+    }, {
+      "CourseGroupCreditsSumConstraint" : {
+        "courseGroup" : {
+          "courseList" : [ "32f86b65-4843-475e-a258-b0214db399d5", "5149f567-a00f-4593-a91d-7fb82b4503e1", "dcfa6441-b41e-4129-a6e2-8c49ce04e925", "5987566e-911a-4efe-851f-417ec19cefc7", "52ccffbc-c9f0-47e2-85cb-c6edd16e1c6c", "f3bdc19d-d6e6-4798-9c64-0ae198f5ac24", "960f7800-0fca-4768-87f5-238be1b15ac3", "42a3d060-2fbe-49e0-8f6f-642a0bc95705", "38897342-f88a-4645-b458-ea27f0f33b9c", "f4d02c6c-7d27-4183-9479-924395436501", "642ad2ac-ab1e-46d2-b168-b269ad63ae94", "f2097663-0bb1-4bed-bb74-f7b279c35140", "7ba69c14-1269-4b3b-a008-d27c9dca05fa", "1f3395e3-882c-42d0-b30b-72161ca8ff42", "741b2fd7-176c-4128-98a2-72cf69a09364", "e09448a7-692e-4031-87be-306699a1645f", "4eb09b9c-b1ee-4681-b53b-b01717c56951", "d7429b4c-4bea-4c94-9d7a-89df5d438bbe", "eef345c6-8df9-4196-9c10-52e737d77ddb", "1bad3830-847a-464f-86d6-35185ded25b6", "5c6bf203-690b-4003-8d49-28e33abfccc3", "11e83e8c-c875-4191-a84f-5ccb717938a1", "337e7ba0-546a-430e-94f2-78847fd28dfc", "069b3b00-73d6-4003-96e9-37eaf0c1616b", "f6cf5c32-c183-48fb-8ae2-b69b2e878c08", "7ad53597-f4da-44be-af49-cfd739734bb6", "ef176d03-ba6b-4ce7-b61f-733e714b1180", "154d80d6-2b85-4efe-bc86-f6f244aa4b5d", "3451126b-11ce-475b-88e2-54711b209eb8", "55a91c80-8a24-41cd-be9c-793c056e568e", "827a90a5-5e5d-4bef-b72b-331f91a38199", "f75f5a7b-6351-4eba-a5ce-154d00087c97", "5efbe44c-efb5-4503-9e5a-d1d074a65de5", "1e5b2cd6-146d-4c57-be21-a277ea88a6f5", "7d3bab98-0d8a-45c2-8a5f-31e8147b9817" ]
+        },
+        "totalNeeded" : {
+          "@id" : "1dda210f-dafe-4bb7-8901-4b20f5f35b21",
+          "creditValue" : 45
+        }
+      }
+    } ],
+    "globalConstraintList" : [ {
+      "GlobalCourseRepeatedEnrollmentConstraint" : {
+        "maxRepeatedEnrollment" : 2
+      }
+    }, {
+      "GlobalCreditsSumConstraint" : {
+        "totalNeeded" : {
+          "@id" : "3a168c16-266b-4f33-be45-8769ad2a5f03",
+          "creditValue" : 120
+        }
+      }
+    }, {
+      "GlobalCourseMaxFulfilledConstraint" : {
+        "maxFulfilled" : 1
+      }
+    }, {
+      "GlobalLongStudyFeeConstraint" : {
+        "feePerSemester" : 22000,
+        "currency" : "CZK",
+        "fromSemester" : 7
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "a951f21a-0572-4e33-b80f-63d2a7add2f7",
+          "creditValue" : 30
+        },
+        "untilSemester" : 1
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "a1ddb999-e801-4026-8104-fec2b8c172d4",
+          "creditValue" : 60
+        },
+        "untilSemester" : 2
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "3d3fc5c1-885d-456e-ba97-eec096ea39e3",
+          "creditValue" : 90
+        },
+        "untilSemester" : 3
+      }
+    }, {
+      "GlobalCreditsSumUntilSemesterConstraint" : {
+        "totalNeeded" : {
+          "@id" : "f07635b9-bf2e-4e59-83c8-e287134656ea",
+          "creditValue" : 120
+        },
+        "untilSemester" : 4
+      }
+    } ],
+    "courseEnrollmentConstraintList" : [ ]
+  }
+}
