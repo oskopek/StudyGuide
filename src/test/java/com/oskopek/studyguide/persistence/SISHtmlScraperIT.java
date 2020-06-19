@@ -32,7 +32,7 @@ public class SISHtmlScraperIT {
         assertNotNull(advancedJava);
         assertEquals(3, registry.courseMapValues().size());
         assertEquals("Advanced programming for Java platform", advancedJava.getName());
-        assertEquals(5, advancedJava.getCredits().getCreditValue());
+        assertEquals(6, advancedJava.getCredits().getCreditValue());
     }
 
     @Test

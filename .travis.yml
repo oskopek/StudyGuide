@@ -4,6 +4,7 @@ sudo: false
 
 jdk:
   - openjdk13
+  - oraclejdk13
 
 env:
   global:
@@ -17,11 +18,3 @@ script: "mvn clean verify -P$MAVEN_PROFILES"
 
 install: /bin/true
 
-notifications:
-  irc:
-    channels:
-      - "irc.freenode.org#carcv"
-    on_success: always
-    on_failure: always
-    template:
-      - "%{repository} (%{branch}:%{commit} by %{author}): %{message} (%{build_url})"
